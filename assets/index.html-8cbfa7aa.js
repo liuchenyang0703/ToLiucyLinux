@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-497efe05","path":"/database/Kang/","title":"Kang","lang":"zh-CN","frontmatter":{"title":"Kang","article":false,"feed":false,"sitemap":false,"seo":false,"head":[]},"headers":[],"git":{},"readingTime":{"minutes":0,"words":1},"filePathRelative":null,"copyright":{"author":"LiucyLinux(LiucyLinux.cn)","license":"MIT"}}');export{e as data};
