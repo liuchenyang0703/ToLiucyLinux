@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as o,a as c}from"./app-8d307529.js";const n={},_=c("p",null,"欢迎来到readme",-1),r=[_];function s(a,l){return t(),o("div",null,r)}const m=e(n,[["render",s],["__file","index.html.vue"]]);export{m as default};
