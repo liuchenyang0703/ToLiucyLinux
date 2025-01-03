@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-beta.67" />
+    <meta name="theme" content="VuePress Theme Hope" />
+    <meta property="og:url" content="http://liuchenyang.top/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html"><meta property="og:site_name" content="ToLiucyLinux"><meta property="og:title" content="【K8s】yaml文件格式详解及实例"><meta property="og:description" content="🍁博主简介 &emsp;&emsp;🏅云计算领域优质创作者 (https://blog.csdn.net/liuchenyang?type=blog) &emsp;&emsp;🏅华为云开发者社区专家博主 (https://bbs.huaweicloud.com/community/myblog) &emsp;&emsp;🏅阿里云开发者社区专家博..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="Liucy"><meta property="article:tag" content="Linux"><meta property="article:tag" content="kubernetes"><meta property="article:tag" content="Docker"><meta property="article:tag" content="yaml"><meta property="article:tag" content="运维"><meta property="article:published_time" content="2024-12-16T00:00:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"【K8s】yaml文件格式详解及实例","image":[""],"datePublished":"2024-12-16T00:00:00.000Z","dateModified":null,"author":[{"@type":"Person","name":"Liucy","url":"http://liuchenyang.top"}]}</script><meta name="robots" content="all"><meta name="author" content="Liucy"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta name="keywords" content="Linux, Docker, kubernetes, 数据库, 自动化运维, 虚拟机, redis, 高可用, Python, Windows, Zabbix, Go, JAVA, 前端, 系统安全"><meta name="apple-mobile-web-app-capable" content="yes"><script>var _hmt1 = _hmt1 || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?891de2bc8f3b2f9c423b3993af701dcb";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();</script><script>var _hmt2 = _hmt2 || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?1404449d13f81f463912cf1bf29d941e";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();</script><script>const btw = new BTWPlugin();
+        btw.init({
+        id: 'container',
+        blogId: '32863-1711898538696-276',
+        name: 'Liucy',
+        qrcode: 'https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142008812.png',
+        keyword: 'vip',
+    });</script><script src="https://readmore.openwrite.cn/js/readmore.js"></script><link rel="stylesheet" href="no-chttps://cdn.jsdelivr.net/npm/@docsearch/css@3ache"><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script><title>【K8s】yaml文件格式详解及实例 | ToLiucyLinux</title><meta name="description" content="🍁博主简介 &emsp;&emsp;🏅云计算领域优质创作者 (https://blog.csdn.net/liuchenyang?type=blog) &emsp;&emsp;🏅华为云开发者社区专家博主 (https://bbs.huaweicloud.com/community/myblog) &emsp;&emsp;🏅阿里云开发者社区专家博...">
+    <style>
+      :root {
+        --bg-color: #fff;
+      }
+
+      html[data-theme="dark"] {
+        --bg-color: #1d1e1f;
+      }
+
+      html,
+      body {
+        background: var(--bg-color);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <link rel="preload" href="/ToLiucyLinux/assets/style-cab24d2e.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-cab24d2e.css">
+    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-bccf5941.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/【K8s】yaml文件格式详解及实例.html-78fc3ad7.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/plugin-vue_export-helper-c27b6911.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/【K8s】yaml文件格式详解及实例.html-9248b079.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="vp-skip-link sr-only">跳至主要內容</a><!--]--><div class="theme-container has-toc"><!--[--><header id="navbar" class="vp-navbar"><div class="vp-navbar-start"><button type="button" class="vp-toggle-sidebar-button" title="Toggle Sidebar"><span class="icon"></span></button><!--[--><!----><!--]--><!--[--><a class="vp-link vp-brand vp-brand" href="/ToLiucyLinux/"><img class="vp-nav-logo" src="/ToLiucyLinux/logo.png" alt="ToLiucyLinux"><!----><span class="vp-site-name hide-in-pad">ToLiucyLinux</span></a><!--]--><!--[--><!----><!--]--></div><div class="vp-navbar-center"><!--[--><!----><!--]--><!--[--><nav class="vp-nav-links"><div class="nav-item hide-in-mobile"><a aria-label="文档指南" class="vp-link nav-link nav-link" href="/ToLiucyLinux/home.html"><span class="font-icon icon iconfont icon-columns" style=""></span>文档指南<!----></a></div><div class="nav-item hide-in-mobile"><a aria-label="面试题大全" class="vp-link nav-link nav-link" href="/ToLiucyLinux/interview/"><span class="font-icon icon iconfont icon-a-061_shuben" style=""></span>面试题大全<!----></a></div><div class="nav-item hide-in-mobile"><a aria-label="运维工具配置" class="vp-link nav-link nav-link" href="/ToLiucyLinux/tools-all.html"><span class="font-icon icon iconfont icon-banshou" style=""></span>运维工具配置<!----></a></div><div class="nav-item hide-in-mobile"><a aria-label="运维服务官网" class="vp-link nav-link nav-link" href="/ToLiucyLinux/website-all.html"><span class="font-icon icon iconfont icon-xiaoquguanwang" style=""></span>运维服务官网<!----></a></div><div class="nav-item hide-in-mobile"><a aria-label="运维文库汇总" class="vp-link nav-link nav-link" href="/ToLiucyLinux/document-all.html"><span class="font-icon icon iconfont icon-wenben" style=""></span>运维文库汇总<!----></a></div><div class="nav-item hide-in-mobile"><div class="dropdown-wrapper"><button type="button" class="dropdown-title" aria-label="网站相关"><span class="title"><span class="font-icon icon iconfont icon-circle-info" style=""></span>网站相关</span><span class="arrow"></span><ul class="nav-dropdown"><li class="dropdown-item"><a aria-label="关于作者" class="vp-link nav-link nav-link" href="/ToLiucyLinux/about-the-author/"><span class="font-icon icon iconfont icon-gerenjieshao" style=""></span>关于作者<!----></a></li><li class="dropdown-item"><a aria-label="更新历史" class="vp-link nav-link nav-link" href="/ToLiucyLinux/timeline/"><span class="font-icon icon iconfont icon-lishi" style=""></span>更新历史<!----></a></li></ul></button></div></div></nav><!--]--><!--[--><!----><!--]--></div><div class="vp-navbar-end"><!--[--><!----><!--]--><!--[--><!----><div class="nav-item vp-repo"><a class="vp-repo-link" href="https://github.com/liuchenyang0703/ToLiucyLinux" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" class="icon github-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="github icon" style="width:1.25rem;height:1.25rem;vertical-align:middle;"><path d="M511.957 21.333C241.024 21.333 21.333 240.981 21.333 512c0 216.832 140.544 400.725 335.574 465.664 24.49 4.395 32.256-10.07 32.256-23.083 0-11.69.256-44.245 0-85.205-136.448 29.61-164.736-64.64-164.736-64.64-22.315-56.704-54.4-71.765-54.4-71.765-44.587-30.464 3.285-29.824 3.285-29.824 49.195 3.413 75.179 50.517 75.179 50.517 43.776 75.008 114.816 53.333 142.762 40.79 4.523-31.66 17.152-53.377 31.19-65.537-108.971-12.458-223.488-54.485-223.488-242.602 0-53.547 19.114-97.323 50.517-131.67-5.035-12.33-21.93-62.293 4.779-129.834 0 0 41.258-13.184 134.912 50.346a469.803 469.803 0 0 1 122.88-16.554c41.642.213 83.626 5.632 122.88 16.554 93.653-63.488 134.784-50.346 134.784-50.346 26.752 67.541 9.898 117.504 4.864 129.834 31.402 34.347 50.474 78.123 50.474 131.67 0 188.586-114.73 230.016-224.042 242.09 17.578 15.232 33.578 44.672 33.578 90.454v135.85c0 13.142 7.936 27.606 32.854 22.87C862.25 912.597 1002.667 728.747 1002.667 512c0-271.019-219.648-490.667-490.71-490.667z"></path></svg></a></div><div class="nav-item hide-in-mobile"><button type="button" class="outlook-button" tabindex="-1" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon outlook-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="outlook icon"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4 38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32 51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0 102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2 6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4 0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2 9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224 419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4 470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0 22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6 12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128 505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2 16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8 86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4 80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6 6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></svg><div class="outlook-dropdown"><!----></div></button></div><form class="search-box" role="search"><input type="search" placeholder="搜索本站" autocomplete="off" spellcheck="false" value><!----></form><!--]--><!--[--><!----><!--]--><button type="button" class="vp-toggle-navbar-button" aria-label="Toggle Navbar" aria-expanded="false" aria-controls="nav-screen"><span><span class="vp-top"></span><span class="vp-middle"></span><span class="vp-bottom"></span></span></button></div></header><!----><!--]--><!----><div class="toggle-sidebar-wrapper"><span class="arrow start"></span></div><aside id="sidebar" class="vp-sidebar"><!--[--><!----><!--]--><ul class="vp-sidebar-links"><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-linux" style=""></span><span class="vp-sidebar-title">Linux</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-docker" style=""></span><span class="vp-sidebar-title">Docker</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable active" type="button"><span class="font-icon icon iconfont icon-k8s1" style=""></span><span class="vp-sidebar-title">Kubernetes</span><span class="vp-arrow down"></span></button><ul class="vp-sidebar-links"><li><!--[--><a aria-label="【云原生-K8s-1】kubeadm搭建k8s集群(一主两从)完整教程及kubernetes简介" class="vp-link nav-link vp-sidebar-link vp-sidebar-page nav-link vp-sidebar-link vp-sidebar-page" href="/ToLiucyLinux/Kubernetes/%E3%80%90%E4%BA%91%E5%8E%9F%E7%94%9F-K8s-1%E3%80%91kubeadm%E6%90%AD%E5%BB%BAk8s%E9%9B%86%E7%BE%A4(%E4%B8%80%E4%B8%BB%E4%B8%A4%E4%BB%8E)%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B%E5%8F%8Akubernetes%E7%AE%80%E4%BB%8B.html"><span class="font-icon icon iconfont icon-circle-info" style=""></span>【云原生-K8s-1】kubeadm搭建k8s集群(一主两从)完整教程及kubernetes简介<!----></a><ul class="vp-sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a aria-label="【云原生-K8s-1实例】通过yaml 文件编排一个web-MySQL小项目" class="vp-link nav-link vp-sidebar-link vp-sidebar-page nav-link vp-sidebar-link vp-sidebar-page" href="/ToLiucyLinux/Kubernetes/%E3%80%90%E4%BA%91%E5%8E%9F%E7%94%9F-K8s-1%E5%AE%9E%E4%BE%8B%E3%80%91%E9%80%9A%E8%BF%87yaml%20%E6%96%87%E4%BB%B6%E7%BC%96%E6%8E%92%E4%B8%80%E4%B8%AAweb-MySQL%E5%B0%8F%E9%A1%B9%E7%9B%AE.html"><span class="font-icon icon iconfont icon-circle-info" style=""></span>【云原生-K8s-1实例】通过yaml 文件编排一个web-MySQL小项目<!----></a><ul class="vp-sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a aria-label="【云原生-K8s-2】kubeadm搭建k8s高可用集群(三主两从一VIP)完整教程" class="vp-link nav-link vp-sidebar-link vp-sidebar-page nav-link vp-sidebar-link vp-sidebar-page" href="/ToLiucyLinux/Kubernetes/%E3%80%90%E4%BA%91%E5%8E%9F%E7%94%9F-K8s-2%E3%80%91kubeadm%E6%90%AD%E5%BB%BAk8s%E9%AB%98%E5%8F%AF%E7%94%A8%E9%9B%86%E7%BE%A4(%E4%B8%89%E4%B8%BB%E4%B8%A4%E4%BB%8E%E4%B8%80VIP)%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B.html"><span class="font-icon icon iconfont icon-circle-info" style=""></span>【云原生-K8s-2】kubeadm搭建k8s高可用集群(三主两从一VIP)完整教程<!----></a><ul class="vp-sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a aria-label="【云原生-k8s】之Kubernetes中强化 tab 自动补全功能" class="vp-link nav-link vp-sidebar-link vp-sidebar-page nav-link vp-sidebar-link vp-sidebar-page" href="/ToLiucyLinux/Kubernetes/%E3%80%90%E4%BA%91%E5%8E%9F%E7%94%9F-k8s%E3%80%91%E4%B9%8BKubernetes%E4%B8%AD%E5%BC%BA%E5%8C%96%20tab%20%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%8A%9F%E8%83%BD.html"><span class="font-icon icon iconfont icon-circle-info" style=""></span>【云原生-k8s】之Kubernetes中强化 tab 自动补全功能<!----></a><ul class="vp-sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a aria-label="【云原生-k8s】kubectl top pod 报错_error_ Metrics API not available" class="vp-link nav-link vp-sidebar-link vp-sidebar-page nav-link vp-sidebar-link vp-sidebar-page" href="/ToLiucyLinux/Kubernetes/%E3%80%90%E4%BA%91%E5%8E%9F%E7%94%9F-k8s%E3%80%91kubectl%20top%20pod%20%E6%8A%A5%E9%94%99_error_%20Metrics%20API%20not%20available.html"><span class="font-icon icon iconfont icon-circle-info" style=""></span>【云原生-k8s】kubectl top pod 报错_error_ Metrics API not available<!----></a><ul class="vp-sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a aria-label="【K8S】解决：The connection to the server raw.githubusercontent.com was refused - did you specify the rig" class="vp-link nav-link vp-sidebar-link vp-sidebar-page nav-link vp-sidebar-link vp-sidebar-page" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8S%E3%80%91%E8%A7%A3%E5%86%B3%EF%BC%9AThe%20connection%20to%20the%20server%20raw.githubusercontent.com%20was%20refused%20-%20did%20you%20specify%20the%20rig.html"><span class="font-icon icon iconfont icon-circle-info" style=""></span>【K8S】解决：The connection to the server raw.githubusercontent.com was refused - did you specify the rig<!----></a><ul class="vp-sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a aria-label="【K8s】yaml文件格式详解及实例" class="vp-link nav-link active vp-sidebar-link vp-sidebar-page active nav-link active vp-sidebar-link vp-sidebar-page active" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html"><span class="font-icon icon iconfont icon-circle-info" style=""></span>【K8s】yaml文件格式详解及实例<!----></a><ul class="vp-sidebar-sub-headers"><li class="vp-sidebar-sub-header"><a aria-label="yaml简介" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#yaml简介"><!---->yaml简介<!----></a><ul class="vp-sidebar-sub-headers"></ul></li><li class="vp-sidebar-sub-header"><a aria-label="yaml语法规则【重要】" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#yaml语法规则【重要】"><!---->yaml语法规则【重要】<!----></a><ul class="vp-sidebar-sub-headers"></ul></li><li class="vp-sidebar-sub-header"><a aria-label="Yaml语法实例" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#yaml语法实例"><!---->Yaml语法实例<!----></a><ul class="vp-sidebar-sub-headers"><li class="vp-sidebar-sub-header"><a aria-label="数组（列表）实例； 短横线加空格（- ）" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#数组-列表-实例-短横线加空格"><!---->数组（列表）实例； 短横线加空格（- ）<!----></a><ul class="vp-sidebar-sub-headers"></ul></li><li class="vp-sidebar-sub-header"><a aria-label="Yaml 对象（字典）实例；用冒号加空格连接键和值（: ）" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#yaml-对象-字典-实例-用冒号加空格连接键和值"><!---->Yaml 对象（字典）实例；用冒号加空格连接键和值（: ）<!----></a><ul class="vp-sidebar-sub-headers"></ul></li><li class="vp-sidebar-sub-header"><a aria-label="Yaml 数组 对象结合（列表中的字典）实例；短横线加空格（- ），用冒号加空格连接键和值（: ）" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#yaml-数组-对象结合-列表中的字典-实例-短横线加空格-用冒号加空格连接键和值"><!---->Yaml 数组 对象结合（列表中的字典）实例；短横线加空格（- ），用冒号加空格连接键和值（: ）<!----></a><ul class="vp-sidebar-sub-headers"></ul></li></ul></li><li class="vp-sidebar-sub-header"><a aria-label="Yaml格式说明与实例" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#yaml格式说明与实例"><!---->Yaml格式说明与实例<!----></a><ul class="vp-sidebar-sub-headers"><li class="vp-sidebar-sub-header"><a aria-label="格式说明" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#格式说明"><!---->格式说明<!----></a><ul class="vp-sidebar-sub-headers"></ul></li><li class="vp-sidebar-sub-header"><a aria-label="实例" class="vp-link nav-link vp-sidebar-link vp-heading nav-link vp-sidebar-link vp-heading" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8s%E3%80%91yaml%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E4%BE%8B.html#实例"><!---->实例<!----></a><ul class="vp-sidebar-sub-headers"></ul></li></ul></li></ul><!--]--></li><li><!--[--><a aria-label="K8s单机架构部署" class="vp-link nav-link vp-sidebar-link vp-sidebar-page nav-link vp-sidebar-link vp-sidebar-page" href="/ToLiucyLinux/Kubernetes/K8s%E5%8D%95%E6%9C%BA%E6%9E%B6%E6%9E%84%E9%83%A8%E7%BD%B2.html"><span class="font-icon icon iconfont icon-circle-info" style=""></span>K8s单机架构部署<!----></a><ul class="vp-sidebar-sub-headers"></ul><!--]--></li></ul></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-nginx" style=""></span><span class="vp-sidebar-title">Nginx</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-jiankong" style=""></span><span class="vp-sidebar-title">Linux监控服务</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-database-2-line" style=""></span><span class="vp-sidebar-title">数据库</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-zidonghua" style=""></span><span class="vp-sidebar-title">自动化运维</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-git" style=""></span><span class="vp-sidebar-title">Git</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-33xunihuapingtaiguanli" style=""></span><span class="vp-sidebar-title">Linux虚拟化</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-fuwuqianquan" style=""></span><span class="vp-sidebar-title">Linux服务器安全</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-wangluo" style=""></span><span class="vp-sidebar-title">网络</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-windows" style=""></span><span class="vp-sidebar-title">Windows</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-java" style=""></span><span class="vp-sidebar-title">Java</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-python" style=""></span><span class="vp-sidebar-title">Python</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-go" style=""></span><span class="vp-sidebar-title">Go</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-WEBqianduan" style=""></span><span class="vp-sidebar-title">前端技术</span><span class="vp-arrow end"></span></button><!----></section></li><li><section class="vp-sidebar-group"><button class="vp-sidebar-heading clickable" type="button"><span class="font-icon icon iconfont icon-qita1" style=""></span><span class="vp-sidebar-title">其他技术</span><span class="vp-arrow end"></span></button><!----></section></li></ul><!--[--><!----><!--]--></aside><!--[--><main id="main-content" class="vp-page"><!--[--><!----><!----><nav class="vp-breadcrumb disable"></nav><div class="vp-page-title"><h1><span class="font-icon icon iconfont icon-circle-info" style=""></span>【K8s】yaml文件格式详解及实例</h1><div class="page-info"><span class="page-author-info" aria-label="作者🖊" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon author-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="author icon"><path d="M649.6 633.6c86.4-48 147.2-144 147.2-249.6 0-160-128-288-288-288s-288 128-288 288c0 108.8 57.6 201.6 147.2 249.6-121.6 48-214.4 153.6-240 288-3.2 9.6 0 19.2 6.4 25.6 3.2 9.6 12.8 12.8 22.4 12.8h704c9.6 0 19.2-3.2 25.6-12.8 6.4-6.4 9.6-16 6.4-25.6-25.6-134.4-121.6-240-243.2-288z"></path></svg><span><a class="page-author-item" href="http://liuchenyang.top" target="_blank" rel="noopener noreferrer">Liucy</a></span><span property="author" content="Liucy"></span></span><span class="page-category-info" aria-label="分类🌈" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon category-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="category icon"><path d="M148.41 106.992h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H148.41c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.311-40.31zM147.556 553.478H429.73c22.263 0 40.311 18.048 40.311 40.31v282.176c0 22.263-18.048 40.312-40.31 40.312H147.555c-22.263 0-40.311-18.049-40.311-40.312V593.79c0-22.263 18.048-40.311 40.31-40.311zM593.927 106.992h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H593.927c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.31-40.31zM730.22 920.502H623.926c-40.925 0-74.22-33.388-74.22-74.425V623.992c0-41.038 33.387-74.424 74.425-74.424h222.085c41.038 0 74.424 33.226 74.424 74.067v114.233c0 10.244-8.304 18.548-18.547 18.548s-18.548-8.304-18.548-18.548V623.635c0-20.388-16.746-36.974-37.33-36.974H624.13c-20.585 0-37.331 16.747-37.331 37.33v222.086c0 20.585 16.654 37.331 37.126 37.331H730.22c10.243 0 18.547 8.304 18.547 18.547 0 10.244-8.304 18.547-18.547 18.547z"></path></svg><!--[--><span class="page-category-item category0" role>Linux</span><span class="page-category-item category6" role>kubernetes</span><span class="page-category-item category4" role>Docker</span><!--]--><meta property="articleSection" content="Linux,kubernetes,Docker"></span><span class="page-tag-info" aria-label="标签🏷" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon tag-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="tag icon"><path d="M939.902 458.563L910.17 144.567c-1.507-16.272-14.465-29.13-30.737-30.737L565.438 84.098h-.402c-3.215 0-5.726 1.005-7.634 2.913l-470.39 470.39a10.004 10.004 0 000 14.164l365.423 365.424c1.909 1.908 4.42 2.913 7.132 2.913s5.223-1.005 7.132-2.913l470.39-470.39c2.01-2.11 3.014-5.023 2.813-8.036zm-240.067-72.121c-35.458 0-64.286-28.828-64.286-64.286s28.828-64.285 64.286-64.285 64.286 28.828 64.286 64.285-28.829 64.286-64.286 64.286z"></path></svg><!--[--><span class="page-tag-item tag0" role>Linux</span><span class="page-tag-item tag6" role>kubernetes</span><span class="page-tag-item tag4" role>Docker</span><span class="page-tag-item tag3" role>yaml</span><span class="page-tag-item tag2" role>运维</span><!--]--><meta property="keywords" content="Linux,kubernetes,Docker,yaml,运维"></span><span class="page-date-info" aria-label="写作日期📅" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon calendar-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="calendar icon"><path d="M716.4 110.137c0-18.753-14.72-33.473-33.472-33.473-18.753 0-33.473 14.72-33.473 33.473v33.473h66.993v-33.473zm-334.87 0c0-18.753-14.72-33.473-33.473-33.473s-33.52 14.72-33.52 33.473v33.473h66.993v-33.473zm468.81 33.52H716.4v100.465c0 18.753-14.72 33.473-33.472 33.473a33.145 33.145 0 01-33.473-33.473V143.657H381.53v100.465c0 18.753-14.72 33.473-33.473 33.473a33.145 33.145 0 01-33.473-33.473V143.657H180.6A134.314 134.314 0 0046.66 277.595v535.756A134.314 134.314 0 00180.6 947.289h669.74a134.36 134.36 0 00133.94-133.938V277.595a134.314 134.314 0 00-133.94-133.938zm33.473 267.877H147.126a33.145 33.145 0 01-33.473-33.473c0-18.752 14.72-33.473 33.473-33.473h736.687c18.752 0 33.472 14.72 33.472 33.473a33.145 33.145 0 01-33.472 33.473z"></path></svg><span><!----></span><meta property="datePublished" content="2024-12-16T00:00:00.000Z"></span><!----><span class="page-word-info" aria-label="字数🔠" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon word-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="word icon"><path d="M518.217 432.64V73.143A73.143 73.143 0 01603.43 1.097a512 512 0 01419.474 419.474 73.143 73.143 0 01-72.046 85.212H591.36a73.143 73.143 0 01-73.143-73.143z"></path><path d="M493.714 566.857h340.297a73.143 73.143 0 0173.143 85.577A457.143 457.143 0 11371.566 117.76a73.143 73.143 0 0185.577 73.143v339.383a36.571 36.571 0 0036.571 36.571z"></path></svg><span>约 3514 字</span><meta property="wordCount" content="3514"></span><span class="page-reading-time-info" aria-label="阅读时间⌛" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon timer-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="timer icon"><path d="M799.387 122.15c4.402-2.978 7.38-7.897 7.38-13.463v-1.165c0-8.933-7.38-16.312-16.312-16.312H256.33c-8.933 0-16.311 7.38-16.311 16.312v1.165c0 5.825 2.977 10.874 7.637 13.592 4.143 194.44 97.22 354.963 220.201 392.763-122.204 37.542-214.893 196.511-220.2 389.397-4.661 5.049-7.638 11.651-7.638 19.03v5.825h566.49v-5.825c0-7.379-2.849-13.981-7.509-18.9-5.049-193.016-97.867-351.985-220.2-389.527 123.24-37.67 216.446-198.453 220.588-392.892zM531.16 450.445v352.632c117.674 1.553 211.787 40.778 211.787 88.676H304.097c0-48.286 95.149-87.382 213.728-88.676V450.445c-93.077-3.107-167.901-81.297-167.901-177.093 0-8.803 6.99-15.793 15.793-15.793 8.803 0 15.794 6.99 15.794 15.793 0 80.261 63.69 145.635 142.01 145.635s142.011-65.374 142.011-145.635c0-8.803 6.99-15.793 15.794-15.793s15.793 6.99 15.793 15.793c0 95.019-73.789 172.82-165.96 177.093z"></path></svg><span>大约 12 分钟</span><meta property="timeRequired" content="PT12M"></span></div><hr></div><div class="toc-place-holder"><aside id="toc"><!--[--><!----><!--]--><div class="toc-header">此页内容<button type="button" class="print-button" title="打印"><svg xmlns="http://www.w3.org/2000/svg" class="icon print-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="print icon"><path d="M819.2 364.8h-44.8V128c0-17.067-14.933-32-32-32H281.6c-17.067 0-32 14.933-32 32v236.8h-44.8C145.067 364.8 96 413.867 96 473.6v192c0 59.733 49.067 108.8 108.8 108.8h44.8V896c0 17.067 14.933 32 32 32h460.8c17.067 0 32-14.933 32-32V774.4h44.8c59.733 0 108.8-49.067 108.8-108.8v-192c0-59.733-49.067-108.8-108.8-108.8zM313.6 160h396.8v204.8H313.6V160zm396.8 704H313.6V620.8h396.8V864zM864 665.6c0 25.6-19.2 44.8-44.8 44.8h-44.8V588.8c0-17.067-14.933-32-32-32H281.6c-17.067 0-32 14.933-32 32v121.6h-44.8c-25.6 0-44.8-19.2-44.8-44.8v-192c0-25.6 19.2-44.8 44.8-44.8h614.4c25.6 0 44.8 19.2 44.8 44.8v192z"></path></svg></button></div><div class="toc-wrapper"><ul class="toc-list"><!--[--><li class="toc-item"><a class="vp-link toc-link level2 toc-link level2" href="/ToLiucyLinux/#yaml简介">yaml简介</a></li><!----><!--]--><!--[--><li class="toc-item"><a class="vp-link toc-link level2 toc-link level2" href="/ToLiucyLinux/#yaml语法规则【重要】">yaml语法规则【重要】</a></li><!----><!--]--><!--[--><li class="toc-item"><a class="vp-link toc-link level2 toc-link level2" href="/ToLiucyLinux/#yaml语法实例">Yaml语法实例</a></li><li><ul class="toc-list"><!--[--><li class="toc-item"><a class="vp-link toc-link level3 toc-link level3" href="/ToLiucyLinux/#数组-列表-实例-短横线加空格">数组（列表）实例； 短横线加空格（- ）</a></li><!----><!--]--><!--[--><li class="toc-item"><a class="vp-link toc-link level3 toc-link level3" href="/ToLiucyLinux/#yaml-对象-字典-实例-用冒号加空格连接键和值">Yaml 对象（字典）实例；用冒号加空格连接键和值（: ）</a></li><!----><!--]--><!--[--><li class="toc-item"><a class="vp-link toc-link level3 toc-link level3" href="/ToLiucyLinux/#yaml-数组-对象结合-列表中的字典-实例-短横线加空格-用冒号加空格连接键和值">Yaml 数组 对象结合（列表中的字典）实例；短横线加空格（- ），用冒号加空格连接键和值（: ）</a></li><!----><!--]--></ul></li><!--]--><!--[--><li class="toc-item"><a class="vp-link toc-link level2 toc-link level2" href="/ToLiucyLinux/#yaml格式说明与实例">Yaml格式说明与实例</a></li><li><ul class="toc-list"><!--[--><li class="toc-item"><a class="vp-link toc-link level3 toc-link level3" href="/ToLiucyLinux/#格式说明">格式说明</a></li><!----><!--]--><!--[--><li class="toc-item"><a class="vp-link toc-link level3 toc-link level3" href="/ToLiucyLinux/#实例">实例</a></li><!----><!--]--></ul></li><!--]--></ul><div class="toc-marker" style="top:-1.7rem;"></div></div><!--[--><!----><!--]--></aside></div><!----><div class="theme-hope-content"><blockquote><p>🍁<strong>博主简介</strong></p><p>  🏅<a href="https://blog.csdn.net/liu_chen_yang?type=blog" target="_blank" rel="noopener noreferrer">云计算领域优质创作者<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><br>   🏅<a href="https://bbs.huaweicloud.com/community/myblog" target="_blank" rel="noopener noreferrer">华为云开发者社区专家博主<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><br>   🏅<a href="https://developer.aliyun.com/my?spm=a2c6h.13148508.setting.3.21fc4f0eCmz1v3#/article?_k=zooqoz" target="_blank" rel="noopener noreferrer">阿里云开发者社区专家博主<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><br> 💊<strong>交流社区：</strong><a href="https://bbs.csdn.net/forums/lcy" target="_blank" rel="noopener noreferrer">运维交流社区<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 欢迎大家的加入！</p></blockquote><h2 id="yaml简介" tabindex="-1"><a class="header-anchor" href="#yaml简介" aria-hidden="true">#</a> yaml简介</h2><p>yaml 是专门用来写配置文件的语言，后缀名可以是.yaml或.yml都可以。</p><blockquote><p>yaml文件一般用于写dockerfile或k8s中的pod yml。</p></blockquote><h2 id="yaml语法规则【重要】" tabindex="-1"><a class="header-anchor" href="#yaml语法规则【重要】" aria-hidden="true">#</a> yaml语法规则【重要】</h2><ul><li>大小写敏感</li><li>使用缩进表示层级关系（不能用Tab，只能用空格）</li><li>相同层级的元素左对齐</li><li>#号表示单行注释</li><li>字符串可以不用引号标注</li><li>数组（列表）是使用 - 开头的清单形式，- 后面必须加空格</li><li>表示对象的 : 和表示数组（列表）的 - 后面都必须要有空格。可以使用 - 回车- 回车-回车 在一个文件里分隔多个 YAML 对象</li></ul><h2 id="yaml语法实例" tabindex="-1"><a class="header-anchor" href="#yaml语法实例" aria-hidden="true">#</a> Yaml语法实例</h2><h3 id="数组-列表-实例-短横线加空格" tabindex="-1"><a class="header-anchor" href="#数组-列表-实例-短横线加空格" aria-hidden="true">#</a> 数组（列表）实例； 短横线加空格（- ）</h3><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>  - linux
+  - name
+  - windows
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="yaml-对象-字典-实例-用冒号加空格连接键和值" tabindex="-1"><a class="header-anchor" href="#yaml-对象-字典-实例-用冒号加空格连接键和值" aria-hidden="true">#</a> Yaml 对象（字典）实例；用冒号加空格连接键和值（: ）</h3><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>  Kubernetes: 
+    linux: <span class="token function">vim</span>
+    name: 张三
+    windows: steam
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="yaml-数组-对象结合-列表中的字典-实例-短横线加空格-用冒号加空格连接键和值" tabindex="-1"><a class="header-anchor" href="#yaml-数组-对象结合-列表中的字典-实例-短横线加空格-用冒号加空格连接键和值" aria-hidden="true">#</a> Yaml 数组 对象结合（列表中的字典）实例；短横线加空格（- ），用冒号加空格连接键和值（: ）</h3><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>containers: 
+- image: mysql5.7.38
+  name: mysql
+  restart: always
+  ports: 
+    - <span class="token number">6379</span>:6379
+  volumes: 
+    - /etc/localtime:/etc/localtime
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="yaml格式说明与实例" tabindex="-1"><a class="header-anchor" href="#yaml格式说明与实例" aria-hidden="true">#</a> Yaml格式说明与实例</h2><h3 id="格式说明" tabindex="-1"><a class="header-anchor" href="#格式说明" aria-hidden="true">#</a> 格式说明</h3><p>pod.yaml</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token comment"># yaml格式的pod定义文件完整内容展示：</span>
+apiVersion: v1       <span class="token comment">#必选，版本号，例如v1</span>
+kind: Pod            <span class="token comment">#必选，Pod</span>
+metadata:            <span class="token comment">#必选，元数据</span>
+  name: string       <span class="token comment">#必选，Pod名称</span>
+  namespace: string  <span class="token comment">#必选，Pod所属的命名空间</span>
+  labels:            <span class="token comment">#必选，自定义标签</span>
+    app: string   	 <span class="token comment">#必选，自定义标签名字</span>
+  annotations:       <span class="token comment">#自定义注释列表</span>
+    - name: string
+spec:                <span class="token comment">#必选，Pod中容器的详细定义</span>
+  restartPolicy: <span class="token punctuation">[</span>Always <span class="token operator">|</span> Never <span class="token operator">|</span> OnFailure<span class="token punctuation">]</span>	<span class="token comment">#Pod的重启策略，Always表示一旦不管以何种方式终止运行，kubelet都将重启，OnFailure表示只有Pod以非0退出码退出</span>
+  hostNetwork: <span class="token boolean">true</span>  <span class="token comment">#是否使用主机网络模式，默认为false，如果设置为true，表示使用宿主机网络；如何使用host网络模式则不需要在使用下面的ports参数了。</span>
+  containers:        <span class="token comment">#必选，Pod中容器列表</span>
+  - name: string     <span class="token comment">#必选，容器名称</span>
+    image: test:latest    <span class="token comment">#必选，容器的镜像名称</span>
+    imagePullPolicy: <span class="token punctuation">[</span>Always <span class="token operator">|</span> Never <span class="token operator">|</span> IfNotPresent<span class="token punctuation">]</span>    <span class="token comment">#获取镜像的策略 Alawys表示下载镜像 IfnotPresent表示优先使用本地镜像，否则下载镜像，Nerver表示仅使用本地镜像</span>
+    command: <span class="token punctuation">[</span>string<span class="token punctuation">]</span>    <span class="token comment">#必选，容器的启动命令列表，如不指定，使用打包时使用的启动命令,如需要在容器内启动就指定个top之类的持续输出。</span>
+    stdin: <span class="token boolean">true</span>			 <span class="token comment">#需要交互式进入容器必选，设置为 true 允许你能够向容器发送输入，相当于docker中的-i。</span>
+    tty: <span class="token boolean">true</span>		     <span class="token comment">#需要交互式进入容器必选，设置为 true 分配一个伪终端，相当于docker中的-t。</span>
+    args: <span class="token punctuation">[</span>string<span class="token punctuation">]</span>       <span class="token comment">#容器的启动命令参数列表</span>
+    workingDir: /application   <span class="token comment">#容器的工作目录</span>
+    volumeMounts:        <span class="token comment">#挂载到容器pod内部的存储卷配置</span>
+    - name: test-path    <span class="token comment">#引用pod定义的共享存储卷的名称，需用volumes[]部分定义的的卷名</span>
+      mountPath: string  <span class="token comment">#要映射到pod内的存储路径</span>
+      readOnly: boolean  <span class="token comment">#是否为只读模式</span>
+  volumes:               <span class="token comment">#在该pod上定义共享存储卷列表（pod外）</span>
+  - name: test-path      <span class="token comment">#共享存储卷名称，需要和volumeMounts的名称相同</span>
+    hostPath: 		     <span class="token comment">#类型为hostPath的存储卷，表示挂载Pod所在宿主机的目录</span>
+      path: string       <span class="token comment">#Pod所在宿主机的目录，用于挂载到pod容器内的路径</span>
+      type: Directory	 <span class="token comment">#表示挂载的是一个目录。</span>
+    ports:               	<span class="token comment">#需要暴露的端口库号列表，如果开启了hostNetwork就不需要写这个了。</span>
+    - name: test-port    	<span class="token comment">#端口号名称，自己定义就行</span>
+      containerPort: <span class="token number">8080</span>	<span class="token comment">#容器需要监听的端口号</span>
+      hostPort: <span class="token number">8080</span>      	<span class="token comment">#容器所在主机需要监听的端口号，默认与Container相同</span>
+      protocol: TCP   	<span class="token comment">#端口协议，支持TCP和UDP，默认TCP</span>
+
+----------------------------------上半部分yml文件基本配置，基本都会用到---------------------------------------------------
+
+    env:                 <span class="token comment">#容器运行前需设置的环境变量列表</span>
+    - name: string       <span class="token comment">#环境变量名称</span>
+      value: string      <span class="token comment">#环境变量的值</span>
+    resources:           <span class="token comment">#资源限制和请求的设置</span>
+      limits:            <span class="token comment">#资源限制的设置</span>
+        cpu: string      <span class="token comment">#Cpu的限制，单位为core数，将用于docker run --cpu-shares参数</span>
+        memory: string   <span class="token comment">#内存限制，单位可以为Mib/Gib，将用于docker run --memory参数</span>
+      requests:          <span class="token comment">#资源请求的设置</span>
+        cpu: string      <span class="token comment">#Cpu请求，容器启动的初始可用数量</span>
+        memory: string   <span class="token comment">#内存清楚，容器启动的初始可用数量</span>
+    livenessProbe:       <span class="token comment">#对Pod内个容器健康检查的设置，当探测无响应几次后将自动重启该容器，检查方法有exec、httpGet和tcpSocket，对一个容器只需设置其中一种</span>
+      exec:              <span class="token comment">#对Pod容器内检查方式设置为exec方式</span>
+        command: <span class="token punctuation">[</span>string<span class="token punctuation">]</span>  <span class="token comment">#exec方式需要制定的命令或脚本</span>
+      httpGet:           <span class="token comment">#对Pod内个容器健康检查方法设置为HttpGet，需要制定Path、port</span>
+        path: string
+        port: number
+        host: string
+        scheme: string
+        HttpHeaders:
+        - name: string
+          value: string
+      tcpSocket:         <span class="token comment">#对Pod内个容器健康检查方式设置为tcpSocket方式</span>
+         port: number
+       initialDelaySeconds: <span class="token number">0</span>   <span class="token comment">#容器启动完成后首次探测的时间，单位为秒</span>
+       timeoutSeconds: <span class="token number">0</span>        <span class="token comment">#对容器健康检查探测等待响应的超时时间，单位秒，默认1秒</span>
+       periodSeconds: <span class="token number">0</span>         <span class="token comment">#对容器监控检查的定期探测时间设置，单位秒，默认10秒一次</span>
+       successThreshold: <span class="token number">0</span>
+       failureThreshold: <span class="token number">0</span>
+       securityContext:
+         privileged:false
+    restartPolicy: <span class="token punctuation">[</span>Always <span class="token operator">|</span> Never <span class="token operator">|</span> OnFailure<span class="token punctuation">]</span><span class="token comment">#Pod的重启策略，Always表示一旦不管以何种方式终止运行，kubelet都将重启，OnFailure表示只有Pod以非0退出码退出</span>
+    nodeSelector: obeject  <span class="token comment">#设置NodeSelector表示将该Pod调度到包含这个label的node上，以key：value的格式指定将该Pod调度到包含这个label的node上，以key：value的格式指定</span>
+    imagePullSecrets:      <span class="token comment">#Pull镜像时使用的secret名称，以key：secretkey格式指定</span>
+    - name: string
+  hostNetwork: <span class="token boolean">false</span>      <span class="token comment">#是否使用主机网络模式，默认为false，如果设置为true，表示使用宿主机网络</span>
+    volumes:               <span class="token comment">#在该pod上定义共享存储卷列表</span>
+    - name: string         <span class="token comment">#共享存储卷名称（volumes类型有很多种）</span>
+      emptyDir: <span class="token punctuation">{</span><span class="token punctuation">}</span>         <span class="token comment">#类型为emtyDir的存储卷，与Pod同生命周期的一个临时目录。为空值</span>
+      hostPath: 		   <span class="token comment">#类型为hostPath的存储卷，表示挂载Pod所在宿主机的目录</span>
+        path: string       <span class="token comment">#Pod所在宿主机的目录，将被用于同期中mount的目录</span>
+      secret:              <span class="token comment">#类型为secret的存储卷，挂载集群与定义的secre对象到容器内部</span>
+        scretname: string  
+        items:     
+        - key: string
+          path: string
+      configMap:           <span class="token comment">#类型为configMap的存储卷，挂载预定义的configMap对象到容器内部</span>
+        name: string
+        items:
+        - key: string
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>deployment.yaml</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>apiVersion: extensions/v1beta1   <span class="token comment">#接口版本</span>
+kind: Deployment                 <span class="token comment">#接口类型</span>
+metadata:
+  name: cango-demo               <span class="token comment">#Deployment名称</span>
+  namespace: cango-prd           <span class="token comment">#命名空间</span>
+  labels:
+    app: cango-demo              <span class="token comment">#标签</span>
+spec:
+  replicas: <span class="token number">3</span>
+  strategy:
+    rollingUpdate:          <span class="token comment">#由于replicas为3,则整个升级,pod个数在2-4个之间</span>
+      maxSurge: <span class="token number">1</span>           <span class="token comment">#滚动升级时会先启动1个pod</span>
+      maxUnavailable: <span class="token number">1</span>     <span class="token comment">#滚动升级时允许的最大Unavailable的pod个数</span>
+  template:         
+    metadata:
+      labels:
+        app: cango-demo     <span class="token comment">#模板名称必填</span>
+    sepc:                   <span class="token comment">#定义容器模板，该模板可以包含多个容器</span>
+      containers:                                                                   
+        - name: cango-demo                                                              <span class="token comment">#镜像名称</span>
+          image: swr.cn-east-2.myhuaweicloud.com/cango-prd/cango-demo:0.0.1-SNAPSHOT    <span class="token comment">#镜像地址</span>
+          command: <span class="token punctuation">[</span> <span class="token string">&quot;/bin/sh&quot;</span>,<span class="token string">&quot;-c&quot;</span>,<span class="token string">&quot;cat /etc/config/path/to/special-key&quot;</span> <span class="token punctuation">]</span>             <span class="token comment">#启动命令</span>
+          args:                                                                         <span class="token comment">#启动参数</span>
+            - <span class="token string">&#39;-storage.local.retention=$(STORAGE_RETENTION)&#39;</span>
+            - <span class="token string">&#39;-storage.local.memory-chunks=$(STORAGE_MEMORY_CHUNKS)&#39;</span>
+            - <span class="token string">&#39;-config.file=/etc/prometheus/prometheus.yml&#39;</span>
+            - <span class="token string">&#39;-alertmanager.url=http://alertmanager:9093/alertmanager&#39;</span>
+            - <span class="token string">&#39;-web.external-url=$(EXTERNAL_URL)&#39;</span>
+<span class="token comment">#如果command和args均没有写，那么用Docker默认的配置。</span>
+<span class="token comment">#如果command写了，但args没有写，那么Docker默认的配置会被忽略而且仅仅执行.yaml文件的command（不带任何参数的）。</span>
+<span class="token comment">#如果command没写，但args写了，那么Docker默认配置的ENTRYPOINT的命令行会被执行，但是调用的参数是.yaml中的args。</span>
+<span class="token comment">#如果如果command和args都写了，那么Docker默认的配置被忽略，使用.yaml的配置。</span>
+          imagePullPolicy: IfNotPresent  <span class="token comment">#如果不存在则拉取</span>
+          livenessProbe:       <span class="token comment">#表示container是否处于live状态。如果LivenessProbe失败，LivenessProbe将会通知kubelet对应的container不健康了。随后kubelet将kill掉</span>
+            httpGet:
+              path: /health    <span class="token comment">#如果没有心跳检测接口就为/</span>
+              port: <span class="token number">8080</span>
+              scheme: HTTP
+            initialDelaySeconds: <span class="token number">60</span> <span class="token comment">#启动后延时多久开始运行检测</span>
+            timeoutSeconds: <span class="token number">5</span>
+            successThreshold: <span class="token number">1</span>
+            failureThreshold: <span class="token number">5</span>
+          readinessProbe:
+            httpGet:
+              path: /health     <span class="token comment">#如果没有心跳检测接口就为/</span>
+              port: <span class="token number">8080</span>
+              scheme: HTTP
+            initialDelaySeconds: <span class="token number">30</span> <span class="token comment">##启动后延时多久开始运行检测</span>
+            timeoutSeconds: <span class="token number">5</span>
+            successThreshold: <span class="token number">1</span>
+            failureThreshold: <span class="token number">5</span>
+          resources:              <span class="token comment">##CPU内存限制</span>
+            requests:
+              cpu: <span class="token number">2</span>
+              memory: 2048Mi
+            limits:
+              cpu: <span class="token number">2</span>
+              memory: 2048Mi
+          env:                    <span class="token comment">##通过环境变量的方式，直接传递pod=自定义Linux OS环境变量</span>
+            - name: LOCAL_KEY     <span class="token comment">#本地Key</span>
+              value: value
+            - name: CONFIG_MAP_KEY  <span class="token comment">#局策略可使用configMap的配置Key，</span>
+              valueFrom:
+                configMapKeyRef:
+                  name: special-config   <span class="token comment">#configmap中找到name为special-config</span>
+                  key: special.type      <span class="token comment">#找到name为special-config里data下的key</span>
+          ports:
+            - name: http
+              containerPort: <span class="token number">8080</span>   <span class="token comment">#对service暴露端口</span>
+          volumeMounts:             <span class="token comment">#挂载volumes中定义的磁盘</span>
+          - name: log-cache
+            mount: /tmp/log
+          - name: sdb               <span class="token comment">#普通用法，该卷跟随容器销毁，挂载一个目录</span>
+            mountPath: /data/media    
+          - name: nfs-client-root    <span class="token comment">#直接挂载硬方法，如挂载下面的nfs目录到/mnt/nfs</span>
+            mountPath: /mnt/nfs
+          - name: example-volume-config  <span class="token comment">#高级用法第1种，将ConfigMap的log-script,backup-script分别挂载到/etc/config目录下的一个相对路径path/to/...下</span>
+            mountPath: /etc/config       
+          - name: rbd-pvc                <span class="token comment">#高级用法第2种，挂载PVC(PresistentVolumeClaim)</span>
+<span class="token comment">#使用volume将ConfigMap作为文件或目录直接挂载，其中每一个key-value键值对都会生成一个文件，key为文件名，value为内容</span>
+  volumes:  <span class="token comment"># 定义磁盘给上面volumeMounts挂载</span>
+  - name: log-cache
+    emptyDir: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  - name: sdb  <span class="token comment">#挂载宿主机上面的目录</span>
+    hostPath:
+      path: /any/path/it/will/be/replaced
+  - name: example-volume-config  <span class="token comment"># 供ConfigMap文件内容到指定路径使用</span>
+    configMap:
+      name: example-volume-config  <span class="token comment">#ConfigMap中名称</span>
+      items:
+      - key: log-script           <span class="token comment">#ConfigMap中的Key</span>
+        path: path/to/log-script  <span class="token comment">#指定目录下的一个相对路径path/to/log-script</span>
+      - key: backup-script        <span class="token comment">#ConfigMap中的Key</span>
+        path: path/to/backup-script  <span class="token comment">#指定目录下的一个相对路径path/to/backup-script</span>
+  - name: nfs-client-root         <span class="token comment">#供挂载NFS存储类型</span>
+    nfs:
+      server: <span class="token number">10.42</span>.0.55          <span class="token comment">#NFS服务器地址</span>
+      path: /opt/public           <span class="token comment">#showmount -e 看一下路径</span>
+  - name: rbd-pvc                 <span class="token comment">#挂载PVC磁盘</span>
+    persistentVolumeClaim:
+      claimName: rbd-pvc1         <span class="token comment">#挂载已经申请的pvc磁盘</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>services.yaml</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>apiVersion: v1
+kind: Service
+matadata:                                <span class="token comment">#元数据</span>
+  name: string                           <span class="token comment">#service的名称</span>
+  namespace: string                      <span class="token comment">#命名空间</span>
+  labels:                                <span class="token comment">#自定义标签属性列表</span>
+    - name: string
+  annotations:                           <span class="token comment">#自定义注解属性列表</span>
+    - name: string
+spec:                                    <span class="token comment">#详细描述</span>
+  selector: <span class="token punctuation">[</span><span class="token punctuation">]</span>                           <span class="token comment">#label selector配置，将选择具有label标签的Pod作为管理</span>
+                                         <span class="token comment">#范围</span>
+  type: string                           <span class="token comment">#service的类型，指定service的访问方式，默认为</span>
+                                         <span class="token comment">#clusterIp</span>
+  clusterIP: string                      <span class="token comment">#虚拟服务地址</span>
+  sessionAffinity: string                <span class="token comment">#是否支持session</span>
+  ports:                                 <span class="token comment">#service需要暴露的端?列表</span>
+  - name: string                         <span class="token comment">#端口名称</span>
+    protocol: string                     <span class="token comment">#端口协议，支持TCP和UDP，默认TCP</span>
+    port: int                            <span class="token comment">#服务监听的端口号</span>
+    targetPort: int                      <span class="token comment">#需要转发到后端Pod的端口号</span>
+    nodePort: int                        <span class="token comment">#当type = NodePort时，指定映射到物理机的端口号</span>
+  status:                                <span class="token comment">#当spce.type=LoadBalancer时，设置外部负载均衡器的地址</span>
+    loadBalancer:                        <span class="token comment">#外部负载均衡器</span>
+      ingress:                           <span class="token comment">#外部负载均衡器</span>
+        ip: string                       <span class="token comment">#外部负载均衡器的Ip地址值</span>
+        hostname: string                 <span class="token comment">#外部负载均衡器的主机名</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>job.yaml</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-demo
+spec:
+  template:
+    metadata:
+      name: job-demo
+    spec:
+      restartPolicy: Never  <span class="token comment">#Job的RestartPolicy仅支持Never和OnFailure两种，不支持Always，我们知道Job就相当于来执行一个批处理任务，执行完就结束了</span>
+      containers:
+      - name: counter
+        image: busybox
+        command:
+        - <span class="token string">&quot;bin/sh&quot;</span>
+        - <span class="token string">&quot;-c&quot;</span>
+        - &quot;for <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token number">9</span> <span class="token number">8</span> <span class="token number">7</span> <span class="token number">6</span> <span class="token number">5</span> <span class="token number">4</span> <span class="token number">3</span> <span class="token number">2</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token variable">$i</span><span class="token punctuation">;</span> <span class="token keyword">done</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Cronjob.yaml</p><blockquote><p>CronJob其实就是在Job的基础上加上了时间调度，我们可以：在给定的时间点运行一个任务，也可以周期性地在给定时间点运行。这个实际上和我们Linux中的crontab就非常类似了。一个CronJob对象其实就对应中crontab文件中的任务，它根据配置的时间格式周期性地运行一个Job，格式和crontab也是一样的。</p></blockquote><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token comment">#crontab的格式如下：</span>
+<span class="token comment">#分时日月周要运行的命令第1列分钟0～59 第2列时0～23）第3列日1～31 第4列月1～12 第5列周0～7（0和7表示星期天）第6列要运行的命令</span>
+apiVersion: batch/v2alpha1
+kind: CronJob
+metadata:
+  name: cronjob-demo
+spec:
+  schedule: <span class="token string">&quot;*/1 * * * *&quot;</span>
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: hello
+            image: busybox
+            args:
+            - <span class="token string">&quot;bin/sh&quot;</span>
+            - <span class="token string">&quot;-c&quot;</span>
+            - <span class="token string">&quot;for i in 9 8 7 6 5 4 3 2 1; do echo <span class="token variable">$i</span>; done&quot;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>我们这里的Kind是CronJob了，要注意的是.spec.schedule字段是必须填写的，用来指定任务运行的周期，格式就和crontab一样，另外一个字段是.spec.jobTemplate, 用来指定需要运行的任务，格式当然和Job是一致的。还有一些值得我们关注的字段.spec.successfulJobsHistoryLimit和.spec.failedJobsHistoryLimit，表示历史限制，是可选的字段。它们指定了可以保留多少完成和失败的Job，默认没有限制，所有成功和失败的Job都会被保留。然后，当运行一个Cron Job时，Job可以很快就堆积很多，所以一般推荐设置这两个字段的值。如果设置限制的值为 0，那么相关类型的Job完成后将不会被保留。</p></blockquote><h3 id="实例" tabindex="-1"><a class="header-anchor" href="#实例" aria-hidden="true">#</a> 实例</h3><p>cs.yaml</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>apiVersion: v1  <span class="token comment">#API版本号，用于迭代我们的更新版本</span>
+kind: Pod       <span class="token comment">#资源对象的类型，有pod，Node，Job，Service</span>
+metadata:       <span class="token comment">#资源元数据，标记对象，方便管理</span>
+  name: hll-pod <span class="token comment">#给pod起名称</span>
+  labels:       <span class="token comment">#给pod打标签，方便找</span>
+    env: demo   <span class="token comment">#注入容器内的环境变量</span>
+    owner: feifei
+spec:           <span class="token comment">#资源规格，pod内容器相关信息</span>
+  replicas: <span class="token number">1</span>   <span class="token comment">#副本数量</span>
+  selector:     <span class="token comment">#标签选择器</span>
+    matchLabels:
+      app: web
+
+  template:     <span class="token comment">#pod模板</span>
+    metadata:   <span class="token comment">#pod元数据</span>
+      labels:   <span class="token comment">#给pod打标签，方便找</span>
+        app: web
+  spec:         <span class="token comment">#pod规格</span>
+    containers:   <span class="token comment">#容器配置</span>
+    - image: nll:v1    <span class="token comment">#运行容器镜像</span>
+      name: nll              <span class="token comment">#容器名称</span>
+      ports:                 <span class="token comment">#端口号</span>
+        - containerPort: <span class="token number">80</span>    <span class="token comment">#容器端口号</span>
+        - <span class="token number">8090</span>:8221            <span class="token comment">#容器内服务映射端口</span>
+      volumes:                 <span class="token comment">#容器持久化</span>
+        - /etc/localtime:/etc/localtime         <span class="token comment">#容器内服务映射路径</span>
+      restart: always          <span class="token comment">#重启容器直接重启服务</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>k8s yaml文件创建和删除</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>kubectl apply <span class="token parameter variable">-f</span> cs.yml
+kubectl delete <span class="token parameter variable">-f</span> cs.yml
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><footer class="page-meta"><!----><div class="meta-item git-info"><!----><!----></div></footer><nav class="vp-page-nav"><a aria-label="【K8S】解决：The connection to the server raw.githubusercontent.com was refused - did you specify the rig" class="vp-link nav-link prev nav-link prev" href="/ToLiucyLinux/Kubernetes/%E3%80%90K8S%E3%80%91%E8%A7%A3%E5%86%B3%EF%BC%9AThe%20connection%20to%20the%20server%20raw.githubusercontent.com%20was%20refused%20-%20did%20you%20specify%20the%20rig.html"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><span class="font-icon icon iconfont icon-circle-info" style=""></span>【K8S】解决：The connection to the server raw.githubusercontent.com was refused - did you specify the rig</div></a><a aria-label="K8s单机架构部署" class="vp-link nav-link next nav-link next" href="/ToLiucyLinux/Kubernetes/K8s%E5%8D%95%E6%9C%BA%E6%9E%B6%E6%9E%84%E9%83%A8%E7%BD%B2.html"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">K8s单机架构部署<span class="font-icon icon iconfont icon-circle-info" style=""></span></div></a></nav><!----><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper"><div class="vp-footer"><a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a></div><div class="vp-copyright">Copyright © 2025 Liucy</div></footer></div><!--]--><!----><!--]--></div>
+    <script type="module" src="/ToLiucyLinux/assets/app-bccf5941.js" defer></script>
+  </body>
+</html>

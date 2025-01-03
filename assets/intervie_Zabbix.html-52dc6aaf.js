@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as r}from"./app-bccf5941.js";const _={};function c(o,i){return t(),r("div")}const s=e(_,[["render",c],["__file","intervie_Zabbix.html.vue"]]);export{s as default};
