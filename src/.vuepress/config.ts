@@ -4,9 +4,9 @@ import theme from "./theme.js";
 
 export default defineUserConfig({
   // 在github上部署的时候构建base需要带：/ToLiucyLinux
-  // base: "/ToLiucyLinux/",
+  base: "/ToLiucyLinux/",
   // 在服务器上部署的时候构建base只需要：/
-  base: "/",
+  // base: "/",
 
   // 文章展示的标题等级，默认为2、3级。
   markdown: {
