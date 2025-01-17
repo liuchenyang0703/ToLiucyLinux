@@ -4,7 +4,7 @@ name: 部署文档
 on:
   push:
     branches:
-      - main
+      - blog_source
 
 permissions:
   contents: write
@@ -48,5 +48,6 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
           # 部署文档
-          branch: blog_source
+          branch: main
           folder: src/.vuepress/dist
+          clean: true 
