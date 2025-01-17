@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as r}from"./app-bccf5941.js";const n={};function _(c,o){return t(),r("div")}const a=e(n,[["render",_],["__file","intervie_Nginx.html.vue"]]);export{a as default};
