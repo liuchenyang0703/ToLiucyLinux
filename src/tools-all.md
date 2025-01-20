@@ -142,6 +142,26 @@ features:
   details: 传文件，找文叔叔，不用登陆，不限速，加密传输。
   link: https://www.wenshushu.cn/
 
+- title: 密码生成器
+  icon: mima
+  details: 可以随机生成强密码，可以直接密码长度、个数、包含大小写、字母、特殊字符等，很方便。
+  link: https://tool.okcode.vip/web/password
+
+- title: 微信公众号markdown排版工具<br> <center>- openwrite</center>
+  icon: gongzhonghao
+  details: 微信公众号markdown排版工具，有丰富的主题、样式等，个人推荐常用这个。
+  link: https://md.openwrite.cn/
+
+- title: 微信公众号markdown排版工具<br> <center>- markdown官方</center>
+  icon: gongzhonghao
+  details: 微信公众号markdown排版工具，有丰富的主题、样式等。
+  link: https://markdown.com.cn/editor/
+
+- title: 微信公众号markdown排版工具<br> <center>- 墨滴社区</center>
+  icon: gongzhonghao
+  details: 微信公众号markdown排版工具，有丰富的主题、样式等，需要登陆账号。
+  link: https://mdnice.com/
+
 - title: 截图好工具<br> <center>- Snipaste_latest</center>
   icon: Snipaste
   details: 截图好工具 - Snipaste_latest。

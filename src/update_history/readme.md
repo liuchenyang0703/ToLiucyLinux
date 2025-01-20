@@ -128,6 +128,13 @@ title: 项目更新记录
 ## 2025-01-14:
 > 1、升级了vuepress-theme-hope到rc.68版本
 > 2、新增了顶部栏博客
+> 3、新增git提交等信息
+
+## 2025-01-20:
+> 1、新增几个运维工具（src/tools_all.md）
+> 2、更换图标地址（src/.vuepress/theme.ts）
+
+
 
 
 # git提交记录
