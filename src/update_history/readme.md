@@ -134,7 +134,9 @@ title: 项目更新记录
 > 1、新增几个运维工具（src/tools_all.md）
 > 2、更换图标地址（src/.vuepress/theme.ts）
 
-
+## 2025-01-22:
+> 1、修改了运维工具配置页面，新加了分类（src/tools-all.md）
+> 2、配置highlights--header字体的大小、颜色等参数、鼠标悬浮的背影（src/.vuepress/styles/index.scss）
 
 
 # git提交记录
