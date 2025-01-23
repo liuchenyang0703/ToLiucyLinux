@@ -1,26 +1,55 @@
 // place your custom styles here
 body {
-    @media (min-width: 1540px) {
-      font-size: 16px;
-    }
-  }
-  :root {
-    // 返回最上面的图标
-    --back-to-top-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon back-to-top-icon' viewBox='0 0 1024 1024' fill='currentColor' aria-label='back-to-top icon'%3E%3Cpath d='M512 843.2c-36.2 0-66.4-13.6-85.8-21.8-10.8-4.6-22.6 3.6-21.8 15.2l7 102c.4 6.2 7.6 9.4 12.6 5.6l29-22c3.6-2.8 9-1.8 11.4 2l41 64.2c3 4.8 10.2 4.8 13.2 0l41-64.2c2.4-3.8 7.8-4.8 11.4-2l29 22c5 3.8 12.2.6 12.6-5.6l7-102c.8-11.6-11-20-21.8-15.2-19.6 8.2-49.6 21.8-85.8 21.8z'/%3E%3Cpath d='m795.4 586.2-96-98.2C699.4 172 513 32 513 32S324.8 172 324.8 488l-96 98.2c-3.6 3.6-5.2 9-4.4 14.2L261.2 824c1.8 11.4 14.2 17 23.6 10.8L419 744s41.4 40 94.2 40c52.8 0 92.2-40 92.2-40l134.2 90.8c9.2 6.2 21.6.6 23.6-10.8l37-223.8c.4-5.2-1.2-10.4-4.8-14zM513 384c-34 0-61.4-28.6-61.4-64s27.6-64 61.4-64c34 0 61.4 28.6 61.4 64S547 384 513 384z'/%3E%3C/svg%3E");
-  }
-  // 配置highlights--header字体的大小、颜色等参数
-  .vp-feature-header {
-    margin-bottom: 1rem;
-    border-bottom: none;
-    font-size: 2rem;
-    font-family: var(--vp-font);
-    text-align: center;
-    color: cornflowerblue;
+  @media (min-width: 1540px) {
+    font-size: 16px;
+  };
 }
-  // 配置鼠标悬浮的背影
-  .vp-feature-item:hover {
-    background-color: var(--bg-color-secondary);
-    box-shadow: 0 2px 12px 0 var(--card-shadow);
-    transform: translate(-2px, -2px);
-    transform: scale(1.05);
-  }
+
+:root {
+  // 返回最上面的图标
+  --back-to-top-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon back-to-top-icon' viewBox='0 0 1024 1024' fill='currentColor' aria-label='back-to-top icon'%3E%3Cpath d='M512 843.2c-36.2 0-66.4-13.6-85.8-21.8-10.8-4.6-22.6 3.6-21.8 15.2l7 102c.4 6.2 7.6 9.4 12.6 5.6l29-22c3.6-2.8 9-1.8 11.4 2l41 64.2c3 4.8 10.2 4.8 13.2 0l41-64.2c2.4-3.8 7.8-4.8 11.4-2l29 22c5 3.8 12.2.6 12.6-5.6l7-102c.8-11.6-11-20-21.8-15.2-19.6 8.2-49.6 21.8-85.8 21.8z'/%3E%3Cpath d='m795.4 586.2-96-98.2C699.4 172 513 32 513 32S324.8 172 324.8 488l-96 98.2c-3.6 3.6-5.2 9-4.4 14.2L261.2 824c1.8 11.4 14.2 17 23.6 10.8L419 744s41.4 40 94.2 40c52.8 0 92.2-40 92.2-40l134.2 90.8c9.2 6.2 21.6.6 23.6-10.8l37-223.8c.4-5.2-1.2-10.4-4.8-14zM513 384c-34 0-61.4-28.6-61.4-64s27.6-64 61.4-64c34 0 61.4 28.6 61.4 64S547 384 513 384z'/%3E%3C/svg%3E");
+}
+
+// 配置highlights--header字体的大小、颜色等参数
+.vp-feature-header {
+  margin-bottom: 1rem;
+  border-bottom: none;
+  font-size: 2rem;
+  font-family: var(--vp-font);
+  text-align: center;
+  color: cornflowerblue;
+}
+
+// 配置鼠标悬浮的背影
+.vp-feature-item:hover {
+  background-color: var(--bg-color-secondary);
+  box-shadow: 0 2px 12px 0 var(--card-shadow);
+  transform: translate(-2px, -2px);
+  transform: scale(1.05);
+}
+
+// 去掉链接后面的箭头和链接与链接之间的空格等
+.external-link-icon [vp-content] a[href*="://"]:not(.no-external-link-icon)::after, .external-link-icon [vp-content] a[target=_blank]:not(.no-external-link-icon)::after {
+  content: none !important; /* 移除内容 */
+  // content: "";
+  // display: inline-block;
+  // flex-shrink: 0;
+  // width: 11px;
+  // height: 11px;
+  // margin-top: -1px;
+  // margin-left: 4px;
+  // background: var(--external-link-c-icon);
+  // -webkit-mask-image: var(--external-link-icon);
+  // mask-image: var(--external-link-icon);
+}
+
+// 个人主页中的 ✨ 我的技术栈 展示css配置
+.badge-container {
+  // display: flex; /* 使用Flexbox布局 */
+  // flex-wrap: nowrap; /* 防止换行 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: flex-start; /* 从左侧开始排列 */
+}
+.badge-container img {
+  margin-right: 8px; /* 图像右侧的间距 */
+}
