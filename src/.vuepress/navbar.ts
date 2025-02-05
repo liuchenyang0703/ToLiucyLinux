@@ -69,6 +69,10 @@ export default navbar([
         children: ["person.md"],
       },
       {
+        text: "友情链接",
+        children: ["friendship.md"],
+      },
+      {
         text: "项目更新",
         children: ["/update_history/"],
       },

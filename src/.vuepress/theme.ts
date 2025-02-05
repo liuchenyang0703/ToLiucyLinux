@@ -185,7 +185,7 @@ export default hopeTheme({
   plugins: {
     // 图标库
     icon: {
-      assets: "//at.alicdn.com/t/c/font_4791124_oc9o7faa0oe.css", // 使用阿里图标库
+      assets: "//at.alicdn.com/t/c/font_4791124_zsi75y978si.css", // 使用阿里图标库
     },
     // 启用博客类型
     blog: true,

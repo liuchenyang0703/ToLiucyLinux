@@ -145,6 +145,10 @@ title: 项目更新记录
 ## 2025-02-05:
 > 1、添加了一篇文章自签证书（src/document/nginx/、src/document/Linux/）
 > 2、修改了Linux临时目录的icon（src/.vuepress/document.ts）
+> 3、修改了icon链接（src/.vuepress/theme.ts）
+> 4、新增了友情链接（src/friendship.md）
+> 5、顶部栏新增了友情链接（src/.vuepress/navbar.ts）
+
 
 # git提交记录
 ```git
