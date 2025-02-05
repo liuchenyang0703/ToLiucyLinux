@@ -46,15 +46,17 @@ openssl version
 
 - **Debian/Ubuntu操作系统**:
   
-  ```bash
-  sudo apt-get install openssl -y 
+```bash
+sudo apt-get install openssl -y 
 ```
-  
+
+
 - **CentOS/RHEL操作系统**:
-  
-  ```bash
-  sudo yum install openssl -y 
-  ```
+
+```bash
+sudo yum install openssl -y 
+```
+
 
 ## 2. 生成私钥
 使用以下命令生成一个 2048 位的 RSA 私钥：
