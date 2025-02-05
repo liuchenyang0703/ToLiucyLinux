@@ -180,7 +180,7 @@ export const document = arraySidebar([
     },
     // {
     //   text: "Linux文章临时目录",
-    //   icon: "book",
+    //   icon: "a-061_shuben",
     //   collapsible: true,
     //   prefix: "Linux_linshi/",
     //   children: "structure",

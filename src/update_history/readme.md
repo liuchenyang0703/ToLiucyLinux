@@ -142,6 +142,10 @@ title: 项目更新记录
 > 1、修改了个人主页内容（src/person.md）
 > 2、修改了个人主页相关的scss（src/.vuepress/styles/index.scss）
 
+## 2025-02-05:
+> 1、添加了一篇文章自签证书（src/document/nginx/、src/document/Linux/）
+> 2、修改了Linux临时目录的icon（src/.vuepress/document.ts）
+
 # git提交记录
 ```git
 git commit -m "初始化博客模板"
