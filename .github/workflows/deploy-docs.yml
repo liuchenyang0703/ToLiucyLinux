@@ -1,13 +1,13 @@
-
 name: 部署文档
 
 on:
   push:
     branches:
       - blog_source
+  workflow_dispatch: # 允许手动触发
 
 permissions:
-  contents: write
+  contents: write # 允许写入内容
 
 jobs:
   deploy-gh-pages:
@@ -23,8 +23,7 @@ jobs:
       - name: 设置 pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.15.3  # 指定pnpm的版本
-
+          version: 9.15.3  # 指定 pnpm 的版本
 
       - name: 设置 Node.js
         uses: actions/setup-node@v4
@@ -40,16 +39,15 @@ jobs:
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
+        run: |
           pnpm run docs:build
-          > src/.vuepress/dist/.nojekyll
+          touch src/.vuepress/dist/.nojekyll
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
-          # 部署文档
           branch: main
           folder: src/.vuepress/dist
-          clean: true 
+          clean: true
