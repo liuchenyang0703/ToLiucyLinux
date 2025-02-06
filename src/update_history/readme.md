@@ -149,6 +149,9 @@ title: 项目更新记录
 > 4、新增了友情链接（src/friendship.md）
 > 5、顶部栏新增了友情链接（src/.vuepress/navbar.ts）
 
+## 2025-02-06:
+> 1、新增了访问过度、音乐、网站运行时间特效、icon跳动功能。（src/.vuepress/components/\*.vue）（src/.vuepress/client.ts）
+> 2、新增了一个图片（src/.vuepress/public/beijing/playBtn.webp）
 
 # git提交记录
 ```git

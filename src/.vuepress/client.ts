@@ -1,4 +1,8 @@
 import { defineClientConfig } from "vuepress/client";
+import { onMounted } from 'vue';
+import { defineAsyncComponent } from 'vue';
+// 为页面图标添加鼠标悬停的跳动效果。
+import 'vuepress-theme-hope/presets/bounce-icon.scss'; 
 // 将博客博主头像裁切成圆形
 import "vuepress-theme-hope/presets/round-blogger-avatar.scss";
 // 为所有 hr 元素添加驾驶的车图标：
@@ -9,9 +13,16 @@ import "vuepress-theme-hope/presets/hr-driving-car.scss";
 // import { setupSnowFall } from "vuepress-theme-hope/presets/setupSnowFall.js";
 // 页脚运行时间
 // import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
+// 音乐
+const NavMusic = defineAsyncComponent(() => import('./components/音乐.vue'));
+// 添加访问页面缓冲加载配置
+const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
+// 添加网站运行时间配置
+const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
 
 export default defineClientConfig({
   setup() {
+    onMounted(() => {});
     // 透明导航栏配置
     // setupTransparentNavbar({
     //   type: "blog-homepage", // 你可以根据需要选择 'homepage', 'blog-homepage', 或 'all'
@@ -37,4 +48,10 @@ export default defineClientConfig({
 //      true, // 是否保留页脚的原有内容
 //    );
  },
+  // 加载vue配置
+  rootComponents: [
+    jz,
+    yx,
+    NavMusic,
+  ],
 });
