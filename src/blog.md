@@ -38,4 +38,7 @@ projects:
     name: 博客更新时间轴
     desc: 记录的博客更新时间及以轴体形式展示
     link: /timeline/
+	
+copyright: false
+footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2023-present Liucy | <img src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142253822.png" height="15" width="15"/> <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a>
 ---
