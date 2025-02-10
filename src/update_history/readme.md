@@ -157,3 +157,12 @@ title: 项目更新记录
 > 1、新增了一个文件：加载所有的vue及json文件，主要是解决client.ts中的引用vue文件报错；（src/.vuepress/public/js/vite-env.d.ts）
 > 2、启动了雪花效果、博客透明导航栏（src/.vuepress/client.ts）
 > 3、博客页脚版权修改和主页一样（src/blog.md）
+
+## 2025-02-10:
+> 1、新增了鼠标点击特效（src/.vuepress/config.ts、src/.vuepress/plugins/）
+> 2、修复了引用plugins中的目录报错（tsconfig.json的mould和moduleResolution配置）
+> 3、安装了@moefy-canvas/theme-popper模块（鼠标点击特效要用到）
+> 4、删除了右上角模式音乐（src/.vuepress/components/音乐.vue）（src/.vuepress/client.ts）（src/.vuepress/public/beijing/playBtn.webp）
+> 5、新增了左下角音乐播放器（src/.vuepress/config.ts），音乐插件官方：[https://github.com/OrageKK/vuepress-plugin-meting2](https://github.com/OrageKK/vuepress-plugin-meting2)
+> 6、安装了vuepress-plugin-meting2模块（音乐插件模块）
+> 7、优化了友情链接页面（src/friendship.md）（src/.vuepress/config.ts）（src/.vuepress/components/友情链接.ts、友情链接.vue）

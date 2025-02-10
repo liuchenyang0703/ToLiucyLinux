@@ -13,8 +13,6 @@ import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentN
 import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
 // 页脚运行时间
 // import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
-// 音乐
-const NavMusic = defineAsyncComponent(() => import('./components/音乐.vue'));
 // 添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 添加网站运行时间配置
@@ -52,6 +50,5 @@ export default defineClientConfig({
   rootComponents: [
     jz,
     yx,
-    NavMusic,
   ],
 });

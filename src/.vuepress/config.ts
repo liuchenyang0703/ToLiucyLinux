@@ -1,5 +1,11 @@
 import { defineUserConfig } from "vuepress";
+import { getDirname, path } from "vuepress/utils";
 import theme from "./theme.js";
+// 鼠标点击
+import { popperPlugin } from "./plugins/vuepress-plugin-popper";
+import { PopperShape } from "@moefy-canvas/theme-popper";
+// 音乐插件
+import metingPlugin from "vuepress-plugin-meting2";
 
 
 export default defineUserConfig({
@@ -107,6 +113,45 @@ export default defineUserConfig({
   ],
   pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
+  plugins: [
+    // 鼠标特效插件
+    popperPlugin({
+      config: {
+        shape: PopperShape.Star,
+        size: 1.95,
+        numParticles: 8,
+      },
+    }),
+    // 音乐插件,官方:https://github.com/OrageKK/vuepress-plugin-meting2
+    metingPlugin({
+      metingOptions: {
+        // 全局可以播放
+        global: true,
+        // 使用网易云音乐
+        server: "netease",
+        // 官方api不用改
+        api: "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r",
+        // 表示播放一个歌单
+        type: "playlist",
+        // 歌单id
+        mid: "9711752353",
+        // 配置音乐播放器的选择
+        aplayerOptions: {
+          // 默认折叠播放列表
+          listFolded: 'true',
+          // 默认显示歌词
+          lrcDisplay: 'show',
+          // 音乐列表随机播放
+          order: 'random',
+        }
+      },
+    }),
+  ],
+  
+  alias: {
+    "@MyCoverLink": path.resolve(__dirname, "./components/友情链接.vue"),
+  },
+  
   // 页面启用预加载
   shouldPrefetch: false,
 });

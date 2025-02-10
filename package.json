@@ -16,6 +16,10 @@
     "sass-embedded": "^1.83.3",
     "vue": "^3.5.13",
     "vuepress": "2.0.0-rc.19",
+    "vuepress-plugin-meting2": "^1.4.2",
     "vuepress-theme-hope": "2.0.0-rc.68"
+  },
+  "dependencies": {
+    "@moefy-canvas/theme-popper": "^0.6.0"
   }
 }
