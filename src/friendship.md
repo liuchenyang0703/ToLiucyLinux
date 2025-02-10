@@ -22,7 +22,7 @@ import MyCoverLink from "@MyCoverLink";
 
 ```yml
 昵称: "ToLiucyLinux",
-简介: "ToLiucyLinux",
+简介: "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
 头像: "https://liuchenyang.top/logo.png",
 连接: "https://liuchenyang.top"
 ```
@@ -32,7 +32,7 @@ import MyCoverLink from "@MyCoverLink";
 ```json
 {
   "name": "ToLiucyLinux",
-  "desc": "ToLiucyLinux",
+  "desc": "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
   "ico": "https://liuchenyang.top/logo.png",
   "link": "https://liuchenyang.top"
 }
@@ -41,7 +41,7 @@ import MyCoverLink from "@MyCoverLink";
 
 ```yml
 - name: "ToLiucyLinux",
-- desc: "ToLiucyLinux",
+- desc: "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
 - ico: "https://liuchenyang.top/logo.png",
 - link: "https://liuchenyang.top"
 ```
