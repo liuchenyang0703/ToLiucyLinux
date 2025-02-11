@@ -139,8 +139,8 @@ export default defineUserConfig({
         aplayerOptions: {
           // 默认折叠播放列表
           listFolded: 'true',
-          // 默认显示歌词
-          lrcDisplay: 'show',
+          // 默认不显示歌词为:hide,显示歌词为:show
+          lrcDisplay: 'hide',
           // 音乐列表随机播放
           order: 'random',
         }

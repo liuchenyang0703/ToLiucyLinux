@@ -12,6 +12,7 @@ export default hopeTheme({
 
 
   logo: "logo.png",
+  favicon: "favicon.ico",
   //github导航栏及文章中的编辑链接配置
   repo: "liuchenyang0703/ToLiucyLinux",
   repoLabel: "GitHub",

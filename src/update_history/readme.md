@@ -166,3 +166,9 @@ title: 项目更新记录
 > 5、新增了左下角音乐播放器（src/.vuepress/config.ts），音乐插件官方：[https://github.com/OrageKK/vuepress-plugin-meting2](https://github.com/OrageKK/vuepress-plugin-meting2)
 > 6、安装了vuepress-plugin-meting2模块（音乐插件模块）
 > 7、优化了友情链接页面（src/friendship.md）（src/.vuepress/config.ts）（src/.vuepress/components/友情链接.ts、友情链接.vue）
+
+## 2025-02-11:
+> 1、修改了歌词默认不展示（src/.vuepress/config.ts）
+> 2、优化了友情链接.vue访问的告警提示（src/.vuepress/components/友情链接.vue）
+> 3、添加了标签栏的icon（src/.vuepress/theme.ts）
+

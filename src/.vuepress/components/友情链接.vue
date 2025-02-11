@@ -19,6 +19,7 @@
     </template>
   </div>
 </template>
+
 <script setup lang="ts">
 import { friends, invalid, LinkData } from "./友情链接";
 const props = defineProps({
@@ -40,31 +41,29 @@ switch (props.type) {
     break;
 }
 </script>
+
 <style lang="scss" scoped>
 .link-card {
   position: relative;
   display: inline-block;
-  width: calc(30% - 8px);
-
-  @media (max-width: hope-config.$tablet) {
-    width: calc(50% - 30px);
-  }
-
   margin: 8px 11px;
   border-radius: 0.5rem;
   overflow: hidden;
   min-height: 10rem;
   color: inherit;
-  // background-image: linear-gradient(to right, #434343 0%, black 100%);
   background-image: linear-gradient(to top,
     #7873f5 0%,
     #97d9e1 33%,
     #ec77ab 100%);
-  // background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%);
-
   box-shadow: 1px 1px 8px var(--card-shadow);
   cursor: pointer;
   transition: box-shadow var(--transform-transition) transform var(--transform-transition);
+
+  width: calc(30% - 8px);
+
+  @media (max-width: hope-config.$tablet) {
+    width: calc(50% - 30px);
+  }
 }
 
 .link-card:hover {
@@ -105,13 +104,12 @@ a.card-body {
       /* 添加过渡效果 */
       width: 3.5rem;
       height: 3.5rem;
+      object-fit: cover;
 
       @media (max-width: hope-config.$tablet) {
         width: 2.8rem;
         height: 2.8rem;
       }
-
-      object-fit: cover;
 
       img {
         width: 100%;
@@ -138,16 +136,15 @@ a.card-body {
       font-family: ZWZT,
         '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif';
 
-      @media (max-width: hope-config.$tablet) {
-        flex-shrink: 1;
-      }
-
       .link-name {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         color: var(--light);
         font-weight: 700;
+
+        // 原来的字体大小设置在媒体查询之前
+        font-size: initial; // 提前声明，避免警告
 
         @media (max-width: hope-config.$tablet) {
           font-size: 0.85rem;
@@ -156,20 +153,20 @@ a.card-body {
 
       .link-desc {
         max-height: 2rem;
-        font-size: 0.85rem;
-
-        @media (max-width: hope-config.$tablet) {
-          font-size: 0.75rem;
-        }
-
-        line-height: 1.2;
-        // color: var(--light-grey);
         color: #f8f9fa;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         text-overflow: ellipsis;
         overflow: hidden;
+
+        // 原来的字体大小设置在媒体查询之前
+        font-size: 0.85rem;
+        line-height: 1.2; // 提前声明，避免警告
+
+        @media (max-width: hope-config.$tablet) {
+          font-size: 0.75rem;
+        }
       }
     }
   }
@@ -204,4 +201,5 @@ a.card-body {
   filter: opacity(0.5) blur(10px) saturate(0.5) brightness(0.5);
   transform: scale(0.96);
   transition: all var(--transform-transition);
-}</style>
+}
+</style>
