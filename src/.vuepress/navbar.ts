@@ -82,8 +82,8 @@ export default navbar([
         children: ["/timeline/"],
       },
       {
-        text: "项目结构",
-        children: ["structure.md"],
+        text: "关于本站",
+        children: ["about.md","structure.md"],
       },
     ],
   },

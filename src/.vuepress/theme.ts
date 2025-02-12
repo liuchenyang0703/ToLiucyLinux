@@ -42,6 +42,20 @@ export default hopeTheme({
   // 页脚支持
   footer: '<a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a>',
 
+  // navbarLayout：用于定义导航栏的布局；start、center 和 end，分别表示导航栏的起始部分、中间部分和结束部分。
+  navbarLayout: {
+    // Brand：表示导航栏的起始部分放置的是品牌（Logo 或网站名称）这是导航栏的最左侧部分。
+    start: ['Brand'],
+    // Links：表示导航栏的中间部分放置的是导航链接，这是导航栏的中间部分。
+    center: ['Links'],
+    // Repo：表示仓库链接，通常用于指向项目的代码仓库（如 GitHub、GitLab 等）。
+    // Wormhole：这是一个自定义组件或链接，名称为“虫洞”。
+    // Travelling：这是一个自定义组件或链接，名称为“友链接力”。
+    // Outlook：包括主题色、外观、全屏组件。
+    // Search：表示搜索功能，通常用于在网站中搜索内容。
+    end: ['Repo', 'Wormhole', 'Travelling', 'Outlook', 'Search'],
+  },
+  
   // 加密配置
   encrypt: {
     config: {
@@ -186,7 +200,7 @@ export default hopeTheme({
   plugins: {
     // 图标库
     icon: {
-      assets: "//at.alicdn.com/t/c/font_4791124_zsi75y978si.css", // 使用阿里图标库
+      assets: "//at.alicdn.com/t/c/font_4791124_6au2pmvhcgx.css", // 使用阿里图标库
     },
     // 启用博客类型
     blog: true,
@@ -282,4 +296,9 @@ export default hopeTheme({
       },
     },
   },
-});
+},
+{
+  // 主题行为选项
+  custom: true, // 启用自定义支持
+}
+);

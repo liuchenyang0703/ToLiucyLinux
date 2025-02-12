@@ -172,3 +172,8 @@ title: 项目更新记录
 > 2、优化了友情链接.vue访问的告警提示（src/.vuepress/components/友情链接.vue）
 > 3、添加了标签栏的icon（src/.vuepress/theme.ts）
 
+## 2025-02-12:
+> 1、修改了icon链接，主要添加了home图标（src/.vuepress/theme.ts）
+> 2、添加了友链接力、虫洞（src/.vuepress/components/开往.ts、虫洞.ts）（src/.vuepress/client.ts）（src/.vuepress/theme.ts）
+> 3、新增了关于本站页面（src/about.md）
+> 4、顶部栏新增了关于本站（src/.vuepress/navbar.ts）
