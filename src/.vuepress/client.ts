@@ -19,8 +19,6 @@ import Travelling from "./components/开往.js";
 import Wormhole from "./components/虫洞.js";
 // 404页面
 import NotFound from "./components/layouts/404.vue";
-// 赞助打赏布局
-import Layout from "./components/layouts/Layout.vue";
 // 添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 添加网站运行时间配置
@@ -69,8 +67,6 @@ export default defineClientConfig({
   
   // 你可以在这里覆盖或新增布局
   layouts: {
-    // 赞助布局
-    Layout,
 	// 404页面
     NotFound,
   },
