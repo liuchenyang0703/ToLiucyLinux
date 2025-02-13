@@ -20,6 +20,7 @@
     "vuepress-theme-hope": "2.0.0-rc.68"
   },
   "dependencies": {
-    "@moefy-canvas/theme-popper": "^0.6.0"
+    "@moefy-canvas/theme-popper": "^0.6.0",
+    "vue-router": "^4.5.0"
   }
 }

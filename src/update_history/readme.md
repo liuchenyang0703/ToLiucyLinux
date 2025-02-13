@@ -177,5 +177,8 @@ title: 项目更新记录
 > 2、添加了友链接力、虫洞（src/.vuepress/components/开往.ts、虫洞.ts）（src/.vuepress/client.ts）（src/.vuepress/theme.ts）
 > 3、新增了关于本站页面（src/about.md）
 > 4、顶部栏新增了关于本站（src/.vuepress/navbar.ts）
-> 5、修改了404页面样式、修改了public目录内容（src/.vuepress/components/layouts/404.vue）（src/.vuepress/client.ts）（src/.vuepress/public/）
-> 6、新增了赞助功能（src/.vuepress/components/layouts/Layout.vue）（src/.vuepress/components/赞助.vue）（src/.vuepress/client.ts）（src/.vuepress/public/）
+
+## 2025-02-13
+> 1、修改了404页面样式、修改了public目录内容（src/.vuepress/components/layouts/404.vue）（src/.vuepress/client.ts）（src/.vuepress/public/）
+> 2、新增了赞助功能（src/.vuepress/components/layouts/Layout.vue）（src/.vuepress/components/赞助.vue）（src/.vuepress/client.ts）（src/.vuepress/public/）
+> 3、安装了vue-router模块（构建的时候404页面需要用到）
