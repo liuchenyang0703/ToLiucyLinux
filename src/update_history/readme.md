@@ -182,3 +182,5 @@ title: 项目更新记录
 > 1、修改了404页面样式、修改了public目录内容（src/.vuepress/components/layouts/404.vue）（src/.vuepress/client.ts）（src/.vuepress/public/）
 > 2、新增了赞助功能（src/.vuepress/components/layouts/Layout.vue）（src/.vuepress/components/赞助.vue）（src/.vuepress/client.ts）（src/.vuepress/public/） -- 暂时废弃
 > 3、安装了vue-router模块（构建的时候404页面需要用到）
+> 4、修改了友情链接的头像及展示头像链接（src/friendship.md）（src/.vuepress/components/友情链接.ts）
+> 5、修改了404访问的图片路径（src/.vuepress/components/layouts/404.vue）

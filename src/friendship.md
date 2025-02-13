@@ -23,8 +23,8 @@ import MyCoverLink from "@MyCoverLink";
 ```yml
 昵称: "ToLiucyLinux",
 简介: "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
-头像: "https://liuchenyang.top/logo.png",
-连接: "https://liuchenyang.top"
+头像: "http://liuchenyang.top/picture.jpg",
+连接: "http://liuchenyang.top"
 ```
 
 @tab json
@@ -33,8 +33,8 @@ import MyCoverLink from "@MyCoverLink";
 {
   "name": "ToLiucyLinux",
   "desc": "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
-  "ico": "https://liuchenyang.top/logo.png",
-  "link": "https://liuchenyang.top"
+  "ico": "http://liuchenyang.top/picture.jpg",
+  "link": "http://liuchenyang.top"
 }
 ```
 @tab yml
@@ -42,8 +42,8 @@ import MyCoverLink from "@MyCoverLink";
 ```yml
 - name: "ToLiucyLinux",
 - desc: "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
-- ico: "https://liuchenyang.top/logo.png",
-- link: "https://liuchenyang.top"
+- ico: "http://liuchenyang.top/picture.jpg",
+- link: "http://liuchenyang.top"
 ```
 
 :::

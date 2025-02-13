@@ -9,7 +9,7 @@ export const friends: LinkData[] = [
   {
     name: "ToLiucyLinux",
     desc: "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
-    icon: "logo.png",
+    icon: "picture.jpg",
     link: "http://liuchenyang.top",
   },
   {
