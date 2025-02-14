@@ -53,3 +53,16 @@ body {
 .badge-container img {
   margin-right: 8px; /* 图像右侧的间距 */
 }
+
+// 博客展示头像设置为圆形
+.vp-blog-hero-image {
+  border-radius: 50%;
+}
+// 首页展示头像设置为圆形
+.vp-hero-image {
+  border-radius: 50%;
+}
+// 左上角头像设置为圆形
+.vp-nav-logo {
+  border-radius: 50%;
+}

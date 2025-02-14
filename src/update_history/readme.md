@@ -178,9 +178,16 @@ title: 项目更新记录
 > 3、新增了关于本站页面（src/about.md）
 > 4、顶部栏新增了关于本站（src/.vuepress/navbar.ts）
 
-## 2025-02-13
+## 2025-02-13:
 > 1、修改了404页面样式、修改了public目录内容（src/.vuepress/components/layouts/404.vue）（src/.vuepress/client.ts）（src/.vuepress/public/）
 > 2、新增了赞助功能（src/.vuepress/components/layouts/Layout.vue）（src/.vuepress/components/赞助.vue）（src/.vuepress/client.ts）（src/.vuepress/public/） -- 暂时废弃
 > 3、安装了vue-router模块（构建的时候404页面需要用到）
 > 4、修改了友情链接的头像及展示头像链接（src/friendship.md）（src/.vuepress/components/友情链接.ts）
 > 5、修改了404访问的图片路径（src/.vuepress/components/layouts/404.vue）
+
+## 2025-02-14:
+> 1、修改了页面内容宽度（src/.vuepress/styles/palette.scss）
+> 2、配置博客、首页、左上角头像都为圆形（src/.vuepress/styles/index.scss）
+> 3、新增赞赏页面（src/donate.md）
+> 4、修改了icon链接，主要添加了赞赏图标（src/.vuepress/theme.ts）
+> 5、顶部栏新增赞赏（src/.vuepress/navbar.ts）

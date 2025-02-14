@@ -87,4 +87,9 @@ export default navbar([
       },
     ],
   },
+  { 
+    text: "打赏",
+    icon: "donate",
+    link: "donate.md" 
+  },
 ]);
