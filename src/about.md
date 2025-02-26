@@ -44,6 +44,15 @@ link: https://giscus.app/
 background: rgb(253, 230, 138, 0.15)
 ```
 
+```component VPCard
+title: iconfont
+desc: 本站图标所用服务
+logo: https://img.alicdn.com/imgextra/i4/O1CN01XZe8pH1USpiUNT1QN_!!6000000002517-2-tps-114-114.png
+link: https://www.iconfont.cn/
+background: rgb(253, 230, 138, 0.15)
+```
+
+
 <!-- ```component VPCard
 title: 
 desc: 
@@ -52,6 +61,9 @@ link:
 background: rgb(253, 230, 138, 0.15) 
 ``` -->
 
+
+## 图床
+- [Typora+PicGo搭建博客图床](document/other/图床oss.md)
 
 ## 仓库连接
 

@@ -194,3 +194,6 @@ title: 项目更新记录
 
 ## 2025-02-26:
 > 1、修改了一篇文章的内容（src/document/Linux）
+> 2、删除了文档指南和面试题大全的readme首页，使用默认的自动获取目录（src/document、interview）
+> 3、关于本站添加了一个服务提供和图床（src/about.md）
+> 4、修改了项目文件结构页面（src/structure.md）
