@@ -191,3 +191,6 @@ title: 项目更新记录
 > 3、新增赞赏页面（src/donate.md）
 > 4、修改了icon链接，主要添加了赞赏图标（src/.vuepress/theme.ts）
 > 5、顶部栏新增赞赏（src/.vuepress/navbar.ts）
+
+## 2025-02-26:
+> 1、修改了一篇文章的内容（src/document/Linux）
