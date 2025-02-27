@@ -22,7 +22,7 @@ toc: false
 
 ## 打赏详情
 
-|打赏用户名|打赏金额|打赏方式|
+|打赏用户名|打赏金额|打赏方式|用途|
 |:--:|:--:|--|:--:|
 | 享受 | 0.01 | <img style="width: 15px" src="https://gtimg.wechatpay.cn/core/favicon.ico" /> 微信支付 | 测试 |
 | 享受 | 0.01 | <img style="width: 15px" src="https://i.alipayobjects.com/common/favicon/favicon.ico" /> 支付宝支付 | 测试 |
