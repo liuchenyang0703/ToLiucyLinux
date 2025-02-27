@@ -74,11 +74,6 @@ highlights:
         details: 传文件，找文叔叔，不用登陆，不限速，加密传输。
         link: https://www.wenshushu.cn/
 
-      - title: github文件下载加速器
-        icon: GitHub
-        details: 可以在不翻墙或使用其他加速器的情况下吧github的链接复制到此进行下载。
-        link: https://github.moeyy.xyz/
-
   - header: 图片、图标、PDF等转换相关在线
     features:
       - title: 图片转换工具<br><center>- 改图宝</center>
