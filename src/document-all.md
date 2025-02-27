@@ -3,8 +3,9 @@ home: true
 icon: home
 title: 运维文库汇总
 heroImage: logo.png
-heroText: LiucyLinux的运维文库汇总
-tagline: ToLiucyLinux,一个优质的Linux编程学习网站，通俗易懂的Linux指南,分享思想，留下痕迹，带你告别碎片化学习，帮助你构筑你自己的知识体系。
+heroText: 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚的运维文库汇总
+# tagline: ToLiucyLinux,一个优质的Linux编程学习网站，通俗易懂的Linux指南,分享思想，留下痕迹，带你告别碎片化学习，帮助你构筑你自己的知识体系。
+bgImage: https://file.mo7.cc/api/public/bz
 
 
 features:

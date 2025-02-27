@@ -197,3 +197,7 @@ title: 项目更新记录
 > 2、删除了文档指南和面试题大全的readme首页，使用默认的自动获取目录（src/document、interview）
 > 3、关于本站添加了一个服务提供和图床（src/about.md）
 > 4、修改了项目文件结构页面（src/structure.md）
+
+## 2025-02-27:
+> 1、运维工具页面添加了一个工具（src/tools-all.md）
+> 2、修改了运维文库、运维服务官网的标题、新增背景（ src/document-all.md、website-all.md）
