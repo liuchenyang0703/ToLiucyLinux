@@ -201,4 +201,4 @@ title: 项目更新记录
 ## 2025-02-27:
 > 1、运维工具页面添加了一个工具（src/tools-all.md）
 > 2、修改了运维文库、运维服务官网的标题、新增背景（ src/document-all.md、website-all.md）
-> 3、博客页面新增打赏（src/blog.md）
+> 3、博客页面新增打赏、关于本站（src/blog.md）

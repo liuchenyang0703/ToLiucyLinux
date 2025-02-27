@@ -34,6 +34,11 @@ projects:
     desc: 运维程序员学习基地 - 文库汇总
     link: document-all.md
 
+  - icon: jisuanji
+    name: 关于本站
+    desc: 记录建站信息（所用到的技术及插件）。
+    link: about.md
+
   - icon: lishi
     name: 博客更新时间轴
     desc: 记录的博客更新时间及以轴体形式展示
