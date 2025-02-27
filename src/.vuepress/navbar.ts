@@ -83,7 +83,11 @@ export default navbar([
       },
       {
         text: "关于本站",
-        children: ["about.md","structure.md"],
+        children: ["about.md"],
+      },
+      {
+        text: "打赏",
+        children: ["donate.md"],
       },
     ],
   },
