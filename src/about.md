@@ -67,9 +67,10 @@ background: rgb(253, 230, 138, 0.15)
 
 ## 仓库连接
 
-本站所有内容及代码均开源，可通过下面 👇 的链接访问
+本站所有内容及代码均开源，可通过下面 👇 的链接访问，方便的话可以点个免费的Star，谢谢！
 
-[ToLiucyLinux 个人博客](https://github.com/liuchenyang0703/ToLiucyLinux)
+<!-- [ToLiucyLinux 个人博客](https://github.com/liuchenyang0703/ToLiucyLinux) -->
+[![github](https://badgen.net/badge/Github/ToLiucyLinux/blue?icon=github)](https://github.com/liuchenyang0703/ToLiucyLinux)![](https://badgen.net/badge/Star/2k%20%E2%AD%90/blue?icon=github)
 
 ## 项目文件结构
 

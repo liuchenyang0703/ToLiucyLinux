@@ -204,3 +204,6 @@ title: 项目更新记录
 > 3、博客页面新增打赏、关于本站（src/blog.md）
 > 4、融合关于本站和项目文件结构页面、删除了项目文件结构页面（structure.md）、网站相关新增打赏与头部栏并行（src/about.md）（src/.vuepress/navbar.ts）
 > 5、去除github下载的工具（src/tools-all.md）
+> 6、修改了关于本站的仓库链接（src/about.md）
+> 7、优化添加了打赏页面的仓库链接、添加支付图标、关闭标题栏（src/donate.md）
+> 8、关闭了友情链接页面的标题栏（src/friendship）

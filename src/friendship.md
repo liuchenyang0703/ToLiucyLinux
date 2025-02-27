@@ -1,8 +1,7 @@
 ---
 title: 友情链接
 icon: link
-sidebar: false
-article: false
+toc: false
 ---
 
 ## 小伙伴
