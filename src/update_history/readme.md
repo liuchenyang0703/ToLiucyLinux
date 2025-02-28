@@ -210,3 +210,6 @@ title: 项目更新记录
 
 ## 2025-02-28
 > 1、修改打赏详情添加打赏时间、修改名称为赞赏（src/donate.md）
+> 2、修改优化了运维工具配置页面（src/tools-all.md）
+> 3、修改了icon的链接（src/.vuepress/theme.ts）
+> 4、修改优化了运维服务官网页面（src/website-all.md）

@@ -47,17 +47,22 @@ highlights:
         details: 正则表达式测试地址，可以在线测试正则表达式（推荐好用）。
         link: https://www.jyshare.com/front-end/854/
 
-      - title: 密码生成器
-        icon: mima
-        details: 可以随机生成强密码，可以直接密码长度、个数、包含大小写、字母、特殊字符等，很方便。
-        link: https://tool.okcode.vip/web/password
-
-  - header: 其他开发在线工具
-    features:
       - title: Nginx格式化工具
         icon: nginx
         details: Nginx格式化工具，优化Nginx配置文件。
         link: https://tool.okcode.vip/dev/nginx-formatter
+
+  - header: 其他开发在线工具
+    features:
+      - title: 开发语言在线工具
+        icon: everything
+        details: 开发语言在线写代码工具，可以切换各种语言。
+        link: https://www.jyshare.com/compile/18/
+
+      - title: 密码生成器
+        icon: mima
+        details: 可以随机生成强密码，可以直接密码长度、个数、包含大小写、字母、特殊字符等，很方便。
+        link: https://tool.okcode.vip/web/password
 
       - title: json解析工具
         icon: json-full
@@ -69,10 +74,26 @@ highlights:
         details: 阿里巴巴矢量图标库 - vue引用icon，内包含多种icon图标。
         link: https://www.iconfont.cn/
 
-      - title: 免费文件传输 - 文叔叔
-        icon: wenjianchuanshu
-        details: 传文件，找文叔叔，不用登陆，不限速，加密传输。
-        link: https://www.wenshushu.cn/
+      - title: base64解编码
+        icon: a-minglingmingchengimagebase64
+        details: base64解编码。
+        link: https://www.jyshare.com/front-end/693/
+
+      - title: 在线文本比对工具
+        icon: wenbenbidui
+        details: 在线文本比对工具，方便比对文本中不同的内容，非常的清晰明了。
+        link: https://www.jyshare.com/front-end/8006/
+
+      - title: 图片转Base64码
+        icon: tupian
+        details: 在线图片转Base64码。
+        link: https://www.jyshare.com/front-end/59/
+
+      - title: AI工具箱
+        icon: wuguan
+        details: AI工具箱，有很多关于AI应用、写作、编程、设计、作图、音影、效率助手等。
+        link: https://tools.haiyong.site/ai/
+
 
   - header: 图片、图标、PDF等转换相关在线
     features:
@@ -95,6 +116,11 @@ highlights:
         icon: tupian
         details: 在线图片去水印（任意地方可选择）。
         link: https://www.aigei.com/tool/image/watermark
+
+      - title: 图片加水印工具<br> <center>- 海拥 </center>
+        icon: tupian
+        details: 在线上传图片添加自己想要的水印。
+        link: https://tools.haiyong.site/front-end/6502/index.html
 
       - title: 图片转PDF工具<br> <center>- 迅捷PDF转换器</center>
         icon: tupian
@@ -209,6 +235,11 @@ highlights:
         icon: zhaoxiangji
         details: 高清极简壁纸，免费可以直接下载，还可以分类选择，让你选择壁纸不在困难！
         link: https://bz.zzzmh.cn/index
+
+      - title: 免费文件传输 - 文叔叔
+        icon: wenjianchuanshu
+        details: 传文件，找文叔叔，不用登陆，不限速，加密传输。
+        link: https://www.wenshushu.cn/
 
 copyright: false
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2023-present Liucy | <img src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142253822.png" height="15" width="15"/> <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a>
