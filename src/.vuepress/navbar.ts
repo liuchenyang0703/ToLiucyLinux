@@ -86,13 +86,13 @@ export default navbar([
         children: ["about.md"],
       },
       {
-        text: "打赏",
+        text: "赞赏",
         children: ["donate.md"],
       },
     ],
   },
   { 
-    text: "打赏",
+    text: "赞赏",
     icon: "donate",
     link: "donate.md" 
   },
