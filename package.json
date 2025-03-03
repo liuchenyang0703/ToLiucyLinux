@@ -13,6 +13,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.19",
     "@vuepress/plugin-search": "2.0.0-rc.70",
+    "echarts": "^5.6.0",
     "mermaid": "^11.4.1",
     "sass-embedded": "^1.83.3",
     "vue": "^3.5.13",
