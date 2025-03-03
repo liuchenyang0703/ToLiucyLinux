@@ -124,11 +124,11 @@ footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VueP
   </thead>
   <tbody>
 	<tr>
-        <td rowspan="2" style="text-align: center;"><a href="https://blog.csdn.net/">CSDN</a></td>
+        <td rowspan="2" style="text-align: center;"><a href="https://blog.csdn.net/" target="_blank">CSDN</a></td>
         <td>2023 博客之星证书</td>
         <td><img style="width: 160px" src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502281621612.png" /></td>
         <td>CSDN2023071935409</td>
-	    <td rowspan="2"><a href="https://activity.csdn.net/cert">CSDN查询地址</a></td>
+	    <td rowspan="2"><a href="https://activity.csdn.net/cert" target="_blank">CSDN查询地址</a></td>
 	</tr>
     <tr>
         <!-- <td>CSDN</td> -->
