@@ -112,6 +112,41 @@ footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VueP
 * [🏅 云计算领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
 <!-- * []() -->
 
+<table>
+  <thead>
+	<tr>
+	    <th>获奖平台</th> 
+	    <th>证书名称</th>
+	    <th>证书图片</th>
+	    <th>证书编号</th> 
+        <th>证书查询地址</th> 
+	</tr>
+  </thead>
+  <tbody>
+	<tr>
+        <td rowspan="2" style="text-align: center;"><a href="https://blog.csdn.net/">CSDN</a></td>
+        <td>2023 博客之星证书</td>
+        <td><img style="width: 160px" src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502281621612.png" /></td>
+        <td>CSDN2023071935409</td>
+	    <td rowspan="2"><a href="https://activity.csdn.net/cert">CSDN查询地址</a></td>
+	</tr>
+    <tr>
+        <!-- <td>CSDN</td> -->
+        <td>博客专家证书</td>
+        <td><img style="width: 160px" src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502281621040.png" /></td>
+        <td>CSDN2024040951774</td>
+	    <!-- <td rowspan="2"><a href="https://activity.csdn.net/cert">CSDN查询地址</a></td> -->
+	</tr>
+    <tr>
+        <td colspan="5" style="text-align: center;"><a href="honor.html" style="text-decoration: none; color: blue;">更多可前往荣誉墙查看</a></td>
+    </tr>
+    <tr>
+        <td colspan="5" style="text-align: center;"></td>
+    </tr>
+  </tbody>
+</table>
+
+
 ## 个人贡献 🏅
 * [🏅 程序员Liucy的学习指南1](http://liuchenyang.top)
 * [🏅 程序员Liucy的学习指南2](https://liuchenyang0703.github.io/ToLiucyLinux/)

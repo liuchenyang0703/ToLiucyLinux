@@ -1,6 +1,9 @@
 ---
-icon: lishi
 title: 项目更新记录
+icon: lishi
+date: 2023-12-24 12:20:00
+category:
+  - 项目更新记录
 ---
 
 ## 2024-07-21：
@@ -213,3 +216,8 @@ title: 项目更新记录
 > 2、修改优化了运维工具配置页面（src/tools-all.md）
 > 3、修改了icon的链接（src/.vuepress/theme.ts）
 > 4、修改优化了运维服务官网页面（src/website-all.md）
+
+## 2025-03-03
+> 1、去除更新记录页面的侧边栏（src/.vuepress/sidebar.ts）（src/.vuepress/sidebar.ts）
+> 2、修改了icon链接，主要添加了荣誉墙图标（src/.vuepress/theme.ts）
+> 3、关于作者个人荣誉添加了证书（src/person.md）
