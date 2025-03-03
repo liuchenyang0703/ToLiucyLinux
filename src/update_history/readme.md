@@ -221,3 +221,4 @@ category:
 > 1、去除更新记录页面的侧边栏（src/.vuepress/sidebar.ts）（src/.vuepress/sidebar.ts）
 > 2、修改了icon链接，主要添加了荣誉墙图标（src/.vuepress/theme.ts）
 > 3、关于作者个人荣誉添加了证书（src/person.md）
+> 4、启用了饼形图，需要安装模块`mermaid`（src/.vuepress/theme.ts）

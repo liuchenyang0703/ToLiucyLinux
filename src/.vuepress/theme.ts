@@ -127,6 +127,8 @@ export default hopeTheme({
     tasklist: true,
 	  // 启用 v-pre 指令功能，允许在 Vue 组件中使用 v-pre 指令来防止内容被 Vue 解析。
     vPre: true,
+    // 饼形图，在启用之前安装 mermaid
+    mermaid: true,
 
     // 取消注释它们如果你需要 TeX 支持
     // markdownMath: {
@@ -151,9 +153,6 @@ export default hopeTheme({
 
     // 在启用之前安装 flowchart.ts
     // flowchart: true,
-
-    // 在启用之前安装 mermaid
-    // mermaid: true,
 
     // playground: {
     //   presets: ["ts", "vue"],
