@@ -222,3 +222,4 @@ category:
 > 2、修改了icon链接，主要添加了荣誉墙图标（src/.vuepress/theme.ts）
 > 3、关于作者个人荣誉添加了证书（src/person.md）
 > 4、启用了图形（饼形图、树形图），需要安装模块`echarts`、`mermaid`（src/.vuepress/theme.ts）
+> 5、表头新增了荣誉墙（src/.vuepress/navbar.ts）（src/honor.md）

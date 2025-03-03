@@ -66,7 +66,7 @@ export default navbar([
     children: [
       {
         text: "作者信息",
-        children: ["person.md"],
+        children: ["person.md","honor.md"],
       },
       {
         text: "友情链接",
