@@ -27,6 +27,14 @@ body {
   transform: translate(-2px, -2px);
   transform: scale(1.05);
 }
+// 移除容器悬浮时展示的箭头
+.vp-feature-item.link:hover::before {
+  content: none !important; /* 移除内容 */
+  display: none !important; /* 隐藏伪元素 */
+  // content: "➜";
+  // display: block;
+  // float: right;
+}
 
 // 去掉链接后面的箭头和链接与链接之间的空格等
 .external-link-icon [vp-content] a[href*="://"]:not(.no-external-link-icon)::after, .external-link-icon [vp-content] a[target=_blank]:not(.no-external-link-icon)::after {

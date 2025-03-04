@@ -225,4 +225,4 @@ category:
 > 5、表头新增了荣誉墙（src/.vuepress/navbar.ts）（src/honor.md）
 
 ## 2025-03-04:
-> 1、优化markdown中的> 提示的背景色和`引用`的背景和内容颜色（src/.vuepress/styles/index.scss）
+> 1、优化markdown中的> 提示的背景色和`引用`的背景和内容颜色、移除容器悬浮时展示的箭头（src/.vuepress/styles/index.scss）
