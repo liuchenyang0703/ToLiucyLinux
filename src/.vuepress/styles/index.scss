@@ -66,3 +66,34 @@ body {
 .vp-nav-logo {
   border-radius: 50%;
 }
+
+// markdown配置
+
+// 设置代码块背景颜色
+// div[class*=language-] {
+//   background-color: #282c34;
+// }
+// // 代码块代码的颜色
+// .shiki span {
+//   color: #abb2bf;
+//   // color: var(--shiki-light, inherit);
+// }
+
+// 代码块前面的行数展示
+// div[class*=language-].line-numbers-mode .line-number{
+//   color: #abb2bf!important;
+// }
+
+// 修改markdown中的> 提示的背景色，照着CSDN的背景色来
+blockquote {
+  background-color: #eef0f4;
+  color: #555666;
+  border-inline-start: 8px solid #dddfe4;
+  padding: 16px;
+}
+
+// 修改了markdown中的`引用`的背景和内容颜色；
+:not(pre)>code{
+  background: #f9f2f4;
+  color: #c7254e;
+}

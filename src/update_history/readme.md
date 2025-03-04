@@ -211,15 +211,18 @@ category:
 > 7、优化添加了打赏页面的仓库链接、添加支付图标、关闭标题栏（src/donate.md）
 > 8、关闭了友情链接页面的标题栏（src/friendship）
 
-## 2025-02-28
+## 2025-02-28:
 > 1、修改打赏详情添加打赏时间、修改名称为赞赏（src/donate.md）
 > 2、修改优化了运维工具配置页面（src/tools-all.md）
 > 3、修改了icon的链接（src/.vuepress/theme.ts）
 > 4、修改优化了运维服务官网页面（src/website-all.md）
 
-## 2025-03-03
+## 2025-03-03:
 > 1、去除更新记录页面的侧边栏（src/.vuepress/sidebar.ts）（src/.vuepress/sidebar.ts）
 > 2、修改了icon链接，主要添加了荣誉墙图标（src/.vuepress/theme.ts）
 > 3、关于作者个人荣誉添加了证书（src/person.md）
 > 4、启用了图形（饼形图、树形图），需要安装模块`echarts`、`mermaid`（src/.vuepress/theme.ts）
 > 5、表头新增了荣誉墙（src/.vuepress/navbar.ts）（src/honor.md）
+
+## 2025-03-04:
+> 1、优化markdown中的> 提示的背景色和`引用`的背景和内容颜色（src/.vuepress/styles/index.scss）
