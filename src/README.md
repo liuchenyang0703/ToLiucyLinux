@@ -6,11 +6,11 @@ heroImage: logo.png
 heroText: LiucyLinux的学习指南
 tagline: ToLiucyLinux,一个优质的Linux编程学习网站，通俗易懂的Linux指南,分享思想，留下痕迹，带你告别碎片化学习，帮助你构筑你自己的知识体系。
 # 浅色背景
-bgImage: beijing/beijing.jpg
+# bgImage: beijing/beijing.jpg
 # 深色背景
-bgImageDark: beijing/beijing2.jpg
+# bgImageDark: beijing/beijing2.jpg
 # 全屏展示
-heroFullScreen: true
+# heroFullScreen: true
     
 actions:
   - text: 开始阅读💡
