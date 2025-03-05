@@ -229,6 +229,6 @@ category:
 
 ## 2025-03-05:
 > 1、修改了博客主页的随机背景链接（src/blog.md）
-> 2、新增了透明背景及背景图片（src/.vuepress/styles/index.scss）（src/.vuepress/styles/background.scss）
+> ~~2、新增了透明背景及背景图片（src/.vuepress/styles/index.scss）（src/.vuepress/styles/background.scss）~~
 > 3、去除主页背景图（src/README.md）
 > 4、修改目录结构（src/about.md）
