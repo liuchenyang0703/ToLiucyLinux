@@ -1,0 +1,84 @@
+// 本scss文件主要用于实现以下效果：
+// 1、透明背景：大部分元素（如导航栏、侧边栏、页脚、代码块等）的背景被设置为透明。
+// 2、模糊效果：通过 backdrop-filter: blur()，为导航栏、特色项目、代码块等元素添加模糊背景，增强视觉层次感。
+// 3、轻量化设计：整体设计倾向于轻量化，减少视觉干扰，同时通过透明度和模糊效果提升用户体验。
+
+// 将背景设置为透明，vp-sidebar：侧边栏和vp-footer-wrapper：页脚容器
+:root,
+.vp-sidebar,
+.vp-footer-wrapper {
+  background: transparent !important;
+}
+
+// 导航栏透明背景和模糊效果
+.vp-navbar {
+  background: transparent !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+// 高亮行透明度
+.highlight-line {
+  opacity: 0.5;
+}
+
+// 搜索按钮透明背景和无边框
+.search-pro-button {
+  background: transparent !important;
+  border: unset !important;
+}
+
+
+// 将博客首页背景设置为透明，就可以展示出背景图片了
+.theme-container .vp-page.vp-portfolio-home, .theme-container .vp-page.vp-blog-home {
+  padding-top: 0;
+  background: transparent !important;
+}
+// 博客时间轴更新背景设置为透明，就可以展示出背景图片了
+.vp-page.vp-blog, .vp-page.vp-blog-home {
+  background: transparent !important;
+}
+
+// 配置全局背景图
+body:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // 将背景图的透明度设置为10%，使其看起来更淡。
+  opacity: 0.1;
+  // 将背景图置于其他内容的下方。
+  z-index: -1;
+  // 伪元素必须包含 content 属性，即使内容为空。
+  content: '';
+  // 背景图固定在视口上，不会随滚动条滚动。
+  position: fixed;
+  // 背景图的URL来自一个API，图片会居中并覆盖整个屏幕。
+  // 风景随机背景
+  // background: url('https://file.mo7.cc/api/public/bz') center / cover;
+  // 二次元随机背景
+  background: url('https://api.armoe.cn/acg/random') center / cover;
+  // 背景纯颜色
+  // background-color: orange;
+
+  // 线性渐变,可能需要关闭顶部的透明
+  /* 从上到下的渐变 */
+  // background: linear-gradient(to bottom, #ff0000, #00ff00);
+  /* 从左到右的渐变 */
+  // background: linear-gradient(to right, #ff0000, #00ff00);
+  /* 对角线渐变 */
+  // background: linear-gradient(45deg, #ff0000, #00ff00);
+  /* 多颜色渐变 */
+  // background: linear-gradient(to bottom, #ff0000, #00ff00, #0000ff);
+  /* 带透明度的渐变 */
+  // background: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 255, 0, 0.5));
+
+  // 径向渐变
+  /* 圆形径向渐变 */
+  // background: radial-gradient(circle, #ff0000, #00ff00);
+  /* 椭圆形径向渐变 */
+  // background: radial-gradient(ellipse, #ff0000, #00ff00);
+  /* 自定义中心点的径向渐变 */
+  // background: radial-gradient(circle at 50% 50%, #ff0000, #00ff00);
+  /* 多颜色径向渐变 */
+  // background: radial-gradient(circle, #ff0000, #00ff00, #0000ff);
+}
