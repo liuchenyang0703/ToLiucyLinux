@@ -118,9 +118,7 @@ background: rgb(253, 230, 138, 0.15)
 │    │    │
 │    │    ├── document.ts → 文档指南侧边栏配置
 │    │    │
-│    │    ├── interview.ts → 面试题文章侧边栏配置
-│    │    │
-│    │    ├── update_history.ts → 历史更新记录侧边栏配置
+│    │    └── interview.ts → 面试题文章侧边栏配置
 │    │
 │    ├── document → 文档指南文件存储目录
 │    │
@@ -137,6 +135,8 @@ background: rgb(253, 230, 138, 0.15)
 │    ├── donate.md → 打赏页面
 │    │
 │    ├── friendship.md → 友情链接页面
+│    │
+│    ├── honor.md → 荣誉墙页面
 │    │
 │    ├── person.md → 关于作者页面
 │    │
