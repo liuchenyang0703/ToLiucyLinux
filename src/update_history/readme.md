@@ -226,3 +226,6 @@ category:
 
 ## 2025-03-04:
 > 1、优化markdown中的> 提示的背景色和`引用`的背景和内容颜色、移除容器悬浮时展示的箭头（src/.vuepress/styles/index.scss）
+
+## 2025-03-05
+> 1、修改了博客主页的随机背景链接（src/blog.md）
