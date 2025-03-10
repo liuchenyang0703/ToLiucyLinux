@@ -232,3 +232,6 @@ category:
 > ~~2、新增了透明背景及背景图片（src/.vuepress/styles/index.scss）（src/.vuepress/styles/background.scss）~~
 > 3、去除主页背景图（src/README.md）
 > 4、修改目录结构（src/about.md）
+
+## 2025-03-10:
+> 1、修改了关于作者的证书和荣誉墙添加2024博客之星证书（src/person.md）（src/honor.md）

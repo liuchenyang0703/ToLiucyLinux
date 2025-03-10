@@ -38,7 +38,7 @@ toc: false
   <tbody>
 	<tr>
         <td rowspan="8" style="text-align: center;"><a href="https://blog.csdn.net/" target="_blank">CSDN</a></td>
-        <td>2023 博客之星证书</td>
+        <td>2023 城市之星证书</td>
         <td><img style="width: 160px" src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502281621612.png" /></td>
         <td>CSDN2023071935409</td>
 	    <td rowspan="3" style="text-align: center;"><a href="https://activity.csdn.net/cert" target="_blank">CSDN查询地址</a></td>
@@ -50,8 +50,8 @@ toc: false
 	</tr>
     <tr>
         <td>2024 博客之星证书</td>
-        <td><img style="width: 160px" src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502281621040.png" /></td>
-        <td>3月下发</td>
+        <td><img style="width: 160px" src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503100943454.png" /></td>
+        <td>CSDN2025030738977</td>
 	</tr>
     <tr>
         <td>CSDN&极术社区智能计算知识挑战</td>
