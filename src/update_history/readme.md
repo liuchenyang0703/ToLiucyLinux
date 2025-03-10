@@ -235,4 +235,5 @@ category:
 
 ## 2025-03-10:
 > 1、修改了关于作者的证书和荣誉墙添加2024博客之星证书（src/person.md）（src/honor.md）
-> 2、新增一篇文章：Enable two-factor authentication (2FA) - Github解决方案（src/document/other/）
+> 2、新增一篇文章：Enable two-factor authentication (2FA) - Github解决方案、docsearch的申请配置安装（src/document/other/）
+> 3、
