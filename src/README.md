@@ -71,3 +71,5 @@ footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VueP
 1. 如果您对本项目有任何建议或发现文中内容有误的，欢迎提交 `issues` 进行指正。
 2. 对于文中我没有涉及到知识点，欢迎提交 `PR`。
 3. 如果您有文章推荐请以 `markdown` 格式将文章发送到邮箱 `2162059863@qq.com`，
+
+<meta name="algolia-site-verification"  content="8801D4D6107AE464" />
