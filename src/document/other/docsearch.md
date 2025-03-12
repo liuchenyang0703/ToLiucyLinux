@@ -17,99 +17,76 @@ breadcrumb: false
 ## 简述
 
 ::: important 文档说明
-此文档来自于[VitePress官方](https://vitepress.yiov.top/docsearch.html)
+此文档申请主要来自于[VitePress官方](https://vitepress.yiov.top/docsearch.html)，后经我自己操作记录来修改成vuepress-theme-hope主题的docsearch配置。
 :::
 
 
-其实也有很多热门的爬虫搜索引擎，而Algolia的 [Algolia DocSearch](https://docsearch.algolia.com/) 是直接集成在VitePress中的，我们来看看有多么强大吧
+其实也有很多热门的爬虫搜索引擎，而Algolia的 [Algolia DocSearch](https://docsearch.algolia.com/) 是直接集成在VuePress中的，我们来看看有多么强大吧。
 
 
 ## 配置
 
-我们先看一下 VitePress 官方给的配置
+这里配置的是vuepress主题的，最新版Hope主题自带algolia插件，无需安装，请在`theme.ts`里定位到plugins设置。
 
-```ts{4-12}
-export default defineConfig({
+::: warning
+如果不是最新版本，在安装`@vuepress/plugin-docsearch`插件的时候需要适配当前版本，具体是如何适配自己的版本不确定，只能在`package.json`配置文件中去修改版本号来试，因为我这个最开始有配置的普通的搜索，安装的时候是70版本，所以我吧这个改成70版本重新`pnpm install`安装一下就可以了，安装的时候会自动删除原版本更新成配置文件中指定的版本，如果安装好访问页面空白的话，大概率就是版本的问题。
+:::
 
-  themeConfig: {
-    //Algolia搜索
-    search: {
-      provider: 'algolia',
-      options: {
-        appId: '<Application ID>',
-        apiKey: '<Search-Only API Key>',
-        indexName: '<INDEX_NAME>',
-      },
-    },
-  },
 
-})
-```
+```ts{3-51}
+  plugins: {
 
-单语言修改成中文，需要配置更多语言，请参考[多语言](https://vitepress.yiov.top/multi-language.html)
-
-```ts{11-53}
-export default defineConfig({
-
-  themeConfig: {
-    //Algolia搜索纯中文版
-    search: {
-      provider: 'algolia',
-      options: {
-        appId: '<Application ID>',
-        apiKey: '<Search-Only API Key>',
-        indexName: '<INDEX_NAME>',
-        locales: {
-          root: {
-            placeholder: '搜索文档',
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档'
+    docsearch:({
+      appId: "<APP_ID>",
+      apiKey: "<API_KEY>",
+      indexName: "<INDEX_NAME>",
+  
+      locales: {
+        "/": {
+          placeholder: "搜索文档",
+          translations: {
+            button: {
+              buttonText: "搜索文档",
+              buttonAriaLabel: "搜索文档",
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: "清除查询条件",
+                resetButtonAriaLabel: "清除查询条件",
+                cancelButtonText: "取消",
+                cancelButtonAriaLabel: "取消",
               },
-              modal: {
-                searchBox: {
-                  resetButtonTitle: '清除查询条件',
-                  resetButtonAriaLabel: '清除查询条件',
-                  cancelButtonText: '取消',
-                  cancelButtonAriaLabel: '取消'
-                },
-                startScreen: {
-                  recentSearchesTitle: '搜索历史',
-                  noRecentSearchesText: '没有搜索历史',
-                  saveRecentSearchButtonTitle: '保存至搜索历史',
-                  removeRecentSearchButtonTitle: '从搜索历史中移除',
-                  favoriteSearchesTitle: '收藏',
-                  removeFavoriteSearchButtonTitle: '从收藏中移除'
-                },
-                errorScreen: {
-                  titleText: '无法获取结果',
-                  helpText: '你可能需要检查你的网络连接'
-                },
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换',
-                  closeText: '关闭',
-                  searchByText: '搜索提供者'
-                },
-                noResultsScreen: {
-                  noResultsText: '无法找到相关结果',
-                  suggestedQueryText: '你可以尝试查询',
-                  reportMissingResultsText: '你认为该查询应该有结果？',
-                  reportMissingResultsLinkText: '点击反馈'
-                },
+              startScreen: {
+                recentSearchesTitle: "搜索历史",
+                noRecentSearchesText: "没有搜索历史",
+                saveRecentSearchButtonTitle: "保存至搜索历史",
+                removeRecentSearchButtonTitle: "从搜索历史中移除",
+                favoriteSearchesTitle: "收藏",
+                removeFavoriteSearchButtonTitle: "从收藏中移除",
+              },
+              errorScreen: {
+                titleText: "无法获取结果",
+                helpText: "你可能需要检查你的网络连接",
+              },
+              footer: {
+                selectText: "选择",
+                navigateText: "切换",
+                closeText: "关闭",
+                searchByText: "搜索提供者",
+              },
+              noResultsScreen: {
+                noResultsText: "无法找到相关结果",
+                suggestedQueryText: "你可以尝试查询",
+                reportMissingResultsText: "你认为该查询应该有结果？",
+                reportMissingResultsLinkText: "点击反馈",
               },
             },
           },
         },
       },
-    },
+    }),
   },
-
-})
 ```
-
-![](https://vitepress.yiov.top/docsearch/docsearch-01.png)
 
 
 ## 注册

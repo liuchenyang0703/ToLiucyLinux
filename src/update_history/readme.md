@@ -239,3 +239,6 @@ category:
 
 ## 2025-03-11:
 > 1、主页添加了docsearch - Algolia 爬虫代码（src/README.md）
+
+## 2025-03-12:
+> 1、更新docsearch的申请配置安装文档（src/document/other/）
