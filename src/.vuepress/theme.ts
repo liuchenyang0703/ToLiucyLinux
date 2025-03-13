@@ -269,33 +269,84 @@ export default hopeTheme({
       },
     },
 
-    // 搜索插件
-    search: {
-      // 多语言支持
+    // 搜索插件 - search
+    // search: {
+    //   // 多语言支持
+    //   locales: {
+    //     "/": {
+    //       placeholder: "搜索本站",
+    //     },
+    //   },
+    //   // 热键支持
+    //   hotKeys: ["command", "k"],
+    //   // 最大推荐文章个数
+    //   maxSuggestions: 10,
+    //   // 排除首页
+    //   isSearchable: (page) => page.path !== "/",
+    //   // 允许搜索 Frontmatter 中的 `tags`
+    //   getExtraFields: (page) => {
+    //     // 确保返回值是一个字符串数组
+    //     const tags = page.frontmatter.tags;
+    //     if (Array.isArray(tags)) {
+    //       return tags;
+    //     } else if (typeof tags === "string") {
+    //       return [tags];
+    //     } else {
+    //       return [];
+    //     }
+    //   },
+    // },
+
+    // 搜索插件 - docsearch
+    docsearch:({
+      appId: "DJTP2DCRA4",
+      apiKey: "39fd99a761874fc7dbe00d0e3076035c",
+      indexName: "liuchenyang",
+  
       locales: {
         "/": {
-          placeholder: "搜索本站",
+          placeholder: "搜索文档",
+          translations: {
+            button: {
+              buttonText: "搜索文档",
+              buttonAriaLabel: "搜索文档",
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: "清除查询条件",
+                resetButtonAriaLabel: "清除查询条件",
+                cancelButtonText: "取消",
+                cancelButtonAriaLabel: "取消",
+              },
+              startScreen: {
+                recentSearchesTitle: "搜索历史",
+                noRecentSearchesText: "没有搜索历史",
+                saveRecentSearchButtonTitle: "保存至搜索历史",
+                removeRecentSearchButtonTitle: "从搜索历史中移除",
+                favoriteSearchesTitle: "收藏",
+                removeFavoriteSearchButtonTitle: "从收藏中移除",
+              },
+              errorScreen: {
+                titleText: "无法获取结果",
+                helpText: "你可能需要检查你的网络连接",
+              },
+              footer: {
+                selectText: "选择",
+                navigateText: "切换",
+                closeText: "关闭",
+                searchByText: "搜索提供者",
+              },
+              noResultsScreen: {
+                noResultsText: "无法找到相关结果",
+                suggestedQueryText: "你可以尝试查询",
+                reportMissingResultsText: "你认为该查询应该有结果？",
+                reportMissingResultsLinkText: "点击反馈",
+              },
+            },
+          },
         },
       },
-      // 热键支持
-      hotKeys: ["command", "k"],
-      // 最大推荐文章个数
-      maxSuggestions: 10,
-      // 排除首页
-      isSearchable: (page) => page.path !== "/",
-      // 允许搜索 Frontmatter 中的 `tags`
-      getExtraFields: (page) => {
-        // 确保返回值是一个字符串数组
-        const tags = page.frontmatter.tags;
-        if (Array.isArray(tags)) {
-          return tags;
-        } else if (typeof tags === "string") {
-          return [tags];
-        } else {
-          return [];
-        }
-      },
-    },
+    }),
   },
 },
 {

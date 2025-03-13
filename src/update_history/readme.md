@@ -242,3 +242,8 @@ category:
 
 ## 2025-03-12:
 > 1、更新docsearch的申请配置安装文档（src/document/other/）
+
+## 2025-03-13:
+> 1、取消本地搜索，更新为docsearch搜索（src/.vuepress/theme.ts）
+> 2、安装docsearch需要的模块`@vuepress/plugin-docsearch@2.0.0-rc.74`
+> 3、更新docsearch的申请配置安装文档（src/document/other/）
