@@ -1,5 +1,5 @@
 ---
-title: docsearch的申请配置安装
+title: Algolia - Docsearch的申请配置安装【以踩坑解决版】
 icon: circle-info
 order: 1
 category:
@@ -12,7 +12,6 @@ comment: false
 breadcrumb: false
 ---
 
-# DocSearch
 
 ## 简述
 
