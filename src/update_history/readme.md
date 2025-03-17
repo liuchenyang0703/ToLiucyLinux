@@ -250,3 +250,4 @@ category:
 
 ## 2025-03-17:
 > 1、修改了如何在VMware上创建虚拟机？-- 手把手教你文章的内容（src/document/Linux/）（src/document/virtualization/）
+> 2、修改了docker拉取镜像问题的文章（src/document/Docker/registry-1.docker.iov2.md）
