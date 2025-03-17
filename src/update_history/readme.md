@@ -249,4 +249,4 @@ category:
 > 3、更新docsearch的申请配置安装文档（src/document/other/）
 
 ## 2025-03-17:
-> 1、修改了如何在VMware上创建虚拟机？-- 手把手教你文章的内容（src/document/Linux/）
+> 1、修改了如何在VMware上创建虚拟机？-- 手把手教你文章的内容（src/document/Linux/）（src/document/virtualization/）

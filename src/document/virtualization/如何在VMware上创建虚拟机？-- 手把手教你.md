@@ -17,20 +17,24 @@ comment: false
 breadcrumb: false
 ---
 
->🍁**博主简介**
+>👨‍🎓**博主简介**
 >
+>&emsp;&emsp;🏅[CSDN博客专家](https://blog.csdn.net/liu_chen_yang?type=blog)
 >&emsp;&emsp;🏅[云计算领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
->&emsp;&emsp;🏅[华为云开发者社区专家博主](https://bbs.huaweicloud.com/community/myblog)
->&emsp;&emsp;🏅[阿里云开发者社区专家博主](https://developer.aliyun.com/my?spm=a2c6h.13148508.setting.3.21fc4f0eCmz1v3#/article?_k=zooqoz)
+>&emsp;&emsp;🏅[华为云开发者社区专家博主](https://bbs.huaweicloud.com/community/usersnew/id_1661843828089234)
+>&emsp;&emsp;🏅[阿里云开发者社区专家博主](https://developer.aliyun.com/profile/7yu26jk3lfqxg)
 >💊**交流社区：**[运维交流社区](https://bbs.csdn.net/forums/lcy) 欢迎大家的加入！
->
+>🐋 希望大家多多支持，我们一起进步！😄
+>🎉如果文章对你有帮助的话，欢迎 点赞 👍🏻 评论 💬 收藏 ⭐️ 加关注+💗
+
+---
 
 
 ## 下载VMware
 可以访问网盘链接下载有多个版本供你选择：
 
->链接：[https://pan.baidu.com/s/1seNL_oBQamg86wfcgze73w?pwd=ware](https://pan.baidu.com/s/1seNL_oBQamg86wfcgze73w?pwd=ware)
-提取码：ware
+>链接：[https://pan.baidu.com/s/1zLcdSGyTUtPVRaCmjhWDMw?pwd=ware](https://pan.baidu.com/s/1zLcdSGyTUtPVRaCmjhWDMw?pwd=ware)
+>提取码：ware
 
 下载完成之后，放到本地的任意盘，自己定，找空间大的就行，因为后续创建都会站很大的空间。
 
