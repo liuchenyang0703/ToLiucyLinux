@@ -30,7 +30,17 @@ const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
 
 export default defineClientConfig({
   setup() {
-    onMounted(() => {});
+    // 动态加载不蒜子脚本
+    const loadBusuanzi = () => {
+      const script = document.createElement("script");
+      script.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+      document.body.appendChild(script);
+    };
+
+    onMounted(() => {
+      // 在页面加载完成后加载不蒜子
+      loadBusuanzi();
+    });
     // 透明导航栏配置
     setupTransparentNavbar({
       type: "blog-homepage", // 你可以根据需要选择 'homepage', 'blog-homepage', 或 'all'

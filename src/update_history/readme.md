@@ -258,3 +258,4 @@ category:
 > 3、修改统计量的样式（src/.vuepress/styles/index.scss）
 > 4、添加爱情倒计时组件放到关于本站中（src/.vuepress/client.ts）（src/about.md）（src/.vuepress/components/LoveTimer.vue）
 > 5、新增一个友情链接（src/.vuepress/components/友情链接.ts）
+> 6、修复统计失效问题（src/.vuepress/client.ts）
