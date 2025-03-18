@@ -257,3 +257,4 @@ category:
 > 2、添加网页访客统计放到主页（src/.vuepress/client.ts）（src/README.md）（src/.vuepress/components/访问量.vue）
 > 3、修改统计量的样式（src/.vuepress/styles/index.scss）
 > 4、添加爱情倒计时组件放到关于本站中（src/.vuepress/client.ts）（src/about.md）（src/.vuepress/components/LoveTimer.vue）
+> 5、新增一个友情链接（src/.vuepress/components/友情链接.ts）
