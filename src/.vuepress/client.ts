@@ -19,6 +19,8 @@ import Travelling from "./components/开往.js";
 import Wormhole from "./components/虫洞.js";
 // 404页面
 import NotFound from "./components/layouts/404.vue";
+// 访问量组件
+import DataPanel from "./components/访问量.vue";
 // 添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 添加网站运行时间配置
@@ -58,11 +60,14 @@ export default defineClientConfig({
     yx,
   ],
 
+  // 全局组件（添加某个组件到全局）
   enhance: ({ app }) => {
     // 虫洞
     app.component("Wormhole", Wormhole);
     // 友链接力
     app.component("Travelling", Travelling);
+    // 访问量组件
+    app.component("DataPanel", DataPanel);
   },
   
   // 你可以在这里覆盖或新增布局

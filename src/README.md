@@ -57,6 +57,7 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 
 **希望我的分享可以帮助更多的小伙伴，** 如果觉得我的网站 **ToLiucyLinux** 的内容对你有帮助的话，还请点个免费的 Star，也是对我最大的鼓励，欢迎和我一起前行！Github个人博客源码传送门: [Github个人博客](https://github.com/liuchenyang0703/ToLiucyLinux)；Github个人主页传送门: [Github个人主页](https://github.com/liuchenyang0703)
 
+<DataPanel />
 
 ## 关于公众号
 最新更新会第一时间同步在公众号，推荐关注！另外，公众号上有很多其他知识可能会与网站不同步，欢迎大家扫码订阅公众号或者微信搜索 **小刘Linux**。
