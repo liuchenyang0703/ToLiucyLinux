@@ -255,4 +255,4 @@ category:
 ## 2025-03-18:
 > 1、修改各大主页的底部，添加关于作者及萌国备案（src/*.md） 
 > 2、添加网页访客统计放到主页（src/.vuepress/client.ts）（src/README.md）（src/.vuepress/components/访问量.vue）
-> 3、修改统计的样式（src/.vuepress/styles/index.scss）
+> 3、修改统计量的样式（src/.vuepress/styles/index.scss）
