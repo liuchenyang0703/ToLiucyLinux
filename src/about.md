@@ -153,6 +153,8 @@ background: rgb(253, 230, 138, 0.15)
 请注意 VuePress 对目录大小写敏感。
 :::
 
+## 在一起❤在一起
+<LoveTimer />
 
 ## test GFM警告案例
 ::: important
