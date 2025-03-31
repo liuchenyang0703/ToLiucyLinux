@@ -259,3 +259,6 @@ category:
 > 4、添加爱情倒计时组件放到关于本站中（src/.vuepress/client.ts）（src/about.md）（src/.vuepress/components/LoveTimer.vue）
 > 5、新增一个友情链接（src/.vuepress/components/友情链接.ts）
 > 6、修复统计失效问题（src/.vuepress/client.ts）
+
+## 2025-03-31:
+> 1、运维服务官网新增rocky操作系统（src/website-all.md）

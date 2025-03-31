@@ -107,6 +107,11 @@ highlights:
         details: Centos Stream操作系统官网。
         link: https://mirror.stream.centos.org/
 
+      - title: Rocky Linux 操作系统官网
+        icon: https://rockylinux.org/favicon.png
+        details: Rocky Linux 操作系统官网，继承了原CentOS的开源特点。
+        link: https://rockylinux.org/zh-CN
+		
       - title: Debian 操作系统官网
         icon: https://www.debian.org/favicon.ico
         details: Debian操作系统，稳定性和安全性高，适合服务器和桌面使用。
