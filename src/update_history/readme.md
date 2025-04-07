@@ -262,3 +262,6 @@ category:
 
 ## 2025-03-31:
 > 1、运维服务官网新增rocky操作系统（src/website-all.md）
+
+## 2025-04-07:
+> 1、更新了2FA文章（src/document/other/）
