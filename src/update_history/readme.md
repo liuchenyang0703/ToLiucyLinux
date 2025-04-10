@@ -265,3 +265,6 @@ category:
 
 ## 2025-04-07:
 > 1、更新了2FA文章（src/document/other/）
+
+## 2025-04-10:
+> 1、更新了docker加速列表（src/document/Docker/registry-1.docker.iov2.md）

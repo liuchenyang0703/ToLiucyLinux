@@ -10,7 +10,7 @@ tag:
   - Docker
   - 运维
 pageview: false
-date: 2024-12-16
+date: 2023-02-20
 comment: false
 breadcrumb: false
 ---
@@ -192,22 +192,29 @@ docker pull liuchenyang/ubuntu20.04:latest
 > 注意：开启🐱之后可能会影响你的网络，请勿使用与非法途径，谨慎使用；
 > 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
 
-## 五、Docker加速列表 - 2025.3.17更新 - 长期维护
+# 五、Docker加速列表 - 2025.4 已更新 - 长期维护
 |镜像加速地址	| 是否正常使用|
 |--|--|
 |https://docker.1ms.run | 毫秒镜像源：正常（推荐）|
 |https://dockercf.jsdelivr.fyi| 毫秒镜像源：正常（推荐）|
 |https://docker.jsdelivr.fyi| 毫秒镜像源：正常（推荐）|
 |https://dockertest.jsdelivr.fyi| 毫秒镜像源：正常（推荐）|
-|https://docker.1ms.run|正常|
 |https://hub.rat.dev|正常|
 |https://docker.1panel.live|正常|
 |https://docker.zhai.cm|正常|
 |https://a.ussh.net|正常|
+|https://docker.sunzishaokao.com|正常|
+|https://docker.xuanyuan.me|正常|
+|https://docker.mybacc.com|正常|
+|https://dytt.online|正常|
+|https://lispy.org|正常|
+|https://docker.xiaogenban1993.com|正常|
+|https://docker.yomansunter.com|正常|
+|https://aicarbon.xyz|正常|
 
-> 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
-> 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
-> 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
+> 注意：如果使用镜像源方式需要把代理的内容删除并重启docker才可使用；
+> 注意：如果使用镜像源方式需要把代理的内容删除并重启docker才可使用；
+> 注意：如果使用镜像源方式需要把代理的内容删除并重启docker才可使用；
 
 
 
