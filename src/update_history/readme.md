@@ -268,3 +268,6 @@ category:
 
 ## 2025-04-10:
 > 1、更新了docker加速列表（src/document/Docker/registry-1.docker.iov2.md）
+
+## 2025-04-16:
+> 1、个人介绍页修改了访问数量连接、新增了网站运营（src/person.md）

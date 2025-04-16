@@ -37,7 +37,7 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 <br>
 
 <div style="text-align: center;">
-    你是我的第 <img src="https://profile-counter.glitch.me/wisdom-zhe/count.svg" alt="Visitor Count"> 个访客，谢谢你的访问！
+    你是我的第 <img src="https://profile-counter.glitch.me/liuchenyang0703/count.svg" alt="Visitor Count"> 个访客，谢谢你的访问！
 </div>
 
 ## ✨ 我的技术栈   
@@ -80,6 +80,20 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
     <img src="https://img.shields.io/badge/-VMware%20ESXi-607078?style=flat-square&logo=VMware&logoColor=fff" alt="VMware ESXi"> 
     <img src="https://img.shields.io/badge/-SUSE-0C722F?style=flat-square&logo=SUSE&logoColor=fff" alt="SUSE"> 
 </div>
+
+<br>
+
+## 📲 网站运营
+
+| Icon         | Name             | Link                                               |
+|--------------|------------------|----------------------------------------------------|
+| 🏠 Home      | 个人主页         | [https://liuchenyang0703.github.io/](https://liuchenyang0703.github.io/)  |
+| 🏠 Home      | 个人主页         | [https://liuchenyang0703.github.io/guide/](https://liuchenyang0703.github.io/guide/)  |
+| 🪄 Blog      | 个人博客         | [https://liuchenyang0703.github.io/ToLiucyLinux/](https://liuchenyang0703.github.io/ToLiucyLinux/) |
+| 🪄 Blog      | 个人博客         | [https://liuchenyang.top](https://liuchenyang.top) |
+| 🧭 Nav      | 个人导航页         | [https://liuchenyang0703.github.io/nav/](https://liuchenyang0703.github.io/nav/) |
+| 🕒 time | 时间计算器         | [https://liuchenyang0703.github.io/time/](https://liuchenyang0703.github.io/time/) |
+| 𝖂 weird-fonts | 奇怪的字体库         | [https://liuchenyang0703.github.io/weird-fonts/](https://liuchenyang0703.github.io/weird-fonts/) |  
 
 <br>
 
