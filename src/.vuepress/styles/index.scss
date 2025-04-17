@@ -115,3 +115,8 @@ blockquote {
   background: #F6F6F7; /* 设置背景色 */
   border-radius: 10px; /* 设置圆角大小 */
 }
+
+// 去掉头部栏链接的符号
+.external-link-icon .external-link:not(.no-external-link-icon)::after {
+  content: none !important; /* 移除内容 */
+}

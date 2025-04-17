@@ -86,6 +86,11 @@ export default navbar([
         children: ["about.md"],
       },
       {
+        text: "访客统计",
+        icon: "gongchengshi-chengxuyuan-selected",
+        link: "https://eu.umami.is/share/oTwjzYgoTuzdkVaR/liuchenyang.top",
+      },
+      {
         text: "赞赏",
         children: ["donate.md"],
       },
