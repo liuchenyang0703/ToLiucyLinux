@@ -271,3 +271,6 @@ category:
 
 ## 2025-04-16:
 > 1、个人介绍页修改了访问数量连接、新增了网站运营（src/person.md）
+
+## 2025-04-17:
+> 1、添加umami统计代码（src/.vuepress/config.ts）

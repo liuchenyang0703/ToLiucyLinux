@@ -6,7 +6,8 @@ import { popperPlugin } from "./plugins/vuepress-plugin-popper";
 import { PopperShape } from "@moefy-canvas/theme-popper";
 // 音乐插件
 import metingPlugin from "vuepress-plugin-meting2";
-
+// umami访客统计
+import {umamiAnalyticsPlugin} from "@vuepress/plugin-umami-analytics";
 
 export default defineUserConfig({
   // 在github上部署的时候构建base需要带：/ToLiucyLinux
@@ -146,6 +147,16 @@ export default defineUserConfig({
         }
       },
     }),
+	
+    // 添加umami访客统计
+    umamiAnalyticsPlugin({
+      id: 'fb6319ef-d539-4cf9-ae36-9bd5846f9911',
+      link: 'https://cloud.umami.is/script.js',
+      autoTrack: true,
+      cache: true,
+      hostUrl: 'https://cloud.umami.is/',
+    }),
+	
   ],
   
   alias: {
