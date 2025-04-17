@@ -52,6 +52,13 @@ link: https://www.iconfont.cn/
 background: rgb(253, 230, 138, 0.15)
 ```
 
+```component VPCard
+title: umami
+desc: 网站统计其一（umami）
+logo: https://eu.umami.is/favicon.ico
+link: https://eu.umami.is/
+background: rgb(253, 230, 138, 0.15)
+```
 
 <!-- ```component VPCard
 title: 

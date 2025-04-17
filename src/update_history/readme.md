@@ -275,3 +275,4 @@ category:
 ## 2025-04-17:
 > 1、添加umami统计代码（src/.vuepress/config.ts）
 > 2、表头添加umami统计展示并修改跳转格式（src/.vuepress/navbar.ts）（src/.vuepress/styles/index.scss）
+> 3、关于本站添加umami服务提供（src/about.md）
