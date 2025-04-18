@@ -276,3 +276,6 @@ category:
 > 1、添加umami统计代码（src/.vuepress/config.ts）
 > 2、表头添加umami统计展示并修改跳转格式（src/.vuepress/navbar.ts）（src/.vuepress/styles/index.scss）
 > 3、关于本站添加umami服务提供（src/about.md）
+
+## 2025-04-18:
+> 1、添加友情链接滚动条到主页（src/.vuepress/client.ts）（src/README.md）（src/.vuepress/components/友情链接滚动条.vue）

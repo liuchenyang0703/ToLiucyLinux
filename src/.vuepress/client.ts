@@ -23,6 +23,8 @@ import NotFound from "./components/layouts/404.vue";
 import DataPanel from "./components/访问量.vue";
 // 爱情倒计时组件
 import LoveTimer from "./components/LoveTimer.vue"; 
+// 友情链接滚动条
+import roll from "./components/友情链接滚动.vue";
 // 添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 添加网站运行时间配置
@@ -82,6 +84,8 @@ export default defineClientConfig({
     app.component("DataPanel", DataPanel);
     // 爱情倒计时组件
     app.component("LoveTimer", LoveTimer);
+    // 友情链接滚动条
+    app.component("roll", roll)
   },
   
   // 你可以在这里覆盖或新增布局
