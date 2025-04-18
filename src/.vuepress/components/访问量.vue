@@ -10,8 +10,8 @@
                 </span>
                 <img src="https://i.p-i.vip/47/20240920-66ed75c79f23d.gif" alt="heart" width="150" height="150" />
                 <span class="text">
-                    本站访客数
-                    <span id="busuanzi_value_site_uv" class="font-bold">--</span> 人次
+                    您是第
+                    <span id="busuanzi_value_site_uv" class="font-bold">--</span> 位访问者
                 </span>
             </section>
         </div>
