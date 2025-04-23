@@ -24,7 +24,6 @@
               :src="currentIcon" 
               alt="天气图标" 
               class="weather-icon"
-              @click.stop
             >
             {{ weatherData.weather }}
           </div>
@@ -50,7 +49,6 @@
 
 <script>
 import { ref, onMounted, onUnmounted } from 'vue'
-import AMapLoader from '@amap/amap-jsapi-loader'
 
 export default {
   setup() {
@@ -68,7 +66,7 @@ export default {
     let updateTimer = null
     let timeUpdateTimer = null
 
-    // 定义不同天气的图标（不再区分白天和夜晚）
+    // 定义不同天气的图标
     const weatherIcons = {
       '晴': 'http://image.nmc.cn/assets/img/w/40x40/4/0.png',
       '多云': 'http://image.nmc.cn/assets/img/w/40x40/4/1.png',
@@ -96,6 +94,9 @@ export default {
       error.value = ''
       loading.value = true
       try {
+        if (!window) throw new Error('Window is not defined') // 确保在客户端执行
+        
+        const AMapLoader = await import('@amap/amap-jsapi-loader')
         await AMapLoader.load({
           key: '71ed3ff64e4f2063c13e43419694436a',
           version: '2.0',
@@ -123,6 +124,9 @@ export default {
 
     const getWeather = async (city) => {
       try {
+        if (!window) throw new Error('Window is not defined') // 确保在客户端执行
+        
+        const AMapLoader = await import('@amap/amap-jsapi-loader')
         await AMapLoader.load({
           key: '71ed3ff64e4f2063c13e43419694436a',
           version: '2.0',
@@ -142,14 +146,12 @@ export default {
                 const timeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
                 updateTime.value = timeString
 
-                // 根据天气状况设置图标
                 if (weatherIcons[data.weather]) {
                   currentIcon.value = weatherIcons[data.weather]
                 } else {
                   currentIcon.value = weatherIcons['默认']
                 }
 
-                // 更新天气数据
                 weatherData.value = {
                   city: data.city,
                   temperature: data.temperature,
