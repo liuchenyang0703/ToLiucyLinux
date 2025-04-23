@@ -284,3 +284,4 @@ category:
 ## 2025-04-23:
 > 1、主页添加了天气预报大组件（<font color=red>注意：天气预报的key和密钥需要换成自己的，key在Weather.vue、密钥在client.ts中</font>）（src/.vuepress/client.ts）（src/README.md）（src/.vuepress/components/Weather.vue）
 > 2、安装了天气预报组件所需的插件`@amap/amap-jsapi-loader`
+> 3、解决了天气预报组件在client中的报错（src/.vuepress/public/js/vite-env.d.ts）
