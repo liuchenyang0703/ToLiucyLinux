@@ -61,6 +61,7 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 
 <roll />
 
+<Weather />
 
 ## 关于公众号
 最新更新会第一时间同步在公众号，推荐关注！另外，公众号上有很多其他知识可能会与网站不同步，欢迎大家扫码订阅公众号或者微信搜索 **小刘Linux**。

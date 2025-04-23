@@ -280,3 +280,6 @@ category:
 ## 2025-04-18:
 > 1、添加友情链接滚动条到主页（src/.vuepress/client.ts）（src/README.md）（src/.vuepress/components/友情链接滚动条.vue）
 > 2、修改了主页访问量展示（src/.vuepress/components/访问量.vue）
+
+## 2025-04-23:
+> 1、主页添加了天气预报（注意：天气预报的key和密钥需要换成自己的，key在Weather.vue、密钥在client.ts中）（src/.vuepress/client.ts）（src/README.md）（src/.vuepress/components/Weather.vue）

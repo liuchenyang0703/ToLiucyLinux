@@ -25,6 +25,8 @@ import DataPanel from "./components/访问量.vue";
 import LoveTimer from "./components/LoveTimer.vue"; 
 // 友情链接滚动条
 import roll from "./components/友情链接滚动.vue";
+// 天气预报大组件
+import Weather from "./components/Weather.vue";
 // 添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 添加网站运行时间配置
@@ -86,6 +88,11 @@ export default defineClientConfig({
     app.component("LoveTimer", LoveTimer);
     // 友情链接滚动条
     app.component("roll", roll)
+    // 天气预报大组件
+    app.component("Weather", Weather);
+    window._AMapSecurityConfig = {
+      securityJsCode: '1744fd88983e27519b32046ce99d36eb', // 替换为你的安全密钥
+    }
   },
   
   // 你可以在这里覆盖或新增布局
