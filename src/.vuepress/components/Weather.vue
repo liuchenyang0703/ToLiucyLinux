@@ -68,24 +68,24 @@ export default {
 
     // 定义不同天气的图标
     const weatherIcons = {
-      '晴': 'http://image.nmc.cn/assets/img/w/40x40/4/0.png',
-      '多云': 'http://image.nmc.cn/assets/img/w/40x40/4/1.png',
-      '阴': 'http://image.nmc.cn/assets/img/w/40x40/4/2.png',
-      '雨': 'http://image.nmc.cn/assets/img/w/40x40/4/3.png',
-      '雪': 'http://image.nmc.cn/assets/img/w/40x40/4/5.png',
-      '雷阵雨': 'http://image.nmc.cn/assets/img/w/40x40/4/4.png',
-      '雨夹雪': 'http://image.nmc.cn/assets/img/w/40x40/4/6.png',
-      '小雨': 'http://image.nmc.cn/assets/img/w/40x40/4/7.png',
-      '中雨': 'http://image.nmc.cn/assets/img/w/40x40/4/8.png',
-      '大雨': 'http://image.nmc.cn/assets/img/w/40x40/4/9.png',
-      '暴雨': 'http://image.nmc.cn/assets/img/w/40x40/4/10.png',
-      '小雪': 'http://image.nmc.cn/assets/img/w/40x40/4/14.png',
-      '中雪': 'http://image.nmc.cn/assets/img/w/40x40/4/15.png',
-      '大雪': 'http://image.nmc.cn/assets/img/w/40x40/4/16.png',
-      '雾': 'http://image.nmc.cn/assets/img/w/40x40/4/18.png',
-      '大风': 'http://image.nmc.cn/assets/img/w/40x40/4/20.png',
-      '扬沙': 'http://image.nmc.cn/assets/img/w/40x40/4/29.png',
-      '默认': 'http://image.nmc.cn/assets/img/w/40x40/4/0.png'
+      '晴': 'weather/Weather_0.png',
+      '多云': 'weather/Weather_1.png',
+      '阴': 'weather/Weather_2.png',
+      '雨': 'weather/Weather_3.png',
+      '雪': 'weather/Weather_5.png',
+      '雷阵雨': 'weather/Weather_4.png',
+      '雨夹雪': 'weather/Weather_6.png',
+      '小雨': 'weather/Weather_7.png',
+      '中雨': 'weather/Weather_8.png',
+      '大雨': 'weather/Weather_9.png',
+      '暴雨': 'weather/Weather_10.png',
+      '小雪': 'weather/Weather_14.png',
+      '中雪': 'weather/Weather_15.png',
+      '大雪': 'weather/Weather_16.png',
+      '雾': 'weather/Weather_18.png',
+      '大风': 'weather/Weather_20.png',
+      '扬沙': 'weather/Weather_29.png',
+      '默认': 'weather/Weather_0.png'
     }
 
     const currentIcon = ref(weatherIcons['默认'])
