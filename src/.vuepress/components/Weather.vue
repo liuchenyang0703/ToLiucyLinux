@@ -174,7 +174,7 @@ export default {
 
     onMounted(() => {
       initWeatherData()
-      updateTimer = setInterval(initWeatherData, 60000) // 每分钟更新一次天气数据
+      updateTimer = setInterval(initWeatherData, 300000) // 每五分钟更新一次天气数据
       timeUpdateTimer = setInterval(() => {
         const now = new Date()
         const year = now.getFullYear()
