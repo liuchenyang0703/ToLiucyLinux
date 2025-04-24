@@ -286,3 +286,6 @@ category:
 > 2、安装了天气预报组件所需的插件`@amap/amap-jsapi-loader`
 > 3、解决了天气预报组件在client中的报错（src/.vuepress/public/js/vite-env.d.ts）
 > 4、天气图片添加到了本地，修改了连接路径（src/.vuepress/components/Weather.vue）（src/.vuepress/public/weather/）
+
+## 2025-04-24:
+> 1、新增几个本站使用插件（src/about.md）

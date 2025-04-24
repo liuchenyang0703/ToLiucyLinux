@@ -60,6 +60,31 @@ link: https://eu.umami.is/
 background: rgb(253, 230, 138, 0.15)
 ```
 
+```component VPCard
+title: 百度统计
+desc: 网站统计其一（百度统计）
+logo: https://tongji.baidu.com/favicon.ico
+link: https://tongji.baidu.com/
+background: rgb(253, 230, 138, 0.15)
+```
+
+```component VPCard
+title: 高德地图API
+desc: 用于本站天气预报
+logo: https://a.amap.com/pc/static/favicon.ico
+link: https://lbs.amap.com/
+background: rgb(253, 230, 138, 0.15)
+```
+
+```component VPCard
+title: 音乐插件
+desc: 用于本站的音乐播放
+logo: https://s1.music.126.net/style/favicon.ico
+link: https://github.com/OrageKK/vuepress-plugin-meting2
+background: rgb(253, 230, 138, 0.15)
+```
+
+
 <!-- ```component VPCard
 title: 
 desc: 
