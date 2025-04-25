@@ -293,3 +293,4 @@ category:
 
 ## 2025-04-25:
 > 1、修改天气预报为一个按钮在全局展示（src/.vuepress/client.ts）（src/.vuepress/components/Weather.vue）（src/README.md）
+> 2、修改图片按钮（src/.vuepress/components/Weather.vue）

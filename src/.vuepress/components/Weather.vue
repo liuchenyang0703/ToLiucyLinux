@@ -8,9 +8,7 @@
       class="weather-toggle-button" 
       @click="toggleWeatherPanel"
     >
-      <svg class="rocket-icon" viewBox="0 0 24 24" fill="#fff">
-        <path d="M13,10H11V6H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M17,12L15.59,13.41L18.17,16H14V18H18V16M9,12L12.5,15.5L14,14L10.5,10.5L9,12Z" />
-      </svg>
+      ☁️
     </div>
     
     <div 
@@ -369,15 +367,11 @@ body {
   z-index: 1;
   pointer-events: auto;
   transition: box-shadow 0.3s ease;
+  font-size: 20px; /* 调整字体大小以适应按钮 */
 }
 
 .weather-toggle-button:hover {
   box-shadow: 0 4px 15px rgba(32, 160, 255, 0.4);
-}
-
-.rocket-icon {
-  width: 24px;
-  height: 24px;
 }
 
 .weather-panel {
