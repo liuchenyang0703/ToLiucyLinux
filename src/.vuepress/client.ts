@@ -74,6 +74,7 @@ export default defineClientConfig({
   rootComponents: [
     jz,
     yx,
+	Weather,
   ],
 
   // 全局组件（添加某个组件到全局）
@@ -89,7 +90,7 @@ export default defineClientConfig({
     // 友情链接滚动条
     app.component("roll", roll);
     // 天气预报大组件
-    app.component("Weather", Weather);
+    // app.component("Weather", Weather);
     if (typeof window !== 'undefined') { // 确保在客户端执行
       window._AMapSecurityConfig = {
         securityJsCode: '1744fd88983e27519b32046ce99d36eb', // 替换为你的安全密钥

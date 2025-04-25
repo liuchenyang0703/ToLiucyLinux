@@ -290,3 +290,6 @@ category:
 ## 2025-04-24:
 > 1、新增几个本站使用插件（src/about.md）
 > 2、修改天气自动刷新时间【因为每天调用有次数限制】（src/.vuepress/components/Weather.vue）
+
+## 2025-04-25:
+> 1、修改天气预报为一个按钮在全局展示（src/.vuepress/client.ts）（src/.vuepress/components/Weather.vue）（src/README.md）

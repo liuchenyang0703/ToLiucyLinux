@@ -1,44 +1,62 @@
 <template>
-  <div class="weather-widget">
-    <div class="weather-title-section">
-      <div class="weather-title-container">
-        <h2 class="weather-title">☁️ 天气预报</h2>
-      </div>
-      <p class="weather-description">实时天气信息，助您规划精彩生活，应对多变气候。</p>
+  <div class="weather-overlay" v-if="showWeatherPanel">
+    <div class="background-overlay"></div>
+  </div>
+  
+  <div class="weather-container">
+    <div 
+      class="weather-toggle-button" 
+      @click="toggleWeatherPanel"
+    >
+      <svg class="rocket-icon" viewBox="0 0 24 24" fill="#fff">
+        <path d="M13,10H11V6H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M17,12L15.59,13.41L18.17,16H14V18H18V16M9,12L12.5,15.5L14,14L10.5,10.5L9,12Z" />
+      </svg>
     </div>
     
-    <div class="mini-weather">
-      <div v-if="loading" class="loading">正在获取天气信息...</div>
-      <div v-else-if="error" class="error">
-        {{ error }}
-      </div>
-      <div v-else>
-        <div class="weather-header">
-          <span class="city-name">{{ weatherData.city }}</span>
-          <span class="update-time">{{ updateTime }}</span>
+    <div 
+      class="weather-panel" 
+      :class="{ 'weather-panel-open': showWeatherPanel }"
+    >
+      <div class="weather-title-section">
+        <div class="weather-title-container">
+          <h2 class="weather-title">☁️ 天气预报</h2>
         </div>
-        <div class="weather-body">
-          <div class="temperature">{{ weatherData.temperature }}℃</div>
-          <div class="weather-info">
-            <img 
-              :src="currentIcon" 
-              alt="天气图标" 
-              class="weather-icon"
-            >
-            {{ weatherData.weather }}
+        <p class="weather-description">实时天气信息，助您规划精彩生活，应对多变气候。</p>
+      </div>
+      
+      <div class="mini-weather">
+        <div v-if="loading" class="loading">正在获取天气信息...</div>
+        <div v-else-if="error" class="error">
+          {{ error }}
+        </div>
+        <div v-else>
+          <div class="weather-header">
+            <span class="city-name">{{ weatherData.city }}</span>
+            <span class="update-time">{{ updateTime }}</span>
           </div>
-          <div class="weather-details">
-            <div class="detail-item">
-              <span>湿度：</span>
-              <span>{{ weatherData.humidity }}%</span>
+          <div class="weather-body">
+            <div class="temperature">{{ weatherData.temperature }}℃</div>
+            <div class="weather-info">
+              <img 
+                :src="currentIcon" 
+                alt="天气图标" 
+                class="weather-icon"
+              >
+              {{ weatherData.weather }}
             </div>
-            <div class="detail-item">
-              <span>风向：</span>
-              <span>{{ weatherData.windDirection }}风</span>
-            </div>
-            <div class="detail-item">
-              <span>风力：</span>
-              <span>{{ weatherData.windPower }}级</span>
+            <div class="weather-details">
+              <div class="detail-item">
+                <span>湿度：</span>
+                <span>{{ weatherData.humidity }}%</span>
+              </div>
+              <div class="detail-item">
+                <span>风向：</span>
+                <span>{{ weatherData.windDirection }}风</span>
+              </div>
+              <div class="detail-item">
+                <span>风力：</span>
+                <span>{{ weatherData.windPower }}级</span>
+              </div>
             </div>
           </div>
         </div>
@@ -65,7 +83,9 @@ export default {
     const error = ref('')
     let updateTimer = null
     let timeUpdateTimer = null
-
+    const showWeatherPanel = ref(false)
+    const isOnline = ref(true) // 添加网络状态的监听
+    
     // 定义不同天气的图标
     const weatherIcons = {
       '晴': 'weather/Weather_0.png',
@@ -106,8 +126,22 @@ export default {
             const citySearch = new AMap.CitySearch()
             citySearch.getLocalCity((status, result) => {
               if (status === 'complete' && result.info === 'OK') {
-                const city = result.city
-                getWeather(city)
+                if (!result.city) {
+                  // 如果无法获取城市，尝试使用浏览器的地理位置 API
+                  navigator.geolocation.getCurrentPosition(
+                    position => {
+                      const latitude = position.coords.latitude
+                      const longitude = position.coords.longitude
+                      getWeatherByCoordinates(latitude, longitude)
+                    },
+                    error => {
+                      console.error('无法获取地理位置:', error)
+                      error.value = '无法获取地理位置，请检查您的位置权限。'
+                    }
+                  )
+                } else {
+                  getWeather(result.city)
+                }
               } else {
                 throw new Error('获取城市信息失败')
               }
@@ -172,7 +206,51 @@ export default {
       }
     }
 
+    // 如果获取城市信息失败，根据坐标获取天气
+    const getWeatherByCoordinates = (latitude, longitude) => {
+      const AMapLoader = window.AMapLoader
+      AMapLoader.load({
+        key: '71ed3ff64e4f2063c13e43419694436a',
+        version: '2.0',
+        plugins: ['AMap.Geocoder', 'AMap.Weather']
+      }).then(AMap => {
+        AMap.plugin(['AMap.Geocoder', 'AMap.Weather'], function () {
+          const geocoder = new AMap.Geocoder()
+          geocoder.getAddress({latitude, longitude}, function(status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+              if (result.regeocode && result.regeocode.addressComponent) {
+                const city = result.regeocode.addressComponent.city || result.regeocode.addressComponent.province
+                getWeather(city.replace('市', ''))
+              }
+            } else {
+              error.value = '无法根据坐标获取天气信息，请稍后再试。'
+            }
+          })
+        })
+      }).catch(err => {
+        console.error('根据坐标获取天气失败:', err)
+        error.value = '无法根据坐标获取天气信息，请稍后再试。'
+      })
+    }
+
+    const toggleWeatherPanel = () => {
+      showWeatherPanel.value = !showWeatherPanel.value
+      if (showWeatherPanel.value && (loading.value || error.value)) {
+        initWeatherData()
+      }
+    }
+
+    // 监听网络状态变化
+    const handleOnlineChange = () => {
+      isOnline.value = navigator.onLine
+      if (isOnline.value && showWeatherPanel.value) {
+        initWeatherData()
+      }
+    }
+
     onMounted(() => {
+      window.addEventListener('online', handleOnlineChange)
+      window.addEventListener('offline', handleOnlineChange)
       initWeatherData()
       updateTimer = setInterval(initWeatherData, 300000) // 每五分钟更新一次天气数据
       timeUpdateTimer = setInterval(() => {
@@ -189,6 +267,8 @@ export default {
     })
 
     onUnmounted(() => {
+      window.removeEventListener('online', handleOnlineChange)
+      window.removeEventListener('offline', handleOnlineChange)
       if (updateTimer) {
         clearInterval(updateTimer)
       }
@@ -202,23 +282,84 @@ export default {
       updateTime,
       loading,
       error,
-      currentIcon
+      currentIcon,
+      showWeatherPanel,
+      toggleWeatherPanel
     }
   }
 }
 </script>
 
 <style scoped>
-.weather-widget {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+body {
+  overflow-x: hidden;
+}
+
+.weather-container {
+  position: fixed;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.weather-toggle-button {
+  position: absolute;
+  right: -12px;
+  top: 75%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #20a0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(32, 160, 255, 0.3);
+  cursor: pointer;
+  z-index: 1;
+  pointer-events: auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.weather-toggle-button:hover {
+  box-shadow: 0 4px 15px rgba(32, 160, 255, 0.4);
+}
+
+.rocket-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.weather-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transform-origin: top right;
+  width: 350px;
+  max-width: 90%;
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.weather-panel.weather-panel-open {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
 }
 
 .weather-title-section {
   text-align: center;
   margin-bottom: 20px;
-  padding: 15px 0;
+  padding: 10px 0 0;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -227,12 +368,6 @@ export default {
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
-}
-
-.weather-title-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
 }
 
 .weather-title {
@@ -250,12 +385,7 @@ export default {
 
 .mini-weather {
   font-family: 'Arial', sans-serif;
-  padding: 15px;
-  border-radius: 12px;
-  background-color: #f5f7fa;
   color: #333333;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #eaeaea;
   width: 100%;
 }
 
@@ -334,5 +464,18 @@ export default {
 
 .error {
   color: #e74c3c;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
 }
 </style>
