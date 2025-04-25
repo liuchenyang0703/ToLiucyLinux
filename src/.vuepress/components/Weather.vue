@@ -28,6 +28,7 @@
         <div v-if="loading" class="loading">正在获取天气信息...</div>
         <div v-else-if="error" class="error">
           {{ error }}
+          <button class="refresh-button" @click="refreshWeather">刷新</button>
         </div>
         <div v-else>
           <div class="weather-header">
@@ -140,7 +141,7 @@ export default {
               if (status === 'complete' && result.info === 'OK') {
                 getWeather(result.city)
               } else {
-                // 使用浏览器的地理位置 API 作为后备方案
+                // 尝试使用浏览器的地理位置 API 作为后备方案
                 getWeatherFromBrowserLocation()
               }
             })
@@ -149,6 +150,8 @@ export default {
       } catch (err) {
         console.error('获取城市信息失败:', err)
         error.value = '获取城市信息失败，请稍后再试。'
+        // 尝试使用 IP 定位作为最后的后备方案
+        getWeatherFromIP()
       } finally {
         loading.value = false
       }
@@ -166,12 +169,16 @@ export default {
             console.error('无法获取地理位置:', error)
             error.value = '无法获取地理位置，请检查您的位置权限。'
             loading.value = false
+            // 尝试使用 IP 定位
+            getWeatherFromIP()
           }
         )
       } else {
         console.error('浏览器不支持地理位置 API')
         error.value = '浏览器不支持地理位置功能。'
         loading.value = false
+        // 尝试使用 IP 定位
+        getWeatherFromIP()
       }
     }
 
@@ -201,6 +208,21 @@ export default {
         console.error('根据坐标获取天气失败:', err)
         error.value = '无法根据坐标获取天气信息，请稍后再试。'
       })
+    }
+
+    const getWeatherFromIP = async () => {
+      try {
+        const response = await fetch('https://api.ip.sb/geoip')
+        const data = await response.json()
+        if (data.city) {
+          getWeather(data.city)
+        } else {
+          error.value = '无法从 IP 获取位置信息，请稍后再试。'
+        }
+      } catch (err) {
+        console.error('IP 定位失败:', err)
+        error.value = '无法从 IP 获取位置信息，请稍后再试。'
+      }
     }
 
     const getWeather = async (city) => {
@@ -260,6 +282,10 @@ export default {
       }
     }
 
+    const refreshWeather = () => {
+      initWeatherData()
+    }
+
     // 监听网络状态变化
     const handleOnlineChange = () => {
       isOnline.value = navigator.onLine
@@ -305,7 +331,8 @@ export default {
       error,
       currentIcon,
       showWeatherPanel,
-      toggleWeatherPanel
+      toggleWeatherPanel,
+      refreshWeather
     }
   }
 }
@@ -498,5 +525,20 @@ body {
   z-index: 1;
   pointer-events: auto;
   transition: opacity 0.3s ease;
+}
+
+.refresh-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #20a0ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.refresh-button:hover {
+  background-color: #1989ea;
 }
 </style>
