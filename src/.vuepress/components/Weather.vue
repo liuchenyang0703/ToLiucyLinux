@@ -84,7 +84,8 @@ export default {
     let updateTimer = null
     let timeUpdateTimer = null
     const showWeatherPanel = ref(false)
-    const isOnline = ref(true) // 添加网络状态的监听
+    const isOnline = ref(true)
+    const retryCount = ref(0)
     
     // 定义不同天气的图标
     const weatherIcons = {
@@ -113,8 +114,19 @@ export default {
     const initWeatherData = async () => {
       error.value = ''
       loading.value = true
+      retryCount.value = 0
       try {
         if (!window) throw new Error('Window is not defined') // 确保在客户端执行
+        
+        // 主动清除浏览器的地理位置缓存
+        if (navigator.geolocation) {
+          // 创建一个不可见的 iframe 来清除缓存
+          const iframe = document.createElement('iframe')
+          iframe.style.display = 'none'
+          iframe.src = 'about:blank'
+          document.body.appendChild(iframe)
+          document.body.removeChild(iframe)
+        }
         
         const AMapLoader = await import('@amap/amap-jsapi-loader')
         await AMapLoader.load({
@@ -126,24 +138,10 @@ export default {
             const citySearch = new AMap.CitySearch()
             citySearch.getLocalCity((status, result) => {
               if (status === 'complete' && result.info === 'OK') {
-                if (!result.city) {
-                  // 如果无法获取城市，尝试使用浏览器的地理位置 API
-                  navigator.geolocation.getCurrentPosition(
-                    position => {
-                      const latitude = position.coords.latitude
-                      const longitude = position.coords.longitude
-                      getWeatherByCoordinates(latitude, longitude)
-                    },
-                    error => {
-                      console.error('无法获取地理位置:', error)
-                      error.value = '无法获取地理位置，请检查您的位置权限。'
-                    }
-                  )
-                } else {
-                  getWeather(result.city)
-                }
+                getWeather(result.city)
               } else {
-                throw new Error('获取城市信息失败')
+                // 使用浏览器的地理位置 API 作为后备方案
+                getWeatherFromBrowserLocation()
               }
             })
           })
@@ -154,6 +152,55 @@ export default {
       } finally {
         loading.value = false
       }
+    }
+
+    const getWeatherFromBrowserLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            const latitude = position.coords.latitude
+            const longitude = position.coords.longitude
+            getWeatherByCoordinates(latitude, longitude)
+          },
+          error => {
+            console.error('无法获取地理位置:', error)
+            error.value = '无法获取地理位置，请检查您的位置权限。'
+            loading.value = false
+          }
+        )
+      } else {
+        console.error('浏览器不支持地理位置 API')
+        error.value = '浏览器不支持地理位置功能。'
+        loading.value = false
+      }
+    }
+
+    const getWeatherByCoordinates = (latitude, longitude) => {
+      const AMapLoader = window.AMapLoader
+      AMapLoader.load({
+        key: '71ed3ff64e4f2063c13e43419694436a',
+        version: '2.0',
+        plugins: ['AMap.Geocoder', 'AMap.Weather']
+      }).then(AMap => {
+        AMap.plugin(['AMap.Geocoder', 'AMap.Weather'], function () {
+          const geocoder = new AMap.Geocoder()
+          geocoder.getAddress({latitude, longitude}, function(status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+              if (result.regeocode && result.regeocode.addressComponent) {
+                const city = result.regeocode.addressComponent.city || result.regeocode.addressComponent.province
+                getWeather(city.replace('市', ''))
+              } else {
+                error.value = '无法根据坐标获取城市信息，请稍后再试。'
+              }
+            } else {
+              error.value = '无法根据坐标获取天气信息，请稍后再试。'
+            }
+          })
+        })
+      }).catch(err => {
+        console.error('根据坐标获取天气失败:', err)
+        error.value = '无法根据坐标获取天气信息，请稍后再试。'
+      })
     }
 
     const getWeather = async (city) => {
@@ -206,33 +253,6 @@ export default {
       }
     }
 
-    // 如果获取城市信息失败，根据坐标获取天气
-    const getWeatherByCoordinates = (latitude, longitude) => {
-      const AMapLoader = window.AMapLoader
-      AMapLoader.load({
-        key: '71ed3ff64e4f2063c13e43419694436a',
-        version: '2.0',
-        plugins: ['AMap.Geocoder', 'AMap.Weather']
-      }).then(AMap => {
-        AMap.plugin(['AMap.Geocoder', 'AMap.Weather'], function () {
-          const geocoder = new AMap.Geocoder()
-          geocoder.getAddress({latitude, longitude}, function(status, result) {
-            if (status === 'complete' && result.info === 'OK') {
-              if (result.regeocode && result.regeocode.addressComponent) {
-                const city = result.regeocode.addressComponent.city || result.regeocode.addressComponent.province
-                getWeather(city.replace('市', ''))
-              }
-            } else {
-              error.value = '无法根据坐标获取天气信息，请稍后再试。'
-            }
-          })
-        })
-      }).catch(err => {
-        console.error('根据坐标获取天气失败:', err)
-        error.value = '无法根据坐标获取天气信息，请稍后再试。'
-      })
-    }
-
     const toggleWeatherPanel = () => {
       showWeatherPanel.value = !showWeatherPanel.value
       if (showWeatherPanel.value && (loading.value || error.value)) {
@@ -244,6 +264,7 @@ export default {
     const handleOnlineChange = () => {
       isOnline.value = navigator.onLine
       if (isOnline.value && showWeatherPanel.value) {
+        // 网络恢复时重新获取天气数据
         initWeatherData()
       }
     }
