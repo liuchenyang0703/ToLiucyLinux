@@ -10,7 +10,7 @@ export const friends: LinkData[] = [
     name: "ToLiucyLinux",
     desc: "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
     icon: "picture.jpg",
-    link: "http://liuchenyang.top",
+    link: "https://liuchenyang.top",
   },
   {
     name: "程序员Leo",
@@ -64,7 +64,7 @@ export const friends: LinkData[] = [
     name: "运维小弟",
     desc: "专注技术积累，探索运维之道",
     icon: "https://srebro.cn/themes/theme-hao/assets/images/hao-logo.jpg",
-    link: "www.srebro.cn",
+    link: "https://www.srebro.cn/",
   },
   {
     name: "南宫乘风",
