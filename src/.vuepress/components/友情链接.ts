@@ -48,6 +48,36 @@ export const friends: LinkData[] = [
     icon: "https://i.p-i.vip/47/20240920-66ed7b168c38c.jpg",
     link: "https://vite.xingji.fun",
   },
+  {
+    name: "二丫讲梵",
+    desc: "💻学习📝记录🔗分享",
+    icon: "https://wiki.eryajf.net/img/logo.png",
+    link: "https://wiki.eryajf.net/",
+  },
+  {
+    name: "崔亮的博客",
+    desc: "专注运维开发技术，传播更多原创运维与开发技术文章",
+    icon: "https://oss.cuiliangblog.cn/image/logo.png",
+    link: "https://www.cuiliangblog.cn/",
+  },
+  {
+    name: "运维小弟",
+    desc: "专注技术积累，探索运维之道",
+    icon: "https://srebro.cn/themes/theme-hao/assets/images/hao-logo.jpg",
+    link: "www.srebro.cn",
+  },
+  {
+    name: "南宫乘风",
+    desc: "💻运维开发📝Devops技术🔗自动化",
+    icon: "https://ownit.top/img/avatar_hu227367ba8544f2fc7811ed9508937bec_102665_300x0_resize_box_3.png",
+    link: "https://ownit.top/",
+  },
+  {
+    name: "MengBo' Li Blog",
+    desc: "运维技术分享",
+    icon: "https://static.imdst.com/image/5/dd/a34353466215dd8721615b9d1538c.jpg",
+    link: "https://blog.imdst.com/",
+  },
 ];
 export const invalid: LinkData[] = [
   

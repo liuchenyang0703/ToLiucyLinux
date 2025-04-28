@@ -23,7 +23,7 @@ import MyCoverLink from "@MyCoverLink";
 昵称: "ToLiucyLinux",
 简介: "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
 头像: "http://liuchenyang.top/picture.jpg",
-连接: "http://liuchenyang.top"
+链接: "http://liuchenyang.top"
 ```
 
 @tab json
@@ -56,8 +56,8 @@ import MyCoverLink from "@MyCoverLink";
 ```yml
 昵称: 昵称或网站title
 简介: 网站或个人简介，多出两行部分不显示
-头像: 头像连接
-链接: 站点连接
+头像: 头像链接
+链接: 站点链接
 ```
 
 
