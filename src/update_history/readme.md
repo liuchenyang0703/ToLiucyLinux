@@ -297,3 +297,6 @@ category:
 
 ## 2025-04-28:
 > 1、友情链接新增好友（src/.vuepress/components/友情链接.ts）
+
+## 2025-04-29:
+> 1、修改了windows 数据库 两篇文章及docker镜像加速标题问题（src/document）

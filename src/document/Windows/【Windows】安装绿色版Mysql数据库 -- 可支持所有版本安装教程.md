@@ -10,8 +10,9 @@ category:
 - Windows
 - mysql
 pageview: false
-date: 2024-03-24
+date: 2023-11-14
 comment: false
+isOriginal: true
 ---
 
 >👨‍🎓**博主简介**
@@ -281,3 +282,17 @@ sc delete mysql
 
 > 注：需要彻底卸载服务，在命令行卸载完之后，还需要删除mysql的安装文件，<font color=red>如果配置了环境变量，记得也需要删除以下环境变量。</font>
 
+
+## 九、附加：创建远程登录用户
+> 默认安装完是没有远程登陆的，只可以自己本机访问，如果需要远程登录可执行以下命令；
+
+```bash
+# 创建root远程登陆
+create user root@'%' identified by '密码';
+
+# 赋予远程登陆root用户所有权限
+grant all on *.* to 'root'@'%' identified by '密码';
+
+# 刷新权限
+flush privileges;
+```
