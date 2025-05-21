@@ -64,7 +64,40 @@ export const document = arraySidebar([
       prefix: "database/",
       // 添加下拉框
       collapsible: true,
-      children: "structure",
+      children: [
+        {
+           text: "Mysql",
+           icon: "mysql",
+           prefix: "MySQL/",
+           // 添加下拉框
+           collapsible: true,
+           children: "structure",
+        },
+        {
+          text: "《MySQL数据库入门到大牛》",
+          icon: "mysql",
+          prefix: "《MySQL数据库入门到大牛》/",
+          // 添加下拉框
+          collapsible: true,
+          children: "structure",
+        },
+        {
+          text: "Redis",
+          icon: "redis",
+          prefix: "Redis/",
+          // 添加下拉框
+          collapsible: true,
+          children: "structure",
+        },
+        {
+          text: "达梦数据库",
+          icon: "damengshujuku-01",
+          prefix: "Dameng/",
+          // 添加下拉框
+          collapsible: true,
+          children: "structure",
+        },
+      ],
     },
     {
       text: "自动化运维",

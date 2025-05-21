@@ -300,3 +300,7 @@ category:
 
 ## 2025-04-29:
 > 1、修改了windows 数据库 两篇文章及docker镜像加速标题问题（src/document）
+
+## 2025-05-21:
+> 1、重新整理了数据库目录（src/document/database）（src/.vuepress/document.ts）
+> 2、修改了icon连接（src/.vuepress/theme.ts）
