@@ -304,3 +304,6 @@ category:
 ## 2025-05-21:
 > 1、重新整理了数据库目录（src/document/database）（src/.vuepress/document.ts）
 > 2、修改了icon连接（src/.vuepress/theme.ts）
+
+## 2025-06-05:
+> 1、更新了docker镜像加速地址文章

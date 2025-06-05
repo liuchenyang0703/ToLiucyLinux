@@ -59,9 +59,9 @@ Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: re
 
 ## 三、解决方法1 - 更换docker下载源
 
-> &emsp;&emsp;最好的解决方法就是：**<font color=teal>寻找靠谱的镜像源，配置镜像加速；</font>**
+> &emsp;&emsp;最好的解决方法就是：**<font color=teal>寻找靠谱的镜像源，配置镜像加速；</font>** 最新的镜像加速列表可查看如下，会长期更新 [Docker加速列表 - 长期维护 ](#dockerjiasu)
 
-> 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
+> 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用（代理的内容是解决方法2）；
 
 1、新建 **<font color=red>/etc/docker</font>** 目录
 
@@ -79,7 +79,7 @@ mkdir -p /etc/docker
 #备份已有的daemon.json
 mv /etc/docker/daemon.json /etc/docker/daemon.json-bak
 ```
-> 注意：docker的镜像源不一定什么时候会失效，如有失效可评论或私信我，我会寻找新的并更新；
+> 注意：docker的镜像加速源不一定什么时候会失效，最新的可查看步骤五，会长期更新：[Docker加速列表 - 长期维护 ](#dockerjiasu)
 ```bash
 [root@localhost docker]# sudo tee /etc/docker/daemon.json <<-'EOF'
 {
@@ -87,11 +87,10 @@ mv /etc/docker/daemon.json /etc/docker/daemon.json-bak
    "https://dockercf.jsdelivr.fyi",
    "https://docker.jsdelivr.fyi",
    "https://dockertest.jsdelivr.fyi",
-   "https://docker.1ms.run",
    "https://hub.rat.dev",
    "https://docker.1panel.live",
-   "https://docker.zhai.cm",
-   "https://a.ussh.net"
+   "https://docker.xuanyuan.me",
+   "https://dytt.online"
    ]
 }
 
@@ -192,25 +191,43 @@ docker pull liuchenyang/ubuntu20.04:latest
 > 注意：开启🐱之后可能会影响你的网络，请勿使用与非法途径，谨慎使用；
 > 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
 
-## 五、Docker加速列表 - 2025.4 已更新 - 长期维护
-|镜像加速地址	| 是否正常使用|
-|--|--|
-|https://docker.1ms.run | 毫秒镜像源：正常（推荐）|
-|https://dockercf.jsdelivr.fyi| 毫秒镜像源：正常（推荐）|
-|https://docker.jsdelivr.fyi| 毫秒镜像源：正常（推荐）|
-|https://dockertest.jsdelivr.fyi| 毫秒镜像源：正常（推荐）|
-|https://hub.rat.dev|正常|
-|https://docker.1panel.live|正常|
-|https://docker.zhai.cm|正常|
-|https://a.ussh.net|正常|
-|https://docker.sunzishaokao.com|正常|
-|https://docker.xuanyuan.me|正常|
-|https://docker.mybacc.com|正常|
-|https://dytt.online|正常|
-|https://lispy.org|正常|
-|https://docker.xiaogenban1993.com|正常|
-|https://docker.yomansunter.com|正常|
-|https://aicarbon.xyz|正常|
+## 五、Docker加速列表 - 2025.06.04 已更新 - 长期维护
+><span id="dockerjiasu">Docker加速列表 - 2025.06.04 已更新 - 长期维护</span>
+
+| 镜像加速地址                     | 是否正常使用             |
+| -------------------------------- | ------------------------ |
+| https://docker.1ms.run           | 毫秒镜像源：正常（推荐） |
+| https://dockercf.jsdelivr.fyi    | 毫秒镜像源：正常（推荐） |
+| https://docker.jsdelivr.fyi      | 毫秒镜像源：正常（推荐） |
+| https://dockertest.jsdelivr.fyi  | 毫秒镜像源：正常（推荐） |
+| https://hub.rat.dev              | 正常                     |
+| https://docker.1panel.live       | 正常                     |
+| https://a.ussh.net               | 正常                     |
+| https://docker.xuanyuan.me       | 正常                     |
+| https://dytt.online              | 正常                     |
+| https://lispy.org                | 正常                     |
+| https://docker.yomansunter.com   | 正常                     |
+| https://docker.xuanyuan.me       | 正常                     |
+| https://docker-mirror.aigc2d.com | 正常                     |
+| https://666860.xyz               | 正常                     |
+| https://docker-0.unsee.tech      | 正常                     |
+| https://docker.hlmirror.com      | 正常                     |
+| https://docker.kejilion.pro      | 正常                     |
+| https://dockerpull.cn            | 正常                     |
+| https://dockerpull.pw            | 正常                     |
+| https://hub.littlediary.cn       | 正常                     |
+| https://image.cloudlayer.icu     | 正常                     |
+| https://hub.amingg.com           | 正常                     |
+| https://cr.laoyou.ip-ddns.com    | 正常                     |
+| https://docker.amingg.com        | 正常                     |
+| https://hub.1panel.dev           | 正常                     |
+| https://docker-registry.nmqu.com | 正常                     |
+| https://docker.367231.xyz        | 正常                     |
+| https://docker.apiba.cn          | 正常                     |
+| https://hubp.me                  | 正常                     |
+| https://hub.fast360.xyz          | 正常                     |
+
+
 
 > 注意：如果使用镜像源方式需要把代理的内容删除并重启docker才可使用；
 > 注意：如果使用镜像源方式需要把代理的内容删除并重启docker才可使用；
@@ -218,4 +235,6 @@ docker pull liuchenyang/ubuntu20.04:latest
 
 
 
-> 长期维护加速列表参考地址：[https://www.xuxlc.cn/article/details-40.html?login=from_csdn](https://www.xuxlc.cn/article/details-40.html?login=from_csdn)
+> 长期维护加速列表参考地址：
+> * [https://www.xuxlc.cn/article/details-40.html?login=from_csdn](https://www.xuxlc.cn/article/details-40.html?login=from_csdn)
+> * [https://www.5dzone.com/posts/docker-mirrors.html](https://www.5dzone.com/posts/docker-mirrors.html)
