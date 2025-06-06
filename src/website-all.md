@@ -11,25 +11,187 @@ bgImage: https://file.mo7.cc/api/public/bz
 highlights:
   - header: 开发、运维官网
     features:
-      - title: JDK 官网
-        icon: java
-        details: oracle JDK官网，可以下载更多版本的JDK。
-        link: https://www.oracle.com/cn/java/technologies/downloads/archive/?source=:ow:o:s:nav::DevoGetStarted
+      - title: Docker 官网
+        icon: https://www.docker.com/app/uploads/2024/02/cropped-docker-logo-favicon-32x32.png
+        details: 
+        link: https://www.docker.com/
+
+      - title: Dockerhub 官网
+        icon: docker
+        details: 
+        link: https://hub.docker.com/
+
+      - title: Kubernetes 官网
+        icon: https://kubernetes.io/icons/favicon-32.png
+        details: 
+        link: https://kubernetes.io/
+
+      - title: vmware 官网
+        icon: https://www.vmware.com/vm-favicon.png
+        details: 
+        link: https://www.vmware.com/
+
+      - title: MariaDB 官网
+        icon: https://mariadb.com/favicon.ico
+        details: 
+        link: https://mariadb.com/
+
+      - title: MySQL 官网
+        icon: https://labs.mysql.com/common/themes/sakila/favicon.ico
+        details: 
+        link: https://www.mysql.com/
+
+      - title: Redis 官网
+        icon: https://redis.io/favicon.ico
+        details: 
+        link: https://redis.io/
+
+      - title: 达梦数据库 官网
+        icon: https://www.dameng.com/images/logo.ico
+        details: 
+        link: https://www.dameng.com/
+
+      - title: Zabbix 官网
+        icon: https://assets.zabbix.com/img/favicon.ico
+        details: 
+        link: https://www.zabbix.com/
+
+      - title: prometheus 官网
+        icon: https://prometheus.io/icon.svg
+        details: 
+        link: https://prometheus.io/
+
+      - title: Git 官网
+        icon: https://git-scm.com/favicon.ico
+        details: 
+        link: https://git-scm.com/
+
+      - title: SVN 官网
+        icon: https://subversion.apache.org/icon.png
+        details: 
+        link: https://subversion.apache.org/
+        
+      - title: Jenkins 官网
+        icon: https://www.jenkins.io/favicon.ico
+        details: 
+        link: https://www.jenkins.io/
+
+      - title: Jumpserver 官网
+        icon: https://www.jumpserver.org/images/logo/favicon.ico
+        details: 
+        link: https://www.jumpserver.org/
+
+      - title: Nginx 官网
+        icon: https://nginx.org/favicon.ico
+        details: 
+        link: https://nginx.org/
+        
+      - title: Tomcat 官网
+        icon: https://tomcat.apache.org/favicon.ico
+        details: 
+        link: https://tomcat.apache.org/
+
+      - title: Apache 官网
+        icon: https://httpd.apache.org/favicon.ico
+        details: 
+        link: https://httpd.apache.org/
 
       - title: NVIDIA 官网
         icon: https://www.nvidia.cn/favicon.ico
-        details: NVIDIA官网，可下载NVIDIA驱动。
+        details: 
         link: https://www.nvidia.cn/drivers/lookup/
 
-      - title: Dockerhub 镜像仓库代码
-        icon: docker
-        details: docker镜像仓库，存储各类镜像，目前只支持国外访问，国内需要通过加速器访问。
-        link: https://hub.docker.com/
+      - title: Openssh 官网
+        icon: https://openssl-library.org/favicon.ico
+        details: 
+        link: https://www.openssh.com/
+
+      - title: pip 官网
+        icon: https://pypi.org/static/images/favicon.35549fe8.ico
+        details: 
+        link: https://pypi.org/project/pip/
+
+      - title: PHP 官网
+        icon: https://www.php.net/favicon.ico
+        details: 
+        link: https://www.php.net/
+
+      - title: Python 官网
+        icon: https://www.python.org/favicon.ico
+        details: 
+        link: https://www.python.org/
+
+      - title: JDK 官网
+        icon: https://www.oracle.com/asset/web/favicons/favicon-32.png
+        details: 
+        link: https://www.oracle.com/cn/java/technologies/downloads/archive/?source=:ow:o:s:nav::DevoGetStarted
+
+      - title: Nodejs 官网
+        icon: https://nodejs.org/static/images/favicons/favicon.png
+        details: 
+        link: https://nodejs.org/zh-cn
+
+  - header: 运维服务安装包下载地址
+    features:
+      - title: Redis 二进制包下载地址
+        icon: redis
+        details: 提供redis各版本下载地址。
+        link: https://download.redis.io/releases/
+
+      - title: Nodejs 二进制包下载地址
+        icon: https://nodejs.org/favicon.ico
+        details: 提供Nodejs各版本、各架构、各系统下载地址。
+        link: https://nodejs.org/download/release/
 
       - title: Docker离线安装包地址
-        icon: docker
+        icon: https://download.docker.com/favicon.ico
         details: Docker离线安装包地址，有很多版本及架构可以下载。
         link: https://download.docker.com/linux/static/stable/
+
+      - title: GCC 二进制包下载地址
+        icon: https://gcc.gnu.org/favicon.ico
+        details: 提供GCC各版本、各系统下载地址。
+        link: https://ftp.gnu.org/gnu/gcc/
+
+      - title: Apache 二进制包下载地址
+        icon: https://httpd.apache.org/favicon.ico
+        details: 提供Apache各版本下载地址。
+        link: https://httpd.apache.org/
+
+      - title: Tomcat 二进制包下载地址
+        icon: https://tomcat.apache.org/favicon.ico
+        details: 提供Tomcat各版本下载地址。
+        link: https://tomcat.apache.org/
+
+      - title: Nginx 二进制包下载地址
+        icon: https://nginx.org/favicon.ico
+        details: 提供Nginx各版本下载地址。
+        link: https://nginx.org/en/download.html
+
+      - title: Openssl 二进制包下载地址
+        icon: https://openssl-library.org/favicon.ico
+        details: 提供Openssl各版本下载地址。
+        link: https://openssl-library.org/source/old/index.html
+
+      - title: Openssh 二进制包下载地址
+        icon: https://www.openssh.com/favicon.ico
+        details: 提供Openssh各版本下载地址。
+        link: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
+
+      - title: Mysql 安装包下载地址
+        icon: https://labs.mysql.com/common/themes/sakila/favicon.ico
+        details: 提供Mysql各版本、各系统下载地址。
+        link: https://downloads.mysql.com/archives/community/
+
+      - title: JDK 二进制包下载地址
+        icon: https://www.oracle.com/asset/web/favicons/favicon-32.png
+        details: 提供JDK各版本、各系统下载地址。
+        link: https://www.oracle.com/cn/java/technologies/downloads/
+
+      - title: Python 离线包下载地址
+        icon: https://www.python.org/favicon.ico
+        details: 提供Python各版本、各系统下载地址。
+        link: https://www.python.org/ftp/python/
 
   - header: 开源镜像
     features:
