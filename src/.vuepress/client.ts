@@ -95,7 +95,7 @@ export default defineClientConfig({
     //  window._AMapSecurityConfig = {
     //    securityJsCode: '1744fd88983e27519b32046ce99d36eb', // 替换为你的安全密钥
     //  }
-    }
+    // }
   },
   
   // 你可以在这里覆盖或新增布局
