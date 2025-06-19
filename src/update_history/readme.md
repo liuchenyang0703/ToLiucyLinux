@@ -314,3 +314,7 @@ category:
 
 ## 2025-06-18:
 > 1、新增了一篇文章【Linux lsof 命令详解+实例】
+
+## 2025-06-19:
+> 1、更新了运维工具页面，新增了内容（src/tools-all.md）
+> 2、去掉天气组件（src/.vuepress/client.ts）

@@ -89,10 +89,25 @@ highlights:
         details: 在线图片转Base64码。
         link: https://www.jyshare.com/front-end/59/
 
+      - title: windows、office激活工具
+        icon: http://win.jxrst.cn/favicon.ico
+        details: 一键激活windows系统和office软件
+        link: https://kms.cx/
+
       - title: AI工具箱
         icon: wuguan
         details: AI工具箱，有很多关于AI应用、写作、编程、设计、作图、音影、效率助手等。
         link: https://tools.haiyong.site/ai/
+
+      - title: AI工具箱2
+        icon: wuguan
+        details: AI工具箱，有很多关于AI应用、写作、编程、设计、作图、音影、效率助手等。
+        link: https://aishenqi.net/#term-815
+
+      - title: Excel公式、快捷键大全
+        icon: http://adobe.sjzgw.cn/office/20250509/img/Excel.svg        
+        details: 内含：基础操作、快捷键、函数、公式等，可以进行搜索。
+        link: https://www.lanrenexcel.com/
 
 
   - header: 图片、图标、PDF等转换相关在线
@@ -132,6 +147,31 @@ highlights:
         details: 修复模糊图片。
         link: https://zh.pixfix.com/
 
+      - title: 免费在线抠图
+        icon: https://www.koukoutu.com/icons/192.png
+        details: 永久免费的AI在线抠图工具，免登录抠图、无限制下载高清大图。
+        link: https://www.koukoutu.com/
+
+      - title: 免费的在线图片与 PDF 处理工具<br> <center>- docsmall</center>
+        icon: https://docsmall.com/favicon.png
+        details: 🚀AI处理图片（高清、抠图、擦除）、图片压缩、图片格式转换（转word、pdf、Excel）、PDF合并、PDF格式转换等。
+        link: https://docsmall.com/
+
+      - title: 证件照大师
+        icon: https://id-photo.cn/favicon.ico
+        details: 免费制作证件照及换底色
+        link: https://id-photo.cn/
+
+      - title: 在线转换文档、图片、视频、音频文件<br> <center>- aconvert</center>
+        icon: 04zhuanhuan
+        details: 在线转换文档、PDF、图片、电子书、视频、音频、压缩文件，非常好用，可以支持上传和链接式转换，最重要不需要登录。
+        link: https://www.aconvert.com/
+
+      - title: 在线文件转换工具<br> <center>- Convertio</center>
+        icon: 04zhuanhuan
+        details: 文件转换工具，可以转换任意格式（图片、文档、电子书等格式）
+        link: https://convertio.co/zh/
+
       - title: PDF转JPG图片工具<br> <center>- Smallpdf</center>
         icon: tupian
         details: PDF转JPG图片工具，还可以转PPT、word，或者word转pdf等。
@@ -142,10 +182,10 @@ highlights:
         details: PDF转JPG图片工具，还可以转PPT、word，或者word转pdf等。
         link: https://www.ilovepdf.com/pdf_to_jpg
 
-      - title: 在线转换文档、图片、视频、音频文件<br> <center>- aconvert</center>
-        icon: 04zhuanhuan
-        details: 在线转换文档、PDF、图片、电子书、视频、音频、压缩文件，非常好用，可以支持上传和链接式转换，最重要不需要登录。
-        link: https://www.aconvert.com/
+      - title: PDF转换大全<br> <center>- PDF24 Tools</center>
+        icon: https://tools.pdf24.org/static/img/pdf24.png
+        details: PDF24 Tools 免费，功能有：pdf转图片、分割、压缩、移除密码保护、网页转PDF、图片转PDF、word转PDF等等功能。
+        link: https://tools.pdf24.org/zh/
 
       - title: 在线生成ICO图标
         icon: icon
@@ -190,6 +230,10 @@ highlights:
         details: 写的文章为markdown文档可以直接转为doc格式的文档。
         link: https://cloudconvert.com/
 
+      - title: URL转markdown文档
+        icon: https://www.helloworld.net/favicon.ico
+        details: 可以上传文章的url或者是html来转换成markdown文档，支持在线预览、支持平台：CSDN、掘金、简书、博客园等。
+        link: https://www.helloworld.net/html2md
 
 
   - header: Windows好用软件推荐
@@ -240,6 +284,58 @@ highlights:
         icon: wenjianchuanshu
         details: 传文件，找文叔叔，不用登陆，不限速，加密传输。
         link: https://www.wenshushu.cn/
+
+      - title: 生活工具修理手册
+        icon: https://assets.cdn.ifixit.com/static/icons/ifixit/favicon-32x32.png
+        details: iFixit：免费修理手册，内含：生活中各种常用的家具、电脑、手机等修理等教程。
+        link: https://zh.ifixit.com/
+
+      - title: 极简插件
+        icon: https://chrome.zzzmh.cn/favicon.ico
+        details: 浏览器的一些插件（扩展程序），最主要的是可以下载离线包到本地。
+        link: https://chrome.zzzmh.cn/
+
+      - title: 谷歌应用商店
+        icon: https://chrome.zzzmh.cn/favicon.ico
+        details: 有很多的谷歌插件（扩展程序）、主题等（访问需要翻墙，需注意）。
+        link: https://chromewebstore.google.com/
+
+      - title: 老师帮
+        icon: https://www.laoshibang.com/favicon.ico
+        details: 老师帮-教师必备AI智能工具，可以帮助做ppt、成绩分析、作业批改等；
+        link: https://www.laoshibang.com/
+
+      - title: 凹凸工坊
+        icon: https://www.autohanding.com/favicon.ico
+        details: 可以一键生成手写文稿_手写字体在线转换_在线字体制作_模仿手写软件_AI手写字体生成_手写字体生成器
+        link: https://www.autohanding.com/
+
+      - title: 在线免费学习外语
+        icon: fenxiang_icon
+        details: 该网站可以免费学习各国语言，提供了40多种语言；
+        link: https://www.lingohut.com/zh
+
+      - title: SaltyLeo 的书架
+        icon: https://book.tstrs.me/96.png
+        details: SaltyLeo的书架是一个集电子书搜索与下载功能于一体的在线平台，提供数十万本电子书资源。
+        link: https://book.tstrs.me/
+
+      - title: AixDownloader
+        icon: https://aixdownloader.com/favicon.ico
+        details: 支持一键批量下载网页图片、视频、音频等内容,支持主流网站,完全免费。
+        link: https://aixdownloader.com/zh
+
+      - title: 免费视频解析下载
+        icon: https://www.bestvideow.com/image/logomin.png
+        details: Best Video下载器、免费使用，高效便捷，一键极速下载。
+        link: https://www.bestvideow.com/
+
+  - header: 
+    features:
+      - title: <center>更多学习网站推荐......</center>
+        icon: 
+        details: 
+        link: https://liuchenyang0703.github.io/nav/
 
 copyright: false
 footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议 | <a href="person.html" target="_blank">关于作者</a><br>

@@ -30,7 +30,7 @@ const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 添加网站运行时间配置
 const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
 // 天气预报大组件
-const Weather = defineAsyncComponent(() => import("./components/Weather.vue"));
+// const Weather = defineAsyncComponent(() => import("./components/Weather.vue"));
 
 export default defineClientConfig({
   setup() {
@@ -74,7 +74,7 @@ export default defineClientConfig({
   rootComponents: [
     jz,
     yx,
-	Weather,
+//	Weather,
   ],
 
   // 全局组件（添加某个组件到全局）
@@ -91,10 +91,10 @@ export default defineClientConfig({
     app.component("roll", roll);
     // 天气预报大组件
     // app.component("Weather", Weather);
-    if (typeof window !== 'undefined') { // 确保在客户端执行
-      window._AMapSecurityConfig = {
-        securityJsCode: '1744fd88983e27519b32046ce99d36eb', // 替换为你的安全密钥
-      }
+    // if (typeof window !== 'undefined') { // 确保在客户端执行
+    //  window._AMapSecurityConfig = {
+    //    securityJsCode: '1744fd88983e27519b32046ce99d36eb', // 替换为你的安全密钥
+    //  }
     }
   },
   
