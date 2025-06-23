@@ -318,3 +318,6 @@ category:
 ## 2025-06-19:
 > 1、更新了运维工具页面，新增了内容（src/tools-all.md）
 > 2、去掉天气组件（src/.vuepress/client.ts）
+
+## 2025-06-23:
+> 1、新增网站提交处（src/.vuepress/navbar.ts）（src/web_submit.md）
