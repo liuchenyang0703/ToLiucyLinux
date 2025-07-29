@@ -2,6 +2,7 @@
 title: 项目更新记录
 icon: lishi
 date: 2023-12-24 12:20:00
+isOriginal: true
 category:
   - 项目更新记录
 ---
@@ -324,3 +325,6 @@ category:
 
 ## 2025-07-21:
 > 1、更新了docker镜像加速地址文章
+
+## 2025-07-29:
+> 1、更新linux中部署docker中的一些内容

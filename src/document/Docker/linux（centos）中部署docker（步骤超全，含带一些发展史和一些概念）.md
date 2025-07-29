@@ -13,6 +13,7 @@ pageview: false
 date: 2024-12-16
 comment: false
 breadcrumb: false
+isOriginal: true
 ---
 
 ## 前言
@@ -200,9 +201,12 @@ SIZE：镜像大小
 ### docker容器管理
 |  docker container命令	|说明	|举例
 |--|--|--|
-|docker ps -a|查看所有的容器 |docker ps -a|
-|docekr ps |查看所有的正在运行的容器| docekr ps 
+|docker ps -a|查看所有的容器 |docker ps -a \| grep nginx|
+|docekr ps |查看所有的正在运行的容器| docekr ps \| grep nginx |
 | docker ps -l|查看最新的容器|  docker ps -l| 
+|docker ps -s|查看容器的大小|docker ps -s \| grep nginx|
+|docker ps -n |查看最后创建的几个容器| docker ps -n 2 | 
+|docker ps -q| 查看所有容器的ID|docker ps -q|
 |docker container ls|	查看运行的容器|	docker container ls|	
 |docker run|	运行一个docker容器		|docker run -itd --name nginx nginx:v1|
 |docker container create	|创建容器但不运行		|docker container create nginx|
