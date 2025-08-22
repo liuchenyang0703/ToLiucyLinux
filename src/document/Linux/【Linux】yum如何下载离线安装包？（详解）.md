@@ -85,7 +85,7 @@ mariadb-5.5.68-1.el7.x86_64.rpm  mariadb-libs-5.5.68-1.el7.x86_64.rpm
 ```bash
 sudo yum -y install yum-utils
 ```
-这个命令安装完之后就会有`yumdownloader `命令了，这时候我们使用这个命令去下载离线包；
+这个命令安装完之后就会有`yumdownloader` 命令了，这时候我们使用这个命令去下载离线包；
 * yumdownloader 用法
 
 ```bash
@@ -97,8 +97,8 @@ yumdownloader --destdir=要下载的路径 要下载的安装包
 |  参数|解析  |
 |--|--|
 | --resolve | 此选项会分析指定的软件包的依赖关系，并自动下载和保存这些依赖软件包。注意，如果系统内该依赖包已安装，运行命令时将不会下载已安装的依赖包。 |
-|--enablerepo=<repository>|指定yum源，如果不知可以省去此参数。
-|--destdir=<directory>|指定下载的软件包存放路径，默认下载到当前目录中。
+|--enablerepo=\<repository\>|指定yum源，如果不知可以省去此参数。|
+|--destdir=\<directory\>|指定下载的软件包存放路径，默认下载到当前目录中。|
 
 **<font color=teal>实例：</font>**
 

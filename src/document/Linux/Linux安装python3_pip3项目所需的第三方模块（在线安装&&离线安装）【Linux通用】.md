@@ -149,7 +149,8 @@ pip3 download numpy==1.18.5 -i https://pypi.tuna.tsinghua.edu.cn/simple -d /data
 
 
 #### ②、批量下载模块&&指定目录
-<font size=3>**创建文件**</font>
+
+**<font size=3>创建文件</font>**
 
 批量下载模块，首先要创建一个文件（文件名任意）
 ```bash
@@ -165,7 +166,7 @@ PyMuPDF
 ```
 ![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221620168.png)
 
-<font size=3>**批量下载**</font>
+**<font size=3>批量下载</font>**
 
 
 **<font color=teal>格式：</font>**
