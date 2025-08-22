@@ -1,5 +1,5 @@
 ﻿---
-title: Centos7 yum如何下载离线安装包？（详解）
+title: 【Linux】yum如何下载离线安装包？（详解）
 icon: circle-info
 order: 1
 category:
@@ -8,24 +8,25 @@ tag:
   - Linux
   - 运维
 pageview: false
-date: 2024-12-18
+date: 2022-07-18
 comment: false
 breadcrumb: false
+isOriginal: true
 ---
-
 ![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181624813.jpeg)
+
 
 >👨‍🎓**博主简介**
 >
+>&emsp;&emsp;🏅[CSDN博客专家](https://blog.csdn.net/liu_chen_yang?type=blog)
 >&emsp;&emsp;🏅[云计算领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
->&emsp;&emsp;🏅[华为云开发者社区专家博主](https://bbs.huaweicloud.com/community/myblog)
->&emsp;&emsp;🏅[阿里云开发者社区专家博主](https://developer.aliyun.com/my?spm=a2c6h.13148508.setting.3.21fc4f0eCmz1v3#/article?_k=zooqoz)
+>&emsp;&emsp;🏅[华为云开发者社区专家博主](https://bbs.huaweicloud.com/community/usersnew/id_1661843828089234)
+>&emsp;&emsp;🏅[阿里云开发者社区专家博主](https://developer.aliyun.com/profile/7yu26jk3lfqxg)
 >💊**交流社区：**[运维交流社区](https://bbs.csdn.net/forums/lcy) 欢迎大家的加入！
 >🐋 希望大家多多支持，我们一起进步！😄
 >🎉如果文章对你有帮助的话，欢迎 点赞 👍🏻 评论 💬 收藏 ⭐️ 加关注+💗
 
 ---
-
 
 ## 前言
 <font color=red>下载离线包的时候需要在有可以ping通baidu等外网的环境中下载离线包；</font>
@@ -74,7 +75,7 @@ yum -y install gcc gcc-c++ --downloadonly --downloaddir=./
 [root@zabbix-5 mysql]# ls
 mariadb-5.5.68-1.el7.x86_64.rpm  mariadb-libs-5.5.68-1.el7.x86_64.rpm
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181624651.png)
+![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221621557.png)
 然后咱们可以把rpm包下载到本地，之后使用的时候就可以上传到内网环境中，直接<font color=red>**rpm -ivh 包名**</font>安装就可以了。
 
 ## 第二种方法：使用 yumdownloader 命令【只下载你需要的安装包（不包含依赖）】
@@ -96,8 +97,8 @@ yumdownloader --destdir=要下载的路径 要下载的安装包
 |  参数|解析  |
 |--|--|
 | --resolve | 此选项会分析指定的软件包的依赖关系，并自动下载和保存这些依赖软件包。注意，如果系统内该依赖包已安装，运行命令时将不会下载已安装的依赖包。 |
-|--enablerepo=\<repository>|指定yum源，如果不知可以省去此参数。
-|--destdir=\<directory>|指定下载的软件包存放路径，默认下载到当前目录中。
+|--enablerepo=<repository>|指定yum源，如果不知可以省去此参数。
+|--destdir=<directory>|指定下载的软件包存放路径，默认下载到当前目录中。
 
 **<font color=teal>实例：</font>**
 
@@ -108,31 +109,30 @@ yumdownloader --destdir=/data/mysql/ mysql
 ```
 下载完之后切换到这个目录看一下，可以看到离线包了。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181624636.png)
+![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221621653.png)
 
 
 ## 两者区别及优缺点：
-
--  举实例两者下载的区别：
+* 举实例两者下载的区别：
 
 * [x] 示例1：使用yum + 参数安装
 ```bash
 yum -y install gcc gcc-c++ --downloadonly --downloaddir=./
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181624606.png)
+![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221621595.png)
 
 
 * [x] 示例2：yumdownloader 命令下载
 ```bash
 yumdownloader --destdir=./ gcc gcc-c++
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181624252.png)
+![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221621986.png)
 
 
 
 两者的区别很明显了，yumdownloader下载的少，是因为他不会下载依赖包，只会下载你需要的包；
 
--  两者优缺点：
+* 两者优缺点：
 
 * [x] yum + 参数 优点：
 1、会自动下载安装所需软件的所有依赖包，保证离线安装包的完整性；
@@ -140,7 +140,7 @@ yumdownloader --destdir=./ gcc gcc-c++
 * [x] yum + 参数 缺点：
 1、如果服务器上已经安装过这个命令或者包的话，下载会提示已经安装过，所以安装的时候需要使用空环境。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181624291.png)
+![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221621801.png)
 
 * [x] yumdownloader 优点：
 1、不管有没有安装都会下载下来离线包。
@@ -153,3 +153,70 @@ yumdownloader --destdir=./ gcc gcc-c++
 
 * 总结：
 > 各有利弊，还是推荐使用第一种方式。
+
+## 批量下载软件离线包及批量安装【推荐使用】
+> 使用脚本来实现批量下载及安装
+* download.sh（批量下载脚本）
+
+```bash
+#!/bin/bash
+
+# 定义要下载的软件包列表
+packages=(
+    "vim"
+    "unzip"
+    "tar"
+    "make"
+    "net-tools"
+    "gcc"
+    "gcc-c++"
+    "locales"
+)
+
+# 遍历软件包列表，下载每个软件包
+for package in "${packages[@]}"; do
+    # 创建以软件包名命名的目录
+    mkdir -p "$package"
+    
+    # 使用yum下载软件包
+    echo "正在下载 $package ..."
+    yum -y install $package --downloadonly --downloaddir=./$package
+done
+
+echo "所有软件包下载完成！"
+```
+
+
+* install.sh（批量安装脚本）
+
+```bash
+#!/bin/bash
+
+# 定义要安装的软件包列表
+packages=(
+    "vim"
+    "unzip"
+    "tar"
+    "make"
+    "net-tools"
+    "gcc"
+    "gcc-c++"
+    "locales"
+)
+
+# 遍历软件包列表，安装每个软件包
+for package in "${packages[@]}"; do
+    # 进入目录
+    cd "$package"
+    
+    # 使用rpm安装软件包
+    echo "正在安装 $package ..."
+    rpm -ivh * --nodeps --force
+    
+    # 返回上级目录
+    cd ..
+done
+
+echo "所有软件包安装完成！"
+```
+
