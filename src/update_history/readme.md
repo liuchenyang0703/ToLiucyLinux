@@ -333,3 +333,7 @@ category:
 > 1、更新了docker镜像加速地址文章
 > 2、更新了Linux安装python3_pip3项目所需的第三方模块（在线安装&&离线安装）【Linux通用】
 > 3、【Linux】yum如何下载离线安装包？（详解）
+
+## 2025-09-01:
+> 1、更新了Ansible自动化运维（三）Playbook_模式详解文章
+> 2、新增了：【Linux】Docker洞察：掌握docker_inspect命令与Go模板技巧文章
