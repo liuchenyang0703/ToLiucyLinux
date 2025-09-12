@@ -348,3 +348,4 @@ category:
 > 7、公众号图片本地化（src/.vuepress/public/assets/image）
 > 8、修改了个人主页失效的内容（src/person.md）
 > 9、修复了博客公众号点击会下载的问题（src/.vuepress/theme.ts）
+> 10、修复博客公众号访问加后缀访问失败问题（src/.vuepress/theme.ts）
