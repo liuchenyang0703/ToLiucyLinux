@@ -347,4 +347,4 @@ category:
 > 6、荣誉证书图片全部本地化（src/.vuepress/public/assets/image/certificate）
 > 7、公众号图片本地化（src/.vuepress/public/assets/image）
 > 8、修改了个人主页失效的内容（src/person.md）
-> 7、修复了博客公众号点击会下载的问题（src/.vuepress/theme.ts）
+> 9、修复了博客公众号点击会下载的问题（src/.vuepress/theme.ts）
