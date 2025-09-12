@@ -183,7 +183,7 @@ export default hopeTheme({
       Email: "person.html#%E4%B8%AA%E4%BA%BA%E9%82%AE%E7%AE%B1",
       GitHub: "https://github.com/liuchenyang0703/",
       Weibo: "https://weibo.com/u/6350216849",
-      WechatMP: "https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142008812.png",
+      WechatMP: "/assets/image/公众号.png",
       "163Music": "https://music.163.com/#/artist?id=50843863",
       QQMusic: "https://y.qq.com/n/ryqq/singer/002w4tXt2LlT2T",
       Kugou: "https://www.kugou.com/singer/info/749K9K2D607AF7/",
