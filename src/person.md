@@ -16,6 +16,7 @@ titles:
   - CSDN-2022年度社区之星
   - 运维领域优质创作者
   - 云计算领域优质创作者
+  - 极星会KOL
    
  
 copyright: false
@@ -36,9 +37,6 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 - ⚡ Read more about my Blog: [ToLiucyLinux](https://liuchenyang.top) |  [ToLiucyLinux](https://liuchenyang0703.github.io/ToLiucyLinux/) 
 <br>
 
-<div style="text-align: center;">
-    你是我的第 <img src="https://profile-counter.glitch.me/liuchenyang0703/count.svg" alt="Visitor Count"> 个访客，谢谢你的访问！
-</div>
 
 ## ✨ 我的技术栈   
 <br>
@@ -92,8 +90,10 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 | 🪄 Blog      | 个人博客         | [https://liuchenyang0703.github.io/ToLiucyLinux/](https://liuchenyang0703.github.io/ToLiucyLinux/) |
 | 🪄 Blog      | 个人博客         | [https://liuchenyang.top](https://liuchenyang.top) |
 | 🧭 Nav      | 个人导航页         | [https://liuchenyang0703.github.io/nav/](https://liuchenyang0703.github.io/nav/) |
+| 🧭 Nav      | 个人导航页         | [https://liuchenyang.top/nav/](https://liuchenyang.top/nav/) |
 | 🕒 time | 时间计算器         | [https://liuchenyang0703.github.io/time/](https://liuchenyang0703.github.io/time/) |
 | 𝖂 weird-fonts | 奇怪的字体库         | [https://liuchenyang0703.github.io/weird-fonts/](https://liuchenyang0703.github.io/weird-fonts/) |  
+|CSDN|CSDN文章质量分批量查询|[http://liuchenyang.top:8000](http://liuchenyang.top:8000)|
 
 <br>
 
@@ -116,7 +116,9 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 
 2023年新星计划Linux运维方向导师 华为云开发者社区专家博主 阿里云开发者社区专家博主 CSDN博客专家 CSDN内容合伙人 CSDN-2022年度社区之星 运维领域优质创作者 云计算领域新星创作者；
 
-如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的CSDN博客 [**A-刘晨阳**](https://blog.csdn.net/liu_chen_yang?type=blog)。
+<div align="center">
+如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的CSDN博客 <strong><a href="https://blog.csdn.net/liu_chen_yang?type=blog">A-刘晨阳</a></strong>。
+</div>
 
 * [🏅 2023年新星计划Linux运维方向导师](https://blog.csdn.net/liu_chen_yang?type=blog)
 * [🏅 华为云开发者社区专家博主](https://bbs.huaweicloud.com/community/usersnew/id_1661843828089234)
@@ -126,6 +128,7 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 * [🏅 CSDN-2022年度社区之星](https://bbs.csdn.net/forums/lcy?spm=1001.2014.3001.6682)
 * [🏅 运维领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
 * [🏅 云计算领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
+* [🏅 极星会KOL](/assets/image/certificate/极星会.jpg)
 <!-- * []() -->
 
 <table>
@@ -142,14 +145,14 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 	<tr>
         <td rowspan="2" style="text-align: center;"><a href="https://blog.csdn.net/" target="_blank">CSDN</a></td>
         <td>2023 城市之星证书</td>
-        <td><img style="width: 160px" src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502281621612.png" /></td>
+        <td><img style="width: 160px" src="/assets/image/certificate/城市之星.png" /></td>
         <td>CSDN2023071935409</td>
 	    <td rowspan="2" style="text-align: center;"><a href="https://activity.csdn.net/cert" target="_blank">CSDN查询地址</a></td>
 	</tr>
     <tr>
         <!-- <td>CSDN</td> -->
         <td>博客专家证书</td>
-        <td><img style="width: 160px" src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502281621040.png" /></td>
+        <td><img style="width: 160px" src="/assets/image/certificate/博客专家.png" /></td>
         <td>CSDN2024040951774</td>
 	    <!-- <td rowspan="2"><a href="https://activity.csdn.net/cert">CSDN查询地址</a></td> -->
 	</tr>
@@ -161,12 +164,6 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
     </tr>
   </tbody>
 </table>
-
-
-## 个人贡献 🏅
-* [🏅 程序员Liucy的学习指南1](http://liuchenyang.top)
-* [🏅 程序员Liucy的学习指南2](https://liuchenyang0703.github.io/ToLiucyLinux/)
-* [🐋 运维交流社区](https://bbs.csdn.net/forums/lcy)
 
 ## 交个朋友 👬🏻
 
@@ -184,7 +181,7 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 ## 公众号
 
 
-如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号**小刘Linux**。
+<center>如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号<strong>小刘Linux</strong> 。</center>
 
 
-![小刘Linux 公众号封面](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142008812.png)
+![小刘Linux 公众号封面](/assets/image/公众号.png)

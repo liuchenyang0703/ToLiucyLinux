@@ -345,3 +345,5 @@ category:
 > 4、新增面试经历记录并配置访问密码（src/interview/intervie_record）（src/.vuepress/theme.ts）
 > 5、荣誉墙新增华为证书及极星会证书（src/honor.md）
 > 6、荣誉证书图片全部本地化（src/.vuepress/public/assets/image/certificate）
+> 7、公众号图片本地化（src/.vuepress/public/assets/image）
+> 8、修改了个人主页失效的内容（src/person.md）
