@@ -62,6 +62,7 @@ export default hopeTheme({
       "/document/database/《MySQL数据库入门到大牛》/": ["3306"],
       "/update_history/":["5555"],
       "/document/Linux_linshi/": ["5555"],
+	  "/interview/intervie_record/": ["202109"],
     },
   },
   // 加密文章的提示信息

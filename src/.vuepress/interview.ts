@@ -84,6 +84,14 @@ export const interview = arraySidebar([
         collapsible: true,
         children: "structure",
     },
+    {
+        text: "面试经历记录",
+        icon: "a-061_shuben",
+        prefix: "intervie_record/",
+        // 添加下拉框
+        collapsible: true,
+        children: "structure",
+    },
     // {
     //     text: "死磕面试",
     //     icon: "book",

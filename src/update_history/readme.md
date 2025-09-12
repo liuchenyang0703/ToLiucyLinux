@@ -337,3 +337,11 @@ category:
 ## 2025-09-01:
 > 1、更新了Ansible自动化运维（三）Playbook_模式详解文章
 > 2、新增了：【Linux】Docker洞察：掌握docker_inspect命令与Go模板技巧文章
+
+## 2025-09-12:
+> 1、更新了docker镜像加速地址文章
+> 2、新增了docker update命令解析文章
+> 3、更新了Linux日志文章
+> 4、新增面试经历记录并配置访问密码（src/interview/intervie_record）（src/.vuepress/theme.ts）
+> 5、荣誉墙新增华为证书及极星会证书（src/honor.md）
+> 6、荣誉证书图片全部本地化（src/.vuepress/public/assets/image/certificate）
