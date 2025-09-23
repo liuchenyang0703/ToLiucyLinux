@@ -12,9 +12,10 @@ tag:
   - Docker
   - 运维
 pageview: false
-date: 2024-12-16
+date: 2023-05-30
 comment: false
 breadcrumb: false
+isOriginal: true
 ---
 
 >🍁**博主简介**
@@ -145,7 +146,7 @@ systemctl stop firewalld && systemctl disable firewalld
 setenforce 0
 
 #永久关闭selinux
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+sed -i 's/^SELINUX=enforcing$/SELINUX=disabled/' /etc/selinux/config
 ```
 ### 关闭交换分区
 ```bash
