@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】邮件服务器搭建_postfix+dovecot+mysql_（终极版_超详细_亲测多遍无问题）
+title: 【Linux】邮件服务器搭建 postfix+dovecot+mysql（终极版_超详细_亲测多遍无问题）
 icon: circle-info
 order: 1
 category:

@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】_OpenSSH_9.8p1_升级到_OpenSSH_10.0p1（亲测无问题，建议收藏）
+title: 【Linux】 OpenSSH_9.8p1 升级到 OpenSSH_10.0p1（亲测无问题，建议收藏）
 icon: circle-info
 order: 1
 category:

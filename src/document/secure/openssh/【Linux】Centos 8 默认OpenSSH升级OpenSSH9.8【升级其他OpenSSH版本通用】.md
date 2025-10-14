@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】Centos_8_默认OpenSSH_升级OpenSSH9.8【升级其他OpenSSH版本通用】
+title: 【Linux】Centos 8 默认OpenSSH升级OpenSSH9.8【升级其他OpenSSH版本通用】
 icon: circle-info
 order: 1
 category:
