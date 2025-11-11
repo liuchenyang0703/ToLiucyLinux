@@ -78,6 +78,18 @@ export const friends: LinkData[] = [
     icon: "https://static.imdst.com/image/5/dd/a34353466215dd8721615b9d1538c.jpg",
     link: "https://blog.imdst.com/",
   },
+  {
+    name: "CodeSuc 的技术博客",
+    desc: "专注于编程技术分享与交流的个人博客",
+    icon: "https://codesuc.top/img/logo-codesuc-icon.18c10571.svg",
+    link: "https://codesuc.top",
+  },
+  {
+    name: "ToLiucyLinux网址导航",
+    desc: "网址导航，分享常用的工具及好用的网站",
+    icon: "https://liuchenyang.top/logo.png",
+    link: "https://liuchenyang.top/nav/",
+  },
 ];
 export const invalid: LinkData[] = [
   

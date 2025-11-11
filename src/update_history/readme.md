@@ -358,3 +358,8 @@ category:
 ## 2025-10-14:
 > 1、更新了docker镜像加速地址文章
 > 2、新增了5篇文章：【Linux】_OpenSSH_9.8p1_升级到_OpenSSH_10.0p1（亲测无问题，建议收藏）、【Linux】如何通过uptime查看系统负载是否过高？、【Linux】Centos_8_默认OpenSSH_升级OpenSSH9.8【升级其他OpenSSH版本通用】、Linux安装centos8及基础配置、【Linux】邮件服务器搭建_postfix+dovecot+mysql_（终极版_超详细_亲测多遍无问题）；
+
+## 2025-11-11:
+> 1、更新了docker镜像加速地址文章
+> 2、新增了K8S_二进制集群搭建（一主两从）文章
+> 3、新增了两个友链

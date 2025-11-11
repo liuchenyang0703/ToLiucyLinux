@@ -192,16 +192,17 @@ docker pull liuchenyang/ubuntu20.04:latest
 > 注意：开启🐱之后可能会影响你的网络，请勿使用与非法途径，谨慎使用；
 > 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
 
-## 五、Docker加速列表 - 2025.10.14 已更新 - 长期维护
-><span id="dockerjiasu">Docker加速列表 - 2025.10.14 已更新 - 长期维护</span>
+## 五、Docker加速列表 - 2025.11.11 已更新 - 长期维护
+><span id="dockerjiasu">Docker加速列表 - 2025.11.11 已更新 - 长期维护</span>
 
 | 镜像加速地址                      | 是否正常使用 |
 | --------------------------------- | ------------ |
-| https://docker.1ms.run | 正常         |
 | https://dockercf.jsdelivr.fyi | 正常         |
-| https://docker.jsdelivr.fyi | 正常         |
-| https://dockertest.jsdelivr.fyi | 正常         |
+| https://docker.jsdelivr.fyi                              | 正常         |
 | https://docker.1panel.live | 正常         |
+| https://docker.zhai.cm | 正常         |
+| https://a.ussh.net | 正常         |
+| https://docker.sunzishaokao.com | 正常         |
 | https://docker.xuanyuan.me | 正常         |
 | https://lispy.org | 正常         |
 | https://docker.yomansunter.com | 正常         |
@@ -210,13 +211,13 @@ docker pull liuchenyang/ubuntu20.04:latest
 | https://docker-0.unsee.tech | 正常         |
 | https://docker.hlmirror.com | 正常         |
 | https://dockerpull.pw | 正常         |
-| https://image.cloudlayer.icu | 正常         |
+| https://hub3.nat.tf | 正常         |
+| https://hub.amingg.com | 正常         |
 | https://cr.laoyou.ip-ddns.com | 正常         |
 | https://docker.amingg.com | 正常         |
 | https://hub.1panel.dev | 正常         |
-| https://docker-registry.nmqu.com | 正常         |
-| https://docker.367231.xyz | 正常         |
-| https://hubp.me | 正常         |
+| https://docker-registry.nmqu.com | 正常 |
+| https://docker.367231.xyz | 正常 |
 
 
 
