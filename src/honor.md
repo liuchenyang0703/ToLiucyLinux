@@ -163,6 +163,13 @@ toc: false
         <td>无证书编号</td>
         <td rowspan="1" style="text-align: center;">无查询地址</td>
 	</tr>
+    <tr>
+        <td rowspan="1" style="text-align: center;"><a href="https://cloud.tencent.com/developer" target="_blank">腾讯云</a></td>
+        <td>腾讯云创作之星证书</td>
+        <td><img style="width: 160px" src="/assets/image/certificate/腾讯云创作之星.jpg" /></td>
+        <td>TCl07070000553</td>
+        <td rowspan="1" style="text-align: center;">无查询地址</td>
+	</tr>
   </tbody>
 </table>
 
@@ -175,5 +182,6 @@ title 荣誉墙平台占比：
   "灵境开发者" : 1
   "阿里云" : 12
   "华为云" : 1
+  "腾讯云" : 1
   "极星会" : 1
 ```
