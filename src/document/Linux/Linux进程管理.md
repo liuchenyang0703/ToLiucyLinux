@@ -130,7 +130,7 @@ kill -9 pid	<font color=daaafns>根据进程的pid强制杀死某个进程</font
 killall 进程名	根据进程名杀进程
 pkill	根据条件杀进程
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191617772.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191617772.png)
 
 |kill -l	| 查看进程的所有进程 |
 |-----------------|--|

@@ -115,7 +115,7 @@ docker commint redhat redhat:7.8
 ```bash
 docker images | grep redhat
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180922246.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180922246.png)
 ## 四、redhat7.8镜像完成！
 >如果想将打成的镜像上传到 `harbor` 或者 `dockerhub` 镜像仓库中，可参考此两篇文章：<br>
 【私有镜像仓库】：[Linux中基于Docker搭建harbor私有镜像仓库（超级详细）](https://liucy.blog.csdn.net/article/details/124623482) 

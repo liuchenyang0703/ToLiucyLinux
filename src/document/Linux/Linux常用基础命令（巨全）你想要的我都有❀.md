@@ -35,7 +35,7 @@ p	<font color=purple> 表示管道文件</font>	紫色
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191606981.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191606981.png)
 
 ## ❀ls命令
 
@@ -51,7 +51,7 @@ p	<font color=purple> 表示管道文件</font>	紫色
 | -t |由新到旧  |
 也可参考👉[linux命令-ll之按时间、大小顺序排列显示](https://blog.csdn.net/liu_chen_yang/article/details/123070483?spm=1001.2014.3001.5502)👈
 查看帮助命令：help	man	info
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191606638.png)❀cd命令
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191606638.png)❀cd命令
 
 | cd |切换目录（后面跟路径“/”）  |
 |--|--|
@@ -111,7 +111,7 @@ hh 小时(必要)
 mm 分钟(必要)
 ss 秒(选择性) 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191606820.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191606820.png)
 ## ❀创建、删除文件和目录命令
 
 |touch	  |  创建文件或者更新文件时间戳|
@@ -180,7 +180,7 @@ ss 秒(选择性)
 > tailf 文件名
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191606357.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191606357.png)
 
 ## ❀find查找、wc统计命令
 
@@ -211,7 +211,7 @@ ss 秒(选择性)
 |-c|统计字节|
 | -m| 统计字符 |
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191606471.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191606471.png)
 
 ## ❀vi/vim命令
 
@@ -287,7 +287,7 @@ ctrl+r	恢复
 > shift+v/V	可视行模式 
 > v	可视模式
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191605587.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191605587.png)
 
 ## ❀压缩与解压缩
 <font color=red> gzip与gunzip</font> 
@@ -322,7 +322,7 @@ ctrl+r	恢复
 >解压缩：tar xvf 原文件 文件名
 
 <font color=teal>file（压缩包名）可以查看这个文件是否是压缩包和类型</font>
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191605980.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191605980.png)
 
 ## ❀grep sed awk命令以及正则表达式
 <font color=red>grep：</font>
@@ -445,7 +445,7 @@ $	以...结尾
 
 <font color=teal>which	文件名查找命令的绝对路径</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191605227.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191605227.png)
 
 ----------------------------------------------
 ## ❀制作模板机
@@ -508,7 +508,7 @@ df -Th 挂在完查看挂载信息
 如果遇到挂载时报错：`mount: 在 /dev/sr0 上找不到媒体`
 请检查ISO映像文件的连接设置；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191605133.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191605133.png)
 
 
 <font color=red>配置本地yum仓库：</font>
@@ -570,7 +570,7 @@ mkfs.xfs -f /dev/[sda]
 
 **<font color=teal>重启系统的命令：reboot、init 6、shutdown -r </font>**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191605537.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191605537.png)
 
 ------------------------------------------------------
 
@@ -645,7 +645,7 @@ tar包（源码包）
 <font color=teal>make	编译<br>
 make	install	安装</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191605702.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191605702.png)
 
 ## ❀用户、用户组管理
 
@@ -760,7 +760,7 @@ who	查看用户登录信息
 w	查看用户登录信息
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191604769.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191604769.png)
 
 ------------------------------------------------------
 
@@ -831,7 +831,7 @@ a	只可以追加，不能修改	只有root用户可以设置
 > chattr -i 文件名 
 > chattr +i 文件名
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191604710.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191604710.png)
 
 ## ❀磁盘管理
 
@@ -1037,7 +1037,7 @@ RAID 50
 
 > cat /proc/mdstat
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191604449.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191604449.png)
 
 
 ## ❀linux系统启动流程
@@ -1180,7 +1180,7 @@ bg 序号	将后台暂停的任务继续执行
 ctrl+c	中断前台执行的任务
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191604758.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191604758.png)
 
 ## ❀进程管理
 详情请看：[Linux进程管理](https://blog.csdn.net/liu_chen_yang/article/details/123476847)
@@ -1298,7 +1298,7 @@ kill -9 pid	<font color=daaafns>根据进程的pid强制杀死某个进程</font
 killall 进程名	根据进程名杀进程
 pkill	根据条件杀进程
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191604489.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191604489.png)
 
 |kill -l	| 查看进程的所有进程 |
 |-----------------|--|
@@ -1325,7 +1325,7 @@ pkill	根据条件杀进程
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191604205.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191604205.png)
 
 
 ## ❀用户提权
@@ -1466,7 +1466,7 @@ inode耗尽引发的故障
 <font color=teal>tune2fs 文件路径	查看文件系统的信息<br>
 dumpe2fs 文件路径	查看文件系统的信息</font><br>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191603026.png)❀日志管理
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191603026.png)❀日志管理
 
 详情请看：👉[Linux中的日志管理](https://blog.csdn.net/liu_chen_yang/article/details/123630727)👈
 
@@ -1553,7 +1553,7 @@ logrotate	实现日志轮割
 !	除了该等级都记录
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191603399.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191603399.png)
 
 ## ❀网络管理
 <br>

@@ -23,7 +23,7 @@ breadcrumb: false
 >配置网络配置的时候需要先看本机的ip；
 >`cmd`打开输入`ipconfig`查看本机ip
 >
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201046754.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201046754.png)
 >
 >可以看出ip为`192.168.0.103`，子网掩码为：`255.255.255.0`，默认网关为：`192.168.0.1`
 >那么我们配置虚拟机ip的时候就不能写：192.168.2.10之类的了，需要和本机相关；
@@ -63,13 +63,13 @@ DNS1=114.114.114.114
 ```bash
 ip a 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201046546.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201046546.png)
 * ping百度，测试是否可以连接网络
 
 ```bash
 ping baidu.com
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201046423.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201046423.png)
 
 可以连接，那么就开始在本机ping刚刚配置的ip，如果可以ping通，这时候就可以用xshell等连接工具连接了。
 
@@ -111,7 +111,7 @@ df -Th 挂在完查看挂载信息
 如果遇到挂载时报错：`mount: 在 /dev/sr0 上找不到媒体`
 请检查ISO映像文件的连接设置；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201046739.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201046739.png)
 
 
 ## <font color=red>配置本地yum仓库</font>
@@ -196,7 +196,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 mount /dev/sdb /data
 #就可以看到已经挂载完成了。
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201046334.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201046334.png)
 
 现在挂载完成了，但是重启他会失效，需要重新挂载，如果我们不想重新挂载，那么可以和上面的挂载方法一样，设置永久挂载；
 
@@ -216,7 +216,7 @@ mount /dev/sdb /data
 >第五段：是否使用dump备份  0不备份  1备份 <font color=darkorange>（0）</font>
 >第六段：是否使用fsck检测  0不检测<font color=darkorange>（0）</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201046475.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201046475.png)
 
 
 ## <font color=red>扩展：格式化磁盘</font>

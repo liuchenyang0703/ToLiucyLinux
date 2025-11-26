@@ -39,7 +39,7 @@ yum -y install java-11
 
 往下翻找到自己要下载的OpenJDK版本；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161355631.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161355631.png)
 ### 下载完成之后上传服务器并解压
 ```bash
 #将下载的包上传到服务器上
@@ -66,7 +66,7 @@ source /etc/profile
 #查看jdk版本
 java --version
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161355095.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161355095.png)
 
 显示JDK11，安装成功。
 

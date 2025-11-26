@@ -24,7 +24,7 @@ breadcrumb: false
 
 众多网络相关的命令可查看：[【Linux】之【网络】相关的命令及解析[ethtool、nload、nethogs、iftop、iptraf、ifstat]](https://blog.csdn.net/liu_chen_yang/article/details/125146080?spm=1001.2014.3001.5501)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200956824.gif)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200956824.gif)
 
 
 ## linux查看服务器带宽具体方法
@@ -38,7 +38,7 @@ yum -y install python-pip
 
 pip install speedtest-cli
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200956950.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200956950.png)
 
 ```bash
 root@cs:[/root]speedtest-cli 
@@ -60,7 +60,7 @@ Upload: 18.58 Mbit/s
 ```bash
 ifconfig
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200956670.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200956670.png)
 
 
 #### 2.ethtool命令查看宽带大小
@@ -111,13 +111,13 @@ yum -y install nload
 #直接使用命令查看
 nload
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200956057.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200956057.png)
 
 ```bash
 #指定网卡进入
 nload eno1
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200956299.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200956299.png)
 >&emsp;&emsp;Incoming是进入网卡的流量，Outgoing是从这块网卡出去的流量，每一部分都有下面几个。<br/>
 >Curr：当前流量
 > Avg：平均流量 
@@ -130,7 +130,7 @@ nload eno1
 ```bash
 dstat -n
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200956579.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200956579.png)
 
 ## 总结
 ## &emsp;相关文章

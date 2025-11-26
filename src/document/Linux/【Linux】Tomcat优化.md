@@ -14,11 +14,11 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180945178.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180945178.jpeg)
 
 
 ## 1、Tomcat整体架构
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180945033.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180945033.png)
 &emsp;&emsp;Tomcat中最顶层的容器是Server，代表着整个服务器，从上图中可以看出，一个Server可以包含至少一个Service，用于具体提供服务。
 
 &emsp;&emsp;Service主要包含两个部分：Connector和Container。从上图中可以看出 Tomcat 的心脏就是这两个组件，他们的作用如下：
@@ -26,7 +26,7 @@ breadcrumb: false
 - Container用于封装和管理Servlet，以及具体处理Request请求；
 
 &emsp;&emsp;一个Tomcat中只有一个Server，一个Server可以包含多个Service，一个Service只有一个Container，但是可以有多个Connectors，这是因为一个服务可以有多个连接，如同时提供Http和Https链接，也可以提供向相同协议不同端口的连接,示意图如下:
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180945706.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180945706.png)
 &emsp;&emsp;多个Connector 和一个Container就形成了一个 Service，有了Service就可以对外提供服务了，但是Service 还要一个生存的环境，必须要有人能够给她生命、掌握其生死大权，所以整个Tomcat 的生命周期由Server控制。
 &emsp;&emsp;server.xml配置文件如下:
 
@@ -68,7 +68,7 @@ breadcrumb: false
 ```
 &emsp;&emsp;Server标签设置的端口号为8005，shutdown=”SHUTDOWN” ，表示在8005端口监听“SHUTDOWN”命令，如果接收到了就会关闭Tomcat。一个Server有一个Service，当然还可以进行配置，一个Service有多个，Service左边的内容都属于Container的，Service下边是Connector。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180945441.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180945441.png)
 
 - Tomcat中只有一个Server，一个Server可以有多个Service，一个Service可以有多个Connector和一个Container； 
 - Server掌管着整个Tomcat的生死大权； 
@@ -87,7 +87,7 @@ breadcrumb: false
 
 &emsp;&emsp;JVM虚拟机内存分配, JVM（Java虚拟机）在执行java程序时，会把所管理的内容分配给不同的数据区域(或者叫运行时数据区)，方法区(Method Area)，虚拟机栈(VM stack)，本地方法栈（Native Method Stack）,堆(Heap)，程序计数器(Program Counter Register)等。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180945437.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180945437.png)
 >1.堆是虚拟机管理内存的最大一块，也是被所有线程共享的内存区域。当内存不足无法完成实例分配的时候，同时推也无法扩展的时会出现OOM<br>
 2.方法区，也是线程共享的一块区域，主要存储已经被虚拟机加载的类信息、常量、及编译器编译后的代码等数据。方法区内存同样有限制，当无法扩展时会出现OOM。<br>
 3.虚拟机栈,线程的私有空间。虚拟机栈在编译器存放了基本数据类型，对象引用及局部变量。在异常情况中因固定长度无法申请足够的内存会抛出OOM。<br>
@@ -106,7 +106,7 @@ OOM(Out of Memory)内存溢出，OOM发生的主要原因是，第一次物理�
 
 默认JVM虚拟机内存分配大小，可以通过管理界面的stats来查看:
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180945612.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180945612.png)
 
 增加堆栈内存可以通过修改catalina.sh文件来实现,在其首行添加:
 
@@ -119,7 +119,7 @@ XX:MetaspaceSize:非堆内存初始大小
 XX:MaxMeatespaceSize 非堆内存上限
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180945968.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180945968.png)
 
 ### 2.3 JVM相关监控（了解）
 #### 2.3.1 jps

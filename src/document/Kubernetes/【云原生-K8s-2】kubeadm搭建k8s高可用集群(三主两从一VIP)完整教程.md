@@ -239,7 +239,7 @@ EOF
 ```
 如下图就属于成功；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408023.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408023.png)
 
 
 ## 部署 docker（所有节点都需要部署）
@@ -694,7 +694,7 @@ scp new.yaml 172.16.11.217:/root/
 ```bash
 kubeadm config images list --config /root/new.yaml
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408772.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408772.png)
 
 
 ### 所有master节点启动 
@@ -707,7 +707,7 @@ kubeadm config images pull --config /root/new.yaml
 ```bash
 kubeadm init --config /root/new.yaml  --upload-certs
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408706.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408706.png)
 
 
 >说明:生成的token有效期为2个小时，如果token过期后，可以采用一下方案解决；
@@ -732,7 +732,7 @@ source /root/.bashrc
 ```bash
 kubectl get nodes
 ```
-![截图](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408673.png)
+![截图](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408673.png)
 
 
 采用初始化安装方式，所有的系统组件均以容器的方式运行并且在`kube-system`命名空间内，此时可以查看Pod状态：
@@ -740,7 +740,7 @@ kubectl get nodes
 ```bash
 kubectl get pods -n kube-system -o wide
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408375.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408375.png)
 
 可以看到有两个`READY`的状态是`0/1`，这个不用担心，后面节点加入之后就好了。
 
@@ -759,7 +759,7 @@ kubectl get pods -n kube-system -o wide
    --control-plane --certificate-key 26270907ae9b940062bd9f5e4daad59e2804a4a5bdbfb61c7ebb0e6d2f5e5839
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408788.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408788.png)
 
 加入成功，可以在master1上使用`kubectl get nods`来查看。
 
@@ -777,7 +777,7 @@ kubectl get pods -n kube-system -o wide
 [root@k8s-node2 ~]# kubeadm join 172.16.11.220:16443 --token 7t2weq.bjbawausm0jaxury \
     --discovery-token-ca-cert-hash sha256:f370e43a5b3218b7b6094980edd4fac3b6104a272e465767d3c78dfad8c62066 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408402.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408402.png)
 
 
 
@@ -788,7 +788,7 @@ kubectl get pods -n kube-system -o wide
  [root@k8s-master1 ~]# kubectl get nodes
 ```
 
-![截图](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408771.png)
+![截图](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408771.png)
 
 现在的集群状态都是`NotReady`表示不可达；这是因为还没有安装网络插件，下面我们来安装一下网络插件（caclico）
 
@@ -846,13 +846,13 @@ cd k8s-ha-install
 ```bash
 [root@k8s-maste1 calico]# kubectl apply -f calico-etcd.yaml
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408959.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408959.png)
 - 查看创建的容器状态
 
 ```bash
 [root@k8s-master1 calico]# kubectl get pods -n kube-system
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408018.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408018.png)
 
 
 同时，上面提到的两个`coredns-54d67798b7-7w4k5`容器没有运行起来的问题也成功的运行起来了。目标为：`在 master1节点 查看集群节点状态`标题。
@@ -863,7 +863,7 @@ cd k8s-ha-install
 ```bash
 [root@k8s-master1 calico]# kubectl get nodes
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408097.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408097.png)
 
 可以看到都连接成功了。
 
@@ -879,7 +879,7 @@ cd k8s-ha-install
 ```bash
 [root@k8s-master1 ~]# scp /etc/kubernetes/pki/front-proxy-ca.crt k8s-node2:/etc/kubernetes/pki/front-proxy-ca.crt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408400.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408400.png)
 ### 安装metrics server
 同时也可以参考：[【云原生-k8s】kubectl top pod 报错:error: Metrics API not available
 ](https://liucy.blog.csdn.net/article/details/129661466) 该篇文章。
@@ -890,7 +890,7 @@ cd k8s-ha-install
 #根据该目录下的yaml文件创建容器
 [root@k8s-master1 metrics-server-0.4.x-kubeadm]# kubectl apply -f comp.yaml 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161408195.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161408195.png)
 ### 查看节点状态
 
 ```bash

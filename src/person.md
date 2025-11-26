@@ -21,7 +21,7 @@ titles:
  
 copyright: false
 footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议 | <a href="person.html" target="_blank">关于作者</a><br>
- 版权所有 © 2023-present Liucy | <img src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142253822.png" height="15" width="15"/> <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a> | <img src="https://icp.gov.moe/favicon.ico" height="15" width="15"/> <a href="https://icp.gov.moe/?keyword=20250703" target="_blank">萌ICP备20250703号</a>
+ 版权所有 © 2023-present Liucy | <img src="./assets/image/公安.png" height="15" width="15"/> <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a> | <img src="https://icp.gov.moe/favicon.ico" height="15" width="15"/> <a href="https://icp.gov.moe/?keyword=20250703" target="_blank">萌ICP备20250703号</a>
 
 ---
 
@@ -184,4 +184,4 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 <center>如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号<strong>小刘Linux</strong> 。</center>
 
 
-![小刘Linux 公众号封面](/assets/image/公众号.png)
+![](/assets/image/公众号.png)

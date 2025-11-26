@@ -39,7 +39,7 @@ unzip gcc-5.4.0-编译好的.zip
 tar xf gcc-5.4.0-▒р╥ы║├╡─.tar
 ```
 解压完会看到gcc-5.4.0这个目录
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200948747.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200948747.png)
 
 ## 软连接gcc库
 
@@ -57,7 +57,7 @@ ln -s /home/lcy/gcc-5.4.0/build/stage1-x86_64-unknown-linux-gnu/libstdc++-v3/src
 strings /lib64/libstdc++.so.6 | grep GLIBC
 #能找到这些库就是成功了。
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200948161.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200948161.png)
 
 ## 软连接gcc版本
 
@@ -72,7 +72,7 @@ cd /home/lcy/gcc-5.4.0/build/gcc
 #添加执行权限
 chmod 775 *
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200948613.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200948613.png)
 
 ```bash
 #我们可以看到有一个xg++和xgcc，软连接这两个任意一个就可以了；还是要注意自己的软连接源路径
@@ -80,6 +80,6 @@ ln -s /home/lcy/gcc-5.4.0/build/gcc/xgcc /bin/gcc
 #软连接完成之后就可以看到版本了
 gcc -v
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200948428.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200948428.png)
 
 

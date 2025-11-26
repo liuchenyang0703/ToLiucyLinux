@@ -17,11 +17,11 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/4ec60dad1cc5427daaca44ce592ae7a4.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4ec60dad1cc5427daaca44ce592ae7a4.jpeg)
 
 
 ## Jenkins简介
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/1c18206e091d405580f6d15dd2ad5448.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1c18206e091d405580f6d15dd2ad5448.png)
 
 &emsp;&emsp;随着软件开发需求及复杂度的不断提高，团队开发成员之间如何更好地协同工作以确保 软件开发的质量已经慢慢成为开发过程中不可回避的问题。Jenkins 自动化部署可以解决集成、测试、部署等重复性的工作，工具集成的效率明显高于人工操作；并且持续集成可以更 早的获取代码变更的信息，从而更早的进入测试阶段，更早的发现问题，这样解决问题的成 本就会显著下降；持续集成缩短了从开发、集成、测试、部署各个环节的时间，从而也就缩 短了中间出现的等待时间；持续集成也意味着开发、集成、测试、部署得以持续。所以，当 配置完 Jenkins 持续集成持续交付环境后，就可以把发布的任务交给集成服务器去打理了。 使用 Maven(Ant) 等来实现 Java 项目自动化构建发布部署。这些工具可以帮助在构建过程 中实现自动化发布、回滚等动作。
 
@@ -66,7 +66,7 @@ breadcrumb: false
 
 &emsp;&emsp;<font color=teal>CI服务器就是我们的Jenkins从仓库里面拉取代码，进入BUILD构建成war ，然后测试把结果返回给开发，开发人员会把代码提交到仓库</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/89412b0e4f234bd8abad6393f0a608f3.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/89412b0e4f234bd8abad6393f0a608f3.png)
 
 &emsp;&emsp;持续集成主要是强调开发人员提交了新代码之后，立刻进行构建、（单元）测试。根据 测试结果，我们可以确定新代码和原有代码能否正确地集成在一起。简单来讲就是：频繁地 （一天多次）将代码集成到主干。
 #### 持续集成的效益
@@ -92,7 +92,7 @@ breadcrumb: false
 &emsp;&emsp;<font color=teal>开发人员提交代码到CI服务器,会对提交的代码进行测试、构建、反馈，会把整体代码往测试环境里面部署,进行统一的测试、部署，部署的话是手工的部署；
 &emsp;&emsp;CD会将整个部署环节改为AUTO 就是整个环节都是自动的</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5636c254847043deaf50c81eac256e9c.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5636c254847043deaf50c81eac256e9c.png)
 
 &emsp;&emsp;持续交付是在持续集成的基础上，将集成后的代码部署到更贴近真实运行环境的「类生产环境」（production-like environments）中。比如，我们完成单元测试后，可以把代码部署到连接数据库的 Staging 环境中更多的测试。如果代码没有问题，可以继续手动部署到生产环境中。
 
@@ -101,7 +101,7 @@ breadcrumb: false
 &emsp;&emsp;持续部署（英语：Continuous Deployment，缩写为 CD），是持续交付的下一步，指的是 代码通过评审以后，自动部署到生产环境。 
 &emsp;&emsp;有时候，持续部署也与持续交付混淆。持续部署意味着所有的变更都会被自动部署到生 产环境中。持续交付意味着所有的变更都可以被部署到生产环境中，但是出于业务考虑，可 以选择不部署。如果要实施持续部署，必须先实施持续交付。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5924109604324044ad877264305aec08.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5924109604324044ad877264305aec08.png)
 
 持续部署即在持续交付的基础上，把部署到生产环境的过程自动化。
 
@@ -182,7 +182,7 @@ jenkins可以在官网下载最新的war包，也可以使用百度网盘的war�
 官网war包下载地址：[https://mirrors.jenkins-ci.org/war/](https://mirrors.jenkins-ci.org/war/)
 可选择下载任意版本包；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/02608aa3434b4276872d6d68be89a6c9.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/02608aa3434b4276872d6d68be89a6c9.png)
 上述下载安装包任选其一即可；
 
 ```bash
@@ -209,7 +209,7 @@ vim startjk.sh
 #!/bin/bash
 /usr/local/jenkins/jdk-18.0.2.1/bin/java -jar /usr/local/jenkins/jenkins.war --httpPort=8080 --enable-future-java >jenkins.log 2>&1 &
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d1b93298c07044eb9971bfd588f6764c.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d1b93298c07044eb9971bfd588f6764c.png)
 
 
 顺便写了个关闭Jenkins脚本；
@@ -248,7 +248,7 @@ fi
 这样Jenkins目录下就有了5个文件：一个jdk18、一个Jenkins的war包、一个重启脚本、一个启动脚本、一个停止脚本。
 还有一个是启动脚本的输出日志（在启动的时候会产生）；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/c3c15cdf6b1d4b01903420520e4e8075.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c3c15cdf6b1d4b01903420520e4e8075.png)
 
 
 使用脚本启动Jenkins服务：`sh startjk.sh`
@@ -258,33 +258,33 @@ fi
 端口可自行设置
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/bfb1b7897b9a43fbb9ae993424da6fba.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bfb1b7897b9a43fbb9ae993424da6fba.png)
 
 输入管理员密码：管理员密码在启动Jenkins的时候可以看到；
 输入管理员密码：或者根据提示`cat /root/.jenkins/secrets/initialAdminPassword` 在这里面查看。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/0ed4c494c5d947c792a46953e1ee3e94.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0ed4c494c5d947c792a46953e1ee3e94.png)
 
 完成之后点击继续即可；
 到这个页面选择<font color=red>安装推荐的插件</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/47130ce97d6845aa88cdf5d37d47a6d1.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/47130ce97d6845aa88cdf5d37d47a6d1.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/ccc8cf8cfbfd4945815a8244ee405635.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/10c79f8083004b1e9330d12167dc21e8.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ccc8cf8cfbfd4945815a8244ee405635.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/10c79f8083004b1e9330d12167dc21e8.png)
 
 注意下面还有一个邮箱，填完保存并完成即可；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/eb30fb1001e9473293df359ce99d5ae1.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/eb30fb1001e9473293df359ce99d5ae1.png)
 
 这个就不用看了，直接继续保存并完成；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/65aabe6fe9f74572a63ebdec2d0f2278.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/65aabe6fe9f74572a63ebdec2d0f2278.png)
 
 已就绪，直接开始使用；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/65c6e6333dd9407e9d25b6f672095297.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/65c6e6333dd9407e9d25b6f672095297.png)
 
 看到这个界面就已经进入了；
 
@@ -292,10 +292,10 @@ fi
 
 如果需要更新最新版本，可以点击图片上的位置更新即可；也可以下载最新的war包；<font color=red>下载</font>这块是直接下载最新的war包；<font color=red>或自动升级</font>会跳转直接升级
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/fdfa3d771ecd450a86cf04e0748253a9.png)![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/afb62e9ada6a497abf97cc0afbb4eadc.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/8c8a747973c8443199b5dd520ec608ab.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fdfa3d771ecd450a86cf04e0748253a9.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/afb62e9ada6a497abf97cc0afbb4eadc.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8c8a747973c8443199b5dd520ec608ab.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/fd81b74460dc4762880690cf9ae2a110.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fd81b74460dc4762880690cf9ae2a110.png)
 
 
 到此部署就完成了；

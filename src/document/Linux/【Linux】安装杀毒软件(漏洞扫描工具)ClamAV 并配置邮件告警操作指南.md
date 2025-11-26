@@ -51,7 +51,7 @@ apt -y install clamav clamtk clamav-daemon clamdscan device-tree-compiler
 ```bash
 freshclam
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181438396.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181438396.png)
 
 这样就是更新成功了；
 
@@ -96,7 +96,7 @@ clamscan -i -r /data/ -l ./clamav.log
 
 扫描结果如下：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181438378.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181438378.png)
 
 这种的是没有病毒；<font color=red>Infected files</font> 显示0，则没有扫到病毒，1或其他则扫出了病毒。
 
@@ -117,7 +117,7 @@ clamscan -i -r /data/ -l ./clamav.log
 #对/data/目录扫描，并将扫描的日志放到该文件中，有病毒则自动删除
 clamscan -i -r /data/ --remove=yes -l ./clamav.log
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181438883.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181438883.png)
 
 删除完可以再去哪个目录看看。
 
@@ -233,14 +233,14 @@ fi
 
 ### 发送邮件告警样式演示：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181438162.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181438162.png)
 
 **显示内容：**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181438066.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181438066.png)
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181438147.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181438147.png)
 
 ### 删除病毒方式
 >方式一：扫描到病毒可以手动删除，进入病毒目录直接删除就可以；
@@ -262,10 +262,10 @@ vim /etc/crontab
 ###每周日凌晨1点clamav扫描漏洞（扫描根目录推荐）
 0 1 * * 7   root /bin/sh /home/clamav/clamav.sh
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181438417.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181438417.png)
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181438711.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181438711.png)
 
 配置完成之后保存退出即可。
 

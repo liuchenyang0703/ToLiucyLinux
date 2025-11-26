@@ -31,7 +31,7 @@ breadcrumb: false
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554918.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554918.jpeg)
 
 
 ## 一、ELFK的部署 -- docker部署方式⚽
@@ -62,7 +62,7 @@ breadcrumb: false
 
 
 
-![ELFK基础架构图](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554242.png)
+![ELFK基础架构图](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554242.png)
 
 
 
@@ -81,7 +81,7 @@ cat /etc/selinux/config
 # 设置 SELINUX=disabled
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554917.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554917.png)
 
 
 
@@ -207,7 +207,7 @@ systemctl enable docker
 
 可以选择离线安装：[docker-compose1.29.2离线包](https://download.csdn.net/download/liu_chen_yang/89428645)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554716.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554716.png)
 
 
 
@@ -503,9 +503,9 @@ elastic/elasticsearch                           8.12.2    c02b14250fd3   3 month
 elastic/logstash                                8.12.2    341c9b96c97b   3 months ago   769MB
 elastic/filebeat                                8.12.2    89c084ca559d   3 months ago   325MB
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554234.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554234.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554657.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554657.png)
 
 
 
@@ -635,7 +635,7 @@ docker-compose -f /data/ELK/docker-compose/docker-compose.yml up -d
 docker-compose ps
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554963.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554963.png)
 
 State状态为：`UP`或者`running`就为运行状态。
 
@@ -661,7 +661,7 @@ docker logs -f filebeat
 ```
 如果在启动 **kibana** 时遇到以下提示内容，不用管，这个提示说的是没有配置账户令牌，不影响我们的访问及拿日志；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554129.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554129.png)
 
 
 #### 4.8 访问es、kibana地址
@@ -674,16 +674,16 @@ docker logs -f filebeat
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191554085.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191554085.png)
 
 
 
 * [x] kibana地址：[http://172.16.11.213:5601](http://172.16.11.213:5601)
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553636.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553636.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553856.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553856.png)
 
 
 
@@ -714,7 +714,7 @@ cd /usr/local/nginx/conf/
 vim nginx.conf
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553772.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553772.png)
 
 
 
@@ -726,7 +726,7 @@ vim nginx.conf
 tail -f /data/ELK/filebeat/logs/nginx_access.log
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553824.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553824.png)
 
 
 
@@ -736,7 +736,7 @@ tail -f /data/ELK/filebeat/logs/nginx_access.log
 
 页面访问kibana查看日志：[http://172.16.11.213:5601](http://172.16.11.213:5601)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553390.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553390.png)
 
 
 
@@ -744,9 +744,9 @@ tail -f /data/ELK/filebeat/logs/nginx_access.log
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553145.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553145.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553760.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553760.png)
 
 ---
 <center>到此部署就完成，如果想要加一些安全性比如密码认证，可以接着看下面的内容；</center>
@@ -799,7 +799,7 @@ elasticsearch-setup-passwords interactive
 
 这里我选择手动输入密码；手动输入密码每个用户都要输入两遍密码，一遍是输入一遍是确认密码；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553580.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553580.png)
 
 
 
@@ -809,7 +809,7 @@ elasticsearch-setup-passwords interactive
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553210.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553210.png)
 
 
 
@@ -817,7 +817,7 @@ elasticsearch-setup-passwords interactive
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553444.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553444.png)
 
 
 
@@ -891,7 +891,7 @@ docker-compose -f /data/ELK/docker-compose/docker-compose.yml restart
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191553253.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191553253.png)
 
 
 
@@ -901,7 +901,7 @@ docker-compose -f /data/ELK/docker-compose/docker-compose.yml restart
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191552311.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191552311.png)
 
 
 
@@ -1033,7 +1033,7 @@ docker-compose -f /data/ELK/docker-compose/docker-compose.yml up -d
 ```bash
 docker-compose ps
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191552730.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191552730.png)
 
 State状态为：`UP`或者`running`就为运行状态。
 
@@ -1052,16 +1052,16 @@ docker logs -f filebeat
 ### 1、查看日志属于哪个路径下及日志名
 如果要看这个日志是哪个路径的话，可以`Discover`中搜索`log.file.path`
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191552363.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191552363.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191552691.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191552691.png)
 ### 2、仪表板
 
 仪表板可以在`Home`-->`Dashboards`创建；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191552380.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191552380.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191552439.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191552439.png)
 
 
 

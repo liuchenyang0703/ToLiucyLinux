@@ -29,7 +29,7 @@ isOriginal: true
 ---
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202509011604843.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202509011604843.jpeg)
 
 
 

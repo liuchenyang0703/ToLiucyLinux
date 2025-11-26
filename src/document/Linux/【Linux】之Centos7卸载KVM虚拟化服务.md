@@ -29,7 +29,7 @@ breadcrumb: false
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181611790.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181611790.png)
 
 ## 1、先查看是否有服务正在运行，将他们都停掉
 
@@ -37,14 +37,14 @@ breadcrumb: false
 #查看是否有服务正在运行；
 virsh list --all
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181611356.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181611356.png)
 
 我们可以看到是有的，需要将服务关闭：
 
 ```bash
 virsh shutdown centos7.0
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181611616.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181611616.png)
 
 然后在删除，不想删除也可以，依据自己；
 
@@ -63,7 +63,7 @@ service NetworkManager restart
 #查看启动状态
 service NetworkManager status
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181611289.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181611289.png)
 
 ## 3、卸载 virbr0 网卡及解除 br0 网络桥接
 ### 卸载 virbr0 网卡
@@ -72,42 +72,42 @@ service NetworkManager status
 #先查看网卡
 ifconfig
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610129.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610129.png)
 - 显示桥接（bridge）列表
 
 ```bash
 brctl show
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610699.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610699.png)
 - 列出当前连接的虚拟网络
 
 ```bash
 virsh net-list
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610472.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610472.png)
 
 - 停止/删除默认的虚拟网络
 
 ```bash
 virsh net-destroy default
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610120.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610120.png)
 
 - 取消定义默认的虚拟网络
 
 ```bash
 virsh net-undefine default
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610644.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610644.png)
 
 - 重新启动libvirtd守护进程
 
 ```bash
 service libvirtd restart 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610342.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610342.png)
 - 再次列出当前连接的虚拟网络
 
 ```bash
@@ -116,7 +116,7 @@ virsh net-list
 这时可以看到已经没有了；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610292.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610292.png)
 - 再次查看桥接（bridge）列表
 
 ```bash
@@ -124,7 +124,7 @@ brctl show
 ```
 发现`virtbr0`已经没有了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610364.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610364.png)
 
 ### 解除并删除br0桥接网卡
 解除网卡会导致远程连接连接不上，需要使用`显示屏直连服务器`或者在`vmwar虚拟机`中操作，在里面使用命令行模式操作，init 3转为完整的字符界面多用户操作；
@@ -133,7 +133,7 @@ brctl show
 #解除绑定ens33网卡
 brctl delif br0 ens33
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610475.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610475.png)
 
 执行这一步就会断连，所以需要使用`显示屏直连服务器`或者在`vmwar虚拟机`中操作接下来的步骤；
 我的是用的虚拟机测试，所以，在`vmware`中执行接下来的命令；
@@ -147,7 +147,7 @@ brctl delbr br0
 #删除完在查看一下桥接（bridge）列表
 brctl show
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610169.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610169.png)
 
 会发现桥接（bridge）列表中的 br0 桥接 ens33 已经没了，然后ip a查看ip时，ens33没有设置IP，所以，需要设置一下ip，然后重启服务，就可以连接上了；
 
@@ -163,24 +163,24 @@ cp -ar ens33-bak ifcfg-ens33
 #覆盖完可以校验查看一下
 cat /etc/ifcfg-ens33
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610058.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610058.png)
 
 - 确认完成，就需要重启一下网络服务，使其生效
 ```bash
 #确认完成，就需要重启一下网络服务，使其生效
 /etc/init.d/network restart
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610768.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610768.png)
 - 查看IP
 
 ```bash
 ip a
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610009.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610009.png)
 
 这样就修改完成了，我们就可以继续远程连接服务器了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181610799.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181610799.png)
 
 
 

@@ -38,7 +38,7 @@ isOriginal: true
 > 漏洞信息：<font color=red>SSH Terrapin 前缀截断漏洞（CVE-2023-48795）</font>
 > 漏洞等级：<font color=red>中级</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141036505.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141036505.png)
 
 
 
@@ -89,7 +89,7 @@ cd /usr/src/openssl-3.3.1/
 make -j4 && make install
 # 大约 10-20 分钟左右
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141037636.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141037636.png)
 
 #### 备份旧的openssl文件并替换新的
 > 可以先查看目前的openssl版本，然后备份的时候可以根据当前版本号来进行备份。
@@ -151,7 +151,7 @@ rpm -e $(rpm -qa| grep openssh) --nodeps
 
 提示移除失败不用担心，因为我们已经给他备份成其他名字了。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141037209.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141037209.png)
 
 
 #### 下载 openssh9.8p1 的安装包：
@@ -179,7 +179,7 @@ cd /usr/src/openssh-9.8p1/
 #  编译安装
 make -j4 && make install
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141037267.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141037267.png)
 
 #### 复制ssh相关配置文件并添加远程登陆配置
 
@@ -248,7 +248,7 @@ WantedBy=multi-user.target
 [root@localhost openssh-9.8p1]#  ssh -V
 OpenSSH_9.8p1, OpenSSL 1.1.1k  FIPS 25 Mar 2021
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141037060.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141037060.png)
 
 版本没问题新开窗口再次连接此服务器，可以连上就没问题。
 

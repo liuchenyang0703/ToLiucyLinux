@@ -129,8 +129,8 @@ docker与虚拟化区别总结:
 [部署docker的离线包](https://download.csdn.net/download/liu_chen_yang/85965917?spm=1001.2014.3001.5503)
 [docker24.0.5离线安装包 （一键部署）](https://download.csdn.net/download/liu_chen_yang/88647183)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161441340.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161441465.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161441340.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161441465.png)
 
 
 
@@ -156,7 +156,7 @@ Docker version 20.10.7, build f0df350
 ```
 ## 添加镜像加速器
 由于docker默认从docker hub(https://registry.hub.docker.com/)下载镜像，所以速度非常慢，可以通过阿里云的镜像加速器提高镜像拉取的速度。 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161441041.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161441041.png)
 
 ```bash
 [root@docker ~]# mkdir -p /etc/docker

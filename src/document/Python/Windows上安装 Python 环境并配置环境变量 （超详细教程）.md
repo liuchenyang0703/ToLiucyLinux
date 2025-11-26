@@ -32,7 +32,7 @@ comment: false
 > 根据自己的版本选择下载<br>
 > 通常下载的都是3.8.5，这里我做个教程，所以也选择了3.8.5版本啦！当然，教程都是通用的，照猫画虎就可以了。<br>
 >Python 3.8.5 下载截图：<br>
->![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/0530e3f7c16e44f98d329de1b015a2bc.png)
+>![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0530e3f7c16e44f98d329de1b015a2bc.png)
 
 
 
@@ -41,27 +41,27 @@ comment: false
 >下载完成之后双击安装，<font color=red>注意：安装时自定义目录需要英文，不能包含中文，可能出现问题；</font>
 
 * 双击安装
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/4216c2fbb75344628ef4bc2be68b85b0.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4216c2fbb75344628ef4bc2be68b85b0.png)
 
 
 - 双击安装，选择下面这个，可以自定义目录
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/211d7533f9ff461da27785b11dfb820f.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/211d7533f9ff461da27785b11dfb820f.png)
 
 
 - 直接下一步
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/15f9f01505454d049ea86dd29d479272.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/15f9f01505454d049ea86dd29d479272.png)
 
 
 - 选择安装路径
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/026eb08435154dd5ac1ab9e8d0c46946.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/026eb08435154dd5ac1ab9e8d0c46946.png)
 
 
 - 点击`install`安装即可；等待安装完成点击`Close`关闭，然后配置环境变量即可；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/86df55ff8625493bb3b33d272e01d394.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/86df55ff8625493bb3b33d272e01d394.png)
 
 
 
@@ -71,7 +71,7 @@ comment: false
 
 
 
-![python环境变量如何配置](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/338469d2afaab5c08f449e2cb7d5932b.jpeg)
+![python环境变量如何配置](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/338469d2afaab5c08f449e2cb7d5932b.jpeg)
 
 
 
@@ -83,7 +83,7 @@ comment: false
 
 **1、第一步：在我们的电脑上鼠标右键此电脑-->选择属性-->进去之后，点击高级系统设置，如下图所示：**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e9b0384742b94d87bdd070b03b775a45.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e9b0384742b94d87bdd070b03b775a45.png)
 
 
 
@@ -92,19 +92,19 @@ comment: false
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/cb38daa1dbcf437bac87a2408fa61600.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/cb38daa1dbcf437bac87a2408fa61600.png)
 
 
 
 
 **3、第三步：在系统变量中有Path则点击Path选择编辑，没有Path，选择新建，<font color=red>变量名写为Path，变量值写为python.exe的路径；</font>**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b99636079e044c2da0e344adee03ee64.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b99636079e044c2da0e344adee03ee64.png)
 
 
 * 新建一个环境变量
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/19d9ea200a304cc299623d37d0f7e6df.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/19d9ea200a304cc299623d37d0f7e6df.png)
 
 
 
@@ -112,7 +112,7 @@ comment: false
 * 追加一个python的环境变量
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/c74d52b4ffb74f018e4bf6ab27ad9235.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c74d52b4ffb74f018e4bf6ab27ad9235.png)
 
 
 
@@ -128,7 +128,7 @@ comment: false
 
 在windows上，使用快捷键 `win+r`，调出cmd窗口；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/7f8b621eae4e4913bdc97d95166ba06e.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7f8b621eae4e4913bdc97d95166ba06e.png)
 
 
 
@@ -141,7 +141,7 @@ comment: false
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/912996794da34854927907a22c344efd.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/912996794da34854927907a22c344efd.png)
 
 
 这样，就可以确认Python环境配置正确了；

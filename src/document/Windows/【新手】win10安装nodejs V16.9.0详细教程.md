@@ -43,7 +43,7 @@ isOriginal: true
 
 * 根据自己的情况选择，我这里是`win X64位 `
 
-![image-20240301112155985](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/f7eaea13ee8b5482f048062e86d6a0b7.png)
+![image-20240301112155985](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f7eaea13ee8b5482f048062e86d6a0b7.png)
 
 可以看到windows有两种格式的：msi zip格式的，这两者区别是什么呢？
 >`.msi`和`.zip`格式区别：
@@ -59,7 +59,7 @@ isOriginal: true
 
 
 
-![image-20240301113442928](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d8eaa6eac110b820a653358d3c7638c9.png)
+![image-20240301113442928](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d8eaa6eac110b820a653358d3c7638c9.png)
 
 
 
@@ -67,7 +67,7 @@ isOriginal: true
 
 
 
-![image-20240301113529882](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d9aef455c4b4bb232e1fff347bc87714.png)
+![image-20240301113529882](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d9aef455c4b4bb232e1fff347bc87714.png)
 
 
 
@@ -77,7 +77,7 @@ isOriginal: true
 
 
 
-![image-20240301113703486](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/4b2dc54eae8b949d61da6a42393d28a3.png)
+![image-20240301113703486](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4b2dc54eae8b949d61da6a42393d28a3.png)
 
 
 
@@ -85,7 +85,7 @@ isOriginal: true
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/809acf4a8f09a661ffeabec56933c21f.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/809acf4a8f09a661ffeabec56933c21f.png)
 
 
 
@@ -94,13 +94,13 @@ isOriginal: true
 
 
 
-![image-20240301113843034](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d5ec392dbc2d4f28ca4f9514dec87781.png)
+![image-20240301113843034](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d5ec392dbc2d4f28ca4f9514dec87781.png)
 
 点击 Finish（完成）按钮退出安装向导，完成安装。
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/50e271680788a1077a36620e4bb22493.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/50e271680788a1077a36620e4bb22493.png)
 
 
 
@@ -110,7 +110,7 @@ isOriginal: true
 `win + r `打开命令行，输入`cmd`进入命令行；执行`node -v `和`npm -v`查看nodejs版本；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/4ef8f3e555317a7d5cc37f1647a813d0.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4ef8f3e555317a7d5cc37f1647a813d0.png)
 
 
 
@@ -129,7 +129,7 @@ npm config ls
 
 >`prefix`就是默认安装的位置；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/385ef20d853e131028bb6c74fb97b5ab.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/385ef20d853e131028bb6c74fb97b5ab.png)
 
 接下来我们就需要修改默认安装的路径；
 #### 1.1 修改npm默认安装的路径
@@ -137,35 +137,35 @@ npm config ls
 创建完之后再在`node_global`目录下创建一个`node_modules`目录；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b9a349e53e9464e53ff5397f0fea73ab.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b9a349e53e9464e53ff5397f0fea73ab.png)
 
 
 #### 1.2 配置环境变量
 
 此电脑 --> 属性 --> 高级系统设置
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/bf9d4e5009a5e5332d4d21c9a59b742f.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bf9d4e5009a5e5332d4d21c9a59b742f.png)
 
 环境变量 --> 系统变量
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/27e801789f895789f4e9d29b125b3882.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/27e801789f895789f4e9d29b125b3882.png)
 
 在系统变量中新建一个`NODE_PATH`变量，变量值就是之前在nodejs安装路径下创建的`node_golbal`下的`node_modules`（注意：填写的是自己的路径）
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d1bdf133ba37269333595532d212478a.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d1bdf133ba37269333595532d212478a.png)
 
 
 <span id="click_me_jump">配置nodejs环境变量：</span>
 新建完点击确定，我们再找一下系统变量的`Path`；查看一下nodejs环境变量是否存在；本文是安装在`E:\nodejs`下（请根据自己的安装路径查看是否正确），正常情况在安装服务时系统默认会自动配置好的。如果没有需要自己手动配置，新建添加，值便是nodejs的安装路径；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/f0d2fadd5195c704875684b98f5633b6.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f0d2fadd5195c704875684b98f5633b6.png)
 
 完成之后点击确定，我们在给普通用户配置一下；
 双击普通用户下的`Path`，进入编辑页新建一个变量， 值就是安装`nodejs`根路径下刚刚创建的`node_global`目录；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e29af7d73277fdd8df6f342c604406de.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e29af7d73277fdd8df6f342c604406de.png)
 
 完成之后一直点击确定直到退出到桌面；
 
@@ -186,7 +186,7 @@ npm config get prefix
 
 npm config get cache
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/f07767f0c9c3529c357857459f736f5e.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f07767f0c9c3529c357857459f736f5e.png)
 
 也可以通过`npm config ls`查看路径是否修改成功；
 
@@ -194,7 +194,7 @@ npm config get cache
 npm config ls
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/54ecc635efb3b9432b3f52e2607c8f5e.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/54ecc635efb3b9432b3f52e2607c8f5e.png)
 
 可以看到已经修改成功。
 
@@ -207,7 +207,7 @@ prefix=E:\nodejs\node_global
 cache=E:\nodejs\node_cache
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/4f454227bb67a261dfe9f33cb6d358cb.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4f454227bb67a261dfe9f33cb6d358cb.png)
 
 ### 2、修改npm默认源为淘宝源
 
@@ -223,7 +223,7 @@ npm config set registry https://registry.npm.taobao.org
 ```bash
 npm config get registry
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/44f067cd493dd49cc313a9b17aa5a274.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/44f067cd493dd49cc313a9b17aa5a274.png)
 
 可以看到源已经更新为淘宝源。
 
@@ -247,11 +247,11 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 如果安装时遇到此报错，是因为证书过期；可以尝试取消ssl证书验证：`npm config set strict-ssl false`；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/dcf9286cfb344f63be0762769156a10e.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/dcf9286cfb344f63be0762769156a10e.png)
 
 取消之后再次安装就可以了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/950145d7d1344540afd7737aba7af028.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/950145d7d1344540afd7737aba7af028.png)
 
 
 ## 三、测试（安装的时候记得使用管理员启动cmd窗口）
@@ -260,7 +260,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 npm i @vue/cli -g
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/435370e7e3b3d715c9018c45037858e5.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/435370e7e3b3d715c9018c45037858e5.png)
 
 
 安装完之后看自己配置的安装路径下：`E:\nodejs\node_global\node_modules`目录，可以看到多了一个`@vue`目录；
@@ -268,14 +268,14 @@ npm i @vue/cli -g
 ## 四、常见报错
 
 ### 常见报错1：ssl证书报错
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/03faae74ec7b541f32b199cead79df4c.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/03faae74ec7b541f32b199cead79df4c.png)
 
 如果遇到以上报错，这是ssl证书过期问题，可以尝试取消ssl证书验证：`npm config set strict-ssl false`；取消之后再次安装；
 
 
 ### 常见报错2：没有权限安装
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/9eeca0e1f701b9bf96a36e54c9560db4.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9eeca0e1f701b9bf96a36e54c9560db4.png)
 
 如果遇到此报错，是因为没有使用管理员用户运行，需要使用管理员安装；
 

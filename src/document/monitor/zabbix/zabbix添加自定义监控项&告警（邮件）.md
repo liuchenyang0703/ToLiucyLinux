@@ -75,80 +75,80 @@ zabbix_get:模拟zabbix_server获取agent数据
 ### 🥈web页面
 #### 🥉添加监控项
 1.登陆web界面，配置——主机——创建主机
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161032668.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161032668.png)
  选择主机，并填写以下红框部分。<font color=red>主机名称：</font>与agent配置文件中Hostname保持一致，<font color=red>可见名称：</font>自定义，<font color=red>群组：</font>选择一个或者新建一个，<font color=red>ip地址：</font>一般为内网ip，如果需要走公网监控则填写公网ip
- ![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161032676.png)
+ ![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161032676.png)
 
 2.监控项——创建监控项
 <font color=red>主机里要选中你监控的那台客户端</font>
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161031746.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161031165.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161031746.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161031165.png)
 按下图进行填写，最后选择添加即可
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161031032.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161031032.png)
  3.查看监控项的结果
 监测——最新数据
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161031817.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161031113.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161031817.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161031113.png)
 
 #### 🥉添加触发器
 监控项创建完我们来创建触发器
 点击触发器
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161031240.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161031240.png)
 创建触发器
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161031912.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161031912.png)
 按照下图来做就可以
 还是设置0比较好，>1的话有点问题。
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161031687.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030837.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030488.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161031687.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030837.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030488.png)
 恢复表达式同样，只不过结果有些不同，可以写成=1就恢复。
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030237.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030237.png)
 ![](https://img-blog.csdnimg.cn/2d9cf417b68d44b683cf7469b97081b0.png)
 
 #### 🥉添加报警媒介
 管理——报警媒介类型
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030396.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030396.png)
 可以选择Email
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030879.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030365.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030879.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030365.png)
 
 注意：密码不是你的163或者qq密码，是邮箱内的smtp码，这里我们来用qq邮箱来举例
 
 #### 🥉qq邮箱生成smtp码
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030508.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030515.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030993.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030508.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030515.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030993.png)
 发送短信，获取授权码，返回zabbix放到密码里就ok了。
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030781.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030781.png)
 生成smtp码之后，填写密码，保存即可。
 
 #### 🥉设置用户和报警媒介
 
 管理——用户
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161030895.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161030895.png)
 用户直接用超级管理员即可
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029919.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029919.png)
 添加报警媒介
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029356.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029356.png)
 可以用qq邮箱，也可以用163邮箱
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029130.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029130.png)
 点击添加，完成
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029937.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029937.png)
 切记一定要点添加或者更新。
 
 #### 🥉添加动作
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029019.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029378.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029543.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029233.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029000.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029019.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029378.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029543.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029233.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029000.png)
 我们来勾选Custom message，告警和恢复的主题和消息，我们放到了这两张图的下面。
 
 故障：
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029230.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029230.png)
 
 恢复：
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029075.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029075.png)
 
 
 故障：
@@ -181,25 +181,25 @@ zabbix_get:模拟zabbix_server获取agent数据
 事件ID：{EVENT.ID}
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029415.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161029174.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029415.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161029174.png)
 
 至此就配置完成，我们开始测试
 
 ## 🥇测试告警和恢复告警
 为了测试我先把jar包杀掉；
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161028874.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161028874.png)
 等待发送邮件和告警
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161022130.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161022352.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161021449.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161022130.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161022352.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161021449.png)
 告警就成功了
 
 接下来就是恢复告警了
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161021202.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161021888.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161021891.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161021202.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161021888.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161021891.png)
 
 这样整套自定义监控就完成啦，包括发送邮件告警。
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161021858.gif)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161021858.gif)
 

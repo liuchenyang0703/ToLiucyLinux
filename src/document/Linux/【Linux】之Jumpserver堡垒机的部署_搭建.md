@@ -15,7 +15,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181629630.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181629630.jpeg)
 
 
 ## Jumpserver 概述
@@ -57,7 +57,7 @@ breadcrumb: false
 - JumpServer官网文档：[https://docs.jumpserver.org/zh/master/](https://docs.jumpserver.org/zh/master/)
 - github 项目网址：[https://github.com/jumpserver/jumpserver/releases](https://github.com/jumpserver/jumpserver/releases)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181629614.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181629614.png)
 	
 ### 环境需求
 - 首先准备一台 4核8G （最低）且可以访问互联网的 64 位 Linux 主机；
@@ -105,7 +105,7 @@ curl -sSL https://github.com/jumpserver/jumpserver/releases/download/v2.25.1/qui
 页面访问：http://ip:80
 初始账号密码：admin admin
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181629399.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181629399.png)
 
 进入页面之后可查看<font color=red>**页面访问操作**</font>操作
 
@@ -150,8 +150,8 @@ cd /opt/jumpserver-installer-v2.25.1
 从飞致云社区 [下载最新的 linux/amd64 离线包](https://community.fit2cloud.com/#/products/jumpserver/downloads), 并上传到部署服务器的 /opt 目录；离线包大概（1.5G）。
 
 注意：下载时需要注册、登录一下
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181629524.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628412.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181629524.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628412.png)
 
 ```bash
 #将下载的包传到/opt目录
@@ -267,7 +267,7 @@ CURRENT_VERSION=
 安装完成，启动完成之后，页面访问：ip地址就行，因为默认端口是80；
 
 安装完成之后会给你说：
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628050.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628050.png)
 
 默认账号密码是admin admin
 
@@ -314,20 +314,20 @@ cd /opt/jumpserver
 ### 页面访问操作
 页面访问：http://ip:80
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628024.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628024.png)
 
 默认账号密码是admin admin；第一次登录需要修改一下密码；可根据自己的情况来定密码；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628913.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628543.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628476.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628620.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628054.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628913.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628543.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628476.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628620.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628054.png)
 
 
 到这就完成了安装，相关文章请看下方！
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181628875.gif)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181628875.gif)
 
 
 ## 相关文章

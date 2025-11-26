@@ -88,7 +88,7 @@ export default defineUserConfig({
         id: 'container',
         blogId: '32863-1711898538696-276',
         name: 'Liucy',
-        qrcode: 'https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142008812.png',
+        qrcode: '/assets/image/公众号.png',
         keyword: 'vip',
     });`,
     ],

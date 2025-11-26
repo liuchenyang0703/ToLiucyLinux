@@ -25,13 +25,13 @@ breadcrumb: false
 ---
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161323934.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161323934.jpeg)
 
 ---
 
 ## 学习路线
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161324137.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161324137.png)
 
 后续可能会因为其他原因打乱顺序 或 添加目录、项目；以实际的内容来说，此图仅作最初参考。
 

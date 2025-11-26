@@ -19,7 +19,7 @@ breadcrumb: false
 
 ## 前言
 作为 Linux 运维工程师，在日常工作中我们会遇到 Linux服务器上出现CPU负载达到100%居高不下的情况，如果CPU 持续跑高，则会影响业务系统的正常运行，带来企业损失。
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200949255.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200949255.png)
 
 很多运维的同学遇到这种状况往往会不知所措，对于CPU过载问题通常使用以下两种方式即可快速定位：
 
@@ -86,14 +86,14 @@ breadcrumb: false
 ### 解决过程
 
 1、根据top命令，shift+p，发现PID为41673的Java进程占用CPU高达250%，出现故障。
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200949184.png)2、找到该进程后，如何定位具体线程或代码呢，首先显示线程列表,并按照CPU占用高的线程排序：
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200949184.png)2、找到该进程后，如何定位具体线程或代码呢，首先显示线程列表,并按照CPU占用高的线程排序：
 
 ```bash
 [root@localhost ~]# ps -mp 41673 -o THREAD,tid,time | sort -rn
 
 ```
 显示结果如下：
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200949311.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200949311.png)
 3.将需要的线程TID转换为16进制格式
 
 ```bash
@@ -108,13 +108,13 @@ a376
 
 ### 解决办法
 1、根据top命令，shift+p，发现PID为41673的Java进程占用CPU高达250%，出现故障。
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200949607.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200949607.png)
 2、根据pid查看他的进程看看是什么服务占用这么高
 
 ```bash
 ps -ef |grep -v grep | grep 41673
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200949313.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200949313.png)
 3、查看到是一个java进程占用这么高，然后看看有没有用，没有用的话就杀掉它
 
 ```bash

@@ -66,7 +66,7 @@ uptime或者使用top
 top
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502251250069.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502251250069.png)
 
 
 
@@ -86,7 +86,7 @@ while true;do echo "压力测试" ; done
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502251250429.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502251250429.png)
 
 
 
@@ -169,7 +169,7 @@ stress --cpu 4 --timeout 600s
 
 可以看到4核cpu都占用了100%。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502251250723.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502251250723.png)
 
 
 
@@ -186,14 +186,14 @@ stress --cpu 5 --timeout 600s
 
 跑了5个cpu
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502251250908.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502251250908.png)
 
 
 
 
 可以看到4核cpu也是占满了，但是，我们跑了5个压力测试，他会平均分摊cpu的处理核数，并使其占满所有cpu。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502251250063.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502251250063.png)
 
 
 #### 3.3.2 跑满4核cpu并挂后台持续占用
@@ -361,5 +361,5 @@ cat /proc/cpuinfo | grep 'processor' |wc -l
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202502260942015.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502260942015.png)
 

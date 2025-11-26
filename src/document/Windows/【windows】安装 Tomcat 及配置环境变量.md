@@ -34,21 +34,21 @@ comment: false
 
 * 点击左侧的 Tomcat 9
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b0d4b829111d4872996c7fe48f6275e7.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b0d4b829111d4872996c7fe48f6275e7.png)
 
 * 找到自己需要的版本 并 根据自己的电脑位数来下载，我这里是`64位`。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/3e0e64193fdf4993ba90500d8a9e6728.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3e0e64193fdf4993ba90500d8a9e6728.png)
 
 ## 三、解压 Tomcat 压缩包
 
 将下载的包解压到自己想要放的目录；这里我放到`桌面`下，（因为这里做一下测试，所以就直接放到桌面了），放到桌面下之后解压`apache-tomcat`压缩包；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/4e6c02c5fc45435ebceb0fe64926b4d2.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4e6c02c5fc45435ebceb0fe64926b4d2.png)
 
 * 可以看到以下是解压下来文件中的内容
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/52088919ed9647ef9c3f0bca744faec8.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/52088919ed9647ef9c3f0bca744faec8.png)
 
 ## 四、配置环境变量
 解压完之后，这里不需要做什么安装操作，只需要配置一下环境变量即可；
@@ -57,14 +57,14 @@ comment: false
 
 这里`此电脑 --> 属性 --> 高级系统设置`这块我就不展示了，大家应该都可以找到吧；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5f8306b044574abba05a6d240334a01f.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5f8306b044574abba05a6d240334a01f.png)
 
 
 系统变量 --> 新建 
 变量名：`CATALINA_HOME`
 变量值：`Tomcat的解压路径 `
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/66462d602d5544ac8870d184d54a8d13.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/66462d602d5544ac8870d184d54a8d13.png)
 
 点击确定 --> 找到系统变量中的Path --> 编辑
 添加：
@@ -74,7 +74,7 @@ comment: false
 >需要注意的是在一行中，在最后添加的时候需要注意前面是否有`分号;`，如果没有需要加上；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/10357496e9854395bd0351fb66343677.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/10357496e9854395bd0351fb66343677.png)
 
 
 然后一直点击确定 --> 确定 --> 确定到桌面即可；
@@ -85,7 +85,7 @@ comment: false
 
 启动结果如下图：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e2737dd59daa44cd9cc77cef39bac291.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e2737dd59daa44cd9cc77cef39bac291.png)
 
 看到启动tomcat服务有乱码问题，我们先停止脚本，解决一下乱码问题；
 停止tomcat服务：执行`bin/`下的`shutdown.bat` 脚本停止；
@@ -96,12 +96,12 @@ comment: false
 java.util.logging.ConsoleHandler.encoding = GBK
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b36fc96c523b48acaeb85439270693c4.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b36fc96c523b48acaeb85439270693c4.png)
 
 修改完之后，保存退出后再执行`startup.bat`启动tomcat脚本，会发现没有乱码问题了；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/17b5fb889244431a8d960e12cb252256.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/17b5fb889244431a8d960e12cb252256.png)
 
 
 到这里也就启动成功了。
@@ -115,7 +115,7 @@ http://localhost:8080/
 
 看到如下页面，则代表安装成功。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/140a6b09fa68400fb5c56b531f90f162.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/140a6b09fa68400fb5c56b531f90f162.png)
 
 
 ## 七、部署完成

@@ -104,7 +104,7 @@ $	以...结尾
 > find ./ -maxdepth 1 -type f ! -name ".*" | wc -l | ll | grep -c "^_"
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191618506.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191618506.png)
 
 ### <font color=red>sed</font>
 
@@ -187,7 +187,7 @@ s替换的两个特殊用法&和\1
 
 echo "http://www.baidu.com/1.mp3" | sed -r 's#(.*)//(.*)/(.*)#\2#'
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191618100.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191618100.png)
 
 ### <font color=red>awk</font>
 

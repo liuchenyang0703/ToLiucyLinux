@@ -15,7 +15,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632531.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632531.jpeg)
 
 ## 资产要求
 >❗ ssh连接资产必须要部署 openssh-server
@@ -35,80 +35,80 @@ breadcrumb: false
 #### 1.1  添加登录用户（用户列表）
 创建新用户（用于其他用户登录jumpserver）
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632864.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632790.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632864.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632790.png)
 
 完成之后点击提交即可（可以多创用户）
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632924.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632924.png)
 
 创建完成用户之后，我们可以设置用户组，就比如在公司你是哪个部门的，给你分配部门；
 
 
 #### 1.2 添加用户组
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632361.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632770.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632361.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632770.png)
 
 #### 1.3 角色列表
 
 系统角色也是在用户列表中设置的；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632850.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632850.png)
 
 我们可以点击刚刚设置的用户
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632100.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632100.png)
 
 进入用户，点击授权用户就可以看到刚刚设置的用户了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181632538.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181632538.png)
 
 #### 1.4 使用新建的用户来登录jumpserver
 退出admin用户
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631726.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631726.png)
 
 使用刚刚创建的用户来登录
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631668.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631668.png)
 
 第一次登录会让我们确认信息，勾选我同意即可；然后点击提交；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631347.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631347.png)
 
 提交完成之后点击工作台
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631265.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631742.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631265.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631742.png)
 
 这样就能看到我们的资产了，当然现在还没有添加；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631580.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631580.png)
 
 下面就是我的应用，有数据库和kernetes；可以自行添加
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631397.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631397.png)
 
 这些看完之后，我们切换到admin用户，还是点击退出登录
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631064.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631064.png)
 
 登录admin账号
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631356.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631356.png)
 
 登录进来admin，选择视图---控制台
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631286.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631286.png)
 
 ### 2.资产管理
 
 从仪表盘可以看到总体的数据；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631662.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631662.png)
 
 #### 2.1 系统用户
 在创建系统用户或者特权用户之前，我们需要连接哪台服务器就要在哪台服务器上添加这个用户，并且给整个用户设置权限；
@@ -125,7 +125,7 @@ useradd test
 #然后给test用户设置密码
 passwd test
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631874.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631874.png)
 
 ```bash
 #设置完成密码之后，我们给test用户设置执行权限
@@ -137,7 +137,7 @@ test    ALL=(ALL)       ALL
 #如果需要切换用户直接切换的话可以添加为
 test    ALL=(ALL)       NOPASSWD:ALL
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631006.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631006.png)
 
 设置完成之后我们可以切换用户试试；
 
@@ -152,47 +152,47 @@ sudo su -
 
 在服务器上设置完成之后我们返回到web页面上来创建特权用户；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631125.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631125.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631690.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631690.png)
 
 
 添加完成之后我们就可以看到；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631384.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631384.png)
 #### 2.2 网域列表
 >&emsp;&emsp;接下来就是网域，网域指的是什么呢，就比如你这台服务器在哪放着，比如自己公司机房，或者是地区机房，或者是虚拟机，都可以；名字的话按理来说是可以随意起的，但是我们为了标准化就起的标准一些吧；
 
 创建网域
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631759.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631353.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631887.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631759.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631353.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631887.png)
 
 
 #### 2.3 资产列表
 接下来我们就开始添加资产了；本篇主要讲的是添加linux主机资产；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631592.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631592.png)
 
 右击资产树的default可创建节点、重命名节点、删除节点、添加资产到某个节点中、测试资产的可连接性......
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631272.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631272.png)
 
 这里我们创建一个新的节点(test)；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631055.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631055.png)
 
 节点创建完成之后，开始创建linux资产；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181631079.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630394.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181631079.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630394.png)
 
 添加完资产之后可查看资产的详细信息，同时也可测试一下改资产是否连接上了服务器；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630738.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630752.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630738.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630752.png)
 
 现在连接不上是因为还没有给该资产授权；等我们给资产授权再反过来测试他的连接性；
 
@@ -201,20 +201,20 @@ sudo su -
 
 支持多平台的远程连接
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630636.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630636.png)
 
 ### 3.权限管理
 #### 3.1 资产授权
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630832.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630832.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630909.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630909.png)
 
 给资产授权完成之后，我们在返回看资产管理中的资产列表，点进资产，测试连接是否可用；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630709.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630709.png)
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630981.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630981.png)
 
 现在是可以通过了；需要注意的就是ip千万不要写错，因为这个连接连不上，基本的都写的正确了，问题不好找，尤其是细节上的东西，就比如刚刚我的ip就写错了，找了半天；
 
@@ -224,27 +224,27 @@ sudo su -
 
 同样的第一步，退出登录：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630455.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630455.png)
 
 登录普通用户
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630105.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630105.png)
 
 登录进来点击“<font color=red>我的资产</font>”
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630396.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630396.png)
 
 可以看到我们这边多了一个主机；这个就是刚刚添加的linux主机；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630340.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630340.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630665.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630665.png)
 
 选择<font color=red>Web CLI</font>登录就可以；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630829.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630938.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630022.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630829.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630938.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630022.png)
 
 这样连接就完成了；
 
@@ -265,28 +265,28 @@ chown -R test:test test/
 #ll查看
 ll
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630691.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630691.png)
 
 设置完成之后，选择右上角的文件管理--连接
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630003.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630003.png)
 
 我们来逐一找到当前的服务器和目录
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630386.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630386.png)
 
 将文件直接拖过来就可以上传了
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630912.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630912.png)
 
 上传完成返回服务器进入test目录就可以看到传进来的文件了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630489.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630489.png)
 
 需要将文件传到哪，复制或者移动都可以
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181630476.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181630476.png)
 
 
 这样文件传输就可以了；

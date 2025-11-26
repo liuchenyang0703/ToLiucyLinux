@@ -45,11 +45,11 @@ Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: re
 
 * docker-compose 创建拉取镜像
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503171726999.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503171726999.png)
 
 * docker直接拉取镜像
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503171726808.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503171726808.png)
 
 
 ## 二、报错原因
@@ -109,7 +109,7 @@ systemctl restart docker
 
 9、重新拉取镜像
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503171726477.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503171726477.png)
 
 
 问题解决。
@@ -154,7 +154,7 @@ Environment="NO_PROXY=localhost,127.0.0.1,xxx.com"
 这里用自己的windows 电脑 作为代理服务器举例子
 通过 `win+r` ，在输入框汇中输入`cmd`，然后 命令窗口输入 `ipconfig` ，查看自己的 ip,假设是 ==172.16.15.122==
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503171726449.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503171726449.png)
 
 6、 这里就需要打开你的`clash for windows`🐱了：
 
@@ -162,16 +162,16 @@ Environment="NO_PROXY=localhost,127.0.0.1,xxx.com"
 
 * 6.1 在General，端口号一般都是`7890`，也可以自己修改；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503171726962.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503171726962.png)
 
  * 6.2 这里把Allow LAN（允许局域网）打开；然后把TUN MODE（TUN模式）打开，System Proxy（系统代理）打开；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503171726191.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503171726191.png)
 
 7、打开虚拟机，最后将配置文件内容的`IP`和`port`换成自己电脑的ip地址，port换成猫的port即可，然后保存加载配置文件，在拉取镜像即可成功；
 
 * 修改配置ip、端口
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503171726451.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503171726451.png)
 * 重启Docker
 ```bash
 #重新加载配置文件
@@ -185,7 +185,7 @@ systemctl restart docker
 docker pull liuchenyang/ubuntu20.04:latest
 ```
 
- ![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202503171726422.png)
+ ![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503171726422.png)
 
 
 恭喜你，Docker Daemon 代理配置完成！

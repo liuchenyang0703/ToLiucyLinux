@@ -30,7 +30,7 @@ breadcrumb: false
 
 ## 一、nginx 介绍
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161335102.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161335102.png)
 
 
 
@@ -286,12 +286,12 @@ http {
 ## 八、nginx配置模块详解
 >这里的图是二进制安装默认的配置，yum安装的与二进制安装的nginx，配置会有差异，但整体大概的说明都是一样的。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161335897.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161335897.png)
 
 主要区域讲解：
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161335879.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161335879.png)
 
 
 

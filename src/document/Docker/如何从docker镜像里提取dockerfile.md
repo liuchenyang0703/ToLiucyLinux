@@ -29,7 +29,7 @@ hello，大家好，今天在玩docker的时候发现了很好用的东西，他
 #docker history 镜像名称:标签
 docker history nginx:latest
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161442079.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161442079.png)
 虽然docker history命令可以看到所有历史层级的操作，但是还是需要手动去写Dockerfile，看的不是那么全，所以我们还有一个能看到非常详细的工具👇↓👇
 
 ### 2、dfimage
@@ -43,19 +43,19 @@ alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpi
 dfimage -sV=1.36 nginx:latest 
 ```
 我们拿nginx镜像试验下
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161442650.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161442650.png)
 先pull一个nginx镜像，我这里之前有，就直接用了，接着通过上面提到的命令，别名一个dfimage命令
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161442727.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161442727.png)
 做好别名之后，通过dfimage去生成nginx的Dockerfile，其实就是启动一个容器工具，执行完之后即删除该容器，镜像保留
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161442264.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161442426.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161442264.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161442426.png)
 如果有报错，不能执行，估计就是缺少-sV=1.36，具体这个报错呢，暂时还没有研究，但是加上-sV=1.36就可以。
 
 ```bash
 #dfimage -sV=1.36 镜像名称:标签
 dfimage -sV=1.36 nginx:latest
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161442532.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161442532.png)
 即可看到完整的dockerfile，这个工具查看的非常的详细
 
 

@@ -133,8 +133,8 @@ pip3 download 模块名 -i 模块镜像加速地址 -d 下载的包的存储路�
 pip3 download numpy -d /data/packages/
 pip3 download numpy -i https://pypi.tuna.tsinghua.edu.cn/simple -d /data/packages/
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221620052.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221620163.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221620052.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221620163.png)
 
 
 - 默认就是最新版本，如需其他指定版本可使用`==`来指定版本。
@@ -144,7 +144,7 @@ pip3 download numpy -i https://pypi.tuna.tsinghua.edu.cn/simple -d /data/package
 pip3 download numpy==1.18.5 -d /data/packages/
 pip3 download numpy==1.18.5 -i https://pypi.tuna.tsinghua.edu.cn/simple -d /data/packages/
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221620868.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221620868.png)
 
 
 
@@ -164,7 +164,7 @@ numpy
 ocrd_fork_pylsd
 PyMuPDF
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221620168.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221620168.png)
 
 **<font size=3>批量下载</font>**
 
@@ -184,7 +184,7 @@ pip3 download -r python-pack -d /data/packages/
 ```
 >第一次下载和我这个图片可能有一些不一样，因为我这是测试的时候已经下载过了，删除又重新下载的（会有缓存），所以，与第一次下载过程是有一些差别的，不过，没有任何影响。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202508221620461.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221620461.png)
 最后我们就可以看到，指定的一些模块已经下载成离线包了，就可以下载到本地拿去用了。
 要是想下载指定版本的，和上面的一样，只不过是在文本里修改就好了；例如：`numpy==1.18.5`。
 

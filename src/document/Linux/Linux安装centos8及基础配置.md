@@ -30,57 +30,57 @@ isOriginal: true
 
 >[阿里云centos8下载地址](https://mirrors.aliyun.com/centos/8.5.2111/isos/x86_64/)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033094.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033094.png)
 
 ## 2、VMware安装centos8操作系统
 
 * 新建虚拟机
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033651.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033651.png)
 * 选择经典安装
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033037.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033037.png)
 * 稍后安装操作系统
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033498.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033498.png)
 * 选择Linux，版本选择centos8 64位
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033577.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033577.png)
 * 命名及配置存储路径
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033150.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033150.png)
 * 根据自己电脑磁盘大小来配置，也可后面扩容
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033534.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033534.png)
 * 选择自定义硬件
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033590.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033590.png)
 * 内存和cpu根据自己的所需和实际情况来调整
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033676.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033676.png)
 * 新DVD，连接选择使用 ISO 映像文件，点击浏览选择centos8.5的ISO。
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033254.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033254.png)
 
 * 网络适配器 - 根据自己需求进行选择，这里我直接选择桥接
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141033252.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141033252.png)
 * 都配置好之后点击关闭就行
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034326.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034326.png)
 * 然后在点击完成
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034088.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034088.png)
 * 开启虚拟机
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034567.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034567.png)
 * install centos Linux 8回车
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034583.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034583.png)
 * 选择安装语言 - 中文
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034960.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034960.png)
 * 需要配置的有如下四个
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034565.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034565.png)
 * 安装目的地，直接选择刚刚给的盘就行（如果点击完成还是显示红色，点进去在选一次）
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034044.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034044.png)
 * 网络连接 - 直接点击打开就好了
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034063.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034063.png)
 * 时间改成上海时间
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034659.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034659.png)
 * 配置root密码，根据自己需求（需要密码是123123这样简单的需要点两次完成）
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141034393.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141034393.png)
 * 都配置好之后开始安装就可以选择了，直接点击开始安装
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141035789.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141035789.png)
 * 等待安装完成之后选择重启系统（大约20分钟左右），等待系统重启完毕；
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141035825.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141035825.png)
 * 初始设置 - 许可证，点进去，点击我同意许可，点击完成，出来之后点击结束配置，完成；
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141035808.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141035808.png)
 * 然后一路前进就行；
 
 完成之后到达桌面，点击终端，使用命令`ip a`查看ip，然后用xshell等连接工具连接服务器即可；
@@ -98,13 +98,13 @@ df -Th
 
 挂载时提示`mount: /media/cdrom: WARNING: device write-protected, mounted read-only.`这个不用管，只是说因为有保护，所以只读，这个是正常的。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141035193.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141035193.png)
 
 
 >**问题1：**<br>
 >如果遇到挂载时报错：`mount: 在 /dev/sr0 上找不到媒体`
 请检查虚拟机的右下角ISO映像文件是否连接；
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141035732.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141035732.png)
 
 
 ## 4、配置永久挂载磁盘
@@ -234,7 +234,7 @@ SELINUX=disabled
 >配置网络配置的时候需要先看本机的ip；
 >`cmd`打开输入`ipconfig`查看本机ip
 >
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141035375.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141035375.png)
 >
 >可以看出ip为`192.168.0.103`，子网掩码为：`255.255.255.0`，默认网关为：`192.168.0.1`
 >那么我们配置虚拟机ip的时候就不能写：192.168.2.10之类的了，需要和本机相关；
@@ -277,7 +277,7 @@ systemctl restart NetworkManager
 ```bash
 ip a 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141035402.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141035402.png)
 
 > 确认ip已经变成自己修改的即可；
 * ping百度，测试是否可以连接网络
@@ -285,7 +285,7 @@ ip a
 ```bash
 ping baidu.com
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202510141036948.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141036948.png)
 
 可以连接，那么就开始在本机ping刚刚配置的ip，如果可以ping通，这时候就可以用xshell等连接工具连接了。
 

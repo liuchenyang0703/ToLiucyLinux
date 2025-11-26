@@ -41,7 +41,7 @@ systemctl stop zabbix-server zabbix-agent httpd rh-php72-php-fpm
 ```bash
 rpm -qa | grep -i zabbix
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161114486.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161114486.png)
 
 我们可以看到有好几个，可以依次卸载；
 
@@ -59,7 +59,7 @@ yum -y remove zabbix-web-5.0.25-1.el7.noarch
 ```bash
 rpm -qa | grep -i zabbix
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161114154.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161114154.png)
 这下已经没有了，就可以了；
 
 ### 2.3、删除zabbix所有的配置以及相关文件
@@ -91,7 +91,7 @@ rm -rf /usr/lib/zabbix
 ```bash
 find / -name zabbix
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161114251.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161114251.png)
 
 可以看到已经删除干净了；
 
@@ -100,9 +100,9 @@ find / -name zabbix
 ```bash
 find / -name "*zabbix*"
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161114478.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161114478.png)
 还可以查到这么多，最后全部删除就可以；
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161114821.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161114821.png)
 最后在次查找一下就可以了，这样就彻底的删除干净了。
 
 ## 3、卸载mysql
@@ -112,7 +112,7 @@ find / -name "*zabbix*"
 #查找mariadb
 rpm -qa mariadb
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161114262.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161114262.png)
 
 ```bash
 #卸载即可
@@ -147,7 +147,7 @@ rm -rf /usr/share/mysql/
 ```bash
 find / -name mysql
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161114776.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161114776.png)
 可以看到已经删除干净了；
 
 
@@ -166,7 +166,7 @@ yum -y remove httpd-2.4.6-97.el7.centos.5.x86_64
 #查找rh-php72-php-fpm安装包
 rpm -qa rh-php72-php-fpm
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161113643.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161113643.png)
 
 ```bash
 #进行卸载就可以

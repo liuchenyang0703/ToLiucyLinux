@@ -46,7 +46,7 @@ echo "net.ipv4.ip_forward=1" >>/usr/lib/sysctl.d/00-system.conf；
 ```bash
 cat /usr/lib/sysctl.d/00-system.conf；
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161510400.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161510400.png)
 
 ### 2 第二步：重启network和docker服务
 
@@ -65,7 +65,7 @@ systemctl restart network && systemctl restart docker
 
 ## 问题解决❀
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161509228.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161509228.jpeg)
 ---
 ---
 

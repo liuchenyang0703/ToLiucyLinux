@@ -63,9 +63,9 @@ nc -nvv 127.0.0.1 8080
 #扫描指定目标IP和端口且输出详细信息
 nc -v -z -w2 172.16.11.210 8080
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181627050.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181627050.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181627937.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181627937.png)
 
 
 
@@ -82,17 +82,17 @@ nc -v -z -w2 172.16.11.210 8088
 ```
 这是不成功的输出
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181627880.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181627880.png)
 
 这是成功输出
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181627327.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181627327.png)
 
 ### 扫描指定主机的80-85端口，并显示执行过程，扫描等待连线时间为2秒：
 ```bash
 nc -v -z -w2 172.16.11.210 80-85
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181627564.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181627564.png)
 
 ### 扫描指定主机的1到65535的端口范围，只输出打开的端口（去掉-v参数即可）
 ```bash
@@ -318,5 +318,5 @@ nc 192.168.78.128 10000
 - -l 监听模式
 - -p 指定本地端口，在实际应用中可以省略
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181627329.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181627329.png)
 

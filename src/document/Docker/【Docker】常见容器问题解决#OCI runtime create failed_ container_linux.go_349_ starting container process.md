@@ -47,13 +47,13 @@ ERROR: Encountered errors while bringing up the project.
 
 找到了有一个是映射的配置文件，而容器外没有这个配置文件，所以会报错，任意添加一个这个命名的文件或者是拉取一个配置文件即可解决。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161518745.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161519111.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161518745.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161519111.png)
 
 
 添加完或创建完文件之后再次执行就可以成功创建了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161518169.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161518169.png)
 
 
 

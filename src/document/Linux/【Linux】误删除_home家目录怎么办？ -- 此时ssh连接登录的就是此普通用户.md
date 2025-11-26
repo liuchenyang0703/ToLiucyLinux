@@ -13,7 +13,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181614803.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181614803.jpeg)
 
 
 >👨‍🎓**博主简介**
@@ -40,7 +40,7 @@ breadcrumb: false
 ```bash
 Could not chdir to home directory /home/test1: No such file or directory<br>
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181613552.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181613552.png)
 
 ## 问题排查
 
@@ -48,7 +48,7 @@ Could not chdir to home directory /home/test1: No such file or directory<br>
 
 > 首先，我们`ls /home`看一下是没有test1这个家目录。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181613003.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181613003.png)
 
 可以看到是没有的，那么可以判定是被误删或者是移动到其他地方了，导致ssh使用普通用户连接找不到家目录，才会报错。
 >**问**：<font color=orange>那么，如何解决呢？</font>
@@ -96,7 +96,7 @@ test1  test2
 这时候复制了一个，但是，还没完成；
 我们看一下复制的用户、用户组所属：`ll`
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181613097.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181613097.png)
 
 可以看到都是test2，这时候我们需要修改一下目录的`用户`和`用户组`所属；
 
@@ -115,7 +115,7 @@ drwx------ 2 test2 test2 62 11月 23 16:57 test2
 
 可以看到设置成功了，这时候我们就可以继续使用普通用户登录了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181613665.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181613665.png)
 
 可以看到登录成功了。
 

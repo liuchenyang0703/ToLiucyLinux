@@ -80,13 +80,13 @@ nload [网卡]
 ```bash
 [root@root ~]# nload eno1
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181604595.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181604595.png)
 
 监测所有网卡的流量：
 ```bash
 [root@root ~]# nload
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181604093.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181604093.png)
 按【回车健】查看下一个网卡监测情况；
 
 **<font color=teal>字段解析</font>**
@@ -182,7 +182,7 @@ iftop [参数]
 [root@root ~]# iftop -n
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181604811.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181604811.png)
 
 
 ### 3、iptraf – 实时监视网卡流量
@@ -231,7 +231,7 @@ iptraf [参数] [网卡]
 ```bash
 [root@root ~]# iptraf-ng
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181604434.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181604434.png)
 
 ### 4、ifstat – 统计网络信息
 >&emsp;&emsp;ifstat命令就像iostat/vmstat描述其它的系统状况一样，是一个统计网络接口活动状态的工具。ifstat工具系统中并不默认安装，需要自己下载源码包，重新编译安装，使用过程相对比较简单。

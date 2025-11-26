@@ -16,7 +16,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/1d08edbca8894c2ebb94586f53c2b100.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1d08edbca8894c2ebb94586f53c2b100.png)
 
 
 
@@ -53,7 +53,7 @@ docker.io/library/mysql:5.7.38
 docker images
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/c371d3805c04428e90cdeccd92266277.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c371d3805c04428e90cdeccd92266277.png)
 
 接下来就是这一环节中最重要的一点了，创建容器；
 
@@ -87,7 +87,7 @@ docker run -itd --name mysql --restart=always --privileged -p 3306:3306 -v /var/
 ```bash
 docker ps -a
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/bd0bc9983b844a0da605a31765bf66fe.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bd0bc9983b844a0da605a31765bf66fe.png)
 
 ## 进入mysql容器
 
@@ -113,7 +113,7 @@ create database cs;
 #再次查看是否创建成功；
 show databases;
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/4c98cbc0c278484588bd79e14992f222.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4c98cbc0c278484588bd79e14992f222.png)
 
 ### 创建表
 
@@ -133,7 +133,7 @@ show tables
 #查看表机构
 desc biaoone;
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b0b4eea0bd244372a3321e7a06d7f534.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b0b4eea0bd244372a3321e7a06d7f534.png)
 
 # 相关文章
 >[Centos7安装Mysql5.7（超详细版）](https://liucy.blog.csdn.net/article/details/124930789)
@@ -141,5 +141,5 @@ desc biaoone;
 >---
 >[【云原生】Docker之创建并进入mysql容器](https://liucy.blog.csdn.net/article/details/126288434)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/22d86cdcfc94420a84febfc6a5b7a22a.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/22d86cdcfc94420a84febfc6a5b7a22a.jpeg)
 

@@ -17,7 +17,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514069.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514069.jpeg)
 
 
 >👨‍🎓**博主简介**
@@ -34,9 +34,9 @@ breadcrumb: false
 ## 一、Jenkins到底是什么？
 >&emsp;&emsp;Jenkins是一款开源 CI&CD 软件，用于自动化各种任务，包括构建、测试和部署软件。支持各种运行方式，可通过系统包、Docker 或者通过一个独立的 Java 程序。下面为项目持续集成和交互的流程图
 >
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514037.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514037.png)
 ## 二、持续集成、自动部署流程
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514815.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514815.png)
 
 >&emsp;&emsp;开发人员将代码push到gitlab中，触发jenkins的自动pull拉取代码，通过maven编译、打包，然后通过执行shell脚本使docker构建镜像并push到私服（或者阿里云）仓库，此操作完成后jenkins服务器上再执行SSH命令登录到部署服务器，docker从仓库（私服）拉取镜像，启动容器。整个操作流程完成。
 
@@ -81,7 +81,7 @@ systemctl restart docker
 ```bash
 docker info
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514294.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514294.png)
 ### 2 拉取Jenkins镜像
 
 ```bash
@@ -89,7 +89,7 @@ docker pull jenkins/jenkins
 ```
 等待拉取即可；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514701.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514701.png)
 
 拉取完成之后查看镜像
 
@@ -134,18 +134,18 @@ docker ps -a
 ```
 jenkins运行中页面访问
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514975.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514975.png)
 ip:port
 
 
 **<font color=red>如：遇到页面访问不到的情况，可使用`netstat -anput | grep port` 查看端口是否被占用；</font>**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514335.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514335.png)
 
 #### 5.1 解锁 Jenkins
 根据提示找到jenkins的密码；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514734.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514734.png)
 
 ```bash
 [root@localhost secrets]# cat /var/jenkins_home/secrets/initialAdminPassword 
@@ -157,7 +157,7 @@ ip:port
 
 可选择使用`推荐插件`或`自定义插件`；推荐使用`推荐插件`。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514074.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514074.png)
 
 
 ##### 5.2.1 配置镜像加速器
@@ -180,23 +180,23 @@ https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json
 :wq
 docker restart jenkins
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514138.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514138.png)
 
 #### 5.3 创建管理用户
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514370.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514370.png)
 #### 5.4 实例配置
 直接保存并完成即可
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514850.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514850.png)
 
 #### 5.5 开始使用
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514257.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514257.png)
 
 ## 四、Jenkins安装Github所需插件
 需要安装几个必须的插件：`CloudBees Credentials` 、`GitHub API Plugin`、`SSH Credentials Plugin`、`Git client plugin`、`SCM API`、`Mailer Plugin` 、`Plain Credentials Plugin` 、`GIT plugin`、`GitHub Plugin`、`Publish Over.SSH` 、`Maven Integration`
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161514112.png)![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513989.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513444.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161514112.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513989.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513444.png)
 
 ## 五【附加】 github生成Token步骤
 ### 1 访问github并登录
@@ -204,16 +204,16 @@ github官网：[https://github.com/](https://github.com/)
 
 登录：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513429.png)![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513547.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513429.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513547.png)
 
 ### 2 配置Personal Access Token
 >在对项目有写权限的用户上获取token进入github –> setting –> Developer settings –>  Personal Access Token –> Token –> Generate new token
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513382.png)![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513306.png)![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513762.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513382.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513306.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513762.png)
 
 >找到tokens，新建tokens并设置读、写、执行权限
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513810.png)![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513378.png)![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161513476.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513810.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513378.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161513476.png)
 
 
 

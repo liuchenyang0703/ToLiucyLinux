@@ -139,7 +139,7 @@ chown -R www:www /www/
 # 检测nginx配置中语法是否有误
 nginx -t 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161334848.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161334848.png)
 
 ok则为正常，没有错误；
 
@@ -167,18 +167,18 @@ systemctl restart nginx
 
 - 访问html资源
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161334423.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161334423.png)
 
 
 
 - 访问jpg资源
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161334458.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161334458.png)
 
 
 - 访问txt资源
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161334429.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161334429.png)
 
 
 - 如果是其他类型的文件，nginx默认不解析，会直接下载
@@ -197,11 +197,11 @@ EOF
 因为是静态页面，上面也说了，修改不用重启；（但是修改配置文件的话就需要重启nignx才能生效；）
 页面直接访问，会让你下载；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161334698.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161334698.png)
 
 下载完打开，里面的内容就是刚刚写进去的内容；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161334131.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161334131.png)
 
 ## 三、nginx的配置文件匹配
 还记得上面让备份的一个nginx配置文件吗，`/etc/nginx/conf.d/default.conf`，这个里面的server_name 写的是localhost，而咱们用的是ip访问网站，所以默认会先去找`default.conf`；所以在上面给他备份了一下，然后才会去找另一个conf文件。
@@ -421,9 +421,9 @@ ip:端口
 
 - ip:81
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161333738.png)- ip:82
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161333738.png)- ip:82
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161333298.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161333298.png)
 
 
 
@@ -443,12 +443,12 @@ wget -O /www/82/82.jpg https://img95.699pic.com/xsj/0v/2f/k8.jpg%21/fw/700/water
 
 - 81 服务器（ip:81/81.jpg）
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161333963.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161333963.png)
 
 
 - 82 服务器（ip:82/82.jpg）
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161333283.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161333283.png)
 
 #### 5.2 页面访问两个端口 --> 各添加一个txt资源
 
@@ -460,12 +460,12 @@ echo "我也又来测试了，这是是 82 的一个测试页面" > /www/82/82.t
 
 - 81 服务器（ip:81/81.txt）
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161333787.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161333787.png)
 
 
 - 82 服务器（ip:82/82.txt）
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161333434.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161333434.png)
 
 
 ### 到这里就完成了nginx部署一个网站及多个域名的网站和多个端口的网站

@@ -34,37 +34,37 @@ comment: false
 
 * 点击 `Download`
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/708d4529cb9249f9bd191b2e5e828a86.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/708d4529cb9249f9bd191b2e5e828a86.png)
 
 * 可以根据自己的需求安装需要的版本：点击 `Files for Microsoft Windows` 下载windows版本
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/9916d8caf66042f4a95f989c22bdd3cb.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9916d8caf66042f4a95f989c22bdd3cb.png)
 
 * 点击 `ApacheHaus` 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b3485ac1f6724edfbbcdef01f3977aed.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b3485ac1f6724edfbbcdef01f3977aed.png)
 
 * 点击 `Download Locations` 下的小房子下载
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/7149f9b2390048a5be7d3f3debeb8c40.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7149f9b2390048a5be7d3f3debeb8c40.png)
 
 ## 三、安装 Apache 并 配置 Apache 配置文件
 
 ### 3.1 解压 压缩包
 下载完成后，放在自己需要的位置，解压压缩包；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/4c1a429e557f480f9dee36002cc1d9d1.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4c1a429e557f480f9dee36002cc1d9d1.png)
 
 ### 3.2 配置 配置文件
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5fd3ca1ff7b64eedad458c90f76cdef4.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5fd3ca1ff7b64eedad458c90f76cdef4.png)
 
 找到以 `Define SRVROOT` 开头的 配置Apache安装路径；
 修改Apache实际绝对安装目录，最后结尾处不能带"/"或"\"，这里${SRVROOT}指定义的SRVROOT路径变量
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/158b7c6c2369486885b5edaf52ab5df6.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/158b7c6c2369486885b5edaf52ab5df6.png)
 
 配置完成...
 
@@ -76,7 +76,7 @@ comment: false
 * 如果在d盘，先输入`d:` ，然后在使用cd 切换到apache的bin目录下，我这里是c盘，直接cd就可以；
 * 进入到bin目录下，使用`httpd -t` ，检查配置文件是否合法；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/61b8de251c02414e91fbce55cc54bc7e.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/61b8de251c02414e91fbce55cc54bc7e.png)
 
 没有问题；
 
@@ -91,7 +91,7 @@ C:\Users\user\Desktop\httpd-2.4.55-o111s-x64-vs17\Apache24\bin>httpd -k install 
 正常安装完毕如下图所示：
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/f4f8ae211178441d90979e1917beaf9e.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f4f8ae211178441d90979e1917beaf9e.png)
 
 安装成功；
 
@@ -107,20 +107,20 @@ httpd -k start -n apache
 #### 4.4.2 可视化启动
 >打开安装apache的 `bin` 目录，下面有一个 `ApacheMonitor.exe` 文件，运行即可；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/9ebd6fb45f5f439394533182207b00e3.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9ebd6fb45f5f439394533182207b00e3.png)
 
 双击如果没反应可以看一下小窗口，就是qq、微信、那些最小化存放的地址，有一个这个标志；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/7199e05f7ac4479ca3daf2f19f312149.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7199e05f7ac4479ca3daf2f19f312149.png)
 
 右击 `Open Apache Monitor` 打开面板；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/0bd6d756986a4270818dc73cf99dbf21.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0bd6d756986a4270818dc73cf99dbf21.png)
 
 在这里面可以直接启动、停止、重启操作；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/23b25f81cad74348ae8169e1db131fdc.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/23b25f81cad74348ae8169e1db131fdc.png)
 
 
 ## 五、页面访问
@@ -129,7 +129,7 @@ httpd -k start -n apache
 
 看到如下页面，则代表安装成功。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/facc7ab23d0843afbf260c7b07fa9a10.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/facc7ab23d0843afbf260c7b07fa9a10.png)
 
 
 ## 六、命令行其他命令操作

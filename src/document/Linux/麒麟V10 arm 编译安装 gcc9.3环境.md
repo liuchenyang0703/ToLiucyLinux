@@ -29,7 +29,7 @@ breadcrumb: false
 ---
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201049085.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201049085.png)
 ## 一、前言需求：
 >在麒麟V10 arm64架构的服务器上需要使用到gcc9.3，但麒麟V10自带的gcc版本是7.3，麒麟系统自带的sp1和sp2源，默认的gcc版本都是7.3，所以需要升级到gcc9.3才能使用；
 
@@ -151,14 +151,14 @@ ln -s /usr/local/gcc-9.3.0/build/gcc/xgcc /bin/gcc
 ```
 完成软连接之后就再次`gcc --version`、或者`gcc -v`查看版本就行，这时候就会显示9.3了。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201048399.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201048399.png)
 
 * **查看gcc9.3的动态库**
 
 ```bash
 strings /lib64/libstdc++.so.6 | grep GLIBC
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201048589.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201048589.png)
 
 发现动态库还是7.3的，这时候也需要手动去软连接一下库；
 
@@ -179,7 +179,7 @@ strings /lib64/libstdc++.so.6 | grep GLIBC
 ```
 可以看到有`GLIBCXX_3.4.28`就算是成功了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412201048763.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201048763.png)
 
 ### 3.7 安装成功
 

@@ -429,7 +429,7 @@ loglevel notice
 [root@localhost redis]# ansible-playbook --list-tags redis.yml 
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/008b476b692c4b3394a68eabf7707c11.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/008b476b692c4b3394a68eabf7707c11.png)
 
 
 
@@ -495,7 +495,7 @@ TASK TAGS:
 # 执行完毕可以查看redis状态及redis端口是否启动，正常是都启动的；
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/8792d06ae0f649b4be2e18ae24eb0fac.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8792d06ae0f649b4be2e18ae24eb0fac.png)
 
 
 
@@ -539,7 +539,7 @@ mkdir -pv /etc/ansible/roles/{nginx,mysql,httpd}/{files,templates,vars,tasks,han
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/c8b5d88f5fa14aa98f35ff319b596cbd.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c8b5d88f5fa14aa98f35ff319b596cbd.png)
 
 
 
@@ -599,7 +599,7 @@ ansible-galaxy命令用于管理`roles`，同时也可以在 [galaxy.ansible.com
 
 拉取、解压完就可以看到roles目录下多了一个新的目录`ansible-mysql-1.0.1`，里面存放的mysql。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b535bb365889403294c59929ebde956f.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b535bb365889403294c59929ebde956f.png)
 
 
 
@@ -839,7 +839,7 @@ playbook: roles.yml
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/42915933fc834abd864aaae0884271b7.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/42915933fc834abd864aaae0884271b7.png)
 
 
 
@@ -851,7 +851,7 @@ playbook: roles.yml
 tree /etc/ansible/roles/nginx
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/6dad4ece07df4963b6a7a0f806389915.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6dad4ece07df4963b6a7a0f806389915.png)
 
 
 

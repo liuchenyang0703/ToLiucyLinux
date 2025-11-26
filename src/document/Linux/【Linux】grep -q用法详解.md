@@ -83,6 +83,6 @@ yes
 no
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412171025290.gif)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171025290.gif)
 
 

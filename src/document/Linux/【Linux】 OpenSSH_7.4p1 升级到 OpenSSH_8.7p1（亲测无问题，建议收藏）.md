@@ -32,7 +32,7 @@ breadcrumb: false
 >生产环境：ssh -V查看版本是：OpenSSH_7.4p1, OpenSSL 1.0.2k-fips  26 Jan 2017
 > 问题关键字：<font color=red>OpenSSH 升级, OpenSSH 更新, OpenSSH 漏洞修复</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/13e70db213ef46fba6bcf12482445256.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/13e70db213ef46fba6bcf12482445256.png)
 
 
 ## 前述
@@ -117,7 +117,7 @@ mv: 无法获取'/etc/init.d/sshd' 的文件状态(stat): No such file or direct
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/70cf95167f6e4edaa39b2bf8fbcb174e.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/70cf95167f6e4edaa39b2bf8fbcb174e.png)
 
 
 ```bash
@@ -176,7 +176,7 @@ root@localhost:openssh-8.7p1# make install
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/70cf95167f6e4edaa39b2bf8fbcb174e.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/70cf95167f6e4edaa39b2bf8fbcb174e.png)
 
 ```bash
 # 重启服务

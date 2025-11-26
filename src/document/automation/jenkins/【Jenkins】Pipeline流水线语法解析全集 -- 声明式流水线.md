@@ -17,7 +17,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5cf90d2d830046058e5fa8768d5f47f4.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5cf90d2d830046058e5fa8768d5f47f4.jpeg)
 
 
 
@@ -120,9 +120,9 @@ pipeline {
 
 
 
-![image-20231226113332353](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/00ca47f3aadec673e6d53041e6fef763.png)
+![image-20231226113332353](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/00ca47f3aadec673e6d53041e6fef763.png)
 
-![image-20231226113350109](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/54218ee2196edbc6c34a47efc8f07b7d.png)
+![image-20231226113350109](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/54218ee2196edbc6c34a47efc8f07b7d.png)
 
 
 
@@ -132,7 +132,7 @@ pipeline {
 
 
 
-![image-20231226113443840](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/11d9b00443b0becd654e2b58eb1903af.png)
+![image-20231226113443840](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/11d9b00443b0becd654e2b58eb1903af.png)
 
 
 
@@ -140,9 +140,9 @@ pipeline {
 
 
 
-![image-20231226113506143](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/677c9048a192ec1062b65df79e0ab43e.png)
+![image-20231226113506143](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/677c9048a192ec1062b65df79e0ab43e.png)
 
-![image-20240125111153073](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/626eeaf100fa9bbe038f201ab287ddc0.png)
+![image-20240125111153073](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/626eeaf100fa9bbe038f201ab287ddc0.png)
 
 
 
@@ -150,7 +150,7 @@ pipeline {
 
 
 
-![image-20231226115217676](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d95c81c4c5d070c1a9c661671054b8c2.png)
+![image-20231226115217676](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d95c81c4c5d070c1a9c661671054b8c2.png)
 
 
 
@@ -176,9 +176,9 @@ pipeline {
 
 
 
-![image-20240125111950335](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/bbcdb934072ec54ce8c506f110c40422.png)
+![image-20240125111950335](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bbcdb934072ec54ce8c506f110c40422.png)
 
-![image-20231226130556616](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/dd98672021f9af79cdd4eecfea71a53c.png)
+![image-20231226130556616](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/dd98672021f9af79cdd4eecfea71a53c.png)
 
 
 
@@ -186,7 +186,7 @@ pipeline {
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5eb6ab0e56802b9e030b164235860ac3.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5eb6ab0e56802b9e030b164235860ac3.png)
 
 ### agent
 
@@ -356,7 +356,7 @@ pipeline {
 
 
 
-![image-20240126143719547](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/25efe9ccbdff3950d065680915169cf1.png)
+![image-20240126143719547](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/25efe9ccbdff3950d065680915169cf1.png)
 
 
 
@@ -397,7 +397,7 @@ pipeline {
 }
 ```
 
-![image-20240126095209114](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e0d68d462be92562a401eba162a29bc2.png)
+![image-20240126095209114](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e0d68d462be92562a401eba162a29bc2.png)
 
 
 
@@ -436,7 +436,7 @@ pipeline {
 
 
 
-![image-20240126143320776](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/6b3ab2f900dd36673127d2430effaa8b.png)
+![image-20240126143320776](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6b3ab2f900dd36673127d2430effaa8b.png)
 
 
 
@@ -476,7 +476,7 @@ pipeline {
 }
 ```
 
-![image-20240126150106957](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e03322a0bc7dc7f94723f5c48770a4a8.png)
+![image-20240126150106957](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e03322a0bc7dc7f94723f5c48770a4a8.png)
 
 
 
@@ -551,13 +551,13 @@ pipeline {
 }
 ```
 
-![image-20240220100551154](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/a1a310bdb6e12e90868d2830e3f49a0a.png)
+![image-20240220100551154](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a1a310bdb6e12e90868d2830e3f49a0a.png)
 
 
 
 > 代码分析：
 >
-> ![image-20240220101045685](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/989dffcbfb86c847696145aa7e690e3e.png)
+> ![image-20240220101045685](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/989dffcbfb86c847696145aa7e690e3e.png)
 
 
 
@@ -585,13 +585,13 @@ pipeline {
 }
 ```
 
-![image-20240220100655699](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/8cc84ddd380da16d00def37ea85021b3.png)
+![image-20240220100655699](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8cc84ddd380da16d00def37ea85021b3.png)
 
 
 
 > 代码分析：
 >
-> ![image-20240220101555304](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/c2bb03dc16dcae39c441cf6625e41c0a.png)
+> ![image-20240220101555304](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c2bb03dc16dcae39c441cf6625e41c0a.png)
 
 ---
 除了自定义的这几个环境变量之后，我们还有系统自带的全局环境变量，可访问：[http://ip:port/job/项目名/pipeline-syntax/globals](http://ip:port/job/项目名/pipeline-syntax/globals)
@@ -702,7 +702,7 @@ pipeline {
 
 
 
-![image-20240222133008528](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/988e3b4f9402ba61191c449f27007bf7.png)
+![image-20240222133008528](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/988e3b4f9402ba61191c449f27007bf7.png)
 
 
 
@@ -710,7 +710,7 @@ pipeline {
 
 
 
-![image-20240222133343179](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/a9482e102f00ad6bfc24a8f8a8c413cf.png)
+![image-20240222133343179](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a9482e102f00ad6bfc24a8f8a8c413cf.png)
 
 
 
@@ -718,7 +718,7 @@ pipeline {
 
 
 
-![image-20240222133848575](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d69c633dd5acaf40d41a6627e1bd55f8.png)
+![image-20240222133848575](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d69c633dd5acaf40d41a6627e1bd55f8.png)
 
 
 
@@ -773,7 +773,7 @@ pipeline {
 
 
 
-![image-20240226103614135](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b4635cf45971d0a889c6fb0db7ac4050.png)
+![image-20240226103614135](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b4635cf45971d0a889c6fb0db7ac4050.png)
 
 
 
@@ -781,7 +781,7 @@ pipeline {
 
 
 
-![image-20240226103808763](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/874f6ed43f2244bf732c514d1e025439.png)
+![image-20240226103808763](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/874f6ed43f2244bf732c514d1e025439.png)
 
 
 
@@ -789,7 +789,7 @@ pipeline {
 
 
 
-![image-20240226103833763](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/743d6c86aaa2e0e1c07594091b644625.png)
+![image-20240226103833763](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/743d6c86aaa2e0e1c07594091b644625.png)
 
 
 
@@ -797,7 +797,7 @@ pipeline {
 
 
 
-![image-20240226104207259](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/c0e761290482696e7f1a84640a1edb8e.png)
+![image-20240226104207259](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c0e761290482696e7f1a84640a1edb8e.png)
 
 
 
@@ -1049,7 +1049,7 @@ pipeline {
 
 如果是在`master`分支上执行，就执行此操作；因为我们没有使用多分支，所以这个执行结果是跳过此执行操作；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/c7c42c9faa194e12abdd4c753ec8f6f3.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c7c42c9faa194e12abdd4c753ec8f6f3.png)
 
 
 
@@ -1082,7 +1082,7 @@ pipeline {
 
 
 
-![image-20240307100517366](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/ae661d57bcb103b789ecf2ecadbc1aa0.png)
+![image-20240307100517366](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ae661d57bcb103b789ecf2ecadbc1aa0.png)
 
 
 
@@ -1114,7 +1114,7 @@ pipeline {
 
 
 
-![image-20240307101435744](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b09eb31fffb39de2a3784be0581a1c69.png)
+![image-20240307101435744](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b09eb31fffb39de2a3784be0581a1c69.png)
 
 
 

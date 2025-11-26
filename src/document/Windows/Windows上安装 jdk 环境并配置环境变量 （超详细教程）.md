@@ -26,7 +26,7 @@ comment: false
 ---
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/db79e07b492e4ef6b680d89a400afcdb.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/db79e07b492e4ef6b680d89a400afcdb.jpeg)
 
 ## 前言
 
@@ -45,29 +45,29 @@ comment: false
 
 等待下载完成，放到自己自定义的目录，右击以管理员方式进行安装；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/42360afe7bb040dead85065f17ae1faa.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/42360afe7bb040dead85065f17ae1faa.png)
 
 
 
 然后一直下一步，到选路径的时候，选一下就可以了，路径要记住，配置环境变量的时候要用到。
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/59db495b77c145b29ec5e7b7f2b9ac99.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/59db495b77c145b29ec5e7b7f2b9ac99.png)
 
 ><font color=red>这里注意，安装目录需要英文目录，不可以带中文。
 >建议创建英文目录，然后在英文目录创建一个`jdk1.8`目录，一个`jre1.8`目录，后面配置环境变量需要用到。</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/bca284b92cb04dda9202f4fd80a539a4.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bca284b92cb04dda9202f4fd80a539a4.png)
 
 
 安装完成之后会让你更改目标文件夹，也同样的修改到D盘就可以了；
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/2e359dd919d74dbe956ca0524b4de6cd.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2e359dd919d74dbe956ca0524b4de6cd.png)
 
 安装完成关闭即可；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/c38ec7b9f7b448f98d7e8f97f4fe3751.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c38ec7b9f7b448f98d7e8f97f4fe3751.png)
 
 
 
@@ -80,8 +80,8 @@ comment: false
 
 >得到完整的 jdk 环境之后，需要配置 jdk 的环境变量，右击此电脑-->属性-->高级系统设置-->环境变量，打开环境变量设置窗口。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/cfdde248de514bda972735cffe6bede3.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/8a4f25f0548e49e3a5547908eedc1938.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/cfdde248de514bda972735cffe6bede3.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8a4f25f0548e49e3a5547908eedc1938.png)
 
 
 >可以看到有“用户变量”与“系统变量”。二者我认为最大的区别在于 用户变量只对当前用户有效，系统变量对所有用户有效；所以我一般在变量配置在“系统变量中”即可。
@@ -89,24 +89,24 @@ comment: false
 
 - 配置“JAVA_HOME”变量，变量名为：“JAVA_HOME ”。变量值为：“`D:\IDEA\windows-jdk1.8\jdk1.8`”。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/bd129cce73b445fe9a72fc55432d5ca2.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/bdd33104c9b24c5c8c406489e1575b09.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bd129cce73b445fe9a72fc55432d5ca2.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bdd33104c9b24c5c8c406489e1575b09.png)
 
 - 配置“CLASSPATH”变量，变量名为：“CLASSPATH ”。变量值为：【`.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar`】；并点击确定。
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/dbafec249f114572a2549020d0c00c27.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/dbafec249f114572a2549020d0c00c27.png)
 
 - 配置“Path”变量，变量名为：“Path ”。变量值为：【`.;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin`】；并点击确定。
 - 找到“Path”，点击编辑。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b4378ce61bdb4502be188abfd3700d6c.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b4378ce61bdb4502be188abfd3700d6c.png)
 - 点击新建
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/331834c33fa647f4864f944d613f7c2b.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/331834c33fa647f4864f944d613f7c2b.png)
 - 新增变量值为：【`.;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin`】；并点击确定。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/7225c237825e4ccbbec35dd078bf6fb5.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7225c237825e4ccbbec35dd078bf6fb5.png)
 
 >这样就配置完了，一路点击确定，直到桌面；
 
@@ -118,7 +118,7 @@ comment: false
 #查看jdk 版本
 java -version
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/fce81d255d0a435fa910a5e592712593.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fce81d255d0a435fa910a5e592712593.png)
 
 
  查看配置的环境变量
@@ -131,7 +131,7 @@ echo %JAVA_HOME%
 echo %CLASSPATH%
 echo %PATH%
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/f51055f68dc7438c940b9f97fdbf5441.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f51055f68dc7438c940b9f97fdbf5441.png)
 
 
 

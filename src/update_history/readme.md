@@ -365,3 +365,7 @@ category:
 > 3、新增了两个友链
 > 4、修改了关于网站链接失效的内容
 > 5、新增了一个荣誉证书
+
+## 2025-11-26:
+> 1、更新了所有的图片存储路径 oss ==> github(https://github.com/liuchenyang0703/blog-images.git)
+> 2、修改了个别图片存储为本地

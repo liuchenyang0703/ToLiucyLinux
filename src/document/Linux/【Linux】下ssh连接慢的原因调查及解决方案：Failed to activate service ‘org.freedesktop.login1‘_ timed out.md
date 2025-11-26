@@ -123,7 +123,7 @@ Mar 29 13:26:00 mail2 sudo: pam_unix(sudo:session): session closed for user root
 ```bash
 systemctl status sshd
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181614044.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181614044.png)
 正常来说有报错会在这里显示的，除非已经解决，就比如我已经解决了就看不到了。
 ### 也可通过 journalctl -u sshd 来查看日志报错
 
@@ -132,7 +132,7 @@ journalctl -u sshd
 ```
 翻到这几天连接不到的日期，来查看；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181614100.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181614100.png)
 
 同样也可以查看这个报错：`“pam_systemd(sudo:session): Failed to create session: Failed to activate service 'org.freedesktop.login1': timed out”`
 
@@ -161,5 +161,5 @@ systemctl restart systemd-logind
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181614093.gif)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181614093.gif)
 

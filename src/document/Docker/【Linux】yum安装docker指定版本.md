@@ -31,7 +31,7 @@ breadcrumb: false
 #查找已安装的docker包
 rpm -qa | grep docker
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161457564.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161457564.png)
 
 ```bash
 #查找到有已安装的docker包并卸载；卸载docker-ce-cli就可以将其他都顺带卸载了；
@@ -142,14 +142,14 @@ docker-ce.x86_64            17.03.0.ce-1.el7.centos             docker-ce-stable
 
 ```
 ### 安装docker-ce和docker-ce-cli
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161457143.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161457143.png)
 
 >注：如果不安装docker-ce-cli或直接安装docker-ce-cli，系统会默认下载最新的版本
 
 ```bash
 yum -y install docker-ce-18.09.6-3.el7 docker-ce-cli-18.09.6-3.el7
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161457326.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161457326.png)
 
 ### 配置docker拉取镜像的源
 
@@ -182,7 +182,7 @@ systemctl enable docker
 ```bash
 systemctl status docker
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161457314.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161457314.png)
 
 ### 查看docker版本
 

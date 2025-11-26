@@ -77,7 +77,7 @@ zip 	# 压缩命令
 cs.zip	# 要压缩的文件名
 cs		# 要压缩的目录
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191615619.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191615619.png)
 
 
 
@@ -86,7 +86,7 @@ cs		# 要压缩的目录
 ```bsah
 zip -r conf.zip /etc/*.conf
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191615755.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191615755.png)
 
 
 - 3、更新压缩包文件中某个文件
@@ -100,7 +100,7 @@ conf.zip			# 要压缩的文件名
 /etc/locale.conf	#要更新的某个文件
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191615522.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191615522.png)
 
 
 
@@ -109,7 +109,7 @@ conf.zip			# 要压缩的文件名
 ```bash
 zip -T conf.zip
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191615588.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191615588.png)
 
 
 ## unzip命令
@@ -153,7 +153,7 @@ unzip [参数] 压缩包名
 unzip conf.zip 
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191615448.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191615448.png)
 
 
 
@@ -164,7 +164,7 @@ unzip conf.zip
 unzip conf.zip -d /home/lcy/aaa/
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191615369.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191615369.png)
 
 
 
@@ -177,7 +177,7 @@ unzip conf.zip -d /home/lcy/aaa/
 unzip -t conf.zip
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191615759.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191615759.png)
 
 
 * 4、批量解压 压缩包
@@ -215,7 +215,7 @@ zip -s 130m cs.zip --out cs-data.zip
 #就可以看到打的压缩包了， cs-data.z01 cs-data.z02 cs-data.zip
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191615589.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191615589.png)
 
 
 解析分片压缩zip压缩包命令：

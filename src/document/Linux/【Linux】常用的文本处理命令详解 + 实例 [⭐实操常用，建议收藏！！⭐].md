@@ -13,7 +13,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349279.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349279.png)
 
 >👨‍🎓**博主简介**
 >
@@ -36,7 +36,7 @@ breadcrumb: false
 ```bash
 touch test-{1..20}.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349096.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349096.png)
 
 ### rename 介绍：
 >&ensp;&ensp;rename命令的功能是用于批量修改文件名称。与mv命令一次只能修改一个文件名不同，rename命令能够基于正则表达式对文件名进行批量修改，但要求是把匹配规则准确地描述给系统。<br>
@@ -57,28 +57,28 @@ rename 原字符 新字符 文件名
 ```bash
 rename test-18.txt cs-18.txt test-18.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349032.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349032.png)
 
 **实例2：将所有test开头的文件全部修改为abc开头的**
 
 ```bash
 rename test abc test*
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349774.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349774.png)
 
 **实例3：将所有的txt后缀改为cfg**
 
 ```bash
 rename txt cfg *
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349954.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349954.png)
 
 **实例4：将所有的a都改为A**
 
 ```bash
 rename a A *
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349402.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349402.png)
 
 ## 2、dirname	去除文件名中的非目录部分（取路径的目录部分）
 ### dirname 介绍：
@@ -125,7 +125,7 @@ dirname a/b
 #结果为
 a
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349197.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349197.png)
 
 ## 3、basename 显示文件路径名的基本文件名（取路径中的文件名）
 ### basename 介绍：
@@ -146,7 +146,7 @@ basename /usr/bin/lcy
 #结果为
 lcy
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349305.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349305.png)
 
 ## 4、cut 按列提取文件内容（切割文本内容）
 ### cut 介绍：
@@ -172,7 +172,7 @@ cat 文件名 | cut [参数]
 cat /etc/passwd | cut -d : -f 1
 cut -d : -f 1 /etc/passwd
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349954.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349954.png)
 
 
 **实例2：仅提取指定文件中每行的前4个字符：**
@@ -181,25 +181,25 @@ cut -d : -f 1 /etc/passwd
 cat /etc/passwd | cut -c 1-4
 cut -c 1-4 /etc/passwd
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181349909.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181349909.png)
 
 
 **实例3：以空格为单位切割只要成功、失败两个字**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348293.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348293.png)
 
 
 ```bash
 cat a.txt | cut -d " " -f 1 | cut -c 4-5
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348814.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348814.png)
 
 **实例4：切割passwd中只有root四个字**
 
 ```bash
 head -1 /etc/passwd | cut -d ":" -f 1	
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348977.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348977.png)
 
 ## 5、sort 对文件内容进行排序
 ### sort 介绍：
@@ -238,8 +238,8 @@ cat 文件名 | sort [参数]
 sort a.txt
 cat a.txt | sort
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348478.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348564.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348478.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348564.png)
 
 **实例2：文本中数字从大到小排序（降序）**
 
@@ -247,7 +247,7 @@ cat a.txt | sort
 sort -nr a.txt
 cat a.txt | sort -nr
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348166.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348166.png)
 
 
 **实例3：文本中数字从小到大排序（升序）**
@@ -256,7 +256,7 @@ cat a.txt | sort -nr
 sort -n a.txt
 cat a.txt | sort -n
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348025.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348025.png)
 
 
 **实例4：以冒号（：）为间隔符，对指定的文件内容按照数字大小对第3列进行排序（降序）**
@@ -264,7 +264,7 @@ cat a.txt | sort -n
 ```bash
 sort -t : -k 3 -n /etc/passwd
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348491.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348491.png)
 ## 6、uniq 去除文件中的重复内容行（去重 相邻 的重复行）
 
 ### uniq 介绍：
@@ -294,7 +294,7 @@ cat 文件名 | uniq [参数]
 
 **文本原文**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348840.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348840.png)
 
 **实例1：去除相邻的重复行，并显示重复次数**
 
@@ -304,14 +304,14 @@ cat a.txt | uniq -c
 ```
 前面的3、1代表的是统计的<font color=red> 相邻 </font>重复行次数。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348633.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348633.png)
 
 可以看到有几个也是一样的，但是没有进行统计，那是因为他们不是相邻的行，这时候我们可以结合`sort命令`排序来进行统计；
 
 ```bash
 cat a.txt | sort -n | uniq -c
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348714.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348714.png)
 
 **实例2：只统计没有重复的<font color=red>相邻</font>的行的数据**
 
@@ -319,7 +319,7 @@ cat a.txt | sort -n | uniq -c
 uniq -u a.txt
 cat a.txt | uniq -u
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348671.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348671.png)
 
 **实例3：只统计重复的<font color=red>相邻</font>的行的数据**
 
@@ -327,20 +327,20 @@ cat a.txt | uniq -u
 cat a.txt | uniq -d 
 uniq -d a.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348016.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348016.png)
 
 **实例4：忽略大小写去除<font color=red>相邻</font>相邻的重复行，并显示重复次数**
 
 初始数据：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348878.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348878.png)
 
 
 ```bash
 uniq -ic a.txt
 cat a.txt | uniq -ic
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348817.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348817.png)
 
 
 
@@ -370,21 +370,21 @@ cat 文件名 | tee [参数]
 ```bash
 uptime | tee cs.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348767.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348767.png)
 
 **实例2：将要输入的结果即输出到屏幕上，又追加到cs.txt中**
 
 ```bash
 echo "123123" | tee -a cs.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348854.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348854.png)
 
 **实例3：随机输出1-50之间的随机数，将结果输出到屏幕上，并追加到cs.txt文件中**
 
 ```bash
 echo $((RANDOM%50+1)) | tee -a cs.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348115.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348115.png)
 
 ## 8、tr 字符转换工具（字符串替换）
 ### tr 介绍：
@@ -410,7 +410,7 @@ ehco "字符串"|tr "原字符串" "替换的字符串"
 ```bash
 echo "abc" | tr "abc" "ABC"
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348526.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348526.png)
 
 
 **实例2：将文本中的小写的test全部变为大写的TEST**
@@ -420,7 +420,7 @@ echo "abc" | tr "abc" "ABC"
 ```bash
 cat a.txt | tr "test" "TEST"
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181348399.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181348399.png)
 
 
 **实例3：输出一长串字符串，只删除a-z的字母，其他都留着**
@@ -429,7 +429,7 @@ cat a.txt | tr "test" "TEST"
 echo "aaaaaaaaabbbbbbbbbbbbbbbbbb1c2c3cc" | tr -d "a-z"
 echo "aaaaaaaaabbbbbbbbbbbbbbbbbb1c2c3cc" | tr -d [a-z]
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347313.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347313.png)
 
 **实例4：去除相邻的相同字符，只保留一个**
 
@@ -437,7 +437,7 @@ echo "aaaaaaaaabbbbbbbbbbbbbbbbbb1c2c3cc" | tr -d [a-z]
 echo "aaaaaaaabbbbbbbccccccc" | tr -s "a-z"
 echo "aaaaaaaabbbbbbbccccccc" | tr -s [a-z]
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347711.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347711.png)
 
 
 **实例5：只保留字符abc，其余字符都替换成逗号**
@@ -445,7 +445,7 @@ echo "aaaaaaaabbbbbbbccccccc" | tr -s [a-z]
 ```bash
 echo "aaaaaaaaabbbbbbbbbbbbbbbbbb1c2c3cc" | tr -c "abc" ","
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347039.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347039.png)
 
 **实例6：将所有的a-z的小写，全部替换为大写**
 
@@ -453,7 +453,7 @@ echo "aaaaaaaaabbbbbbbbbbbbbbbbbb1c2c3cc" | tr -c "abc" ","
 cat a.txt | tr [a-z] [A-Z]
 tr [a-z] [A-Z] < a.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347530.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347530.png)
 
 ## 9、join 连接两个文件-->以某列为主，相同合并两个文件（不相同的话先排序）
 ### join 介绍：
@@ -498,13 +498,13 @@ B wang:21:women:jiangsu:shopping
 C zhang:22:men:anhui:pingpong
 D liu:23:women:Shanghai:chess
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347027.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347027.png)
 
 **实例2：-a1还显示第一个文件中没有共同域的纪录，-a2则显示第二个**
 
 文本内容：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347225.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347225.png)
 
 
 ```bash
@@ -553,7 +553,7 @@ paste [参数] 文件名1 文件名2
 
 文本初始内容：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347491.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347491.png)
 
 ```bash
 #以=和\n轮流做分隔符
@@ -561,7 +561,7 @@ paste -sd '=' a.txt
 #一个-表示读入一行
 paste -d '=' - - < a.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347549.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347549.png)
 
 **实例2：将2个文件进行合并**
 
@@ -587,14 +587,14 @@ ccc	CCC
 ddd	DDD
 eee	EEE
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347778.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347778.png)
 
 **实例3：将2个文件进行合并，并添加：为分隔符**
 
 ```bash
 paste -d ':' a.txt b.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347093.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347093.png)
 
 
 **实例4：将每个文件的内容转为一行，在进行合并**
@@ -602,7 +602,7 @@ paste -d ':' a.txt b.txt
 ```bash
 paste -s a.txt b.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347612.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347612.png)
 
 ## 11、split 分割文件内容
 ### split 介绍：
@@ -632,7 +632,7 @@ split -6 a.txt
 ```
 将文件中的文字以每6行切割为一份文件，切割成多个以"x"开头的小文件。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347350.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347350.png)
 
 > <font color=red>linux中split命令切割出来的文件名为什么是xaa、xab之类的？？？？</font><br> 
 > 在 Linux 中，`split` 命令用于将文件分割成指定大小的较小文件。默认情况下，split 命令会以字母序列来命名分割后的文件，第一个文件会被命名为 `x`，第二个文件会被命名为 `aa`，第三个文件会被命名为 `ab`，以此类推。<br>
@@ -644,7 +644,7 @@ split -6 a.txt
 ```bash
 split -d -b 10 a.txt lcy_
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347715.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347715.png)
 > 在上面的例子中，-d 选项用于指定使用数字序列来命名文件，`-b 10` 选项用于指定每个分割后的文件大小为 10字节，a.txt 是要分割的文件名，`lcy_` 是用于指定前缀的字符串。这样，第一个分割后的文件会被命名为 `lcy_00`，第二个分割后的文件会被命名为 `lcy_001`，以此类推。
 > 当然，其他单位也可以，比如m（兆比）或者k（K比），`split -d -b 10k a.txt lcy_ && split -d -b 10m a.txt lcy_`
 
@@ -656,7 +656,7 @@ split -l 5 a.txt lcy.
 ```
 >以行为单位，每`五行`切割一次，以`lcy.`为前缀，后缀为默认，默认从`aa`开始。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347973.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347973.png)
 
 
 **实例4：以行为单位、以lcy.为单位、并设置后缀为4为数字进行切割**
@@ -666,7 +666,7 @@ split -l 5 -a 4 -d a.txt lcy.
 ```
 >以行为单位，每`五行`切割一次，以`lcy.`为前缀，后缀为`数字`形式，后缀长为`4`位数；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347433.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347433.png)
 
 ## 12、diff / vimdiff [多]文本比较
 ### diff / vimdiff 介绍：
@@ -683,7 +683,7 @@ vimdiff介绍：
 > - `vimdiff` 是可以清晰的看出哪个文件少什么东西，或者是那行和哪行不一样，非常的清晰，而且还支持多文件比较，是非常友好的，但是就是退出有点麻烦，必须执行`:q!`退出。
 > - `总结及推荐` 各有各的好，但我还是推荐使用 <font color=red>vimdiff</font >。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347378.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347378.png)
 
 ### diff / vimdiff 格式：
 
@@ -700,21 +700,21 @@ diff a.txt b.txt
 ```
 >看不出来是哪个少东西，很不友好。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347040.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347040.png)
 
 **实例2：vimdiff 比较两个文件**
 
 ```bash
 vimdiff a.txt b.txt 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181347165.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181347165.png)
 
 **实例3：vimdiff 比较多个文件**
 
 ```bash
 vimdiff a.txt b.txt c.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346963.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346963.png)
 
 ## 13、xagrs 给其他命令传参数的过滤器
 >将字符结果转化为参数传递个后命令，通常与管道连用
@@ -761,7 +761,7 @@ cat a.txt | xargs -n 3
 ```bash
 cat a.txt | xargs -d ":"
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346232.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346232.png)
 
 ## 14、rev 将文件中的每行内容反序输出（以列为单位）
 
@@ -785,7 +785,7 @@ rev [文件]
 ```bash
 rev a.txt
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346930.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346930.png)
 
 ## 15、shuf 产生随机的排列（指定输出内容，随机输出没有顺序）
 ### shuf 介绍：
@@ -809,28 +809,28 @@ shuf [参数]
 ```bash
 shuf -i 1-10	
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346240.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346240.png)
 
 **实例2：打乱顺序输出1-10并只显示5行**
 
 ```bash
 shuf -n 5 -i 1-10
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346230.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346230.png)
 
 **实例3：模拟硬币抛掷，获取前10个结果：**
 
 ```bash
 shuf -r -n 10 -e "正面" -e "反面"
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346470.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346470.png)
 
 **实例4：模拟体彩超级大乐透：**
 
 ```bash
 shuf -i 1-35 -n 5 | sort -n && shuf -i 1-12 -n 2 | sort -n
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346932.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346932.png)
 
 ## 16、Shell脚本的调式
 
@@ -867,7 +867,7 @@ fi
 ```bash
 sh -x cs.sh
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346476.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346476.png)
 
 很清晰可以看到每一步执行的操作；
 
@@ -877,12 +877,12 @@ sh -n cs.sh
 ```
 我们来修改一下脚本，将脚本的if判断的;分号去掉测试；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346644.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346644.png)
 
 **<font color=gree>-v 一边执行脚本，一边打印脚本</font>**
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346929.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346929.png)
 
 
 
@@ -909,7 +909,7 @@ if [ 1 -eq 1 ];then
 	echo 0
 fi
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346268.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346268.png)
 
 
 **<font color=gree>-n 测试脚本语法是否有问题</font>**
@@ -924,7 +924,7 @@ if [ 1 -eq 1 ];then
 	echo 0
 fi
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346464.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346464.png)
 
 0 则为上条命令成功没有报错；
 
@@ -942,7 +942,7 @@ if [ 1 -eq 1 ];then
 fi
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346580.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346580.png)
 
 
 
@@ -962,11 +962,11 @@ wget https://sourceforge.net/projects/bashdb/files/bashdb/4.4-0.94/bashdb-4.4-0.
 ```
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346126.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346126.png)
 
 如果出现这个报错，可以在最后添加`-no-check-certificate`
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346382.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346382.png)
 
 ```bash
 #解压压缩包
@@ -976,7 +976,7 @@ cd bashdb-4.4-0.94
 #编译
 ./configure
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346903.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346903.png)
 
 如果出现此报错，说的时没有编译环境，需要安装一下gcc gcc-c++命令，编译环境；
 
@@ -985,7 +985,7 @@ yum -y install gcc gcc-c++
 ```
 安装完再次编译即可；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181346644.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181346644.png)
 
 这样就编译完成了。
 
@@ -998,7 +998,7 @@ make && make check && make install
 ```bash
 bashdb --version
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412181345756.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181345756.png)
 
 这样就安装完成了；
 

@@ -27,7 +27,7 @@ breadcrumb: false
 ---
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412200949835.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200949835.png)
 
 
 

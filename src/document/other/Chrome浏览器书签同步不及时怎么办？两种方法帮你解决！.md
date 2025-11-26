@@ -33,7 +33,7 @@ breadcrumb: false
 地址栏输入：[chrome://sync-internals](chrome://sync-internals)
 中间那列中下方，点击“`Request Start`”，意思是同步开启自启。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5a939548f080f4d1300777cba08abbb9.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5a939548f080f4d1300777cba08abbb9.png)
 
 重启浏览器
 
@@ -49,7 +49,7 @@ breadcrumb: false
 chrome://sync 点 `Trigger GetUpdates`
 如果不行的话，重启chrome再重复以上操作，附图如下：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/1e139fb8c806af1718a1222933874631.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1e139fb8c806af1718a1222933874631.png)
 
 >还是不行的话，就重新登录一下谷歌账号，开启同步功能。（需要开启 VPN）
 

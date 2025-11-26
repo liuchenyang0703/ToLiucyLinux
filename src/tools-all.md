@@ -339,7 +339,7 @@ highlights:
 
 copyright: false
 footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议 | <a href="person.html" target="_blank">关于作者</a><br>
- 版权所有 © 2023-present Liucy | <img src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142253822.png" height="15" width="15"/> <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a> | <img src="https://icp.gov.moe/favicon.ico" height="15" width="15"/> <a href="https://icp.gov.moe/?keyword=20250703" target="_blank">萌ICP备20250703号</a>
+ 版权所有 © 2023-present Liucy | <img src="./assets/image/公安.png" height="15" width="15"/> <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a> | <img src="https://icp.gov.moe/favicon.ico" height="15" width="15"/> <a href="https://icp.gov.moe/?keyword=20250703" target="_blank">萌ICP备20250703号</a>
 
 ---
 
@@ -347,4 +347,4 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 最新更新会第一时间同步在公众号，推荐关注！另外，公众号上有很多其他知识可能会与网站不同步，欢迎大家扫码订阅公众号或者微信搜索 **小刘Linux**。
 
 
-<img src="https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202312142008812.png" alt="扫码_搜索联合传播样式-标准色版" style="zoom: 50%;" />
+<img src="/assets/image/公众号.png" alt="扫码_搜索联合传播样式-标准色版" style="zoom: 50%;" />

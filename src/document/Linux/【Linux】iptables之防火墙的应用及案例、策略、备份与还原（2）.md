@@ -15,12 +15,12 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180922057.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180922057.png)
 
 
 ## 一、案例——基于 IP 和端口的防火墙控制
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180933936.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180933936.png)
 
 >实验环境：为网关、Web 服务器配置防火墙规则
 需求描述：
@@ -33,62 +33,62 @@ breadcrumb: false
 
 **搭建实验环境，结果如下：**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180933887.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180933718.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180933669.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180933805.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180933110.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180933887.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180933718.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180933669.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180933805.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180933110.png)
 
 
 为网站服务器编写入站规则
 允许接受响应本机 ping 测试请求的各种 ICMP 数据包
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180933229.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180933550.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180933229.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180933550.png)
 
 禁止其他任何形式的入站访问数据
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932138.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932138.png)
 
 
 
 内网服务器 ping 网关测试：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932696.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932696.png)
 
 网关 ping 内网服务器测试：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932844.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932844.png)
 
 允许访问本机中位于 80 端口的 Web 服务，禁止访问其他端口的 TCP 请求
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932617.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932617.png)
 
 
 允许发往本机以建立连接或与已有连接相关的各种 TCP  数据包
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932413.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932413.png)
 
 保存 iptables 设置
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932289.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932607.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932289.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932607.png)
 
 
 测试
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932675.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932278.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932005.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932521.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932675.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932278.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932005.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932521.png)
 
 
 ```bash
 [root@iptables~]# elinks 192.168.1.5
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932825.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932036.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932825.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932036.png)
 
 
 
@@ -104,19 +104,19 @@ ftp:connect:连接超时
 **允许局域网中的主机访问Internet  中是 Web、FTP、DNS、邮件服务**
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180932015.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180932015.png)
 
 禁止局域网中的主机访问web.qq.com、w.qq.com、im.qq.com   等网站
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180931733.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180931012.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180931733.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180931012.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180931001.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180931116.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180931001.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180931116.png)
 
 保存 iptables 规则配置
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180931339.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180931339.png)
 
 ## 二、SNAT 策略
 ### 1、作用
@@ -126,40 +126,40 @@ ftp:connect:连接超时
 &emsp;&emsp;源地址转换，Source Network Address Translation
 &emsp;&emsp;修改数据包的源地址
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180931117.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180931117.png)
 
 ### 3、企业共享上网案例
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180931043.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180931043.png)
 
 前提条件：
 &emsp;&emsp;局域网各主机正确设置 IP 地址/子网掩码
 &emsp;&emsp;局域网各主机正确设置默认网关地址 
 &emsp;&emsp;Linux 网关支持 IP 路由转发
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180931766.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180931766.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180930453.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180930453.png)
 ![](https://img-blog.csdnimg.cn/203fe1b17f0d4d90b14d0e6c69bfb346.png#pic_center)
 
 #### 3.1、固定的外网 IP 地址
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180930207.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180930216.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180930695.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180930370.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180930207.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180930948.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180930207.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180930216.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180930695.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180930370.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180930207.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180930948.png)
 
 
 #### 3.2、非固定外网 IP 地址或 ADSL
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180930709.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180930709.png)
 ## 三、DNAT 策略
 ### 1、DNAT 原理
 &emsp;&emsp;在 Internet 环境中，通过网关服务器中正确设置 DNAT 策略可实现企业所注册的网站或域名必须对应公网 IP 地址。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929574.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929574.png)
 
 前提条件
 &emsp;&emsp;局域网的 Web 服务器能够访问 Internet
@@ -168,16 +168,16 @@ ftp:connect:连接超时
 
 #### 1.1、DNAT 转发规则 1：发内网 Web 服务
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929930.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929271.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929338.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929438.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929930.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929271.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929338.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929438.png)
 
 #### 1.2、DNAT 转换规则 2：发布时修改目标端口
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929002.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929322.png)![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929014.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929994.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929749.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929002.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929322.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929014.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929994.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929749.png)
 
 
 
@@ -199,7 +199,7 @@ iptables-save > 要导出的路径
 
 **<font color=teal>实例：</font>**
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929106.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929106.png)
 
 ### 2、导入（还原）防火墙规则 
 
@@ -216,11 +216,11 @@ iptables-restore < 要导入的路径
 
 查看规则，现在是空的：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929806.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929806.png)
 
 导入规则：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180929021.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180929021.png)
 >&emsp;&emsp;重定向出的文件也可以是任意自定义的文件，若将规则保存到/etc/sysconfig/iptables 中，iptables 启动时自动还原规则。
 
 ## 五、企业防火墙脚本编程与规范【附加】
@@ -296,10 +296,10 @@ $CTL -w net.ipv4.tcp_max_syn_backlog=3200     syn 队列，默认1024，> 1280 �
 `$LAN_WWW_IP`
 
 #### 1.5、实例：
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180928744.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180928143.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180928481.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180928534.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180928744.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180928143.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180928481.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180928534.png)
 
 ### 2、“主机型”防火墙脚本
 - 将 OUTPUT 链的默认策略设为允许，不添加其他规则
@@ -325,14 +325,14 @@ $IPT -A INPUT -m multiport -p tcp --dport 22,80 -j ACCEPT
 $IPT -A INPUT -m state --state ESTABLISHED,RELATED,NEW -j ACCEPT
 
 #### 2.4、实例：
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180927032.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180927549.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180927515.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180927496.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180927032.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180927549.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180927515.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180927496.png)
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180927160.gif)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180927160.gif)
 
 
 ## 相关文章
@@ -344,6 +344,6 @@ $IPT -A INPUT -m state --state ESTABLISHED,RELATED,NEW -j ACCEPT
 >---
 >[🍐【Linux】firewall-cmd之防火墙简介及常用命令+实例](https://liucy.blog.csdn.net/article/details/126243544)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412180927477.gif)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180927477.gif)
 
 

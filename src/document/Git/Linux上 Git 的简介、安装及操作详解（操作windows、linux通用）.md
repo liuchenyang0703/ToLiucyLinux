@@ -17,7 +17,7 @@ breadcrumb: false
 
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d2a835dc861b433682088f2b26daa3c1.png#pic_center)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d2a835dc861b433682088f2b26daa3c1.png#pic_center)
 
 
 >👨‍🎓**博主简介**
@@ -32,7 +32,7 @@ breadcrumb: false
 
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/63becd5a78f94dafbae5deb4599a9a54.jpeg#pic_center)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/63becd5a78f94dafbae5deb4599a9a54.jpeg#pic_center)
 
 ## 一、Git 简介
 
@@ -59,7 +59,7 @@ breadcrumb: false
 > 这种方式的好处是每个人都可以在一定程度上看到项目中的其他人正在做些什么。而管理员也可以轻松掌控每个开发者的权限（安全），并且管理一个集中化的版本控制系统，要远比在各个客户端上维护本地数据库来得轻松容易。  <br>
 > 坏处是**中央服务器的单点故障**，如果服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。
 
-![img](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/9542102808d72663dae5c0b69336faa1.png#pic_center)
+![img](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9542102808d72663dae5c0b69336faa1.png#pic_center)
 
 
 
@@ -98,7 +98,7 @@ Git易于学习，占地面积小，性能极快。它具有廉价的本地库�
 
 
 
-![img](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/307804b1fd1522a24ea16caab9b72f88.png#pic_center)
+![img](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/307804b1fd1522a24ea16caab9b72f88.png#pic_center)
 
 ### 1.6 Git 官网及中文手册地址
 >Git 官网地址：[https://git-scm.com](https://git-scm.com)<br>
@@ -129,14 +129,14 @@ setenforce 0
 ```bash
 yum -y install git
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/fa734f75c4831c72b98d7c3a21c72de0.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fa734f75c4831c72b98d7c3a21c72de0.png)
 ### 2.3 编译安装（yum、编译安装二选一）
 编译安装的话是可以安装比较新的版本
 Git 安装包下载地址：[https://github.com/git/git/tags](https://github.com/git/git/tags)
 
 ①、选择要安装的版本
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/890d4235ba0cc387741deaa3c154102d.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/890d4235ba0cc387741deaa3c154102d.png)
 
 ②、选择下载【可以直接点击下载也可以复制链接在服务器上用`wget`下载】
 如果没有wget命令需要提前下载：
@@ -146,7 +146,7 @@ yum -y install wget
 wget https://github.com/git/git/archive/refs/tags/v2.45.2.tar.gz
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/a66ec0601d1094b6c5937bcca730bbf3.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a66ec0601d1094b6c5937bcca730bbf3.png)
 
 ③、安装依赖
 ```bash
@@ -160,7 +160,7 @@ yum -y install gcc gcc-c++ curl-devel expat-devel gettext-devel openssl-devel zl
 git --version
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b175ac92172b4128df6a311c3dde729a.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b175ac92172b4128df6a311c3dde729a.png)
 
 ```bash
 yum -y remove git
@@ -186,7 +186,7 @@ cd /usr/local/git
 ```
 安装的git 路径下有三个目录
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5703009f003c4c62bc2cded1b807e711.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5703009f003c4c62bc2cded1b807e711.png)
 
 ⑥、配置 git 环境变量
 ```bash
@@ -202,23 +202,23 @@ source /etc/profile
 # 查看git版本号
 git --version
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/35508a202eeb0956846da4867dd9cec8.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/35508a202eeb0956846da4867dd9cec8.png)
 
 ## 三、Gitee 仓库的创建
 >gitee 官方地址：[https://gitee.com/](https://gitee.com/)
 
 ### 3.1 新建仓库
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/ed4fb0012ef81d17738c413ca7bb4281.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e97d27482dad122dd4a93cc45e4a8a41.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ed4fb0012ef81d17738c413ca7bb4281.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e97d27482dad122dd4a93cc45e4a8a41.png)
 
 ### 3.2 克隆仓库
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/6a4a63c577fda741130815278ab410b2.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/df772439f82c279a1ef87beb52cfd7a4.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6a4a63c577fda741130815278ab410b2.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/df772439f82c279a1ef87beb52cfd7a4.png)
 
 在linux服务器上自己想在的目录下执行；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/63f0e4e67238de6dd75bf3e93ff3dc91.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/63f0e4e67238de6dd75bf3e93ff3dc91.png)
 
 ### 3.3 仓库里的 .gitignore 是什么
 
@@ -226,11 +226,11 @@ git --version
 # 看查克隆的目录及隐藏文件
 ll -a 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/9e6cc83e3b04bde3bee6587e5f53507c.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9e6cc83e3b04bde3bee6587e5f53507c.png)
 
 进入.gitignore文件之后发现有如下的内容：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/75c4a96a0cfe731c9f0b6f39cd16f80b.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/75c4a96a0cfe731c9f0b6f39cd16f80b.png)
 
 我们发现里面**保存的是文件的后缀，并且在这个文件内部的后缀，对应的文件，不会被上传到仓库中。**
 
@@ -251,7 +251,7 @@ git config --global color.ui true
 # 查看全局配置
 git config --list 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/475a82247ae162f45a90d24828b39d29.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/475a82247ae162f45a90d24828b39d29.png)
 
 ## 四、Git 的两种创建仓库
 ### 4.1 手动去创建仓库
@@ -345,7 +345,7 @@ git init
 ```
 初始化完成之后可以使用` ls -a`查看是否有`.git`目录；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/6105346175444d418d7c6b3624b2adf7.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6105346175444d418d7c6b3624b2adf7.png)
 
 ---
 
@@ -364,7 +364,7 @@ git init test
 git status
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/7af63255e5821f6072f7fb3b45093d86.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7af63255e5821f6072f7fb3b45093d86.png)
 
 ### 5.4 将修改的文件或内容提交到暂存区
 
@@ -377,7 +377,7 @@ git add -A
 # 查看当前工作区的状态
 git status 
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/02bcdb841fd9a5120a971a32197ca7af.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/02bcdb841fd9a5120a971a32197ca7af.png)
 
 我们发现字体变绿了，并且最后一行也没有`修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）`提示了，说明已经提交到暂存区了；
 
@@ -399,8 +399,8 @@ git commit -m '提交日志描述'
 git status 
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e37b92411da7ea176a3274323be355a9.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/1239fd9d65a0e20bc4a38e887c8fa053.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e37b92411da7ea176a3274323be355a9.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1239fd9d65a0e20bc4a38e887c8fa053.png)
 ### 5.6 将本地仓库的数据提交到远程仓库（gitee）
 
 ```bash
@@ -408,11 +408,11 @@ git push
 ```
 这里需要输入gitee的用户名密码；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/43ec8ca5ec51b8ded37f31ce948cfbe3.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/43ec8ca5ec51b8ded37f31ce948cfbe3.png)
 
 鉴权成功之后就会提交到远程的仓库中（gitee）；我们可以登录gitee查看刚刚推送上来的信息，是不是有改变；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/2c884349ff34a829e2392c79a18bc6d1.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2c884349ff34a829e2392c79a18bc6d1.png)
 
 可以看到已经推送到gitee上了；
 
@@ -422,7 +422,7 @@ git push
 <center>总结上面几部就是最基础的创建目录到初始化到修改内容并从本地到推送到远程仓库了，下面为流程图！</center><br>
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/1fcd5e0acc974ad48ddcf9a01c352c9e.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1fcd5e0acc974ad48ddcf9a01c352c9e.jpeg)
 
 ---
 
@@ -508,7 +508,7 @@ rm '123rm'
 
 无文件要提交，干净的工作区
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/cc27f06fed704b25af489b9e1c09be98.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/cc27f06fed704b25af489b9e1c09be98.png)
 
 
 
@@ -551,7 +551,7 @@ mvtest  README.md  test
 mvtest2  README.md  test
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/cbd72a4ebbb845abaddd9342a18fd61a.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/cbd72a4ebbb845abaddd9342a18fd61a.png)
 
 
 ### 6.3 查看 Git 提交日志（记录）
@@ -588,7 +588,7 @@ git log --pretty=fomat:"%h %cn" #查看当前所有提交记录的简短 SHA-1 �
 ```bash
 git log
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/60a66424d6a344a2aead40608169d8c7.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/60a66424d6a344a2aead40608169d8c7.png)
 
 
 ### 6.4 还原历史数据
@@ -642,7 +642,7 @@ git push
 # 查看提交记录
 git log
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/a8f42b7f09d544d5a7e5d3732bdde130.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a8f42b7f09d544d5a7e5d3732bdde130.png)
 
 * [x] 2、还原一次历史数据
 
@@ -655,7 +655,7 @@ git reset --hard 5ad19e6
 git log
 ls
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/3e563d38f1574710aa818991843cdb3b.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3e563d38f1574710aa818991843cdb3b.png)
 
 * [x] 3、还原未来数据
 
@@ -669,7 +669,7 @@ git reset --hard 6d49987
 git log
 ls
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/fd055b29ac7245a69b4e6a7e0a5ffca6.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fd055b29ac7245a69b4e6a7e0a5ffca6.png)
 
 * [x] 4、还原未来数据完成
 
@@ -703,7 +703,7 @@ git tag v1.4
 git log
 # git log可以看到tag
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/2133fcaddfe94a90b29a1cd27eb840a8.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2133fcaddfe94a90b29a1cd27eb840a8.png)
 
 * [x] 2、在创建一个新的第五次提交
 
@@ -727,7 +727,7 @@ git tag v1.5
 # git log查看
 git log
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/624a559e877947cea9eafa74b5a4d197.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/624a559e877947cea9eafa74b5a4d197.png)
 
 可以看到已经打了两个标签了，一个`v1.4`和`v1.5`；
 我们也可以给其他也打上标签；不过之前没打有些麻烦；需要先还原到哪个历史的数据，然后进行`git tag 打标签`，在还原回来未来数据，就可以；不过打不打都行，这里是进行测试，有两个就可以了；
@@ -746,7 +746,7 @@ git log
 ls
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5d0d6aff3419469eac516551e7bd8252.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5d0d6aff3419469eac516551e7bd8252.png)
 
 还原到历史数据之后，我们再还原回未来数据；
 
@@ -764,7 +764,7 @@ HEAD 现在位于 91814fd 第五次提交，tag标签
 git log
 ls
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/fc345c28482843d0bf1b3cb34b9f4c71.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fc345c28482843d0bf1b3cb34b9f4c71.png)
 
 ### 6.6.1 删除标签
 
@@ -783,9 +783,9 @@ git tag -d v1.5
 git log 
 git tag
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e98ee205b7064ad7a4d6ad4498a4e3d3.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/cf856a968a5e4686912a47411b3b1063.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/6c063be45f644e29a9988fbe57a94eca.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e98ee205b7064ad7a4d6ad4498a4e3d3.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/cf856a968a5e4686912a47411b3b1063.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6c063be45f644e29a9988fbe57a94eca.png)
 
 ---
 
@@ -797,7 +797,7 @@ git tag
 ---
 **Git 分支图（工作中人员所在分支）：**
 
-![Git 分支图](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d0bf725632304da49ec51ca46bb627a1.png)
+![Git 分支图](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d0bf725632304da49ec51ca46bb627a1.png)
 
 ---
 ### 6.7.1 创建分支
@@ -809,7 +809,7 @@ git branch dev
 # 查看当前工作区所有分支
 git branch
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/da76a48ec0794ef2b202445c371c1d09.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/da76a48ec0794ef2b202445c371c1d09.png)
 
 
 ### 6.7.2 分支切换
@@ -819,8 +819,8 @@ git branch
 git checkout dev
 git switch dev
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/66024dddb63b4dc795e78603d13c9214.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/eec91767081e4b6da1fb7841c4831e55.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/66024dddb63b4dc795e78603d13c9214.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/eec91767081e4b6da1fb7841c4831e55.png)
 
 
 ---
@@ -838,7 +838,7 @@ git commit -m "dev分支，第一次提交"
 # 查看当前工作区的状态
 git stats
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5d8d7a3ec1d046ad96f8921692ab48d0.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5d8d7a3ec1d046ad96f8921692ab48d0.png)
 
 ```bash
 # 也可以再加一个标签（看个人需求）
@@ -847,7 +847,7 @@ git tag v2.1
 git log -1
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5e44d9c45ac44cda9426e97b244c6fc2.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5e44d9c45ac44cda9426e97b244c6fc2.png)
 
 
 ---
@@ -866,7 +866,7 @@ git checkout master
 ```bash
 git merge dev
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/0d52180449db4a7fbf1fa35919915f69.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0d52180449db4a7fbf1fa35919915f69.png)
 
 ```bash
 # 查看提交记录
@@ -877,7 +877,7 @@ ls
 cat branch.txt
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/6e85c944aae34bc5b8412bd0371710ec.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6e85c944aae34bc5b8412bd0371710ec.png)
 
 
 这样合并分支就成功了，检查没问题就可以提交到远程仓库了；
@@ -915,7 +915,7 @@ git branch --no-merged
 >如果想要删除的分支上还有工作内容，而且并不想要哪些内容，可以使用`-D`参数强制删除。
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/91feed9c89aa45baa9dfc5c8e11519d4.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/91feed9c89aa45baa9dfc5c8e11519d4.png)
 
 
 
@@ -947,8 +947,8 @@ git commit -m "提交的说明"
 
 ②、创建好仓库之后，点击克隆下载，复制https的git地址；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/025d3cf1c2404055a06f357794246d55.png)
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/e447ed2233ef41ff83f3512942c69924.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/025d3cf1c2404055a06f357794246d55.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e447ed2233ef41ff83f3512942c69924.png)
 
 ③、在服务器或windows上执行推送指定仓库；
 > git push 要推送到的仓库地址 要推送到的分支
@@ -959,7 +959,7 @@ git push https://gitee.com/liu-chenyang/linuxtest.git master
 
 推送流程：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/86d1c056c31181516b124a3c33bf6e2e.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/86d1c056c31181516b124a3c33bf6e2e.jpeg)
 
 ## 八、创建项目到推送到 github 上流程
 ### 8.1 项目初始化
@@ -1010,7 +1010,7 @@ git push -f https://github.com/liuchenyang0703/test.git gh-pages
 
 推送流程：
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/86d1c056c31181516b124a3c33bf6e2e.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/86d1c056c31181516b124a3c33bf6e2e.jpeg)
 
 ## 九、特此声明：参考文献
 

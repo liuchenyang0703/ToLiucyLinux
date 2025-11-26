@@ -42,7 +42,7 @@ isOriginal: true
 
 * 根据自己的情况选择，我这里是选择`Linux `版本；找到`linux-x64.tar.gz`
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051150715.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051150715.png)
 
 
 
@@ -84,7 +84,7 @@ node -v
 npm -v
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051343918.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051343918.png)
 
 
 
@@ -110,7 +110,7 @@ npm config get prefix
 npm config ls
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051502262.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051502262.png)
 
 
 
@@ -128,7 +128,7 @@ npm config get cache
 npm config ls
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051459956.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051459956.png)
 
 
 
@@ -145,7 +145,7 @@ npm config set registry https://registry.npm.taobao.org
 npm config get registry
 npm config ls
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051433147.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051433147.png)
 
 可以看到源已经更新为淘宝源。
 
@@ -174,22 +174,22 @@ npm install -g cnpm pnpm --registry=https://registry.npm.taobao.org
 npm config set strict-ssl false
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051500573.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051500573.png)
 
 取消之后再次安装就可以了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051505918.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051505918.png)
 
 安装好之后可以在`/usr/local/nodejs/lib/node_modules`中看到；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051509570.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051509570.png)
 
 
 
 ## 四、常见问题
 
 ### 常见报错1：ssl证书报错
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051510801.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051510801.png)
 
 如果安装时遇到此报错，是因为证书过期；可以取消ssl证书验证；
 
@@ -203,7 +203,7 @@ npm config set strict-ssl false
 
 ### 常见报错2：执行`node -v` 查看时提示glibc错
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202506051323175.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506051323175.png)
 
 
 

@@ -76,7 +76,7 @@ freshclam
 
 升级成功。
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412191550500.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191550500.png)
 
 
 

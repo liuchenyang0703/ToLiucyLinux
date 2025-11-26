@@ -17,7 +17,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043752.jpeg)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043752.jpeg)
 ## ❀写在最前（相关文章）
 ><font color=red size=4.5>**相关文章：**</font> <br>
 >
@@ -56,20 +56,20 @@ yum -y install wget
 #接着下载zabbix-release-5.0-1.el7.noarch.rpm包
 wget https://mirrors.aliyun.com/zabbix/zabbix/5.0/rhel/7/x86_64/zabbix-release-5.0-1.el7.noarch.rpm
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043171.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043171.png)
 显示200ok即下载成功，然后我们安装；
 
 ```bash
 rpm -ivh zabbix-release-5.0-1.el7.noarch.rpm
 ```
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043020.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043020.png)
 
 ```bash
 #看一下/etc/yum.repos.d目录下多了一个zabbix.repo
 ls /etc/yum.repos.d
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043819.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043819.png)
 
 这就相当于下载了一个zabbix的源；
 
@@ -81,7 +81,7 @@ vim /etc/yum.repos.d/zabbix.repo
 ```
 将<font color=red>zabbix-frontend </font>下面的 enabled = 0更改为<font color=red> enabled = 1</font>
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043132.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043132.png)
 ### 3、修改yum源为阿里源
 
 ```bash
@@ -89,7 +89,7 @@ vim /etc/yum.repos.d/zabbix.repo
 
 [root@zabbix-5 ~]# yum makecache fast
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043052.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043052.png)
 ### 4、下载安装zabbix5.0所需的rpm包
 使用<font color=red>yum --downloadonly </font>进行下载rpm包和相关依赖包
 <font color=red>--downloaddir</font>参数可进行设置下载保存路径
@@ -136,11 +136,11 @@ yum -y install createrepo
 #使用createrepo来创建repository仓库
 createrepo /tmp/offline_rpm
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043409.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043409.png)
 
 完了会生成一个repodata子目录
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043093.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043093.png)
 
 将 /tmp/offline_rpm/下面全部可以打个tar包，后续直接用脚本安装即可；
 
@@ -167,7 +167,7 @@ tar xf offline_rpm.tar
 ```
 就可以看到这个目录
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043145.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043145.png)
 
 ```bash
 #将/etc/yum.repos.d 下面所有repo文件进行转移至bak文件夹下
@@ -265,7 +265,7 @@ MariaDB [(none)]> grant all privileges on zabbix.* to zabbix@localhost;
 #退出数据库
 MariaDB [(none)]> quit;
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161043964.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161043964.png)
 #### 7.5、导入初始架构和数据
 
 ```bash
@@ -298,7 +298,7 @@ MariaDB [zabbix]> show tables;
 
 就会看到一个zabbix目录
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161042901.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161042901.png)
 ### 8、修改 zabbix-server 和 php配置文件
 
 #### 8.1、编辑 zabbix_server.conf
@@ -332,7 +332,7 @@ systemctl restart zabbix-server zabbix-agent httpd rh-php72-php-fpm
 #设置开机自启
 systemctl enable zabbix-server zabbix-agent httpd rh-php72-php-fpm
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161042667.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161042667.png)
 ### 10、如果存在问题请检查日志
 
 ```bash
@@ -361,25 +361,25 @@ zabbix-server zabbix-agent httpd
 ## 页面访问
 >ip/zabbix
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161042754.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161042754.png)
 
 一路next step，到这个要输入密码，密码是123456
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161042169.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161042169.png)
 
 下一步，需要你给这个监控起一个名字；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161042545.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161042545.png)
 
 
 一直下一步,直到登录（默认的账号是：Admin   密码是：zabbix）
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161042952.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161042952.png)
 
 登录进入页面就可以了；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/202412161042611.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161042611.png)
 
 
 ## 重要：

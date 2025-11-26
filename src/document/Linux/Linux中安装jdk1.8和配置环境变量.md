@@ -25,13 +25,13 @@ breadcrumb: false
 [https://www.oracle.com/cloud/free/?source=:ow:o:s:nav::DevoGetStarted&intcmp=:ow:o:s:nav::DevoGetStarted](https://www.oracle.com/cloud/free/?source=:ow:o:s:nav::DevoGetStarted&intcmp=:ow:o:s:nav::DevoGetStarted)
 
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/5eab67dff62b5d7f70fb6e182002144d.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5eab67dff62b5d7f70fb6e182002144d.png)
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/b9e573dab66a16eaf0e1db9a33077b20.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b9e573dab66a16eaf0e1db9a33077b20.png)
 
 找到自己需要的`版本和系统`进行下载，可以使用`ctrl + F`进行搜索需要的版本；
 
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/00e601d51550434385bf65fb6783d928.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/00e601d51550434385bf65fb6783d928.png)
 
 
 
@@ -73,7 +73,7 @@ source /root/.bashrc
 #查看jdk版本
 java -version
 ```
-![](https://lcy-blog.oss-cn-beijing.aliyuncs.com/blog/d4af9e5887f8e53e115bffa922a83d37.png)
+![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d4af9e5887f8e53e115bffa922a83d37.png)
 可以看到版本已经是jdk1.8的了，这样就算安装成功了！
 
 
