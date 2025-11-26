@@ -109,7 +109,7 @@ isOriginal: true
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948030.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948030.png)
 
 
 ---
@@ -297,7 +297,7 @@ cfssl是一个开源的证书管理工具，使用json文件生成证书，相�
 
 K8s所有组件采用https加密通信，这些组件一般由两套根证书生成:K8S组件（apiserver）和Etcd。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948334.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948334.png)
 
 
 按照需求分类来说，这里所有的服务组件`controller-manager`、`scheduler`、`kubelet`、`kube-proxy`、`kubectl`等需要访问apiserver，这里需要一套。Apiserver访问etcd集群又是一套单独的。所以这里2套证书是2个不同自签CA颁发的。
@@ -318,7 +318,7 @@ cp -ar cfssl_linux-amd64 /usr/local/bin/cfssl
 cp -ar cfssljson_linux-amd64 /usr/local/bin/cfssljson
 cp -ar cfssl-certinfo_linux-amd64 /usr/local/bin/cfssl-certinfo
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948274.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948274.png)
 
 **说明:**  
 如果下载失败,可以使用最后提供的下载连接；
@@ -379,7 +379,7 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
 ```
 执行以上命令会在当前目录下生成 `ca-key.pem`和`ca.pem`文件;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948855.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948855.png)
 
 ### 3.5 使用自签CA签发etcd https证书
 #### 3.5.1 创建证书申请文件
@@ -416,7 +416,7 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=www 
 ```
 执行以上命令会在当前目录下生成 `server-key.pem`和`server.pem`文件;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948897.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948897.png)
 
 ### 3.6 准备部署etcd集群文件及路径
 
@@ -537,7 +537,7 @@ ETCD_INITIAL_CLUSTER="etcd-1=https://172.16.11.230:2380,etcd-2=https://172.16.11
 ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
 ETCD_INITIAL_CLUSTER_STATE="new"
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948550.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948550.png)
 ![](https://i-blog.csdnimg.cn/direct/643b361826424a68b4256fc296d8aa6f.png)
 ![](https://i-blog.csdnimg.cn/direct/e2bdc5d98b5a49bcb0693186eaf6d642.png)
 
@@ -560,7 +560,7 @@ systemctl status etcd
 ```bash
 ETCDCTL_API=3 /opt/etcd/bin/etcdctl --cacert=/opt/etcd/ssl/ca.pem --cert=/opt/etcd/ssl/server.pem --key=/opt/etcd/ssl/server-key.pem --endpoints="https://172.16.11.230:2379,https://172.16.11.231:2379,https://172.16.11.232:2379" endpoint health --write-out=table
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948849.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948849.png)
 
 
 **如果`HEALTH`为true状态证明部署的没有问题**
@@ -685,7 +685,7 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
 
 执行以上命令会在当前目录下生成 `ca-ket.pem` 和 `ca.pem`文件;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948889.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948889.png)
 
 #### 5.1.2 使用自签CA签发kube-apiserver https证书
 
@@ -734,7 +734,7 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 ```
 执行以上命令会在当前目录下生成 `server-key.pem`和`server.pem`文件;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110948778.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948778.png)
 
 
 
@@ -745,8 +745,8 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 **Kubernetes下载地址1.20各版本下载地址：**[https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.20.md](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.20.md)
 选择自己要下载的版本，找到`Server Binaries`，根据平台选择自己需要下载的文件；  
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947141.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947884.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947141.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947884.png)
 
 也可以直接在服务器上下载，我这里是`1.20.10`版本：
 
@@ -771,7 +771,7 @@ cp -ar kubectl /usr/bin/
 # kubectl查看版本
 kubectl version
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947252.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947252.png)
 
 ### 5.3 部署 kube-apiserver
 
@@ -1129,7 +1129,7 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 
 执行以上命令会在当前目录下生成 `kube-controller-manager-key.pem`和`kube-controller-manager.pem`文件;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947970.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947970.png)
 
 #### 5.4.3 生成 kube-controller-manager 的 kubeconfig 文件
 > 以下内容是在命令行直接执行的，需要注意`生成的kubeconfig文件路径`、所有`pem`的位置、及`IP`地址，如果不一样记得修改；
@@ -1159,7 +1159,7 @@ kubectl config use-context default --kubeconfig=${KUBE_CONFIG}
 ```
 生成完之后会在`/opt/kubernetes/cfg/`目录下有一个`kube-controller-manager.kubeconfig`文件；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947854.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947854.png)
 #### 5.4.4 systemd管理controller-manager
 
 ```bash
@@ -1238,7 +1238,7 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 ```
 执行以上命令会在当前目录下生成 `kube-scheduler-key.pem`和`kube-scheduler.pem`文件;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947295.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947295.png)
 #### 5.5.3 生成 kube-scheduler 的 kubeconfig 文件
 
 > 以下内容是在命令行直接执行的，需要注意`生成的kubeconfig文件路径`、所有`pem`的位置、及`IP`地址，如果不一样记得修改；
@@ -1269,7 +1269,7 @@ kubectl config use-context default --kubeconfig=${KUBE_CONFIG}
 ```
 生成完之后会在`/opt/kubernetes/cfg/`目录下有一个`kube-scheduler.kubeconfig`文件；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947149.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947149.png)
 
 #### 5.5.4 systemd管理scheduler
 
@@ -1333,7 +1333,7 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 ```
 执行以上命令会在当前目录下生成 `admin-key.pem`和`admin.pem`文件;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947774.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947774.png)
 
 
 #### 5.6.2 生成 kubectl 的 kubeconfig 文件
@@ -1366,7 +1366,7 @@ kubectl config use-context default --kubeconfig=${KUBE_CONFIG}
 ```
 生成完之后会在`/root/.kube/`目录下有一个`config`文件；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947853.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947853.png)
 
 #### 5.6.3 通过kubectl工具查看当前集群组件状态 
 
@@ -1388,7 +1388,7 @@ etcd-2               Healthy   {"health":"true"}
 > - etcd-0  
 > - （1.19 之后 apiserver 不再列出，因为 apiserver 自己就是接口提供者）
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947158.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947158.png)
 
 
 如上`STATUS`都是`Healthy`说明Master节点所有组件运行正常。
@@ -1406,7 +1406,7 @@ kubectl create clusterrolebinding kubelet-bootstrap \
 ```bash
 kubectl get clusterrolebinding kubelet-bootstrap -o wide
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947714.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947714.png)
 
 ## 六、Master节点部署Node
 ### 6.1 复制kubelet及kube-proxy命令
@@ -1564,7 +1564,7 @@ node-csr-KbHieprZUMOvTFMHGQ1RNTZEhsSlT5X6wsh2lzfUry4   2m35s   kubernetes.io/kub
 NAME          STATUS     ROLES    AGE     VERSION
 k8s-master   NotReady   <none>    17s     v1.20.10
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947210.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947210.png)
 
 
 **说明：**  
@@ -1632,7 +1632,7 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 ```
 执行以上命令会在当前目录下生成 `kube-proxy` 相关的证书文件;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947975.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947975.png)
 
 #### 6.3.4 生成kube-proxy.kubeconfig文件
 
@@ -1719,12 +1719,12 @@ calico-node-pgxpz                         1/1     Running   0          33m
 NAME         STATUS   ROLES    AGE   VERSION
 k8s-master   Ready    <none>   21h   v1.20.10
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947363.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947363.png)
 
 ---
 `calico`默认拉取的镜像都有如下：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110947990.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110947990.png)
 
 ---
 
@@ -1837,7 +1837,7 @@ sed -i 's|registry.k8s.io/metrics-server|registry.cn-hangzhou.aliyuncs.com/googl
 sed -i '/args:/a\        - --kubelet-insecure-tls' components.yaml
 sed -i '/args:/a\        - --kubelet-preferred-address-types=InternalIP,Hostname,ExternalIP' components.yaml
 ```
- ![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110946315.png)
+ ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110946315.png)
 * 3、部署 & 等待 Ready
 ```bash
 kubectl apply -f components.yaml
@@ -1859,7 +1859,7 @@ kubectl top nodes
 ```
 如下输出正常，则成功；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110946464.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110946464.png)
 
 
 
@@ -1940,7 +1940,7 @@ NAME                                                   AGE   SIGNERNAME         
 node-csr-n8MYKY4us2_nVF-qRNZCYFGouhLO9-gj-mHMsPfrvZQ   18h   kubernetes.io/kube-apiserver-client-kubelet   kubelet-bootstrap   Approved,Issued
 node-csr-nj5FFQBNkH-z2NEoQpRjkVhHfps7mzGvWKIWvoO1Fh4   18h   kubernetes.io/kube-apiserver-client-kubelet   kubelet-bootstrap   Approved,Issued
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110946001.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110946001.png)
 
 ### 7.6 查看Node节点的状态
 > 要稍等会才`STATUS`会变成`Ready`，因为需要再node节点上下载一些初始化`calico`镜像，当然两台node节点的docker镜像加速地址也需要为可用的，否则会下载失败导致起不来；
@@ -1977,7 +1977,7 @@ k8s-node2    Ready    <none>   172m   v1.20.10
 ---
 两台node节点上`calico`服务默认拉取的镜像都有如下：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202511110946890.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110946890.png)
 
 确保这四个都有，pod的`calico`的状态就会正常运行；
 

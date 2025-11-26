@@ -31,14 +31,14 @@ breadcrumb: false
 ## 问题
 >问题所在处：在web页面来添加图形，实时监控数据的时候我们一般会写中文，可是，添加完成之后发现中文是乱码，那么我们这期就来解决这个问题；图如下👇
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161014739.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161014739.jpeg)
 ## 解决方法
 1、在zabbix服务端找到<font color=red>**defines.inc.php**</font>文件；找不到的可以使用find 方法查找；
 
 ```bash
 find / -name defines.inc.php
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161014607.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161014607.png)
 
 这里我们可以看到查找到了好几个，那么哪个才是正确的呢，首先先找有zabbix词的，其他都排除，还有其他带zabbix的，但是一般都是<font color=red>/usr/share/zabbix/include/defines.inc.php</font>这个目录；
 
@@ -61,17 +61,17 @@ vim /usr/share/zabbix/include/defines.inc.php
 ><font color=red>修改可以默认给定名字；但两处修改名字要一样，后面上传的图片也要修改成你定义的名字；</font>
 
 修改一图片：
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161014912.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161014912.png)
 
 修改二图片：
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161014266.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161014266.png)
 
 3、将Windows的字体上传到服务器上并放到指定目录
 
 首先我们现在windows上找到存放字体的地方，默认的位置在<font color=red> **C:\Windows\Fonts** </font>目录下；
 找到之后我们可以找出自己想要的字体，但是为了能看懂还是选择中文较好；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013640.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013640.png)
 
 找到自己想要的图片，上传至服务器上，如果不知道上传到服务器哪个位置，我们可以先找到指定的目录；
 
@@ -93,7 +93,7 @@ systemctl restart zabbix-server.service
 ## 查验
 重启完服务后，登录web页面查验；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013377.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013377.png)
 
 这时候我们可以看到已经修改成功了；问题解决！
 

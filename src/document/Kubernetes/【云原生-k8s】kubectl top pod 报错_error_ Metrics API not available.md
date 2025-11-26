@@ -39,7 +39,7 @@ error: Metrics API not available
 ```bash
 wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml -O metrics-server-components.yaml
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161404720.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161404720.png)
 
 ### 2、将 metrics-server-components.yaml中的 k8s.gcr.io 更改为阿里云镜像地址
 
@@ -67,7 +67,7 @@ kubectl apply -f metrics-server-components.yaml
 ```bash
 kubectl get pod -A |grep me
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161404782.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161404782.png)
 
 发现是0/1，表示未启动。
 
@@ -113,7 +113,7 @@ vim metrics-server-components.yaml
 ```bash
 kubectl apply -f metrics-server-components.yaml
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161404774.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161404774.png)
 
 #### 4.5 再次查看pod启动状态
 
@@ -122,7 +122,7 @@ kubectl get pod -A |grep me
 ```
 发现是1/1，启动成功。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161404774.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161404774.png)
 
 
 ### 5、验证是否成功
@@ -131,7 +131,7 @@ kubectl get pod -A |grep me
 kubectl top nodes
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161404980.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161404980.png)
 
 完成。
 

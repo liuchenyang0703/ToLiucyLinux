@@ -29,7 +29,7 @@ isOriginal: true
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202509011604843.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202509011604843.jpeg)
 
 
 

@@ -39,7 +39,7 @@ breadcrumb: false
 
 ## 远程报错
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181618407.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181618407.png)
 ## 一、安装GNOME默认桌面环境
 
 ```bash
@@ -72,11 +72,11 @@ systemctl status xrdp
 
 running为启动状态
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181618287.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181618287.png)
 
 再来看一下端口是否启动；（3389）
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181618046.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181618046.png)
 
 已经启动没问题。
 
@@ -103,22 +103,22 @@ systemctl restart xrdp
 
 使用windows自带的 远程桌面 ，输入自己的ip和用户名
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181618911.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181618911.png)
 
 点击连接，跳出来这个框，代表现在已经可以连接了，只需要输入以下登陆密码即可。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181618568.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181618568.png)
 
 输入完成之后点击，确定就行；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181618791.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181618791.png)
 
 连接上了，ok，完事了。
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181618983.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181618983.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181617299.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181617299.png)
 
 
 
@@ -140,7 +140,7 @@ systemctl restart xrdp
 
 5.防火墙屏蔽问题：防火墙作为电脑安全防护的重要程序，有时会阻挡远程桌面连接请求，从而导致远程桌面连接出现了内部错误。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181617525.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181617525.png)
 
 如果在使用远程桌面连接服务器时，遇到远程桌面出现内部错误的问题，可以使用本教程中提到的几种方法，来解决“远程桌面连接出现了内部错误”的问题。
 

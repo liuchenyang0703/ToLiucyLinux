@@ -369,3 +369,6 @@ category:
 ## 2025-11-26:
 > 1、更新了所有的图片存储路径 oss ==> github(https://github.com/liuchenyang0703/blog-images.git)
 > 2、修改了个别图片存储为本地
+> 3、更新了所有的图片存储路径的访问链接，引用了cdn：https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/
+> 4、新增了一篇文章：使用github搭建图床，上面的cdn地址就是此图床的存储地址；
+> 5、修改了网站提交访问错误的问题

@@ -26,7 +26,7 @@ breadcrumb: false
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161323335.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161323335.jpeg)
 
 
 ---
@@ -45,7 +45,7 @@ breadcrumb: false
 
 ## 一、流程控制图解
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161323932.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161323932.png)
 |流程控制操作| 说明 |
 |--|--|
 |  if 判断语句| 根据条件处理数据，支持多个条件分支 |
@@ -106,7 +106,7 @@ if num >= 50:
 else:
     print("数字是小于50的，没有机会了")
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161323514.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161323514.png)
 
 *  if - elif - else 多重判断判断一个年龄；大于等于0岁，小于6岁，输出：“还是一个未成年的小朋友！”；大于等于6岁，小于18岁，输出：“还是一个未成年人哦！！”；大于等于18岁，输出：“已经成年了！！！”；其他输出："请输入正确的年龄“；
 
@@ -161,7 +161,7 @@ elif num > 100 or num < 0:
 else:
     print("请输入正确的数字，您当然输入的结果为：%s" %num)
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161323937.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161323937.png)
 
 * 如果表达式比较长，可以使用圆括号括起来：
 
@@ -244,7 +244,7 @@ for i in range(5):
 for _ in range(3):
 	print("重要的事说三遍，没有用到变量的时候可以使用下划线代替 _")
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161323783.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161323783.png)
 * 示例3：如果迭代完还有必须执行的逻辑，可以加一个`else：`，与for语句平行缩进，和if一样；
 
 ```python

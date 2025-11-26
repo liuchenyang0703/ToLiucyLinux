@@ -26,7 +26,7 @@ breadcrumb: false
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/855c9bc0e2ec444192e8cf5c5e1a8229.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/855c9bc0e2ec444192e8cf5c5e1a8229.gif)
 
 
 ## 安装mariadb
@@ -52,7 +52,7 @@ mysql_secure_installation
 
 提示：如果回车没有反应，先检查mariadb是否启动。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7acba896caf44af2b9202d7a3b26db84.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7acba896caf44af2b9202d7a3b26db84.png)
 
 ## 测试数据库连接并开启远程登陆
 ```bash
@@ -70,8 +70,8 @@ flush privileges;
 ## 测试本地客户端连接（远程连接）
 开放远程登录这时候我们就可以用`navicat、sqlyog`等链接工具来连接数据库了，端口3306；自己可以测试一下，如果是直接在linux中用就不用测试了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b4b2ab1ac57c4b0fa8af2f7f39827c69.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/91efe871b6474deda61743f82c5f1af8.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b4b2ab1ac57c4b0fa8af2f7f39827c69.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/91efe871b6474deda61743f82c5f1af8.png)
 
 这样就链接成功了，就可以在里面操作增删改查库了。
 

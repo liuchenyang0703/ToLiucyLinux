@@ -29,7 +29,7 @@ breadcrumb: false
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161338953.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161338953.png)
 
 
 

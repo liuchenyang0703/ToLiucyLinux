@@ -25,7 +25,7 @@ comment: false
 >🎉如果文章对你有帮助的话，欢迎 点赞 👍🏻 评论 💬 收藏 ⭐️ 加关注+💗
 
 ---
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951741.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951741.jpeg)
 
 
 
@@ -37,68 +37,68 @@ comment: false
 
 1、下载安装包后解压打开，打开之后里面有三个文件如下图所示：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951626.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951626.png)
 
 
 
 2、先安装navicat，双击安装文件（64位）
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951766.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951766.png)
 
 
 然后一路下一步，到选择安装路径的时候要注意，这个位置Cracking的时候需要用，建议新建一个专门`navicat`的目录。
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951467.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951467.png)
 
 然后继续一路下一步，然后安装即可，安装完成点击完成即可；
 
 3、打开Cracking器
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951942.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951942.png)
 
 
 选择刚刚安装的`navicat`路径；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951103.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951103.png)
 
 成功会跳出这个，如果不成功就建议卸载`navicat`重新安装，再重新选择路径；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951015.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951015.png)
 
 然后点击 `Generate` 生成 注册码，复制注册码，然后打开`navicat`，将生成的注册码，填进去；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951172.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160951206.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951172.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160951206.png)
 
 打开navicat 将注册码填进去，点击activation；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160952029.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160952029.png)
 
 这时候跳出来一个警告，我们点击 <font color=red>手动activation</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160952441.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160952441.png)
 
 复制请求码
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160952247.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160952247.png)
 
 然后放到Cracking器的用户名密码下；
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160952460.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160952460.png)
 
 然后我们点击 `Generate` 生成keygen；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160952232.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160952232.png)
 
 生成后默认就会填充到刚刚打开的手动activation里面，点击activation即可；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160952533.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160952181.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160952533.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160952181.png)
 
 出现现已activation即可，这样就是永久的了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412160953246.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412160953246.png)
 
 

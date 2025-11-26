@@ -25,7 +25,7 @@ breadcrumb: false
 >🐋 希望大家多多支持，我们一起进步！😄
 >🎉如果文章对你有帮助的话，欢迎 点赞 👍🏻 评论 💬 收藏 ⭐️ 加关注+💗
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607803.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607803.png)
 
 
 
@@ -52,7 +52,7 @@ cp -ar ifcfg-ens33 ens33-bak
 ```bash
 cat /proc/cpuinfo | egrep 'vmx|svm'
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607556.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607556.png)
 由此可看到，我这边是支持的；
 
 有一个要注意的就是：要关闭selinux沙盒
@@ -70,7 +70,7 @@ SELINUX=disabled
 
 <font color=red>如果是虚拟机的话，记得在虚拟机设置中开启虚拟化</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607168.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607168.png)
 
 ## 查看是否加载上KVM
 
@@ -120,14 +120,14 @@ yum -y install qemu-kvm python-virtinst libvirt libvirt-python virt-manager libg
 ```
 这样就是正在运行时（绿色的running）
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607656.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607656.png)
 ## 设置机器的存储
 首先就是看那块有空间
 
 ```bash
 df -Th
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607698.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607698.png)
 
 可以看到/home目录下是有空间的，那么我们就将数据放到/home下：
 
@@ -156,14 +156,14 @@ mv CentOS-7-x86_64-Minimal-2009.iso /home/iso/
 ```bash
 ifconfig
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607013.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607013.png)
 2.关闭NetworkManager服务
 
 ```bash
 [root@kvm ~]# chkconfig NetworkManager off
 [root@kvm ~]# service NetworkManager stop
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607392.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607392.png)
 
 3.桥接设备关联网卡
 
@@ -171,14 +171,14 @@ ifconfig
 ```bash
 [root@kvm ~]# virsh iface-bridge ens33 br0
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607745.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607745.png)
 
 4.查看是否成功
 
 ```bash
 [root@kvm ~]# brctl show
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181607146.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181607146.png)
 
 多了一个br0，就可以看到已经成功了；
 
@@ -198,7 +198,7 @@ init 5
 yum groupinstall -y "GNOME Desktop"
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606768.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606768.png)
 
 安装完成之后，init 5 进入GNOME桌面环境：到虚拟机（vmvare）里操作；
 
@@ -208,26 +208,26 @@ init 5
 
 进入GNOME桌面环境之后按照下面一步步走就可以了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606198.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606751.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606986.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606198.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606751.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606986.png)
 
 时区设置为上海
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606750.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606760.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606213.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606218.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606750.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606760.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606213.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606218.png)
 
 开始使用就好了
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606336.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606336.png)
 ## 开始使用KVM
 
 进入GNOME桌面环境之后我们打开终端；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606467.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606673.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606467.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606673.png)
 
 ### 在虚拟机中创建新的虚拟机
 
@@ -235,38 +235,38 @@ init 5
 #使用virt-manager命令打开虚拟机管理器
 virt-manager
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606314.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606314.png)
 
 打开虚拟系统管理器
 
 >前面已经让上传了一个iso映像了，我们就用前面上传的吧，如果没上传创建虚拟机会找不到iso映像的。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606631.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606305.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181606211.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606631.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606305.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181606211.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605548.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605768.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605030.png)![](https://img-blog.csdnimg.cn/de1a1d91ec6d4faa8634b59120047c10.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605933.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605548.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605768.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605030.png)![](https://img-blog.csdnimg.cn/de1a1d91ec6d4faa8634b59120047c10.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605933.png)
 
 如果要给大一点的话可以查看自己的磁盘空间，哪个目录大，就把iso放到哪个目录，这样就可以选择更大的空间了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605835.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605051.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605835.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605051.png)
 
 点击完成就开始创建
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605040.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605152.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605219.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605546.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605797.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605287.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605771.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605099.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605822.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605040.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605152.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605219.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605546.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605797.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605287.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605771.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605099.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605822.png)
 
 登录账号密码，账号就是root，密码就是刚刚设置的root密码；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605959.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605959.png)
 ### 新的虚拟机创建完成
 
 这样就可以在虚拟机中创建一个虚拟机了，也就是KVM了。
@@ -331,7 +331,7 @@ virt-manager
 /var/lib/libvirt/qemu/snapshot/
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181605352.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181605352.gif)
 
 
 ## 相关文章

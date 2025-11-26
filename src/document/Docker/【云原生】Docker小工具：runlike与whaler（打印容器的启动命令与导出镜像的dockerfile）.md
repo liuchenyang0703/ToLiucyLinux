@@ -15,7 +15,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161451089.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161451089.jpeg)
 
 
 
@@ -47,12 +47,12 @@ runlike -p 容器名/容器id
 ```
 <font color=red>runlike</font>打印出来的是很多在一行；例如：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161451673.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161451673.png)
 
 
 <font color=red>runlike -p</font> 加-p参数会给你整理一行一行整理出来，看着比较简洁；例如：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161451035.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161451035.png)
 
 
 ## whaler：通过镜像导出dockerfile
@@ -74,12 +74,12 @@ whaler -sV=1.36 镜像名/镜像id
 ```
 直接用whaler会报错，需要添加一个参数；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161451165.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161451165.png)
 
 这样就可以出来了，也可以重定向到一个文件中>a.txt就可以；
 当然这个比较少，因为这个镜像也就只有1M，所以，不会输出很多东西，感兴趣的朋友可以去自己写一个镜像，或者去官网拉一个大一点的镜像，然后再来测试，就会有很多很多的，特别详细；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161451998.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161451998.png)
 
 
 ## 相关文章

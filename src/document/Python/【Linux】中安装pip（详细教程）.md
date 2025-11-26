@@ -15,7 +15,7 @@ date: 2024-03-24
 comment: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7c453b5d405345618f248139a1f5798f.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7c453b5d405345618f248139a1f5798f.gif)
 >👨‍🎓**博主简介**
 >
 >&emsp;&emsp;🏅[云计算领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
@@ -58,7 +58,7 @@ python setup.py install
 ```
 发现安装报错
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/07a51e072f8c4704b5dd19104ee0a5c0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/07a51e072f8c4704b5dd19104ee0a5c0.png)
 
 原因是因为：安装pip时提示setup.py中使用setuptools中的模块，但是我们开始并没有安装setuptools软件包，所以我们需要先下载并安装 setuptools！
 
@@ -87,7 +87,7 @@ python setup.py install
 ```
 Finished代表成功！
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b4c552ff2e974da280de899eff0dec0d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b4c552ff2e974da280de899eff0dec0d.png)
 #### 再次安装pip
 >现在，setuptools已经安装好，我们再次进入pip-9.0.1目录，使用 “python setup.py install” 命令安装pip：
 >
@@ -99,7 +99,7 @@ python setup.py install
 ```
 Finished代表成功！
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e54da30de120461489c7c99747cbf1a0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e54da30de120461489c7c99747cbf1a0.png)
 #### 验证pip安装是否成功
 
 ```bash
@@ -107,7 +107,7 @@ pip --version
 ```
 能查到说明安装成功，接下来我们就可以安装自己想要的包了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fc296ae00a5a427095878f7d7f875d88.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/fc296ae00a5a427095878f7d7f875d88.png)
 #### 测试使用pip命令安装需要的包
 
 ```bash
@@ -116,7 +116,7 @@ pip install virtualenv
 pip install distribute
 pip install runlike
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/de8771fece2a48f6b89eb475c18f18e6.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/de8771fece2a48f6b89eb475c18f18e6.png)
 
 
 ## 相关专栏/文章
@@ -125,6 +125,6 @@ pip install runlike
 >---
 >相关文章：[centos安装python3/pip3项目所需的第三方模块（在线安装&&离线安装）](https://liucy.blog.csdn.net/article/details/124475543)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d2fdf0e5b33d4c8fb2863a2a463b7813.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d2fdf0e5b33d4c8fb2863a2a463b7813.jpeg)
 
 

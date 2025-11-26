@@ -17,7 +17,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5cf90d2d830046058e5fa8768d5f47f4.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5cf90d2d830046058e5fa8768d5f47f4.jpeg)
 
 
 
@@ -144,7 +144,7 @@ pipeline {
 
 输出结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9a4d8ef3390f48e98c1f1180b6a4ce13.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/9a4d8ef3390f48e98c1f1180b6a4ce13.png)
 
 ---
 
@@ -178,7 +178,7 @@ pipeline {
 ```
 输出结果为：`zhangsan is 30 years old`
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/db5a0747c6da447dbf47cbdf6db42aa3.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/db5a0747c6da447dbf47cbdf6db42aa3.png)
 
 
 
@@ -232,7 +232,7 @@ pipeline {
 ```
 结果为：2
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/87b98d5eacdf418ca7800c646f999668.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/87b98d5eacdf418ca7800c646f999668.png)
 
 
 >注意：如果`print "$number[1]"`不是用`{}`输出，那么输出的内容将是：`[1, 2, 3, 4][1]`;
@@ -271,7 +271,7 @@ pipeline {
 ```
 执行结果为：4
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e7be6ef136ce48cc9dc0d578b00d1520.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e7be6ef136ce48cc9dc0d578b00d1520.png)
 
 
 ---
@@ -312,7 +312,7 @@ pipeline {
 ```
 结果为：6
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5db4aaae829e49e88d2f36ac10ad579f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5db4aaae829e49e88d2f36ac10ad579f.png)
 
 ---
 #### 在列表中往后面添加一个值
@@ -355,7 +355,7 @@ pipeline {
     }
 }
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f161377fef0945a5b042fc2f14671b47.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f161377fef0945a5b042fc2f14671b47.png)
 
 ---
 
@@ -401,7 +401,7 @@ pipeline {
 ```
 结果为：[2, 6, 10, 4]
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3155a247bce84e3bad53bffa9e1a204d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/3155a247bce84e3bad53bffa9e1a204d.png)
 
 ---
 ####  二维列表
@@ -455,7 +455,7 @@ pipeline {
 ```
 输出的结果为：f
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3645895627594850b62473943dd6abae.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/3645895627594850b62473943dd6abae.png)
 
 
 >解析：
@@ -497,7 +497,7 @@ pipeline {
 ```
 输出的结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1a9fdfb805c54e5886353f562f940c92.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1a9fdfb805c54e5886353f562f940c92.png)
 
 ### 条件语句 if/else判断
 
@@ -543,7 +543,7 @@ pipeline {
 
 执行结果为：`I execute elsewhere`，因为我们没有开启多分支所以没有分支的说法，所以是false判断；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2070c2ba46324143957acc44e75751e7.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2070c2ba46324143957acc44e75751e7.png)
 
 
 
@@ -577,7 +577,7 @@ pipeline {
     }
 }
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8cfa0dc6de944fe5a523100bef531174.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/8cfa0dc6de944fe5a523100bef531174.png)
 
 
 * 进阶for循环，在Jenkins的`script`中使用：
@@ -603,7 +603,7 @@ pipeline {
 ```
 执行结果：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/43549d0ba9da4910a89ef682273a6d6f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/43549d0ba9da4910a89ef682273a6d6f.png)
 
 
 

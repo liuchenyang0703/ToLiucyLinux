@@ -17,7 +17,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ac9849a85ee448d3830389d1d2646d91.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ac9849a85ee448d3830389d1d2646d91.jpeg)
 
 
 >👨‍🎓**博主简介**
@@ -121,9 +121,9 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7922e54a0b5e418f89627cca8bb03c2e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7922e54a0b5e418f89627cca8bb03c2e.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b1307fff15824137b0a0afe6ec6ecedf.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b1307fff15824137b0a0afe6ec6ecedf.png)
 
 
 
@@ -131,11 +131,11 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/64b7b7eebc334439974b3c305f593585.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/64b7b7eebc334439974b3c305f593585.png)
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/749a8c3407634b80acccbc7265583c4f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/749a8c3407634b80acccbc7265583c4f.png)
 
 
 
@@ -143,7 +143,7 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/aedc44abe17f490fb049814303faae6a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/aedc44abe17f490fb049814303faae6a.png)
 
 
 
@@ -155,7 +155,7 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b6891318d6c9466eb821fdefe65864f6.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b6891318d6c9466eb821fdefe65864f6.png)
 
 
 
@@ -163,7 +163,7 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/922d184f9cca420a8cbaa846982f3f08.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/922d184f9cca420a8cbaa846982f3f08.png)
 
 
 
@@ -171,7 +171,7 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9b14b31a582d4e94a57f152ba559b27d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/9b14b31a582d4e94a57f152ba559b27d.png)
 
 
 
@@ -179,7 +179,7 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/110d6fa0893d492db80381a87cd6e1d7.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/110d6fa0893d492db80381a87cd6e1d7.png)
 
 
 
@@ -191,9 +191,9 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/47f33a7f835044439907f1bad56fee5a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/47f33a7f835044439907f1bad56fee5a.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c7188daf5e8a4149915f429dafb0d368.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c7188daf5e8a4149915f429dafb0d368.png)
 
 
 
@@ -201,7 +201,7 @@ Manage Jenkins --> Plugins --> 点击Available plugins ：搜索Blue Ocean --> �
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6fba362a143d4a47a8010b702f4ef6f7.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6fba362a143d4a47a8010b702f4ef6f7.png)
 
 
 
@@ -215,7 +215,7 @@ SUCCESS表示执行完成，没有报错：
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2a11852389c34a5bb74efd3eded8b3d0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2a11852389c34a5bb74efd3eded8b3d0.png)
 
 
 
@@ -223,11 +223,11 @@ SUCCESS表示执行完成，没有报错：
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b358898dcccb4b98aa098c15e9555ab6.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b358898dcccb4b98aa098c15e9555ab6.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7acf02978b2e4139865bc505c9ecb83a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7acf02978b2e4139865bc505c9ecb83a.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/72429b0af8374b2bb45d442b6c38fecd.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/72429b0af8374b2bb45d442b6c38fecd.png)
 
 
 
@@ -426,7 +426,7 @@ pipeline {
 
 
 
-![image-20240312162945962](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f627bd1c6e95f3627965e92e865fc7bb.png)
+![image-20240312162945962](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f627bd1c6e95f3627965e92e865fc7bb.png)
 
 
 
@@ -436,11 +436,11 @@ pipeline {
 
 
 
-![image-20240312163333547](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/dedda8e01a575c125fb4d3d97d3e95f5.png)
+![image-20240312163333547](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/dedda8e01a575c125fb4d3d97d3e95f5.png)
 
 * 跑完也可以查看阶段视图：项目 --> 状态
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/240ff8f7b73d4d429bacde685175caab.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/240ff8f7b73d4d429bacde685175caab.png)
 
 
 
@@ -449,7 +449,7 @@ pipeline {
 
 
 
-![image-20240312163254879](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a3ab9d31d7a8a99992bf20589753a7ae.png)
+![image-20240312163254879](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a3ab9d31d7a8a99992bf20589753a7ae.png)
 
 
 

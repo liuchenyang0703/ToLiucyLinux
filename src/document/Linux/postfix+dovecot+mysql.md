@@ -28,7 +28,7 @@ isOriginal: true
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141021162.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141021162.png)
 
 
 ## 前言
@@ -61,7 +61,7 @@ pop3（或imap服务器，与之性质相同）更多的是起一个中转作用
 pop3与imap的区别是，pop3将邮件拉回本地后，即与服务器脱钩了。imap则更先进一些，它能做到实时将你在邮件客户端的操作反馈回邮件服务器，比如：删除邮件，标记已读等，服务器上的邮件也会做相应的动作。所以无论从浏览器登录邮箱或者客户端软件登录邮箱，看到的邮件以及状态都是一致的。
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141021287.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141021287.png)
 
 
 
@@ -96,13 +96,13 @@ pop3与imap的区别是，pop3将邮件拉回本地后，即与服务器脱钩�
 
 - 腾讯云
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141021818.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141021818.png)
 
 - 阿里云
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141021673.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141021673.png)
 > 如果需要一个域名、两台服务器使用mail邮件服务，可以配置成mail1和mail2，这两台机器都需要一个`@A`、`@MX`、`mail2A`，`www`随便绑定主的哪台就用，用于部署网站等服务时用到；如下（阿里云、腾讯云等配置同样）：
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141021312.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141021312.png)
 
 
 
@@ -110,7 +110,7 @@ pop3与imap的区别是，pop3将邮件拉回本地后，即与服务器脱钩�
 配置好之后，可以在windows上打开cmd，输入nslookup，然后在输入set type=MX，然后在输入自己的域名（这里的域名不是带mail的域名，是mail后面的域名），如果windows上没有nslookup可以自己安装一下，如下图，则是解析成功。
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141021467.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141021467.png)
 
 解析成功之后，链接服务器，修改主机名：
 
@@ -202,7 +202,7 @@ mysql_secure_installation
 ```
 提示：如果回车没有反应，先检查mariadb是否启动。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141021931.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141021931.png)
 
 ```bash
 #进入mysql数据库
@@ -534,7 +534,7 @@ yum -y install postfix
 #查看postfix版本 
 postconf -d | grep mail_version
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022417.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022417.png)
 
 
 安装好以后 , 开始配置postfix的主配置文件
@@ -706,7 +706,7 @@ postmap -q cs@cs.com mysql:/etc/postfix/sql/mysql_virtual_alias_domain_mailbox_m
 postmap -q cs@cs.com mysql:/etc/postfix/sql/mysql_virtual_mailbox_maps.cf
 postmap -q cs@cs.com mysql:/etc/postfix/sql/mysql_virtual_alias_domain_maps.cf
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022039.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022039.png)
 
 测试完之后没有问题就可以启动postfix啦！！！
 
@@ -738,7 +738,7 @@ yum -y install dovecot dovecot-devel dovecot-mysql pam-devel
 rpm -qa | grep dovecot
 rpm -qa | grep pam-devel
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022163.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022163.png)
 
 可以看到都安装上了；
 
@@ -748,7 +748,7 @@ rpm -qa | grep pam-devel
 ```bash
 dovecot --version
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022514.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022514.png)
 
 
 3)配置
@@ -800,7 +800,7 @@ touch /var/log/{dovecot_info.log,dovecot_debug.log}
 # 查看
 ll /var/log/ | grep dovecot
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022570.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022570.png)
 
 
 将他们修改为vmail:vmail 用户:用户组
@@ -811,7 +811,7 @@ chown vmail:vmail dovecot_info.log dovecot_debug.log
 chmod 777 dovecot_info.log dovecot_debug.log 
 ll | grep dovecot
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022678.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022678.png)
 
 `vim /etc/dovecot/conf.d/10-logging.conf `
 
@@ -878,7 +878,7 @@ service auth {
 ```bash
 ll /usr/libexec/dovecot/dovecot-lda
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022889.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022889.png)
 
 可以看出来是root权限，所以要设置dovecot-lda的执行权限；
 
@@ -889,7 +889,7 @@ chmod 777 /usr/libexec/dovecot/dovecot-lda
 ll /usr/libexec/dovecot/dovecot-lda
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022420.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022420.png)
 
 
 给`/var/spool/mail/` 授权
@@ -898,7 +898,7 @@ ll /usr/libexec/dovecot/dovecot-lda
 #先查看/var/spool/mail/权限
 ll /var/spool/ | grep mail
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022934.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022934.png)
 
 是`root:mail`权限，给他设置为`vmail:vmail`权限
 ```bash
@@ -906,7 +906,7 @@ chown -R vmail:vmail /var/spool/mail/
 #设置完再确认一下
 ll /var/spool/ | grep mail
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022238.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022238.png)
 
 
 
@@ -943,22 +943,22 @@ systemctl status postfix dovecot
 我这里使用`Foxmail邮箱`
 
 * 新建邮箱
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022231.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022231.png)
 
 * 选择其他邮箱
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022328.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022328.png)
 
 * 输入自己的email地址，也就是数据库里的邮件地址和密码；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022158.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022158.png)
 
 * 选择`IMAP`，邮箱和密码是刚刚创建的用户信息，`IMAP`和`SMTP`都是域名`cs.com`；
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022403.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022403.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022415.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022415.png)
 
 
 然后自己就可以直接测试收发邮件了；
@@ -966,13 +966,13 @@ systemctl status postfix dovecot
 
 发送邮件成功收到；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141022013.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141022013.png)
 
 收取邮件成功；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141023323.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141023246.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141023585.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141023323.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141023246.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141023585.png)
 
 部署完成！！！
 

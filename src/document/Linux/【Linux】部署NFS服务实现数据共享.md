@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181441583.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181441583.png)
 
 
 
@@ -75,7 +75,7 @@ RPC远程过程调度：
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181441484.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181441484.png)
 
 
 
@@ -83,7 +83,7 @@ RPC远程过程调度：
 
 > &emsp;&emsp;当我们在NFS服务器设置好一个共享目录/opt 后，其他人是有权访问/opt这个共享目录的，NFS客户端就可以将这个目录挂载到自己文件系统的某个挂载点（这个挂载点可以自己定义），路径不同也可以；如下图客户端A与客户端B挂载的目录就不相同。并且挂载好后我们在本地能够看到服务端/opt下的所有数据。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181440917.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181440917.png)
 
 ## 二、准备工作
 
@@ -152,7 +152,7 @@ vim /etc/selinux/config
 # 将selinux=修改为disabled
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181440694.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181440694.png)
 
 
 
@@ -185,7 +185,7 @@ systemctl status nfs
 systemctl status rpcbind
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181440383.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181440383.png)
 
 
 

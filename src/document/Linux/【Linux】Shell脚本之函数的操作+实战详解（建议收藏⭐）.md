@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180959326.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180959326.png)
 
 >🍁**博主简介**
 >
@@ -81,7 +81,7 @@ f1
 >输出结果为：
 <font color=red>这是没有function的函数测试</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180959771.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180959771.png)
 
 - 实例3
 
@@ -181,7 +181,7 @@ echo $?
 
 为什么会变成40呢？是因为里面写了交互式输入的数字*2，结果在$?返回值里返回。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180959410.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180959410.png)
 
 - 实例2
 
@@ -206,7 +206,7 @@ sum
 刚刚输入的两个数分别为：52 和 10
 两个数的和为：62
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180959555.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180959555.png)
 
 
 ### 函数的传参
@@ -226,7 +226,7 @@ add $1 $2
 
 结果为：24
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180959511.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180959511.png)
 
 ### 函数变量的作用范围
 
@@ -267,7 +267,7 @@ echo $i
 >如果吧local这行注释了，那么输出的结果就是<font color=red>6和6</font>；为什么呢？
 >因为两个全局变量，在脚本中只能执行一个全局变量，且是从上往下，所以输出的只有6。
 >
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180959691.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180959691.png)
 
 ## * 函数的参数
 ### *.1 参数的用法
@@ -354,7 +354,7 @@ jiecheng
 ```
 结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958207.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958207.png)
 
 
 
@@ -377,7 +377,7 @@ cheng
 
 结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958354.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958354.png)
 
 为什么等于720呢？看上去和*.3.1写的一模一样，其实不一样，仔细看；
 一个`echo $num`在for循环内，一个在for循环外；
@@ -400,12 +400,12 @@ echo $?
 ```
 结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958315.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958315.png)
 
 脚本解析：
 如果没有哪个文件也是会返回40的；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958807.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958807.png)
 
 
 
@@ -432,7 +432,7 @@ list $1 $2 #调用变量
 ```
 执行结果：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958124.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958124.png)
 
 #### *.5.2 交互式 递归方式计算你输入的数值作为阶乘	
 
@@ -465,7 +465,7 @@ echo $res
 ```
 执行结果：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958815.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958815.png)
 
 如果还是看不懂过程，可以使用 `sh -x 脚本名称` 来看脚本执行过程，或者是在脚本中的`#!/bin/bash/`下一行加`set -x`；就可以看到脚本执行的过程了。适合与for循环这一类的工程。
 
@@ -476,7 +476,7 @@ echo $res
 ```bash
 sh -x 脚本名称
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958455.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958455.png)
 - 实例2：在脚本中的`#!/bin/bash/`下一行加`set -x`
 
 ```bash
@@ -485,11 +485,11 @@ set -x
 ```
 脚本：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958518.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958518.png)
 
 执行：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180958073.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180958073.png)
 
 
 ## 函数重点：

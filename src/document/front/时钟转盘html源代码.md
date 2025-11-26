@@ -272,11 +272,11 @@ breadcrumb: false
 > 3、ctrl+s保存，关闭
 > 4、右击重命名，起一个你想起的名字
 > 5、后缀名改为html，双击打开即可；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c8642387f4524b2a8fa757eb4a72d0b5.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c8642387f4524b2a8fa757eb4a72d0b5.png)
 
 
 ![](https://img-blog.csdnimg.cn/18b431eec91a48ec8717dce30dd3e52f.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5cefc2a0f8214558a6b15387cbdffcd1.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5cefc2a0f8214558a6b15387cbdffcd1.png)
 
 
 

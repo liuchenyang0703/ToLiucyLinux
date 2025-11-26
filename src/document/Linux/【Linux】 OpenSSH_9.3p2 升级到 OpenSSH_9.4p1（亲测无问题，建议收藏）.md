@@ -33,7 +33,7 @@ breadcrumb: false
 > 问题关键字：<font color=red>OpenSSH 升级, OpenSSH 更新, OpenSSH 漏洞修复</font>
 > 漏洞信息：<font color=red>OpenSSH 命令注入漏洞(CVE-2020-15778)、OpenSSH 安全漏洞(CVE-2023-38408)</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/379775b034b741f09bed3dfae40fa1dd.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/379775b034b741f09bed3dfae40fa1dd.png)
 
 ## 漏洞描述
 
@@ -166,7 +166,7 @@ Executing /sbin/chkconfig sshd on
 [root@localhost ~]# ssh -V
 OpenSSH_9.4p1, OpenSSL 1.1.1t  7 Feb 2023
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/97cc98e2d9a9482a8da90f8d78468dbc.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/97cc98e2d9a9482a8da90f8d78468dbc.png)
 
 
 ## 相关专栏

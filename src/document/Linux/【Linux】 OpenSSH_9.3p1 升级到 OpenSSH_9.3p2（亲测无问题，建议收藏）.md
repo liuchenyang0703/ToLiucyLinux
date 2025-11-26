@@ -33,7 +33,7 @@ breadcrumb: false
 > 问题关键字：<font color=red>OpenSSH 升级, OpenSSH 更新, OpenSSH 漏洞修复</font>
 > 漏洞信息：<font color=red>OpenSSH代理转发远程代码执行漏洞（CVE-2023-38408）</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2f8edbcf2f9a4e9cbd60e54f736bdfbd.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2f8edbcf2f9a4e9cbd60e54f736bdfbd.png)
 
 
 ## 前述
@@ -150,7 +150,7 @@ Executing /sbin/chkconfig sshd on
 [root@localhost ~]# ssh -V
 OpenSSH_9.3p2, OpenSSL 1.1.1t  7 Feb 2023
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6551fdeab07d4a31839ea5396b319e18.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6551fdeab07d4a31839ea5396b319e18.png)
 
 
 

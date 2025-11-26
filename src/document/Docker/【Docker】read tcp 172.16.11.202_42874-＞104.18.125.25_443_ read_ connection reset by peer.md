@@ -60,24 +60,24 @@ read tcp 172.16.11.202:42874->104.18.125.25:443: read: connection reset by peer
 
 1、访问阿里云官网：[阿里云官网](https://promotion.aliyun.com/ntms/act/kubernetes.html)     并登录官网：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517319.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517319.png)
 
 2、登录进来点击控制台：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517666.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517666.png)
 
 3、点击左上方的导航栏，在搜索框搜索容器镜像服务
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517962.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517962.png)
 
 4、点击 镜像工具---镜像加速器
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517558.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517558.png)
 
 5、复制镜像加速器地址，按照操作文档，找到对应平台的文档进行操作
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517544.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517544.png)
 
 6、返回服务器，新建 <font color=red> **/etc/docker** </font>目录
 
@@ -128,7 +128,7 @@ d044dd425955: Download complete
 Digest： a256:c358e72e100ab493a0304bda35e6f239db2ec8c9bb836d8a427ac34307d074ed
 Status： Downloadednewer image for qiushenjie/cuda11.1-cudnn8-devel-ubuntu18.04-python3.6:latest
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517545.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517545.png)
 
 这样就下载拉取完成了；
 

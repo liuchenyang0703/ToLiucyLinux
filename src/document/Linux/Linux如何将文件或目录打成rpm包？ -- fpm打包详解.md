@@ -145,7 +145,7 @@ gem install fpm
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191614633.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412191614633.png)
 
 
 

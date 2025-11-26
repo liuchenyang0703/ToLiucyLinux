@@ -42,7 +42,7 @@ isOriginal: true
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d1f7cb8c7c3a499db406389e46a782c2.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d1f7cb8c7c3a499db406389e46a782c2.png)
 
 
 
@@ -58,7 +58,7 @@ isOriginal: true
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fe404b3fb0f44ed3bb64e9bf8743595e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/fe404b3fb0f44ed3bb64e9bf8743595e.png)
 
 
 
@@ -101,7 +101,7 @@ default-character-set=utf8
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/aba0f14a39684b229b4806a5dcb95bf6.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/aba0f14a39684b229b4806a5dcb95bf6.png)
 
 
 
@@ -116,11 +116,11 @@ default-character-set=utf8
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9351b1ed6c4e464884abff4225196eca.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/9351b1ed6c4e464884abff4225196eca.png)
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4247912a4c4f48e9b6f9ffdeec2ab2f7.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4247912a4c4f48e9b6f9ffdeec2ab2f7.png)
 
 
 
@@ -140,7 +140,7 @@ mysqld --initialize --console
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/57a35278375a45fba43605a6b1962863.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/57a35278375a45fba43605a6b1962863.png)
 
 
 
@@ -156,7 +156,7 @@ mysqld --initialize --console
 mysqld --install mysql
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/54f682d00eae4d24bb782bac9dd448ed.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/54f682d00eae4d24bb782bac9dd448ed.png)
 
 
 
@@ -174,7 +174,7 @@ net start mysql
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/055553479d8542ba840b4a5ed77155b5.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/055553479d8542ba840b4a5ed77155b5.png)
 
 
 
@@ -186,7 +186,7 @@ net start mysql
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/12602c32bdb84802b450140895ff1abb.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/12602c32bdb84802b450140895ff1abb.png)
 
 
 
@@ -213,7 +213,7 @@ alter user root@'localhost' identified by '123123';
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/819da59d8cf345bba202810983891a9b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/819da59d8cf345bba202810983891a9b.png)
 
 
 
@@ -243,7 +243,7 @@ alter user root@'localhost' identified by '123123';
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/22c6c87dca394517b6af4145560a8d19.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/22c6c87dca394517b6af4145560a8d19.png)
 
 
 
@@ -253,7 +253,7 @@ alter user root@'localhost' identified by '123123';
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ca01d606fd98479bb8d8f19dc0e5700b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ca01d606fd98479bb8d8f19dc0e5700b.png)
 
 
 

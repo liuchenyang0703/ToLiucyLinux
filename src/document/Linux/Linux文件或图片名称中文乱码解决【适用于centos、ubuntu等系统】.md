@@ -42,7 +42,7 @@ breadcrumb: false
 locale
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958599.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958599.png)
 
 
 
@@ -103,7 +103,7 @@ source /etc/locale.conf
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958633.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958633.png)
 
 
 
@@ -111,7 +111,7 @@ source /etc/locale.conf
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958211.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958211.png)
 
 
 
@@ -121,7 +121,7 @@ source /etc/locale.conf
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958117.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958117.png)
 
 
 
@@ -181,7 +181,7 @@ linux下有许多方便的小工具来转换编码：
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200957579.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200957579.png)
 
 
 
@@ -191,7 +191,7 @@ linux下有许多方便的小工具来转换编码：
 yum -y install convmv
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200957224.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200957224.png)
 
 
 
@@ -203,7 +203,7 @@ yum -y install convmv
 convmv -f gbk -t utf-8 -r --notest ?龳??????.jpg
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200957116.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200957116.png)
 
 
 
@@ -213,6 +213,6 @@ convmv -f gbk -t utf-8 -r --notest ?龳??????.jpg
 convmv -f gbk -t utf-8 -r --notest /home/lcy/cs/luanma/
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200957682.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200957682.png)
 
 格式转换完成。

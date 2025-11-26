@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180951125.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180951125.jpeg)
 
 ## 1、Tomcat介绍
 &emsp;&emsp;Tomcat是Apache 软件基金会（Apache Software Foundation）中的一个核心项目，由Apache、Sun和其他一些公司及个人共同开发而成，以Apache license许可的方式进行发布。由于有了Sun的参与和支持，最新的Servlet和JSP规范总是能在Tomcat中得到体现。因为Tomcat技术先进、性能稳定，而且免费，因而深受Java爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web应用服务器。
@@ -67,10 +67,10 @@ Tomcat官网：[https://tomcat.apache.org/](https://tomcat.apache.org/)
 
 进入官网-->选择右侧的Tomcat 10
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180951479.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180951941.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180951479.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180951941.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180950809.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180950809.png)
 
 #### 2.2.2 部署Tomcat
 下载完成之后上传至服务器；
@@ -86,12 +86,12 @@ mv apache-tomcat-10.0.23 /usr/local/tomcat
 #启动tomcat
 /usr/local/tomcat/bin/startup.sh
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180950621.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180950621.png)
 #### 2.2.3 web页面访问
 启动完成，访问地址测试：ip:8080
 <font color=red>默认端口为8080</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180950256.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180950256.png)
 
 可以访问到，完成部署；
 

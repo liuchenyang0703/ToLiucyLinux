@@ -26,7 +26,7 @@ breadcrumb: false
 
 ---
 
-![IMG_202307267457_jpg.jpg](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/306574aa33344995bc7dca1f2a0aa5ba.jpeg)
+![IMG_202307267457_jpg.jpg](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/306574aa33344995bc7dca1f2a0aa5ba.jpeg)
 
 ## 前言
 MySQL数据库是业务系统中常用的关系型数据库，但是由于其广泛使用，也成为安全攻击的目标。因此，数据库安全加固至关重要。下面将为大家提供一份基于Linux的MySQL数据库安全加固指南，帮助大家保护自己及公司的数据库免受潜在的安全威胁。
@@ -67,7 +67,7 @@ cat /etc/my.cnf
 找到port，注意`my.cnf`可能会有两个port，一个是`[client]`下的，一个是`[mysqld]`下的，修改`[mysqld]	`下的port即可，client下的也可以修改，主要是`[mysqld]`下的生效；
 修改完重启数据库，有一点如果访问不到，可以先查看端口有没有起来，如果起来了，就检查防火墙，如果没起来，就去看数据库启动报错或日志；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/81c9b7abbf784b59b6835c3e03d171eb.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/81c9b7abbf784b59b6835c3e03d171eb.png)
 
 修改完重启一下服务即可生效。
 
@@ -99,7 +99,7 @@ firewall-cmd --list-ports | grep 3306
 ```bash
 log-bin=mysql-bin
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e30be3e33ff6489e9a12acae014e801d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e30be3e33ff6489e9a12acae014e801d.png)
 
 
 开启完，重启服务生效；
@@ -109,7 +109,7 @@ log-bin=mysql-bin
 mariadb日志一般会存储在 `/var/lib/mysql` 下；
 容器的方式部署的mysql，日志数据一般会存在 `/var/lib/mysql/data/` 下。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/27aed8f281df4275bc1ba77c7750a898.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/27aed8f281df4275bc1ba77c7750a898.png)
 
 
 
@@ -165,7 +165,7 @@ select * from user;
 ```
 可以看到本地和远程都可以连接到该数据库，那么下来我们就给他做限制；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fbb5e9f4736b47deb8a9d12e5183a26a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/fbb5e9f4736b47deb8a9d12e5183a26a.png)
 ### 开放单用户及ip测试
 ```bash
 #首先创建一个库，（后面要用到这个库）
@@ -190,24 +190,24 @@ select * from mysql.user where user="cs" \G;
 ```
 - 查看权限
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d148d81701984c51a691d01cbc95a6ba.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/af5d712ab35346b79abf73a01eb5264c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d148d81701984c51a691d01cbc95a6ba.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/af5d712ab35346b79abf73a01eb5264c.png)
 
 
 - 然后看mysql/user表，可以看到多了一个cs用户，只可以本地访问数据库，然后测试登陆；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c7489a5048f140a4bf02b499e61e227a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c7489a5048f140a4bf02b499e61e227a.png)
 
 ```bash
 mysql -ucs -p123123
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/930327c0592f41c28cb2442d4dc6e7a7.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/930327c0592f41c28cb2442d4dc6e7a7.png)
 
 成功登陆，并且有`cs`这个库的所有权限；
 而用第三方登陆，就登陆不上，比如我们用`navicat`连接测试；
 很显然，登陆不上的这是；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4da55b74ee2545e89d44f221b4394b94.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4da55b74ee2545e89d44f221b4394b94.png)
 
 ### 批量开放用户及ip测试
 
@@ -230,11 +230,11 @@ show grants for 'cs'@'172.16.11.11';
 select * from mysql.user where user="cs" \G;
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3f51517d5db34f408715499c40ff01bc.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/3f51517d5db34f408715499c40ff01bc.png)
 
 - 然后看mysql/user表，可以看到多了一个好几个cs用户，但是host不一样，也就是可以访问的ip主机不一样，只有上面显示的这几个访问数据库，然后测试登陆；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5f66b7516f144bd38e7f162a505df232.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5f66b7516f144bd38e7f162a505df232.png)
 
 
 
@@ -264,7 +264,7 @@ select * from mysql.user where user="root" \G;
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7d4782bcf55345af97cb0fda8641cfee.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7d4782bcf55345af97cb0fda8641cfee.png)
 
 
 ## 6.1 附加

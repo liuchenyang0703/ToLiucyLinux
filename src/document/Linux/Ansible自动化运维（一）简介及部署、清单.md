@@ -93,7 +93,7 @@ breadcrumb: false
 
 ### 2.3 Ansible的架构
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/29d2cf993fb4438ab17883f77714b350.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/29d2cf993fb4438ab17883f77714b350.png)
 
 
 
@@ -177,7 +177,7 @@ ansible 2.9.27
   python version = 2.7.5 (default, Aug  7 2019, 00:51:29) [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c9e85ea6314c403ea2baa387df8df410.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c9e85ea6314c403ea2baa387df8df410.png)
 
 
 
@@ -314,7 +314,7 @@ Using a SSH password instead of a key is not possible because Host Key checking 
 }
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1a42e5136f524d2da8a96b6e934b568c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1a42e5136f524d2da8a96b6e934b568c.png)
 
 
 
@@ -322,7 +322,7 @@ Using a SSH password instead of a key is not possible because Host Key checking 
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/aa24a71963354fa0abcebea311afdf3a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/aa24a71963354fa0abcebea311afdf3a.png)
 
 
 
@@ -362,7 +362,7 @@ Using a SSH password instead of a key is not possible because Host Key checking 
 #没有定义用户时，默认使用当前登录用户；
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f99e4374685d49f8b8123821f9bd4667.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f99e4374685d49f8b8123821f9bd4667.png)
 
 
 
@@ -397,7 +397,7 @@ Using a SSH password instead of a key is not possible because Host Key checking 
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/913eb04c2155496897ecdc262ae34950.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/913eb04c2155496897ecdc262ae34950.png)
 
 
 

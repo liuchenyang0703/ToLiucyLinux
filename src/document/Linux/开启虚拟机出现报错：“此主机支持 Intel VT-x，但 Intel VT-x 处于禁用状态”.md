@@ -30,7 +30,7 @@ breadcrumb: false
 ## 报错
 开启虚拟机出现报错：此主机支持 Intel VT-x，但 Intel VT-x 处于禁用状态
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958064.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958064.png)
 
 >Intel VT-x完整名称是`Intel Virtualization Technology`，就是Intel虚拟技术，开启它可以让硬件平台同时运行多个操作系统，是虚拟机软件运行必备的技术之一，如果禁用，就会弹出“此主机支持Intel VT-x,但Intel VT-x处于禁用状态”这个提示，解决办法就是进BIOS开启Intel Virtualization Technology。
 
@@ -39,18 +39,18 @@ breadcrumb: false
 
 我们打开任务管理器，点击`“性能” ——> “CPU”`，可以看到虚拟化是处于禁用状态的
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958232.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958232.png)
 
 ## 解决方式（这里以联想笔记本为例）
 
 - 1、重启电脑，开机时按“Fn+F2”，会听到滴的一声，进入BIOS界面
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958492.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958492.png)
 
 
 - 2、选择`“configuration”`，找到`“intel virtual technology”`，按回车，将“Disable（关闭）” 改为“Enable（打开）”
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958031.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958031.png)
 
 
 - 3、最后按`“Fn+F10”`保存并退出，重启即可。
@@ -59,11 +59,11 @@ breadcrumb: false
 
 - 4、重启完之后，进入windows页面，还是点击`“性能” ——> “CPU”`，可以看到虚拟化已经处于启动状态了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958669.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958669.png)
 
 - 5、再次打开虚拟机，启动虚拟机成功。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412200958326.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412200958326.png)
 
 
 

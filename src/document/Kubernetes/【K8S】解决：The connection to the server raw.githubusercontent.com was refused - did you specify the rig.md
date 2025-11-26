@@ -40,7 +40,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 出现报错：
 `The connection to the server raw.githubusercontent.com was refused - did you specify the right host or port?`
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161403079.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161403079.png)
 
 ## 问题原因：
 
@@ -53,12 +53,12 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 访问此地址通过域名查询真实地址IP：[https://www.ipaddress.com/](https://www.ipaddress.com/)，此网站需要使用v**或其他工具；
 
 访问往下拉：
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161403154.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161403154.png)
 
 点击进去，输入`raw.githubusercontent.com`域名，点击查找；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161403131.jpeg)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161403771.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161403131.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161403771.jpeg)
 
 * 将查询到的域名和ip写到服务器里的`/etc/hosts`文件中；
 
@@ -68,14 +68,14 @@ sudo vim /etc/hosts
 # 在后面追加输入
 185.199.108.133  raw.githubusercontent.com
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161403164.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161403164.png)
 
 * 添加完之后再次运行安装命令即可；
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161402113.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161402113.png)
 
 
 > 如果遇到下载`flannel`镜像失败，可使用此链接镜像包：[k8s网络插件 flannel v0.25.5 flannel-cni-plugin-v1.5.1-flannel1 镜像包](https://download.csdn.net/download/liu_chen_yang/89682727)
@@ -86,7 +86,7 @@ kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Doc
 kubectl get nodes
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161402894.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161402894.png)
 
 Ready连接成功；
 
@@ -96,6 +96,6 @@ Ready连接成功；
 ```bash
 kubectl get nodes -w
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161402060.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161402060.png)
 
 ><center>问题解决！！！</center>

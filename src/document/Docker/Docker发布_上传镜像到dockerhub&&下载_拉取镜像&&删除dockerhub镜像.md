@@ -20,7 +20,7 @@ breadcrumb: false
 我们先去官网注册dockerhub的账号和密码，官网在下方↓
 [https://hub.docker.com/](https://hub.docker.com/)
 登录到这个界面。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161449105.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161449105.png)
 
 ## 二、安装docker
 
@@ -42,10 +42,10 @@ FROM centos
 ```bash
 docker build -f Dockerfile -t mycentos:v1 .
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161449977.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161449977.png)
 
 （2）docker images查看
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161449939.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161449939.png)
 这里一个镜像就打好了；
 
 ### 2、直接pull一个镜像
@@ -54,7 +54,7 @@ docker build -f Dockerfile -t mycentos:v1 .
 docker pull busybox
 ```
 （1）docker images查看
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161449807.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161449807.png)
 这里一个镜像就拉好了；
 
 ## 四、修改镜像标签
@@ -90,7 +90,7 @@ liuchenyang/mycenos                  v1                          5d0da3dc9764   
 ```bash
 docker login -u liuchenyang
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450730.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450730.png)
 
 ### 2、直接docker login登录
 
@@ -131,11 +131,11 @@ v1: digest: sha256:62ffc2ed7554e4c6d360bce40bbcf196573dd27c4ce080641a2c59867e732
 最后显示的有<font color=red>大小多少</font>则是上传成功，然而显示的<font color=red>denied: requested access to the resource is denied</font>则是报错，可以看第八条。
 ## 七、查看dockerhub
 这时候我们登录dockerhub官网去查看：[dockerhub官网](https://hub.docker.com/)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450911.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450911.png)
 然后可以看到这时候已经上传到dockerhub中；之后下载镜像也可以直接登录dockerhub账号，然后pull镜像了。
 ## 八、denied: requested access to the resource is denied报错详解
 如遇到此类报错，可以查看：[Docker——denied: requested access to the resource is denied问题以及解决方法](https://blog.csdn.net/liu_chen_yang/article/details/124665726?spm=1001.2014.3001.5502)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450008.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450008.png)
 ## 九、拉取镜像
 **<font color=teal>格式：</font>**
 ```bash
@@ -150,23 +150,23 @@ Digest: sha256:a1801b843b1bfaf77c501e7a6d3f709401a1e0c83863037fa3aab063a7fdb9dc
 Status: Downloaded newer image for liuchenyang/mycenos:v1
 docker.io/liuchenyang/mycenos:v1
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450250.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450250.png)
 拉取成功，后续需要修改镜像名可以通过“<font color=red>docker tag 原镜像名 要修改的镜像名</font>” 来修改。
 也可以从dockerhub中查看拉取镜像的命令；
 点击你想要拉取的镜像；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450389.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450389.png)
 然后选择tag，就可以看到有一个拉取镜像的命令了；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450790.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450790.png)
 
 ## 十、删除dockerhub镜像
 还是先选择要删除的镜像；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450218.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450218.png)
 然后点击settings，往下面翻就可以看到删除镜像了；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450793.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450793.png)
 然后会让你再次输入要删除的镜像，就和提示你确认是否删除是一样的，怕你误删；输入完镜像名之后再次点击delete就可以删除了；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450686.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450686.png)
 然后就可以看到只剩一个镜像了，这时就删除成功了。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161450001.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161450001.png)
 
 # 总结
 **相关文章：**

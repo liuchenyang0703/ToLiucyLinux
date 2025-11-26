@@ -15,7 +15,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201007644.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201007644.png)
 
 
 >👨‍🎓**博主简介**
@@ -40,7 +40,7 @@ breadcrumb: false
 
 ## nvidia-smi命令详解
 ### nvidia-smi 表格参数详解
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201008125.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201008125.png)
 
 ```bash
 +-----------------------------------------------------------------------------+
@@ -152,7 +152,7 @@ breadcrumb: false
 ```bash
 nvidia-smi -L
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201007621.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201007621.png)
 >作用：可用作统计服务器中的显卡数量。
 
 #### 列出所有被拉入黑名单的NVIDIA设备
@@ -160,7 +160,7 @@ nvidia-smi -L
 ```bash
 nvidia-smi -B
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201007457.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201007457.png)
 >`No blacklisted devices found.` 未找到列入黑名单的设备。
 
 #### 查询nvidiaGPU的相关信息
@@ -168,7 +168,7 @@ nvidia-smi -B
 ```bash
 nvidia-smi -q
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201007437.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201007437.png)
 
 
 #### 持续刷新显存状态
@@ -275,14 +275,14 @@ nounits		去除单位，比如MiB	nvidia-smi --format=csv,noheader,nounits --que
 ```bash
 nvidia-smi --format=csv,noheader --query-gpu=memory.total
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201007130.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201007130.png)
 
 #### 查询总显存不带头部标题并且不带单位
 
 ```bash
 nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201007634.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201007634.png)
 
 ## 附加：计算某显卡的剩余显存脚本
 >下载地址：[计算显卡的剩余显存脚本：nvidia.sh](https://download.csdn.net/download/liu_chen_yang/87364591?spm=1001.2014.3001.5503)

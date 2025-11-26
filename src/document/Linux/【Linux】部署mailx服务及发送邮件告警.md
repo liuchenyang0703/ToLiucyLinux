@@ -131,12 +131,12 @@ mailx服务默认是已经安装了，如果没有安装一下就行；
 1 打开[网页版qq邮箱](https://www.baidu.com/link?url=HCaTwQ6t4JQWm7TVHpUSONFDnTzdOGQLiav3Zt9xlC7&wd=&eqid=814cefc30001c04c0000000263fdbcef)
 2 开启授权码
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181440945.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181440338.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181440945.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181440338.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181440272.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181440272.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181440243.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181440243.png)
 
 完了会给你一个授权码，先复制保存起来，关闭了就找不到了。
 

@@ -13,7 +13,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181612672.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181612672.png)
 >👨‍🎓**博主简介**
 >
 >&emsp;&emsp;🏅[CSDN博客专家](https://blog.csdn.net/liu_chen_yang?type=blog)
@@ -29,28 +29,28 @@ breadcrumb: false
 ```bash
 echo $RANDOM
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181612388.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181612388.png)
 
 ## 生成指定区间随机数：随机生成1-50之间的数
 
 ```bash
 echo $((RANDOM%50+1))
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181612281.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181612281.png)
 
 ## 随机生成时间戳秒和纳秒加密运算
 
 ```bash
 date +%s%N | md5sum
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181612888.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181612888.png)
 
 ## 生成一个随机字符指定10个在使用md5sum校验
 
 ```bash
 head -c 10 /dev/random |md5sum
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181612845.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181612845.png)
 
 /dev/random是什么？
 
@@ -65,7 +65,7 @@ UUID，通用识别唯一码。
 uuidgen
 cat /proc/sys/kernel/random/uuid
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181611270.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181611270.png)
 
 ## 加密算法
 md5	报文摘要算法-->校验文件的完整性
@@ -78,7 +78,7 @@ echo "123" | md5sum
 CRC	循环冗余校验码-->sksum
 echo "123" | sksum
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181611223.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181611223.png)
 
 ## 相关文章
 |文章名称|文章连接  |

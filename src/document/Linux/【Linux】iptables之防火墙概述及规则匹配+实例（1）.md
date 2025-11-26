@@ -16,7 +16,7 @@ breadcrumb: false
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180922736.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180922736.png)
 
 
 
@@ -45,7 +45,7 @@ breadcrumb: false
 
 **<font color=teal size=4>链表结构关系图：</font>**
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180926677.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180926677.png)
 
 
 **<font color=teal size=4>五链：</font>**
@@ -212,10 +212,10 @@ iptables -L --line
 
 常用管理选项汇总表：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925106.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925106.png)
 <br>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925035.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925035.png)
 
 <br>
 
@@ -232,7 +232,7 @@ iptables -L --line
 ```bash
 iptables -A INPUT -p tcp -j ACCEPT
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925588.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925588.png)
 
 **<font color=sjldiwei>删除指定协议匹配规则：</font>**
 
@@ -245,7 +245,7 @@ iptables -D INPUT -p tcp -j ACCEPT
 ```bash
 iptables -I FORWARD ! -p icmp -j DROP
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925018.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925018.png)
 
 #### 1.2、地址匹配
 <font color=grep>地址匹配：-s 源地址、-d 目的地址</font>
@@ -259,7 +259,7 @@ iptables -I INPUT -s 192.168.2.2 -j ACCEPT
 # 追加一条
 iptables -A INPUT -s 192.168.2.2 -j ACCEPT
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925932.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925932.png)
 
 **<font color=sjldiwei>删除指定ip规则</font>**
 
@@ -273,14 +273,14 @@ iptables -D INPUT -s 192.168.2.2 -j DROP
 ```bash
 iptables -I INPUT -s 192.168.1.0/24 -j DROP
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925612.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925612.png)
 
 **<font color=sjldiwei>访问地址将地址转发到目标地址“192.168.2.22”并且开放</font>**
 
 ```bash
 iptables -A FORWARD -d 192.168.2.22 -j ACCEPT
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925731.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925731.png)
 
 
 #### 1.3、接口匹配
@@ -292,7 +292,7 @@ iptables -A FORWARD -d 192.168.2.22 -j ACCEPT
 ```bash
 iptables -I INPUT -i eth1 -j DROP
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925828.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925828.png)
 
 **<font color=sjldiwei>删除指定接口规则</font>**
 ```bash
@@ -304,7 +304,7 @@ iptables -D INPUT -i eth1 -j DRO
 ```bash
 iptables -I OUTPUT -o eth1 -j DROP
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925759.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925759.png)
 
 
 ### 2、隐含匹配
@@ -324,7 +324,7 @@ iptables -A FORWARD -s 192.16.2.2/24 -p udp --dport 53 -j ACCEPT
 
 iptables -A FORWARD -d 192.16.2.2/24 -p udp --sport 53 -j ACCEPT
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925167.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925167.png)
 
 **<font color=sjldiwei>将源网段“192.16.2.0/24”设置为tcp协议且目标端口为53，并开启地址转发</font>**
 **<font color=sjldiwei>将目标网段“192.16.2.0/24”设置为tcp协议且源端口为53，并开启地址转发</font>**
@@ -335,7 +335,7 @@ iptables -A FORWARD -s 192.16.2.0/24 -p tcp --dport 53 -j ACCEPT
 iptables -A FORWARD -d 192.16.2.0/24 -p tcp --sport 53 -j ACCEPT
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180925175.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180925175.png)
 
 **<font color=sjldiwei>开放TCP协议且目标端口为22，允许进入</font>**
 **<font color=sjldiwei>开放TCP协议且目标端口为20-21，允许进入</font>**
@@ -346,7 +346,7 @@ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp --dport 20:21 -j ACCEPT
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924375.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924375.png)
 
 
 #### 2.2、TCP匹配
@@ -361,7 +361,7 @@ iptables -I INPUT -i eth1 -p tcp --tcp-flags SYN,RST,ACK SYN -j DROP
 
 iptables -I INPUT -i eth1 -p tcp ! --tcp-flags SYN,RST,ACK SYN -j ACCEPT
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924464.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924464.png)
 
 
 #### 2.3、ICMP匹配
@@ -371,8 +371,8 @@ iptables -I INPUT -i eth1 -p tcp ! --tcp-flags SYN,RST,ACK SYN -j ACCEPT
 &emsp;&emsp;0 &emsp;Echo Reply——回显应答（Ping 应答）
 &emsp;&emsp;3 &emsp;错误回显
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924694.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924921.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924520.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924694.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924921.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924520.png)
 
 获取帮助：<font color=red>iptables -p icmp -h</font>
 
@@ -391,7 +391,7 @@ iptables -I INPUT -i eth1 -p tcp ! --tcp-flags SYN,RST,ACK SYN -j ACCEPT
 iptables -I INPUT -p tcp -m multiport --dport 22,25,80,110,143 -j ACCEPT
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924210.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924210.png)
 
 
 #### 3.2、IP范围匹配
@@ -403,7 +403,7 @@ iptables -I INPUT -p tcp -m multiport --dport 22,25,80,110,143 -j ACCEPT
 iptables -A FORWARD -p tcp -m iprange --src-range 192.168.1.100-192.168.1.110 -j ACCEPT
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924204.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924204.png)
 
 #### 3.3、MAC地址匹配
 <font color=grep>MAC地址匹配：-m mac --mac-source MAC地址</font>
@@ -414,7 +414,7 @@ iptables -A FORWARD -p tcp -m iprange --src-range 192.168.1.100-192.168.1.110 -j
 iptables -A FORWARD -m mac --mac-source 00:0c:29:c2:83:32 -j DROP
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924675.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924675.png)
 
 
 #### 3.4、状态匹配
@@ -468,7 +468,7 @@ iptables -D INPUT -i eth1 -j DROP
 简单来说就是删除的时候把` -I 或者 -A `改为`-D`，其他的都还和添加的一样。
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180924465.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180924465.gif)
 
 
 ## 相关文章
@@ -480,4 +480,4 @@ iptables -D INPUT -i eth1 -j DROP
 >---
 >[🍐【Linux】firewall-cmd之防火墙简介及常用命令+实例](https://liucy.blog.csdn.net/article/details/126243544)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180923943.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180923943.gif)

@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171027216.png#pic_center)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171027216.png#pic_center)
 <br>
 **<center><font color=red size=5>【Linux】firewall-cmd之防火墙简介及命令详解+实例</font></center>**
 
@@ -437,7 +437,7 @@ firewall-cmd --list-all
 
 firewall-cmd --list-ports
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171027162.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171027162.png)
 
 ##### 4.4、删除已开放的某个不需要的端口
 
@@ -484,7 +484,7 @@ firewall-cmd --zone=public --list-rich-rules
 firewall-cmd --list-rich-rules
 firewall-cmd --list-all
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171027549.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171027549.png)
 
 ##### 5.2、解除（开放）IP地址限制
 - 解除（开放）IP为 172.16.11.332 的地址开放<font color=red>（accept）</font>22端口
@@ -531,7 +531,7 @@ firewall-cmd --zone=public --list-rich-rules
 firewall-cmd --list-rich-rules
 firewall-cmd --list-all
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171027429.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171027429.png)
 
 ##### 5.4、限制（禁止）IP地址段
 - 限制（禁止）IP为 172.0.0.1/24 的地址<font color=red>（reject）</font>
@@ -705,7 +705,7 @@ firewall-cmd --add-forward-port=port=80:proto=tcp:toaddr=192.168.1.12:toport=808
 - 当我们想把某个端口隐藏起来的时候，就可以在防火墙上阻止那个端口访问，然后再开一个不规则的端口，之后配置防火墙的端口转发，将流量转发过去。
 - 端口转发还可以做流量分发，一个防火墙拖着好多台运行着不同服务的机器，然后用防火墙将不同端口的流量转发至不同机器。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171027570.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171027570.gif)
 ## 相关文章
 >[🍎【Linux】iptables之防火墙概述及规则匹配+实例（1）](https://liucy.blog.csdn.net/article/details/125968904)
 >

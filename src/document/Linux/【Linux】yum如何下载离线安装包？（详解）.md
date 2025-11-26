@@ -13,7 +13,7 @@ comment: false
 breadcrumb: false
 isOriginal: true
 ---
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181624813.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181624813.jpeg)
 
 
 >👨‍🎓**博主简介**
@@ -75,7 +75,7 @@ yum -y install gcc gcc-c++ --downloadonly --downloaddir=./
 [root@zabbix-5 mysql]# ls
 mariadb-5.5.68-1.el7.x86_64.rpm  mariadb-libs-5.5.68-1.el7.x86_64.rpm
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221621557.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202508221621557.png)
 然后咱们可以把rpm包下载到本地，之后使用的时候就可以上传到内网环境中，直接<font color=red>**rpm -ivh 包名**</font>安装就可以了。
 
 ## 第二种方法：使用 yumdownloader 命令【只下载你需要的安装包（不包含依赖）】
@@ -109,7 +109,7 @@ yumdownloader --destdir=/data/mysql/ mysql
 ```
 下载完之后切换到这个目录看一下，可以看到离线包了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221621653.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202508221621653.png)
 
 
 ## 两者区别及优缺点：
@@ -119,14 +119,14 @@ yumdownloader --destdir=/data/mysql/ mysql
 ```bash
 yum -y install gcc gcc-c++ --downloadonly --downloaddir=./
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221621595.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202508221621595.png)
 
 
 * [x] 示例2：yumdownloader 命令下载
 ```bash
 yumdownloader --destdir=./ gcc gcc-c++
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221621986.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202508221621986.png)
 
 
 
@@ -140,7 +140,7 @@ yumdownloader --destdir=./ gcc gcc-c++
 * [x] yum + 参数 缺点：
 1、如果服务器上已经安装过这个命令或者包的话，下载会提示已经安装过，所以安装的时候需要使用空环境。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202508221621801.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202508221621801.png)
 
 * [x] yumdownloader 优点：
 1、不管有没有安装都会下载下来离线包。

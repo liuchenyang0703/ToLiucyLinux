@@ -17,7 +17,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/03042836b51a4e5c8a528976c81340f7.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/03042836b51a4e5c8a528976c81340f7.jpeg)
 
 >👨‍🎓**博主简介**
 >
@@ -50,42 +50,42 @@ breadcrumb: false
 
 点击 `Manage Jenkin `--> `Plugins（插件）` --> `Available plugins（商店）`
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6d9d5f7622e84bf08454fb8cd0fe580b.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/709cd2b55d534d259d8a9cc59f57757e.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ae2f7b24cead4c8bb75c1b8f04c2ad89.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6d9d5f7622e84bf08454fb8cd0fe580b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/709cd2b55d534d259d8a9cc59f57757e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ae2f7b24cead4c8bb75c1b8f04c2ad89.png)
 
 * 搜索`git` 和 `maven`  和 `ssh` 和 `svn` 进行安装；
 
 git 和 ssh 我这里已经有了，需要更新就更新一下；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8f81048c052a4b6e8f67554e65524264.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/57fa1028b8684b218db0681a2453ad7b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/8f81048c052a4b6e8f67554e65524264.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/57fa1028b8684b218db0681a2453ad7b.png)
 
 
 
 maven、svn 我这里没有，就安装一下吧；
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e71e838dc35242e1ac5e0aa0446453fa.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e71e838dc35242e1ac5e0aa0446453fa.png)
 
 安装完成之后，在新建`Item` 那块就可以看到maven了。如下↓
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6aa5061acde04f25abd63e5476912011.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6aa5061acde04f25abd63e5476912011.png)
 
 svn
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4f77a798aa0b4e708997e3142a58fb3c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4f77a798aa0b4e708997e3142a58fb3c.png)
 
 
 
 ### 1.2 创建maven任务
 * 新建`Item` -- > 选择maven项目，起一个任务名称。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/494890ff99564b5aaa57f7e37efa420f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/494890ff99564b5aaa57f7e37efa420f.png)
 
 创建完之后，就到了这个页面
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1679f74ece2e418288e60f714c4d3ded.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1679f74ece2e418288e60f714c4d3ded.png)
 
 
 ## 二、配置maven项目
@@ -97,12 +97,12 @@ svn
 
 > 项目描述，可以在这块写一些项目的描述。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/26e14cdf56874c7285bafe2ea55eac0c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/26e14cdf56874c7285bafe2ea55eac0c.png)
 
 #### 2.1.2 源码管理
 >主要是拉取源码用的，这里有两种，一种是`git`，一种是`svn`方式。等下我们创建项目使用的是svn方式。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7ec701dc62064c93a992dcc34616f453.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7ec701dc62064c93a992dcc34616f453.png)
 
 这个不仅Jenkins项目上要安装git插件，在服务器上也需要安装git。
 ```bash
@@ -111,7 +111,7 @@ yum -y install git
 #### 2.1.3 构建触发器
 默认勾选上的是下面的选项：Jenkins将会去寻找之前已经构建过的pom依赖（如果有之前构建过的相同的pom文件），直接使用之前的镜像，便不会再去重新的解析了
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e1dc7d63fdaa456195952fe89ca8222b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e1dc7d63fdaa456195952fe89ca8222b.png)
 
 
 
@@ -120,22 +120,22 @@ yum -y install git
 
 在这里面，勾选上对应的内容，将去做一些额外的处理，在这里保持默认的，什么都不去勾选
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/22a35d8a01ee4feebf1d0af47ba9f726.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/22a35d8a01ee4feebf1d0af47ba9f726.png)
 
 这是翻译后的，可根据实际情况来使用。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ac94694518fe441aad6bd1f43dc1221b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ac94694518fe441aad6bd1f43dc1221b.png)
 
 
 
 #### 2.1.5 Pre Steps（准备步骤）
 准备步骤，一般会选择`Execute shell` 和 `Invoke Gradle script`。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/95bb4c4bef384df18b1b8b70adf7fc6d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/95bb4c4bef384df18b1b8b70adf7fc6d.png)
 
 
 #### 2.1.6 Build（构建）
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4329689c98b24bb19c2ffe052a073a1b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4329689c98b24bb19c2ffe052a073a1b.png)
 
 
 #### 2.1.7 Post Steps（发布步骤）
@@ -165,31 +165,31 @@ maven环境默认是没有的，也需要在服务器安装一下，可参考：
 #### 2.2.2 配置全局系统配置
 >Manage Jenkins --> System
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ceb042e1cee54e0d9c3ddd4f9633d31a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ceb042e1cee54e0d9c3ddd4f9633d31a.png)
 
 * 配置ssh环境
 
 > 提示：如果找不到ssh在哪，可以使用`ctrl+f`搜索一下；
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8e44a2a4ad464c37ae4526e7b2500cee.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/8e44a2a4ad464c37ae4526e7b2500cee.png)
 #### 2.2.3 配置全局工具配置
 > Manage Jenkins --> Tools
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/abe857bc77d848dcb8f65a9289f2a782.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/abe857bc77d848dcb8f65a9289f2a782.png)
 
 * maven配置
 
 在项目开始前，我们安装了maven，所以maven使用默认的配置就行，所以这块不用改。
 如果服务器有多个maven，需要用到这时候就需要重新配置一下了，配置的时候到maven的setting.xml路径，比如`/usr/local/maven/apache-maven-3.8.6/conf/setting.xml`。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/59fb940816bd41b1b00aa26b47bd0367.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/59fb940816bd41b1b00aa26b47bd0367.png)
 
 然后我们拉到最下面可以看到还有一个maven，这个需要配置一下；
 
 找到Maven安装 --> 点击新增Maven --> 配置maven路径即可；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/131dc38156a0416d99ea122e9c58366d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/131dc38156a0416d99ea122e9c58366d.png)
 
 
 
@@ -197,7 +197,7 @@ maven环境默认是没有的，也需要在服务器安装一下，可参考：
 
 找到JDK安装 --> 点击新增JDK --> 配置jdk路径即可；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b932b458ee2a4080ab323647817c990a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b932b458ee2a4080ab323647817c990a.png)
 
 
 
@@ -212,15 +212,15 @@ maven环境默认是没有的，也需要在服务器安装一下，可参考：
 #### 2.2.4 先写一个描述（可写可不写）
 进入刚刚创建的maven项目，选择`配置`，跳到这个页面；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/72477befb11347d3ba9bc3342e85d811.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/72477befb11347d3ba9bc3342e85d811.png)
 #### 2.2.5 创建源码管理（svn方式）
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8868b3c742d24f73bfbe615b7412e87d.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f0137b4e935c492f919e9fb82f27033b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/8868b3c742d24f73bfbe615b7412e87d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f0137b4e935c492f919e9fb82f27033b.png)
 
 #### 2.2.6 保存配置
 配置完之后，点击保存
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/74ca22a9813b4729a5d0fc72ebb5f4d5.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/74ca22a9813b4729a5d0fc72ebb5f4d5.png)
 
 
 
@@ -232,30 +232,30 @@ maven环境默认是没有的，也需要在服务器安装一下，可参考：
 ### 3.1 build（构建）项目
 保存完之后，看到左边有一个`build now`，然后点击build（构建）就可以了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/da999cab6ed04a19844157ad6311163b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/da999cab6ed04a19844157ad6311163b.png)
 
 构建的时候可以查看构建过程，`F5` 刷新一下页面
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/95fd120ef0364e35b3089c7dc971e3ca.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/95fd120ef0364e35b3089c7dc971e3ca.png)
 
 往下拉，看到这个，点进去，然后点击控制台输出，就可以看到构建过程了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1709a9b6f169425ca145ea6fc7a3565a.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0de760ee47954cdaa0f0f790c44d2216.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1709a9b6f169425ca145ea6fc7a3565a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0de760ee47954cdaa0f0f790c44d2216.png)
 
 ### 3.2 构建完成
 
 出现`Finished: SUCCESS` 就是构建完成了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/673564d1e9bd48f3bf5b96f7e71e43a0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/673564d1e9bd48f3bf5b96f7e71e43a0.png)
 
 同时，最上面也会变成一个绿色的对号；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a7fe74a395124459a8b23381de0291dc.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a7fe74a395124459a8b23381de0291dc.png)
 
 构建完之后就可以在服务器上查看了，以下是存放到服务器的路径。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/aaee9b5c150f4272ad2ba2749209bba8.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/aaee9b5c150f4272ad2ba2749209bba8.png)
 
 
 ### 3.3 构建报错总结：
@@ -264,12 +264,12 @@ maven环境默认是没有的，也需要在服务器安装一下，可参考：
 #### 3.3.1 关于maven版本问题报错
 如果在build的时候遇到此报错，是因为maven版本的问题；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6f79c663519a47be915b7fef42e15729.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6f79c663519a47be915b7fef42e15729.png)
 
 #### 3.3.2 关于jdk版本配置的问题
 如果在build的时候遇到此报错，是因为jdk版本配置的问题；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/90b63e2d5b2648d4ba34ba5132a0fa07.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/90b63e2d5b2648d4ba34ba5132a0fa07.png)
 
 
 
@@ -284,16 +284,16 @@ maven环境默认是没有的，也需要在服务器安装一下，可参考：
 
 首先，需要返回刚刚的项目中进行配置；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/185f8738ce7e4b62a59113a4475dae98.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/185f8738ce7e4b62a59113a4475dae98.png)
 
 * 找到 `Post Steps`
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/440205caa7ed43098b089acecd0d4c81.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/440205caa7ed43098b089acecd0d4c81.png)
 
 * 选择执行shell，写个shell脚本（也可以使用ssh方式，自己定义）
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f65073a27e2d43c2a6d929cbda0ccaa0.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2854c56118fe4c1aad7aa0b56945210b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f65073a27e2d43c2a6d929cbda0ccaa0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2854c56118fe4c1aad7aa0b56945210b.png)
 
 * shell 脚本内容
 
@@ -341,25 +341,25 @@ fi
 
 配置完之后，点击保存；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5ae3f0b933e24418be2a0b36b583ec58.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5ae3f0b933e24418be2a0b36b583ec58.png)
 
 
 ### 4.2 自动构建jar包并运行
 * 点击构建（Build Now）
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bc13b587eb24496091684709581ee6d8.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/bc13b587eb24496091684709581ee6d8.png)
 * `F5` 刷新一下，可看到最新的构建运行
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/02ab98775aa24817950fc4179c207fe2.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/02ab98775aa24817950fc4179c207fe2.png)
 
 
 * 点击进入，查看控制台输出。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e112d4cebf924f6abfa63bddb1f0c8c2.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e112d4cebf924f6abfa63bddb1f0c8c2.png)
 
 输出`Finished: SUCCESS` 则为执行成功。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/14fe9e00aad74b87866030a7d3a21d89.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/14fe9e00aad74b87866030a7d3a21d89.png)
 
 执行成功之后我们进入到服务器中，查看一下服务是否启动，可以查看端口是否启动或者jar包进程是否启动
 

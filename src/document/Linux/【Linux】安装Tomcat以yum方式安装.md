@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356632.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356632.jpeg)
 
 
 
@@ -30,7 +30,7 @@ yum -y install tomcat
 ```
 会安装大量依赖；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356796.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356796.png)
 
 
 ## 2、启动tomcat并设置开机自启
@@ -47,12 +47,12 @@ systemctl status tomcat
 ```
 属于运行中；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356253.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356253.png)
 
 ## 3、访问页面（失败的情况）
 默认端口是8080
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356420.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356420.png)
 
 报错404；这个问题是因为没有安装完整的组件；
 
@@ -61,7 +61,7 @@ systemctl status tomcat
 ```bash
 yum -y install tomcat-webapps tomcat-admin-webapps
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356147.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356147.png)
 
 ## 4、重启tomcat服务
 
@@ -74,13 +74,13 @@ systemctl restart tomcat
 ```bash
 systemctl status tomcat
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356200.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356200.png)
 
 
 ## 6、页面测试
 ip:8080
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356282.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356282.png)
 
 
 ## 7、Tomcat配置文件详解

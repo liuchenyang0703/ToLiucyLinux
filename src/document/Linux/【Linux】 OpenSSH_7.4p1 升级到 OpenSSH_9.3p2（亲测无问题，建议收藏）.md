@@ -34,7 +34,7 @@ breadcrumb: false
 > 问题关键字：<font color=red>OpenSSH 升级, OpenSSH 更新, OpenSSH 漏洞修复</font>
 > 漏洞信息：<font color=red>OpenSSH代理转发远程代码执行漏洞（CVE-2023-38408）</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/13e70db213ef46fba6bcf12482445256.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/13e70db213ef46fba6bcf12482445256.png)
 
 ## 前述
 >OpenSSH（OpenBSD Secure Shell）是OpenBSD计划组的一套用于安全访问远程计算机的连接工具。该工具是SSH协议的开源实现，支持对所有的传输进行加密，可有效阻止窃听、连接劫持以及其他网络级的攻击。 OpenSSH 8.9版本至9.3之前版本存在安全漏洞，该漏洞源于将智能卡密钥添加到ssh-agent，会导致忽略每次转发的目标约束。
@@ -73,8 +73,8 @@ yum install wget gcc openssl-devel pam-devel rpm-build zlib-devel -y
 ### 2、编译安装openssl  
 <span id="openssl">2.1 官网下载安装包：[openssl官网](https://www.openssl.org/source/old/)</span>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/944b44d1363f4dd288211b863b1c7df7.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0e31c72b56ce4e09916cc291e2a31251.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/944b44d1363f4dd288211b863b1c7df7.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0e31c72b56ce4e09916cc291e2a31251.png)
 
 ```bash
 wget https://www.openssl.org/source/old/1.1.1/openssl-1.1.1t.tar.gz
@@ -90,13 +90,13 @@ wget https://www.openssl.org/source/old/1.1.1/openssl-1.1.1t.tar.gz
 
 如果遇到以下问题，后面加上`--no-check-certificate`
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3be70e41f33f44f6b3f445776e80d4ba.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/3be70e41f33f44f6b3f445776e80d4ba.png)
 
 ```bash
 wget https://www.openssl.org/source/old/1.1.1/openssl-1.1.1t.tar.gz --no-check-certificate
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2b1c024b563642acabac5226d595b2ed.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2b1c024b563642acabac5226d595b2ed.png)
 
 
 **2.2  解压并放到/usr/local/目录**
@@ -135,7 +135,7 @@ ln -s /usr/local/openssl/lib/libcrypto.so.1.1 /usr/lib64/libcrypto.so.1.1
 ```bash
 openssl version -a
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c8f7d72ebba545f9aa2a3d306434d3d9.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c8f7d72ebba545f9aa2a3d306434d3d9.png)
 
 
 
@@ -166,14 +166,14 @@ mv: 无法获取'/etc/init.d/sshd' 的文件状态(stat): No such file or direct
 # 卸载现有OpenSSH
 rpm -e --nodeps $(rpm -qa |grep openssh)
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/93bcc6d3205a4b97b266ddbc8071febd.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/93bcc6d3205a4b97b266ddbc8071febd.png)
 
 **确保已经卸载成功（没有返回则卸载成功）**
 
 ```bash
 rpm -qa | grep openssh
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/277bdd224f9e4ef09d818e5d3505aca9.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/277bdd224f9e4ef09d818e5d3505aca9.png)
 
 
 ### 4、下载OpenSSH二进制包
@@ -182,7 +182,7 @@ openssh官网：[下载官网](https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/porta
 ```bash
 wget https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2.tar.gz
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f40d28397a8345929823da7b31ea4a13.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f40d28397a8345929823da7b31ea4a13.png)
 
 
 
@@ -262,7 +262,7 @@ Executing /sbin/chkconfig sshd on
 # 查看服务状态
 [root@localhost openssh-9.3p2]# systemctl status sshd
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8ac24286ef2b4a23a47a389bb9d5fa1b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/8ac24286ef2b4a23a47a389bb9d5fa1b.png)
 
 
 ### 10、验证升级是否成功
@@ -271,7 +271,7 @@ Executing /sbin/chkconfig sshd on
 [root@localhost ~]# ssh -V
 OpenSSH_9.3p2, OpenSSL 1.1.1t  7 Feb 2023
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e578300732234bc8b51ca1fa6a8236ab.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e578300732234bc8b51ca1fa6a8236ab.png)
 
 
 ## 可能遇到的问题及解决方式
@@ -280,7 +280,7 @@ OpenSSH_9.3p2, OpenSSL 1.1.1t  7 Feb 2023
 
 编译如果有此报错，可能是你没安装gcc…需要的命令，返回最上面：  [安装一些必要的命令（需要用到的）](#click_me_jump)，安装完再次编译就可以了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0e2a3cc5ff714da1a9992828bd3e5948.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0e2a3cc5ff714da1a9992828bd3e5948.png)
 
 ### 问题二：
 编译时报错信息：

@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954417.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954417.png)
 
 >👨‍🎓**博主简介**
 >
@@ -69,7 +69,7 @@ else
      echo "${num}不是整数"                                  
 fi
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954408.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954408.png)
 
 #### 🍃 多条件判断实例：成绩及格否
 
@@ -109,7 +109,7 @@ else
     echo "请输入0-100之间合法的整数,您输入的是：${results}"
 fi
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954060.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954060.png)
 #### 🍃 单行if判断实例：判断是否有这个文件或目录
 
 ```bash
@@ -180,7 +180,7 @@ done
 #touch cs{1..100}
 #会在当前目录创建cs{1..100}文件
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954833.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954833.png)
 #### 🍃 需求3：从变量中取遍历的值
 
 ```bash
@@ -191,7 +191,7 @@ for I in $List;do
         echo "当前文件为 ${I}"
 done
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954362.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954362.png)
 #### 🍃 需求4：循环输出数组中的值
 
 ```bash
@@ -205,7 +205,7 @@ for i in "${my_array[@]}";do
     echo "$i"  
 done
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954938.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954938.png)
 
 #### 🍃 需求5：从命令中取值
 ```bash
@@ -216,7 +216,7 @@ do
         echo "$I"
 done
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954493.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954493.png)
 #### 🍃 需求6：for循环自增自减
 ##### 🍃 需求6.1：批量创建cs1-cs10用户
 
@@ -227,7 +227,7 @@ for (( i=1;i<=10;i++ ));do
         useradd cs_$i
 done
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954162.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954162.png)
 
 如果需要删除这些用户，可在脚本中把`useradd`改为`userdel -r`即可；
 
@@ -245,7 +245,7 @@ a的初始值为1；b的初始值为9；
 a在前，所以写a最大不能>10；
 a每次加1，直至加到10；b每次-1，直至a停止。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954117.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954117.png)
 ##### 🍃 需求6.3：循环20次zabbix调用
 
 ```bash
@@ -276,7 +276,7 @@ done
 ```
 a.txt 中名字可以随便起;
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954138.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954138.png)
 ## 🍁 while 循环
 
 ### 🍁 while 循环格式：
@@ -319,7 +319,7 @@ echo "$SUM"
 ```
 在执行脚本时加个 `-x` 可查看执行过程
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180954153.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180954153.png)
 
 #### 🍃 需求2：批量创建用户，密码默认为123456
 
@@ -349,8 +349,8 @@ abd
 abe
 abf
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180953541.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180953180.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180953541.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180953180.png)
 
 
 批量删除用户
@@ -369,7 +369,7 @@ cat $DIR/username.txt | while read username; do
 	userdel -r $username
 done
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180953193.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180953193.png)
 #### 🍃 需求3：提示用户输入字符，如果是小写就把字母全部变为大写，如果是quit则退出脚本
 
 ```bash
@@ -385,7 +385,7 @@ done
 ```
 字母写的小写，全部会替换为大写，数字和其他字符不会被替换；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180953156.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180953156.png)
 #### 🍃 需求4：无限循环执行zabbix_get调用命令
 
 ```bash
@@ -466,7 +466,7 @@ case $1 in
 esac
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412180953716.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180953716.png)
 
 
 >推荐一个使用case写的启动脚本，包含启动，停止及重启监测状态：[linux启动、关闭、重启jar包shell脚本 ](https://download.csdn.net/download/liu_chen_yang/87755766?spm=1001.2014.3001.5503)

@@ -36,7 +36,7 @@ isOriginal: true
 > 漏洞信息：<font color=red>SSH Terrapin 前缀截断漏洞（CVE-2023-48795）</font>
 > 漏洞等级：<font color=red>中级</font>
 > 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141038469.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141038469.png)
 
 ## 漏洞描述及风险
 
@@ -98,7 +98,7 @@ cd /usr/src/openssh-10.0p1/
 #  编译安装
 make -j4 && make install
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141038680.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141038680.png)
 ### 复制ssh相关配置文件并添加远程登陆配置
 
 ```bash
@@ -165,7 +165,7 @@ WantedBy=multi-user.target
 [root@localhost ~]# ssh -V
 OpenSSH_10.0p2, OpenSSL 1.1.1k  FIPS 25 Mar 2021
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202510141039191.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202510141039191.png)
 
 版本没问题新开窗口再次连接此服务器，可以连上就没问题。
 

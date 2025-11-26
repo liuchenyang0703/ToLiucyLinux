@@ -42,7 +42,7 @@ docker build -t work:v1 .
 >&emsp;&emsp;🥳我们可以用dockerfile自定义写需要的操作，来用dockerfile的指令来实现，最终采用<font color=red>docker build</font>来构建镜像，构建完镜像可以采用<font color=red>docker save </font>命令打成tar包，以便于日后在其他服务器上使用，也可以采用<font color=red>docker push</font>提交到私有镜像仓库或dockerhub中。
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161449838.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161449838.png)
 如上图所示，Dockerfile是独立于本地docker实例的一个文本文件，用于自动化地构建具有特定功能的docker镜像。
 
 >Dockerfile镜像构建三部曲：
@@ -57,7 +57,7 @@ docker build -t work:v1 .
 - （2）Docker镜像是软件的交付品；
 - （3）Docker容器是Docker交付镜像的实例化，代表软件的实际运行过程。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161449732.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161449732.png)
 > 总结：Dockerfile面向开发，Docker镜像为交付标准，Docker容器与部署、运维相关，三则相辅相成缺一不可，他们是Docker的三大基石。Docker在实际运行中，Dockerfile、Docker镜像、Docker容器三者的运作内容如下所示：
 
 - 1、Dockerfile定义了进程需要的一切内容，包括：代码执行、文件/环境变量、依赖包、运行环境、操作系统发行版本、服务进程、内核进程等等，很多与操作系统底层相关的内容。

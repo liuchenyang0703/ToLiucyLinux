@@ -38,7 +38,7 @@ breadcrumb: false
 openssl version
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051004411.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051004411.png)
 
 
 
@@ -68,7 +68,7 @@ openssl genpkey -algorithm RSA -out private.key -aes256
 ```
 系统会提示设置私钥的密码。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051028792.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051028792.png)
 
 ## 3. 生成证书签名请求 (CSR)
 使用以下命令生成 CSR：
@@ -80,7 +80,7 @@ openssl req -new -key private.key -out csr.csr
 ```
 系统会提示需要输入私钥的密码，还有提示输入国家、省份、城市、组织等信息。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051036579.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051036579.png)
 
 ## 4. 生成自签证书
 使用以下命令生成自签证书：
@@ -94,7 +94,7 @@ openssl x509 -req -days 365 -in csr.csr -signkey private.key -out certificate.cr
 
 会提示输入一下私钥密码；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051042446.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051042446.png)
 
 ## 5. 验证证书
 
@@ -103,13 +103,13 @@ openssl x509 -req -days 365 -in csr.csr -signkey private.key -out certificate.cr
 openssl x509 -in certificate.crt -text -noout
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051047839.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051047839.png)
 
 
 
 出现这些代表自签证书已经配置成功，生成完共有三个文件【crt：自签证书、csr：证书签名信息、key：私钥】。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051050337.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051050337.png)
 
 
 
@@ -151,15 +151,15 @@ Nginx配置ssl证书如下：
 
 页面访问会提示不安全的，可以点击`高级`、`继续访问`
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051055220.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051055220.png)
 
 可以查看证书详情：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051056796.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051056796.png)
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202502051057211.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202502051057211.png)
 
 ## 9. 总结
 通过以上步骤，可以在 Linux 系统上生成自签证书。

@@ -20,7 +20,7 @@ breadcrumb: false
 ```bash
 vim .bashrc
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191616331.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412191616331.png)
 
 进入该文件里，我们要在最后一行或者最后在空出来几行来新增我们的个性化配置，如设置别名：
 
@@ -29,7 +29,7 @@ alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpi
 ```
 比如下图👇
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191616470.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412191616470.png)
 
 设置完之后，我们:wq保存并退出
 

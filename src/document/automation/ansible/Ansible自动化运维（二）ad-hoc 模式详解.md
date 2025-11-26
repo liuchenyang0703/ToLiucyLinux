@@ -435,7 +435,7 @@ ansible_ssh_pass='123123'
 }
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/416afb174f78414d8773763fd6917af3.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/416afb174f78414d8773763fd6917af3.png)
 
 
 

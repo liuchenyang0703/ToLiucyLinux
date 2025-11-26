@@ -66,7 +66,7 @@ systemctl enable docker
 #查看是否生效
 docker info
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517504.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517504.png)
 
 ```bash
 #docker存储目录已经变了，然后再次导入镜像
@@ -134,7 +134,7 @@ vim /usr/lib/systemd/system/docker.service
 
 #找到ExecStart，可以在合适的位置添加--graph=要放的路径
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517961.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517961.png)
 
 修改完成之后重新加载docker，并重启docker
 
@@ -149,7 +149,7 @@ docker info
 
 #找Docker Root Dir
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517109.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517109.png)
 
 看到修改到了自己想修改的目录，则修改成功；
 
@@ -166,7 +166,7 @@ vim /etc/docker/daemon.json
 "graph": "/newpath/docker"
 }
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517428.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517428.png)
 
 修改完成之后重新加载docker，并重启docker
 
@@ -181,7 +181,7 @@ docker info
 
 #找Docker Root Dir
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517460.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517460.png)
 
 看到修改到了自己想修改的目录，则修改成功；
 
@@ -192,7 +192,7 @@ vim /usr/lib/systemd/system/docker.service
 
 #找到ExecStart，可以在合适的位置添加--data-root=要放的路径
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517887.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517887.png)
 
 
 修改完成之后重新加载docker，并重启docker
@@ -208,7 +208,7 @@ docker info
 
 #找Docker Root Dir
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161517122.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161517122.png)
 
 看到修改到了自己想修改的目录，则修改成功；
 ### 第四种方法：同样修改/etc/docker/daemon.json - data-root方式（支持最新版docker）
@@ -230,7 +230,7 @@ vim /etc/docker/daemon.json
 }
 
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161516690.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161516690.png)
 
 
 修改完成之后重新加载docker，并重启docker
@@ -246,7 +246,7 @@ docker info
 
 #找Docker Root Dir
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161516568.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161516568.png)
 
 
 看到修改到了自己想修改的目录，则修改成功；

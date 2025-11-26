@@ -18,7 +18,7 @@ breadcrumb: false
 ---
 
 ## 🏆Zabbix5.0部署
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161020511.webp)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161020511.webp)
 
 
 ### 🥇系统环境
@@ -75,7 +75,7 @@ yum makecache fast
 ```bash
 bash zabbix_aliyun.sh 5.0
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019477.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019477.png)
 
 
 ### 🥇由于zabbix提供集中的web监控管理界面，因此服务在web界面的呈现需要LAMP架构支持。安装httpd php
@@ -105,14 +105,14 @@ rpm -ivh zabbix-release-5.0-1.el7.noarch.rpm
 
 yum clean all
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019735.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019735.png)
 
 ### 🥈安装zabbix server 和agent
 
 ```bash
 yum install zabbix-server-mysql zabbix-agent -y
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019565.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019565.png)
 
 ### 🏅启用Red Hat软件集合
 >SCL(Software Collections)可以让你在同一个操作系统上安装和使用多个版本的软件，而不会影响整个系统的安装包。
@@ -120,28 +120,28 @@ yum install zabbix-server-mysql zabbix-agent -y
 ```bash
 yum install centos-release-scl -y
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019249.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019249.png)
 
 ### 🏅启用zabbix-deprecated repository
 
 ```bash
 vi /etc/yum.repos.d/zabbix.repo
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019117.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019117.png)
 
 ### 🥈安装zabbix前端
 
 ```bash
 yum install -y zabbix-web-mysql-scl zabbix-apache-conf-scl
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019214.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019214.png)
 
 ### 🥈安装mysql数据库
 
 ```bash
 yum -y install mariadb-server mariadb
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019465.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019465.png)
 
 ### 🏅启动mariadb
 
@@ -170,7 +170,7 @@ grant all privileges on zabbix.* to zabbix@localhost;
 #退出
 quit;                                                           
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019568.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019568.png)
 
 ### 🥈在Zabbix服务器主机上，导入初始架构和数据。系统将提示您输入新创建的密码
 
@@ -216,16 +216,16 @@ systemctl restart zabbix-server zabbix-agent httpd rh-php72-php-fpm&&systemctl e
 ><br>
 >- 点next step下一步
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019163.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019769.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019163.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019769.png)
 
 >- 配置mysql数据库账号和密码， 输入zabbix帐户的密码，点next step下一步
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019094.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019094.png)
 >- Name那里起一个名， 点next step下一步
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019013.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019423.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019013.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019423.png)
 
 
 **<font color=red>至此zabbix前端配置完成</font>**
@@ -233,18 +233,18 @@ systemctl restart zabbix-server zabbix-agent httpd rh-php72-php-fpm&&systemctl e
 
  输入账号Admin密码zabbix
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161019718.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161019718.png)
 进入zabbix页面
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161018395.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161018395.png)
 
 
 ### 🥇 后续配置zabbix页面语言为中文
 1.Zabbix前端界面设置成中文
 选择User settings,语言选择中文，点击update
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161018482.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161018482.png)
 就修改成功了，同时zabbix也就部署完成了。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161018302.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161018302.png)
 
 ## 🥇 更多の推荐の提议
 
@@ -254,4 +254,4 @@ systemctl restart zabbix-server zabbix-agent httpd rh-php72-php-fpm&&systemctl e
 
 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇
 [zabbix5.0离线脚本一键安装(包含服务端、客户端、脚本和使用说明)](https://download.csdn.net/download/liu_chen_yang/86168600)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161018540.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161018540.gif)

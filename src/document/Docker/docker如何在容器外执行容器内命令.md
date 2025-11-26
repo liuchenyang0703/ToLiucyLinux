@@ -66,6 +66,6 @@ sudo docker exec $DOCKER_ID /bin/bash -c 'cd /packages/detectron && python tools
 <br>
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161456196.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161456196.gif)
 
 

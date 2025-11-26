@@ -78,7 +78,7 @@ format=json
 
 3、放到脚本里执行：发现直接结果是：<font color=red>“配置文件中测试服务没有打开，跳过此判断”</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201048137.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201048137.png)
 
 
 
@@ -86,9 +86,9 @@ format=json
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201048657.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201048657.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201048485.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201048485.png)
 
 
 
@@ -104,7 +104,7 @@ format=json
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201048985.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201048985.png)
 
 
 
@@ -137,9 +137,9 @@ format=json
 
 4、再次进入查看文件格式：`:set ff`
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201048588.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201048588.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201047718.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201047718.png)
 
 
 
@@ -166,7 +166,7 @@ root@7b64cee30106:~# sh -x test.sh
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201047698.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201047698.png)
 
 
 
@@ -221,7 +221,7 @@ root@7b64cee30106:~# sh -x test.sh
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201047241.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201047241.png)
 
 
 
@@ -235,5 +235,5 @@ root@7b64cee30106:~# sh -x test.sh
 
 &emsp;&emsp;在windows上使用`notepad++`可以看到该文件的文件类型是什么；打开一个文件或者脚本在右下角可以看到。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412201047102.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201047102.png)
 

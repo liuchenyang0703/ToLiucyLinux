@@ -115,7 +115,7 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```bash
 docker-compose --version
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161503192.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161503192.png)
 
 安装完成。
 
@@ -834,7 +834,7 @@ services:                   #服务
 docker-compose up -d
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161502945.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161502945.png)
 ### 3 访问nginx页面
 通过浏览器访问nginx1，nginx2，nginx3服务:
 http://127.0.0.1:80

@@ -38,11 +38,11 @@ Harbor的所有组件都在Dcoker中部署，所以Harbor可使用Docker Compose
 Harbor的每个组件都是以Docker容器的形式构建的，可以使用Docker Compose来进行部署。如果环境中使用了kubernetes，Harbor也提供了kubernetes的配置文件。Harbor大概需要以下几个容器组成：ui(Harbor的核心服务)、log(运行着rsyslog的容器，进行日志收集)、mysql(由官方mysql镜像构成的数据库容器)、Nginx(使用Nginx做反向代理)、registry(官方的Docker registry)、adminserver(Harbor的配置数据管理器)、jobservice(Harbor的任务管理服务)、redis(用于存储session)。
 
 Harbor是一个用于存储和分发Docker镜像的企业级Registry服务器，整体架构还是很清晰的。下面借用了网上的架构图:
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161455489.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161455489.png)
 
 ---
 ---
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161455105.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161455105.png)
 
 
 ## 安装docker
@@ -58,7 +58,7 @@ systemctl start docker
 #设置开机自启
 systemctl enable docker
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161455330.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161455330.gif)
 ## 安装docker-compose
 
 具体docker-compose的安装可以查看：[Linux中安装/部署docker-compose](https://blog.csdn.net/liu_chen_yang/article/details/124688952)
@@ -67,15 +67,15 @@ systemctl enable docker
 ### 1、下载harbor的安装包
 >harbor版本 github地址：[https://github.com/goharbor/harbor/releases/](https://github.com/goharbor/harbor/releases/)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161455932.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161455932.png)
 
 拉到最后可以看到安装包，我们可以右键复制链接地址在服务器上使用`wget`下载，也可以直接点击下载；
 需要指定版本的话，可以在链接上直接指定想要的版本，我这个就是找不到旧的了，随便点进去一个，指定了一下版本，然后下载2.4.2的即可。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161455433.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161455433.png)
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161455526.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161455526.png)
 
 
 
@@ -119,7 +119,7 @@ data_volume: /data/harbor  #配置数据仓库
  
 # 注释https，在13行开始
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161455302.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161455302.png)
 ### 4、安装harbor
 编辑完配置我们来安装harbor；
 
@@ -383,7 +383,7 @@ docker login -uadmin -p123456 192.168.2.22:10010
 访问地址：（ip:端口）192.168.2.22:10010
 用户名：admin		密码：123456
 登录进入；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454046.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454046.png)
 ### 7、上传镜像
 #### ①、查看所有镜像
 找到你要上传的镜像。
@@ -431,18 +431,18 @@ v1: digest: sha256:62ffc2ed7554e4c6d360bce40bbcf196573dd27c4ce080641a2c59867e732
 ```
 #### ④、web页面查看
 然后我们去web页面看，登录页面192.168.2.22:10010，然后去查看。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454993.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454993.png)
 这个就是我们的项目名称了，我们点进去就可以看到我们上传的镜像了。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454517.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454517.png)
 然后再次点击进去就可以看到更详细的了；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454270.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454270.png)
 这里我们的上传镜像就完成了。
 
 ### 8、拉取镜像
 
 #### ①、拉取方法一
 拉取镜像的话，我们可以点击这个小按钮，然后直接粘贴到linux中等待拉取就可以了；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454115.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454115.png)
 
 #### ②、拉取方法二
 
@@ -473,20 +473,20 @@ REPOSITORY                                  TAG                 IMAGE ID        
 #### ①、访问harbor并登录
 192.168.2.22:10010
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454353.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454353.png)
 
 #### ②、查看镜像详情
 点击项目——点击项目名称
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454647.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454647.png)
 
 #### ③、删除harbor镜像库中的镜像
 
 找到要删除的镜像，选中前面的空白框；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454551.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454551.png)
 选中要删除的镜像——点击删除——确认删除
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454916.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454916.png)
 这样就删除成功了。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161454452.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161454452.png)
 好了，今天所有的到此结束了，感谢大家的阅读。
 
 ## 总结

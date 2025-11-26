@@ -44,7 +44,7 @@ locale
 下面 LANG=en_US.UTF-8 是当前语言，属于英文；
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181351499.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181351499.png)
 
 - 2、查看是否存在中文语言包
 
@@ -52,7 +52,7 @@ locale
 locale -a | grep zh_CN
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181351291.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181351291.png)
 
 `zh_CN.utf8` 是简体中文，如果没有zh_CN.utf8，就安装语言包，如果存在可以直接设置。
 简体中文语言包安装：
@@ -98,7 +98,7 @@ yum install man man-pages man-pages-zh-CN -y
 ls --help
 man bash
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181351351.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181351351.png)
 
 ## 完成
 

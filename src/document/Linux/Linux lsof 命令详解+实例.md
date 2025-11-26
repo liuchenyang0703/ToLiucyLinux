@@ -23,7 +23,7 @@ isOriginal: true
 >🐋 希望大家多多支持，我们一起进步！😄
 >🎉如果文章对你有帮助的话，欢迎 点赞 👍🏻 评论 💬 收藏 ⭐️ 加关注+💗
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202506181007694.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202506181007694.jpeg)
 
 ---
 

@@ -122,7 +122,7 @@ cache 读缓存 解决速率问题
 
 如下图
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181623269.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181623269.png)
 
 **进程参数含义**
 |参数  |  含义/解析|
@@ -212,7 +212,7 @@ htop [参数]
 ```bash
 [root@root ~]# htop -u linuxcool_user
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181623419.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181623419.png)
 
 ## 三、vmstat – 显示虚拟内存状态
 

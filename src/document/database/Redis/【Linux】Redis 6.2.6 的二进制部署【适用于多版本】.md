@@ -30,7 +30,7 @@ isOriginal: true
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202505201616089.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202505201616089.jpeg)
 
 
 
@@ -52,7 +52,7 @@ yum -y install gcc gcc-c++ make
 gcc -v
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202505200954443.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202505200954443.png)
 
 检查make是否安装成功
 
@@ -60,7 +60,7 @@ gcc -v
 make --version
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202505201029823.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202505201029823.png)
 
 ### 1.2 创建安装目录
 
@@ -129,7 +129,7 @@ make PREFIX=/usr/local/redis/redis-6.2.6 install
 mkdir -p /usr/local/redis/redis_6379/{conf,logs,data,pid}
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202505201345762.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202505201345762.png)
 
 
 
@@ -275,7 +275,7 @@ ps -ef | grep redis
 netstat -lnt | grep 6379
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202505201405741.png#pic_center)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202505201405741.png#pic_center)
 
 
 
@@ -304,7 +304,7 @@ get hello
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202505201427426.png#pic_center)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202505201427426.png#pic_center)
 
 
 

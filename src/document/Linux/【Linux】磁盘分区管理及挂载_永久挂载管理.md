@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342354.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342354.jpeg)
 
 >👨‍🎓**博主简介**
 >
@@ -36,8 +36,8 @@ breadcrumb: false
 
 首先，我们需要准备一个虚拟机，并在添加一块硬盘；添加的时候使用`推荐的`即可，然后创建一个新的虚拟磁盘，这个就不会影响其他的了；磁盘大小我这里就设置成50G即可；过多的细节就不一一说了，一直下一步即可。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342516.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342984.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342516.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342984.png)
 
 设置好之后，启动虚拟机，进行磁盘管理，和磁盘扩容。
 
@@ -49,7 +49,7 @@ breadcrumb: false
 fdisk -l
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342196.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342196.png)
 
 
 
@@ -63,7 +63,7 @@ lsblk
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342084.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342084.png)
 
 
 
@@ -176,13 +176,13 @@ lsblk
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342963.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342963.png)
 
 
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342505.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342505.png)
 
 
 
@@ -209,7 +209,7 @@ mkdir /data
 
 然后对磁盘分区进行挂载；直接挂载肯定是不行的，会提示报错的；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342542.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342542.png)
 
 所以需要先格式化磁盘分区。
 > 这里针对一下centos格式化磁盘空间的类型；
@@ -251,7 +251,7 @@ tmpfs                   tmpfs     182M     0  182M    0% /run/user/0
 
 # 可以看到/dev/sdb1已经挂载上了，类型为 xfs。
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342590.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342590.png)
 
 
 扩展：
@@ -265,7 +265,7 @@ tmpfs                   tmpfs     182M     0  182M    0% /run/user/0
 >至于为什么是ext3，我也不是很清楚，因为这是商家的一个要求，毕竟永久挂载错了，服务器就起不来了，就需要去虚拟机或者连接服务器去看报错信息；一般配置完这个导致服务器启动不来大部分都是因为类型配置错了。
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181342427.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181342427.png)
 
 
 这个直接mount挂载完只是临时挂载，如果不设置永久挂载，服务器重启之后就会掉，还需要手动去挂载，容易丢失数据，所以我们还需要设置永久挂载。
@@ -280,7 +280,7 @@ tmpfs                   tmpfs     182M     0  182M    0% /run/user/0
 # 在最后一行添加
 /dev/sdb1 /data/ xfs defaults 0 0
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181341103.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181341103.png)
 
 
 然后保存退出，重启测试`reboot`重启，如果配置的挂载有问题会导致服务器启动不了，需要到虚拟机或服务器去排查问题，查看报错信息，一般配置完这个导致服务器启动不了或者是大部分都是因为<font color=red>类型</font>配置错了，<font color=red>所以要谨慎更谨慎</font>；

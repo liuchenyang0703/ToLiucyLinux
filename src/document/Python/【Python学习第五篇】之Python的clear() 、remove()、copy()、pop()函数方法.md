@@ -27,7 +27,7 @@ breadcrumb: false
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326862.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326862.jpeg)
 
 
 ---
@@ -87,7 +87,7 @@ print(lst,"\n",bta,"\n",dct,"\n",st)
  set()
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326549.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326549.png)
 
 对于序列来说，此操作等同于del s[:] 和 s[:]=[]，但不是del s，即只清空容器里的内容，而不会将容器对象删除。
 - 【示例2】
@@ -144,7 +144,7 @@ del 方法清空内容3
 [1, 2, 3]
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326107.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326107.png)
 
 
 &emsp;&emsp;进行clear()及copy()操作是为了与不支持切片操作的可变容器（例如：字典和集合）的接口保持一致。clear()是一个原地操作。
@@ -182,7 +182,7 @@ print(list)			# 输出:[1,2,4]
 list.remove(5)
 print(list)			# 输出ValueError报错
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326504.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326504.png)
 
 - 【示例2】如果元素不存在于 <font color=red>**字节数组（bytearray）**</font> 中，remove() 会引发一个 ValueError。
 
@@ -209,7 +209,7 @@ bta.remove(1)
 print(bta)			# 输出ValueError报错
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326551.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326551.png)
 
 
 
@@ -225,7 +225,7 @@ se.remove(4)
 print(se)		# 输出:KeyError: 4
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326636.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326636.png)
 
 如果删除一个不存在的元素，会报错：KeyError，可以使用以下方法处理：
 
@@ -239,7 +239,7 @@ except KeyError:
 print(se2)			# 输出结果为：{1,2,3}
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326948.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326948.png)
 
 解析：
 >&emsp;&emsp;定义了一个集合se2，并尝试从该集合中移除元素5。
@@ -266,7 +266,7 @@ for i in list1:
 print(list1)  # 输出：[1, 3, 4, 5]
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326901.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326901.png)
 
 
 代码解析：
@@ -313,7 +313,7 @@ copied_list.append(5)   # 在复制后的数据中再加一个5
 print(original_list)    # 输出原数据结果为：[1, 2, 3, 4]
 print(copied_list)      # 输出复制后的数据结果为：[1, 2, 3, 4, 5]
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326274.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326274.png)
 
 * 【示例2】 复制字典
 
@@ -328,7 +328,7 @@ print(original_dict)    # 输出原数据结果为：{'a': 1, 'b': 2, 'c': 3}
 print(copied_dict)      # 输出复制后的数据结果为：{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326883.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326883.png)
 
 
 
@@ -357,7 +357,7 @@ print(lst_copy)     # 再次输出复制后的数据；
 # 发现内部数据发生了变化，而第一层没有发生变化
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326187.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326187.png)
 
 &emsp;&emsp;不可变对象不支持通过`copy()`方法进行浅拷贝，因为没有意义，这相当于直接改变引用，如果需要深拷贝，则需要使用内置库的`copy.deepcopy()`函数；
 &emsp;&emsp;关于浅拷贝和深拷贝的更多知识可查看次网站：[https://www.gairuo.com/p/python-library-copy](https://www.gairuo.com/p/python-library-copy)
@@ -393,11 +393,11 @@ print( '深拷贝：', d, '# 不受原对象的变化')
 深拷贝： [1, 2, ['a', 'b']] # 不受原对象的变化
 '''
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326529.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326529.png)
 
 可以用 [https://pythontutor.com/live.html](https://pythontutor.com/live.html) 进行在线测试，观看实时效果。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161326395.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161326395.png)
 
 小结：
 >&emsp;&emsp;由于 Python 内部引用计数的特性，对于不可变对象，浅拷贝和深拷贝的作用是一致的，就相当于复制了一份副本，原对象内部的不可变对象的改变，不会影响到复制对象；
@@ -441,7 +441,7 @@ popped_element = my_list.pop()
 print(popped_element)  # 输出结果为: 5
 print(my_list)         # 输出结果为: [1, 2, 4]
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325954.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325954.png)
 
 
 
@@ -455,7 +455,7 @@ print(lst)          # 输出结果为：[2, [3, 4]]
 lst.pop(1)          # 删除第1个坐标，从0开始逐步向后，[3,4]被视为一体，这里不能删除2，因为在第二个里面已经删除了0，1自然就接替了0，所以，删除后面的[3,4]就是1
 print(lst)          # 输出结果为：[2]
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325159.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325159.png)
 
 
 
@@ -477,7 +477,7 @@ print(my_dict)       # 输出结果为: {'a': 1, 'c': 3}
 popped_value = my_dict.pop('x', 0)
 print(popped_value)  # 输出结果为: 0
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325278.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325278.png)
 
 ```python
 dic={'a':1,'b':2,'c':3}     # 定义一个字典
@@ -490,7 +490,7 @@ print(dic)                  # 输出结果为: {'a': 1, 'c': 3}
 dic.pop('d')                # 删除并返回键为 'd' 的值，字典中没有d，则抛出KeyError
 print(dic)                  # 输出结果为：抛出KeyError
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325459.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325459.png)
 
 ### 3. 在集合中使用 `pop()`
 在集合中，`pop()` 方法用于删除并返回集合中的一个随机元素。由于集合是无序的，不能预测哪个元素会被弹出。
@@ -504,7 +504,7 @@ popped_element = my_set.pop()
 print(popped_element)  # 输出: 随机元素，例如 1 或 2 或 3
 print(my_set)          # 输出: 剩余元素组成的集合
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325631.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325631.png)
 
 ```python
 my_set = {1,2}  # 定义一个集合
@@ -518,7 +518,7 @@ my_set.pop()    # 在随机删除一个元素，因为已经是空的了，如�
 print(my_set)   # 输出集合：抛出KeyError
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325536.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325536.png)
 
 
 ### 4. 在字节数组中使用`pop()`
@@ -532,7 +532,7 @@ popped_value = bta.pop(1)   # 删除字节数组中的第一位
 print(bta)                  # 输出结果为：bytearray(b'ac')
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325695.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325695.png)
 
 `pop()` 方法在不同的数据类型中有不同的用法，但它通常用于删除并返回一个元素，可以根据需要提供索引、键或默认值。
 `pop()` 方法是一个原地操作。注意：传值时只能用位置参数，不能传关键字参数，既不能写成`index=n`这种形式。

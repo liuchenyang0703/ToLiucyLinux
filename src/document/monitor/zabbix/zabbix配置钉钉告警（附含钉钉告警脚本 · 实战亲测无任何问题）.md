@@ -33,15 +33,15 @@ breadcrumb: false
 
 手机、电脑都可以，这里以电脑举例
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013287.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013287.png)
 
 这里可以自己随便选择，我选择的是内部群
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013869.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013869.png)
 
 邀请好友，起一个群名称就可以了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013695.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013695.png)
 
 
 创建完成。
@@ -53,25 +53,25 @@ breadcrumb: false
 
 创建完成之后点击群设置
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013245.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013245.png)
 
 往下翻找到“机器人”
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013639.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013639.png)
 
 点击添加机器人
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013421.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013421.png)
 
 添加”机器人“-->“自定义”
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161013926.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161013926.png)
 
 点击添加
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012927.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012927.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012770.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012770.png)
 
 
 ### 生成webhook（请保管好webhook的值；后面需要用到。）
@@ -79,9 +79,9 @@ breadcrumb: false
 <font color=red>请保管好webhook的值；后面需要用到。</font>
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012572.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012572.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012936.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012936.png)
 
 
 ## 服务器上操作
@@ -102,7 +102,7 @@ breadcrumb: false
 > 注意：这里需要提前安装好这几个python模块：`requests、json、sys、os、datetime`；
 > 安装方式为：`pip3 install requests` 以此类推；
 > 如遇到以下报错就是没有安装`requests模块`，就需要pip安装一下；<br>
-> ![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012035.png)
+> ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012035.png)
 ```bash
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
@@ -142,7 +142,7 @@ else:
         f.close()
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012465.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012465.png)
 
 
 ```bash
@@ -173,7 +173,7 @@ else:
 ```
 手机号写的正确的话就可以直接@他，如果随便写的就不会输出，如下图的上（正确手机号）、下（错误手机号）
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012679.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012679.png)
 
 成功接收到信息，完成！
 
@@ -181,7 +181,7 @@ else:
 
  - 管理-->报警媒介类型-->创建媒体类型
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012859.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012859.png)
 
 ```bash
 {ALERT.SUBJECT}
@@ -189,17 +189,17 @@ else:
 {ALERT.SENDTO}
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012980.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012980.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012531.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012531.png)
 
 - 配置-->动作-->创建动作
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012192.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012192.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012808.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012808.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012251.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012251.png)
 
 ```bash
 #告警操作内容：
@@ -236,26 +236,26 @@ else:
 
 操作添加：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161012952.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161012952.png)
 
 恢复操作添加：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161011878.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161011878.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161011168.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161011168.png)
 
 - 个人中心-->报警媒介-->添加
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161011916.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161011916.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161011637.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161011637.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161011037.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161011037.png)
 
 ## 钉钉接收告警信息测试
 自己设置好服务器的`监控项`和`触发器`，让他告警；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161011369.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161011369.png)
 
 成功收到，完成！！！
 

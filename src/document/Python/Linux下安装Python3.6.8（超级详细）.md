@@ -28,8 +28,8 @@ comment: false
 
 python各版本下载地址：[https://www.python.org/ftp/python/](https://www.python.org/ftp/python/)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/936e3362a6764650971c7135b71290d6.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0f080328d5014a5ab236c7f9a8cf9830.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/936e3362a6764650971c7135b71290d6.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0f080328d5014a5ab236c7f9a8cf9830.png)
 
 **链接下载：**
 >在Linux下任意位置新建一个目录（python3），用于存放下载的安装包，接着进入python3目录下，再通过 wget 命令下载。<br>
@@ -57,7 +57,7 @@ wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
 tar xvf Python-3.6.8.tgz
 ```
 解压完成后，python3的目录下会出现一个python3.6.8的目录：
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1dfef90b3bb14771b1f4d305cbe0f97d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1dfef90b3bb14771b1f4d305cbe0f97d.png)
 
 
 <br>
@@ -113,7 +113,7 @@ make && make install
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7d7e971db0b44974b0221a09eeaf808c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7d7e971db0b44974b0221a09eeaf808c.png)
 在这里，我们设置软链接，直接让新安装的python3.6指向给 /usr/bin/python3 ，让 pip3 指向给/usr/bin/pip3。
 
 ```bash
@@ -131,18 +131,18 @@ ln -s /usr/local/python3.6/bin/pip3 /usr/bin/pip3
 python3 --version
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2a9501a390d9470b98a558d6cd196a53.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2a9501a390d9470b98a558d6cd196a53.png)
 就可以证明安装成功了，也可以进入python交互界面
 
 ```bash
 python3
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/459fd612b5344594b30ad2db173dea75.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/459fd612b5344594b30ad2db173dea75.png)
 这里我们也可以看到已经安装成功，还可以输入python，然后tab、tab两下，看看有没有python3
 ![](https://img-blog.csdnimg.cn/032f87b57dbf41b3a0d920be6ead292d.png)
 看到有python3也可以说明已经安装成功。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d6be6717b3d34a8f9c2dff3233642d64.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d6be6717b3d34a8f9c2dff3233642d64.png)
 pip3也安装完成；
 
 ## 总结

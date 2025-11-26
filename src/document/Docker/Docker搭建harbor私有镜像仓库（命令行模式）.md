@@ -37,20 +37,20 @@ systemctl enabel docker
 ```bash
 docker pull registry
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161459324.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161459324.png)
 ### 2、运行Registry镜像并查看
 
 ```bash
 docker run -d --name registry -p 5000:5000 -v /storage/registry:/tmp/registry registry
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161459908.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161459908.png)
 
 ### 3、查看镜像仓库中的所有镜像
 ```bash
 curl http://127.0.0.1:5000/v2/_catalog
 ```
 下图返回的json数据代表有一个仓库，因为我做测试的时候上传了一个镜像。（busybox）
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161459771.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161459771.png)
 
 ## 三、配置仓库可直接通过http方式访问
 >docker默认是传输方式使用https协议，我们手头上没有https证书，所以此处不配置https证书，直接设置可信源，使我们内网可以通过http方式访问
@@ -63,7 +63,7 @@ curl http://127.0.0.1:5000/v2/_catalog
     ]
 ```
 因为我这是已经有了哪个文件，而且里面还有别的，所以，到时候一定要看好格式；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161459734.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161459734.png)
 
 ### 2、重新加载、重启docker、启动镜像
 
@@ -114,7 +114,7 @@ v1: digest: sha256:d8217a445d79fb6325eb26a651d2a7a1ceb7f53c44d82cd7bb9e8fd2bdb38
 [root@localhost ~]# curl http://127.0.0.1:5000/v2/_catalog
 {"repositories":["busybox","mycentos"]}
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161458234.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161458234.png)
 这里我们可以看到，多了一个mycentos，这样就是推送成功了，mycentos镜像就已经上传上来了。
 ## 五、本地拉取镜像
 **<font color=teal>格式：</font>**
@@ -131,7 +131,7 @@ Status: Downloaded newer image for 127.0.0.1:5000/mycentos:v1
 127.0.0.1:5000/mycentos:v1
 ```
 **查看镜像，我们就可以看到已经拉取了。（刚刚的镜像已经删除这是重新从harbor镜像仓库拉的）**
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161458496.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161458496.png)
  **要想改回原来的名字，我们可以给他打标签；**
 
 **<font color=teal>格式：</font>**
@@ -143,7 +143,7 @@ docker tag 上传时修改的镜像名 现在想改回去的镜像名:版本
 docker tag 127.0.0.1:5000/mycentos:v1 mycentos:v1
 ```
 这样就改回来了。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161458538.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161458538.png)
 
 ## 六、客户端（另一台服务器）拉取镜像
 另一台客户机也需要docker是前提，注意要配置http方式访问，然后访问下载镜像。
@@ -170,9 +170,9 @@ ip要服务端设置的ip，我那边后来有设置了一个同网段的ip，�
 ```bash
 docker pull 192.168.2.22:5000/registry:v1
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161458194.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161458194.png)
 这里就可以看到我们已经拉取成功了。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161458763.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161458763.gif)
 
 ## 七、总结
 **相关文章：**

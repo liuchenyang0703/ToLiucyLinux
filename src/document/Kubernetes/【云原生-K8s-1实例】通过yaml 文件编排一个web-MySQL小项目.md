@@ -90,7 +90,7 @@ kubectl scale rc mysql --replicas=5
 kubectl get pods
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161415885.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161415885.png)
 
 
 现在启动了5个mysql，负载均衡完成。
@@ -123,7 +123,7 @@ kubectl apply -f mysql-svc.yaml
 ```bash
 kubectl get svc
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161415390.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161415390.png)
 
 >&emsp;&emsp;注意到，MySQL服务被分配了一个值为 10.100.130.176 的Cluster IP地址。随后，Kubernetes集群中其他新创建的Pod就可以通过Service的Cluster IP+端口号3306来连接和访问它了。但是要注意，外部是无法去访问这个Mysql的，3306只是对其他pod开放的端口号。回忆一下，之前的pod,node架构图就知道了。
 >&emsp;
@@ -136,7 +136,7 @@ kubectl get svc
 ```bash
 kubectl get pods -o wide
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161415162.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161415162.png)
 
 
 可以看到mysql在node2节点上，我们就可以去node2集群中去找到`mysql-4fxv6`这个容器；
@@ -146,7 +146,7 @@ kubectl get pods -o wide
 ```bash
 [root@k8s-node2 ~]# docker ps -a | grep mysql-4fxv6
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161415626.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161415626.png)
 
 
 过滤出来了两个容器，选第一个就行，因为第二个是属于一个控制器，容器名为：`k8s_mysql_mysql-4fxv6_default_a6be3c5d-72ef-40d9-b6b7-83e31c4f5d86_0`
@@ -160,7 +160,7 @@ kubectl get pods -o wide
 ```bash
 mysql -uroot -p123456
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161414039.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161414039.png)
 这样就进入到数据库中了，可以自行查看表结构或者增删改查数据之类的了。
 
 
@@ -268,7 +268,7 @@ kubectl apply -f tomcat-svc.yaml
 ```bash
 kubectl get svc
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161414858.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161414858.png)
 
 30001为映射的端口，是可以对外访问的。
 
@@ -279,7 +279,7 @@ kubectl get svc
 http://172.16.11.221:30001
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161414680.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161414680.png)
 
 >如果看不到这个网页，那么可能有几个原因：比如防火墙的问题，无法访问 30001 端口，或者因为你是通过代理上网的，浏览器错把虛拟机的IP地址当成远程地址了。可以在虛拟机上直接运行 curl 127.0.0.1:30001 来验证此端口是否能被访问，如果还是不能访问，那么这肯定不是机器的问题…
 
@@ -289,21 +289,21 @@ http://172.16.11.221:30001
 #ip填你的master或者node的地址
 http://172.16.11.221:30001/demo/ 
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161414432.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161414432.png)
 
 接下来可以尝试单击 “Add..” 按钮添加一条记录并提交，如下图所示，提交以后，数据就被写入 MySQL 数据库中了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161414057.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161414057.png)
 
 提交为`submit`，提交成功会显示如下图；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161414407.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161414407.png)
 
 如果失败，既有可能是因为数据库副本开的太多，导致数据写入不知道该往哪个数据库中写了。
 
 点击`return`即可返回查看到刚刚添加的数据。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161414443.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161414443.png)
 
 &emsp;&emsp;至此，我们终于完成了 Kuberetes 上的 Tomcat 例子，这个例子并不是很复杂。我们也看到，相对于传统的分布式应用的部署方式，在Kuberetes 之上我们仅仅通过一些很容易理解的配置文件和相关的简单命令就完成了对整个集群的部署，这让我们惊诧于 Kuberetes 的创新和强大。 下一节，我们将开始对 Kubernetes 中的基本概念和术语进行全面学习，在这之前，读者可以继续研究下这个例子里的一些拓展内容，如下所述。 研究 RC、Service 等配置文件的格式。 
 

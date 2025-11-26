@@ -25,7 +25,7 @@ breadcrumb: false
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161319730.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161319730.jpeg)
 
 
 ---
@@ -49,7 +49,7 @@ print ('Hello Word !')
 #在交互式界面，也就是cmd的那种
 'hello word !'
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161319557.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161319557.png)
 
 这样，在交互式界面的时候可以少打一个print，如果有良好习惯，那么就不管在哪里都加上最好；
 
@@ -62,7 +62,7 @@ print ('hello',',','what','your','name','?')
 ```
 输出结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161319343.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161319343.png)
 
 加个分割连接符
 
@@ -71,7 +71,7 @@ print('liu','chen','yang',sep="_")
 #\n表示换行符
 print('liu','chen','yang',sep="\n")
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161319782.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161319782.png)
 最后一行代的中的`\n`是换行的意思。如果两个print()一起执行，数据就会显示在两行上，如果不想让他显示在两行上，想让他显示在一行上，可以使用end="连接符" 来连接，连接上一行输出的值与下一行输出的值；
 
 ```python
@@ -82,7 +82,7 @@ print('liu','chen',end="_")
 print('yang')
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318496.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318496.png)
 
 可以看到，liu 和chen之间是有个空格的，因为这个只是连接上下两行的值，并不管内容的分割，如果想将空格也加一个连接符号，可以sep和end结合使用：
 
@@ -92,7 +92,7 @@ print('yang')
 ```
 输出结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318147.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318147.png)
 
 
 print() 总结：
@@ -112,7 +112,7 @@ while True:												# while无限循环（这里的:都必须是英文字符�
         print("请输入正确的姓名！\n%s" %('-'*30))			# 那就输出提示语！（\n表示换行，后面的数据将在下一行输出；%s表示占位符，%('-'*30)表示将该结果给前面的占位符，%('-'*30)的意思是输出'-'，*30的意思是一共输出30个'-'）
         continue										#表示返回继续问
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318896.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318896.png)
 
 
 
@@ -129,7 +129,7 @@ if True:
 ```
 这样就会抛出`IndentationError`异常，因为两个print都是四个空格，排在一列的；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318936.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318936.png)
 
 
 ### 3. 代码行
@@ -155,7 +155,7 @@ print(hi)
 ```
 输出结果：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318844.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318844.png)
 
 - 2．隐式连接
 
@@ -172,7 +172,7 @@ print(hi)
 ```
 输出结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318865.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318865.png)
 
 如果多条相邻语句属于同一个代码块，可以合并在一个物理行内显示，语句之间使用分号（;）分割；
 例如：
@@ -184,7 +184,7 @@ while True:
     else:
         print("请输入正确的姓名！\n%s" %('-'*30));continue
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318226.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318226.png)
 
 
 ### 4. 代码注释
@@ -197,7 +197,7 @@ print('hello word!')
 #也可以在代码行后面写注释
 print('hello word!')		#输出一个hello word！
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318189.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318189.png)
 
 - 多行注释：使用3个引号''' 和 """ 定义
 
@@ -214,7 +214,7 @@ print('hello word!')		#输出一个hello word！
     else:
         print("请输入正确的姓名！\n%s" %('-'*30));continue"""
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318057.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318057.png)
 
 但是这个有个缺点就是可能会影响程序出错，所以，建议还是使用`#`来注释。
 
@@ -337,7 +337,7 @@ print(a)
 a = "test"
 print(a)
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318825.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318825.png)
 
 
 >注意：输出值时变量不能打双引号，打了双引号他就会认为输出的是一个字符串，并不是一个变量了。
@@ -359,7 +359,7 @@ print(c)
 ```
 输出的值为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318479.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318479.png)
 
 > 他们的值都是一样的，那么他们的id一样吗？
 >  答：当然一样。
@@ -385,7 +385,7 @@ print(id(e))
 print(id(f))
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318285.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318285.png)
 
 
 ### 3、为多个变量赋多个值（多元赋值）
@@ -403,7 +403,7 @@ print(a,b,c,d)
 ```
 输出的值为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318579.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318579.png)
 
 
 
@@ -416,7 +416,7 @@ print(a,b,c,d)
 print(id(a))
 print(id(b))
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318111.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318111.png)
 
 ### 4、变量的命名
 
@@ -569,7 +569,7 @@ else:
 ```
 输出结果为：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318116.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318116.png)
 
 >提示：isinstance() 函数要考虑继承关系，而type()函数类型则不用考虑继承关系。
 
@@ -586,7 +586,7 @@ print(isinstance(B(),A))        # 输出为；True
 print(type(B())==A)             # 输出为；False
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318187.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318187.png)
  >提示：如果要判断两个类型是否相同，推荐使用 isinstance()函数
 ## 四、数字
 ### 1. 认识数字
@@ -642,7 +642,7 @@ print(x % y)
 ```
 运行结果：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161318118.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161318118.png)
 
 所有数字类型都支持的运算
 
@@ -828,12 +828,12 @@ str([1,2,3])
 str("1,2,3")
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317325.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317325.png)
 
 ```python
 print(str('abc'))
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317043.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317043.png)
 
 【示例1】下面示例设计自定义类Person，定义__str__()方法，返回该类实例的字符串表示，同时定义__init__()方法，初始化类型实例，最后，使用str()函数转换Person实例为字符串表示。 
 ```python
@@ -876,7 +876,7 @@ print(repr(a))
 eval("1+4+5")
 print(eval("1+4+5"))
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317671.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317671.png)
 #### chr() 
 
 - 使用 chr() 转换：
@@ -887,7 +887,7 @@ print(eval("1+4+5"))
 chr(3)
 chr(60)
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317333.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317333.png)
 
 chr(x)函数能够将一个整数转换为Unicode字。参数x可以是十进制或十六进制形式的数字，范围Unicode 字符集，例如：
 
@@ -901,9 +901,9 @@ chr(0*30)
 chr(90)
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317384.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317384.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317794.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317794.png)
 #### hex() 、bin()、oct() 函数
 - 使用 hex() 、bin()、oct() 函数：
 
@@ -922,7 +922,7 @@ for i in range(beg,end+1):                      # 循环输出指定的值，每
     print("{}\t\t{}\t\t{}\t\t{}".format(i,oct(i),hex(i),chr(i)))        # 输出：{}表示结果，\t制表符，相当于tab键；oct转为八进制，hex转为十六进制，chr可以是十六进制，也可以是十进制。
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317854.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317854.png)
 #### 总结
 
 >str() 	主要是转换为适合阅读的字符串
@@ -1039,7 +1039,7 @@ print(bool("0"))        # 返回True
 print(bool('2'))        # 返回True
 print(bool([1,2,3]))    # 返回True
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317031.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317031.png)
 
 
 在 Python 中，布尔值是两种主要的值之一，它们表示逻辑真或假。你可以通过以下方法将其他类型转换为布尔值：
@@ -1104,7 +1104,7 @@ print(float(".222"))	# 输出结果为：0.222
 float("2.3.445")
 print(float("2.3.445"))
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161317589.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161317589.png)
 
 
 

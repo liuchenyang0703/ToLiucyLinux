@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/dfc7ac4d3ca04b14a86dc0b603e40e17.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/dfc7ac4d3ca04b14a86dc0b603e40e17.jpeg)
 
 
 
@@ -75,7 +75,7 @@ select * from student order by score desc;
 #偏移量为2，取5行；（取第3行到第7行）
 select * from student limit 2,5;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6ff71a3845314e469bf33ee0667a750b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6ff71a3845314e469bf33ee0667a750b.png)
 
 ### 分组查询
 
@@ -88,7 +88,7 @@ select * from 表名 group by 字段;
 select * from student group by score;
 ```
 如遇到以下报错，可了解 [https://blog.csdn.net/weixin_44013783/article/details/119422353](https://blog.csdn.net/weixin_44013783/article/details/119422353)、[https://blog.csdn.net/W_317/article/details/116723943](https://blog.csdn.net/W_317/article/details/116723943)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d1ef12a4f71b4683aabdb37d845014f1.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d1ef12a4f71b4683aabdb37d845014f1.png)
 
 ### 去重查询
 
@@ -101,7 +101,7 @@ select distinct 字段 from 表名;
 select distinct score from student;
 select distinct score as '分数' from student;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d59478161b654075bbf949112bb40425.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d59478161b654075bbf949112bb40425.png)
 
 
 ### 聚合函数
@@ -230,7 +230,7 @@ select count(*) as '各组人数',sum(score) as '各组总分',avg(score) as '�
 #查询分数小于120的人
 select * from student having score<120;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6da2421525384779acac663b87c661c0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6da2421525384779acac663b87c661c0.png)
 
 - where&emsp;&emsp;&emsp;用于聚合前，having用于聚合后。
 
@@ -238,7 +238,7 @@ select * from student having score<120;
 #查询性别为女的人
 select * from student where sex='女';
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/64ad23fa16cf47a9adf15052864ba92d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/64ad23fa16cf47a9adf15052864ba92d.png)
 ### 比较运算符查询
 - 等于: =
 
@@ -246,7 +246,7 @@ select * from student where sex='女';
 #查询性别是男的学生
 select * from student where sex='男';
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0f87bc58f9fe4b149bbf0f5a532ac4fc.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0f87bc58f9fe4b149bbf0f5a532ac4fc.png)
 
 - 大于: >
 
@@ -254,7 +254,7 @@ select * from student where sex='男';
 #查询年龄大于15的学生
 select * from student where age>15;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2cf9e050638c49eca97d2251caeb9e73.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2cf9e050638c49eca97d2251caeb9e73.png)
 
 - 大于等于: >=
 
@@ -262,7 +262,7 @@ select * from student where age>15;
 #查询年龄大于等于15的学生
 select * from student where age>=15;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ac2034d1ccdc4a5997554167294d15e0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ac2034d1ccdc4a5997554167294d15e0.png)
 
 - 小于: <
 
@@ -270,7 +270,7 @@ select * from student where age>=15;
 #查询分数小于122的学生
 select * from student where score<122;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/07c660da564940e6b885782c596311e4.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/07c660da564940e6b885782c596311e4.png)
 
 - 小于等于: <=
 
@@ -278,7 +278,7 @@ select * from student where score<122;
 #查询分数小于等于122的学生
 select * from student where score<=122;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/64aa6bdf188c4914a9daf9bdeb1c336e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/64aa6bdf188c4914a9daf9bdeb1c336e.png)
 
 - 不等于: != 或 <>
 
@@ -287,13 +287,13 @@ select * from student where score<=122;
 select * from student where sex!='男';
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b1b4365e31944ef88e1e33087cb328e8.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b1b4365e31944ef88e1e33087cb328e8.png)
 
 ```bash
 #查询学生性别不是女生的
 select * from student where sex<>'女';
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c0a2c14e4ec8415fa255eb2b05ee16f8.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c0a2c14e4ec8415fa255eb2b05ee16f8.png)
 
 ### 逻辑运算符查询
 - and&emsp;和，要同时符合这两个条件或多个条件；
@@ -302,7 +302,7 @@ select * from student where sex<>'女';
 #查询学生分数高于122的男同学
 select * from student where score>122 and sex='男';
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ae93199fac9d4abd849f3dae70c559a0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ae93199fac9d4abd849f3dae70c559a0.png)
 
 - or&emsp;或，满足其中一个条件即可，两者都有则都输出；
 
@@ -310,7 +310,7 @@ select * from student where score>122 and sex='男';
 #查询年龄大于18或小于20的学生
 select * from student where age>18 or age<20;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/763e832d00df449b895e2a8e923bcb02.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/763e832d00df449b895e2a8e923bcb02.png)
 
 - not&emsp;不，不要指定条件的数据；
 
@@ -318,7 +318,7 @@ select * from student where age>18 or age<20;
 #查询分数不在120到123的学生
 select * from student where not (score>=120 and score<=123);
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f7ce1732f9bc4089b9a5b130f3319b96.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f7ce1732f9bc4089b9a5b130f3319b96.png)
 >多个条件判断想要作为一个整体的时候，可以使用<font color=red>()</font>。
 
 ### 模糊查询
@@ -341,7 +341,7 @@ insert into student values (null,'张时嘉','女',17,12.12,'北京市朝阳区�
 #查询姓张的学生都有谁
 select name from student where name like "张%";
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/eb03bad4cc674299ab6d532d349aebed.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/eb03bad4cc674299ab6d532d349aebed.png)
 
 **例2：查询姓张的两个字的学生都有谁**
 
@@ -349,7 +349,7 @@ select name from student where name like "张%";
 #查询姓张的两个字的学生都有谁
 select * from student where name like "张_";
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/420af16e5f5e462496b4e045a48950eb.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/420af16e5f5e462496b4e045a48950eb.png)
 
 **例3：查询三个字的学生都有谁**
 
@@ -357,14 +357,14 @@ select * from student where name like "张_";
 #查询三个字的学生都有谁
 select * from student where name like "___";
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fe2b83875cf24204ac8e8f14a8fe5678.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/fe2b83875cf24204ac8e8f14a8fe5678.png)
 
 **例4：查询手机号以16开头的学生**
 ```bash
 #查询手机号以16开头的学生
 select * from student where iphone like "16%";
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ad464092ca4543f3abc8cc8fc49b2fd5.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ad464092ca4543f3abc8cc8fc49b2fd5.png)
 
 **例5：查询姓老的或是名字中带时的都有谁**
 
@@ -372,7 +372,7 @@ select * from student where iphone like "16%";
 #查询姓老的或是名字中带时的都有谁
 select * from student where name like "老%" or name like "%时%";
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1f29a751f46e4b3c80df6d5202bef860.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1f29a751f46e4b3c80df6d5202bef860.png)
 
 ### 范围查询
 - between .. and .. 表示在一个连续的范围内查询
@@ -383,7 +383,7 @@ select * from student where name like "老%" or name like "%时%";
 #查询生日6月01日到9月31日的学生
 select * from student where birthday between "6.01"and"9.31";
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5d90106a3dbf4e4cace2fb813735969c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5d90106a3dbf4e4cace2fb813735969c.png)
 
 
 **例2：查询地址为1单元103到109之间的男同学**
@@ -392,7 +392,7 @@ select * from student where birthday between "6.01"and"9.31";
 #查询地址为1单元103到109之间的男同学
 select * from student where (address between "北京市朝阳区某小区1号楼1单元103"and"北京市朝阳区某小区1号楼1单元109") and sex='男';
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/87aeaf3de82947229b759427adaa9aa5.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/87aeaf3de82947229b759427adaa9aa5.png)
 
 **例3：查询id为1和22的两个学生**
 
@@ -400,7 +400,7 @@ select * from student where (address between "北京市朝阳区某小区1号楼
 #查询id为1和22的两个学生
 select * from student where id in(1,22);
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/009e63e84e3c43aabe83a7703057b955.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/009e63e84e3c43aabe83a7703057b955.png)
 >IN 列表项不仅支持数字，也支持字符甚至时间日期类型等，并且可以将这些不同类型的数据项混合排列而无须跟 column 的类型保持一致：
 >一个 IN 只能对一个字段进行范围比对，如果要指定更多字段，可以使用 AND 或 OR 逻辑运算符：
 >使用 AND 或 OR 逻辑运算符后，IN 还可以和其他如 LIKE、>=、= 等运算符一起使用。
@@ -456,7 +456,7 @@ select student.name as '姓名',student.sex as '性别',student.age as '年龄',
 #别名两表联查：查询student表姓名、性别、年龄，body表身高、体重、心跳；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟' from student a,body b where a.id=b.id;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/91baa77494f7411c89800b9ff8e2b6ac.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/91baa77494f7411c89800b9ff8e2b6ac.png)
 
 **例2：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的学生；**
 
@@ -465,7 +465,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟',a.score as '分数' from student a,body b where a.id=b.id having score>=122;
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/64154ab9de524641a226dfc6ada15121.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/64154ab9de524641a226dfc6ada15121.png)
 
 **例3：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生；**
 
@@ -475,7 +475,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 ```
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2b4e2f0d625c4dc381dc5159447bbda7.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2b4e2f0d625c4dc381dc5159447bbda7.png)
 
 **例4：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生且从大到小排序；**
 
@@ -484,7 +484,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟',a.score as '分数' from student a inner join body b on a.id=b.id where score>=122 having sex='女' order by score desc;
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/02be73306a61416e8110d0a2478c59ad.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/02be73306a61416e8110d0a2478c59ad.png)
 
 ### 两表联查左连接
 >两表联查必须加上where 表1 id=表2 id，否则查询出来会有很多重复的数据，你写了几个字段，就会查询到多少字段的重复数据；
@@ -503,7 +503,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 #别名两表联查左连接：查询student表姓名、性别、年龄，body表身高；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高' from student a left join body b on a.id=b.id;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1c58424240b54854ad748b9d2297e600.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1c58424240b54854ad748b9d2297e600.png)
 
 **例2：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的学生；**
 
@@ -511,7 +511,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 #别名两表联查左连接：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的学生；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟',a.score as '分数' from student a left join body b on a.id=b.id where score>=122;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/386ed25fe148407f9c9b346c29b22d88.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/386ed25fe148407f9c9b346c29b22d88.png)
 
 **例3：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生；**
 
@@ -519,7 +519,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 #别名两表联查左连接：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟',a.score as '分数' from student a left join body b on a.id=b.id where score>=122 having sex='女';
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2f4c3cf0ce1f4af681d5cedec4eef2ad.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2f4c3cf0ce1f4af681d5cedec4eef2ad.png)
 
 **例4：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生且从大到小排序；**
 
@@ -527,7 +527,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 #别名两表联查左连接：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生且从大到小排序；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟',a.score as '分数' from student a left join body b on a.id=b.id where score>=122 having sex='女' order by score desc;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/493fae6f353b45a980faf3232bd30194.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/493fae6f353b45a980faf3232bd30194.png)
 
 ### 两表联查右连接
 >两表联查必须加上where 表1 id=表2 id，否则查询出来会有很多重复的数据，你写了几个字段，就会查询到多少字段的重复数据；
@@ -547,7 +547,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 #别名两表联查右连接：查询student表姓名、性别、年龄，body表身高；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高' from student a right join body b on a.id=b.id;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1aae26d06244440a8c19b3b5dfc28f72.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1aae26d06244440a8c19b3b5dfc28f72.png)
 
 
 
@@ -557,7 +557,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 #别名两表联查右连接：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的学生；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟',a.score as '分数' from student a right join body b on a.id=b.id where score>=122;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e9ffc888fb414bd4af1dc56b1863bb8f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e9ffc888fb414bd4af1dc56b1863bb8f.png)
 
 
 **例3：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生；**
@@ -566,7 +566,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 #别名两表联查右连接：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟',a.score as '分数' from student a right join body b on a.id=b.id where score>=122 having sex='女';
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fc2f4edbc787468fb11b26d220437316.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/fc2f4edbc787468fb11b26d220437316.png)
 
 
 **例4：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生且从大到小排序；**
@@ -575,7 +575,7 @@ select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身�
 #别名两表联查右连接：查询student表姓名、性别、年龄、分数，body表身高、体重、心跳，并只显示成绩大于等于122的女学生且从大到小排序；
 select a.name as '姓名',a.sex as '性别',a.age as '年龄',b.height as '身高',b.weight as '体重',b.heartbeat as '心跳/每分钟',a.score as '分数' from student a right join body b on a.id=b.id where score>=122 having sex='女' order by score desc;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4e29406c5e2c4f56aa23d8937d29674a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4e29406c5e2c4f56aa23d8937d29674a.png)
 ### 全连接: union或union all 
 **注意：**
 1.两张表的数据数量必须相同

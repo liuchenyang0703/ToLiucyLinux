@@ -40,7 +40,7 @@ isOriginal: true
 >- Kubernetes随后在集群内的所有相关应用程序上实现所需的状态。
 >- Kubernetes持续监控集群的元素，以确保应用程序的当前状态不会与所需状态有所不同。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420964.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420964.png)
 
 #### 1.1master节点
 >&emsp;&emsp;k8s集群的管理节点，负责管理集群，提供集群的资源数据访问入口。拥有Etcd存储服务（可选），运行Api Server进程，Controller Manager服务进程及Scheduler服务进程，关联工作节点Node。
@@ -361,7 +361,7 @@ wget -O kubeadm.sh https://files.rundreams.net/sh/kubeadm.sh && sh kubeadm.sh
 ```bash
 docker images
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420231.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420231.png)
 
 
 ## master节点
@@ -377,7 +377,7 @@ kubeadm init --kubernetes-version=1.20.15 --apiserver-advertise-address=172.16.1
 
 初始化成功图为下：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420398.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420398.png)
 
 >如遇初始化报错可根据`systemctl status kubelet` 或者 `journalctl -xeu kubelet` 查看报错信息来解。决
 
@@ -404,7 +404,7 @@ node2：
 	kubeadm join 172.16.11.221:6443 --token ckgdsy.xa5x21lsjqak2zmr \
     --discovery-token-ca-cert-hash sha256:3bc8dd07b7e88a5f7b0efa81b4ae4918abb440f93f4940c72f9b4a842d6c872b 
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420434.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420434.png)
 
 node节点显示这样就是加载成功；
 
@@ -413,7 +413,7 @@ node节点显示这样就是加载成功；
 ```bash
 [root@k8s-master ~]# kubectl get nodes
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420835.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420835.png)
 
 现在的集群状态都是`NotReady`表示不可达；这是因为还没有安装网络插件，下面我们来安装一下`网络插件（caclico）`
 
@@ -430,7 +430,7 @@ calico网络插件：[https://docs.projectcalico.org/v3.9/getting-started/kubern
 ```bash
 kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420304.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420304.png)
 - 确认一下calico是否安装成功
 
 ```bash
@@ -448,9 +448,9 @@ kubectl get nodes -o wide
 ```
 STATUS 状态为`Ready`则连接成功。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420932.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420932.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420435.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420435.png)
 
 
 ## 测试
@@ -498,7 +498,7 @@ kubectl get pods -o wide
 #查看所有的pod超级详细信息
 kubectl describe pod nginx
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420100.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420100.png)
 - 通过rs将pod扩容为5个nginx服务
 
 ```bash
@@ -539,7 +539,7 @@ kubectl apply -f pod_nginx_rs_svc.yaml
 kubectl get svc
 kubectl get services
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420085.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420085.png)
 
 
 >kubectl get svc 中的 type 。
@@ -548,13 +548,13 @@ kubectl get services
 
 - 启动services之后，查看端口
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161420877.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161420877.png)
 
 端口为30000，页面访问，<font color=red>节点的ip+30000;</font>
 
 ><font color=red>节点的ip可以为主节点的ip，也可以为从节点的ip。</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161419732.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161419732.png)
 
 
 

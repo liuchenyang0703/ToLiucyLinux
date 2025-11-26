@@ -272,7 +272,7 @@ write to dir [/opt/dmdbms/data/DAMENG].
 create dm database success. 2020-12-24 22:05:38
 ```
 
-![image-20240529170026112](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412301443191.png)
+![image-20240529170026112](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412301443191.png)
 
 注意：实际环境中，簇大小建议选择 32，页大小选择 32K，日志大小选择 2048，字符集和大小写敏感需要和应用厂商对接后，再进行选择。
 
@@ -316,7 +316,7 @@ Created symlink from
 /usr/lib/systemd/system/DmServiceDMSERVER.service. 创建服务(DmServiceDMSERVER)完成
 ```
 
-![image-20240529170127531](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412301443571.png)
+![image-20240529170127531](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412301443571.png)
 
 ### 3.3 启动实例服务
 
@@ -396,7 +396,7 @@ DROP TABLE "MOULD"."TEMPLATES";
 SELECT table_name FROM user_tables;
 ```
 
-![image-20240726161909094](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412301443798.png)
+![image-20240726161909094](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412301443798.png)
 
 
 
@@ -406,7 +406,7 @@ SELECT table_name FROM user_tables;
 desc TEMPLATES;
 ```
 
-![image-20240729103024531](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202407291030882.png)
+![image-20240729103024531](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202407291030882.png)
 
 
 
@@ -416,4 +416,4 @@ desc TEMPLATES;
 select * from v$version;
 ```
 
-![image-20240729103103260](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412301443913.png)
+![image-20240729103103260](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412301443913.png)

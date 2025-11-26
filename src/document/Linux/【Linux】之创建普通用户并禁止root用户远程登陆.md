@@ -45,7 +45,7 @@ useradd test
 ```bash
 cat /etc/passwd
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181625050.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181625050.png)
 
 ### 1.2、给test用户设置登录密码
 
@@ -54,8 +54,8 @@ passwd test
 ```
 密码需要输入两次，如果第一次提示你的密码过于简单，不用担心，继续输入就好了，也可以设置一个比较难一点的密码，这样就不会提醒了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181625235.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181625382.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181625235.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181625382.png)
 
 输入完密码之后，可以测试一下；
 
@@ -109,7 +109,7 @@ vim /etc/ssh/sshd_config
 #去掉前面的井号注释，在将yes修改为no
 PermitRootLogin no
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181625827.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181625827.png)
 
 修改完成之后，保存退出，重启ssh服务；
 

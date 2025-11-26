@@ -25,7 +25,7 @@ breadcrumb: false
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181357950.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181357950.png)
 
 
 ## 1.查看服务器已安装的所有内核版本
@@ -65,7 +65,7 @@ GRUB_DISABLE_RECOVERY="true"
 GRUB_DEFAULT=1
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181357876.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181357876.png)
 
 
 
@@ -89,7 +89,7 @@ reboot
 uname -a
 uname -r
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356462.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356462.png)
 
 
 
@@ -98,7 +98,7 @@ uname -r
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181356922.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181356922.jpeg)
 
 
 

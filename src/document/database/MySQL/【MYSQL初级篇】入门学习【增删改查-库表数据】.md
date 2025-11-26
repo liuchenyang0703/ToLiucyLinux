@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/dfc7ac4d3ca04b14a86dc0b603e40e17.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/dfc7ac4d3ca04b14a86dc0b603e40e17.jpeg)
 
 
 
@@ -96,7 +96,7 @@ show tables;
 ```bash
 create table student (id int(3) ZEROFILL PRIMARY KEY AUTO_INCREMENT comment'学号',name varchar(255) not null comment'姓名',sex char(4) not null comment'性别',age int not null comment'年龄',birthday varchar(255) comment'生日',address varchar(255) not null comment'住址',email varchar(50) comment'邮箱',iphone varchar(255) comment'手机号',score int not null comment'成绩')comment='学生表';
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b8eaffe6fe7446a5a4bb80630f801874.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b8eaffe6fe7446a5a4bb80630f801874.png)
 
 
 
@@ -218,7 +218,7 @@ insert into student values (null,'李四','男',18,9.02,'北京市朝阳区某�
 #查询student表中所有数据
 select * from student;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3b8300e99fde4793a4931fa79292226d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/3b8300e99fde4793a4931fa79292226d.png)
 
 
 
@@ -245,7 +245,7 @@ delete from student where iphone="13246780092";
 #查询student表中所有数据
 select * from student;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4eaf195bfde2476792a060dbbdc9ad46.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4eaf195bfde2476792a060dbbdc9ad46.png)
 
 <font color=red>注：完成之后会将数据重新添加上</font>
 
@@ -270,7 +270,7 @@ update student set sex='男',address='北京市朝阳区某小区1号楼1单元1
 #查询student表中所有数据
 select * from student;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a6b56af82d594333890d2d19a3f80215.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a6b56af82d594333890d2d19a3f80215.png)
 
 ### 查：
 
@@ -287,7 +287,7 @@ select * from student;
 select name,score from student;
 select name as 姓名,score as 成绩 from student;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6eab0080a2554e329e40be3a0db08dd4.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6eab0080a2554e329e40be3a0db08dd4.png)
 
 
 

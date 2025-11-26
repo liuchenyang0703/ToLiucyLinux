@@ -52,7 +52,7 @@ breadcrumb: false
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439392.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439392.png)
 
 
 
@@ -77,7 +77,7 @@ breadcrumb: false
 >登录个人华为云账号，在搜索栏输入云耀云服务器L实例，按回车键确认，进入云耀云服务器L实例详情页。
 >或直接点击：[华为云耀云服务器L实例地址](https://www.huaweicloud.com/product/hecs-light.html)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439812.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439812.png)
 
 
 
@@ -87,13 +87,13 @@ breadcrumb: false
 实例名称：自定义即可，这里编辑为HECS-L-nacos；
 购买时长：1个月；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439934.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439720.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439928.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439934.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439720.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439928.png)
 
 - 检查配置 --> 确认购买
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439308.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439308.png)
 
 - 购买成功；
 
@@ -151,14 +151,14 @@ Digest: sha256:a6d7575e810f080ae5b1e7535a0778aa581e9e43020f170a233fb78a42c91f90
 Status: Downloaded newer image for liuchenyang/redhat-nacos:latest
 docker.io/liuchenyang/redhat-nacos:latest
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439483.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439483.png)
 ### 5.2 查看镜像
 
 ```bash
 docker images | grep redhat-nacos
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439381.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439381.png)
 
 可以自己将镜像重新命名，或者直接使用此名字都可以；
 重新命名命令为：`docker tag liuchenyang/redhat-nacos:latest nacos:latest`
@@ -176,7 +176,7 @@ docker run -itd --name nacos --restart=always --privileged -p 8848:8848 -v /usr/
 ```
 创建完容器会自动启动nacos服务，日志可查看映射出来的/usr/local/start.out
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439620.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439620.png)
 
 
 启动完成，日志没问题，查看端口是否已经被占用；默认端口为：8848
@@ -184,7 +184,7 @@ docker run -itd --name nacos --restart=always --privileged -p 8848:8848 -v /usr/
 ```bash
 netstat -lnt | grep 8848
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439366.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439366.png)
 
 
 这里可以看到，端口已经启动了；但是因为是云服务器，还需要在云服务器上开放 8848 端口；
@@ -193,9 +193,9 @@ netstat -lnt | grep 8848
 > 172.16.11.10:8848/nacos
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439228.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439228.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161439458.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161439458.png)
 
 >因为此部署没有设置数据库，所以会自动跳进来；
 

@@ -49,13 +49,13 @@ ll -Shr  由小到大排序(可读的方式)
 ```bash
 ll -Sh
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444130.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444130.png)
 * 示例2：查看日志文件大小 <font color=red>由小到大排序(可读的方式)</font>
 
 ```bash
 ll -Shr
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444123.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444123.png)
 
 ---
 ## ll 按时间排序
@@ -80,7 +80,7 @@ ll -thr 按日期由旧到新排序
 ```bash
 ll -th
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444810.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444810.png)
 
 
 * 示例2：查看日志文件时间顺序 <font color=red>由旧到新排序(可读的方式)</font>
@@ -88,7 +88,7 @@ ll -th
 ```bash
 ll -thr
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444696.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444696.png)
 
 ---
 ## ls 查看隐藏文件
@@ -101,10 +101,10 @@ ls -a
 
 * 正常看到的一个目录下的文件：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444406.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444406.png)
 * 查看一个目录及以下的所有隐藏文件：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444416.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444416.png)
 
 明显就比正常看到的要多一些。这些以.开头的都是隐藏文件了。
 
@@ -143,14 +143,14 @@ du -sh .[^.]* *		显示当前目录下所有隐藏文件和非隐藏文件的大
 ```bash
 du -sh 
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444881.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444881.png)
 
 * 示例2：列出当前目录的各个目录、文件的大小
 
 ```bash
 du -sh *
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444020.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444020.png)
 
 
 * 示例3：列出当前目录的各个目录、文件的大小，<font color=red>按从小到大排序展示</font>
@@ -158,14 +158,14 @@ du -sh *
 ```bash
 du -sh * | sort -h
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181444090.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181444090.png)
 
 * 示例4：列出当前目录的各个目录、文件的大小，<font color=red>按从大到小排序展示</font>
 
 ```bash
 du -sh * | sort -rh
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181443347.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181443347.png)
 
 ## du 查看目录大小及展示隐藏文件
 
@@ -174,7 +174,7 @@ du -sh * | sort -rh
 ```bash
 du -sh .[^.]* *
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181443958.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181443958.png)
 
 * [x] du -sh .[^.]* * 分析：
 
@@ -241,7 +241,7 @@ du -sh /* --exclude=/media
 application  applog  bin  boot  data  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181443914.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181443914.png)
 
 * 然后查看目录大小过滤media挂载磁盘的目录
 
@@ -273,7 +273,7 @@ du: 无法访问"/proc/98795/fdinfo/4": 没有那个文件或目录
 1.8G	/usr
 391M	/var
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181443380.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181443380.png)
 看的时候没有看到`media`目录，成功过滤掉。
 
 
@@ -290,7 +290,7 @@ du -sh * --exclude=jenkins --exclude=maven
 [root@localhost local]# ls
 bin  etc  games  include  jenkins  lib  lib64  libexec  maven  sbin  share  src
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181443344.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181443344.png)
 
 * 过滤掉`jenkins`和`maven`目录；
 
@@ -307,7 +307,7 @@ bin  etc  games  include  jenkins  lib  lib64  libexec  maven  sbin  share  src
 0	share
 0	src
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181443948.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181443948.png)
 
 >成功过滤掉多个目录，用于查看一个目录下的子目录大小，但有的知道很大像过滤掉不看他的情况下使用。
 

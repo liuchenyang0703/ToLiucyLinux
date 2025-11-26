@@ -26,14 +26,14 @@ breadcrumb: false
 
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161337284.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161337284.jpeg)
 
 ## 一、下载安装包
 >官网下载地址：[nginx: download](https://nginx.org/en/download.html)
 
 选择`Stable version`版本下载到本地（该版本为Linux版本），下载完成后上传到服务器上；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161337619.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161337619.png)
 
 - 或者在服务器上使用wget下载
 
@@ -91,13 +91,13 @@ ps -ef | grep nginx
 ```bash
 netstat -anput | grep 80
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161336609.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161336609.png)
 
 
 确定启动之后，页面访问：ip
 即可访问到页面：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161336342.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161336342.png)
 
 
 ## 四、nginx启动、停止、重启、检测配置命令
@@ -157,12 +157,12 @@ statically from the source with nginx by using --with-zlib=<path> option.
 ## 六、nginx配置模块详解
 >这里的图是二进制安装默认的配置，yum安装的与二进制安装的nginx，配置会有差异，但整体大概的说明都是一样的。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161336812.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161336812.png)
 
 主要区域讲解：
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161336242.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161336242.png)
 
 
 
@@ -171,12 +171,12 @@ statically from the source with nginx by using --with-zlib=<path> option.
 >[https://nginxconfig.io/](https://nginxconfig.io/)
 >可以根据你的业务需求，自动生成负载的配置。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161335700.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161335700.png)
 
 
 往下面翻，就可以看到配置文件了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161335855.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161335855.png)
 
 ---
 >推荐一个优化nginx配置文件的页面：[Nginx配置文件格式化](https://tool.okcode.vip/dev/nginx-formatter)<br>

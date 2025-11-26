@@ -36,7 +36,7 @@ breadcrumb: false
 
 ## 一、什么是 podman？
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161447549.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161447549.png)
 
 
 &emsp;&emsp;Podman 是一个开源项目，可在大多数 Linux 平台上使用，并位于GitHub 上。Podman 是一个无守护进程的容器引擎，用于在 Linux 系统上开发、管理和运行 Open Container Initiative (OCI) 容器和容器映像。Podman 提供了一个与 Docker 兼容的命令行前端，它可以简单地为 Docker cli ，alias docker=podman。Podman 还提供了一个套接字激活的 REST API 服务，以允许远程应用程序启动按需容器。此 REST API 还支持 Docker API，允许 docker-py 和 docker-compose 的用户与 Podman 作为服务进行交互。
@@ -71,7 +71,7 @@ yum -y install podman
 podman --version
 ```
 
-![image-20240708155326314](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161447226.png)
+![image-20240708155326314](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161447226.png)
 
 
 
@@ -281,7 +281,7 @@ sudo systemctl restart podman
 sudo podman info
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161447436.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161447436.png)
 
 
 这样就修改成功了，如果不放心可以`ls /data/podman/containers/storage/`看看；
@@ -291,7 +291,7 @@ sudo podman info
 ```bash
 systemctl status podman
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161447396.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161447396.png)
 
 运行状态，那么就没问题了，接下来可以试试`拉取镜像`或者`导入镜像`；
 
@@ -322,7 +322,7 @@ sudo systemctl restart podman
 # 查看podman服务状态
 systemctl status podman
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161447403.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161447403.png)
 
 没有启动起来，报错了；
 
@@ -331,16 +331,16 @@ systemctl status podman
 sudo podman info --log-level=debug
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161447016.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161447016.png)
 所以如果bolt数据库存储了相关配置，那么无论怎么修改`/etc/containers/storage.conf`中的配置都会被重载而不起作用。
 `bolt_state.db`又是一种小众的数据库，格式为bolt，目前BoltDB不支持直接修改和查看数据库内容，需要使用专门的bolt数据库工具才能查看和修改。
 [https://github.com/etcd-io/bbolt](https://github.com/etcd-io/bbolt) 页面罗列了不少bolt工具，笔者选用了boltdbweb这款Go写的Web工具来查看和修改。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161447070.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161447070.png)
 
 打开`runtime-config`可以看到里面有`graph-root`就是podman的存储路径；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161447121.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161447121.png)
 
 这里可以修改`graph root`、`static dir`和`volume path`配置，也可以直接删除掉，让podman直接使用`/etc/containers/storage.conf`中的配置。
 

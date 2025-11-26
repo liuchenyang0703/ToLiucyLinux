@@ -19,21 +19,21 @@ breadcrumb: false
 **下载地址：[https://dev.mysql.com/downloads/mysql/5.7.html](https://dev.mysql.com/downloads/mysql/5.7.html)**
 
 ### ①、选择linux版的
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ff19a527bddc4e2e9a373c31da7c414a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ff19a527bddc4e2e9a373c31da7c414a.png)
 ### ②、选择64bit，根据自己的情况来看
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/62f25ac4350c4098a65490d81ef9fa33.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/62f25ac4350c4098a65490d81ef9fa33.png)
 ### ③、选择下载tar包
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/82938b0cc6c445668ef80ac514a2a45a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/82938b0cc6c445668ef80ac514a2a45a.png)
 ### ④、点击下载
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/362a8430e8e642b78b1f5ccf3c52393c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/362a8430e8e642b78b1f5ccf3c52393c.png)
 ### ⑤、等待下载完
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8701884070d940beb15b98d0669aae19.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/8701884070d940beb15b98d0669aae19.png)
 ## 二、上传到服务器
 >**上传到服务器有好几种方法，任意采用一种就可以。**
 
 可以直接把tar包上传到服务器的根目录下或者自己创建的目录下也可以，一般标准的就直接放到了/usr/local/下面；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6b1a6fb0d868435ebaffa80baf878f6b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6b1a6fb0d868435ebaffa80baf878f6b.png)
 
 ## 三、检查服务器是否安装过mysql服务
 >检查服务器是否安装过mysql服务，因为以前如果安装的有mysql可能会导致安装mysql的时候冲突报错；
@@ -43,7 +43,7 @@ breadcrumb: false
 ```bash
 rpm -qa | grep mysql
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/37e87efc55ab46de93786c4e142db544.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/37e87efc55ab46de93786c4e142db544.png)
 我们可以看到是没有安装mysql的；
 **如果有mysql的话，把mysql的文件全部删除，和卸载mysql；**
 
@@ -58,7 +58,7 @@ find / -name mysql
 ```bash
 rpm -qa | grep mariadb
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/616911ed9b9146bfa51ae1ac980ce9f7.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/616911ed9b9146bfa51ae1ac980ce9f7.png)
 我们可以看到是可以查到的，现在把他卸载了；
 ### ②、卸载系统自带的mariadb
 
@@ -68,7 +68,7 @@ rpm -e --nodeps mariadb-libs-5.5.60-1.el7-5.x86_64
 #卸载完查看还有没有mariadb
 rpm -qa | grep mariadb
 ```
-![卸载完查看](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/964d669507204668af2f9c363a2cb9f1.png)
+![卸载完查看](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/964d669507204668af2f9c363a2cb9f1.png)
 这里看已经卸载了；
 ### ③、查看my.cnf配置文件
 
@@ -76,7 +76,7 @@ rpm -qa | grep mariadb
 cat /etc/my.cnf
 ```
 因为默认的mysql的配置文件就是在/etc/的；我们可以看到也是没有my.cnf的。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/8e8ad65c26984ba6991c07a8c60b22f0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/8e8ad65c26984ba6991c07a8c60b22f0.png)
 ## 五、安装mysql5.7
 >卸载完系统自带的mariadb之后，我们开始安装mysql；
 ### ①、解压上传上来的安装包
@@ -84,21 +84,21 @@ cat /etc/my.cnf
 ```bash
 tar xf mysql-5.7.38-linux-glibc2.12-x86_64.tar
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/eb7bc8174c68498a8fa2e0e53a41e18a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/eb7bc8174c68498a8fa2e0e53a41e18a.png)
 生成了两个压缩包，然后在解压一下mysql-5.7.38-linux-glibc2.12-x86_64.tar.gz，注意最开始下载的tar包后缀<font color=red>**不带.gz**</font>，解压下来后面会多一个后缀<font color=red>**带了一个.gz**</font>;
 
 ```bash
 #解压mysql-5.7.38-linux-glibc2.12-x86_64.tar.gz
 tar xf mysql-5.7.38-linux-glibc2.12-x86_64.tar.gz
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e7c28668caf545bcb3d1c06dd145157b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e7c28668caf545bcb3d1c06dd145157b.png)
 解压完之后可以看到生成了一个mysql-5.7.38-linux-glibc2.12-x86_64的目录；正好，我们的<font color=red>【mysql-5.7.38-linux-glibc2.12-x86_64.tar】  【mysql-test-5.7.38-linux-glibc2.12-x86_64.tar.gz】</font>这两个就可以删了，留着也没用，但是<font color=red>mysql-5.7.38-linux-glibc2.12-x86_64.tar.gz</font>这个可不能删；
 ```bash
 #删除mysql-5.7.38-linux-glibc2.12-x86_64.tar、mysql-test-5.7.38-linux-glibc2.12-x86_64.tar.gz
 [root@mysql local]# rm -rf mysql-test-5.7.38-linux-glibc2.12-x86_64.tar.gz 
 [root@mysql local]# rm -rf mysql-5.7.38-linux-glibc2.12-x86_64.tar
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0563d37831994e40bebc8f314ff991f6.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0563d37831994e40bebc8f314ff991f6.png)
 
 删除完毕之后顺便给解压下来的文件修改个名字（规范）；
 
@@ -107,7 +107,7 @@ tar xf mysql-5.7.38-linux-glibc2.12-x86_64.tar.gz
 mv mysql-5.7.38-linux-glibc2.12-x86_64 mysql
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d79fff4a2caf40d3902889b494abcae5.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d79fff4a2caf40d3902889b494abcae5.png)
 
 ### ②、创建一个mysql组和用户
 
@@ -121,7 +121,7 @@ useradd -r -g mysql mysql
 cat /etc/group | grep mysql
 cat /etc/passwd |grep mysql
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c11f4174a9194509885818378b199650.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c11f4174a9194509885818378b199650.png)
 这样就是创建好了，创建好之后，我们继续下一步；
 ### ③、更改mysql 目录下所有文件夹所属的用户组、用户以及文件权限
 
@@ -134,7 +134,7 @@ cat /etc/passwd |grep mysql
 [root@mysql local]# chmod -R 775 mysql
 #更改完之后ll可以查看一下
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f8549a4f8a7c452382a3ad00ab155435.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f8549a4f8a7c452382a3ad00ab155435.png)
 这样就修改成功了。
 ### ④、把mysql/bin目录下的所有命令创建一个“快捷方式”
 
@@ -154,13 +154,13 @@ cd /usr/local/mysql/
 #执行命令。生成临时数据库密码（还是注意路径看看是不是和你的一样）如果有 libaio.so.1: cannot open shared object file: No such file or directory报错，看下面！
 mysqld --user=mysql --initialize --datadir=/usr/local/mysql/data
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/950f5895e4474efeb91ab1c08ccefaf2.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/950f5895e4474efeb91ab1c08ccefaf2.png)
 生成的临时密码是：<font color=red>eqypjeVdx6/d</font>
 
 **千万要把临时密码记住，到后面修改完密码之后，就可以不用了；**
 如果执行<font color=red>mysqld --user=mysql --initialize --datadir=/usr/local/mysql/data</font>报这个错；安装包即可；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ae44742ba61e4add94d0dc60fc354d3e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ae44742ba61e4add94d0dc60fc354d3e.png)
 
 ```bash
 yum -y install libaio*
@@ -177,7 +177,7 @@ cp -ar /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
 这个直接复制就可以了，咱们不需要改动什么，因为是按正规的流程走的，所以不需要改动；如果说，你的路径和我的不一样，就需要改完之后在复制过去了；
 路径不对的，修改这几个路径在复制过去就可以，软连接的话应该也是可以的，最后还是复制过去一份；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/af4b6d55b6434747b3ed2338ca66e16f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/af4b6d55b6434747b3ed2338ca66e16f.png)
 
 ### ⑦、添加my.cnf配置文件
 
@@ -203,14 +203,14 @@ chmod -R 775 /etc/my.cnf
 ps -ef|grep -v grep |grep mysql
 ps -ef|grep -v grep |grep mysqld
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6006b6c6ce2249f1aa07fb9c324a67ca.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6006b6c6ce2249f1aa07fb9c324a67ca.png)
 **可以看到是没有进程的，然后我们启动mysql服务；**
 
 ```bash
 #启动mysql服务
 /etc/init.d/mysqld start
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/151aef8098a14c0489a9ae72f7b1fb6c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/151aef8098a14c0489a9ae72f7b1fb6c.png)
 显示这个就是启动成功了，然后我们接下来设置开机自启；
 
 ```bash
@@ -219,7 +219,7 @@ chkconfig --add mysqld
 //显示服务列表
 chkconfig --list
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/dc983ff688954582998d1fec24ef2072.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/dc983ff688954582998d1fec24ef2072.png)
 开机自启设置成功。
 ### ⑨、登录mysql&&修改mysql密码
 >登录mysql ，密码就是初始化时生成的临时密码；
@@ -228,14 +228,14 @@ chkconfig --list
  mysql -uroot -p
 ```
 在这输入密码，密码是看不到的，输入临时密码之后就可以进入mysql了；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ecf7285c695d4ecaa55ff82954d6f60a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ecf7285c695d4ecaa55ff82954d6f60a.png)
 登录进来之后，我们来修改密码；
 
 ```bash
 #修改密码为123456
 set password for root@localhost = password('123456');
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f360414efaa44f6ea5721f3bacc8caa3.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f360414efaa44f6ea5721f3bacc8caa3.png)
 这样就是密码修改成功，然后我们退出重新登录一下；
 
 ```bash
@@ -247,7 +247,7 @@ set password for root@localhost = password('123456');
 mysql -uroot -p123456
 ```
 就可以登录进来了；
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/7be8cc97b74c409ea53fff7b8f3e3aba.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7be8cc97b74c409ea53fff7b8f3e3aba.png)
 ### ⑩、开放远程登陆&&测试本地客户端连接
 
 ```bash
@@ -258,10 +258,10 @@ update user set user.Host='%' where user.User='root';
 #刷新权限
 flush privileges;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/47638eace2ef4c3ea86cea170154993e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/47638eace2ef4c3ea86cea170154993e.png)
 开放远程登录这时候我们就可以用navicat、sqlyog等链接工具来连接数据库了，端口3306；自己可以测试一下，如果是直接在linux中用就不用测试了。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/086bb558cd67434eb9a0a5bb5cc6e81f.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c4fe8ba7e22f46899831b97f034051ee.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/086bb558cd67434eb9a0a5bb5cc6e81f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c4fe8ba7e22f46899831b97f034051ee.png)
 
 这样就链接成功了，就可以在里面操作增删改查库了。
 

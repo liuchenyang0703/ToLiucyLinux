@@ -111,7 +111,7 @@ make && make install
 ```bash
 gcc --version
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171024264.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171024264.png)
 **查看库：**
 
 ```bash
@@ -120,7 +120,7 @@ strings /lib64/libstdc++.so.6 | grep GLIBC
 # ubuntu系统查看方式
 strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBC
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171024546.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171024546.png)
 
 有这些就代表安装成功。
 
@@ -139,14 +139,14 @@ strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBC
 ```bash
 find / -name libstdc++.so.6*
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171024050.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171024050.png)
 
 然后我们可以看到`gcc5.4`的对应版本是`libstdc++.so.6.0.21`，这时候我们在查询一下`libstdc++.so.6.0.21`
 
 ```bash
 find / -name libstdc++.so.6.0.21
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171024656.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171024656.png)
 
 然后将这个路径的`libstdc++.so.6.0.21`复制到/lib64/改名为`libstdc++.so.6`，或者是软连接过去；（二选一）
 
@@ -166,7 +166,7 @@ ln -s /application/gcc-5.4.0/build/stage1-x86_64-unknown-linux-gnu/libstdc++-v3/
 放到lib64下之后我们可以通过`strings /lib64/libstdc++.so.6 | grep GLIBC`查看。
 这样就可以看到`GLIBCXX 3.4.21`了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412171024350.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171024350.png)
 
 ## 六、相关文章
 |文章标题|文章链接  |

@@ -27,7 +27,7 @@ breadcrumb: false
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191550275.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412191550275.jpeg)
 
 
 ## 前言
@@ -139,7 +139,7 @@ ELK 分别代表：
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191550269.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412191550269.png)
 
 - **input：** 设置数据来源。
 - **filter：** 数据处理层，可以对数据进行格式化处理、数据类型转换、数据过滤等，支持正则表达式。
@@ -236,7 +236,7 @@ ELK 分别代表：
 
 ### 5. ELK 基础架构/工作原理
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191550556.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412191550556.jpeg)
 
 
 
@@ -262,7 +262,7 @@ ELK 分别代表：
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412191550130.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412191550130.png)
 
 
 

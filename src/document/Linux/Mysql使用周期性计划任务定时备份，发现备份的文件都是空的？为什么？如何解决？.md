@@ -14,7 +14,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f599934504f440d8872f960b2e7ee0c5.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f599934504f440d8872f960b2e7ee0c5.jpeg)
 
 
 >👨‍🎓**博主简介**
@@ -88,7 +88,7 @@ mysqldump: [Warning] Using a password on the command line interface can be insec
 ```bash
 cat /etc/crontab
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/54e16ff4d3ed4e82b89f3e92fac17c08.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/54e16ff4d3ed4e82b89f3e92fac17c08.png)
 
 可以看到写的是：`0 0 */1 * * root /bin/sh /usr/local/mysql/data/back.sh`，每天备份一次，而且都写的绝对路径；
 我们把他这个绝对路径拿出来试试看看执行一下是否成功？
@@ -191,7 +191,7 @@ PATH=/usr/local/mysql/bin/:$PATH
 ```bash
 [root@csdn backup]# tailf logfile.log 
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6ca70cc1110c481db3f14766df7df17e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6ca70cc1110c481db3f14766df7df17e.png)
 
 可以看到已经没有报错了；这个是提示，说你使用了明文密码，不影响；
 

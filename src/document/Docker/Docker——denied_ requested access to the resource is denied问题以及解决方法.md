@@ -15,11 +15,11 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161456021.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161456021.gif)
 
 ## 问题
 使用<font color=red>docker push</font>推送镜像时，出现<font color=red>denied: requested access to the resource is denied</font>的报错。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161456378.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161456378.png)
 
 ## 解析
 &emsp;&emsp;原因和Git push代码一样，为了安全起见，在Docker Hub无法确定操作者的情况下，是无法完成push操作的。在Git中是通过配置文件SSH Keys来记住用户，那么在Docker Hub中也是通过配置文件。
@@ -28,7 +28,7 @@ breadcrumb: false
 >这里说一下，直接用-u参数指定登录名或者直接docker login在输入用户名密码登录都可以。
 
 例如：↓
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161456215.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161456215.png)
 画红框的就是你config.json的绝对路径。
 
 
@@ -56,10 +56,10 @@ Login Succeeded
 ```bash
 docker push liuchenyang/mycentos:tagname
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161456163.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161456163.png)
 最后就可以看到我们的镜像存储库了。
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161456033.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161456470.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161456033.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161456470.jpeg)
 
 ## 总结
 **相关文章：**

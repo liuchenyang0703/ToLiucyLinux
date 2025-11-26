@@ -135,8 +135,8 @@ prometheus 本身不会对报警进行处理、需要借助一个组件alertmana
 
 **1.4 系统架构**
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161105856.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161105854.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161105856.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161105854.png)
 
 
 ### 2、Prometheus 部署
@@ -147,7 +147,7 @@ prometheus 本身不会对报警进行处理、需要借助一个组件alertmana
 
 >访问下载官网：[https://prometheus.io/download/](https://prometheus.io/download/)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161105449.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161105449.png)
 选择版本，在哪部署选择哪个哪个，本文在linux上部署，所以，选择linux的tar包；
 
 点击，等待下载完成，上传到服务器中；
@@ -156,7 +156,7 @@ prometheus 本身不会对报警进行处理、需要借助一个组件alertmana
 
 也是同样的先打开官网：找到自己要下载的版本；右击点击复制连接；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161105176.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161105176.png)
 
 在服务器上使用wget下载
 
@@ -164,7 +164,7 @@ prometheus 本身不会对报警进行处理、需要借助一个组件alertmana
 wget https://github.com/prometheus/prometheus/releases/download/v2.44.0/prometheus-2.44.0.linux-amd64.tar.gz
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161105304.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161105304.png)
 
 
 
@@ -196,7 +196,7 @@ scrape_timeout: 10s
 ```
 修改两处。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104372.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104372.png)
 #### 2.4 配置系统启动文件，设置开机自启 （两种方式：推荐第一种）
 **2.4.1 第一种：配置系统启动文件，启动并设置开机自启**
 
@@ -223,7 +223,7 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104696.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104696.png)
 
 ```bash
 #启动
@@ -235,7 +235,7 @@ systemctl enable prometheus
 #查看端口是否启动9090
 netstat -anput | grep 9090
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104268.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104268.png)
 **2.4.2 第二种：进入解压目录，挂后台执行./prometheus**
 
 ```bash
@@ -248,7 +248,7 @@ cd /usr/local/prometheus
 #查看端口是否启动
 netstat -anput | grep 9090
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104436.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104436.png)
 
 也是可以启动的，但是不好的是，不能设置开机自启，如果想要开机自启，还需要手动写一个启动服务器去执行他的命令或者周期性计划任务，所以不推荐使用方法二；<font color=red>**推荐使用第一种。**</font>
 
@@ -260,16 +260,16 @@ netstat -anput | grep 9090
 点击页面的 Status -> Targets，如看到 Target 状态都为 UP，说明 Prometheus 能正常采集到数据
 http://192.168.100.20:9090/metrics ，可以看到 Prometheus 采集到自己的指标数据
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104429.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104766.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104429.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104766.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104245.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104245.png)
 
 点击graph可以查看折线图
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104331.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104972.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104066.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104331.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104972.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104066.png)
 
 #### 2.6 服务端安装完成
 >至此，Prometheus 服务端安装完成。
@@ -288,7 +288,7 @@ http://192.168.100.20:9090/metrics ，可以看到 Prometheus 采集到自己的
 
 可以`ctrl+f`搜索`node_exporter`。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104399.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104399.png)
 
 同样也是下载linux版本；点击，等待下载完成，上传到服务器中；
 
@@ -296,7 +296,7 @@ http://192.168.100.20:9090/metrics ，可以看到 Prometheus 采集到自己的
 
 也是同样的先打开官网：找到自己要下载的版本；右击点击复制连接；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104061.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104061.png)
 
 在服务器上使用wget下载
 
@@ -304,7 +304,7 @@ http://192.168.100.20:9090/metrics ，可以看到 Prometheus 采集到自己的
 wget https://github.com/prometheus/node_exporter/releases/download/v1.6.0/node_exporter-1.6.0.linux-amd64.tar.gz
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104963.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104963.png)
 
 等待下载完成之后，
 
@@ -355,7 +355,7 @@ systemctl enable node_exporter
 #查看端口是否启动9100
 netstat -anput | grep 9100
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104072.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104072.png)
 
 **1.3.2 第二种：进入解压目录，挂后台执行./node_exporter**
 
@@ -369,7 +369,7 @@ cd /usr/local/prometheus_node
 #查看端口是否启动
 netstat -anput | grep 9100
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104683.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104683.png)
 
 也是可以启动的，但是不好的是，不能设置开机自启，如果想要开机自启，还需要手动写一个启动服务器去执行他的命令或者周期性计划任务，所以不推荐使用方法二；<font color=red>推荐使用第一种。</font>
 
@@ -379,10 +379,10 @@ netstat -anput | grep 9100
 > ip:port
 > 172.16.11.220:9100
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104391.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104391.png)
 点击`Metrics`可以查看node_exporter 在被监控端收集的监控信息：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161104749.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161104749.png)
 
 #### 1.5 客户端安装完成
 
@@ -402,7 +402,7 @@ vim /usr/local/prometheus/prometheus.yml
     static_configs:
       - targets: ['172.16.11.220:9100']
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103805.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103805.png)
 
 **2.1.2 添加多个 客户端（两种方式，暂无推荐，根据自己的需求选择）**
 
@@ -418,7 +418,7 @@ vim /usr/local/prometheus/prometheus.yml
     static_configs:
       - targets: ["172.16.11.209:9100"]
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103395.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103395.png)
 
 
 **添加方式二：使用单个命名来命名多个客户端的作用（两种方式，推荐使用方法二）**
@@ -430,7 +430,7 @@ vim /usr/local/prometheus/prometheus.yml
       - targets: ["172.16.11.220:9100"]
       - targets: ["172.16.11.209:9100"]
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103170.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103170.png)
 
 **方法二：**
 ```bash
@@ -440,7 +440,7 @@ vim /usr/local/prometheus/prometheus.yml
         - 172.16.11.220:9100
         - 172.16.11.209:9100
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103482.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103482.png)
 
 #### 2.2 重启服务端
 
@@ -449,7 +449,7 @@ systemctl restart prometheus
 ```
 等待重启完成，刷新一下页面，如果还是没有可以清除一下缓存，试试。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103177.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103177.png)
 
 #### 2.3 服务端添加客户端完成
 
@@ -489,7 +489,7 @@ Checking prometheus.yml
 
 Prometheus页面显示：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103980.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103980.png)
 
 ><font color=red>报错说明：</font>为什么会报错呢，当然，只是为了测试加后缀，随便写的，所以会报错，只是连接被拒绝，因为并没有这个服务。
 
@@ -505,7 +505,7 @@ Prometheus页面显示：
 
 可以`ctrl+f`搜索`mysqld_exporter`，选择要下载的版本。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103302.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103302.png)
 
 
 同样也是下载linux版本；点击，等待下载完成，上传到服务器中；
@@ -514,7 +514,7 @@ Prometheus页面显示：
 
 也是同样的先打开官网：找到自己要下载的版本；右击点击复制连接；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103646.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103646.png)
 
 
 在服务器上使用wget下载
@@ -523,7 +523,7 @@ Prometheus页面显示：
 wget https://github.com/prometheus/mysqld_exporter/releases/download/v0.15.0-rc.0/mysqld_exporter-0.15.0-rc.0.linux-amd64.tar.gz
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103020.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103020.png)
 
 
 等待下载完成之后，
@@ -537,7 +537,7 @@ tar xf mysqld_exporter-0.15.0-rc.0.linux-amd64.tar.gz -C /usr/local/
 #进入/usr/local/下给重命名为：mysqld_exporter
 mv mysqld_exporter-0.15.0-rc.0.linux-amd64/ mysqld_exporter
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103467.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103467.png)
 
 #### 4.3 安装mysql数据库，并授权 
 
@@ -561,7 +561,7 @@ mysql_secure_installation
 ```
 提示：如果回车没有反应，先检查mariadb是否启动。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103767.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103767.png)
 
 ```bash
 #进入mysql数据库
@@ -574,7 +574,7 @@ grant select,replication client,process on *.* to 'mysql_exporter'@'localhost';
 #刷新权限
 flush privileges;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103908.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103908.png)
 
 
 - 第二种：已经有数据库的
@@ -590,7 +590,7 @@ grant select,replication client,process on *.* to 'mysql_exporter'@'localhost';
 #刷新权限
 flush privileges;
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103216.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103216.png)
 #### 4.4 创建一个mysqld_exporter配置文件
 >创建一个mysqld_exporter配置文件，写上连接的用户名和密码（和上面的授权的用户名和密码要对应）
 
@@ -601,7 +601,7 @@ vim /usr/local/mysqld_exporter/.my.cnf
 user=mysql_exporter
 password=123456
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161103317.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161103317.png)
 
 #### 4.5 配置系统启动文件，设置开机自启 （两种方式：推荐第二种）
 **4.5.1 第一种：配置系统启动文件，启动并设置开机自启**
@@ -630,7 +630,7 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102788.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102788.png)
 
 
 ```bash
@@ -643,7 +643,7 @@ systemctl enable mysqld_exporter
 #查看端口是否启动9104
 netstat -anput | grep 9104
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102589.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102589.png)
 
 **4.5.2 第二种：进入解压目录，挂后台执行 mysqld_exporter**
 
@@ -657,17 +657,17 @@ nohup /usr/local/mysqld_exporter/mysqld_exporter --config.my-cnf=/usr/local/mysq
 #查看端口是否启动
 netstat -anput | grep 9104
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102089.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102089.png)
 #### 4.6 页面访问
 
 > ip:port
 > 172.16.11.220:9104
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102327.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102327.png)
 
 >点击`Metrics`可以查看node_exporter 在被监控端收集的监控信息：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102763.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102763.png)
 
 
 #### 4.7 客户端安装完成
@@ -684,7 +684,7 @@ vim /usr/local/prometheus/prometheus.yml
     static_configs:
       - targets: ['172.16.11.220:9104']
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102085.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102085.png)
 添加完之后，重启服务端
 
 ```bash
@@ -692,7 +692,7 @@ systemctl restart prometheus
 ```
 等待重启完成，刷新一下页面，如果还是没有可以清除一下缓存，试试。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102149.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102149.png)
 
 #### 4.9 添加成功！！！
 ## 四、部署 Grafana（可视化）
@@ -704,28 +704,28 @@ systemctl restart prometheus
 >随着公司业务的不断发展，紧接来的是业务种类的增加、服务器数量的增长、网络环境的越发复杂以及发布更加频繁，从而不可避免地带来了线上事故的增多，因此需要对服务器到应用的全方位监控，提前预警，急需一个工具来解决这个问题，而Grafana的出现完美的解决了这个问题。
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102013.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102013.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102656.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102059.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102656.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102059.png)
 
 **主要特点**
 
 1.grafana提供了快速灵活的可视化效果，可以让自己以任何想要的方式来可视化数据
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102774.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102500.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102009.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102774.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102500.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102009.png)
 
 2.支持众多插件 ，使用Grafana插件可以连接自己的工具和团队，数据源插件通过 API 挂接到现有数据源中，实时呈现数据，**而无需迁移或引入数据**。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102491.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102491.png)
 
 3.告警系统，可以在一个简单的UI中创建，管理所有警报从而轻松整合和集中所有警报。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102522.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102522.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161102194.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161102194.png)
 
 
 
@@ -740,11 +740,11 @@ systemctl restart prometheus
 
 可以选择版本和系统，我们这里就直接选择最新版：9.5.2
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101779.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101779.png)
 
 下载推荐rpm包，点击一下，就会自动下载；或者复制一下，粘贴到服务器上也会下载。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101552.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101552.png)
 
 等待下载完成...
 
@@ -797,7 +797,7 @@ systemctl enable grafana-server
 #查看端口（默认为3000）
 netstat -natp | grep 3000
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101657.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101657.png)
 
 #### 2.3 页面访问
 
@@ -808,51 +808,51 @@ netstat -natp | grep 3000
 > 密码：admin<br>
 > grafana默认配置文件目录 /etc/grafana/grafana.ini</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101266.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101266.png)
 
 **通过浏览器访问 http:// grafana 服务器 IP:3000 就到了登录界面，使用默认的 admin 用户，admin 密码就可以登陆了。**
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101791.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101791.png)
 
 进来需要设置一个新密码
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101699.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101699.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101198.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101198.png)
 
 #### 2.4 配置数据源
 >下面我们把 Prometheus 服务器收集的数据做为一个数据源添加到 grafana，让 grafana 可以得到 Prometheus 的数据。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101742.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101742.png)
 
 选择prometheus
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101482.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101461.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101482.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101461.png)
 
 点击保存测试
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101526.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101505.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101526.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101505.png)
 
 #### 2.5 导入模板
 
 可以看到我们刚刚创建的
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101238.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101238.png)
 
 点进去，选择：Dashboards-->从中选择任意一个模板，这里我选择第二个，点击import。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101273.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101273.png)
 
 安装完成；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101175.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101175.png)
 
 然后点击名称，进入可以查看模板；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101680.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101528.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101680.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101528.png)
 
 >这里已经可以看到了，但是他只是个模板，不能展示出来，接下来，我们将自己做数据源将数据展示出来。
 
@@ -860,43 +860,43 @@ netstat -natp | grep 3000
 
 点击右上角加号，再点击创建新的仪表板
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101654.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101582.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101654.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101582.png)
 
 <a id="click_me_jump">选择刚刚添加的监控项</a>
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101422.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101422.png)
 
 
 选择load1、load5、load15；一分钟、五分钟、十五分钟负载
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101784.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161101168.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101784.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161101168.png)
 
 这里写了三个条件
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161100502.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161100237.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161100502.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161100237.png)
 
 点击保存
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161100291.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161100291.png)
 
  自定义名称、点击保存；
 
 最后在dashboard可以查看到 。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161100262.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161100976.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161100262.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161100976.png)
 
 拉住想要看的这个模块右下角，可以放大；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161100451.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161100451.png)
 
 还可以点击查看，再次点击一下就恢复到默认所有；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161100555.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161100555.png)
 
 > 注：有多条数据的时候，可以在查询的键值后面加个大括号，括号里的条件表示只匹配当前的监控项。 
 
@@ -904,7 +904,7 @@ netstat -natp | grep 3000
 
 点击dashboard可以查看到 ；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161100640.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161100640.png)
 
 
 
@@ -919,26 +919,26 @@ netstat -natp | grep 3000
 进入官网，往下拉，可以看到选择这几个，`Data Source` 选择`Prometheus`，然后搜索主机监控，或者自己定义，搜索，linux什么的都可以，根据自己的需求选择；
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161053258.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161053258.png)
 
 找到心仪的模板之后点进去，可以看到右边有`Copy ID` 和 `Download JSON`，自行选择就行；这里我选择复制id，json需要下载；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161053421.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161053421.png)
 
 >复制好id之后，打开在 grafana 页面中，+ Create -> Import ，输入面板 ID 号或者上传 JSON 文件，点击 Load，即可导入监控面板
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052975.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052500.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052544.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052975.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052500.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052544.png)
 
 完成，页面显示就是这样的了。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052595.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052247.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052595.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052247.png)
 
 需要查看其他模板的话，可以点击最上面的中间的搜索；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052796.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052796.png)
 
 
 
@@ -946,26 +946,26 @@ netstat -natp | grep 3000
 
 首先，打开已添加的模板；点击add-->visualization
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052992.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052992.png)
 
 然后再次添加即可，添加方式和上面的一样；点击跳转到上面： [2.6 为数据源做自定义数据展示](#click_me_jump)
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052553.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052553.png)
 
 这里可以选择形状图；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052333.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052333.png)
 
 
 最后的展示
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052056.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052056.png)
 #### 2.9 修改已有的模块数据
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052413.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052149.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052413.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052149.png)
 
 
 
@@ -992,7 +992,7 @@ git clone https://github.com/percona/grafana-dashboards.git
 如果服务器上没有`git`服务，可以访问：[https://github.com/percona/grafana-dashboards](https://github.com/percona/grafana-dashboards)
 直接下载，下载完之后上传服务器解压，放到/var/lib/grafana/目录即可，git下来的与下载的zip解压下来的是一样的。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052660.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052660.png)
 
 **将克隆的 grafana-dashboards/下的dashboards 放到 /var/lib/grafana/ 目录**
 
@@ -1004,20 +1004,20 @@ systemctl restart grafana-server.service
 #查看端口号是否启动
 netstat -anput | grep 3000
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052691.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052691.png)
 
 #### 3.3 在grafana图形化界面导入相关的json文件
 
 将 <font color=grepp>/var/lib/grafana/dashboards/MySQL/MySQL_Instances_Overview.json </font>文件下载到本地；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052662.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052662.png)
 
 **访问grafana页面，导入json文件**
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161052045.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051549.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051113.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051841.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161052045.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051549.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051113.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051841.png)
 
 ### 4、Grafana + onealert 实现服务告警
 
@@ -1025,26 +1025,26 @@ Prometheus 告警需要使用 alertmanager 这个组件，而且告警规则需�
 
 **登陆 [https://www.aiops.com/](https://www.aiops.com/)→注册帐户→登入后台管理**
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051063.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051444.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051063.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051444.png)
 
 会有一个邮箱认证，认证一下就可以了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051093.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051093.png)
 
 登录上来之后，点击左侧的 智能告警平台
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051894.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051228.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051894.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051228.png)
 
 然后点击下面的加号，进入编辑页面；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051215.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051860.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051215.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051860.png)
 
 获取key值
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051135.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051135.png)
 
 
 下面也有配置步骤，可根据自己的版本来查看；
@@ -1055,22 +1055,22 @@ Prometheus 告警需要使用 alertmanager 这个组件，而且告警规则需�
 
 #### 4.3 创建 contact points
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051751.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051751.png)
 
 URL填写名称，选择 contact points type为webhook,填写<font color=red>url:http://api.aiops.com/alert/api/event/grafana/v1/`{appKey}`/</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051612.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161051916.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161050465.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161050032.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051612.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161051916.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161050465.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161050032.png)
 
 >contact points 创建完成！！！
 #### 4.4 创建 Notification policies
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161050522.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161050958.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161050303.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161050761.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161050522.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161050958.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161050303.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161050761.png)
 
 >Notification policies 创建完成！！！
 

@@ -17,7 +17,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c0aa11fd101543d0a17ef264c0609468.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c0aa11fd101543d0a17ef264c0609468.jpeg)
 
 >🍁**博主简介**
 >&emsp;&emsp;🏅[云计算领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
@@ -36,41 +36,41 @@ breadcrumb: false
 2  进入用户
 3  设置修改密码
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/31df0c79e09f4d9aa2c3f8453f237b60.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1014ef8d72a149bf813b1335b1540e74.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/180c0f1b574343baa0097d0a05520664.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/089bf009eb8a48d08e4f89458685ac1c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/31df0c79e09f4d9aa2c3f8453f237b60.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1014ef8d72a149bf813b1335b1540e74.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/180c0f1b574343baa0097d0a05520664.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/089bf009eb8a48d08e4f89458685ac1c.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3f52f0f56e2b4cca90a33d4d6ec77762.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f12898c529a548f48c326a701d2b1bdc.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/3f52f0f56e2b4cca90a33d4d6ec77762.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f12898c529a548f48c326a701d2b1bdc.png)
 ### 2、安装 Jenkins 必要插件
 
 在 Jenkins 首页中，点击左侧的 Manage Jenkins>>Manage Plugins>>可选插件，在过滤搜 索框中输入要安装的 <font color=red>Publish Over SSH</font> 、  <font color=red>Maven Integration</font> 插件，并勾中其左侧的复 选框，点击“直接安装”即可开始插件安装操作。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c31abbbda15f4b1295bb326ff9c220e8.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/38d4ddbcd3ef4eb49b5de8dae87ccf14.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4346fbf977a54640b40865794391f933.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1d3c7745bc8f46c081bbc016daa4321b.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/18eb45bda8ec4fc2b45e575e18a9875b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c31abbbda15f4b1295bb326ff9c220e8.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/38d4ddbcd3ef4eb49b5de8dae87ccf14.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4346fbf977a54640b40865794391f933.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1d3c7745bc8f46c081bbc016daa4321b.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/18eb45bda8ec4fc2b45e575e18a9875b.png)
 ### 3、配置 jenkins 并发执行数量
 用于提高提高执行效率
 <font color=red>Manage Jenkins</font> >> <font color=red>Configure System</font> >> <font color=red>Maven 项目配置</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1268310994bc41c49751155aad084ad4.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1268310994bc41c49751155aad084ad4.png)
 
 并发执行者数量  如果构建任务数量多的时候,我们可以在同一时间内构建多个；
 默认是2个
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bc31c6fcb70a47b4a5af3b95ac2ecd8f.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0536f9383e9943fb831f4268e23300f8.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/bc31c6fcb70a47b4a5af3b95ac2ecd8f.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0536f9383e9943fb831f4268e23300f8.png)
 ### 4、配置邮件地址
 在测试完成后，主动发邮件告知测试情况
 <font color=red>Manage Jenkins</font> >> <font color=red>Configure System</font> >> <font color=red>Jenkins Location</font>
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ca9de6d6a8804980a4d2e38556d88705.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e2d16418a1f14ca3a8988f355dc7e81c.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c60e8c9508b64ea09da14785f0a25574.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ca9de6d6a8804980a4d2e38556d88705.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e2d16418a1f14ca3a8988f355dc7e81c.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c60e8c9508b64ea09da14785f0a25574.png)
 ## 基于 Jenkins 自动打包并部署 Tomcat 环境
 ### 传统网站部署的流程
 >&emsp;&emsp;在运维过程中，网站部署是运维的工作之一。传统的网站部署的流程大致分为:需求分析-->原型设计-->开发代码-->提交代码-->内网部署-->内网测试-->确认上线-->备份数据-->外网更新-->外网测试-->发布完成。如果在内网测试时发现代码有异常，返回代码开发人员名字,调整代码；如果在外网测试时发现外网部署的代码有异常，可以及时进行网站回滚。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0e1de9e7a3f3449ea51afebec2c01efa.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0e1de9e7a3f3449ea51afebec2c01efa.png)
 
 
-![img](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c9acdc7b28b1472eb27e3ee224475e1e.png)
+![img](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c9acdc7b28b1472eb27e3ee224475e1e.png)
 
 
 <font color=teal>**传统代码上线的过程**</font>
@@ -83,7 +83,7 @@ breadcrumb: false
 >-  运维人员：减轻人工干预的错误率，同时解放运维人员繁杂的上传代码、手动备份、更新等操作。
 >-  测试人员：可以通过 Jenkins 进行简单的代码及网站测试。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a6d999bd9fb647b4aadf67092587c348.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a6d999bd9fb647b4aadf67092587c348.png)
 
 &emsp;&emsp;代码仓库中有Jenkins可直接进行打包和部署不需要开发人员进行打包,只要选择分支上的代码需要上线,会自动打包和构建.部署在内网测试的测试结果也会反馈给开发。
 
@@ -91,7 +91,7 @@ breadcrumb: false
 
 >&emsp;&emsp;Jenkins 的工作原理是先将源代码从 SVN/Git 版本控制系统中拷贝一份到本地，然后根据设置的脚本调用 Maven 进行 build（构建）。整个系统的关键就是 build 脚本，build脚本告诉 Jenkins 在一次集成中需要执行的任务。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f55e3534b05d4bcc807c4199587fc0e1.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f55e3534b05d4bcc807c4199587fc0e1.png)
 
 
 1、开发人员写代码 将代码往服务器上推送 
@@ -171,23 +171,23 @@ setenforce 0
 在 Jenkins 的首页中点击“<font color=red>凭据</font>”进入凭据页面；
 注：有是版本不一样，位置不一样，根据自己的实际版本来定；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b5501484432b4864a546a22c05239733.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b5501484432b4864a546a22c05239733.png)
 
 在凭据页面中，点击“Jenkins”跳转到“系统”页面。点击左侧导航栏中“添加域”，跳转到“添加域”页面。在该页面创建域名为“crushlinux”并点击“ok”完成配置。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/0ceb65ac9724444386fefb2645e5d758.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/0ceb65ac9724444386fefb2645e5d758.png)
 在添加域里面添加的用户名的密码是web服务器的
 Jenkins要往web服务器上面去部署,所以Jenkins要有权限去远程连接web服务器
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4b8a3964fa7247fab871e3d91296d02c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4b8a3964fa7247fab871e3d91296d02c.png)
 
 点击左侧导航栏中的“添加凭据”。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/07a62894b8934b61b6afc09446839d2a.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/467bea9c13154a58966118bec6e302af.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/07a62894b8934b61b6afc09446839d2a.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/467bea9c13154a58966118bec6e302af.png)
 
 填写以上数据后，点击“确定”就可以查看到新增的远程 web 主机账号。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a8e353a8c076438f91afa937451d525a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a8e353a8c076438f91afa937451d525a.png)
 ② 添加 Publish Over SSH 远程主机
 在主机名为 <font color=red>web</font> 的主机上上创建远程目录。
 
@@ -197,8 +197,8 @@ Jenkins要往web服务器上面去部署,所以Jenkins要有权限去远程连�
 ```
 >&emsp;&emsp;在 Jenkins 首页中点击“Manage Jenkins”->“Configure System”-“Publish overSSH”->“SSH Servers”->“增加”选项按钮，添加 SSH 远程主机。如图 3.13 所示，输入 Name、Hostname、Username 等必要信息后，点击“高级”选项按钮->勾选“Use Passwordauthentication,or use a different key”选项->输入“远程主机登录密码”->“TestConfiguration”测试远程主机配置。测试远程主机配置成功后点击“保存”按钮即可。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ffc515317d4b40c2bcaa887f6970f932.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5049adc621bd45319bcd3ff09b4f4cd1.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b09ad61c7a984e0db8455aee1d25dd58.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ffc515317d4b40c2bcaa887f6970f932.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5049adc621bd45319bcd3ff09b4f4cd1.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b09ad61c7a984e0db8455aee1d25dd58.png)
 
 ③ 配置 Maven、JDK、Git 环境
 Jenkins需要构建任务还要去配置Maven JDK Git 集成的工具
@@ -218,7 +218,7 @@ java version "1.8.0_191"
 Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b6a627195fd14c9dbf4b1ff2eafcea3e.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9fbcfb59dc5a42bfb4f7ff05582a3e0a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b6a627195fd14c9dbf4b1ff2eafcea3e.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/9fbcfb59dc5a42bfb4f7ff05582a3e0a.png)
 
 &emsp;&emsp;在“Global Tool Configuration”配置界面中找到 Maven 配置选项，然后点击“新增Maven”并设置别名为“Maven3.5”。
 
@@ -240,14 +240,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 ```
 之后可能会报错，可以使用先使用apache官网下载地质下载jar包
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/310a8292ff074fb4834db827c7697074.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/310a8292ff074fb4834db827c7697074.png)
 Git 配置
 
 ```bash
 [root@jenkins ~]# which git
 /usr/bin/git
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/dfae6c3f292f4c9e83f973a179a829bf.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/dfae6c3f292f4c9e83f973a179a829bf.png)
 
 
 以上全局基本配置完毕后，点击保存即可完成。
@@ -284,11 +284,11 @@ web主机将公钥发送给Jenkins
 
 &emsp;&emsp;在以上配置完成后，回到 Jenkins 首页，选择“新建任务”，然后输入一个任务名称“probe”，并选中“Maven project”点击当前页面下方的“确定”按钮。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ba446e99d12640dbaf94928c504982b0.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a2086736504c46de9f5bd13d6b1e05aa.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ba446e99d12640dbaf94928c504982b0.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a2086736504c46de9f5bd13d6b1e05aa.png)
 
 在点击“确定”按钮后，选择“源码管理”选中“Git”,配置“RepositoriesURL”为git@172.16.11.203:/home/git/probe.g
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9531bf1d66204f0f848f829e515c5298.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/9531bf1d66204f0f848f829e515c5298.png)
 
 主机 Jenkins 默认用 jenkins 用户去连接 git，所以用 jenkins 用户生成密钥对，并发送给 git。
 
@@ -301,7 +301,7 @@ bash-4.2$ ssh-copy-id git@172.16.11.203
 ```
 Jenkins将公钥文件发送给git用户；我们要注意的是Jenkins运行是一个程序用户，无法登录的我们要-s 指定/bin/bash 将秘钥对发送给指定的git 用户；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fe51e67d200c42e3ae7f44f60f9b63d0.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a7693fd32be842e182ec0aaf3a59be3d.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/fe51e67d200c42e3ae7f44f60f9b63d0.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a7693fd32be842e182ec0aaf3a59be3d.png)
 
 选择“构建后操作“中的“send build artfacts over SSH” “Exec command”中执行命令的含义是:在自动部署前先杀掉 Tomcat 进程，然后删除 war 包，用 scp 远程拷贝命令将Jenkins 自动打包好的项目 war 包拷贝到当前 Tomcat 应用目录。 然后重启 Tomcat 。
 
@@ -312,13 +312,13 @@ scp 172.16.11.202:/var/lib/jenkins/workspace/probe/psi-probe-web/target/probe.wa
 ```
 将Jenkins的war包推送到tomcat的webapps目录下自动解压
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1e064921f15547118cd6beefdbf1bbd4.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1e064921f15547118cd6beefdbf1bbd4.png)
 
 &emsp;&emsp;以上全部配置完成后，点击保存即可。然后点击刚才创建的“probe”->“Build Now”直至项目构建完成。构建过程可以在“控制台输出”中查看到。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/cc0ff45a0cba4c3fa6ac1bc0aa93a84f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/cc0ff45a0cba4c3fa6ac1bc0aa93a84f.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c97a4bda21064866932f00524253c3b6.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1577f744013b40b6a572524cb3077545.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c97a4bda21064866932f00524253c3b6.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1577f744013b40b6a572524cb3077545.png)
 
 
 
@@ -342,7 +342,7 @@ drwxr-x--- 6 root root 4096 6 月 20 12:12 WEB-INF
 ```
 从构建后的执行命令可以看出，Tomcat 已经重新启动，通过浏览器访问测试 probe 监控系统。http://172.16.11.204:8080/probe。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/48bfabbd45b9427699338c1b235d0214.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/48bfabbd45b9427699338c1b235d0214.png)
 
 ```bash
 [root@tomcat ~]# vim /usr/local/tomcat/conf/tomcat-users.xml
@@ -358,7 +358,7 @@ drwxr-x--- 6 root root 4096 6 月 20 12:12 WEB-INF
 [root@tomcat ~]# /usr/local/tomcat/bin/shutdown.sh
 [root@tomcat ~]# /usr/local/tomcat/bin/startup.sh
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/9bc10a1d18b442a8a758d6b9828daf40.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/9bc10a1d18b442a8a758d6b9828daf40.png)
 
 至此，Jenkins 自动打包部署完毕。
 
@@ -448,16 +448,16 @@ centos 7 58584b57ef9c 8 minutes ago
 ### 4、构建一个 Maven 项目
 在以上配置完成后，回到 Jenkins 首页，选择“新建任务”，然后输入一个任务名称“probe-docker”，并选择“Maven project”配置项，点击当前页面下方的“确定”按钮。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ff31479639bc4487a164c97bd147c9de.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ff31479639bc4487a164c97bd147c9de.png)
 
 在点击“确定”按钮，选择“源码管理”并选中“Git”,设置“Repository URL”地址。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d9de0fe87e814d16b8632b1a41575683.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d9de0fe87e814d16b8632b1a41575683.png)
 
 
 选择“Build”-> clean package -Dmaven.test.skip=true
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/87414ec4de184fb694c46dc2b9541de3.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/87414ec4de184fb694c46dc2b9541de3.png)
 
 在上一步后面选择“构建后操作”中的“Send build artfacts over SSH”选项并进行。
 
@@ -465,11 +465,11 @@ centos 7 58584b57ef9c 8 minutes ago
 scp 172.16.11.202: /var/lib/jenkins/workspace/probe/psi-probe-web/target/probe.war /data/
 docker run -itd --name tomcat-test -p 8090:8080 -v /data:/usr/local/apache-tomcat-8.5.16/webapps tomcat:v1
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/898a8efe06b948f0b81711f9aca80d3c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/898a8efe06b948f0b81711f9aca80d3c.png)
 
 &emsp;&emsp;以上全部配置完成后，点击保存即可。然后点击刚才创建的工程任务“probe-docker “->” Build new”直至任务构建完成。开始构建过程中可以点击进度条查看
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/ac1649f7f969422f92b76e35770f9df2.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/ac1649f7f969422f92b76e35770f9df2.png)
 
 &emsp;&emsp;可以看到此工程任务已构建成功，并且在构建后，创建用于 docker 项目的 Docker Web环境命令也执行成功。
 
@@ -483,7 +483,7 @@ NAMESac8fefaac75f tomcat:v1 "/bin/sh -c '/usr/lo…" 39
 seconds ago Up 37 seconds 0.0.0.0:8090->808
 0/tcp tomcat-test
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/eec5312712d9417a8f7645fbdbe5474f.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/eec5312712d9417a8f7645fbdbe5474f.png)
 
 ## 基于 Jenkins 自动化部署 PHP 环境
 准备 git 仓库
@@ -526,7 +526,7 @@ To git@172.16.11.203:/home/git/php.git * [new branch] master -> master
 [root@web ~]# systemctl start httpd
 [root@web ~]# systemctl start mariadb
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/838544d4119f4096be8a5803b722762e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/838544d4119f4096be8a5803b722762e.png)
 
 Jenkins 主机将密钥发布到 web 主机
 
@@ -540,12 +540,12 @@ bash-4.2$ ssh-copy-id root@172.16.11.204
 ### 基于 rsync 部署
 创建一个 Freestyle project
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e4cc7fc51d7840228ed59865513edf2b.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e4cc7fc51d7840228ed59865513edf2b.png)
 ![](https://img-blog.csdnimg.cn/1d80709ea27e4a8e88fbd460880c2b28.png)
 
 rsync -avz --delete * root@172.16.11.204:/var/www/html/
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/1102e0d66a734268b4b16c1bee00c7bc.png)![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/f3db1eaa744143929e1bfc40a866203a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1102e0d66a734268b4b16c1bee00c7bc.png)![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/f3db1eaa744143929e1bfc40a866203a.png)
 
 ```php
 [root@web ~]# ls /var/www/html/
@@ -555,7 +555,7 @@ index.php
 phpinfo();
 ?>
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/d14b53d15ba1471982d36e47e41fb372.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/d14b53d15ba1471982d36e47e41fb372.png)
 
 
 ### 基于 ansible 部署
@@ -577,27 +577,27 @@ Restarting jenkins (via systemctl): [ 确定 ]
 ```
 添加 Ansible 插件
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/276415ca9f1641cabd97149518592521.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/276415ca9f1641cabd97149518592521.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/58b6523db71e4a73a30ada20619689da.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/58b6523db71e4a73a30ada20619689da.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/bf876d2e58ac486b9937291b21f4b7c5.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/bf876d2e58ac486b9937291b21f4b7c5.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/b1164e81748b41109332d8acf5778fa0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/b1164e81748b41109332d8acf5778fa0.png)
 
 ```bash
 [root@jenkins ~]# ssh-keygen
 [root@jenkins ~]# ssh-copy-id git@172.16.11.203
 [root@jenkins ~]# ssh-copy-id root@172.16.11.204
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/41f1d3469f5545b38da90194049c2838.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/41f1d3469f5545b38da90194049c2838.png)
 
 src=${WORKSPACE} dest=/var/www/html rsync_opts=--exclude=.git
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/6d01660b31004f7ab1782b541a049bd0.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/6d01660b31004f7ab1782b541a049bd0.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a3508fd728db41ff9102045916515c6e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a3508fd728db41ff9102045916515c6e.png)
 
 ```bash
 [root@web ~]# cat /var/www/html/php-ansible/index.php
@@ -605,7 +605,7 @@ src=${WORKSPACE} dest=/var/www/html rsync_opts=--exclude=.git
 phpinfo();
 ?>
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c6a132d5ac664d5da1202a35d9b06fc4.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c6a132d5ac664d5da1202a35d9b06fc4.png)
 
 至此所有就完成了；
 

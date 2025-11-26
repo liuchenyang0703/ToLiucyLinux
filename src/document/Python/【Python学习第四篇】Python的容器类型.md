@@ -25,7 +25,7 @@ breadcrumb: false
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161324543.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161324543.jpeg)
 
 
 
@@ -72,7 +72,7 @@ print((1,2,3) * 3)	# 输出结果为：(1, 2, 3, 1, 2, 3, 1, 2, 3)
 print([]+[],[] * 4)	# 输出结果为：[] [] 
 print("---"* 50)	# 输出结果为：50个---；常用于分割内容
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325138.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325138.png)
 
 ><font color=red>提示：range对象、字典、集合由于其定义的特点，所以不支持拼接操作。</font>
 
@@ -114,7 +114,7 @@ for i in ["a","b","c"]:
 >  a
 >   b
 >    c<br>
->    ![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325760.png)
+>    ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325760.png)
 
 - 【示例2】while迭代abc
 
@@ -129,7 +129,7 @@ while num:
 >  c
 >   b
 >    a<br>
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325760.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325760.png)
 
 另外，列表、字典、集合的推导式都可以进行类似的迭代操作；我们可以将数据转换为一个列表和字典；
 
@@ -145,7 +145,7 @@ num = 'abc'
 # 上面的过程可以附带操作后者调用函数
 [print(f'哎呀！迭代{i}了')for i in num]
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325086.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325086.png)
 
 >不过，不建议这样操作。
 
@@ -182,7 +182,7 @@ a = 'hello'
 a += ' world!'
 print(a)
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161325739.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161325739.png)
 
 
 

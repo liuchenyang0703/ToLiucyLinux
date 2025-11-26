@@ -156,7 +156,7 @@ breadcrumb: false
 
 ### 申请成功发送邮件
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503131327620.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202503131327620.png)
 
 申请成功之后，将邮件中的`addId`、`apiKey`、`indexName`值放到项目配置中。
 
@@ -188,7 +188,7 @@ breadcrumb: false
 
 这个时候要使用官方工具进行调试，进入[调试工具地址](https://crawler.algolia.com/admin/)，打开调试台，点击进入爬虫详情；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503131347183.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202503131347183.png)
 
 
 进来之后在点击 `Overview` 菜单，发现爬虫数据是有的，但 Records 为 0，那大概是爬虫提取数据的逻辑有问题；
@@ -197,9 +197,9 @@ breadcrumb: false
 
 点击左侧选项栏中的 `Editor`，查看具体的爬虫逻辑，可以根据 vuepress 官方提供的模版参考查看问题：[vuepress官方爬虫配置](https://theme-hope.vuejs.press/zh/guide/feature/search.html#%E4%BD%BF%E7%94%A8-vuepress-plugin-docsearch)，这里我是直接整个复制粘贴成官方的然后进行个别地方修改就可以了；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503131353918.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202503131353918.png)
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503131357773.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202503131357773.png)
 
 ::: warning 注意
 
@@ -335,7 +335,7 @@ new Crawler({
 ```
 配置完成后，点击右上角的 `save` 进行保存在；然后找个自己的文档的链接，粘贴到`URL Tester`里，点击`RUN Test`测试下，看是否能成功，成功则进行下一步，否则继续调整抓取规则，指导能抓取成功！如下图，多测几个链接，保证都可用。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202503131403741.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202503131403741.png)
 
 ![](https://vitepress.yiov.top/docsearch/docsearch-15.png)
 

@@ -9,7 +9,7 @@ toc: false
 ::: warning 关于网站提交处说明
 主要用于提交一些运维工具、官网、电子书籍等相关网站及其他网站，扩展我们的网站集合，使用起来更便捷方便；
 
-数据会同步与导航栏：[https://liuchenyang.github.io/nav/](https://liuchenyang.github.io/nav/)
+数据会同步与导航栏：[https://liuchenyang0703.github.io/nav/](https://liuchenyang0703.github.io/nav/) |  [https://liuchenyang.top/nav/](https://liuchenyang.top/nav/)
 :::
 
 

@@ -17,7 +17,7 @@ comment: false
 breadcrumb: false
 ---
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/018aee30d8ea4271888ad311a6a34ddd.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/018aee30d8ea4271888ad311a6a34ddd.jpeg)
 
 
 >👨‍🎓**博主简介**
@@ -52,7 +52,7 @@ breadcrumb: false
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/edf31fc760ff4b778edcf137a2aa3924.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/edf31fc760ff4b778edcf137a2aa3924.png)
 
 
 
@@ -64,7 +64,7 @@ breadcrumb: false
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/84de0cb3953e49af92ad57da2ded9165.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/84de0cb3953e49af92ad57da2ded9165.png)
 
 
 
@@ -72,38 +72,38 @@ breadcrumb: false
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/998426455d79425984f47c7d5e0cad71.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/998426455d79425984f47c7d5e0cad71.png)
 
 
 先使用一条命令来测试一下，自己随便输入那条命令都可以；这里我写一个`ls /root/`命令；
 
 写完之后点击`保存`；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/71be279c3b304f61861a5d0a2768776a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/71be279c3b304f61861a5d0a2768776a.png)
 ## 三、构建一个简易的项目
 
 保存完毕之后，点击左边的`Build Now`构建项目；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/81bcab819c8d4afd9dbabdae9b138f00.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/81bcab819c8d4afd9dbabdae9b138f00.png)
 
 这样就构建完了，我们可以查看构建日志；
 直接点击构建成功的那个位置，或者后面有个小三角，在点击`控制台输出`
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/5b1d08fb5d314a1c9719fe8e8bc0becb.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5b1d08fb5d314a1c9719fe8e8bc0becb.png)
 
 这块就输出了刚刚执行的脚本日志了；
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c2d3a533cce148f69f5d9c76c2a64b0a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c2d3a533cce148f69f5d9c76c2a64b0a.png)
 
 
 这样，自定义构建项目就完成了；
 
 如果需要更改配置，可以点击上面的项目名称 --> 然后左边的配置 --> 接着给shell即可；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/80efef8e4d2d4a0cad8d85a0389994ce.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/60f8d38198d94e5d892dc1676fd1e83c.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/2293180a1c6c49dc98e68fdeaf272997.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/80efef8e4d2d4a0cad8d85a0389994ce.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/60f8d38198d94e5d892dc1676fd1e83c.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/2293180a1c6c49dc98e68fdeaf272997.png)
 
 
 
@@ -143,20 +143,20 @@ fi
 
 写完之后，点击保存，并构建；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3425b55baac74eb29bea84cf06e567d4.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/3425b55baac74eb29bea84cf06e567d4.png)
 
 完成之后可以查看一下服务器上有没有这个jar包了；可以看到没问题；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/a8622b95e4ed47ea8d846eb38c59d23e.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/a8622b95e4ed47ea8d846eb38c59d23e.png)
 
 那么在执行一下，就会备份这个，然后在拿一个新的jar包过来；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/77c50639741d40cea789dceee44b1fd3.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/77c50639741d40cea789dceee44b1fd3.png)
 
 可以看到将之前的备份了，然后有拉来一个新的jar包；
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/fe8e63cd407941559fce476c9199ab58.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/fe8e63cd407941559fce476c9199ab58.png)
 
 这样就实现更新操作了，不过这只是本机更新，要想其他服务器也更新我们就需要去配置；
 
@@ -180,7 +180,7 @@ ssh-keygen -t rsa
 ```
 一直回车即可；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/06a04bf950fd4ea985de3a3868e9cce9.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/06a04bf950fd4ea985de3a3868e9cce9.png)
 #### 5.1.2 上传 SSH 密钥
 从服务器 172.16.10.232 使用 SSH，并在服务器 172.16.10.224 的 root 的 .ssh 目录下上传新生成的公钥（id_rsa.pub），文件名为`authorized_keys`。
 
@@ -196,7 +196,7 @@ ssh-copy-id root@172.16.10.224
 ```bash
 scp jdk-18.0.2.1.zip root@172.16.10.232:/home/lcy/cs/
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/c7987d5fff094dbb9b11cf3ec8eefca4.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c7987d5fff094dbb9b11cf3ec8eefca4.png)
 
 可以看到是不需要的；所以免密就成功了；
 
@@ -237,7 +237,7 @@ done
 ```
 写完shell之后，点击构建；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/4631168c36b64fd7998c6ef96d0490ad.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/4631168c36b64fd7998c6ef96d0490ad.png)
 
 构建完成，查看其他服务器是否上传成功，如果成功了，那么就没问题了，我这里是测试了两台，都上传了，成功了。
 
@@ -269,7 +269,7 @@ yum -y install ansible
 ```bash
 ansible server1 -m shell -a "ls /root/"
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/e669232a194f4369a29ba9b823574ed6.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/e669232a194f4369a29ba9b823574ed6.png)
 
 可以查到，没问题。
 
@@ -309,7 +309,7 @@ done
 ```
 写完shell之后，点击构建；
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/3243a5e0d4134da984ae842163cabc22.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/3243a5e0d4134da984ae842163cabc22.png)
 
 
 

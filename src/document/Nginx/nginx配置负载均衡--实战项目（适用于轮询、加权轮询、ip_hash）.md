@@ -29,7 +29,7 @@ breadcrumb: false
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161332109.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161332109.jpeg)
 
 ## 两台服务器：
 
@@ -94,7 +94,7 @@ breadcrumb: false
 
 返回这个有`ok`，则nginx配置没有问题；如果有报错会显示几行报错的。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161332468.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161332468.png)
 
 
 

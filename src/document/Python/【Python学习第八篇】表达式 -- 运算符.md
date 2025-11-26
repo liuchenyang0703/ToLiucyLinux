@@ -25,7 +25,7 @@ breadcrumb: false
 ---
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321049.jpeg)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321049.jpeg)
 
 
 ---
@@ -205,7 +205,7 @@ print(result)
 
 - 图解：
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321787.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321787.png)
 
 - 【示例1】随机抽取4个1~10之间的数字，编写表达式，使用算术运算让它们总是等于24。注意，每个数字必须使用，且只能使用一次。示例代码如下:
 
@@ -330,7 +330,7 @@ print("数字个数：",num)               # 输出数字的个数
 print("字符个数：",str)               # 输出字符的个数
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321213.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321213.png)
 
 
 ## 5、关系运算
@@ -362,7 +362,7 @@ for cha in str:                 # 循环遍历字符串
 
 print(str1)                     # 打印转换后的结果
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321342.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321342.png)
 
 
 ```python
@@ -372,7 +372,7 @@ def swap_case(s):                       # 定义一个函数swap_case(s),这个�
 input_str = input("请输入一个字符串：")      # 定义一个变量,让用户输入字符串;
 print(swap_case(input_str))               # 最后，我们调用我们定义的swap_case()函数，并将用户输入的字符串作为参数传递给它。然后，我们打印出swap_case()函数返回的字符串，这就是转换了大小写的字符串。
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321940.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321940.png)
 
 
 - 【示例2】要求用户输入3个字符串，并比较3个字符串的大小。2个字符串进行大小比较时，时按照从左到右的顺序，依次比较相应位置的字符的ASCII码值的大小。
@@ -392,7 +392,7 @@ if str2 > str3:
 
 print("排序后的字符串：",str1,str2,str3)                      # 打印排序后的字符串顺序
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321036.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321036.png)
 
 
 ### 5.2 相等关系
@@ -416,7 +416,7 @@ for i in range(1,1000):         # 假设现在有最多1000个鸡蛋，循环去
     if i % 1 == 0 and i % 2 == 1 and i % 3 == 0 and i % 4 == 1 and i % 5 == 1 and i % 6 == 3 and i % 7 == 0 and i % 8 == 1 and i % 9 == 0:
         print(i)        # 最后输出i，就是框里最少有多少个鸡蛋了；
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321803.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321803.png)
 
 
 
@@ -484,7 +484,7 @@ str = (grade1 == 1 and "游客" or
 
 print(str)
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321065.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321065.png)
 
 
 ### 6.2 逻辑或 运算
@@ -525,7 +525,7 @@ if id > 20230601 and id < 20232000:
 else:
     print("不符合招生条件！")
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321202.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321202.png)
 
 上述示例仅做测试数据，不可用到生活中，如需用到生活中，需要改一些代码；因为：我这还有一些漏洞的，比如：成绩和等级没有上限和下限，只有高于。
 
@@ -606,7 +606,7 @@ print("对数字执行左移5位运算符结果为：%s"%new_password)
 old_password = -(~(new_password)) >> 5               # -为去掉负号，~为取反，<< 5 为向右偏移5.
 print("在对移位后的数字执行按位取反运算结果为：%s"%old_password)
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321403.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321403.png)
 
 ### 7.2 移位运算
 > <font color=red> &lt&lt 运算符为左移位运算符；</font>在移位运算过程中，符号位始终保持不变，如果右侧空出位置，则自动填充为0；如果超过32为值，则自动丢弃。<br>
@@ -663,7 +663,7 @@ while True:
     else:                                      # 输入非正整数时
         print("输入的数不符合规范")                # 打印提示语句
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161321839.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161321839.png)
 
 ## 8、其他运算
 其他运算符一共有4个，分为如下两类：
@@ -752,8 +752,8 @@ while True:
         break
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161320356.png)
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161320897.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161320356.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161320897.png)
 
 
 ### 8.2 身份运算
@@ -798,7 +798,7 @@ print(a == b)   # 判断a的id是否等于b的id，结果为：True
 ```
 简单来说，只要值是一样的，他们的id就是一样的，不会重复创建，利于性能。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161320433.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161320433.png)
 
 - 【示例4】假设 n 是一个任意的自然数，若将 n 的各位数字反向排序所得自然数 n1 与 n 相等，则称 n 为回文数。
 例如：如果 n =123123，则称 n 为回文数；但如果n = 123456，则不为回文数。
@@ -867,7 +867,7 @@ for i in range(1,length + 1):
 # '{:<20}'和'{:>6.1f}%'是格式化字符串，分别表示左对齐的20个字符宽度的字符串和至少有6个字符宽度、小数点后有1位的浮点数并加上百分号。
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161320978.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161320978.png)
 
 ><font color=red>附加提示：\r为回车符号，回车后会回到开头，并将前面的输出全部覆盖在输出，形成动态更新的效果，如果不添加的话，就会一直横着输出，感兴趣的可以自己试一试；</font>
 ### 9.2 统计学生成绩
@@ -941,7 +941,7 @@ print("语文平均分为：%2.f" %(sum/len(name_cj)))
 print("语文最高分为：%2.f(%s)"%(max,max_name))
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161320041.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161320041.png)
 
 ### 9.3 逐位推算
 如果输入一个尾数是 3 或者 9 的数字，判断至少需要用含有多少个9的数字才能整除该数。
@@ -1003,7 +1003,7 @@ print('{}/{} = {}'.format(dividend,divsior,r))
 ```
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161320876.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161320876.png)
 
 ### 9.4 数字运算器
 设计一个简单的四则运算器，允许用户输入两个数字和四则运算符，然后返回运算结果。
@@ -1074,7 +1074,7 @@ while True:
         break
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161320483.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161320483.png)
 
 ---
 

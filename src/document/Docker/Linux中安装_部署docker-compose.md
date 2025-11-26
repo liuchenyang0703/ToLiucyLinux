@@ -18,11 +18,11 @@ breadcrumb: false
 ## 前提
 **必须要有docker**，如果没有可以去查看：[linux（centos）中部署docker（步骤超全，含带一些发展史和一些概念）](https://blog.csdn.net/liu_chen_yang/article/details/123842609)，有安装步骤。
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161445579.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161445579.gif)
 
 
 ## 两种安装/部署方式
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161445873.gif)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161445873.gif)
 
 ### 第一种：按照官方文档下载docker-compose包来安装
 #### （1）下载docker-compose
@@ -58,7 +58,7 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```bash
 docker-compose --version
 ```
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412161445141.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161445141.png)
 
 ### 第二种：使用pip install 的方式安装
 因为docker-compose是使用python开发的，因此可以通过pip install 的方式安装

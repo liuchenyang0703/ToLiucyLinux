@@ -420,7 +420,7 @@ ansible-playbook -i inventory.ini playbook.yml
        var: root_directory_contents.stdout_lines
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202509011602241.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202509011602241.png)
 
 ### 1.7 Ansible 中的事实变量
 
@@ -664,7 +664,7 @@ ansible-playbook --syntax-check with_items.yml
 ansible-playbook with_items.yml
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202509011602142.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202509011602142.png)
 
 
 
@@ -705,7 +705,7 @@ ansible-playbook item2.yml
 tail -3 /etc/passwd
 ```
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202509011601373.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202509011601373.png)
 
 * [x] 3、循环嵌套使用场景 - 批量创建用户并给用户添加用户组
 
@@ -1138,7 +1138,7 @@ playbook: tags.yml
 
 
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202509011601519.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202509011601519.png)
 ## 四、相关文章
 |                           文章标题                           |                           文章链接                           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |

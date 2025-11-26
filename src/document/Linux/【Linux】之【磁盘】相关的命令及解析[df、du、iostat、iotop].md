@@ -235,7 +235,7 @@ iotop [参数]
 ```
 **<font color=teal>字段解析</font>**
 
-![](https://raw.githubusercontent.com/liuchenyang0703/blog-images/refs/heads/main/images/202412181608477.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181608477.png)
 >#Total DISK READ：从磁盘中读取的总速率
 #Total DISK WRITE：往磁盘里写入的总速率
 #Actual DISK READ：从磁盘中读取的实际速率
