@@ -372,3 +372,8 @@ category:
 > 3、更新了所有的图片存储路径的访问链接，引用了cdn：https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/
 > 4、新增了一篇文章：使用github搭建图床，上面的cdn地址就是此图床的存储地址；
 > 5、修改了网站提交访问错误的问题
+
+## 2025-12-18:
+> 1、更新了docker镜像加速地址文章
+> 2、添加一个新的友链
+> 3、更新及添加几篇新文章

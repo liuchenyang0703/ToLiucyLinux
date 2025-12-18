@@ -1,5 +1,5 @@
 ﻿---
-title: linux（centos）中部署docker（步骤超全，含带一些发展史和一些概念）
+title: 【Linux】部署Docker及镜像、容器、网络管理命令详解（步骤超全，含带发展史及核心概念）
 icon: circle-info
 order: 1
 category:
@@ -10,11 +10,12 @@ tag:
   - Docker
   - 运维
 pageview: false
-date: 2024-12-16
+date: 2022-04-11
 comment: false
 breadcrumb: false
 isOriginal: true
 ---
+
 
 ## 前言
 &emsp;&emsp;Docker 是一个开源的应用容器引擎，基于Go语言 并遵从 Apache2.0 协议开源。
@@ -35,7 +36,7 @@ isOriginal: true
 >- 2017 年 - 2019年，容器引擎技术飞速发展，新技术不断涌现。2017 年底Kata Containers社区成立，2018年5月Google开源gVisor代码，2018年11月AWS 开源firecracker，阿里云发布安全沙箱1.0。
 
 
-## Docker中两项核心技术
+## 一、Docker中两项核心技术
 &emsp;&emsp;Docker本质就是宿主机的一个进程，Docker是通过Namespace实现资源隔离，通过Cgroup实现资源限制，通过写时复制技术(copy-on-write)实现了高效的文件操作。
 
 **<font color=teal>&emsp;&emsp;1.Namespace</font>**
@@ -62,13 +63,13 @@ isOriginal: true
  - 资源统计：可以统计系统的资源使用量，如cpu时长，内存用量等
  - 任务控制：cgroup可以对任务执行挂起、恢复等操作
 
-## Docker核心概念
+## 二、Docker核心概念
 
 **<font color=green> 1. 镜像(Image)</font>**
 
 
 &emsp;&emsp; 一个带有创建docker容器命令的只读模板，通常在一个基础镜像上添加附加的指令，来创建一个新镜像。
-    
+
 
 镜像的两个特征：
 >- 镜像是分层（Layer）的：即一个镜像可以多个中间层组成，多个镜像可以共享同一中间层，我们也可以通过在镜像添加多一层来生成一个新的镜像。
@@ -83,13 +84,15 @@ isOriginal: true
 
 **<font color=green>3. 仓库(Repository)</font>**
 
->仓库（Repository）是集中存储镜像的地方，仓库分为公有仓库与私有仓库。比如Docker Hub，就是Docker官方提供的一个仓库服务器。
+>仓库（Repository）是集中存储镜像的地方，仓库分为`公有仓库`与`私有仓库`。比如：
+>`Docker Hub`，就是Docker官方提供的一个公共仓库；
+>`Harbor`是私有化仓库，可以自己部署公司内部使用。
 
-## Docker的逻辑架构
+## 三、Docker的逻辑架构
   >&emsp;&emsp; Docker采用的是C/S架构，Docker客户端向服务端(docker-daemon)发送指令，docker-daemon负责构建，运行以及分发docker容器，docker的客户端与服务端可以运行在同一台主机上，也可以使用docker的客户端连接远程的服务端，客户端与服务端使用RSET API通信，也可以使用Unix套接字，或者是网络接口。另外还可以使用docker compose作为客户端，它可以控制一组docker容器的应用程序。
-## docker优缺点
+## 四、Docker优缺点
 
- &emsp; 优点：
+* 优点：
 >1.  快速部署：短时间内可以部署成百上千个应用，更快速交付到线上。
 >2. 高效虚拟化：不需要额外的 hypervisor 支持，直接基于 linux 实现应用虚拟化，相比虚拟机大幅提高性能和效率。
 >3. 节省开支：提高服务器利用率，降低 IT 支出。
@@ -97,10 +100,10 @@ isOriginal: true
 >5. 快速迁移和扩展： 可夸平台运行在物理机、虚拟机、公有云等环境，良好的兼容性可以方便将应用从A宿主机迁移到B宿主机， 甚至是A平台迁移到B平台。
 
 
-&emsp; 缺点：
+*  缺点：
 >隔离性：各应用之间的隔离不如虚拟机彻底。
 
-## Docker VS 虚拟化
+## 五、Docker VS 虚拟化
 虚拟化：
 >    &emsp;  传统的虚拟机需要模拟整台机器包括硬件，每台虚拟机都需要有自己的操作系统，虚拟机一旦被开启，预分配给他的资源将全部被占用。每一个虚拟机包括应用，必要的二进制和库，以及一个完整的用户操作系统。
 
@@ -109,6 +112,7 @@ Docker：
  &emsp; 容器包含应用和其所有的依赖包，但是与其他容器共享内核。容器在宿主机操作系统中，在用户空间以分离的进程运行。
 
 <table><tr><td bgcolor=yellow>服务器虚拟化解决的核心问题是资源调配，而容器解决的核心问题是应用开发、测试和部署。</td></tr></table>
+
 
 docker与虚拟化区别总结:
 >1. docker启动快速属于秒级别。虚拟机通常需要几分钟去启动。
@@ -119,24 +123,28 @@ docker与虚拟化区别总结:
 >6. 交付、部署：虚拟机可以通过镜像实现环境交付的一致性，但镜像分发无法体系化；Docker在Dockerfile中记录了容器构建过程，可在集群中实现快速分发和快速部署;
 
 
-## docker部署与管理
-### docker安装
+## 六、Docker的部署
 
-&emsp;&emsp;在服务器上准备在线镜像源，然后添加docker的镜像源，如果之前安装过需要先卸载。
+> 这里区分离线安装与在线安装，可自行选择参考；
+### 6.1 离线安装
+> 可使用如下一键安装脚本及离线包，**适配多个主流操作系统**：【centos、ubuntu、redhat、centos stream、kylin、等等】；
+> <font color=red>注意：不带arm的为x86架构；</font>
+> 更多x86或arm架构的二进制安装包可访问：[https://download.docker.com/linux/static/stable/](https://download.docker.com/linux/static/stable/)，进行下载，这里只有cpu的，不支持gpu；
 
-#### 离线安装
-连接中有步骤；
-[部署docker的离线包](https://download.csdn.net/download/liu_chen_yang/85965917?spm=1001.2014.3001.5503)
-[docker24.0.5离线安装包 （一键部署）](https://download.csdn.net/download/liu_chen_yang/88647183)
-
-![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161441340.png)
-![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161441465.png)
+|包名| 下载地址 |
+|--|--|
+|docker24.0.5离线安装包 （一键部署）|[https://download.csdn.net/download/liu_chen_yang/88647183](https://download.csdn.net/download/liu_chen_yang/88647183)|
+|docker28.1.1离线安装包 （一键部署）|[https://download.csdn.net/download/liu_chen_yang/92468623](https://download.csdn.net/download/liu_chen_yang/92468623)|
+|docker20.10.7离线安装包 - ARM架构 （一键部署）|[https://download.csdn.net/download/liu_chen_yang/89641904](https://download.csdn.net/download/liu_chen_yang/89641904)|
 
 
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202512180941999.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202512180940160.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202512180940568.png)
 
 
-#### 在线安装
-
+### 6.2 在线安装
+> 在线安装这里举例为centos环境；
 ```bash
 #安装依赖包
 [root@docker ~]# yum install -y yum-utils device-mapper-persistent-data lvm2	
@@ -154,26 +162,28 @@ Docker version 20.10.7, build f0df350
 #查看docker可以安装的版本
 [root@docker ~]# yum list docker-ce --showduplicates | sort -r
 ```
-## 添加镜像加速器
-由于docker默认从docker hub(https://registry.hub.docker.com/)下载镜像，所以速度非常慢，可以通过阿里云的镜像加速器提高镜像拉取的速度。 
-![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161441041.png)
+## 七、添加镜像加速器
+
+> 由于现在国内访问不了国外的dockerhub，导致镜像都下载不了，并且国内的很多加速地址也被封禁或变为区域内访问，所以，可参考此文章：[https://liucy.blog.csdn.net/article/details/129085538](https://liucy.blog.csdn.net/article/details/129085538)，会每月一更新加速地址，方便我们再国内可以拉取到需要的镜像；
 
 ```bash
 [root@docker ~]# mkdir -p /etc/docker
 [root@docker ~]# tee /etc/docker/daemon.json <<-'EOF'
 
 > {
->   "registry-mirrors": ["https://mrlmpasq.mirror.aliyuncs.com"]
+>   "registry-mirrors": ["https://docker.1panel.live"]
 > }
 > EOF
 {
-  "registry-mirrors": ["https://mrlmpasq.mirror.aliyuncs.com"]
+  "registry-mirrors": ["https://docker.1panel.live"]
 }
 [root@docker ~]# systemctl daemon-reload
 [root@docker ~]# systemctl restart docker
 ```
-### docker镜像管理
 
+## 八、Docker三大组件管理
+### 8.1 docker镜像管理
+* `docker image` 内容解析
 ```bash
 #列出所有的镜像
 [root@docker ~]# docker images
@@ -184,9 +194,11 @@ IMAGE ID：镜像ID
 CREATED：镜像创建时间
 SIZE：镜像大小
 ```
-| docker image 命令 | 作用         | 举例          | 选项 / 参数 |
-| ----------------- | ------------ | ------------- | ----------- |
-| docker images     | 查看所有镜像 | docker images |             |
+* `docker image` 命令参数解析及示例
+
+| docker image 命令 |  作用	|举例|选项 / 参数|
+|--|--|--|--|
+| docker images   | 查看所有镜像 | docker images   | |
 | docker build |通过Dockerfile构建镜像 | docker build -t centos:v1 .| -t 指定镜像名称
 |docker search |	搜索镜像	|docker search centos	|-f 按条件过滤
 |docker pull	|拉取镜像	|docker pull centos:7	
@@ -198,7 +210,8 @@ SIZE：镜像大小
 |docker histroy 	|查看镜像创建的历史	|docker history centos:7	
 |docker prune|删除未使用的镜像|docker prune|
 
-### docker容器管理
+### 8.2 docker容器管理
+
 |  docker container命令	|说明	|举例
 |--|--|--|
 |docker ps -a|查看所有的容器 |docker ps -a \| grep nginx|
@@ -232,30 +245,33 @@ SIZE：镜像大小
 |docker export|	容器文件导出为tar 		|docker export nginx.tar nginx
 |docker wait|	阻塞容器		|一般用不到
 
-#### docker运行容器命令
->docker run命令是根据指定镜像创建一个容器并启动运行。如果本地没有该镜像，则从docker仓库中拉去镜像。所以
->docker run = docker image pull +  docker create + docker start  
->命令格式：`docker run [选项] 镜像名称|镜像ID  [command]`
->示例：`docker run -itd --name test --restart=always --network=host -v /etc/localtime/:/etc/localtime test:v1`
+#### 8.2.1 docker运行容器命令
+>docker run命令是根据指定镜像创建一个容器并启动运行。如果本地没有该镜像，则会从`dockerhub`仓库中拉取镜像，**需要配置加速地址**。所以:
+> `docker run` = `docker image pull +  docker create + docker start `
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;↑&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;↑&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;↑
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;拉取镜像&emsp;&emsp;&emsp;&emsp;&emsp;创建容器&emsp;&emsp;&emsp;启动容器
+> 命令格式：`docker run [参数] 镜像名称`
+> 示例：`docker run -itd --name test --restart=always --network=host -v /etc/localtime/:/etc/localtime test:v1`
+> 解析：`以守护进程模式创建了一个名为test的容器；`<br> `网络模式为host主机模式；`<br>`配置了开机自启，只要docker重启，容器也会跟着重启；`<br>`-v映射了宿主机时间到容器里，使其容器内时间与容器外同步；`<br>`使用test镜像`
 
 **常用参数选项：**
-|参数|解释|
-|--|--|
-|-i |以交互模式运行容器，通常与 -t 同时使用；
-|-t| 为容器重新分配一个伪输入终端，通常与 -i 同时使用；
-|-d| 后台运行容器，返回容器ID，运行守护进程式容器 
-|- -name |指定生成容器的名称
-|- -restart|指定是否开机自启，always（开机自启）
-|- -network |指定docker网络模式(bridge/host/none/container)
-|-P |随机映射端口，容器内部端口随机映射为主机端口
-|-p| 指定端口映射， -p 主机端口:容器端口
-|- -expose| 指定暴露端口或端口范围
-|-h |指定容器的主机名称
-|-v|映射容器外与容器内的目录
-|- -privileged|使用该参数，container内的root拥有真正的root权限。
-|- -dns |指定DNS服务器地址，默认与主机一致
-|-e |设置环境变量
-|- -env-file |从指定文件读取环境变量 
+|参数|解释|是否常用|
+|--|--|--|
+|-i |以交互模式运行容器，通常与 `-itd` 同时使用；|是|
+|-t| 为容器重新分配一个伪输入终端，通常与 -`itd` D使用；|是|
+|-d| 后台运行容器，返回容器ID，运行守护进程式容器，通常和`-itd`同时使用 |是|
+|\-\-name |指定生成容器的名称|是|
+|-\-restart|指定是否开机自启，always（开机自启）no（不配置开机自启）|是|
+|-\-network |指定docker网络模式(bridge/host/none/container)，不可与`-p`同时存在|是|
+|-P |随机映射端口，容器内部端口随机映射对外端口，不可与`--network`参数同时使用|否|
+|-p| 指定端口映射，` -p `对外访问端口:容器内部端口，不可与`--network`参数同时使用|是|
+|-\-expose| 指定暴露端口或端口范围|否|
+|-h |指定容器的主机名称|否|
+|-v|映射容器外与容器内的目录|是|
+|-\-privileged|使用该参数，container内的root拥有真正的root权限。|否|
+|-\-dns |指定DNS服务器地址，默认与主机一致|否|
+|-e |设置环境变量|否|
+|-\-env-file |从指定文件读取环境变量 |否|
 
 
 ```bash
@@ -285,11 +301,11 @@ cef133be2d53   nginx:latest   "/docker-entrypoint.…"   6 seconds ago   Up 5 se
 764b82cb892f   centos:7       "/bin/bash"              3 minutes ago   Up 3 minutes             centos-2
 3ad7e1a5e55f   centos:7       "/bin/bash"              5 minutes ago   Up 4 minutes             centos-1
 ```
-### docker网络管理
+### 8.3 docker网络管理
 
-| 命令                   | 解析                 |
-| ---------------------- | -------------------- |
-| docker network ls      | 列出所有的docker网络 |
-| docker network create  | 创建一个新的网络     |
-| docker network rm      | 删除一个网络         |
-| docker network inspect | 检查网络的详细信息   |
+|命令|解析  |
+|--|--|
+|  docker network ls|  列出所有的docker网络|
+|docker network create|创建一个新的网络|
+|docker network rm|删除一个网络|
+|docker network inspect|检查网络的详细信息|

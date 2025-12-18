@@ -90,6 +90,12 @@ export const friends: LinkData[] = [
     icon: "https://liuchenyang.top/logo.png",
     link: "https://liuchenyang.top/nav/",
   },
+  {
+    name: "One",
+    desc: "明心静性，爱自己",
+    icon: "https://img.onedayxyy.cn/images/Teek/Teekwebsite/xyy-logo.webp",
+    link: "https://teek.onedayxyy.cn/",
+  },
 ];
 export const invalid: LinkData[] = [
   
