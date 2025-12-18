@@ -377,3 +377,5 @@ category:
 > 1、更新了docker镜像加速地址文章
 > 2、添加一个新的友链
 > 3、更新及添加几篇新文章
+> 4、修改了版权保护内容，复制会出现文章地址（src/.vuepress/theme.ts）
+> 5、新增文章最后更新时间（src/.vuepress/theme.ts）

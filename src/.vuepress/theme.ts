@@ -23,6 +23,8 @@ export default hopeTheme({
   editLink: false,
   // 是否展示面包屑导航
   breadcrumb: true,
+  // 文章最后更新时间
+  lastUpdated: true,
 
 
   // 暗黑模式切换-在深色模式和浅色模式中切换
@@ -255,7 +257,7 @@ export default hopeTheme({
       // 是否全局启用，复制出现版权信息，例如：看到版本已经是jdk1.8的了，著作权归LiucyLinux(http://liuchenyang.top)所有基于MIT协议原文链接：http://liuchenyang.top/Java/Linux%E4%B8%AD%E5%AE%89%E8%A3%85jdk1.8%E5%92%8C%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.html
       global: true,
       // 版权作者信息
-      author: "Liucy(https://liuchenyang.top)",
+      author: "Mr.Liucy",
       // 协议
       license: "MIT",
       // 复制多少字符才展示协议信息
@@ -266,7 +268,11 @@ export default hopeTheme({
       canonical: "https://liuchenyang.top",
       // 自定义版权信息
       copyrightGetter: (page) => {
-        return `著作权归 Mr.Liucy 所有，基于 MIT 协议，原文链接：https://liuchenyang.top`;
+        const postUrl = 'https://liuchenyang.top' + page.path
+        return (
+          `著作权归 Mr.Liucy 所有，本站内容遵循 MIT 协议，转载请注明出处。\n` + 
+          `原文链接：${postUrl}`
+        )
       },
     },
 
