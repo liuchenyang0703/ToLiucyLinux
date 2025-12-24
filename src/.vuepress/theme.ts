@@ -27,8 +27,8 @@ export default hopeTheme({
   lastUpdated: true,
 
 
-  // 暗黑模式切换-在深色模式和浅色模式中切换
-  darkmode: "toggle",
+  // 暗黑模式切换-在深色模式，浅色模式和自动之间切换 (默认根据设备自动检测)
+  darkmode: "switch",
   // 全屏按钮
   fullscreen: true,
   //提取到h6级标题（已失效，默认到4级，也就是2-5级）
@@ -240,8 +240,20 @@ export default hopeTheme({
       categoryId:"DIC_kwDOMUbAoc4CmBak",
     },
     
+    // 内置组件：
+    // ArtPlayer: 由 ArtPlayer 驱动的视频播放器。
+    // Badge: 多彩的徽章组件
+    // BiliBili: 嵌入 BiliBili 视频
+    // CodePen: 嵌入 CodePen 演示
+    // PDF: 嵌入 PDF 查看器
+    // Share: 通过社交媒体分享当前页面
+    // StackBlitz: 嵌入 StackBlitz 演示
+    // SiteInfo: 显示站点
+    // VPBanner: 一个横幅组件
+    // VPCard: 一个卡片组件
+    // VidStack: 由 VidStack 驱动的音频/视频播放器
     components: {
-      components: ["Badge", "VPCard"],
+      components: ["ArtPlayer", "Badge", "BiliBili", "CodePen", "PDF", "Share", "StackBlitz", "SiteInfo", "VPBanner", "VPCard", "VidStack"],
     },
 
     // 代码复制功能-vuepress-plugin-copy-code2

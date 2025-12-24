@@ -391,3 +391,6 @@ category:
 > 8、取消了docsearch搜索多余内容（src/.vuepress/theme.ts）
 > 9、修复了鼠标点击特效文件的警告信息（src/.vuepress/config.ts）（src/.vuepress/plugins/vuepress-plugin-popper/*）
 > 10、修改了构建所需版本（.github\workflows\deploy-docs.yml）
+> 11、修改了暗黑模式，改为自动检测，并再暗黑模式下可以进行手动切换（src/.vuepress/theme.ts）
+> 12、修改了主题色选择器（src/.vuepress/styles/config.scss）
+> 13、添加了更多的内置组件（src/.vuepress/theme.ts）
