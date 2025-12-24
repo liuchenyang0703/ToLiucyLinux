@@ -1,6 +1,6 @@
 ---
 home: true
-layout: BlogHome
+layout: Blog
 icon: home
 title: 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚 的技术博客
 heroImage: picture.jpg
