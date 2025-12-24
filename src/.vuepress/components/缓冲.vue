@@ -4,7 +4,9 @@
       <i></i><i></i><i></i><i></i>
     </div>
     <div class="welcome-text">
-      欢迎来到我的主页
+      欢迎来到我的博客，希望你天天开心，万事如意； o(*￣▽￣*)ブ
+      <br><br>
+      Welcome to my blog. I hope you are happy every day and everything goes well for you. o(*￣▽￣*)ブ
     </div>
   </div>
 </template>

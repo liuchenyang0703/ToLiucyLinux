@@ -1,24 +1,28 @@
 import { defineClientConfig } from "vuepress/client";
 import { onMounted } from 'vue';
 import { defineAsyncComponent } from 'vue';
-// 为页面图标添加鼠标悬停的跳动效果。
+// 文档：为项目主页的特性添加闪光效果。
+import 'vuepress-theme-hope/presets/shinning-feature-panel.scss';
+// 其他：为页面图标添加鼠标悬停的跳动效果。
 import 'vuepress-theme-hope/presets/bounce-icon.scss'; 
-// 将博客博主头像裁切成圆形
+// 博客：将博客博主头像裁切成圆形
 import "vuepress-theme-hope/presets/round-blogger-avatar.scss";
-// 为所有 hr 元素添加驾驶的车图标：
+// 其他：为所有 hr 元素添加驾驶的车图标：
 import "vuepress-theme-hope/presets/hr-driving-car.scss";
-// 博客透明导航栏
+// 博客：透明导航栏
 import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
-// 雪花效果
-import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
-// 页脚运行时间
+// 博客：必应壁纸及一言描述（壁纸已停，采用url随机壁纸）
+import Blog from "./components/layouts/Blog.vue";
+// 全局：雪花效果
+// import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
+// 全局：页脚运行时间
 // import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
-// 开往-友链接力
+// 全局-自定义：开往-友链接力
 import Travelling from "./components/开往.js";
-// 虫洞
+// 全局-自定义：虫洞
 import Wormhole from "./components/虫洞.js";
-// 404页面
-import NotFound from "./components/layouts/404.vue";
+// 全局-自定义：404页面
+// import NotFound from "./components/layouts/404.vue";
 // 访问量组件
 import DataPanel from "./components/访问量.vue";
 // 爱情倒计时组件
@@ -54,12 +58,12 @@ export default defineClientConfig({
     });
 
     // 下雪效果配置
-    setupSnowFall({
-      count: 25,    // 雪花数量
-      minSize: 5,   // 雪花的最小大小 (像素)
-      maxSize: 10,  // 雪花的最大大小 (像素)
-      speed: 1,     // 雪花的下落速度
-    });
+    // setupSnowFall({
+    //   count: 25,    // 雪花数量
+    //   minSize: 5,   // 雪花的最小大小 (像素)
+    //   maxSize: 10,  // 雪花的最大大小 (像素)
+    //   speed: 1,     // 雪花的下落速度
+    // });
 
     // 运行时间配置
 //    setupRunningTimeFooter(
@@ -101,6 +105,8 @@ export default defineClientConfig({
   // 你可以在这里覆盖或新增布局
   layouts: {
 	// 404页面
-    NotFound,
+    // NotFound,
+    // 博客必应壁纸及一言描述
+    Blog,
   },
 });

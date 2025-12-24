@@ -2,7 +2,7 @@ import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
 import theme from "./theme.js";
 // 鼠标点击
-import { popperPlugin } from "./plugins/vuepress-plugin-popper";
+import { popperPlugin } from "./plugins/vuepress-plugin-popper/index.js";
 import { PopperShape } from "@moefy-canvas/theme-popper";
 // 音乐插件
 import metingPlugin from "vuepress-plugin-meting2";

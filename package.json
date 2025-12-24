@@ -1,5 +1,5 @@
 {
-  "name": "toliucylinux",
+  "name": "vuepress-theme-hope-template",
   "description": "A project of vuepress-theme-hope",
   "version": "2.0.0",
   "license": "MIT",
@@ -11,21 +11,22 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.19",
-    "@vuepress/plugin-search": "2.0.0-rc.70",
+    "@moefy-canvas/core": "0.6.0",
+    "@moefy-canvas/theme-popper": "0.6.0",
+    "@vuepress/bundler-vite": "2.0.0-rc.26",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.120",
     "@vuepress/plugin-umami-analytics": "2.0.0-rc.27",
-    "echarts": "^5.6.0",
-    "mermaid": "^11.4.1",
-    "sass-embedded": "^1.83.3",
-    "vue": "^3.5.13",
-    "vuepress": "2.0.0-rc.19",
-    "vuepress-plugin-meting2": "^1.4.2",
-    "vuepress-theme-hope": "2.0.0-rc.68"
+    "echarts": "6.0.0",
+    "mermaid": "11.12.2",
+    "sass-embedded": "1.83.3",
+    "vue": "3.5.26",
+    "vuepress": "2.0.0-rc.26",
+    "vuepress-plugin-meting2": "1.4.2",
+    "vuepress-theme-hope": "2.0.0-rc.99"
   },
-  "dependencies": {
-    "@amap/amap-jsapi-loader": "^1.0.1",
-    "@moefy-canvas/theme-popper": "^0.6.0",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.74",
-    "vue-router": "^4.5.0"
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

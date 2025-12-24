@@ -31,8 +31,8 @@ export default hopeTheme({
   darkmode: "toggle",
   // 全屏按钮
   fullscreen: true,
-  //提取到h6级标题
-  headerDepth: 6,
+  //提取到h6级标题（已失效，默认到4级，也就是2-5级）
+  // headerDepth: 6,
 
   // 导航栏
   navbar,
@@ -174,8 +174,8 @@ export default hopeTheme({
   blog: {
     // 个人介绍页地址
     intro: "/person.md",
-    // 侧边栏显示设置，这里设置为移动端显示
-    sidebarDisplay: "mobile",
+    // 侧边栏显示设置，这里设置为移动端显示（rc.99版本已失效）
+    // sidebarDisplay: "mobile",
     // 博主头像
     avatar: "picture.jpg",
     // 座右铭
@@ -310,49 +310,49 @@ export default hopeTheme({
       apiKey: "39fd99a761874fc7dbe00d0e3076035c",
       indexName: "liuchenyang",
   
-      locales: {
-        "/": {
-          placeholder: "搜索文档",
-          translations: {
-            button: {
-              buttonText: "搜索文档",
-              buttonAriaLabel: "搜索文档",
-            },
-            modal: {
-              searchBox: {
-                resetButtonTitle: "清除查询条件",
-                resetButtonAriaLabel: "清除查询条件",
-                cancelButtonText: "取消",
-                cancelButtonAriaLabel: "取消",
-              },
-              startScreen: {
-                recentSearchesTitle: "搜索历史",
-                noRecentSearchesText: "没有搜索历史",
-                saveRecentSearchButtonTitle: "保存至搜索历史",
-                removeRecentSearchButtonTitle: "从搜索历史中移除",
-                favoriteSearchesTitle: "收藏",
-                removeFavoriteSearchButtonTitle: "从收藏中移除",
-              },
-              errorScreen: {
-                titleText: "无法获取结果",
-                helpText: "你可能需要检查你的网络连接",
-              },
-              footer: {
-                selectText: "选择",
-                navigateText: "切换",
-                closeText: "关闭",
-                searchByText: "搜索提供者",
-              },
-              noResultsScreen: {
-                noResultsText: "无法找到相关结果",
-                suggestedQueryText: "你可以尝试查询",
-                reportMissingResultsText: "你认为该查询应该有结果？",
-                reportMissingResultsLinkText: "点击反馈",
-              },
-            },
-          },
-        },
-      },
+      // locales: {
+      //   "/": {
+      //     placeholder: "搜索文档",
+      //     translations: {
+      //       button: {
+      //         buttonText: "搜索文档",
+      //         buttonAriaLabel: "搜索文档",
+      //       },
+      //       modal: {
+      //         searchBox: {
+      //           resetButtonTitle: "清除查询条件",
+      //           resetButtonAriaLabel: "清除查询条件",
+      //           cancelButtonText: "取消",
+      //           cancelButtonAriaLabel: "取消",
+      //         },
+      //         startScreen: {
+      //           recentSearchesTitle: "搜索历史",
+      //           noRecentSearchesText: "没有搜索历史",
+      //           saveRecentSearchButtonTitle: "保存至搜索历史",
+      //           removeRecentSearchButtonTitle: "从搜索历史中移除",
+      //           favoriteSearchesTitle: "收藏",
+      //           removeFavoriteSearchButtonTitle: "从收藏中移除",
+      //         },
+      //         errorScreen: {
+      //           titleText: "无法获取结果",
+      //           helpText: "你可能需要检查你的网络连接",
+      //         },
+      //         footer: {
+      //           selectText: "选择",
+      //           navigateText: "切换",
+      //           closeText: "关闭",
+      //           // searchByText: "搜索提供者",
+      //         },
+      //         noResultsScreen: {
+      //           noResultsText: "无法找到相关结果",
+      //           suggestedQueryText: "你可以尝试查询",
+      //           reportMissingResultsText: "你认为该查询应该有结果？",
+      //           reportMissingResultsLinkText: "点击反馈",
+      //         },
+      //       },
+      //     },
+      //   },
+      // },
     }),
   },
 },

@@ -379,3 +379,14 @@ category:
 > 3、更新及添加几篇新文章
 > 4、修改了版权保护内容，复制会出现文章地址（src/.vuepress/theme.ts）
 > 5、新增文章最后更新时间（src/.vuepress/theme.ts）
+
+## 2025-12-24:
+> 1、升级了vuepress-theme-hope rc.68版本到rc.99版本
+> 2、去掉了雪花动画（src/.vuepress/client.ts）
+> 3、优化了主页预加载动画（src/.vuepress/components/缓冲.vue）
+> 4、新增了博客一言描述，关闭了blog.md的固定描述（src/.vuepress/components/layouts/Blog.vue）（src/blog.md）
+> 5、新增了为项目主页的特性添加闪光效果（src/.vuepress/client.ts）
+> 6、取消了自定义404页面（src/.vuepress/client.ts）
+> 7、取消了文章展示目录，默认展示2-5，4档标题（src/.vuepress/theme.ts）
+> 8、取消了docsearch搜索多余内容（src/.vuepress/theme.ts）
+> 9、修复了鼠标点击特效文件的警告信息（src/.vuepress/config.ts）（src/.vuepress/plugins/vuepress-plugin-popper/*）

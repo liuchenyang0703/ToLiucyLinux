@@ -1,6 +1,6 @@
 import { App, PageOptions, PluginFunction } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
-import { PopperOption } from "./type";
+import { PopperOption } from "./type.js";
 
 const __dirname = getDirname(import.meta.url);
 
