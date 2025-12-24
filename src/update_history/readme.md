@@ -390,3 +390,4 @@ category:
 > 7、取消了文章展示目录，默认展示2-5，4档标题（src/.vuepress/theme.ts）
 > 8、取消了docsearch搜索多余内容（src/.vuepress/theme.ts）
 > 9、修复了鼠标点击特效文件的警告信息（src/.vuepress/config.ts）（src/.vuepress/plugins/vuepress-plugin-popper/*）
+> 10、修改了构建所需版本（.github\workflows\deploy-docs.yml）
