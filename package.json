@@ -14,7 +14,7 @@
     "@moefy-canvas/core": "0.6.0",
     "@moefy-canvas/theme-popper": "0.6.0",
     "@vuepress/bundler-vite": "2.0.0-rc.26",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.120",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.121",
     "@vuepress/plugin-umami-analytics": "2.0.0-rc.27",
     "echarts": "6.0.0",
     "mermaid": "11.12.2",
