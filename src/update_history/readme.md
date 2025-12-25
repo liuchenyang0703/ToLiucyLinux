@@ -7,30 +7,36 @@ category:
   - 项目更新记录
 ---
 
+## 2023-11-06:
+> 项目启动。。。
+> 项目搁置。。。
+> 项目学习。。。
+> 项目正式启动与2024年7月21日！🎉
+
 ## 2024-07-21：
->1、个人介绍的添加了一个分类（src/about-the-author/year-end-2023-summary.md）
-2、面试题删除了一些，留了一篇也添加了分类（src/interview/clarify-whether-java-value-passing-or-reference-passing.md）
-3、修改了面试题大全显示的及分类（src/interview/readme.md）
-4、修改面试题的侧边栏，添加运维常见的面试题标题（interview）
+> 1、个人介绍的添加了一个分类（src/about-the-author/year-end-2023-summary.md）
+> 2、面试题删除了一些，留了一篇也添加了分类（src/interview/clarify-whether-java-value-passing-or-reference-passing.md）
+> 3、修改了面试题大全显示的及分类（src/interview/readme.md）
+> 4、修改面试题的侧边栏，添加运维常见的面试题标题（interview）
 
 ## 2024-07-22：
->1、修改了标题字体；（palette.scss）
-2、修改了文档指南的侧边栏及清除了一些原来的文章；（sidebar.ts）
+> 1、修改了标题字体；（palette.scss）
+> 2、修改了文档指南的侧边栏及清除了一些原来的文章；（sidebar.ts）
 
 
 ## 2024-09-03：
->1、修改了表头运维工具配置的路径（navbar.ts）；
-2、新建了tools-all.ts用于加运维工具连接；
-3、修改了文库汇总的头部显示；
+> 1、修改了表头运维工具配置的路径（navbar.ts）；
+> 2、新建了tools-all.ts用于加运维工具连接；
+> 3、修改了文库汇总的头部显示；
 
 ## 2024-10-05：
->1、主页新增了正则表达式测试地址（src/README.md）
-2、修改了运维工具配置内容（src/tools-all.md）
-3、修改了文库汇总的底部导航栏（src/document-all.md）
-4、添加了文档指南需要用到的一些目录（Linux等）
-5、修改了文档指南侧边栏引用（.vuepress/sidebar.ts）
-6、修改了面试题大全侧边栏引用（.vuepress/interview.ts）
-7、添加了面试题大全目录及测试文章（Linux等）
+> 1、主页新增了正则表达式测试地址（src/README.md）
+> 2、修改了运维工具配置内容（src/tools-all.md）
+> 3、修改了文库汇总的底部导航栏（src/document-all.md）
+> 4、添加了文档指南需要用到的一些目录（Linux等）
+> 5、修改了文档指南侧边栏引用（.vuepress/sidebar.ts）
+> 6、修改了面试题大全侧边栏引用（.vuepress/interview.ts）
+> 7、添加了面试题大全目录及测试文章（Linux等）
 
 ## 2024-10-07:
 > 1、头部栏新增网站更新历史（src/.vuepress/navbar.ts）
