@@ -408,4 +408,4 @@ category:
 > 4、运维资源汇总整合工具、服务、配置（src/.vuepress/navbar.ts）
 > 5、新增icon图标，更新阿里图标连接（src/.vuepress/theme.ts）
 > 6、更新工具、服务、配置里的图标（src/document-all.md、tools-all.md、website-all.md）
-> 7、添加公告栏信息及样式（src/.vuepress/theme.ts）（src/.vuepress/styles/index.scss）
+> 7、添加新年限时公告栏信息及样式（src/.vuepress/theme.ts）（src/.vuepress/styles/index.scss）

@@ -237,10 +237,15 @@ export default hopeTheme({
             link: "./", // 按钮点击后跳转的链接
             type: "primary", // 按钮类型，"primary" 表示主要按钮
           },
+          {
+            text: "去看烟花🎇", // 按钮文本
+            link: "https://liuchenyang0703.github.io/fireworks/", // 按钮点击后跳转的链接
+            type: "primary", // 按钮类型，"primary" 表示主要按钮
+          },
         ],
-        showOnce: true, // 是否只显示一次，用户关闭后不再显示
+        showOnce: false, // 是否只显示一次，用户关闭后不再显示
         fullscreen: true, // 是否全屏显示通知
-        confirm: false, // 是否需要用户确认（点击按钮）才能关闭通知
+        confirm: true, // 是否需要用户确认（点击按钮）才能关闭通知，false表示可以直接关闭（有关闭按钮）
       },
     ],
 
