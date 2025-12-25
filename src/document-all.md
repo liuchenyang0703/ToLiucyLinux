@@ -1,6 +1,6 @@
 ---
 home: true
-icon: home
+icon: wenben
 title: 运维文库汇总
 heroImage: logo.png
 heroText: 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚的运维文库汇总

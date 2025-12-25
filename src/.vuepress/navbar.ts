@@ -20,19 +20,22 @@ export default navbar([
     link: "/interview/",
   },
   {
-    text: "运维工具配置",
-    icon: "banshou",
-    link: "tools-all.md",
-  },
-  {
-    text: "运维服务官网",
-    icon: "xiaoquguanwang",
-    link: "website-all.md",
-  },
-  {
-    text: "运维文库汇总",
-    icon: "wenben",
-    link: "document-all.md"
+    text: "运维资源汇总",
+    icon: "yunweiziyuanguanli",
+    children: [
+      {
+        text: "运维工具配置",
+        children: ["tools-all.md"],
+      },
+      {
+        text: "运维服务官网",
+        children: ["website-all.md"],
+      },
+      {
+        text: "运维文库汇总",
+        children: ["document-all.md"],
+      },
+    ],
   },
   // {
   //   text: "网站相关",

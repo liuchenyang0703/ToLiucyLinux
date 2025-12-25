@@ -1,6 +1,6 @@
 ---
 home: true
-icon: home
+icon: banshou
 title: 运维工具配置
 heroImage: logo.png
 heroText: 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚的运维工具集合

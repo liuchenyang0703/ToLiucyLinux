@@ -399,3 +399,6 @@ category:
 > 1、修改了内置组件注释（src/.vuepress/theme.ts）
 > 2、新增思维导图配置（src/.vuepress/theme.ts），需安装：`pnpm add -D markmap-lib markmap-toolbar markmap-view`
 > 3、新增了流程图配置（src/.vuepress/theme.ts），需安装：`pnpm add -D flowchart.ts`
+> 4、运维资源汇总整合工具、服务、配置（src/.vuepress/navbar.ts）
+> 5、新增icon图标，更新阿里图标连接（src/.vuepress/theme.ts）
+> 6、更新工具、服务、配置里的图标（src/document-all.md、tools-all.md、website-all.md）
