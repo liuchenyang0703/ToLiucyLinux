@@ -102,8 +102,6 @@ export default hopeTheme({
     include: true,
 	  // 启用标记功能，允许在文本中使用 == 来高亮显示部分文本。
     mark: true,
-	  // 启用 PlantUML 支持，允许在 Markdown 文件中直接写出 PlantUML 图表。
-    plantuml: true,
 	  // 启用剧透功能，允许将部分内容隐藏，用户点击后显示。这在需要隐藏某些内容（如答案、提示等）时非常有用。
     spoiler: true,
 	  // 启用样式化功能，允许自定义特定文本的样式。这里配置了一个匹配器和替换器
@@ -120,20 +118,26 @@ export default hopeTheme({
         },
       },
     ],
-	  // 启用下标功能，允许使用 _ 来表示下标。
+    // 启用下标功能，允许使用 _ 来表示下标。
     sub: true,
-	  // 启用上标功能，允许使用 ^ 来表示上标。
+    // 启用上标功能，允许使用 ^ 来表示上标。
     sup: true,
-	  // 启用选项卡功能，允许将内容组织成标签页形式，方便用户切换查看不同部分的内容。
+    // 启用选项卡功能，允许将内容组织成标签页形式，方便用户切换查看不同部分的内容。
     tabs: true,
-	  // 支持任务列表
+    // 支持任务列表
     tasklist: true,
-	  // 启用 v-pre 指令功能，允许在 Vue 组件中使用 v-pre 指令来防止内容被 Vue 解析。
+    // 启用 v-pre 指令功能，允许在 Vue 组件中使用 v-pre 指令来防止内容被 Vue 解析。
     vPre: true,
-    // 图形（属性图、圆饼图），在启用之前安装 echarts
+    // 在启用之前安装 echarts，支持折线图、饼图、柱状图、散点图、雷达图、地图、K线图、热力图、仪表盘、漏斗图、词云图、混合图表等；
     echarts: true,
-    // 饼形图，在启用之前安装 mermaid
+    // 在启用之前安装 mermaid，支持流程图、时序图、甘特图、类图、状态图、用例图、依赖图、代码结构图、数据流图、 网络拓扑图等;
     mermaid: true,
+    // 启用 PlantUML 支持，允许在 Markdown 文件中直接写出 PlantUML 图表，例如：用例图、类图、序列图、活动图、状态图、组件图、部署图等；
+    plantuml: true,
+    // 在启用之前安装 markmap-lib markmap-toolbar markmap-view，主要支持思维导图；
+    markmap: true,
+    // 在启用之前安装 flowchart.ts，主要支持流程图；
+    flowchart: true,
 	
     // 取消注释它们如果你需要 TeX 支持
     // markdownMath: {
@@ -148,16 +152,8 @@ export default hopeTheme({
     //   plugins: ["highlight", "math", "search", "notes", "zoom"],
     // },
 
-    // 在启用之前安装 chart.js
+    // 在启用之前安装 chart.js，chart.js 和 echarts 对比，前者更轻量级，后者功能更强大；
     // chartjs: true,
-
-    // insert component easily
-
-    // 在启用之前安装 echarts
-    // echarts: true,
-
-    // 在启用之前安装 flowchart.ts
-    // flowchart: true,
 
     // playground: {
     //   presets: ["ts", "vue"],
@@ -240,7 +236,7 @@ export default hopeTheme({
       categoryId:"DIC_kwDOMUbAoc4CmBak",
     },
     
-    // 内置组件：
+    // 内置组件，官方讲解地址：https://theme-hope.vuejs.press/zh/guide/component/built-in.html
     // ArtPlayer: 由 ArtPlayer 驱动的视频播放器。
     // Badge: 多彩的徽章组件
     // BiliBili: 嵌入 BiliBili 视频

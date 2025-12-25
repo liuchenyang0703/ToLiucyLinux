@@ -394,3 +394,8 @@ category:
 > 11、修改了暗黑模式，改为自动检测，并再暗黑模式下可以进行手动切换（src/.vuepress/theme.ts）
 > 12、修改了主题色选择器（src/.vuepress/styles/config.scss）
 > 13、添加了更多的内置组件（src/.vuepress/theme.ts）
+
+## 2025-12-25:
+> 1、修改了内置组件注释（src/.vuepress/theme.ts）
+> 2、新增思维导图配置（src/.vuepress/theme.ts），需安装：`pnpm add -D markmap-lib markmap-toolbar markmap-view`
+> 3、新增了流程图配置（src/.vuepress/theme.ts），需安装：`pnpm add -D flowchart.ts`
