@@ -77,6 +77,7 @@ export default hopeTheme({
 
   // 文章信息，可以填入数组，数组的顺序是各条目显示的顺序
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "Word","ReadingTime"],
+  //           作者      是否原创    日期     分类        标签    字数   阅读时间
 
   // markdown支持的文档配置
   markdown: {
@@ -204,28 +205,6 @@ export default hopeTheme({
     },
     // 启用博客类型
     blog: true,
-    
-    // 左边弹窗公告
-    // components: {
-    //   rootComponents: {
-    //     notice: [
-    //       {
-    //         path: "/",
-    //         title: "2023技术年货汇总",
-    //         showOnce: true,
-    //         content:
-    //             "抽空整理了一些优秀的技术团队公众号 2023 年的优质技术文章汇总，质量都挺高的，强烈建议打开这篇文章看看。",
-    //         actions: [
-    //           {
-    //             text: "开始阅读",
-    //             link: "https://www.yuque.com/snailclimb/dr6cvl/nt5qc467p3t6s13k?singleDoc# 《2023技术年货》",
-    //             type: "primary",
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   }
-    // },
 
     // 注意: 此评论功能为我的仓库地址! 你必须自行生成自己的评论仓库并在生产环境中使用自己的评论服务，详细请看官方地址：https://theme-hope.vuejs.press/zh/guide/feature/comment.html#giscus
     comment: {
@@ -236,6 +215,35 @@ export default hopeTheme({
       categoryId:"DIC_kwDOMUbAoc4CmBak",
     },
     
+    // 公告栏
+    notice: [
+      {
+        path: "/", // 指定通知显示的路径，"/" 表示在首页显示
+        title: "2025年总结", // 通知的标题
+        content: `
+          <div style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; margin: 15px;">
+            <h1 style="color: #333;">2025年总结</h1>
+            <p>亲爱的朋友们：</p>
+            <p>2025年即将过去，这一年对我来说充满了挑战与成长。在工作中，我参与了多个项目，不断提升自己的专业技能。在生活中，我尝试了新的运动和爱好，结识了许多新朋友。感谢每一位支持我的人，你们的鼓励是我前进的动力。</p>
+            <p>回顾这一年，虽然有起有落，但每一步都让我更加坚定。希望在新的一年里，我们都能继续追逐梦想，创造更多美好的回忆。</p>
+            <p>感谢大家的支持！</p>
+            <p>[ToLiucyLinux]</p>
+            <p>[2025年12月25日]</p>
+          </div>
+        `, // 通知的内容，支持 HTML 字符串
+        actions: [
+          {
+            text: "开始阅读", // 按钮文本
+            link: "./", // 按钮点击后跳转的链接
+            type: "primary", // 按钮类型，"primary" 表示主要按钮
+          },
+        ],
+        showOnce: true, // 是否只显示一次，用户关闭后不再显示
+        fullscreen: true, // 是否全屏显示通知
+        confirm: false, // 是否需要用户确认（点击按钮）才能关闭通知
+      },
+    ],
+
     // 内置组件，官方讲解地址：https://theme-hope.vuejs.press/zh/guide/component/built-in.html
     // ArtPlayer: 由 ArtPlayer 驱动的视频播放器。
     // Badge: 多彩的徽章组件

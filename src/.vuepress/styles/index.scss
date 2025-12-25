@@ -120,3 +120,12 @@ blockquote {
 .external-link-icon .external-link:not(.no-external-link-icon)::after {
   content: none !important; /* 移除内容 */
 }
+
+// 配置全屏的公告提示框
+.vp-notice-wrapper.fullscreen {
+    top: 50vh;
+    right: 50vw;
+    left: unset;
+    transform: translate(50%, -50%);
+    width: auto;
+}
