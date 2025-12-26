@@ -409,3 +409,7 @@ category:
 > 5、新增icon图标，更新阿里图标连接（src/.vuepress/theme.ts）
 > 6、更新工具、服务、配置里的图标（src/document-all.md、tools-all.md、website-all.md）
 > 7、添加新年限时公告栏信息及样式（src/.vuepress/theme.ts）（src/.vuepress/styles/index.scss）
+
+## 2025-12-26:
+> 1、添加各个设备的响应式配置（src/.vuepress/styles/config.scss）
+> 2、公告添加高自适应，解决手机端显示问题（src/.vuepress/styles/index.scss）
