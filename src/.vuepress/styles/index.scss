@@ -89,7 +89,20 @@ body {
     -webkit-user-drag: none; /* 防止拖拽 */   
 }
 
-// markdown配置
+// ################################### markdown代码块颜色配置 start ###################################
+
+
+// 覆盖代码块演示标题颜色
+#app {
+  --code-c-bg: #1d1f21; /* 默认情况下，代码块背景颜色为黑色 */
+
+  [data-theme="dark"] & {
+    --code-c-bg: #1d1f21; /* 在暗色模式下，代码块背景颜色仍为黑色 */
+  }
+}
+
+
+
 
 // 设置代码块背景颜色
 // div[class*=language-] {
@@ -106,19 +119,35 @@ body {
 //   color: #abb2bf!important;
 // }
 
-// 修改markdown中的> 提示的背景色，照着CSDN的背景色来
+// 修改markdown中的 ">" 提示的背景色，照着CSDN的背景色来
 blockquote {
-  background-color: #eef0f4;
-  color: #555666;
+  background: #eef0f4;
+  color: hsl(236, 9%, 37%);
   border-inline-start: 8px solid #dddfe4;
   padding: 16px;
+
+  // 暗色模式下的引用样式
+  [data-theme="dark"] & {
+    border-color: #404041 !important;
+    background: #2e2f30 !important;
+    color: #b4b4b4 !important;
+    padding: 16px;
+  }
 }
 
 // 修改了markdown中的`引用`的背景和内容颜色；
 :not(pre)>code{
   background: #f9f2f4;
   color: #c7254e;
+
+  // 暗色模式下的引用样式
+  [data-theme="dark"] & {
+    background: #404041 !important;
+    color: #b4b4b4 !important;
+  }
 }
+
+// ################################### markdown代码块颜色配置 end ###################################
 
 // 不蒜子统计的配置
 .grid {
