@@ -121,3 +121,18 @@ blockquote {
   content: none !important; /* 移除内容 */
 }
 
+// 配置全屏的公告提示框
+.vp-notice-wrapper.fullscreen {
+    top: 50%;
+    right: 50vw;
+    left: unset;
+    transform: translate(50%, -50%);
+    width: auto; min-width: var(--notice-width);
+    height: auto;
+}
+
+// 配置公告提示框内容的大小和样式，并添加滚动条
+.vp-notice-content{
+  max-height: calc(100vh - 300px);
+  overflow: auto;
+}
