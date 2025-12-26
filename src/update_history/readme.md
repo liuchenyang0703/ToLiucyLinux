@@ -413,3 +413,6 @@ category:
 ## 2025-12-26:
 > 1、添加各个设备的响应式配置（src/.vuepress/styles/config.scss）
 > 2、公告添加高自适应，解决手机端显示问题（src/.vuepress/styles/index.scss）
+> 3、修复极星会图片获取失败问题（src/person.md）
+> 4、博客自定义社交媒体内容头像设置为圆形并防止右击等（src/.vuepress/styles/index.scss）
+> 5、新增几个博客自定义社交媒体（src/.vuepress/theme.ts）

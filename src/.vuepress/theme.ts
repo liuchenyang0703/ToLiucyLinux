@@ -178,15 +178,56 @@ export default hopeTheme({
     // 座右铭
     description:"没有什么使我停留--除了目的，纵然岸旁有玫瑰、有绿荫、有宁静的港湾，我是不系之舟。",
     // 社交媒体链接
+    // 社交媒体链接
     medias: {
-      Email: "person.html#%E4%B8%AA%E4%BA%BA%E9%82%AE%E7%AE%B1",
-      GitHub: "https://github.com/liuchenyang0703/",
-      Weibo: "https://weibo.com/u/6350216849",
+      Email: "person.html#交个朋友-👬🏻",
       WechatMP: "./assets/image/公众号.png",
+      GitHub: "https://github.com/liuchenyang0703/",
+      Gitee: "https://gitee.com/liu-chenyang",
+      Weibo: "https://weibo.com/u/6350216849",
+      XiaoHongShu: "https://xhslink.com/m/5wagZ8CE1o0",
+      Soul: "https://www.soulapp.cn/",
+      Twitter: "https://x.com/home",
+      IdleFish: "https://m.tb.cn/h.75FKfBL?tk=Ka1WfywGAE3",
       "163Music": "https://music.163.com/#/artist?id=50843863",
       QQMusic: "https://y.qq.com/n/ryqq/singer/002w4tXt2LlT2T",
       Kugou: "https://www.kugou.com/singer/info/749K9K2D607AF7/",
       Kuwo: "https://www.kuwo.cn/singer_detail/8900358",
+      BiliBili: "https://space.bilibili.com/39814207",
+      csdn: {
+        icon: "https://g.csdnimg.cn/static/logo/favicon32.ico",
+        link: "https://blog.csdn.net/liu_chen_yang?type=blog",
+      },
+      bokeyuan: {
+        icon: "https://liuchenyang0703.github.io/nav/assets/images/logos/%e5%8d%9a%e5%ae%a2%e5%9b%ad.png",
+        link: "https://home.cnblogs.com/u/lcyL",
+      },
+      junjie: {
+        icon: "https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/favicon-32x32.png",
+        link: "https://juejin.cn/user/1522190805637534",
+      },
+      Zhihu: "https://www.zhihu.com/people/liu_chen_yang",
+      "51cto": {
+        icon: "https://blog.51cto.com/favicon.ico",
+        link: "https://blog.51cto.com/u_16017669",
+      },
+      infoq: {
+        icon: "https://liuchenyang0703.github.io/nav/assets/images/logos/infoq.webp",
+        link: "https://www.infoq.cn/u/liucy/",
+      },
+      tengxunyun: {
+        icon: "https://cloud.tencent.com/favicon.ico",
+        link: "https://cloud.tencent.com/developer/user/10755554",
+      },
+      huaweuyun: {
+        icon: "https://bbs.huaweicloud.com/favicon.ico",
+        link: "https://bbs.huaweicloud.com/community/usersnew/id_1661843828089234",
+      },
+      aliyun: {
+        icon: "https://liuchenyang0703.github.io/nav/assets/images/logos/%e9%98%bf%e9%87%8c%e4%ba%91.jpg",
+        link: "https://developer.aliyun.com/profile/7yu26jk3lfqxg",
+      },
+      AliPay: "https://open.alipay.com/portal/forum/developer/2406012047/article",
     },
     // 时间轴的顶部文字展示。
     timeline: "创作时间",

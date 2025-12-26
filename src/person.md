@@ -128,7 +128,7 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 * [🏅 CSDN-2022年度社区之星](https://bbs.csdn.net/forums/lcy?spm=1001.2014.3001.6682)
 * [🏅 运维领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
 * [🏅 云计算领域优质创作者](https://blog.csdn.net/liu_chen_yang?type=blog)
-* [🏅 极星会KOL](/assets/image/certificate/极星会.jpg)
+* [🏅 极星会KOL](./assets/image/certificate/极星会.jpg)
 <!-- * []() -->
 
 <table>
