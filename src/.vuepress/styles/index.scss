@@ -131,3 +131,14 @@ blockquote {
 	height: auto;
 	min-width: var(--notice-width);
 }
+
+.vp-notice-wrapper {
+    overflow-y: auto; /* 允许垂直滚动 */
+    max-height: 90vh; /* 设置最大高度，留出一些空间给底部按钮等 */
+}
+
+.vp-notice-content {
+  padding: 20px; /* 内边距 */
+    // max-height: calc(100vh - 100px);
+    // overflow: auto;
+}
