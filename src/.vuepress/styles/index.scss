@@ -101,23 +101,14 @@ body {
   }
 }
 
-
-
-
-// 设置代码块背景颜色
-// div[class*=language-] {
-//   background-color: #282c34;
-// }
-// // 代码块代码的颜色
-// .shiki span {
-//   color: #abb2bf;
-//   // color: var(--shiki-light, inherit);
-// }
-
 // 代码块前面的行数展示
-// div[class*=language-].line-numbers-mode .line-number{
-//   color: #abb2bf!important;
-// }
+div[class*=language-].line-numbers-mode .line-number{
+  color: #c5c8c6 !important;
+  // 暗色模式下的引用样式
+  [data-theme="dark"] & {
+    color: #c5c8c6 !important;
+  }
+}
 
 // 修改markdown中的 ">" 提示的背景色，照着CSDN的背景色来
 blockquote {
