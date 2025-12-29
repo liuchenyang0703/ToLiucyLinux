@@ -69,10 +69,18 @@ background: rgb(253, 230, 138, 0.15)
 ```
 
 ```component VPCard
-title: 高德地图API
-desc: 用于本站天气预报
-logo: https://a.amap.com/pc/static/favicon.ico
-link: https://lbs.amap.com/
+title: 心知天气API
+desc: 用于本站天气预报 - 申请账号、API
+logo: https://cdn.sencdn.com/widget2/assets/img/chameleon/logo.svg
+link: https://www.seniverse.com/
+background: rgb(253, 230, 138, 0.15)
+```
+
+```component VPCard
+title: 心知天气插件
+desc: 用于本站天气预报 - 获取JS代码
+logo: https://cdn.sencdn.com/widget2/assets/img/chameleon/logo.svg
+link: https://www.seniverse.com/widgetv3
 background: rgb(253, 230, 138, 0.15)
 ```
 
