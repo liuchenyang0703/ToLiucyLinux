@@ -15,8 +15,9 @@ import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentN
 import Blog from "./components/layouts/Blog.vue";
 // 全局：雪花效果
 // import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
-// 全局：页脚运行时间
+// 全局：页脚运行时间（官方）
 // import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
+// 全局-自定义：页脚运行时间
 import { setupRunningTimeFooter } from "./components/runtime.js";
 // 全局-自定义：开往-友链接力
 import Travelling from "./components/开往.js";
@@ -24,17 +25,17 @@ import Travelling from "./components/开往.js";
 import Wormhole from "./components/虫洞.js";
 // 全局-自定义：404页面
 // import NotFound from "./components/layouts/404.vue";
-// 访问量组件
+// 主页-自定义：访问量组件
 import DataPanel from "./components/访问量.vue";
-// 爱情倒计时组件
+// 关于本站-自定义：爱情倒计时组件
 import LoveTimer from "./components/LoveTimer.vue"; 
-// 友情链接滚动条
+// 主页-自定义：友情链接滚动条
 import roll from "./components/友情链接滚动.vue";
-// 添加访问页面缓冲加载配置
+// 全局-自定义：添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
-// 添加网站运行时间配置
+// 全局-自定义：添加网站运行时间配置
 // const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
-// 天气预报大组件
+// 全局-自定义：天气预报大组件
 // const Weather = defineAsyncComponent(() => import("./components/Weather.vue"));
 
 export default defineClientConfig({
