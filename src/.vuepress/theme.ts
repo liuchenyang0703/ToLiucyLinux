@@ -140,6 +140,16 @@ export default hopeTheme({
     // 在启用之前安装 flowchart.ts，主要支持流程图；
     flowchart: true,
 	
+    // 添加 Shiki 配置
+    highlighter: {
+      // 选择要使用的代码块高亮器,有shiki和Prism.js两种,默认是 shiki
+      type: "shiki",
+      // 被 Shiki 解析的额外语言。
+      langs: ['ts', 'json', 'vue', 'md', 'bash', 'diff', 'shell', 'yaml', 'yml', 'bat'],
+      // Shiki 主题，应用于代码块,简称:代码块主题。
+      theme: 'dark-plus',
+    },
+	
     // 取消注释它们如果你需要 TeX 支持
     // markdownMath: {
     //   // 启用前安装 katex
@@ -219,7 +229,7 @@ export default hopeTheme({
         icon: "https://cloud.tencent.com/favicon.ico",
         link: "https://cloud.tencent.com/developer/user/10755554",
       },
-      huaweuyun: {
+      huaweiyun: {
         icon: "https://bbs.huaweicloud.com/favicon.ico",
         link: "https://bbs.huaweicloud.com/community/usersnew/id_1661843828089234",
       },

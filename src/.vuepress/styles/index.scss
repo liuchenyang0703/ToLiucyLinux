@@ -93,13 +93,26 @@ body {
 
 
 // 覆盖代码块演示标题颜色
-#app {
-  --code-c-bg: #1d1f21; /* 默认情况下，代码块背景颜色为黑色 */
+// #app {
+//   --code-c-bg: #1d1f21; /* 默认情况下，代码块背景颜色为黑色 */
 
-  [data-theme="dark"] & {
-    --code-c-bg: #1d1f21; /* 在暗色模式下，代码块背景颜色仍为黑色 */
-  }
-}
+//   [data-theme="dark"] & {
+//     --code-c-bg: #1d1f21; /* 在暗色模式下，代码块背景颜色仍为黑色 */
+//   }
+// }
+
+
+// div[class*=language-].line-numbers-mode .line-numbers
+
+// 设置代码块背景颜色
+// div[class*=language-] {
+//   background-color: #282c34;
+// }
+// // 代码块代码的颜色
+// .shiki span {
+//   color: #abb2bf;
+//   // color: var(--shiki-light, inherit);
+// }
 
 // 代码块前面的行数展示
 div[class*=language-].line-numbers-mode .line-number{
