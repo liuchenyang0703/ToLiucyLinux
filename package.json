@@ -16,6 +16,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.26",
     "@vuepress/plugin-docsearch": "2.0.0-rc.112",
     "@vuepress/plugin-umami-analytics": "2.0.0-rc.27",
+    "@vueuse/core": "14.1.0",
     "echarts": "6.0.0",
     "mermaid": "11.12.2",
     "markmap-lib": "0.18.12",
