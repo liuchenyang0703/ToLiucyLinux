@@ -78,7 +78,7 @@ export default defineClientConfig({
   // 加载vue配置
   rootComponents: [
     jz,
-    yx,
+//  yx,
 //	Weather,
   ],
 
