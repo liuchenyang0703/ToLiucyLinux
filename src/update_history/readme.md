@@ -420,3 +420,4 @@ category:
 
 ## 2025-12-29:
 > 1、添加代码高亮器，代码块颜色主题（src/.vuepress/theme.ts）
+> 2、取消运行时间贴墙插件，添加vuepress主题自带的底部插件，修改了位置（src/.vuepress/client.ts）（src/.vuepress/components/runtime.ts）

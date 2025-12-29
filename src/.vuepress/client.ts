@@ -17,6 +17,7 @@ import Blog from "./components/layouts/Blog.vue";
 // import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
 // 全局：页脚运行时间
 // import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
+import { setupRunningTimeFooter } from "./components/runtime.js";
 // 全局-自定义：开往-友链接力
 import Travelling from "./components/开往.js";
 // 全局-自定义：虫洞
@@ -32,7 +33,7 @@ import roll from "./components/友情链接滚动.vue";
 // 添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 添加网站运行时间配置
-const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
+// const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
 // 天气预报大组件
 // const Weather = defineAsyncComponent(() => import("./components/Weather.vue"));
 
@@ -65,14 +66,14 @@ export default defineClientConfig({
     //   speed: 1,     // 雪花的下落速度
     // });
 
-    // 运行时间配置
-//    setupRunningTimeFooter(
-//      new Date("2023-11-16"), // 站点开始运行的日期
-//      {
-//        "/": "ToLiucyLinux网站已运行： :day 天 :hour 小时 :minute 分钟 :second 秒 ღゝ◡╹)ノ♡",
-//      },
-//      true, // 是否保留页脚的原有内容
-//    );
+   // 运行时间配置
+   setupRunningTimeFooter(
+     new Date("2023-11-16"), // 站点开始运行的日期
+     {
+       "/": "本站已运行： :day 天 :hour 小时 :minute 分钟 :second 秒",
+     },
+     true, // 是否保留页脚的原有内容
+   );
  },
   // 加载vue配置
   rootComponents: [
