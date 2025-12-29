@@ -31,12 +31,12 @@ import DataPanel from "./components/访问量.vue";
 import LoveTimer from "./components/LoveTimer.vue"; 
 // 主页-自定义：友情链接滚动条
 import roll from "./components/友情链接滚动.vue";
+// 全局-自定义：天气预报小组件
+import WeatherWidget from "./components/WeatherWidget.vue";
 // 全局-自定义：添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 全局-自定义：添加网站运行时间配置
 // const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
-// 全局-自定义：天气预报大组件
-// const Weather = defineAsyncComponent(() => import("./components/Weather.vue"));
 
 export default defineClientConfig({
   setup() {
@@ -95,13 +95,8 @@ export default defineClientConfig({
     app.component("LoveTimer", LoveTimer);
     // 友情链接滚动条
     app.component("roll", roll);
-    // 天气预报大组件
-    // app.component("Weather", Weather);
-    // if (typeof window !== 'undefined') { // 确保在客户端执行
-    //  window._AMapSecurityConfig = {
-    //    securityJsCode: '1744fd88983e27519b32046ce99d36eb', // 替换为你的安全密钥
-    //  }
-    // }
+    // 天气预报小组件
+    app.component("WeatherWidget", WeatherWidget);
   },
   
   // 你可以在这里覆盖或新增布局

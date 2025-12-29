@@ -47,7 +47,7 @@ export default hopeTheme({
   // navbarLayout：用于定义导航栏的布局；start、center 和 end，分别表示导航栏的起始部分、中间部分和结束部分。
   navbarLayout: {
     // Brand：表示导航栏的起始部分放置的是品牌（Logo 或网站名称）这是导航栏的最左侧部分。
-    start: ['Brand'],
+    start: ['Brand', 'WeatherWidget'],
     // Links：表示导航栏的中间部分放置的是导航链接，这是导航栏的中间部分。
     center: ['Links'],
     // Repo：表示仓库链接，通常用于指向项目的代码仓库（如 GitHub、GitLab 等）。
