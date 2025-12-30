@@ -257,13 +257,39 @@ export default hopeTheme({
     // 启用博客类型
     blog: true,
 
-    // 注意: 此评论功能为我的仓库地址! 你必须自行生成自己的评论仓库并在生产环境中使用自己的评论服务，详细请看官方地址：https://theme-hope.vuejs.press/zh/guide/feature/comment.html#giscus
+	// 评论系统
     comment: {
-      provider: "Giscus",
-      repo :"liuchenyang0703/ToLiucyLinux",
-      repoId:"R_kgDOMUbAoQ",
-      category:"Announcements",
-      categoryId:"DIC_kwDOMUbAoc4CmBak",
+      // Giscus注意: 此评论功能为我的仓库地址! 你必须自行生成自己的评论仓库并在生产环境中使用自己的评论服务，详细请看官方地址：https://theme-hope.vuejs.press/zh/guide/feature/comment.html#giscus
+      // provider: "Giscus",
+      // repo :"liuchenyang0703/ToLiucyLinux",
+      // repoId:"R_kgDOMUbAoQ",
+      // category:"Announcements",
+      // categoryId:"DIC_kwDOMUbAoc4CmBak",
+
+      // 启用 Waline 评论系统，此评论地址为我的，需要改为自己的，详细请看官方地址：https://theme-hope.vuejs.press/zh/guide/feature/comment.html#waline
+      provider: "Waline",
+      serverURL: "https://waline.liuchenyang.top",
+      reaction: true,
+      requiredMeta: ["nick", 'mail'],
+      wordLimit: 300,
+      pageSize: 10,
+      emoji: [
+        "https://unpkg.com/@waline/emojis@1.1.0/tieba",
+        "https://unpkg.com/@waline/emojis@1.1.0/weibo",
+        "https://emoji.shojo.cn/bili/webp/tv_小电视_动图",
+        "https://emoji.shojo.cn/bili/webp/罗小黑战记",
+        "https://emoji.shojo.cn/bili/webp/2233娘",
+        "https://emoji.shojo.cn/bili/webp/装扮小姐姐梦幻冬季",
+        "https://emoji.shojo.cn/bili/webp/装扮小姐姐·秋日午后",
+        "https://emoji.shojo.cn/bili/webp/星尘",
+        "https://emoji.shojo.cn/bili/webp/池年"
+      ],
+      locales: {
+        "/": {
+          placeholder:
+            "欢迎留言~ _(≧∇≦」∠)_ (填写常用邮箱即可快速收到回复通知~)",
+        },
+      },
     },
     
     // 公告栏

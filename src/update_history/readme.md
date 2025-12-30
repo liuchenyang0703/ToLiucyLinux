@@ -428,3 +428,4 @@ category:
 ## 2025-12-30:
 > 1、修改了代码块为：one-dark-pro（src/.vuepress/theme.ts）
 > 2、修改了代码块复制及天气组件暗黑模式下的样式（src/.vuepress/styles/index.scss）
+> 3、更新评论Giscus为Waline（src/.vuepress/theme.ts），需安装：`pnpm add -D @waline/client`
