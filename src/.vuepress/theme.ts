@@ -147,7 +147,7 @@ export default hopeTheme({
       // 被 Shiki 解析的额外语言。
       langs: ['ts', 'json', 'vue', 'md', 'bash', 'diff', 'shell', 'yaml', 'yml', 'bat'],
       // Shiki 主题，应用于代码块,简称:代码块主题。
-      theme: 'dark-plus',
+      theme: 'one-dark-pro',
     },
 	
     // 取消注释它们如果你需要 TeX 支持

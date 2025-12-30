@@ -1,5 +1,3 @@
-// place your custom styles here
-
 // 引入background的scss配置，主要配置的背景的透明及图片,如需不用注释此引用即可;
 // @import "./background.scss";
 
@@ -12,6 +10,17 @@ body {
 :root {
   // 返回最上面的图标
   --back-to-top-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon back-to-top-icon' viewBox='0 0 1024 1024' fill='currentColor' aria-label='back-to-top icon'%3E%3Cpath d='M512 843.2c-36.2 0-66.4-13.6-85.8-21.8-10.8-4.6-22.6 3.6-21.8 15.2l7 102c.4 6.2 7.6 9.4 12.6 5.6l29-22c3.6-2.8 9-1.8 11.4 2l41 64.2c3 4.8 10.2 4.8 13.2 0l41-64.2c2.4-3.8 7.8-4.8 11.4-2l29 22c5 3.8 12.2.6 12.6-5.6l7-102c.8-11.6-11-20-21.8-15.2-19.6 8.2-49.6 21.8-85.8 21.8z'/%3E%3Cpath d='m795.4 586.2-96-98.2C699.4 172 513 32 513 32S324.8 172 324.8 488l-96 98.2c-3.6 3.6-5.2 9-4.4 14.2L261.2 824c1.8 11.4 14.2 17 23.6 10.8L419 744s41.4 40 94.2 40c52.8 0 92.2-40 92.2-40l134.2 90.8c9.2 6.2 21.6.6 23.6-10.8l37-223.8c.4-5.2-1.2-10.4-4.8-14zM513 384c-34 0-61.4-28.6-61.4-64s27.6-64 61.4-64c34 0 61.4 28.6 61.4 64S547 384 513 384z'/%3E%3C/svg%3E");
+  // 代码块复制图标背景色及文字颜色配置
+  --code-c-text: #abb2bf;
+  --code-c-bg: #282c34;
+  --code-c-highlight-bg: rgb(46.6326086957, 53.1775362319, 66.2673913043);
+  --code-c-line-number: rgba(171, 178, 191, 0.67);
+  [data-theme=dark] {
+      --code-c-text: #abb2bf;
+      --code-c-bg: #282c34;
+      --code-c-highlight-bg: rgb(46.6326086957, 53.1775362319, 66.2673913043);
+      --code-c-line-number: rgba(171, 178, 191, 0.67);
+  }
 }
 
 // 配置highlights--header字体的大小、颜色等参数
@@ -91,33 +100,28 @@ body {
 
 // ################################### markdown代码块颜色配置 start ###################################
 
+// 代码块类型颜色配置
+div[class*=language-]::before {
+    color: #abb2bf !important;
+  // 暗色模式下的代码块类型颜色配置
+  [data-theme="dark"] & {
+    color: #abb2bf !important;
+  }
+}
 
-// 覆盖代码块演示标题颜色
-// #app {
-//   --code-c-bg: #1d1f21; /* 默认情况下，代码块背景颜色为黑色 */
-
-//   [data-theme="dark"] & {
-//     --code-c-bg: #1d1f21; /* 在暗色模式下，代码块背景颜色仍为黑色 */
-//   }
-// }
-
-
-// div[class*=language-].line-numbers-mode .line-numbers
-
-// 设置代码块背景颜色
-// div[class*=language-] {
-//   background-color: #282c34;
-// }
-// // 代码块代码的颜色
-// .shiki span {
-//   color: #abb2bf;
-//   // color: var(--shiki-light, inherit);
-// }
+// 代码块块复制按钮颜色配置
+.vp-copy-code-button::before {
+    color: rgba(171, 178, 191, 0.67) !important;
+  // 暗色模式下的按钮颜色配置
+  [data-theme="dark"] & {
+    color: rgba(171, 178, 191, 0.67) !important;
+  }
+}
 
 // 代码块前面的行数展示
 div[class*=language-].line-numbers-mode .line-number{
   color: #c5c8c6 !important;
-  // 暗色模式下的引用样式
+  // 暗色模式下的行号颜色配置
   [data-theme="dark"] & {
     color: #c5c8c6 !important;
   }
@@ -130,7 +134,7 @@ blockquote {
   border-inline-start: 8px solid #dddfe4;
   padding: 16px;
 
-  // 暗色模式下的引用样式
+  // 暗色模式下的">"样式
   [data-theme="dark"] & {
     border-color: #404041 !important;
     background: #2e2f30 !important;
@@ -152,6 +156,15 @@ blockquote {
 }
 
 // ################################### markdown代码块颜色配置 end ###################################
+
+// 天气文字颜色配置
+.EKHJj {
+    color: rgba(0, 0, 0, 0.87) !important;
+    // 暗色模式下的颜色配置
+    [data-theme="dark"] & {
+      color: rgba(235, 235, 245, 0.86) !important;
+    }
+}
 
 // 不蒜子统计的配置
 .grid {
@@ -179,3 +192,4 @@ blockquote {
   max-height: calc(100vh - 300px);
   overflow: auto;
 }
+

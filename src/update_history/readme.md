@@ -424,3 +424,7 @@ category:
 > 3、修改了`client.ts`的注释（src/.vuepress/client.ts）
 > 4、添加天气小组件 - 心知天气（src/.vuepress/client.ts）（src/.vuepress/components/WeatherWidget.vue）（src/.vuepress/theme.ts）
 > 5、修改了关于本站使用的插件（src/about.md）
+
+## 2025-12-30:
+> 1、修改了代码块为：one-dark-pro（src/.vuepress/theme.ts）
+> 2、修改了代码块复制及天气组件暗黑模式下的样式（src/.vuepress/styles/index.scss）
