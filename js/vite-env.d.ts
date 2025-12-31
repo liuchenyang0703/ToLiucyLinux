@@ -15,3 +15,16 @@ interface Window {
     securityJsCode: string;
   };
 }
+
+// 扩展 WalinePluginOptions 类型
+declare module '@waline/client' {
+  interface WalinePluginOptions {
+    locale?: {
+      placeholder?: string;
+      nickPlaceholder?: string;
+      emailPlaceholder?: string;
+      locationPlaceholder?: string;
+      verifyPlaceholder?: string;
+    };
+  }
+}
