@@ -429,3 +429,9 @@ category:
 > 1、修改了代码块为：one-dark-pro（src/.vuepress/theme.ts）
 > 2、修改了代码块复制及天气组件暗黑模式下的样式（src/.vuepress/styles/index.scss）
 > 3、更新评论Giscus为Waline（src/.vuepress/theme.ts），需安装：`pnpm add -D @waline/client`
+
+## 2025-12-31:
+> 1、文章添加了阅读量，需使用Waline评论才可以生效（src/.vuepress/theme.ts）
+> 2、修改了关于本站使用的插件（src/about.md）
+> 3、新增一篇waline配置邮件通知文章（src/document/other）
+> 4、去掉了waline评论系统local配置告警的信息（src/.vuepress/public/js）

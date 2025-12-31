@@ -76,8 +76,8 @@ export default hopeTheme({
   },
 
   // 文章信息，可以填入数组，数组的顺序是各条目显示的顺序
-  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "Word","ReadingTime"],
-  //           作者      是否原创    日期     分类        标签    字数   阅读时间
+  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "Word","ReadingTime", "PageView"],
+  //           作者      是否原创    日期       分类      标签    字数    阅读时间        浏览量
 
   // markdown支持的文档配置
   markdown: {
@@ -257,7 +257,7 @@ export default hopeTheme({
     // 启用博客类型
     blog: true,
 
-	// 评论系统
+    // 评论系统
     comment: {
       // Giscus注意: 此评论功能为我的仓库地址! 你必须自行生成自己的评论仓库并在生产环境中使用自己的评论服务，详细请看官方地址：https://theme-hope.vuejs.press/zh/guide/feature/comment.html#giscus
       // provider: "Giscus",
@@ -268,14 +268,29 @@ export default hopeTheme({
 
       // 启用 Waline 评论系统，此评论地址为我的，需要改为自己的，详细请看官方地址：https://theme-hope.vuejs.press/zh/guide/feature/comment.html#waline
       provider: "Waline",
+      // Waline 的服务端地址
       serverURL: "https://waline.liuchenyang.top",
-      reaction: true,
-      requiredMeta: ["nick", 'mail'],
-      wordLimit: 300,
+      // 暗黑模式支持。设置为 true 开启，'auto' 跟随设备偏好；
+      dark: "auto",
+      // 登录模式。可选值：'enable' - 启用登录（默认）、'disable' - 禁用登录，用户填写信息、'force' - 强制登录
+      login: 'force',
+      // 评论字数限制
+      wordLimit: 3000,
+      // 每页评论数量
       pageSize: 10,
+      // 文章表情反应。设置 true 使用默认表情，或提供自定义表情 URL 数组（最多8个）。
+      reaction: true,
+      // 评论系统的表情设置
       emoji: [
+        "https://unpkg.com/@waline/emojis@1.4.0/alus",
+        "https://unpkg.com/@waline/emojis@1.4.0/bilibili",
+        "https://unpkg.com/@waline/emojis@1.4.0/bmoji",
+        "https://unpkg.com/@waline/emojis@1.4.0/qq",
+        "https://unpkg.com/@waline/emojis@1.4.0/tieba",
+        "https://unpkg.com/@waline/emojis@1.4.0/tw-emoji",
+        "https://unpkg.com/@waline/emojis@1.4.0/weibo",
+        "https://unpkg.com/@waline/emojis@1.4.0/soul-emoji",
         "https://unpkg.com/@waline/emojis@1.1.0/tieba",
-        "https://unpkg.com/@waline/emojis@1.1.0/weibo",
         "https://emoji.shojo.cn/bili/webp/tv_小电视_动图",
         "https://emoji.shojo.cn/bili/webp/罗小黑战记",
         "https://emoji.shojo.cn/bili/webp/2233娘",
@@ -284,11 +299,24 @@ export default hopeTheme({
         "https://emoji.shojo.cn/bili/webp/星尘",
         "https://emoji.shojo.cn/bili/webp/池年"
       ],
-      locales: {
-        "/": {
-          placeholder:
-            "欢迎留言~ _(≧∇≦」∠)_ (填写常用邮箱即可快速收到回复通知~)",
-        },
+      // 在Waline配置中添加locale设置
+      locale: {
+        placeholder: "欢迎留言~ _(≧∇≦」∠)_ (请使用QQ、Github等登录或注册后评论哦~)",
+        // 等级名称配置
+        level0: '炼体',
+        level1: '炼气',
+        level2: '筑基',
+        level3: '金丹',
+        level4: '元婴',
+        level5: '化神',
+        level6: '炼虚',
+        level7: '合体',
+        level8: '大乘',
+        level9: '真仙',
+        level10: '金仙',
+        level11: '太乙',
+        level12: '大罗',
+        level13: '道祖',
       },
     },
     

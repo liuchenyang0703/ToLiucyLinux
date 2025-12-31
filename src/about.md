@@ -38,11 +38,26 @@ background: rgb(253, 230, 138, 0.15)
 
 ```component VPCard
 title: Giscus
-desc: 本站评论所用服务。
+desc: 本站评论所用服务<br> - 弃用
 logo: https://avatars.githubusercontent.com/in/106117
 link: https://giscus.app/
 background: rgb(253, 230, 138, 0.15)
 ```
+```component VPCard
+title: Waline 
+desc: 本站评论所用服务<br> - 控制台
+logo: https://console.leancloud.app/favicon.ico
+link: https://console.leancloud.app/apps
+background: rgb(253, 230, 138, 0.15)
+```
+```component VPCard
+title: Waline
+desc: 本站评论所用服务<br> - 配置信息及邮箱、github
+logo: https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/favicon.ico
+link: https://vercel.com/
+background: rgb(253, 230, 138, 0.15)
+```
+
 
 ```component VPCard
 title: iconfont
