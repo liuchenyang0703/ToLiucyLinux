@@ -37,6 +37,17 @@ export default navbar([
       },
     ],
   },
+  {
+    text: "在线小工具",
+    icon: "gongju",
+    children: [
+      {
+        text: "IP 查询检测",
+        icon: "ip2",
+        link: "tools/ip_check.md"
+      },
+    ],
+  },
   // {
   //   text: "网站相关",
   //   icon: "circle-info",

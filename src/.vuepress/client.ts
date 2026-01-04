@@ -37,6 +37,14 @@ import WeatherWidget from "./components/WeatherWidget.vue";
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // 全局-自定义：添加网站运行时间配置
 // const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
+// IP查询检测-自定义：IP 检测
+import ipcheck from "./components/ip_check/ipcheck.vue";
+// IP查询检测-自定义：网站连通性测试
+import Connectivity from "./components/ip_check/Connectivity.vue";
+// IP查询检测-自定义：WebRTC 测试
+import WebRTC from "./components/ip_check/WebRTC.vue";
+// IP查询检测-自定义：DNS泄露测试
+import DNSLeak from "./components/ip_check/DNSLeak.vue";
 
 export default defineClientConfig({
   setup() {
@@ -97,6 +105,14 @@ export default defineClientConfig({
     app.component("roll", roll);
     // 天气预报小组件
     app.component("WeatherWidget", WeatherWidget);
+    // IP 检测
+    app.component("ipcheck", ipcheck);
+    // 网站连通性测试
+    app.component("Connectivity", Connectivity);
+    // WebRTC 测试
+    app.component("WebRTC", WebRTC);
+    // DNS泄露测试
+    app.component("DNSLeak", DNSLeak);
   },
   
   // 你可以在这里覆盖或新增布局

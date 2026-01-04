@@ -435,3 +435,8 @@ category:
 > 2、修改了关于本站使用的插件（src/about.md）
 > 3、新增一篇waline配置邮件通知文章（src/document/other）
 > 4、去掉了waline评论系统local配置告警的信息（src/.vuepress/public/js）
+
+## 2026-01-04:
+> 1、更新了css图标地址（src/.vuepress/theme.ts）
+> 2、头部添加了在线小工具（src/.vuepress/navbar.ts）
+> 3、新增了在线小工具目录，添加了ip检测工具（src/.vuepress/client.ts）（src/tools/ip_check.md）（src/.vuepress/components/ip_check）
