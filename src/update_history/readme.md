@@ -440,3 +440,4 @@ category:
 > 1、更新了css图标地址（src/.vuepress/theme.ts）
 > 2、头部添加了在线小工具（src/.vuepress/navbar.ts）
 > 3、新增了在线小工具目录，添加了ip检测工具（src/.vuepress/client.ts）（src/tools/ip_check.md）（src/.vuepress/components/ip_check）
+> 4、取消顶部赞赏，保留网站相关里的赞赏（src/.vuepress/navbar.ts）

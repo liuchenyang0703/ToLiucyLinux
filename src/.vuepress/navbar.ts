@@ -110,9 +110,4 @@ export default navbar([
       },
     ],
   },
-  { 
-    text: "赞赏",
-    icon: "donate",
-    link: "donate.md" 
-  },
 ]);
