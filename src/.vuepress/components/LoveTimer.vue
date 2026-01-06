@@ -2,14 +2,14 @@
     <div class="love-timer">
         <div class="avatars">
             <div class="avatar-wrapper">
-                <img src="https://liuchenyang.top/picture.jpg" alt="Avatar 1" class="avatar left-avatar" />
+                <img src="/assets/image/aboutus/me.jpg" alt="Avatar 1" class="avatar left-avatar" />
             </div>
             <div class="heart-container">
                 <div class="heart-beat">❤️</div>
                 <div class="heart-particles"></div>
             </div>
             <div class="avatar-wrapper">
-                <img src="https://liuchenyang.top/picture.jpg" alt="Avatar 2" class="avatar right-avatar" />
+                <img src="/assets/image/aboutus/she.jpg" alt="Avatar 2" class="avatar right-avatar" />
             </div>
         </div>
         <h2 class="title-animate">我们已经在一起</h2>
@@ -44,7 +44,7 @@ interface TimeObject {
     seconds: number;
 }
 
-const startDate = new Date('2024-02-14');
+const startDate = new Date('2021-02-14');
 const timeObj = ref<TimeObject>({
     days: 0,
     hours: 0,

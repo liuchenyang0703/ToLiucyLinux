@@ -110,4 +110,9 @@ export default navbar([
       },
     ],
   },
+  { 
+    text: "关于我们",
+    icon: "aiqingqinglv",
+    link: "AboutUs.md" 
+  },
 ]);

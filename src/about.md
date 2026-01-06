@@ -118,7 +118,8 @@ background: rgb(253, 230, 138, 0.15)
 
 
 ## 图床
-- [Typora+PicGo搭建博客图床](document/other/图床oss.md)
+- [Typora+PicGo搭建博客图床 - 使用阿里云oss](document/other/图床oss.md)
+- [Typora+PicGo搭建博客图床 - 使用GitHub+CDN](document/other/2025最新在GitHub上搭建个人图床，保姆级图文教程，实现图片高效管理.md)
 
 ## 仓库连接
 
@@ -207,9 +208,6 @@ background: rgb(253, 230, 138, 0.15)
 ::: warning
 请注意 VuePress 对目录大小写敏感。
 :::
-
-## 在一起❤在一起
-<LoveTimer />
 
 ## test GFM警告案例
 ::: important
