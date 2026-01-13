@@ -442,7 +442,10 @@ category:
 > 3、新增了在线小工具目录，添加了ip检测工具（src/.vuepress/client.ts）（src/tools/ip_check.md）（src/.vuepress/components/ip_check）
 > 4、取消顶部赞赏，保留网站相关里的赞赏（src/.vuepress/navbar.ts）
 
-## 2026-01-16:
+## 2026-01-06:
 > 1、头部新增关于我们（src/.vuepress/navbar.ts）（src/.vuepress/public/assets/image/aboutus/）（src/.vuepress/components/LoveTimer.vue）（src/AboutUs.md）
 > 2、更新了css图标地址（src/.vuepress/theme.ts）
 > 3、关于本站新增github做图床文章链接（src/about.md）
+
+## 2026-01-13:
+> 1、更新了docker镜像加速地址文章
