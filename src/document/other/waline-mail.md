@@ -2,7 +2,6 @@
 shortTitle: "Waline 之邮件通知配置"
 date: 2025-12-30
 icon: circle-info
-star: true
 category:
   - 其他技术
 tag:
