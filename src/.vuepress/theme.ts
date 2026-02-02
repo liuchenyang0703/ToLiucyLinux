@@ -230,7 +230,7 @@ export default hopeTheme({
         link: "https://cloud.tencent.com/developer/user/10755554",
       },
       huaweiyun: {
-        icon: "https://bbs.huaweicloud.com/favicon.ico",
+        icon: "https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202602021050737.svg",
         link: "https://bbs.huaweicloud.com/community/usersnew/id_1661843828089234",
       },
       aliyun: {
@@ -321,38 +321,38 @@ export default hopeTheme({
     },
     
     // 公告栏
-    notice: [
-      {
-        path: "/", // 指定通知显示的路径，"/" 表示在首页显示
-        title: "2025年总结", // 通知的标题
-        content: `
-          <div style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; margin: 15px;">
-            <h1 style="color: #333;">2025年总结</h1>
-            <p>亲爱的朋友们：</p>
-            <p>2025年即将过去，这一年对我来说充满了挑战与成长。在工作中，我参与了多个项目，不断提升自己的专业技能。在生活中，我尝试了新的运动和爱好，结识了许多新朋友。感谢每一位支持我的人，你们的鼓励是我前进的动力。</p>
-            <p>回顾这一年，虽然有起有落，但每一步都让我更加坚定。希望在新的一年里，我们都能继续追逐梦想，创造更多美好的回忆。</p>
-            <p>感谢大家的支持！</p>
-            <p>[ToLiucyLinux]</p>
-            <p>[2025年12月25日]</p>
-          </div>
-        `, // 通知的内容，支持 HTML 字符串
-        actions: [
-          {
-            text: "开始阅读", // 按钮文本
-            link: "./", // 按钮点击后跳转的链接
-            type: "primary", // 按钮类型，"primary" 表示主要按钮
-          },
-          {
-            text: "去看烟花🎇", // 按钮文本
-            link: "https://liuchenyang0703.github.io/fireworks/", // 按钮点击后跳转的链接
-            type: "primary", // 按钮类型，"primary" 表示主要按钮
-          },
-        ],
-        showOnce: false, // 是否只显示一次，用户关闭后不再显示
-        fullscreen: true, // 是否全屏显示通知
-        confirm: true, // 是否需要用户确认（点击按钮）才能关闭通知，false表示可以直接关闭（有关闭按钮）
-      },
-    ],
+    // notice: [
+    //   {
+    //     path: "/", // 指定通知显示的路径，"/" 表示在首页显示
+    //     title: "2025年总结", // 通知的标题
+    //     content: `
+    //       <div style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; margin: 15px;">
+    //         <h1 style="color: #333;">2025年总结</h1>
+    //         <p>亲爱的朋友们：</p>
+    //         <p>2025年即将过去，这一年对我来说充满了挑战与成长。在工作中，我参与了多个项目，不断提升自己的专业技能。在生活中，我尝试了新的运动和爱好，结识了许多新朋友。感谢每一位支持我的人，你们的鼓励是我前进的动力。</p>
+    //         <p>回顾这一年，虽然有起有落，但每一步都让我更加坚定。希望在新的一年里，我们都能继续追逐梦想，创造更多美好的回忆。</p>
+    //         <p>感谢大家的支持！</p>
+    //         <p>[ToLiucyLinux]</p>
+    //         <p>[2025年12月25日]</p>
+    //       </div>
+    //     `, // 通知的内容，支持 HTML 字符串
+    //     actions: [
+    //       {
+    //         text: "开始阅读", // 按钮文本
+    //         link: "./", // 按钮点击后跳转的链接
+    //         type: "primary", // 按钮类型，"primary" 表示主要按钮
+    //       },
+    //       {
+    //         text: "去看烟花🎇", // 按钮文本
+    //         link: "https://liuchenyang0703.github.io/fireworks/", // 按钮点击后跳转的链接
+    //         type: "primary", // 按钮类型，"primary" 表示主要按钮
+    //       },
+    //     ],
+    //     showOnce: false, // 是否只显示一次，用户关闭后不再显示
+    //     fullscreen: true, // 是否全屏显示通知
+    //     confirm: true, // 是否需要用户确认（点击按钮）才能关闭通知，false表示可以直接关闭（有关闭按钮）
+    //   },
+    // ],
 
     // 内置组件，官方讲解地址：https://theme-hope.vuejs.press/zh/guide/component/built-in.html
     // ArtPlayer: 由 ArtPlayer 驱动的视频播放器。

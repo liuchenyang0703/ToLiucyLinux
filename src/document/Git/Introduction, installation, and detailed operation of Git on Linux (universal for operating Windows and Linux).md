@@ -213,7 +213,30 @@ git --version
 
 在linux服务器上自己想在的目录下执行；
 
+```bash
+git clone https://gitee.com/liu-chenyang/linuxtest.git
+```
+
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202512180952744.png)
+
+---
+* 克隆仓库指定分支
+```bash
+git clone -b blog_source --single-branch https://gitee.com/liu-chenyang/linuxtest.git
+```
+
+解释与补充  
+1. `-b blog_source` 指定要检出的分支。  
+2. `--single-branch` 让 Git 只下载该分支的提交历史，省流量、省时间。  
+3. 克隆完本地只有 `blog_source` 分支，看不到 `main`；后续若突然需要 `main`，再执行  
+```bash
+git remote set-branches --add origin main  
+git fetch origin main:main
+```
+即可把 `main` 也拉回来。
+
+---
+
 
 ### 3.3 仓库里的 .gitignore 是什么
 
