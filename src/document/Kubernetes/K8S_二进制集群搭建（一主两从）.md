@@ -35,6 +35,8 @@ isOriginal: true
 ## 一、前言
 ### 1.1 温馨提示
 > 内容比较多，请耐心观看，有不懂的可留言
+> 请注意：所有涉及IP的需改为自己的集群IP，可复制出来到记事本等工具修改好再在服务器上操作；
+
 ### 1.2 常见的k8s部署方式
 * Mini kube
 > Minikube是一个工具，可以在本地快速运行一个单节点微型K8s，仅用于学习预览K8s的一些特性使用。
@@ -1990,4 +1992,53 @@ k8s-node2    Ready    <none>   172m   v1.20.10
 > 网盘链接：[k8s1.20.10集群所需包](https://pan.baidu.com/s/1JH4wZ8F4qokgBdD1cZ0RPA?pwd=k8s1)
 
 ## 九、问题：
+
+### 9.1 服务器重启请检查这些服务状态
+* 服务端：
+* [x] `docker.service`： 存储镜像与容器数据
+* [x] `etcd.service`：K8s集群数据存储，集群模式可容忍(N-1)/2台故障
+* [x] `kube-apiserver.service`：K8s API入口，所有组件通信中枢
+* [x] `kube-controller-manager.service`：控制平面控制器，管理Node生命周期
+* [x] `kube-scheduler.service`：Pod调度器，负责资源分配决策
+* [x] `kubelet.service`：节点代理，管理Pod生命周期及资源上报
+* [x] `kube-proxy.service `：网络代理，维护Service的IPtables/IPVS规则
+
+```bash
+systemctl status docker.service etcd.service kube-apiserver.service kube-controller-manager.service kube-scheduler.service kubelet.service kube-proxy.service 
+```
+
+* 客户端
+
+* [x] `docker.service`： 存储镜像与容器数据
+* [x] `etcd.service`：K8s集群数据存储，集群模式可容忍(N-1)/2台故障
+* [x] `kubelet.service`：节点代理，管理Pod生命周期及资源上报
+* [x] `kube-proxy.service `：网络代理，维护Service的IPtables/IPVS规则
+
+```bash
+systemctl status docker.service etcd.service kubelet.service kube-proxy.service
+```
+
+* master节点查看组件状态
+
+```bash
+kubectl get cs
+```
+
+* master节点查看节点状态
+
+```bash
+kubectl get nodes
+```
+* master节点查看 `cert-manager、kube-system`的pod状态
+
+```bash
+# 证书管理组件（自动签发SSL证书）
+kubectl get pods -n cert-manager
+# 核心系统组件（网络、监控、DNS）
+kubectl get pods -n kube-system
+```
+
+
+---
+
 待定。。

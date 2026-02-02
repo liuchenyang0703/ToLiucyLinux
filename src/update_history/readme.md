@@ -457,3 +457,4 @@ category:
 > 4、暂时去除公告栏（待开）（src/.vuepress/theme.ts）
 > 5、更新极星会粉丝数图（src/.vuepress/public/assets/image/certificate）
 > 6、更新了博客页面华为云图标（src/.vuepress/theme.ts）
+> 7、修改了《K8S 二进制集群搭建（一主两从）》文章内容
