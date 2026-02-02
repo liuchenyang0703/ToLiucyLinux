@@ -2008,7 +2008,6 @@ systemctl status docker.service etcd.service kube-apiserver.service kube-control
 ```
 
 * 客户端
-
 * [x] `docker.service`： 存储镜像与容器数据
 * [x] `etcd.service`：K8s集群数据存储，集群模式可容忍(N-1)/2台故障
 * [x] `kubelet.service`：节点代理，管理Pod生命周期及资源上报
