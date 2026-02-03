@@ -461,3 +461,4 @@ category:
 
 ## 2026-02-03:
 > 1、更新了《K8S 二进制集群搭建（一主两从）》文章内容
+> 2、更新了代码说明文档（src/.vuepress/public/README.md）
