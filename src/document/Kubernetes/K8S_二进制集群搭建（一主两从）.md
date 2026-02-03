@@ -572,7 +572,9 @@ ETCDCTL_API=3 /opt/etcd/bin/etcdctl --cacert=/opt/etcd/ssl/ca.pem --cert=/opt/et
 ## 四、部署Docker（所有节点）
 > 这里使用Docker作为容器引擎,也可以换成别的,例如containerd,k8s在1.20版本就不在支持docker
 
-推荐使用部署脚本一键部署：[docker24.0.5离线安装包 （一键部署）](https://download.csdn.net/download/liu_chen_yang/88647183)
+>推荐使用部署脚本一键部署：[docker24.0.5离线安装包 （一键部署）](https://download.csdn.net/download/liu_chen_yang/88647183)；
+> 包含自动配置开机自启、自动区分操作系统安装等；只许解压执行`sh install.sh`自动安装即可，就可以免去第四步`除4.2`所有操作（因为必须要加镜像加速，要不然拉不到镜像）；
+
 ### 4.1 解压二进制包
 
 ```bash
@@ -2037,7 +2039,12 @@ kubectl get pods -n cert-manager
 kubectl get pods -n kube-system
 ```
 
+### 9.2 查看csr无数据
 
----
-
-待定。。
+```bash
+kubectl get csr
+```
+> 在允许kubelet证书申请并加入集群的时候发现没有数据，返回`No resources found`，这时候请检查
+> 1、`KUBE_APISERVER`的IP地址是否正确
+> 2、`TOKEN`是否与`/opt/kubernetes/cfg/token.csv`中是否一致 ；
+> 修改完之后重新执行 “生成 kubelet bootstrap kubeconfig 配置文件” 以下的命令，并重启`kubelet`服务，这时候在执行`kubectl get csr`就可以看到有证书请求了；
