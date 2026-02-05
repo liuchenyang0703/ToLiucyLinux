@@ -664,60 +664,89 @@ consul_exporter 常用指标（一句话说明 + 中文单位）
 
 
 ## 十六、kubernetes 常用指标
-> K8s 指标分 **kube-state-metrics（对象）+ kubelet/cAdvisor（容器/节点）+ 控制平面组件（API Server/Scheduler/ETCD）** 三大官方源头；
-### 16.1 kube-state-metrics（对象级资源数量/状态）
-| 指标名 | 来源 | 一句话说明 | 单位 |
-| --- | --- | --- | --- |
-| `kube_node_status_condition` | kube-state-metrics | 节点 Ready/NotReady 状态（标签：condition, status） | 1/0 |
-| `kube_pod_status_phase` | kube-state-metrics | Pod 当前相位（Pending/Running/Succeeded/Failed/Unknown） | 1/0 |
-| `kube_deployment_status_replicas_available` | kube-state-metrics | Deployment 可用副本数 | 个 |
-| `kube_deployment_spec_replicas` | kube-state-metrics | Deployment 期望副本数 | 个 |
-| `kube_hpa_spec_max_replicas` | kube-state-metrics | HPA 最大副本数 | 个 |
-| `kube_hpa_status_current_replicas` | kube-state-metrics | HPA 当前副本数 | 个 |
-| `kube_job_failed` | kube-state-metrics | Job 失败次数 | 次 |
-| `kube_persistentvolumeclaim_status_phase` | kube-state-metrics | PVC 相位（Bound/Pending/Lost） | 1/0 |
-| `kube_namespace_created` | kube-state-metrics | 命名空间创建时间戳 | 秒 |
 
-### 16.2 kubelet（节点 & 容器运行时）
-| 指标名 | 来源 | 一句话说明 | 单位 |
-| --- | --- | --- | --- |
-| `kubelet_node_name` | kubelet | 节点名称标签 | 无 |
-| `kubelet_running_pods` | kubelet | 当前运行 Pod 数 | 个 |
-| `kubelet_running_containers` | kubelet | 当前运行容器数 | 个 |
-| `kubelet_volume_stats_available_bytes` | kubelet | 卷可用空间 | 字节 |
-| `kubelet_volume_stats_capacity_bytes` | kubelet | 卷总容量 | 字节 |
-| `kubelet_pleg_relist_duration_seconds` | kubelet | PLEG  relist 耗时 | 秒 |
+### 16.1 容器层（cAdvisor）
 
-### 16.3 cAdvisor（容器资源用量，嵌在 kubelet 里）
-| 指标名 | 来源 | 一句话说明 | 单位 |
-| --- | --- | --- | --- |
-| `container_cpu_usage_seconds_total` | cAdvisor | 容器累计 CPU 使用时间 | 秒 |
-| `container_memory_working_set_bytes` | cAdvisor | 容器实际使用内存（OOM 判断依据） | 字节 |
-| `container_memory_cache` | cAdvisor | 容器 cache 内存 | 字节 |
-| `container_fs_reads_bytes_total` | cAdvisor | 容器磁盘读字节累计 | 字节 |
-| `container_fs_writes_bytes_total` | cAdvisor | 容器磁盘写字节累计 | 字节 |
-| `container_network_receive_bytes_total` | cAdvisor | 容器网卡收字节累计 | 字节 |
-| `container_network_transmit_bytes_total` | cAdvisor | 容器网卡发字节累计 | 字节 |
+> Pod / Container 资源消耗指标（K8s 核心运行指标）
 
-### 16.4 API Server（控制平面）
-| 指标名 | 来源 | 一句话说明 | 单位 |
-| --- | --- | --- |--|
-| `apiserver_request_total` | kube-apiserver | 各 Verb/资源/状态码请求累计 | 次 |
-| `apiserver_request_duration_seconds` | kube-apiserver | 请求延迟分布 | 秒 |
-| `apiserver_current_inflight_requests` | kube-apiserver | 当前飞行中请求数 | 个 |
-### 16.5 Scheduler & Controller Manager
-| 指标名 | 来源 | 一句话说明 | 单位 |
-| --- | --- | --- |--|
-| `scheduler_schedule_attempts_total` | kube-scheduler | 调度尝试次数（result 标签） | 次 |
-| `scheduler_binding_duration_seconds` | kube-scheduler | Pod 绑定耗时 | 秒 |
-| `workqueue_depth` | kube-controller-manager | 各控制器工作队列深度 | 个 |
+| 指标名                                      | 来源       | 含义            | 单位    |
+| ---------------------------------------- | -------- | ------------- | ----- |
+| container_cpu_usage_seconds_total        | cAdvisor | 容器 CPU 使用时间累计 | 秒     |
+| container_cpu_system_seconds_total       | cAdvisor | 内核态 CPU 使用时间  | 秒     |
+| container_cpu_user_seconds_total         | cAdvisor | 用户态 CPU 使用时间  | 秒     |
+| container_memory_usage_bytes             | cAdvisor | 容器内存使用量       | bytes |
+| container_memory_working_set_bytes       | cAdvisor | 实际工作集内存       | bytes |
+| container_memory_rss                     | cAdvisor | RSS 内存        | bytes |
+| container_memory_cache                   | cAdvisor | page cache    | bytes |
+| container_fs_usage_bytes                 | cAdvisor | 容器磁盘使用量       | bytes |
+| container_fs_reads_bytes_total           | cAdvisor | 容器磁盘读取        | bytes |
+| container_fs_writes_bytes_total          | cAdvisor | 容器磁盘写入        | bytes |
+| container_network_receive_bytes_total    | cAdvisor | 容器接收流量        | bytes |
+| container_network_transmit_bytes_total   | cAdvisor | 容器发送流量        | bytes |
+| container_network_receive_packets_total  | cAdvisor | 接收包数          | 个     |
+| container_network_transmit_packets_total | cAdvisor | 发送包数          | 个     |
+| container_start_time_seconds             | cAdvisor | 容器启动时间        | 秒     |
+| container_last_seen                      | cAdvisor | 最近采集时间        | 时间戳   |
 
-### 16.6 Etcd（K8s 数据库）
-| 指标名 | 来源 | 一句话说明 | 单位 |
-| --- | --- | --- |--|
-| `etcd_disk_wal_fsync_duration_seconds` | etcd | WAL 落盘延迟 | 秒 |
-| `etcd_server_has_leader` | etcd | 是否有 leader（1/0） | 无 |
-| `etcd_mvcc_db_total_size_in_bytes` | etcd | 数据库总大小 | 字节 |
+### 16.2 K8s 对象状态（kube-state-metrics）
+
+> 不是资源消耗，而是**Kubernetes 状态信息**
+
+#### 16.2.1 Pod 相关
+
+| 指标名                                               | 来源                 | 含义                      | 单位    |
+| ------------------------------------------------- | ------------------ | ----------------------- | ----- |
+| kube_pod_info                                     | kube-state-metrics | Pod 基本信息                | 无     |
+| kube_pod_status_phase                             | kube-state-metrics | Pod 状态（Running/Pending） | 枚举    |
+| kube_pod_status_ready                             | kube-state-metrics | Pod Ready 状态            | 布尔    |
+| kube_pod_container_status_restarts_total          | kube-state-metrics | 容器重启次数                  | 次     |
+| kube_pod_container_status_running                 | kube-state-metrics | 容器运行状态                  | 布尔    |
+| kube_pod_container_resource_requests_cpu_cores    | kube-state-metrics | CPU 请求值                 | 核     |
+| kube_pod_container_resource_limits_cpu_cores      | kube-state-metrics | CPU 限制值                 | 核     |
+| kube_pod_container_resource_requests_memory_bytes | kube-state-metrics | 内存请求值                   | bytes |
+| kube_pod_container_resource_limits_memory_bytes   | kube-state-metrics | 内存限制值                   | bytes |
+
+
+#### 16.2.2 Node 相关
+
+| 指标名                                       | 来源                 | 含义          | 单位    |
+| ----------------------------------------- | ------------------ | ----------- | ----- |
+| kube_node_info                            | kube-state-metrics | 节点信息        | 无     |
+| kube_node_status_condition                | kube-state-metrics | 节点 Ready 状态 | 布尔    |
+| kube_node_status_capacity_cpu_cores       | kube-state-metrics | CPU 总容量     | 核     |
+| kube_node_status_capacity_memory_bytes    | kube-state-metrics | 内存总容量       | bytes |
+| kube_node_status_allocatable_cpu_cores    | kube-state-metrics | 可分配 CPU     | 核     |
+| kube_node_status_allocatable_memory_bytes | kube-state-metrics | 可分配内存       | bytes |
+
+
+#### 16.2.3 Deployment / ReplicaSet
+
+| 指标名                                         | 来源                 | 含义    | 单位 |
+| ------------------------------------------- | ------------------ | ----- | -- |
+| kube_deployment_spec_replicas               | kube-state-metrics | 期望副本数 | 个  |
+| kube_deployment_status_replicas             | kube-state-metrics | 当前副本数 | 个  |
+| kube_deployment_status_replicas_available   | kube-state-metrics | 可用副本  | 个  |
+| kube_deployment_status_replicas_unavailable | kube-state-metrics | 不可用副本 | 个  |
+
+
+#### 16.2.4 StatefulSet
+
+| 指标名                                    | 来源                 | 含义       | 单位 |
+| -------------------------------------- | ------------------ | -------- | -- |
+| kube_statefulset_replicas              | kube-state-metrics | 副本数      | 个  |
+| kube_statefulset_status_replicas_ready | kube-state-metrics | Ready 副本 | 个  |
+
+
+
+#### 16.2.5 PVC / PV
+
+| 指标名                                                        | 来源                 | 含义       | 单位    |
+| ---------------------------------------------------------- | ------------------ | -------- | ----- |
+| kube_persistentvolume_capacity_bytes                       | kube-state-metrics | PV 容量    | bytes |
+| kube_persistentvolumeclaim_resource_requests_storage_bytes | kube-state-metrics | PVC 请求存储 | bytes |
+| kube_persistentvolume_status_phase                         | kube-state-metrics | PV 状态    | 枚举    |
+| kube_persistentvolumeclaim_status_phase                    | kube-state-metrics | PVC 状态   | 枚举    |
+
 
 
 ## 十七、其他说明
