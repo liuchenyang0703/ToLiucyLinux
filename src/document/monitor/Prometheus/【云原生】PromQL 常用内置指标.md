@@ -699,6 +699,7 @@ consul_exporter 常用指标（一句话说明 + 中文单位）
 | kube_pod_info                                     | kube-state-metrics | Pod 基本信息                | 无     |
 | kube_pod_status_phase                             | kube-state-metrics | Pod 状态（Running/Pending） | 枚举    |
 | kube_pod_status_ready                             | kube-state-metrics | Pod Ready 状态            | 布尔    |
+|kube_pod_status_scheduled|kube-state-metrics | Pod 是否已调度          |   0/1 |
 | kube_pod_container_status_restarts_total          | kube-state-metrics | 容器重启次数                  | 次     |
 | kube_pod_container_status_running                 | kube-state-metrics | 容器运行状态                  | 布尔    |
 | kube_pod_container_resource_requests_cpu_cores    | kube-state-metrics | CPU 请求值                 | 核     |
@@ -719,26 +720,74 @@ consul_exporter 常用指标（一句话说明 + 中文单位）
 | kube_node_status_allocatable_memory_bytes | kube-state-metrics | 可分配内存       | bytes |
 
 
-#### 16.2.3 Deployment / ReplicaSet
+#### 16.2.3 Deployment 
 
 | 指标名                                         | 来源                 | 含义    | 单位 |
 | ------------------------------------------- | ------------------ | ----- | -- |
+| kube_deployment_created | kube-state-metrics | 创建时间 |秒（Unix 时间戳）|
 | kube_deployment_spec_replicas               | kube-state-metrics | 期望副本数 | 个  |
 | kube_deployment_status_replicas             | kube-state-metrics | 当前副本数 | 个  |
 | kube_deployment_status_replicas_available   | kube-state-metrics | 可用副本  | 个  |
 | kube_deployment_status_replicas_unavailable | kube-state-metrics | 不可用副本 | 个  |
+| kube_deployment_status_replicas_updated | kube-state-metrics | 已更新副本数 |个  |
+| kube_deployment_spec_replicas | kube-state-metrics | 期望副本数 |个  |
+| kube_deployment_spec_strategy_rollingupdate_max_unavailable | kube-state-metrics | 滚动更新最大不可用 |个  |
 
+#### 16.2.4 Namespace 
 
-#### 16.2.4 StatefulSet
+| 指标名 | 来源 | 作用 |单位 |
+|-------|------|------|--|
+| kube_namespace_created | kube-state-metrics | 命名空间创建时间 |秒（Unix 时间戳）|
+| kube_namespace_labels | kube-state-metrics | 命名空间标签 |无（只有标签，值为 1）|
+| kube_namespace_annotations | kube-state-metrics | 命名空间注解 |无（只有标签，值为 1）|
+#### 16.2.5 StatefulSet / DaemonSet /  ReplicaSet
 
-| 指标名                                    | 来源                 | 含义       | 单位 |
-| -------------------------------------- | ------------------ | -------- | -- |
-| kube_statefulset_replicas              | kube-state-metrics | 副本数      | 个  |
-| kube_statefulset_status_replicas_ready | kube-state-metrics | Ready 副本 | 个  |
+| 资源类型 | 指标名                                    | 来源                 | 含义       | 单位 |
+|-------| -------------------------------------- | ------------------ | -------- | -- |
+| StatefulSet| kube_statefulset_replicas              | kube-state-metrics | 副本数      | 个  |
+| StatefulSet| kube_statefulset_status_replicas_ready | kube-state-metrics | Ready 副本 | 个  |
+| StatefulSet|kube_statefulset_status_replicas_current| kube-state-metrics |当前副本数 |个  |
+| StatefulSet|kube_statefulset_status_replicas_updated | kube-state-metrics |已更新副本数 |个  |
+| DaemonSet | kube_daemonset_status_number_available| kube-state-metrics |可用数量 |个  |
+| DaemonSet | kube_daemonset_status_number_unavailable    | kube-state-metrics |不可用数量 |个  |
+| DaemonSet | kube_daemonset_status_desired_number_scheduled| kube-state-metrics |期望调度数 |个  |
+| DaemonSet | kube_daemonset_status_current_number_scheduled| kube-state-metrics |当前调度数 |个  |
+| ReplicaSet | kube_replicaset_spec_replicas|  kube-state-metrics |期望副本数 |个  |
+| ReplicaSet | kube_replicaset_status_ready_replicas |  kube-state-metrics |就绪副本数 |个  |
+| ReplicaSet | kube_replicaset_owner |  kube-state-metrics |归属关系（指向Deployment） |个  |
 
+#### 16.2.6 Service / Endpoint / Ingress 
 
+| 资源类型 | 指标名 | 来源 | 含义|单位|
+|-----|-------|------|------|-----|
+|Service | kube_service_info | kube-state-metrics | Service 信息 |0/1|
+|Service | kube_service_created | kube-state-metrics | 创建时间 |	秒（时间戳）|
+|Service | kube_service_spec_type| kube-state-metrics | 类型（ClusterIP/NodePort/LoadBalancer） |0/1|
+|Service | kube_service_ports | kube-state-metrics | 端口配置 |无|
+|Endpoint | kube_endpoint_info | kube-state-metrics | Endpoint 信息 |0/1|
+|Endpoint | kube_endpoint_address_available | kube-state-metrics | 可用端点数量|个|
+|Endpoint | kube_endpoint_address_not_ready | kube-state-metrics | 未就绪端点数量 |个|
+|Ingress | kube_ingress_info | kube-state-metrics | Ingress 信息 |无|
+|Ingress | kube_ingress_tls | kube-state-metrics | TLS 配置 |无|
+|Ingress | kube_ingress_path | kube-state-metrics | 路径规则 |无|
+|Ingress | kube_ingress_created | kube-state-metrics | 创建时间 |秒（时间戳）|
 
-#### 16.2.5 PVC / PV
+#### 16.2.7 ConfigMap / Secret
+| 资源类型      | 指标名                                        | 来源                 | 含义                             | 单位          |
+| --------- | ------------------------------------------ | ------------------ | ------------------------------ | ----------- |
+| ConfigMap | `kube_configmap_info`                      | kube-state-metrics | 基本信息                           | 无（值为 1）     |
+| ConfigMap | `kube_configmap_created`                   | kube-state-metrics | 创建时间                           | 秒（Unix 时间戳） |
+| ConfigMap | `kube_configmap_metadata_resource_version` | kube-state-metrics | 资源版本                           | 无（值为 1）     |
+| ConfigMap | `kube_configmap_annotations`               | kube-state-metrics | 注解信息                           | 无（值为 1）     |
+| ConfigMap | `kube_configmap_labels`                    | kube-state-metrics | 标签信息                           | 无（值为 1）     |
+| Secret    | `kube_secret_info`                         | kube-state-metrics | 基本信息（不含 data）                  | 无（值为 1）     |
+| Secret    | `kube_secret_type`                         | kube-state-metrics | 类型（Opaque/tls/docker-registry） | 无（值为 1）     |
+| Secret    | `kube_secret_created`                      | kube-state-metrics | 创建时间                           | 秒（Unix 时间戳） |
+| Secret    | `kube_secret_annotations`                  | kube-state-metrics | 注解信息                           | 无（值为 1）     |
+| Secret    | `kube_secret_labels`                       | kube-state-metrics | 标签信息                           | 无（值为 1）     |
+| Secret    | `kube_secret_metadata_resource_version`    | kube-state-metrics | 资源版本                           | 无（值为 1）     |
+
+#### 16.2.8 PVC / PV
 
 | 指标名                                                        | 来源                 | 含义       | 单位    |
 | ---------------------------------------------------------- | ------------------ | -------- | ----- |
@@ -746,7 +795,6 @@ consul_exporter 常用指标（一句话说明 + 中文单位）
 | kube_persistentvolumeclaim_resource_requests_storage_bytes | kube-state-metrics | PVC 请求存储 | bytes |
 | kube_persistentvolume_status_phase                         | kube-state-metrics | PV 状态    | 枚举    |
 | kube_persistentvolumeclaim_status_phase                    | kube-state-metrics | PVC 状态   | 枚举    |
-
 
 
 ## 十七、其他说明
