@@ -472,4 +472,5 @@ category:
 
 ## 2026-02-07:
 > 1、更新了所有面试题中标题及其他（暂时还没添加内容）（src/interview/）
-> 2、添加Prometheus面试题页面（src/interview/）（src/.vuepress/interview.ts）
+> 2、添加Prometheus面试题、web、高可用、虚拟化面试题页面（src/interview/）（src/.vuepress/interview.ts）
+> 3、一些面试题中添加了面试题

@@ -13,6 +13,14 @@ export const interview = arraySidebar([
         // ],
     },
     {
+        text: "Linux高可用常见面试题",
+        icon: "linux",
+        prefix: "intervie_LVS/",
+        // 添加下拉框
+        collapsible: true,
+        children: "structure",
+    },
+    {
         text: "Docker常见面试题",
         icon: "docker",
         prefix: "intervie_Docker/",
@@ -80,6 +88,14 @@ export const interview = arraySidebar([
         text: "网络常见面试题",
         icon: "wangluo",
         prefix: "intervie_network/",
+        // 添加下拉框
+        collapsible: true,
+        children: "structure",
+    },
+    {
+        text: "虚拟化常见面试题",
+        icon: "33xunihuapingtaiguanli",
+        prefix: "intervie_virtualization/",
         // 添加下拉框
         collapsible: true,
         children: "structure",
