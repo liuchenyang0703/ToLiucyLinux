@@ -37,9 +37,9 @@ export const interview = arraySidebar([
         children: "structure",
     },
     {
-        text: "Zabbix常见面试题",
-        icon: "zabbix",
-        prefix: "intervie_Zabbix/",
+        text: "监控常见面试题",
+        icon: "jiankong",
+        prefix: "intervie_monitor/",
         // 添加下拉框
         collapsible: true,
         children: "structure",

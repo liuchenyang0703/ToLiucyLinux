@@ -1,6 +1,6 @@
 ---
 title: Mysql常见面试题
-icon: circle-info
+icon: mysql
 order: 1
 category:
   - 面试题
@@ -9,7 +9,8 @@ tag:
   - 运维
 pageview: false
 date: 2026-02-07
-comment: false
+pageview: true
+article: false
 breadcrumb: false
 isOriginal: true
 ---

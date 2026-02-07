@@ -2,10 +2,14 @@
 title: Jenkins常见面试题
 icon: circle-info
 order: 1
-pageview: false
-date: 2024-10-5 09:44:15
-comment: false
+category:
+  - 面试题
+tag:
+  - Jenkins常见面试题
+  - 运维
+date: 2026-02-07
+pageview: true
+article: false
 breadcrumb: false
-# 类别
-category: 面试题
+isOriginal: true
 ---
