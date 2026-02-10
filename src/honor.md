@@ -41,7 +41,7 @@ toc: false
         <td>2023 城市之星证书</td>
         <td><img style="width: 160px" src="/assets/image/certificate/城市之星.png" /></td>
         <td>CSDN2023071935409</td>
-	    <td rowspan="3" style="text-align: center;"><a href="https://activity.csdn.net/cert" target="_blank">CSDN查询地址</a></td>
+	    <td rowspan="4" style="text-align: center;"><a href="https://activity.csdn.net/cert" target="_blank">CSDN查询地址</a></td>
 	</tr>
     <tr>
         <td>博客专家证书</td>
