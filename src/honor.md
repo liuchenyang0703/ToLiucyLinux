@@ -37,7 +37,7 @@ toc: false
   </thead>
   <tbody>
 	<tr>
-        <td rowspan="8" style="text-align: center;"><a href="https://blog.csdn.net/" target="_blank">CSDN</a></td>
+        <td rowspan="9" style="text-align: center;"><a href="https://blog.csdn.net/" target="_blank">CSDN</a></td>
         <td>2023 城市之星证书</td>
         <td><img style="width: 160px" src="/assets/image/certificate/城市之星.png" /></td>
         <td>CSDN2023071935409</td>
@@ -52,6 +52,11 @@ toc: false
         <td>2024 博客之星证书</td>
         <td><img style="width: 160px" src="/assets/image/certificate/2024博客之星.png" /></td>
         <td>CSDN2025030738977</td>
+	</tr>
+    <tr>
+        <td>2025 博客之星证书</td>
+        <td><img style="width: 160px" src="/assets/image/certificate/2025年博客之星电子证书.png" /></td>
+        <td>CSDN2026020480649</td>
 	</tr>
     <tr>
         <td>CSDN&极术社区智能计算知识挑战</td>
