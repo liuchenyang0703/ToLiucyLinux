@@ -477,3 +477,8 @@ category:
 
 ## 2026-02-10:
 > 1、荣誉墙添加了2025博客之星证书 - CSDN（src/honor.md）
+
+## 2026-02-11:
+> 1、更新了icon链接（src/.vuepress/theme.ts）
+> 2、新增了elk、RabbitMQ面试题（src/interview/）（src/.vuepress/interview.ts）
+> 3、添加了一些Prometheus、Zabbix、Linux基础、docker、kubernetes、ansible的面试题

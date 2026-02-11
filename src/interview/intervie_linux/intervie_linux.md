@@ -193,3 +193,27 @@ sh test.sh 小张
 
 *   保存规则（取决于发行版）：iptables-save > /etc/iptables.rules
 *   恢复规则：iptables-restore < /etc/iptables.rules 或 service iptables save # RHEL/CentOS
+
+## 44、如何解决 NFS 挂载失败的问题  
+答：
+
+*   检查网络连接和防火墙设置。
+*   确保 NFS 服务正在运行。
+*   检查 /etc/exports 文件配置是否正确。
+*   查看日志文件（如 /var/log/messages 或 /var/log/syslog）。
+
+## 45、NFS 的默认端口是什么？  
+答案：
+
+*   portmapper：111（TCP/UDP）。
+*   NFS：2049（TCP/UDP）。
+*   mountd：动态分配（可通过 rpcinfo -p 查看）。
+
+## 46、NFS 与 SMB/CIFS 的区别是什么？  
+答案：​
+
+*   NFS：主要用于 Unix/Linux 系统，性能较高。
+*   SMB/CIFS：主要用于 Windows 系统，支持更多功能（如文件锁定、打印服务）。
+
+## 47、如何限制 NFS 客户端的访问？  
+答案：在 /etc/exports 文件中指定允许访问的 IP 或网段。例如 /shared\_dir 192.168.1.10(rw)

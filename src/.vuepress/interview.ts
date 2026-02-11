@@ -93,6 +93,14 @@ export const interview = arraySidebar([
         children: "structure",
     },
     {
+        text: "ELK常见面试题",
+        icon: "ELK",
+        prefix: "intervie_elk/",
+        // 添加下拉框
+        collapsible: true,
+        children: "structure",
+    },
+    {
         text: "虚拟化常见面试题",
         icon: "33xunihuapingtaiguanli",
         prefix: "intervie_virtualization/",
