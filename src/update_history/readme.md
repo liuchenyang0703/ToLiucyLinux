@@ -482,3 +482,7 @@ category:
 > 1、更新了icon链接（src/.vuepress/theme.ts）
 > 2、新增了elk、RabbitMQ面试题（src/interview/）（src/.vuepress/interview.ts）
 > 3、添加了一些Prometheus、Zabbix、Linux基础、docker、kubernetes、ansible的面试题
+
+## 2026-02-19:
+> 1、新增防火墙常见面试题
+> 2、新增网络、高可用、Docker相关的面试题
