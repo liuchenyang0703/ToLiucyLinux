@@ -486,3 +486,4 @@ category:
 ## 2026-02-19:
 > 1、新增防火墙常见面试题
 > 2、新增网络、高可用、Docker相关的面试题
+> 3、新增《K8S 之 DaemonSet》、《K8S 之 Taints（污点）与 Tolerations（容忍）》两篇文章；
