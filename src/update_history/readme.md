@@ -486,5 +486,9 @@ category:
 ## 2026-02-19:
 > 1、新增防火墙常见面试题
 > 2、新增网络、高可用、Docker相关的面试题
-> 3、新增《K8S 之 DaemonSet》、《K8S 之 Taints（污点）与 Tolerations（容忍）》两篇文章；
-> 4、两篇新文调整展示状态为展示到博客中；
+> 3、新增《K8S 之 DaemonSet》、《K8S 之 Taints（污点）与 Tolerations（容忍）》两篇文章（src/document/Kubernetes）
+> 4、两篇新文调整展示状态为展示到博客中
+
+## 2026-02-20:
+> 1、新增《nginx性能优化》文章（src/document/Nginx）
+> 2、新增nginx常见面试题
