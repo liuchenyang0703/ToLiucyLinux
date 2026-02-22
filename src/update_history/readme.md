@@ -492,3 +492,6 @@ category:
 ## 2026-02-20:
 > 1、新增《nginx性能优化》文章（src/document/Nginx）
 > 2、新增nginx常见面试题
+
+## 2026-02-22:
+> 1、添加了Prometheus和Zabbix监控的常见面试题
