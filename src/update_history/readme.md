@@ -495,3 +495,6 @@ category:
 
 ## 2026-02-22:
 > 1、添加了Prometheus和Zabbix监控的常见面试题
+
+## 2026-02-23:
+> 1、添加了mysql、RabbitMQ、redis、jenkins、ansible、git、elk的常见面试题
