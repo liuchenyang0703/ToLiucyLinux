@@ -88,16 +88,22 @@ mv /etc/docker/daemon.json /etc/docker/daemon.json-bak
   "registry-mirrors": [
    "https://docker.1panel.live",
    "https://hub.1panel.dev",
-   "https://docker.kejilion.pro",
    "https://docker.hlmirror.com",
-   "https://hubp.me",
-   "https://docker.sunzishaokao.com",
-   "https://func.ink",
+   "https://docker.jsdelivr.fyi",
+   "https://dockercf.jsdelivr.fyi",
+   "https://dockertest.jsdelivr.fyi",
+   "https://docker.xuanyuan.me",
+   "https://dockerproxy.net",
+   "https://docker-0.unsee.tech",
+   "https://docker.kejilion.pro",
+   "https://docker.367231.xyz",
+   "https://docker.yomansunter.com",
    "https://hub3.nat.tf",
-   "https://image.cloudlayer.icu",
-   "https://hub4.nat.tf",
+   "https://docker.1panel.top",
+   "https://dislabaiot.xyz",
+   "https://docker.fxxk.dedyn.io",
    "https://hub.amingg.com",
-   "https://hub.fast360.xyz"
+   "https://docker.apiba.cn"
    ]
 }
 
@@ -198,23 +204,29 @@ docker pull liuchenyang/ubuntu20.04:latest
 > 注意：开启🐱之后可能会影响你的网络，请勿使用与非法途径，谨慎使用；
 > 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
 
-## 五、Docker加速列表 - 2026.01.13 已更新 - 长期维护
-><span id="dockerjiasu">Docker加速列表 - 2026.01.13 已更新 - 长期维护</span>
+## 五、Docker加速列表 - 2026.02.24 已更新 - 长期维护
+><span id="dockerjiasu">Docker加速列表 - 2026.02.24 已更新 - 长期维护</span>
 
 | 镜像加速地址                      | 是否正常使用 |
 | --------------------------------- | ------------ |
-| https://docker.1panel.live | 正常（稳定）   |
+| https://docker.1panel.live | 正常（稳定） |
 | https://hub.1panel.dev | 正常（稳定）     |
-| https://docker.kejilion.pro | 正常         |
 | https://docker.hlmirror.com | 正常（稳定）     |
-| https://hubp.me | 正常         |
-| https://docker.sunzishaokao.com | 正常 |
-| https://func.ink | 正常 |
+| https://docker.jsdelivr.fyi | 正常 |
+| https://dockercf.jsdelivr.fyi | 正常（稳定） |
+| https://dockertest.jsdelivr.fyi | 正常（稳定） |
+| https://docker.xuanyuan.me | 正常 |
+| https://dockerproxy.net | 正常 |
+| https://docker-0.unsee.tech | 正常 |
+| https://docker.kejilion.pro | 正常 |
+| https://docker.367231.xyz | 正常 |
+| https://docker.yomansunter.com | 正常 |
 | https://hub3.nat.tf | 正常 |
-| https://image.cloudlayer.icu | 正常 |
-| https://hub4.nat.tf | 正常 |
+| https://docker.1panel.top | 正常 |
+| https://dislabaiot.xyz | 正常 |
+| https://docker.fxxk.dedyn.io | 正常 |
 | https://hub.amingg.com | 正常 |
-| https://hub.fast360.xyz | 正常 |
+| https://docker.apiba.cn | 正常 |
 
 
 

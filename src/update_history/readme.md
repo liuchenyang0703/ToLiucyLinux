@@ -498,3 +498,6 @@ category:
 
 ## 2026-02-23:
 > 1、添加了mysql、RabbitMQ、redis、jenkins、ansible、git、elk的常见面试题
+
+## 2026-02-24:
+> 1、更新了docker镜像加速地址文章
