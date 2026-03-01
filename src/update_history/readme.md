@@ -501,3 +501,6 @@ category:
 
 ## 2026-02-24:
 > 1、更新了docker镜像加速地址文章
+
+## 2026-03-01:
+> 1、新增了k8s和Prometheus两篇文章：《k8s部署Prometheus + node_exporter + Grafana + Alertmanager》《K8S部署kube-state-metrics + CAdvisor 并使用 Prometheus 监控 Kubernetes 指标》（src/document/monitor/Prometheus）（src/document/Kubernetes）
