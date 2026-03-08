@@ -18,25 +18,99 @@ isOriginal: true
 
 答：
 
-*   API Server：提供 Kubernetes API。
-*   Scheduler：负责调度 Pod 到合适的节点。
-*   Controller Manager：运行控制器（如 Node Controller、Replication Controller）。
-*   etcd：分布式键值存储，保存集群状态。
-*   Kubelet：管理节点上的 Pod 和容器。
-*   Kube Proxy：实现服务负载均衡和网络代理。
-*   Container Runtime：运行容器的软件（如 Docker、containerd）。
+> Kubernetes（k8s）的核心组件可以分为**控制平面（Control Plane）组件**和**工作节点（Node）组件**两大类；
+
+* [x] **控制平面组件（Control Plane Components）**
+
+* etcd：分布式键值存储，保存集群状态。
+
+*   kube-apiserver：提供 Kubernetes API，是整个集群的前端入口。
+*   kube-scheduler：负责调度新创建的 Pod 到合适的工作节点上运行。
+*   kube-controller-manager：运行控制器（如 Node Controller、Replication Controller）。
+*   [x] **工作节点组件（Node Components）**
+*   kubelet：节点上的主要代理，管理节点上的 Pod 和容器。
+*   kube-proxy：负责**网络代理和负载均衡**，实现 Kubernetes Service 的通信。
+*   Container Runtime：负责运行容器的软件（如 Docker、containerd）。
 
 ## 2、k8s中都有哪些对象资源？
 
-答：namespace、controller、pod、pv、pvc、configmap、secret、service、ingress
+答：
+
+* [x] 工作负载类（Workload）
+
+| 资源名称                  | 简称     | 作用                                              |
+| ------------------------- | -------- | ------------------------------------------------- |
+| **Pod**                   | `po`     | 最小部署单元，包含一个或多个紧密耦合的容器        |
+| **Deployment**            | `deploy` | 声明式管理无状态应用，支持滚动更新和回滚          |
+| **StatefulSet**           | `sts`    | 管理有状态应用，提供稳定的网络标识和持久存储      |
+| **DaemonSet**             | `ds`     | 确保每个（或指定）节点上运行一个 Pod 副本         |
+| **ReplicaSet**            | `rs`     | 维护指定数量的 Pod 副本（通常被 Deployment 管理） |
+| **Job**                   | -        | 一次性任务，运行完成后即结束                      |
+| **CronJob**               | `cj`     | 定时任务，按 Cron 表达式周期性执行 Job            |
+| **ReplicationController** | `rc`     | 旧版副本控制器（已被 ReplicaSet/Deployment 取代） |
+
+* [x] 服务与网络类（Service & Networking）
+
+| 资源名称          | 简称     | 作用                                                         |
+| ----------------- | -------- | ------------------------------------------------------------ |
+| **Service**       | `svc`    | 为一组 Pod 提供稳定的网络访问入口（ClusterIP/NodePort/LoadBalancer/ExternalName） |
+| **Ingress**       | `ing`    | 管理外部 HTTP/HTTPS 访问，提供基于域名的路由                 |
+| **IngressClass**  | -        | 定义 Ingress 控制器的配置类                                  |
+| **NetworkPolicy** | `netpol` | 定义 Pod 之间的网络访问策略（防火墙规则）                    |
+| **EndpointSlice** | -        | 存储 Service 的后端端点信息（替代旧的 Endpoints）            |
+| **Endpoints**     | `ep`     | Service 对应的后端 Pod IP:Port 列表（逐渐被 EndpointSlice 取代） |
+
+* [x] 配置与存储类（Config & Storage）
+
+| 资源名称                  | 简称  | 作用                                             |
+| ------------------------- | ----- | ------------------------------------------------ |
+| **ConfigMap**             | `cm`  | 存储非敏感的配置数据（键值对、配置文件等）       |
+| **Secret**                | -     | 存储敏感数据（密码、Token、证书等），Base64 编码 |
+| **PersistentVolume**      | `pv`  | 集群中的持久化存储资源（由管理员配置或动态供给） |
+| **PersistentVolumeClaim** | `pvc` | Pod 对持久化存储的请求声明                       |
+| **StorageClass**          | `sc`  | 定义存储的"类"，支持动态卷供给                   |
+| **VolumeAttachment**      | -     | 记录存储卷的挂载状态（CSI 使用）                 |
+| **CSI Driver/Node**       | -     | 容器存储接口相关资源                             |
+
+* [x] 身份与权限类（RBAC & Security）
+
+| 资源名称               | 简称  | 作用                                                         |
+| ---------------------- | ----- | ------------------------------------------------------------ |
+| **ServiceAccount**     | `sa`  | 为 Pod 提供身份标识，用于 API 认证                           |
+| **Role**               | -     | 定义命名空间级别的权限规则                                   |
+| **ClusterRole**        | -     | 定义集群级别的权限规则                                       |
+| **RoleBinding**        | -     | 将 Role 绑定到用户/组/ServiceAccount（命名空间级别）         |
+| **ClusterRoleBinding** | -     | 将 ClusterRole 绑定到用户/组/ServiceAccount（集群级别）      |
+| **PodSecurityPolicy**  | `psp` | 定义 Pod 的安全策略（已弃用，被 Pod Security Standards 替代） |
+| **PodSecurityContext** | -     | 定义 Pod/容器的安全上下文（非独立资源，是字段）              |
+
+* [x] 调度与节点类（Scheduling & Node）
+
+| 资源名称                        | 简称     | 作用                                      |
+| ------------------------------- | -------- | ----------------------------------------- |
+| **Node**                        | `no`     | 集群中的工作节点（物理机或虚拟机）        |
+| **Namespace**                   | `ns`     | 资源隔离的虚拟集群（如 dev、test、prod）  |
+| **ResourceQuota**               | `quota`  | 限制命名空间的资源使用总量                |
+| **LimitRange**                  | `limits` | 设置命名空间中 Pod/容器的默认资源限制     |
+| **PriorityClass**               | `pc`     | 定义 Pod 的调度优先级                     |
+| **RuntimeClass**                | -        | 定义不同的容器运行时配置                  |
+| **Taint** / **Toleration**      | -        | 节点污点与 Pod 容忍度（字段，非独立资源） |
+| **Affinity** / **AntiAffinity** | -        | Pod 亲和性与反亲和性（字段，非独立资源）  |
 
 ## 3、labels 的本质是什么？他的作用又是什么？
 
-答：Label其实就一对 key/value ，被关联到对象上。他可以起到服务发现和集群调度的作用。
+答：Label其实就一对 `key/value` ，被关联到对象上。他可以起到服务发现和集群调度的作用。
 
 ## 4、Service 在 K8s 中有哪几种类型？
 
-答：ClusterIp、NodePort、LoadBalancer
+答：
+
+| 类型             | 名称          | 访问方式              | 典型使用场景                 |
+| :--------------- | :------------ | :-------------------- | :--------------------------- |
+| **ClusterIP**    | 集群内部 IP   | 仅集群内部访问        | 微服务内部通信、数据库服务   |
+| **NodePort**     | 节点端口      | `<NodeIP>:<NodePort>` | 开发测试、简单外部访问       |
+| **LoadBalancer** | 云负载均衡器  | 云厂商提供的公网 IP   | 生产环境、云平台部署         |
+| **ExternalName** | 外部 DNS 别名 | 映射到外部域名        | 访问集群外服务、服务迁移过渡 |
 
 ## 5、Secret 在k8s中的作用？
 

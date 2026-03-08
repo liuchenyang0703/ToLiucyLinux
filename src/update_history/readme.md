@@ -504,3 +504,6 @@ category:
 
 ## 2026-03-01:
 > 1、新增了k8s和Prometheus两篇文章：《k8s部署Prometheus + node_exporter + Grafana + Alertmanager》《K8S部署kube-state-metrics + CAdvisor 并使用 Prometheus 监控 Kubernetes 指标》（src/document/monitor/Prometheus）（src/document/Kubernetes）
+
+## 2026-03-08:
+> 1、优化k8s面试题内容（1-3）
