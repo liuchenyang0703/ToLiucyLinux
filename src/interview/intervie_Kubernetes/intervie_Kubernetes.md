@@ -21,9 +21,7 @@ isOriginal: true
 > Kubernetes（k8s）的核心组件可以分为**控制平面（Control Plane）组件**和**工作节点（Node）组件**两大类；
 
 * [x] **控制平面组件（Control Plane Components）**
-
 * etcd：分布式键值存储，保存集群状态。
-
 *   kube-apiserver：提供 Kubernetes API，是整个集群的前端入口。
 *   kube-scheduler：负责调度新创建的 Pod 到合适的工作节点上运行。
 *   kube-controller-manager：运行控制器（如 Node Controller、Replication Controller）。
