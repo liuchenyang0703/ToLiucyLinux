@@ -128,7 +128,7 @@ PS : 只有与 apiserver 组件进行交互的 pod 才会有如下的 证书、�
 
 答：由于Kubernetes节点运行大量Pod，因此在进行关机维护之前，建议先使用kubectl drain将该节点的Pod进行驱逐，然后进行关机维护。
 
-## 9、_什么是 ConfigMap 和 Secret？_
+## 9、什么是 ConfigMap 和 Secret？
 
 *   ConfigMap：用于存储非敏感的配置数据。
 *   Secret：用于存储敏感数据（如密码、密钥）。
