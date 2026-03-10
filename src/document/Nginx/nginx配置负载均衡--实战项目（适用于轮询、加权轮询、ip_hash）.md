@@ -77,13 +77,14 @@ breadcrumb: false
         location / {
           #  root   html;
           #  index  index.html index.htm;
-		proxy_pass http://front_server$request_uri;
-		proxy_http_version 1.1;
-		proxy_set_header Uparade $http_upgrade;
-		proxy_set_header Connection "Upgrade";
-		proxy_set_header Host $host;
+          proxy_pass http://front_server$request_uri;
+          proxy_http_version 1.1;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "Upgrade";
+          proxy_set_header Host $host;
         }
 ```
+
 
 配置完负载之后，报错保存退出，检测`nginx`配置语法是否有误；
 

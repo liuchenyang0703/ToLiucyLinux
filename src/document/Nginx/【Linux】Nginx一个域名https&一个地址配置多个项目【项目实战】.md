@@ -47,8 +47,112 @@ breadcrumb: false
 | `--with-http_realip_module`      | 获取真实IP（CDN场景） | 
 | `--with-file-aio`                | 异步文件IO（大文件）   |
 
+## 域名+https配置单个项目
+①、首先将项目移动到html下；
+②、将ssl证书移动到目的地；
+③、然后进行nginx配置；
 
-## 一个域名带https配置多个项目
+Nginx配置文件完整代码展示（主要在`server`段）：
+
+```bash
+
+#user  root;
+worker_processes 1;
+
+events {
+  worker_connections 1024;
+}
+
+
+http {
+  include mime.types;
+  default_type application/octet-stream;
+  server_tokens off;
+
+  sendfile on;
+  tcp_nopush on;
+  tcp_nodelay on;
+  keepalive_timeout 65;
+
+  gzip on;
+  gzip_vary on;
+  gzip_types text/plain text/css application/json application/javascript;
+
+  server {
+    listen 80;
+    server_name test.top www.test.top;
+
+    # HTTP 重定向到 HTTPS
+    return 301 https://$server_name$request_uri;
+    # 这里不需要配置local内容，会自动跳转到https，如果证书到期也会跳转，不依赖443；
+  }
+
+  server {
+    listen 443 ssl http2;
+    server_name test.top www.test.top;
+
+    # SSL 配置
+    ssl_certificate /usr/local/nginx/conf/ssl/test.top.pem;
+    ssl_certificate_key /usr/local/nginx/conf/ssl/test.top.key;
+
+    # 会话缓存
+    ssl_session_cache    shared:SSL:10m;
+    ssl_session_timeout  5m;
+
+    # 协议与加密套件
+    # 解决的目标主机支持RSA密钥交换、目标使用过期的TLS1.0 版协议两个漏洞
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers  on;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305';
+
+    # 安全响应头
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+        
+    # OCSP Stapling
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 114.114.114.114 valid=300s;
+    resolver_timeout 5s;
+
+    # 设置错误页面
+    error_page 404 /404.html;
+    error_page 500 502 503 504 /50x.html;
+
+    location = /404.html {
+      root /usr/local/nginx/html;
+      internal;
+    }
+    # 如果是自定义404需要找图片，需要加上这个；
+    location /404/ {
+      root /usr/local/nginx/html; 
+    }
+
+    location = /50x.html {
+      root /usr/local/nginx/html;
+      internal;
+    }
+
+    location / {
+        # 写上项目地址
+        root   html/blog_dist;
+        index  index.html index.htm;
+        expires 30d; # 缓存 30 天
+        add_header Cache-Control "public, immutable";  # 明确缓存语义
+       
+        # 关键：HTML不缓存（防更新后用户看到旧版）
+        location ~* \.html$ {
+           expires -1;
+           add_header Cache-Control "no-cache";
+        }
+    }
+  }
+}
+```
+这样页面访问时就可以是：`https://test.top/`。
+
+## 域名+https配置多个项目
 
 ①、首先将项目移动到html下；
 ②、将ssl证书移动到目的地；
@@ -159,7 +263,7 @@ http {
 这样页面访问时就可以是：`https://test.top/`、`https://test.top/p2/`、`https://test.top/p3/`。
 
 
-## 一个域名配置多个项目
+## 域名不加https配置多个项目
 ①、首先将项目移动到html下；
 ②、然后进行nginx配置；
 
@@ -332,5 +436,5 @@ Nginx 404页面美化：[Nginx 404页面美化](https://download.csdn.net/downlo
 ><div align="center"><a href="https://blog.csdn.net/liu_chen_yang/category_10887074.html">❀《Linux从入门到精通》专栏 ❀</a></div>
 ><div align="center"><a href="https://blog.csdn.net/liu_chen_yang/category_12419502.html">❀《Nginx》专栏 ❀</a></div>
 
->🐋 希望大家多多支持，我们一起进步！😄
-🎉如果文章对你有帮助的话，欢迎 点赞 👍🏻 评论 💬 收藏 ⭐️ 加关注+💗
+> 🐋 希望大家多多支持，我们一起进步！😄
+> 🎉如果文章对你有帮助的话，欢迎 点赞 👍🏻 评论 💬 收藏 ⭐️ 加关注+💗
