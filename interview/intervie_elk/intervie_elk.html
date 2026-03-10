@@ -50,7 +50,7 @@
         keyword: 'vip',
     });</script><script src="https://readmore.openwrite.cn/js/readmore.js"></script><link rel="stylesheet" href="no-chttps://cdn.jsdelivr.net/npm/@docsearch/css@3ache"><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script><link rel="icon" href="/ToLiucyLinux/favicon.ico"><title>ELK常见面试题 | ToLiucyLinux</title><meta name="description" content="1、什么是 ELK Stack？它的数据流转流程是怎样的？ 答： Elasticsearch：基于 Lucene 的分布式搜索与分析引擎，负责数据存储、索引和查询。 Logstash：数据收集处理管道，具备 Input-Filter-Output 三段式处理能力，负责数据解析、过滤、富化。 Kibana：可视化分析平台，提供 Discover、Dash...">
     <link rel="preload" href="/ToLiucyLinux/assets/style-DQOYncDr.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-DQOYncDr.css">
-    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-DyAUxAqf.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/intervie_elk.html-Ad9f-qxz.js">
+    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-AmgzgQet.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/intervie_elk.html-Bvj2_YRS.js">
     
   </head>
   <body>
@@ -197,6 +197,6 @@
 <span class="line"><span>[ES Cold Nodes] × 3 台（8C32G，HDD，ILM Cold 阶段，冻结索引，保留 90 天）</span></span>
 <span class="line"><span>    ↓</span></span>
 <span class="line"><span>[Snapshot → S3/OSS]（归档存储）</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>关键配置：</strong></p><ul><li><strong>索引策略</strong>：按天滚动 <code>logs-2024.01.01</code>，单索引 50GB，10 分片 1 副本。</li><li><strong>写入优化</strong>：Logstash 开启 <code>pipeline.ecs_compatibility: disabled</code>，使用 <code>http_compression =&gt; true</code>。</li><li><strong>成本控制</strong>：冷数据使用 <code>searchable snapshots</code> 挂载到对象存储，查询时按需拉取。</li></ul></div><!----><!----><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="update-time"><span class="vp-meta-label">最近更新: </span><time class="vp-meta-info" datetime="2026-02-23T12:49:13.000Z" data-allow-mismatch>2026/2/23 12:49</time></div><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2162059863@qq.com">liuchenyang</span><!--]--><!--]--></div></div></footer><!----><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer"><a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a></div><div class="vp-copyright">Copyright © 2026 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚 </div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!----><div></div><!----><!--]--><!--]--></div>
-    <script type="module" src="/ToLiucyLinux/assets/app-DyAUxAqf.js" defer></script>
+    <script type="module" src="/ToLiucyLinux/assets/app-AmgzgQet.js" defer></script>
   </body>
 </html>
