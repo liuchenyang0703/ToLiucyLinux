@@ -160,28 +160,54 @@ server {
 
 答：`upstream`
 
-## 10、常用负载均衡算法有哪些？
+## 10、常用负载均衡算法有哪些？都是怎么实现的？
 
-> 常用的有：轮询、加权轮询、ip\_hash、最少链接、一致性哈希；
+> 常用的负载均衡算法有：轮询、加权轮询、ip\_hash、最少链接、一致性哈希（第三方）、fair（第三方）、url_hash（第三方）；
 
-```bash
+
+
+**1. 轮询(默认)**
+
+每个请求按时间顺序逐一分配到不同的后端服务器，如果后端某个服务器宕机，能自动剔除故障系统。
+
+```nginx
+upstream backserver { 
+ server 192.168.0.12; 
+ server 192.168.0.13; 
+} 
+```
+
+**2. 加权轮询 weight**
+
+weight的值越大，分配到的访问概率越高，主要用于后端每台服务器性能不均衡的情况下。其次是为在主从的情况下设置不同的权值，达到合理有效的地利用主机资源。
+
+```nginx
+# 权重越高，在被访问的概率越大，如上例，分别是20%，80%。
+upstream backserver { 
+ server 192.168.0.12 weight=2; 
+ server 192.168.0.13 weight=8; 
+} 
+```
+
+**3. ip_hash( IP绑定)**
+
+每个请求按访问IP的哈希结果分配，使来自同一个IP的访客固定访问一台后端服务器，并且可以有效解决动态网页存在的session共享问题
+
+```nginx
+upstream backserver { 
+ ip_hash; 
+ server 192.168.0.12:88; 
+ server 192.168.0.13:80; 
+} 
+```
+
+**4. 最少连接**
+
+```nginx
 upstream backend {
-    # 1. 轮询（默认）
+    least_conn;  # 连接数最少的服务器优先
     server 192.168.1.10:8080;
     server 192.168.1.11:8080;
-    
-    # 2. 加权轮询
-    server 192.168.1.10:8080 weight=3;
-    server 192.168.1.11:8080 weight=1;
-    
-    # 3. IP哈希（会话保持）
-    ip_hash;
-    
-    # 4. 最少连接
-    least_conn;
-    
-    # 5. 一致性哈希（第三方模块）
-    hash $request_uri consistent;
 }
 ```
 
@@ -518,44 +544,86 @@ rewrite regex replacement [flag];
 
 
 
-## 17、如何配置HTTPS/SSL？
+## 23、如何配置HTTPS/SSL？
 
 ```bash
-server {
-    listen 443 ssl http2;
-    server_name www.example.com;
-    
-    # 证书配置
-    ssl_certificate /etc/nginx/ssl/www.example.com.crt;
-    ssl_certificate_key /etc/nginx/ssl/www.example.com.key;
-    
-    # 优化配置
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
-    ssl_prefer_server_ciphers on;
-    
-    # 会话缓存
-    ssl_session_cache shared:SSL:10m;
-    ssl_session_timeout 10m;
-    
-    # HSTS（强制HTTPS）
-    add_header Strict-Transport-Security "max-age=31536000" always;
-    
-    root /var/www/html;
-    index index.html;
-}
-
 # HTTP重定向到HTTPS
-server {
+  server {
     listen 80;
-    server_name www.example.com;
+    server_name test.top www.test.top;
+
+    # HTTP 重定向到 HTTPS
     return 301 https://$server_name$request_uri;
+    # 这里不需要配置local内容，会自动跳转到https，如果证书到期也会跳转，不依赖443；
+  }
+  
+  server {
+    listen 443 ssl http2;
+    server_name test.top www.test.top;
+
+    # SSL 配置
+    ssl_certificate /usr/local/nginx/conf/ssl/test.top.pem;
+    ssl_certificate_key /usr/local/nginx/conf/ssl/test.top.key;
+
+    # 会话缓存
+    ssl_session_cache    shared:SSL:10m;
+    ssl_session_timeout  5m;
+
+    # 协议与加密套件
+    # 解决的目标主机支持RSA密钥交换、目标使用过期的TLS1.0 版协议两个漏洞
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers  on;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305';
+
+    # 安全响应头
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+        
+    # OCSP Stapling
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 114.114.114.114 valid=300s;
+    resolver_timeout 5s;
+
+    # 设置错误页面
+    error_page 404 /404.html;
+    error_page 500 502 503 504 /50x.html;
+
+    location = /404.html {
+      root /usr/local/nginx/html;
+      internal;
+    }
+    # 如果是自定义404需要找图片，需要加上这个；
+    location /404/ {
+      root /usr/local/nginx/html; 
+    }
+
+    location = /50x.html {
+      root /usr/local/nginx/html;
+      internal;
+    }
+
+    location / {
+        # 写上项目地址
+        root   html/blog_dist;
+        index  index.html index.htm;
+        expires 30d; # 缓存 30 天
+        add_header Cache-Control "public, immutable";  # 明确缓存语义
+       
+        # 关键：HTML不缓存（防更新后用户看到旧版）
+        location ~* \.html$ {
+           expires -1;
+           add_header Cache-Control "no-cache";
+        }
+    }
+  }
 }
 ```
 
 
 
-## 18、如何优化Nginx性能？
+## 24、如何优化Nginx性能？
 
 **1. 系统层面**
 
@@ -601,84 +669,129 @@ http {
 }
 ```
 
-## 19、什么是惊群效应？Nginx如何解决？
+## 25、什么是惊群效应？为什么产生惊群效应？Nginx如何解决？
+
+* [x] 什么是惊群效应？
 
 **惊群效应（Thundering Herd）：** 多个进程/线程同时阻塞等待同一事件，当事件发生时，所有等待者被唤醒，但只有一个能处理，其余重新阻塞，造成资源浪费。
 
-**Nginx解决方案：**
+* [x] 为什么产生惊群效应？
 
-- **旧版本**：使用`accept_mutex`互斥锁，只有获得锁的worker才能accept新连接
-- **新版本（Linux 3.9+）**：使用`EPOLLEXCLUSIVE`标志，内核只唤醒一个等待的进程
+| 层级             | 说明                                             |
+| :--------------- | :----------------------------------------------- |
+| **内核早期设计** | `accept()`/`epoll_wait()` 触发时唤醒所有等待进程 |
+| **多进程架构**   | Nginx多个Worker同时监听同一端口                  |
+| **结果**         | 只有一个Worker成功，其他返回`EAGAIN`，重新休眠   |
 
-```bash
+* [x] Nginx如何解决？
+
+使用`SO_REUSEPORT`
+
+```nginx
 events {
-    accept_mutex on;  # 默认开启（多核且高并发时建议开启）
-    accept_mutex_delay 500ms;
+    use epoll;
+}
+
+http {
+    server {
+        listen 80 reuseport;  # ← 关键：每个Worker独立监听端口
+        listen 443 ssl http2 reuseport;
+    }
 }
 ```
 
-## 20、如何实现限流（Rate Limiting）？
+## 26、如何实现限流（Rate Limiting）？
 
-```bash
-# 定义限流区域
-limit_req_zone $binary_remote_addr zone=req_limit:10m rate=10r/s;
-limit_conn_zone $binary_remote_addr zone=conn_limit:10m;
+> 可以使用`漏桶`或`令牌桶`来实现；
+>
+> 限流一般有3种
+>
+> - 正常限制访问频率（正常流量）
+> - 突发限制访问频率（突发流量）
+> - 限制并发连接数
 
-server {
-    location /api/ {
-        # 漏桶算法限流：突发20个请求，延迟处理
-        limit_req zone=req_limit burst=20 nodelay;
-        
-        # 连接数限制：单IP最多2个连接
-        limit_conn conn_limit 2;
-        
-        proxy_pass http://backend;
-    }
+* 限流算法对比
+
+| 算法                       | 模块                         | 原理                           | 特点               |
+| :------------------------- | :--------------------------- | :----------------------------- | :----------------- |
+| **漏桶（Leaky Bucket）**   | `ngx_http_limit_req_module`  | 固定速率处理请求，**平滑突发** | 严格限速，队列等待 |
+| **令牌桶（Token Bucket）** | `ngx_http_limit_conn_module` | 固定速率产生令牌，**允许突发** | 弹性限速，瞬时峰值 |
+
+* 漏桶限流（限制请求速率）
+
+```nginx
+http {
+    # 定义限流区域：10MB内存，速率10r/s（每秒10请求）
+    limit_req_zone $binary_remote_addr zone=req_zone:10m rate=10r/s;
     
-    # 白名单（不限流）
-    location /health {
-        limit_req off;
-        return 200 "OK";
+    server {
+        location /api/ {
+            # burst=20：允许突发20个请求，前10个立即处理，后10个排队等待
+            # nodelay：突发请求立即处理，不延迟（总速率仍受控）
+            limit_req zone=req_zone burst=20 nodelay;	
+            # limit_req zone=req_zone;           # 严格10r/s，超出的延迟处理
+            # limit_req zone=req_zone nodelay;  # 超出的直接拒绝（503）
+            proxy_pass http://backend;
+        }
     }
 }
 ```
 
-**算法说明：**
+* 令牌桶限流（限制并发连接数）
 
-- **漏桶算法（Leaky Bucket）**：请求以固定速率处理，平滑突发流量
-- **令牌桶（第三方模块）**：允许一定突发，更灵活
-
-## 21、如何实现灰度发布（A/B测试）？
-
-```bash
-# 方式1：基于Cookie
-split_clients "${http_cookie}_GRAY" $variant {
-    10%     "gray";      # 10%流量到新版本
-    *       "stable";    # 90%流量到稳定版
+```nginx
+http {
+    # 限制单IP并发连接数
+    limit_conn_zone $binary_remote_addr zone=conn_zone:10m;
+    
+    # 或限制虚拟主机总并发
+    limit_conn_zone $server_name zone=per_server:10m;
+    
+    server {
+        location /download/ {
+            limit_conn conn_zone 5;        # 单IP最多5个并发连接
+            limit_conn per_server 1000;    # 本server总并发1000
+            limit_rate 500k;               # 单连接限速500KB/s
+            
+            proxy_pass http://backend;
+        }
+    }
 }
+```
 
-# 方式2：基于IP哈希
-map $remote_addr $variant {
-    ~^192\.168\.1\.    "gray";    # 内网IP走灰度
-    default            "stable";
-}
 
-upstream stable {
-    server 192.168.1.10:8080;
-}
 
-upstream gray {
-    server 192.168.1.20:8080;
+## 27、如何实现灰度发布（A/B测试）？
+
+> **五种常用策略**：
+>
+> * 基于IP地址/IP哈希
+> * 基于Cookie
+> * 基于Header
+> * 基于权重
+> * 基于Lua/OpenResty
+
+
+
+这里举例一个最简单的就是：**基于权重**，也就是加权轮询方式；
+
+```nginx
+upstream backend {
+    server 192.168.1.10:8080 weight=95;  # 旧版 95%
+    server 192.168.1.20:8080 weight=5;   # 新版 5%
+    
+    # 健康检查（第三方模块）
+    check interval=3000 rise=2 fall=3 timeout=1000 type=http;
 }
 
 server {
     location / {
-        proxy_pass http://$variant;
+        proxy_pass http://backend;
     }
 }
 ```
 
-## 22、如何配置跨域（CORS）？
+## 28、如何配置跨域（CORS）？
 
 ```bash
 server {
@@ -705,7 +818,7 @@ server {
 }
 ```
 
-## 23、常见的502/504错误原因及排查？
+## 29、常见的502/504错误原因及排查？
 
 | 错误码                  | 含义                     | 常见原因                                                    | 排查方法                                         |
 | ----------------------- | ------------------------ | ----------------------------------------------------------- | ------------------------------------------------ |
@@ -726,24 +839,33 @@ telnet backend 8080
 ss -ant | grep 8080
 ```
 
-## 24、如何实现热升级（零停机升级）？
+## 30、如何实现热升级（零停机升级）？
 
 ```bash
-# 1. 编译新版本Nginx，替换二进制文件
+# 1. 备份旧版本
 cp /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.old
-cp /path/to/new/nginx /usr/local/nginx/sbin/nginx
 
-# 2. 向Master发送USR2信号，启动新Master
+# 2. 编译新版本Nginx
+cd /usr/src/nginx-1.25.0
+./configure --prefix=/usr/local/nginx --with-http_ssl_module ...（原参数）
+make
+# 3. 不要make install！直接复制二进制进行替换
+cp objs/nginx /usr/local/nginx/sbin/nginx
+
+# 4. 验证新版本
+/usr/local/nginx/sbin/nginx -t -c /usr/local/nginx/conf/nginx.conf
+
+# 5. 向Master发送USR2信号，启动新Master
 kill -USR2 `cat /usr/local/nginx/logs/nginx.pid`
 
-# 3. 此时存在新旧两个Master及其Worker
+# 6. 此时存在新旧两个Master及其Worker
 ps -ef | grep nginx
 # 会看到nginx.pid和nginx.pid.oldbin
 
-# 4. 向旧Master发送WINCH，优雅关闭旧Worker
+# 7. 向旧Master发送WINCH，优雅关闭旧Worker
 kill -WINCH `cat /usr/local/nginx/logs/nginx.pid.oldbin`
 
-# 5. 验证新版本正常后，关闭旧Master
+# 8. 验证新版本正常后，关闭旧Master
 kill -QUIT `cat /usr/local/nginx/logs/nginx.pid.oldbin`
 
 # 回滚（如果新版本有问题）
@@ -751,7 +873,7 @@ kill -HUP `cat /usr/local/nginx/logs/nginx.pid.oldbin`  # 重启旧Worker
 kill -QUIT `cat /usr/local/nginx/logs/nginx.pid`        # 关闭新Master
 ```
 
-## 25、Nginx与LVS、HAProxy的区别？
+## 31、Nginx与LVS、HAProxy的区别？
 
 | 特性         | LVS                 | Nginx                  | HAProxy         |
 | ------------ | ------------------- | ---------------------- | --------------- |
@@ -763,7 +885,7 @@ kill -QUIT `cat /usr/local/nginx/logs/nginx.pid`        # 关闭新Master
 | **SSL终止**  | 不支持              | 支持                   | 支持            |
 | **典型场景** | 超大规模流量入口    | 七层流量分发、静态服务 | 数据库、TCP代理 |
 
-## 26、如果静态资源更新了，怎么让用户获取最新版本？
+## 32、如果静态资源更新了，怎么让用户获取最新版本？
 
 **答：**
 
@@ -771,14 +893,14 @@ kill -QUIT `cat /usr/local/nginx/logs/nginx.pid`        # 关闭新Master
 2. **Query String**：`style.css?v=20240220`（不推荐，部分CDN不缓存带参数URL）
 3. **CDN刷新**：手动刷新CDN缓存（仅用于紧急更新）
 
-## 27、动态内容里包含的静态资源路径怎么处理？
+## 33、动态内容里包含的静态资源路径怎么处理？
 
 **答：**
 
 - 使用**模板引擎**自动替换：`<img src="{{ static('images/logo.png') }}">`
 - 构建时注入环境变量，区分开发和生产环境的静态域名
 
-## 28、用户上传的图片属于动态还是静态？
+## 34、用户上传的图片属于动态还是静态？
 
 **答：**
 
@@ -798,5 +920,300 @@ location /upload/files {
 }
 ```
 
+## 35、怎么限制浏览器访问？
+
+```nginx
+server {
+    location / {
+        # 禁止IE浏览器访问
+        if ($http_user_agent ~* "MSIE|Trident") {
+            return 403 "IE浏览器不支持，请使用Chrome/Firefox/Edge";
+        }
+        
+        # 禁止移动端访问（PC站专用）
+        if ($http_user_agent ~* "Mobile|Android|iPhone|iPad") {
+            return 403 "请使用PC端访问";
+        }
+        
+        proxy_pass http://backend;
+    }
+}
+```
+
+<font size=4>**常见浏览器User-Agent标识**</font>
+
+* 桌面端浏览器
+
+| 浏览器                | 典型User-Agent关键词 | 完整示例（简化）                                             |
+| :-------------------- | :------------------- | :----------------------------------------------------------- |
+| **Google Chrome**     | `Chrome` `Chromium`  | `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36` |
+| **Mozilla Firefox**   | `Firefox` `Gecko`    | `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/121.0` |
+| **Microsoft Edge**    | `Edg`（注意无e）     | `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0` |
+| **Apple Safari**      | `Safari` `Version`   | `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15` |
+| **Internet Explorer** | `MSIE` `Trident`     | `Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko` |
+| **Opera**             | `Opera` `OPR` `OPX`  | `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 OPR/106.0.0.0` |
+| **Brave**             | `Brave` `Chrome`     | `Mozilla/5.0... Chrome/120... Safari/537.36`（需检查`navigator.brave`） |
+| **Vivaldi**           | `Vivaldi`            | `Mozilla/5.0... Chrome/120... Safari/537.36 Vivaldi/6.5`     |
+
+* 移动端浏览器
+
+| 浏览器               | 典型标识                    | 完整示例（简化）                                             |
+| :------------------- | :-------------------------- | :----------------------------------------------------------- |
+| **Safari (iOS)**     | `Mobile` `Safari` `Version` | `Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1` |
+| **Chrome (Android)** | `Android` `Chrome` `Mobile` | `Mozilla/5.0 (Linux; Android 14; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36` |
+| **Samsung Internet** | `SamsungBrowser`            | `Mozilla/5.0 (Linux; Android 14; SAMSUNG SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/23.0 Chrome/115.0.0.0 Mobile Safari/537.36` |
+| **Firefox (Mobile)** | `Firefox` `Mobile` `Fennec` | `Mozilla/5.0 (Android 14; Mobile; rv:121.0) Gecko/121.0 Firefox/121.0` |
+| **Opera Mobile**     | `Opera Mobile` `OPR`        | `Mozilla/5.0 (Linux; Android 14; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36 OPR/73.0.0.0` |
+
+* 国内主流浏览器
+
+| 浏览器             | 典型标识                      | 特点                                     |
+| :----------------- | :---------------------------- | :--------------------------------------- |
+| **微信内置浏览器** | `MicroMessenger` `WeChat`     | 必含`MicroMessenger`，区分PC版/移动版    |
+| **QQ浏览器**       | `QQBrowser` `MQQBrowser`      | PC:`QQBrowser`；移动:`MQQBrowser`        |
+| **UC浏览器**       | `UCBrowser` `UCWEB`           | 阿里系，移动:`UCBrowser`，老版本:`UCWEB` |
+| **360安全浏览器**  | `360SE` `360EE` `Qihoo`       | `360SE`=安全版，`360EE`=极速版           |
+| **360极速浏览器**  | `360EE` `Chrome`              | 双核，Chrome内核                         |
+| **搜狗浏览器**     | `SogouExplorer` `SE` `MetaSr` | `MetaSr`是搜狗搜索特征                   |
+| **百度浏览器**     | `BaiduBrowser` `baidubrowser` | 已停止更新，但仍存在                     |
+| **猎豹浏览器**     | `LieBaoFast` `LBBROWSER`      | 金山系                                   |
+| **傲游浏览器**     | `Maxthon` `MxBrowser`         | 国产老牌                                 |
+| **世界之窗**       | `TheWorld`                    | 已被360收购                              |
+| **2345浏览器**     | `2345Explorer` `2345chrome`   | 推广软件捆绑常见                         |
+| **夸克浏览器**     | `Quark`                       | 阿里系，简洁定位                         |
+| **小米浏览器**     | `MiuiBrowser` `XiaoMi`        | MIUI内置                                 |
+| **华为浏览器**     | `HuaweiBrowser` `Huawei`      | 鸿蒙/EMUI内置                            |
+| **OPPO浏览器**     | `HeyTapBrowser` `OPPO`        | ColorOS内置                              |
+| **vivo浏览器**     | `VivoBrowser`                 | OriginOS内置                             |
+| **联想浏览器**     | `Lenovo` `SLBrowser`          | 联想电脑预装                             |
+
+## 36、怎么限制地区访问？
+
+> 前提：需要**安装GeoIP模块和数据库**；
+
+```nginx
+http {
+    geoip_country /usr/share/GeoIP/GeoIP.dat;
+    
+    map $geoip_country_code $allowed_country {
+        default 0;
+        CN 1;      # 仅允许中国
+        US 1;      # 允许美国
+        JP 1;      # 允许日本
+    }
+    
+    server {
+        location / {
+            if ($allowed_country = 0) {
+                return 403 "该地区禁止访问";
+            }
+            proxy_pass http://backend;
+        }
+    }
+}
+```
+
+更多国家`ISO代码`可自行百度；
+
+## 37、Nginx都有哪些限制方法
+
+* 一、连接层限制
+
+| 限制类型         | 说明                         |
+| :--------------- | :--------------------------- |
+| **连接数限制**   | 单IP并发连接数、总并发连接数 |
+| **连接速率限制** | 每秒新建连接数               |
+| **带宽限制**     | 单连接下载速度、总出口带宽   |
+
+* 二、请求层限制
+
+| 限制类型           | 说明                     |
+| :----------------- | :----------------------- |
+| **请求速率限制**   | 单IP每秒/每分钟请求数    |
+| **请求并发限制**   | 单IP同时处理请求数       |
+| **请求体大小限制** | 上传文件最大尺寸         |
+| **请求头大小限制** | 单条Header、总Header大小 |
+| **URI长度限制**    | URL最大字符数            |
+
+* 三、应用层限制
+
+| 限制类型         | 说明                             |
+| :--------------- | :------------------------------- |
+| **浏览器限制**   | User-Agent白名单/黑名单          |
+| **IP地址限制**   | 单IP、IP段、地理区域             |
+| **Referer限制**  | 来源页面白名单                   |
+| **Cookie限制**   | 特定Cookie存在/值匹配            |
+| **Token限制**    | URL参数/Header令牌验证           |
+| **时间窗口限制** | 特定时段允许/拒绝访问            |
+| **请求方法限制** | 允许的HTTP方法（GET/POST/PUT等） |
+
+* 四、资源层限制
+
+| 限制类型           | 说明                        |
+| :----------------- | :-------------------------- |
+| **CPU限制**        | Worker进程CPU亲和、使用上限 |
+| **内存限制**       | 单连接内存占用、总内存      |
+| **文件描述符限制** | 进程最大打开文件数          |
+| **磁盘IO限制**     | 异步IO队列深度、磁盘带宽    |
+
+* 五、安全层限制
+
+| 限制类型         | 说明                           |
+| :--------------- | :----------------------------- |
+| **慢攻击防护**   | 慢速连接超时、慢速请求超时     |
+| **畸形请求防护** | 非法字符、协议违规拦截         |
+| **重试次数限制** | 后端失败重试次数、重试间隔     |
+| **DNS解析限制**  | 解析超时、缓存时间、解析器数量 |
+
+## 38、Rewrite全局变量是什么？
+
+* 一、请求信息类
+
+| 变量                 | 说明                                       |
+| :------------------- | :----------------------------------------- |
+| `$args`              | URL参数（?后的内容）                       |
+| `$arg_xxx`           | 特定参数值，如`$arg_id`                    |
+| `$uri`               | 当前URI（不含参数，解码后）                |
+| `$request_uri`       | 完整URI（含参数，原始编码）                |
+| `$request`           | 完整请求行                                 |
+| `$request_method`    | 请求方法（GET/POST等）                     |
+| `$request_filename`  | 请求映射的文件路径                         |
+| `$request_body`      | 请求体（需开启`client_body_in_file_only`） |
+| `$request_body_file` | 请求体临时文件路径                         |
+
+* 二、网络连接类
+
+| 变量                   | 说明                   |
+| :--------------------- | :--------------------- |
+| `$remote_addr`         | 客户端IP地址           |
+| `$remote_port`         | 客户端端口             |
+| `$remote_user`         | 基本认证用户名         |
+| `$server_addr`         | 服务器IP地址           |
+| `$server_port`         | 服务器端口             |
+| `$server_name`         | 当前server_name        |
+| `$server_protocol`     | 请求协议（HTTP/1.1等） |
+| `$scheme`              | 协议方案（http/https） |
+| `$connection`          | 连接序列号             |
+| `$connection_requests` | 当前连接请求数         |
+
+* 三、HTTP头部类
+
+| 变量                    | 说明                             |
+| :---------------------- | :------------------------------- |
+| `$http_xxx`             | 任意请求头，如`$http_user_agent` |
+| `$http_host`            | 请求Host头                       |
+| `$http_referer`         | 来源页面                         |
+| `$http_user_agent`      | 浏览器标识                       |
+| `$http_cookie`          | 完整Cookie字符串                 |
+| `$cookie_xxx`           | 特定Cookie值                     |
+| `$http_x_forwarded_for` | 代理传递的真实IP                 |
+| `$http_authorization`   | 认证信息                         |
+| `$sent_http_xxx`        | 响应头（日志用）                 |
+
+* 四、时间类
+
+| 变量                      | 说明                 |
+| :------------------------ | :------------------- |
+| `$time_iso8601`           | ISO8601格式时间      |
+| `$time_local`             | 本地时间（日志格式） |
+| `$msec`                   | 毫秒级时间戳         |
+| `$request_time`           | 请求处理总时间（秒） |
+| `$upstream_response_time` | 后端响应时间         |
+| `$upstream_connect_time`  | 后端连接时间         |
+| `$upstream_header_time`   | 后端响应头时间       |
+
+* 五、状态与结果类
+
+| 变量               | 说明                                          |
+| :----------------- | :-------------------------------------------- |
+| `$status`          | HTTP响应状态码                                |
+| `$body_bytes_sent` | 发送字节数（不含头）                          |
+| `$bytes_sent`      | 总发送字节数                                  |
+| `$content_length`  | 请求体长度                                    |
+| `$content_type`    | 请求体类型                                    |
+| `$host`            | 请求主机（优先级：Host头→server_name→匹配IP） |
+| `$hostname`        | 服务器主机名                                  |
+| `$nginx_version`   | Nginx版本号                                   |
+| `$pid`             | Worker进程ID                                  |
+| `$pipe`            | 管道请求标识（p/.）                           |
+
+* 六、Rewrite专用变量
+
+| 变量             | 说明                    |
+| :--------------- | :---------------------- |
+| `$1-$9`          | 正则捕获组              |
+| `$&`             | 完整匹配字符串          |
+| `$is_args`       | 存在参数为`?`，否则为空 |
+| `$document_root` | 当前root值              |
+| `$realpath_root` | root的绝对路径          |
+| `$limit_rate`    | 当前限速值              |
 
 
+
+## 39、Nginx 如何实现后端服务的健康检查？
+
+方式一，利用 nginx 自带模块 `ngx_http_proxy_module` 和 `ngx_http_upstream_module` 对后端节点做健康检查。
+
+方式二(推荐)，利用 `nginx_upstream_check_module` 模块对后端节点做健康检查。
+
+## 40、Nginx 如何开启压缩？
+
+> 开启nginx gzip压缩后，网页、css、js等静态资源的大小会大大的减少，从而可以节约大量的带宽，提高传输效率，给用户快的体验。虽然会消耗cpu资源，但是为了给用户更好的体验是值得的。
+
+开启的配置如下：
+
+```nginx
+http {
+  # 开启gzip
+  gzip on;
+ 
+  # 启用gzip压缩的最小文件；小于设置值的文件将不会被压缩
+  gzip_min_length 1k;
+ 
+  # gzip 压缩级别 1-10 
+  gzip_comp_level 2;
+ 
+  # 进行压缩的文件类型。
+ 
+  gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;
+ 
+  # 是否在http header中添加Vary: Accept-Encoding，建议开启
+  gzip_vary on;
+}
+```
+
+## 41、nginx状态码
+
+| 分类               | 状态码 | 名称                               | 含义                    | 触发场景                          | 解决方案                                     |
+| :----------------- | :----- | :--------------------------------- | :---------------------- | :-------------------------------- | :------------------------------------------- |
+| **1xx 信息**       | 100    | Continue                           | 继续                    | 客户端发送Expect: 100-continue头  | 正常流程，无需处理                           |
+|                    | 101    | Switching Protocols                | 切换协议                | WebSocket/HTTP2协议升级           | 正常流程                                     |
+| **2xx 成功**       | 200    | OK                                 | 请求成功                | 正常响应                          | 标准成功状态                                 |
+|                    | 201    | Created                            | 已创建                  | POST创建资源成功                  | 正常流程                                     |
+|                    | 204    | No Content                         | 无内容                  | DELETE成功或空响应                | 正常流程                                     |
+|                    | 206    | Partial Content                    | 部分内容                | 断点续传/Range请求                | 正常流程                                     |
+| **3xx 重定向**     | 301    | Moved Permanently                  | 永久重定向              | URL永久变更                       | 确认重定向目标正确                           |
+|                    | 302    | Found                              | 临时重定向              | 临时跳转（如登录后返回）          | 避免过多跳转链                               |
+|                    | 304    | Not Modified                       | 未修改                  | 缓存有效，返回空body              | 检查Etag/Last-Modified配置                   |
+|                    | 307    | Temporary Redirect                 | 临时重定向（保持方法）  | 严格保持POST方法跳转              | 比302更规范                                  |
+|                    | 308    | Permanent Redirect                 | 永久重定向（保持方法）  | 严格保持POST方法跳转              | 比301更规范                                  |
+| **4xx 客户端错误** | 400    | Bad Request                        | 错误请求                | 请求语法错误/参数非法             | 检查请求格式                                 |
+|                    | 401    | Unauthorized                       | 未授权                  | 缺少认证信息                      | 配置auth\_basic/JWT                          |
+|                    | 403    | Forbidden                          | 禁止访问                | 权限不足/IP黑名单                 | 检查location权限配置                         |
+|                    | 404    | Not Found                          | 未找到                  | 文件/路由不存在                   | 检查root/alias路径                           |
+|                    | 405    | Method Not Allowed                 | 方法不允许              | 使用了不允许的HTTP方法            | 检查add\_header Access-Control-Allow-Methods |
+|                    | 408    | Request Timeout                    | 请求超时                | 客户端发送请求体超时              | 调整`client_body_timeout`                    |
+|                    | 413    | Payload Too Large                  | 请求体过大              | 超过`client_max_body_size`        | 增大`client_max_body_size`                   |
+|                    | 414    | URI Too Long                       | URI过长                 | 超过`large_client_header_buffers` | 增大缓冲区                                   |
+|                    | 429    | Too Many Requests                  | 请求过多                | 触发`limit_req`限流               | 调整限流阈值或等待                           |
+| **Nginx特有4xx**   | 444    | Connection Closed Without Response | 无响应关闭连接          | Nginx主动断开恶意请求             | 用于防攻击，无需处理                         |
+|                    | 494    | Request Header Too Large           | 请求头过大              | 超过`large_client_header_buffers` | 增大`large_client_header_buffers 4 16k`      |
+|                    | 495    | SSL Certificate Error              | SSL证书错误             | 客户端证书验证失败                | 检查`ssl_client_certificate`配置             |
+|                    | 496    | SSL Certificate Required           | 需要SSL证书             | 未提供客户端证书                  | 配置`ssl_verify_client optional`             |
+|                    | 497    | HTTP Request Sent to HTTPS Port    | HTTP请求发送到HTTPS端口 | 端口协议不匹配                    | `error_page 497 https://$host$request_uri`   |
+|                    | 499    | Client Closed Request              | 客户端关闭请求          | 客户端主动断开连接                | 排查客户端超时/网络质量                      |
+| **5xx 服务器错误** | 500    | Internal Server Error              | 内部服务器错误          | Nginx内部错误/配置错误            | 检查error\_log                               |
+|                    | 502    | Bad Gateway                        | 网关错误                | 后端无法连接/崩溃                 | 检查后端进程状态、端口、防火墙               |
+|                    | 503    | Service Unavailable                | 服务不可用              | 限流触发/主动维护/后端全挂        | 调整限流阈值或检查upstream                   |
+|                    | 504    | Gateway Timeout                    | 网关超时                | 后端响应超时                      | 增大`proxy_read_timeout`或优化后端           |
+| **Nginx特有5xx**   | 598    | Network Read Timeout Error         | 网络读取超时（非官方）  | 代理层网络超时                    | 检查网络稳定性                               |
