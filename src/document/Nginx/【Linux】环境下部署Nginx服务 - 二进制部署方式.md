@@ -64,15 +64,35 @@ cd /usr/src/nginx-1.24.0
 ```
 
 ### 3、编译安装nginx服务
-指定安装路径然后编译安装
+
+指定安装路径然后编译安装，后面的参数可根据自己需求进行安装
 ```bash
-./configure --prefix=/usr/local/nginx
+./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_v2_module --with-http_gzip_static_module --with-http_stub_status_module --with-threads --with-http_realip_module  --with-file-aio --with-http_auth_request_module --with-http_secure_link_module --with-http_slice_module --with-http_sub_module --with-http_addition_module --with-pcre
 make
 make install 
 
 #或者使用下面这一条命令。上面的看着清晰，在哪里错了，易排查问题
-./configure --prefix=/usr/local/nginx && make && make install
+./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_v2_module --with-http_gzip_static_module --with-http_stub_status_module --with-threads --with-http_realip_module  --with-file-aio --with-http_auth_request_module --with-http_secure_link_module --with-http_slice_module --with-http_sub_module --with-http_addition_module --with-pcre && make && make install
 ```
+编译安装参数解析：
+
+| 参数                       | 功能              | 典型配置                    | 使用场景                       |
+| :----------------------- | :-------------- | :---------------------- | :------------------------- |
+| `--with-http_ssl_module` | **SSL/TLS加密支持** | `listen 443 ssl;`       | HTTPS网站、证书配置               |
+| `--with-http_v2_module`  | **HTTP/2协议支持**  | `listen 443 ssl http2;` | 多路复用、头部压缩、服务器推送            |
+| `--with-pcre`            | **正则表达式支持**     | `location ~ \.php$`     | URL重写、location匹配、rewrite规则 |
+| `--with-threads`                 | **线程池支持**   | `thread_pool default threads=32;` | 异步文件读取，避免阻塞Worker              |
+| `--with-file-aio`                | **异步文件IO**  | `aio on; directio 512k;`          | 大文件传输（视频/下载），提升吞吐量             |
+| `--with-http_gzip_static_module` | **预压缩文件服务** | `gzip_static on;`                 | 提前生成`.gz`文件，Nginx直接发送，省CPU实时压缩 |
+| `--with-http_realip_module`       | **获取真实客户端IP** | `set_real_ip_from 192.168.1.0/24; real_ip_header X-Forwarded-For;` | CDN/代理后，后端获取用户真实IP      |
+| `--with-http_auth_request_module` | **子请求鉴权**     | `auth_request /auth;`                                              | 统一鉴权入口（如JWT验证），未通过返回401 |
+| `--with-http_secure_link_module`  | **防盗链/安全链接**  | `secure_link $arg_md5,$arg_expires;`                               | 生成带过期时间的加密URL，防非法下载     |
+| `--with-http_sub_module`      | **响应内容替换**  | `sub_filter 'old_string' 'new_string';` | 过滤敏感词、替换域名、A/B测试        |
+| `--with-http_addition_module` | **响应内容追加**  | `addition_types text/html;`             | 在HTML头部/尾部统一注入代码（如统计脚本） |
+| `--with-http_slice_module`    | **大文件分片传输** | `slice 1m;`                             | 大文件分段缓存/传输，支持断点续传、并行下载  |
+| `--with-http_stub_status_module` | **状态监控页** | `location /nginx_status { stub_status; allow 127.0.0.1; deny all; }` | 查看活跃连接数、请求处理数，对接Prometheus/Zabbix |
+
+
 
 ## 三、启动及确认服务是否正常
 - 安装成功后，启动Nginx服务：到/usr/local/nginx/sbin目录下，启动服务：
