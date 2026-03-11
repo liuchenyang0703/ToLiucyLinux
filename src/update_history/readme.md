@@ -512,3 +512,6 @@ category:
 > 1、更新nginx篇两篇文章内容《【Linux】环境下部署Nginx服务 - 二进制部署方式》《【Linux】Nginx一个域名https&一个地址配置多个项目【项目实战】》《nginx配置负载均衡--实战项目（适用于轮询、加权轮询、ip_hash）》
 > 2、更新nginx面试题
 > 3、新增两篇文章《Prometheus 之 Alertmanager配置说明及路由的使用》《【Prometheus】Alertmanager配置钉钉告警》（src/document/monitor/Prometheus）
+
+## 2025-03-11:
+> 1、优化k8s面试题内容（5-29 完结）
