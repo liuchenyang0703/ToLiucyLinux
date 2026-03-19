@@ -1,16 +1,17 @@
 ﻿---
 title: Linux上实现分片压缩及解压分片zip压缩包 - 及zip、unzip命令详解
 icon: circle-info
-order: 1
+order: 2
 category:
   - Linux
 tag:
   - Linux
   - 运维
 pageview: false
-date: 2024-12-19
+date: 2023-08-25
 comment: false
 breadcrumb: false
+isOriginal: true
 ---
 
 >👨‍🎓**博主简介**
@@ -281,3 +282,15 @@ unzip cs-new.zip
 > 那么可以去windows上进行分片压缩，在拿到linux上合并，linux上的分片压缩不是很好，可能在合并并解压的时候报错，所以分片压缩的话还是建议在windows上；
 > 没有必须要求分片合并解压在linux上的话，最好也在windows上进行操作。
 
+
+## tar包分片压缩与合并分片压缩
+* 分片压缩
+```bash
+# 将已有的 tar.gz 分割成 4G 大小的卷（刻盘的注意不能满4G，否则可能会溢出）
+split -b 4000M test.tar.gz "test.tar.gz.part-"
+```
+* 合并分片压缩内容
+
+```bash
+cat test.tar.gz.part-* > test.tar.gz
+```
