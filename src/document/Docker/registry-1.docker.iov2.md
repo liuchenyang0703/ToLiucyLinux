@@ -81,30 +81,29 @@ mkdir -p /etc/docker
 #备份已有的daemon.json
 mv /etc/docker/daemon.json /etc/docker/daemon.json-bak
 ```
-> 注意：docker的镜像加速源不一定什么时候会失效，最新的可查看步骤五，会长期更新：[Docker加速列表 - 长期维护 ](#dockerjiasu)
+> 注意：docker的镜像加速源不一定什么时候会失效，最新的可查看步骤五，会长期更新：[Docker加速列表 - 长期维护 ](#dockerjiasu)，**PS**：现更新步骤五的时候会同步更新此镜像加速源的地址，可以直接使用；
 ```bash
 [root@localhost docker]# sudo tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": [
-   "https://docker.1panel.live",
-   "https://hub.1panel.dev",
-   "https://docker.hlmirror.com",
-   "https://docker.jsdelivr.fyi",
-   "https://dockercf.jsdelivr.fyi",
-   "https://dockertest.jsdelivr.fyi",
-   "https://docker.xuanyuan.me",
-   "https://dockerproxy.net",
-   "https://docker-0.unsee.tech",
-   "https://docker.kejilion.pro",
-   "https://docker.367231.xyz",
-   "https://docker.yomansunter.com",
-   "https://hub3.nat.tf",
-   "https://docker.1panel.top",
-   "https://dislabaiot.xyz",
-   "https://docker.fxxk.dedyn.io",
-   "https://hub.amingg.com",
-   "https://docker.apiba.cn"
-   ]
+    "https://docker.1panel.live",
+    "https://docker.hlmirror.com",
+    "https://docker.jsdelivr.fyi",
+    "https://dockerproxy.net",
+    "https://docker.kejilion.pro",
+    "https://docker.apiba.cn",
+    "https://docker-0.unsee.tech",
+    "https://hub.1panel.dev",
+    "https://dockercf.jsdelivr.fyi",
+    "https://dockertest.jsdelivr.fyi",
+    "https://docker.367231.xyz",
+    "https://lispy.org",
+    "https://docker.xuanyuan.me",
+    "https://docker.fxxk.dedyn.io",
+    "https://xdark.top",
+    "https://cr.laoyou.ip-ddns.com",
+    "https://hub4.nat.tf"
+  ]
 }
 
 EOF
@@ -204,29 +203,28 @@ docker pull liuchenyang/ubuntu20.04:latest
 > 注意：开启🐱之后可能会影响你的网络，请勿使用与非法途径，谨慎使用；
 > 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
 
-## 五、Docker加速列表 - 2026.02.24 已更新 - 长期维护
-><span id="dockerjiasu">Docker加速列表 - 2026.02.24 已更新 - 长期维护</span>
+## 五、Docker加速列表 - 2026.03.24 已更新 - 长期维护
+><span id="dockerjiasu">Docker加速列表 - 2026.03.24 已更新 - 长期维护</span>
 
 | 镜像加速地址                      | 是否正常使用 |
 | --------------------------------- | ------------ |
-| https://docker.1panel.live | 正常（稳定） |
-| https://hub.1panel.dev | 正常（稳定）     |
-| https://docker.hlmirror.com | 正常（稳定）     |
-| https://docker.jsdelivr.fyi | 正常 |
-| https://dockercf.jsdelivr.fyi | 正常（稳定） |
-| https://dockertest.jsdelivr.fyi | 正常（稳定） |
-| https://docker.xuanyuan.me | 正常 |
-| https://dockerproxy.net | 正常 |
-| https://docker-0.unsee.tech | 正常 |
-| https://docker.kejilion.pro | 正常 |
+| https://docker.1panel.live | 正常（超级稳定） |
+| https://docker.hlmirror.com | 正常（超级稳定） |
+| https://docker.jsdelivr.fyi | 正常（稳定） |
+| https://dockerproxy.net | 正常（稳定） |
+| https://docker.kejilion.pro | 正常（稳定） |
+| https://docker.apiba.cn | 正常（稳定） |
+| https://docker-0.unsee.tech | 正常（稳定） |
+| https://hub.1panel.dev | 正常   |
+| https://dockercf.jsdelivr.fyi | 正常 |
+| https://dockertest.jsdelivr.fyi | 正常 |
 | https://docker.367231.xyz | 正常 |
-| https://docker.yomansunter.com | 正常 |
-| https://hub3.nat.tf | 正常 |
-| https://docker.1panel.top | 正常 |
-| https://dislabaiot.xyz | 正常 |
+| https://lispy.org | 正常 |
+| https://docker.xuanyuan.me | 正常 |
 | https://docker.fxxk.dedyn.io | 正常 |
-| https://hub.amingg.com | 正常 |
-| https://docker.apiba.cn | 正常 |
+| https://xdark.top | 正常 |
+| https://cr.laoyou.ip-ddns.com | 正常 |
+| https://hub4.nat.tf | 正常 |
 
 
 
