@@ -45,6 +45,10 @@ import Connectivity from "./components/ip_check/Connectivity.vue";
 import WebRTC from "./components/ip_check/WebRTC.vue";
 // IP查询检测-自定义：DNS泄露测试
 import DNSLeak from "./components/ip_check/DNSLeak.vue";
+// 电流边框-自定义：电流边框组件
+import ElectricBorder from "./components/ElectricBorder.vue";
+// 轨道图片-自定义：轨道图片组件
+import OrbitImages from "./components/OrbitImages.vue";
 
 export default defineClientConfig({
   setup() {
@@ -113,6 +117,10 @@ export default defineClientConfig({
     app.component("WebRTC", WebRTC);
     // DNS泄露测试
     app.component("DNSLeak", DNSLeak);
+    // 电流边框组件
+    app.component("ElectricBorder", ElectricBorder);
+    // 轨道图片组件
+    app.component("OrbitImages", OrbitImages);
   },
   
   // 你可以在这里覆盖或新增布局
