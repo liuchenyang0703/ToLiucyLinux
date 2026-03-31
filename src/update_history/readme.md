@@ -523,4 +523,4 @@ category:
 > 1、更新了docker镜像加速地址文章
 
 ## 2026-03-31:
-> 1、添加自定义组件：电流边框组件、轨道图片组件
+> 1、添加自定义组件：电流边框组件、轨道图片组件（src/.vuepress/client.ts）（src/.vuepress/components/ElectricBorder.vue、OrbitImages.vue）（src/test.md）
