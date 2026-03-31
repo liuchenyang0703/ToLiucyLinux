@@ -43,12 +43,6 @@ export const friends: LinkData[] = [
     link: "https://www.geekery.cn/",
   },
   {
-    name: "XINGJI",
-    desc: "迄今所有人生都大写着失败，但不妨碍我继续向前✨",
-    icon: "https://i.p-i.vip/47/20240920-66ed7b168c38c.jpg",
-    link: "https://vite.xingji.fun",
-  },
-  {
     name: "二丫讲梵",
     desc: "💻学习📝记录🔗分享",
     icon: "https://wiki.eryajf.net/img/logo.png",
@@ -63,7 +57,7 @@ export const friends: LinkData[] = [
   {
     name: "运维小弟",
     desc: "专注技术积累，探索运维之道",
-    icon: "https://srebro.cn/themes/theme-hao/assets/images/hao-logo.jpg",
+    icon: "https://s3.hi168.com/hi168-19497-0285lqya/images/202511101531377.webp",
     link: "https://www.srebro.cn/",
   },
   {
@@ -79,16 +73,24 @@ export const friends: LinkData[] = [
     link: "https://blog.imdst.com/",
   },
   {
-    name: "CodeSuc 的技术博客",
-    desc: "专注于编程技术分享与交流的个人博客",
-    icon: "https://codesuc.top/img/logo-codesuc-icon.18c10571.svg",
-    link: "https://codesuc.top",
-  },
-  {
     name: "ToLiucyLinux网址导航",
     desc: "网址导航，分享常用的工具及好用的网站",
     icon: "https://liuchenyang.top/logo.png",
     link: "https://liuchenyang.top/nav/",
+  },
+];
+export const invalid: LinkData[] = [
+  {
+    name: "XINGJI",
+    desc: "迄今所有人生都大写着失败，但不妨碍我继续向前✨",
+    icon: "https://i.p-i.vip/47/20240920-66ed7b168c38c.jpg",
+    link: "https://vite.xingji.fun",
+  },
+  {
+    name: "CodeSuc 的技术博客",
+    desc: "专注于编程技术分享与交流的个人博客",
+    icon: "https://codesuc.top/img/logo-codesuc-icon.18c10571.svg",
+    link: "https://codesuc.top",
   },
   {
     name: "One",
@@ -96,7 +98,4 @@ export const friends: LinkData[] = [
     icon: "https://img.onedayxyy.cn/images/Teek/Teekwebsite/xyy-logo.webp",
     link: "https://teek.onedayxyy.cn/",
   },
-];
-export const invalid: LinkData[] = [
-  
 ];

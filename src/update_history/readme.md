@@ -524,3 +524,4 @@ category:
 
 ## 2026-03-31:
 > 1、添加自定义组件：电流边框组件、轨道图片组件（src/.vuepress/client.ts）（src/.vuepress/components/ElectricBorder.vue、OrbitImages.vue）（src/test.md）
+> 2、更新了友情链接（src/.vuepress/components/友情链接.ts）
