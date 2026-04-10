@@ -525,3 +525,6 @@ category:
 ## 2026-03-31:
 > 1、添加自定义组件：电流边框组件、轨道图片组件（src/.vuepress/client.ts）（src/.vuepress/components/ElectricBorder.vue、OrbitImages.vue）（src/test.md）
 > 2、更新了友情链接（src/.vuepress/components/友情链接.ts）
+
+## 2026-04-10:
+> 1、新增两篇文章《K8s之StatefulSet控制器》《麒麟v10桌面版2403版本运行程序提示权限不足（KYSEC）》（src/document/Kubernetes）（src/document/Linux）
