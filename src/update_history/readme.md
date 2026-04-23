@@ -528,3 +528,7 @@ category:
 
 ## 2026-04-10:
 > 1、新增两篇文章《K8s之StatefulSet控制器》《麒麟v10桌面版2403版本运行程序提示权限不足（KYSEC）》（src/document/Kubernetes）（src/document/Linux）
+
+## 2026-04-23:
+> 1、更新了docker镜像加速地址文章
+> 2、新增两篇文章《Kubernetes 部署 MySQL 一主两从集群（StatefulSet + Job 初始化主从复制）》《k8s之镜像拉取策略》（src/document/Kubernetes）
