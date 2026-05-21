@@ -532,3 +532,7 @@ category:
 ## 2026-04-23:
 > 1、更新了docker镜像加速地址文章
 > 2、新增两篇文章《Kubernetes 部署 MySQL 一主两从集群（StatefulSet + Job 初始化主从复制）》《k8s之镜像拉取策略》（src/document/Kubernetes）
+
+## 2026-05-21:
+> 1、更新了docker镜像加速地址文章
+> 2、新增两篇文章《K8s之负载均衡》、《K8s 之 Ingress 及 Ingress Controller》（src/document/Kubernetes）

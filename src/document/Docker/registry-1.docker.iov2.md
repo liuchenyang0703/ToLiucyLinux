@@ -88,24 +88,16 @@ mv /etc/docker/daemon.json /etc/docker/daemon.json-bak
   "registry-mirrors": [
     "https://docker.1panel.live",
     "https://docker.kejilion.pro",
-    "https://docker.apiba.cn",
-    "https://docker.367231.xyz",
-    "https://dockerproxy.net",
-    "https://hub.1panel.dev",
-    "https://docker.jsdelivr.fyi",
-    "https://docker-0.unsee.tech",
     "https://dockercf.jsdelivr.fyi",
     "https://dockertest.jsdelivr.fyi",
-    "https://docker.fxxk.dedyn.io",
-    "https://xdark.top",
-    "https://hub.amingg.com",
-    "https://docker.1panel.top",
+    "https://docker.jsdelivr.fyi",
+    "https://dockerproxy.net",
+    "https://docker.367231.xyz",
+    "https://docker-0.unsee.tech",
     "https://docker.amingg.com",
     "https://docker-registry.nmqu.com",
-    "https://docker.1ms.run",
-    "https://docker.wanpeng.top",
-    "https://docker-mirror.aigc2d.com",
-    "https://666860.xyz"
+    "https://lispy.org",
+    "https://hub.1panel.dev"
   ]
 }
 
@@ -206,31 +198,23 @@ docker pull liuchenyang/ubuntu20.04:latest
 > 注意：开启🐱之后可能会影响你的网络，请勿使用与非法途径，谨慎使用；
 > 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
 
-## 五、Docker加速列表 - 2026.04.23 已更新 - 长期维护
-><span id="dockerjiasu">Docker加速列表 - 2026.04.23 已更新 - 长期维护</span>
+## 五、Docker加速列表 - 2026.05.21 已更新 - 长期维护
+><span id="dockerjiasu">Docker加速列表 - 2026.05.21 已更新 - 长期维护</span>
 
 | 镜像加速地址                      | 是否正常使用 |
 | --------------------------------- | ------------ |
 | https://docker.1panel.live | 正常（超级稳定） |
-| https://docker.kejilion.pro | 正常（超级稳定） |
-| https://docker.apiba.cn | 正常（超级稳定） |
-| https://docker.367231.xyz | 正常（稳定）|
-| https://dockerproxy.net | 正常（稳定） |
-| https://hub.1panel.dev | 正常（稳定） |
-| https://docker.jsdelivr.fyi | 正常|
+| https://docker.kejilion.pro | 正常（稳定） |
+| https://dockercf.jsdelivr.fyi | 正常（稳定） |
+| https://dockertest.jsdelivr.fyi | 正常（稳定） |
+| https://docker.jsdelivr.fyi | 正常（稳定） |
+| https://dockerproxy.net | 正常 |
+| https://docker.367231.xyz | 正常 |
 | https://docker-0.unsee.tech | 正常 |
-| https://dockercf.jsdelivr.fyi | 正常 |
-| https://dockertest.jsdelivr.fyi | 正常 |
-| https://docker.fxxk.dedyn.io | 正常 |
-| https://xdark.top | 正常 |
-| https://hub.amingg.com | 正常 |
-| https://docker.1panel.top | 正常 |
 |https://docker.amingg.com|正常|
 |https://docker-registry.nmqu.com|正常|
-|https://docker.1ms.run|正常|
-|https://docker.wanpeng.top|正常|
-|https://docker-mirror.aigc2d.com|正常|
-|https://666860.xyz|正常|
+|https://lispy.org|正常|
+| https://hub.1panel.dev | 正常 |
 
 
 
