@@ -536,3 +536,6 @@ category:
 ## 2026-05-21:
 > 1、更新了docker镜像加速地址文章
 > 2、新增两篇文章《K8s之负载均衡》、《K8s 之 Ingress 及 Ingress Controller》（src/document/Kubernetes）
+
+## 2026-06-18:
+> 1、更新了docker镜像加速地址文章
