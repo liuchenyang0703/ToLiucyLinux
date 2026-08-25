@@ -97,6 +97,14 @@ export const document = arraySidebar([
           collapsible: true,
           children: "structure",
         },
+        {
+          text: "人大金仓数据库",
+          icon: "rendajincang-lg",
+          prefix: "Renda/",
+          // 添加下拉框
+          collapsible: true,
+          children: "structure",
+        },
       ],
     },
     {

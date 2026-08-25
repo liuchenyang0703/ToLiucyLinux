@@ -16,7 +16,6 @@ comment: false
 breadcrumb: false
 ---
 
-
 ## 一、挂载并创建用户
 
 ```bash
@@ -41,24 +40,24 @@ passwd dmdba
 # 提前创建安装目录
 mkdir -p /opt/dmdbms
 # 给目录用户权限
-chown -R dmdba:dinstall dmdbms/
+chown -R dmdba:dinstall /opt/dmdbms/
 ```
 
 
 
 ## 二、安装达梦数据库（命令行）（安装不能使用root用户）
 
-> <font color=red>**注意：需要提前申请好达梦的授权（key）并把key放到自己需要放到的目录**</font>
+> **<font color=red>注意：需要提前申请好达梦的授权（key）并把key放到自己需要放到的目录</font>**
 >
-> <font color=red>**注意：需要提前申请好达梦的授权（key）并把key放到自己需要放到的目录**</font>
+> **<font color=red>注意：需要提前申请好达梦的授权（key）并把key放到自己需要放到的目录</font>**
 >
-> <font color=red>**注意：需要提前申请好达梦的授权（key）并把key放到自己需要放到的目录**</font>
+> **<font color=red>注意：需要提前申请好达梦的授权（key）并把key放到自己需要放到的目录</font>**
 >
-> <font color=red>**需要使用普通用户来安装**</font>
+> **<font color=red>需要使用普通用户来安装</font>**
 >
-> <font color=red>**需要使用普通用户来安装**</font>
+> **<font color=red>需要使用普通用户来安装</font>**
 >
-> <font color=red>**需要使用普通用户来安装**</font>
+> **<font color=red>需要使用普通用户来安装</font>**
 
 
 
@@ -68,7 +67,7 @@ chown -R dmdba:dinstall dmdbms/
 
 ```bash
 # 切换dmdba用户
-sudo dmdba
+su dmdba
 
 # 进入dm目录安装
 cd /dm
@@ -272,7 +271,7 @@ write to dir [/opt/dmdbms/data/DAMENG].
 create dm database success. 2020-12-24 22:05:38
 ```
 
-![image-20240529170026112](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412301443191.png)
+![初始化过程](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202405291700411.png)
 
 注意：实际环境中，簇大小建议选择 32，页大小选择 32K，日志大小选择 2048，字符集和大小写敏感需要和应用厂商对接后，再进行选择。
 
@@ -316,7 +315,7 @@ Created symlink from
 /usr/lib/systemd/system/DmServiceDMSERVER.service. 创建服务(DmServiceDMSERVER)完成
 ```
 
-![image-20240529170127531](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412301443571.png)
+![创建实例服务](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202405291701567.png)
 
 ### 3.3 启动实例服务
 
@@ -344,7 +343,7 @@ cd /opt/dmdbms/bin && ./disql SYSDBA/SYSDBA@localhost:5236
 ```sql
 # 查看授权时间
 select * from v$license;
-select EXPIRED_DATE from v$license;
+select EXPIRED_DATE as "到期时间" from v$license;
 ```
 
 
@@ -353,10 +352,17 @@ select EXPIRED_DATE from v$license;
 
 ```sql
 # 创建用户
-create user 名字 IDENTIFIED BY "密码";
+create user 用户名 IDENTIFIED BY "密码(9位)";
 # 授权给某个用户
-grant resource,PUBLIC,vti,soi to 名字;
+grant resource,PUBLIC,vti,soi to 用户名;
 ```
+
+| 角色         | 主要用途/包含的核心权限                                      | 实际效果                                                     |
+| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **RESOURCE** | 提供“建对象”能力：CREATE TABLE、CREATE INDEX、CREATE PROCEDURE、CREATE TRIGGER、CREATE SEQUENCE、CREATE TYPE、CREATE OPERATOR 等（不含建库、建用户、建视图权限）。 | 让普通开发者能在自己的 schema 下正常开发存储过程、表、索引。 |
+| **PUBLIC**   | 系统伪角色，**每个用户自动拥有**，显式写不写都一样。它本身只含少量“人人都该有”的权限（如查询系统字典）。 | 写在这里仅为兼容 Oracle 习惯，实际不增加任何新权限。         |
+| **VTI**      | 达梦内部保留角色，**官方文档未公开其权限列表**。实测为空角色或仅用于虚拟隧道接口（Virtual Tunnel Interface）相关功能，在通用 OLTP/OLAP 场景下**不授予任何可感知权限**。 | 可视为“无实际权限”的角色，一般直接忽略。                     |
+| **SOI**      | “SELECT ON DICTIONARY” 的缩写，即 **查询任何数据字典视图** 的权限（SELECT ANY DICTIONARY）。 | 允许用户读取 `DBA_*`、`ALL_*`、`USER_*` 等系统视图，做监控、排查、性能分析时必需。 |
 
 
 
@@ -393,10 +399,10 @@ DROP TABLE "MOULD"."TEMPLATES";
 ## 十、查看当前用户所有的表
 
 ```sql
-SELECT table_name FROM user_tables;
+SELECT table_name as "表名" FROM user_tables;
 ```
 
-![image-20240726161909094](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412301443798.png)
+![查看当前用户所有的表](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202407261619373.png)
 
 
 
@@ -406,7 +412,7 @@ SELECT table_name FROM user_tables;
 desc TEMPLATES;
 ```
 
-![image-20240729103024531](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202407291030882.png)
+![查看表结构](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202407291030882.png)
 
 
 
@@ -414,6 +420,78 @@ desc TEMPLATES;
 
 ```sql
 select * from v$version;
+select banner as "版本信息" from v$version;
 ```
 
-![image-20240729103103260](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412301443913.png)
+![查看数据库版本](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202407291031360.png)
+
+## 十三、查询所有用户
+
+```bash
+select username as "用户名" from DBA_USERS;
+```
+
+## 十四、查看某个用户的信息
+
+```bash
+select * from dba_users where username='MOULD';
+```
+
+| 字段                           | 含义                                       |
+| ------------------------------ | ------------------------------------------ |
+| USERNAME                       | 用户登录名。                               |
+| USER\_ID                       | 系统内部用户编号，唯一。                   |
+| PASSWORD                       | 哈希后的口令串。                           |
+| ACCOUNT\_STATUS                | 账户状态：OPEN、LOCKED、EXPIRED 等。       |
+| LOCK\_DATE                     | 账户被锁时间；未锁为空。                   |
+| EXPIRY\_DATE                   | 口令过期时间；空表示永不过期。             |
+| DEFAULT\_TABLESPACE            | 用户对象的默认表空间。                     |
+| DEFAULT\_INDEX\_TABLESPACE     | 用户索引的默认表空间（达梦保留，通常空）。 |
+| TEMPORARY\_TABLESPACE          | 临时段使用的表空间。                       |
+| CREATED                        | 用户创建时间。                             |
+| PROFILE                        | 所用的口令资源限制策略名。                 |
+| INITIAL\_RSRC\_CONSUMER\_GROUP | 资源消费组（保留字段，通常空）。           |
+| EXTERNAL\_NAME                 | 外部认证标识（保留字段，通常空）。         |
+| PASSWORD\_VERSIONS             | 口令算法版本号。                           |
+| EDITIONS\_ENABLED              | 是否启用 Edition（保留，N）。              |
+| AUTHENTICATION\_TYPE           | 认证方式：PASSWORD、EXTERNAL 等。          |
+| NOWDATE                        | 查询时的系统时间（达梦附加字段）。         |
+
+## 十五、切换用户
+
+```sql
+conn DM/dameng123;
+```
+
+![切换用户](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608251121527.png)
+
+## 十六、查看当前登录的用户
+
+```sql
+SELECT user FROM DUAL;
+```
+
+## 十七、修改用户名密码
+
+> 需要登录管理员（SYSDBA）进行修改；
+
+```sql
+ALTER USER 要修改的用户名 IDENTIFIED BY "要修改的密码";
+# 示例：
+ALTER USER MOULD IDENTIFIED BY "MOULD123456";
+```
+
+## 十八、查看某个用户的所有表
+
+```sql
+SELECT owner as "用户名",table_name as "表名" FROM   all_tables WHERE  owner = 'SYSDBA';
+
+SELECT * FROM all_tables WHERE  owner = 'SYSDBA';
+```
+
+## 十九、删除一个用户
+
+```sql
+DROP USER 用户名 CASCADE;
+```
+

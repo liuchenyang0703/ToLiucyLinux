@@ -539,3 +539,9 @@ category:
 
 ## 2026-06-18:
 > 1、更新了docker镜像加速地址文章
+
+## 2026-08-25:
+> 1、新增5篇文章：《【Linux】人大金仓数据库常用命令、SQL》、《Kubernetes 共享存储：PV、PVC、StorageClass 详解及使用》、《K8s - Helm管理工具》、《k8s 部署 Headlamp》、《 Kubernetes 非共享存储详解：emptyDir 与 hostPath 从入门到实践》（src/document/Kubernetes）（src/document/database/Renda）
+> 2、新增人大金仓目录（src/.vuepress/document.ts）
+> 3、优化一篇文章：《Linux 达梦数据库的部署及操作》（src/document/database/Dameng）
+> 4、修改了vue图标的链接（src/.vuepress/theme.ts）
