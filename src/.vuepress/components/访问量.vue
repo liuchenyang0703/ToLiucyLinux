@@ -8,7 +8,7 @@
                     本站总访问量
                     <span id="busuanzi_value_site_pv" class="font-bold">--</span> 次
                 </span>
-                <img src="https://i.p-i.vip/47/20240920-66ed75c79f23d.gif" alt="heart" width="150" height="150" />
+                <img src="https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608251148677.GIF" alt="heart" width="150" height="150" />
                 <span class="text">
                     您是第
                     <span id="busuanzi_value_site_uv" class="font-bold">--</span> 位访问者
