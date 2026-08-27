@@ -108,9 +108,9 @@ background: rgb(253, 230, 138, 0.15)
 ```
 
 ```component VPCard
-title: 站内文章搜索插件
-desc: 用于搜索本站的所有文章索引
-logo: https://dashboard.algolia.com/ds-assets/favicon/favicon.ico
+title: algolia
+desc: 用于搜索本站的所有文章索引插件
+logo: https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608271109992.ico
 link: https://dashboard.algolia.com/
 background: rgb(253, 230, 138, 0.15)
 ```
