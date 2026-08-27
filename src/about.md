@@ -107,6 +107,13 @@ link: https://github.com/OrageKK/vuepress-plugin-meting2
 background: rgb(253, 230, 138, 0.15)
 ```
 
+```component VPCard
+title: 站内文章搜索插件
+desc: 用于搜索本站的所有文章索引
+logo: https://dashboard.algolia.com/ds-assets/favicon/favicon.ico
+link: https://dashboard.algolia.com/
+background: rgb(253, 230, 138, 0.15)
+```
 
 <!-- ```component VPCard
 title: 
