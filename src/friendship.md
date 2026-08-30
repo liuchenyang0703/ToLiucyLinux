@@ -4,6 +4,10 @@ icon: link
 toc: false
 ---
 
+## 我的
+
+<MyCoverLink type="me"/>
+
 ## 小伙伴
 
 <MyCoverLink type="friend"/>

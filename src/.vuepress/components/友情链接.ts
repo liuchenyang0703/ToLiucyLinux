@@ -5,13 +5,28 @@ export interface LinkData {
   link: string;
 }
 
-export const friends: LinkData[] = [
+export const me: LinkData[] = [
   {
     name: "ToLiucyLinux",
     desc: "享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。",
     icon: "picture.jpg",
     link: "https://liuchenyang.top",
   },
+  {
+    name: "ToLiucyLinux网址导航",
+    desc: "网址导航，分享常用的工具及好用的网站",
+    icon: "https://liuchenyang.top/logo.png",
+    link: "https://liuchenyang.top/nav/",
+  },
+  {
+    name: "A-刘晨阳CSDN博客",
+    desc: "最新的技术文章，分享运维开发技术，传播更多原创运维与开发技术文章",
+    icon: "picture.jpg",
+    link: "https://blog.csdn.net/liu_chen_yang?type=blog",
+  },
+];
+
+export const friends: LinkData[] = [
   {
     name: "程序员Leo",
     desc: "欢迎大家来看看~",
@@ -57,7 +72,7 @@ export const friends: LinkData[] = [
   {
     name: "运维小弟",
     desc: "专注技术积累，探索运维之道",
-    icon: "https://s3.hi168.com/hi168-19497-0285lqya/images/202511101531377.webp",
+    icon: "https://s3api.srebro.cn/srebro/images/202511101531377.webp",
     link: "https://www.srebro.cn/",
   },
   {
@@ -72,13 +87,8 @@ export const friends: LinkData[] = [
     icon: "https://static.imdst.com/image/5/dd/a34353466215dd8721615b9d1538c.jpg",
     link: "https://blog.imdst.com/",
   },
-  {
-    name: "ToLiucyLinux网址导航",
-    desc: "网址导航，分享常用的工具及好用的网站",
-    icon: "https://liuchenyang.top/logo.png",
-    link: "https://liuchenyang.top/nav/",
-  },
 ];
+
 export const invalid: LinkData[] = [
   {
     name: "XINGJI",

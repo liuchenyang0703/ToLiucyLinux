@@ -35,8 +35,6 @@ import roll from "./components/友情链接滚动.vue";
 import WeatherWidget from "./components/WeatherWidget.vue";
 // 全局-自定义：添加访问页面缓冲加载配置
 const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
-// 全局-自定义：添加网站运行时间配置
-// const yx = defineAsyncComponent(() => import('./components/运行时间.vue'));
 // IP查询检测-自定义：IP 检测
 import ipcheck from "./components/ip_check/ipcheck.vue";
 // IP查询检测-自定义：网站连通性测试
@@ -45,10 +43,6 @@ import Connectivity from "./components/ip_check/Connectivity.vue";
 import WebRTC from "./components/ip_check/WebRTC.vue";
 // IP查询检测-自定义：DNS泄露测试
 import DNSLeak from "./components/ip_check/DNSLeak.vue";
-// 电流边框-自定义：电流边框组件
-import ElectricBorder from "./components/ElectricBorder.vue";
-// 轨道图片-自定义：轨道图片组件
-import OrbitImages from "./components/OrbitImages.vue";
 
 export default defineClientConfig({
   setup() {
@@ -91,8 +85,6 @@ export default defineClientConfig({
   // 加载vue配置
   rootComponents: [
     jz,
-//  yx,
-//	Weather,
   ],
 
   // 全局组件（添加某个组件到全局）
@@ -117,10 +109,6 @@ export default defineClientConfig({
     app.component("WebRTC", WebRTC);
     // DNS泄露测试
     app.component("DNSLeak", DNSLeak);
-    // 电流边框组件
-    app.component("ElectricBorder", ElectricBorder);
-    // 轨道图片组件
-    app.component("OrbitImages", OrbitImages);
   },
   
   // 你可以在这里覆盖或新增布局

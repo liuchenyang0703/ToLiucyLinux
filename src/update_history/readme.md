@@ -559,3 +559,6 @@ category:
 
 ## 2026-08-30:
 > 1、修复了博客主页背景失效问题，更换新的随机图片链接（src/blog.md）
+> 2、友情链接添加了我的，吧我的链接和其他好友的拆分开（src/.vuepress/components/友情链接.ts、友情链接.vue）（src/friendship.md）
+> 3、去除电流边框、轨道图片组件、运行时间贴边组件【采用的页脚展示】（src/.vuepress/client.ts）（src/.vuepress/components）
+> 4、消除client.ts中引用scss文件报错提示（此提示不影响运行）（src/.vuepress/public/js/vite-env.d.ts）

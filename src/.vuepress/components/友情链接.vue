@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { friends, invalid, LinkData } from "./友情链接";
+import { friends, invalid, me, LinkData } from "./友情链接";
 const props = defineProps({
   type: {
     type: String,
@@ -30,6 +30,9 @@ const props = defineProps({
 });
 let linkDatas: LinkData[];
 switch (props.type) {
+  case "me":
+    linkDatas = me;
+    break;
   case "friend":
     linkDatas = friends;
     break;
