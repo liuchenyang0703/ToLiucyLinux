@@ -40,19 +40,9 @@
           hm.src = "https://hm.baidu.com/hm.js?1404449d13f81f463912cf1bf29d941e";
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
-        })();</script><script>window.addEventListener('load', () => {
-        if (typeof BTWPlugin === 'undefined') return;
-        const btw = new BTWPlugin();
-        btw.init({
-        id: 'container',
-        blogId: '32863-1711898538696-276',
-        name: 'Liucy',
-        qrcode: '/assets/image/公众号.png',
-        keyword: 'vip',
-        });
-      });</script><script src="https://readmore.openwrite.cn/js/readmore.js"></script><link rel="stylesheet" href="no-chttps://cdn.jsdelivr.net/npm/@docsearch/css@3ache"><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script><link rel="icon" href="/ToLiucyLinux/favicon.ico"><title>docker如何在容器外执行容器内命令 | ToLiucyLinux</title><meta name="description" content="前言 有时候我们想执行某个容器的某条命令，但又不想进入容器内。那该怎么办？ 所以就有一种办法，我们直接在容器外执行容器内的命令，来进行一些容器内的操作。 参考实例 这个不使用it，一般用于执行周期性计划任务之类的，容易遇到：报错； -it 有可能造成命令不执行，特别是在程序调用时，确认的确需要的时候再加上-it； 在执行周期性计划任务的时候就不要加-i...">
-    <link rel="preload" href="/ToLiucyLinux/assets/style-DFfdxa32.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-DFfdxa32.css">
-    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-Cp-KlJ0w.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/docker如何在容器外执行容器内命令-C707q-P-.js">
+        })();</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script><link rel="icon" href="/ToLiucyLinux/favicon.ico"><title>docker如何在容器外执行容器内命令 | ToLiucyLinux</title><meta name="description" content="前言 有时候我们想执行某个容器的某条命令，但又不想进入容器内。那该怎么办？ 所以就有一种办法，我们直接在容器外执行容器内的命令，来进行一些容器内的操作。 参考实例 这个不使用it，一般用于执行周期性计划任务之类的，容易遇到：报错； -it 有可能造成命令不执行，特别是在程序调用时，确认的确需要的时候再加上-it； 在执行周期性计划任务的时候就不要加-i...">
+    <link rel="preload" href="/ToLiucyLinux/assets/style-CGaz4qOx.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-CGaz4qOx.css">
+    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-Dkbpu6_p.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/docker如何在容器外执行容器内命令-EDHKaNMI.js">
     
   </head>
   <body>
@@ -66,6 +56,6 @@
 <span class="line"><span style="color:#61AFEF;">sudo</span><span style="color:#98C379;"> docker</span><span style="color:#98C379;"> exec</span><span style="color:#D19A66;"> -it</span><span style="color:#E06C75;"> $DOCKER_ID</span><span style="color:#98C379;"> /bin/bash</span><span style="color:#D19A66;"> -c</span><span style="color:#98C379;"> &#39;cd /packages/detectron &amp;&amp; python tools/train.py&#39;</span></span>
 <span class="line"><span style="color:#7F848E;font-style:italic;"># 或</span></span>
 <span class="line"><span style="color:#61AFEF;">sudo</span><span style="color:#98C379;"> docker</span><span style="color:#98C379;"> exec</span><span style="color:#E06C75;"> $DOCKER_ID</span><span style="color:#98C379;"> /bin/bash</span><span style="color:#D19A66;"> -c</span><span style="color:#98C379;"> &#39;cd /packages/detectron &amp;&amp; python tools/train.py&#39;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="注意事项" tabindex="-1"><a class="header-anchor" href="#注意事项"><span><!----></span></a></h2><blockquote><p><code>-it</code> 有可能造成命令不执行，特别是在程序调用时，确认的确需要的时候再加上-it；<br> 在执行周期性计划任务的时候就不要加<code>-it</code>了，把<code>-it</code>改为<code>-i</code>即可；<br> 如果在周期性计划任务中使用的是<code>-it</code>，会遇到：<!---->报错；</p></blockquote><br><figure><img src="https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161456196.gif" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure></div><!----><!----><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="update-time"><span class="vp-meta-label">最近更新: </span><time class="vp-meta-info" datetime="2025-11-26T07:57:04.000Z" data-allow-mismatch>2025/11/26 07:57</time></div><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2162059863@qq.com">liuchenyang</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/ToLiucyLinux/document/Docker/Docker%E5%8F%91%E5%B8%83_%E4%B8%8A%E4%BC%A0%E9%95%9C%E5%83%8F%E5%88%B0dockerhub__%E4%B8%8B%E8%BD%BD_%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F__%E5%88%A0%E9%99%A4dockerhub%E9%95%9C%E5%83%8F.html" aria-label="Docker发布_上传镜像到dockerhub&amp;&amp;下载_拉取镜像&amp;&amp;删除dockerhub镜像"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><i class="vp-icon iconfont icon-circle-info" sizing="height"></i>Docker发布_上传镜像到dockerhub&amp;&amp;下载_拉取镜像&amp;&amp;删除dockerhub镜像</div></a><a class="route-link auto-link next" href="/ToLiucyLinux/document/Docker/Docker%E6%90%AD%E5%BB%BAharbor%E7%A7%81%E6%9C%89%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%EF%BC%88%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%EF%BC%89.html" aria-label="Docker搭建harbor私有镜像仓库（命令行模式）"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">Docker搭建harbor私有镜像仓库（命令行模式）<i class="vp-icon iconfont icon-circle-info" sizing="height"></i></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:none;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer"><a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a></div><div class="vp-copyright">Copyright © 2026 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚 </div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!----><div></div><!----><!--]--><!--]--></div>
-    <script type="module" src="/ToLiucyLinux/assets/app-Cp-KlJ0w.js" defer></script>
+    <script type="module" src="/ToLiucyLinux/assets/app-Dkbpu6_p.js" defer></script>
   </body>
 </html>
