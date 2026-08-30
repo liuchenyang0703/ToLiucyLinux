@@ -11,6 +11,9 @@ date: 2023-12-03 19:36:39
 comment: false
 breadcrumb: false
 ---
+
+> 转载~~~
+
 # 使用脚手架创建Vue3项目
 
 
@@ -37,7 +40,7 @@ breadcrumb: false
 - 通过[vite官网的介绍](https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project)，我们可以通过vite创建各种各样的项目，我们这里直接执行创建就好了。
 - 我这里使用pnpm创建项目，大家可以选择其他包管理器进行项目创建。
 
-```node
+```bash
 pnpm create vite
 ```
 
@@ -47,7 +50,7 @@ pnpm create vite
 
 第一步，进入我们创建好的vue3项目目录
 
-```node
+```bash
 cd vue3-demo
 ```
 
@@ -78,7 +81,7 @@ npm run dev
 - 最后一种也是我最推荐大家使用的一种，[这个库](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fcreate-vue)也是官方进行维护的，笔者一直都是使用这种方式进行创建的，简单粗暴。
 - 执行方式也是比较简单的，我们可以基于vite创建vue3或者vue2的项目
 
-```npm
+```bash
 npm init vue@3
 npm init vue@2
 ```
@@ -89,7 +92,7 @@ npm init vue@2
 
 然后执行以下命令即可。
 
-```node
+```bash
 npm init vue@latest
 ```
 
@@ -101,7 +104,7 @@ npm init vue@latest
 
 第一步，进入我们创建好的vue3项目目录
 
-```node
+```bash
 cd vue3-demo
 ```
 

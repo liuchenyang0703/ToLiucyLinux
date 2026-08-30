@@ -1,4 +1,4 @@
-﻿---
+---
 title: Ansible自动化运维（四）jinja2 模板、Roles角色详解
 icon: circle-info
 order: 1
@@ -89,7 +89,7 @@ Ansible通常会使用jinja2模板来修改被管理主机的配置文件等。
 
    例如，创建一个名为 `my_template.j2` 的模板文件：
 
-   ```jinja2
+   ```text
    [root@localhost jinja2]# vim my_template.j2 
    ServerName {{ hostname }}
    Listen {{ port }}
@@ -147,7 +147,7 @@ Jinja2模板的强大之处在于它允许创建灵活和动态的配置文件�
 
 格式：
 
-```jinja2
+```text
 {% if EXPR %}
 	执行内容
 {% else %}
@@ -157,7 +157,7 @@ Jinja2模板的强大之处在于它允许创建灵活和动态的配置文件�
 
 实例：
 
-```jinja2
+```text
 {% if is_production %}
     # 生产环境配置
     DebugLevel: 0
@@ -171,7 +171,7 @@ Jinja2模板的强大之处在于它允许创建灵活和动态的配置文件�
 
 格式：
 
-```jinja2
+```text
 {% if EXPR %}
 	执行内容
 {% elif EXPR %}
@@ -183,7 +183,7 @@ Jinja2模板的强大之处在于它允许创建灵活和动态的配置文件�
 
 实例：
 
-```jinja2
+```text
 {% if is_production %}
 	DebugLevel: 0
 {% elif is_production %}
@@ -203,7 +203,7 @@ Jinja2模板的强大之处在于它允许创建灵活和动态的配置文件�
 
 格式：
 
-```jinja2
+```text
 {% for i in EXPR %}
 	执行内容
 {% endfor %}
@@ -211,7 +211,7 @@ Jinja2模板的强大之处在于它允许创建灵活和动态的配置文件�
 
 实例：
 
-```jinja2
+```text
 {% for item in list_items %}
     - {{ item }}
 {% endfor %}
@@ -235,13 +235,13 @@ Jinja2模板的强大之处在于它允许创建灵活和动态的配置文件�
 
 Jinja2还支持过滤器，可以使用过滤器来对变量进行操作。例如，可以使用`default`过滤器来设置默认值：
 
-```jinja2
+```text
 {{ variable | default("default_value") }}
 ```
 
 或者，您可以使用`length`过滤器来获取列表的长度：
 
-```jinja2
+```text
 The list has {{ list_items | length }} items.
 ```
 
@@ -299,7 +299,7 @@ Jinja2还支持其他控制结构，如`{% include %}`用于包含其他模板�
 
 * 1、创建一个自定义的Redis配置模板文件，如 `redis_conf.j2`，并在其中修改Redis绑定地址以侦听所有IP地址：
 
-```jinja2
+```text
 [root@localhost redis]# vim redis_conf.j2
 bind {{ ansible_host }} 127.0.0.1
 port {{ redis_port }}
@@ -688,7 +688,7 @@ Role: tenequm.mysql
 
 * 定义templates生成配置文件：`/etc/ansible/roles/nginx/templates/nginx.conf.j2`
 
-```jinja2
+```text
 user  nginx; #设置nginx服务的系统使用用户
 worker_processes  {{ ansible_processor_vcpus }}; #工作进程数
 

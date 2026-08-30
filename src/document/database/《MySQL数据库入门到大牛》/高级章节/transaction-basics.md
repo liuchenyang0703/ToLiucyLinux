@@ -34,7 +34,7 @@ breadcrumb: false
 
 **事务处理的原则：**保证所有事务都作为 `一个工作单元` 来执行，即使出现了故障，都不能改变这种执行方 式。当在一个事务中执行多个操作时，要么所有的事务都被提交( `commit` )，那么这些修改就 `永久` 地保 `存下来`；要么数据库管理系统将 `放弃` 所作的所有 `修改` ，整个事务回滚( rollback )到最初状态。
 
-```mysql
+```sql
 # 案例：AA用户给BB用户转账100
 update account set money = money - 100 where name = 'AA';
 # 服务器宕机
@@ -67,7 +67,7 @@ update account set money = money + 100 where name = 'BB';
 
 如果无法保证隔离性会怎么样？假设A账户有200元，B账户0元。A账户往B账户转账两次，每次金额为50 元，分别在两个事务中执行。如果无法保证隔离性，会出现下面的情形：
 
-```mysql
+```sql
 UPDATE accounts SET money = money - 50 WHERE NAME = 'AA';
 UPDATE accounts SET money = money + 50 WHERE NAME = 'BB';
 ```
@@ -108,7 +108,7 @@ UPDATE accounts SET money = money + 50 WHERE NAME = 'BB';
 
   举例：
 
-  ```mysql
+  ```sql
   UPDATE accounts SET money = money - 50 WHERE NAME = 'AA';
   
   UPDATE accounts SET money = money + 50 WHERE NAME = 'BB';
@@ -132,7 +132,7 @@ UPDATE accounts SET money = money + 50 WHERE NAME = 'BB';
 
 **步骤1**  START TRANSACTION 或者 BEGIN ，作用是显式开启一个事务。
 
-```mysql
+```sql
 mysql> BEGIN;
 #或者
 mysql> START TRANSACTION;
@@ -150,15 +150,15 @@ mysql> START TRANSACTION;
 
 比如：
 
-```mysql
+```sql
 START TRANSACTION READ ONLY; # 开启一个只读事务
 ```
 
-```mysql
+```sql
 START TRANSACTION READ ONLY, WITH CONSISTENT SNAPSHOT # 开启只读事务和一致性读
 ```
 
-```mysql
+```sql
 START TRANSACTION READ WRITE, WITH CONSISTENT SNAPSHOT # 开启读写事务和一致性读
 ```
 
@@ -171,12 +171,12 @@ START TRANSACTION READ WRITE, WITH CONSISTENT SNAPSHOT # 开启读写事务和�
 
 **步骤3** 提交事务 或 中止事务（即回滚事务）
 
-```mysql
+```sql
 # 提交事务。当提交事务后，对数据库的修改是永久性的。
 mysql> COMMIT;
 ```
 
-```mysql
+```sql
 # 回滚事务。即撤销正在进行的所有没有提交的修改
 mysql> ROLLBACK;
 
@@ -186,12 +186,12 @@ mysql> ROLLBACK TO [SAVEPOINT]
 
 其中关于SAVEPOINT相关操作有：
 
-```mysql
+```sql
 # 在事务中创建保存点，方便后续针对保存点进行回滚。一个事务中可以存在多个保存点。
 SAVEPOINT 保存点名称;
 ```
 
-```mysql
+```sql
 # 删除某个保存点
 RELEASE SAVEPOINT 保存点名称;
 ```
@@ -200,7 +200,7 @@ RELEASE SAVEPOINT 保存点名称;
 
 MySQL中有一个系统变量 `autocommit` ：
 
-```mysql
+```sql
 mysql> SHOW VARIABLES LIKE 'autocommit';
 +---------------+-------+
 | Variable_name | Value |
@@ -216,7 +216,7 @@ mysql> SHOW VARIABLES LIKE 'autocommit';
 
 * 把系统变量 `autocommit` 的值设置为 `OFF` ，就像这样：
 
-  ```mysql
+  ```sql
   SET autocommit = OFF;
   #或
   SET autocommit = 0;
@@ -228,7 +228,7 @@ mysql> SHOW VARIABLES LIKE 'autocommit';
 
   数据库对象，指的就是`数据库、表、视图、存储过程`等结构。当我们`CREATE、ALTER、DROP`等语句去修改数据库对象时，就会隐式的提交前边语句所属于的事务。即：
 
-  ```mysql
+  ```sql
   BEGIN;
   
   SELECT ... # 事务中的一条语句
@@ -246,7 +246,7 @@ mysql> SHOW VARIABLES LIKE 'autocommit';
 
   ① 当我们在一个事务还没提交或者回滚时就又使用 START TRANSACTION 或者 BEGIN 语句开启了另一个事务时，会隐式的提交上一个事务。即：
 
-  ```mysql
+  ```sql
   BEGIN;
   
   SELECT ... # 事务中的一条语句
@@ -278,7 +278,7 @@ mysql> SHOW VARIABLES LIKE 'autocommit';
 
 **情况1：**
 
-```mysql
+```sql
 CREATE TABLE user(name varchar(20), PRIMARY KEY (name)) ENGINE=InnoDB;
 
 BEGIN;
@@ -295,7 +295,7 @@ SELECT * FROM user;
 
 运行结果（1 行数据）：
 
-```mysql
+```sql
 mysql> commit;
 Query OK, 0 rows affected (0.00 秒)
 
@@ -321,7 +321,7 @@ mysql> select * from user;
 
 **情况2：**
 
-```mysql
+```sql
 CREATE TABLE user (name varchar(20), PRIMARY KEY (name)) ENGINE=InnoDB;
 
 BEGIN;
@@ -335,7 +335,7 @@ ROLLBACK;
 
 运行结果（2 行数据）：
 
-```mysql
+```sql
 mysql> SELECT * FROM user;
 +--------+
 | name   |
@@ -348,7 +348,7 @@ mysql> SELECT * FROM user;
 
 **情况3：**
 
-```mysql
+```sql
 CREATE TABLE user(name varchar(255), PRIMARY KEY (name)) ENGINE=InnoDB;
 
 SET @@completion_type = 1;
@@ -365,7 +365,7 @@ SELECT * FROM user;
 
 运行结果（1 行数据）：
 
-```mysql
+```sql
 mysql> SELECT * FROM user;
 +--------+
 | name   |
@@ -385,7 +385,7 @@ mysql> SELECT * FROM user;
 
 ### 2.5 使用举例2：测试不支持事务的engine
 
-```mysql
+```sql
 CREATE TABLE test1(i INT) ENGINE=InnoDB;
 
 CREATE TABLE test2(i INT) ENGINE=MYISAM;
@@ -393,7 +393,7 @@ CREATE TABLE test2(i INT) ENGINE=MYISAM;
 
 针对于InnoDB表
 
-```mysql
+```sql
 BEGIN;
 INSERT INTO test1 VALUES(1);
 ROLLBACK;
@@ -405,7 +405,7 @@ SELECT * FROM test1;
 
 针对于MYISAM表：
 
-```mysql
+```sql
 BEGIN;
 INSERT INTO test1 VALUES(1);
 ROLLBACK;
@@ -421,7 +421,7 @@ SELECT * FROM test2;
 
 创建表并添加数据：
 
-```mysql
+```sql
 CREATE TABLE account(
 id INT PRIMARY KEY AUTO_INCREMENT,
 NAME VARCHAR(15),
@@ -434,7 +434,7 @@ VALUES
 ('李四',1000);
 ```
 
-```mysql
+```sql
 BEGIN;
 UPDATE account SET balance = balance - 100 WHERE NAME = '张三';
 UPDATE account SET balance = balance - 100 WHERE NAME = '张三';
@@ -445,7 +445,7 @@ ROLLBACK TO s1; # 回滚到保存点
 
 结果：张三：800.00
 
-```mysql
+```sql
 ROLLBACK;
 ```
 
@@ -457,7 +457,7 @@ MySQL是一个 `客户端／服务器` 架构的软件，对于同一个服务�
 
 ### 3.1 数据准备
 
-```mysql
+```sql
 CREATE TABLE student (
     studentno INT,
     name VARCHAR(20),
@@ -468,13 +468,13 @@ CREATE TABLE student (
 
 然后向这个表里插入一条数据：
 
-```mysql
+```sql
 INSERT INTO student VALUES(1, '小谷', '1班');
 ```
 
 现在表里的数据就是这样的：
 
-```mysql
+```sql
 mysql> select * from student;
 +-----------+--------+-------+
 | studentno | name   | class |
@@ -526,7 +526,7 @@ Session A中的事务先根据条件 studentno > 0这个条件查询表student�
 
 上面介绍了几种并发事务执行过程中可能遇到的一些问题，这些问题有轻重缓急之分，我们给这些问题 按照严重性来排一下序：
 
-```mysql
+```sql
 脏写 > 脏读 > 不可重复读 > 幻读
 ```
 
@@ -553,7 +553,7 @@ Session A中的事务先根据条件 studentno > 0这个条件查询表student�
 
 MySQL的默认隔离级别为REPEATABLE READ，我们可以手动修改一下事务的隔离级别。
 
-```mysql
+```sql
 # 查看隔离级别，MySQL 5.7.20的版本之前：
 mysql> SHOW VARIABLES LIKE 'tx_isolation';
 +---------------+-----------------+
@@ -581,7 +581,7 @@ SELECT @@transaction_isolation;
 
 **通过下面的语句修改事务的隔离级别：**
 
-```mysql
+```sql
 SET [GLOBAL|SESSION] TRANSACTION ISOLATION LEVEL 隔离级别;
 #其中，隔离级别格式：
 > READ UNCOMMITTED
@@ -592,7 +592,7 @@ SET [GLOBAL|SESSION] TRANSACTION ISOLATION LEVEL 隔离级别;
 
 或者：
 
-```mysql
+```sql
 SET [GLOBAL|SESSION] TRANSACTION_ISOLATION = '隔离级别'
 #其中，隔离级别格式：
 > READ-UNCOMMITTED
@@ -605,7 +605,7 @@ SET [GLOBAL|SESSION] TRANSACTION_ISOLATION = '隔离级别'
 
 * 使用 GLOBAL 关键字（在全局范围影响）：
 
-  ```mysql
+  ```sql
   SET GLOBAL TRANSACTION ISOLATION LEVEL SERIALIZABLE;
   #或
   SET GLOBAL TRANSACTION_ISOLATION = 'SERIALIZABLE';
@@ -618,7 +618,7 @@ SET [GLOBAL|SESSION] TRANSACTION_ISOLATION = '隔离级别'
 
 * 使用 `SESSION` 关键字（在会话范围影响）：
 
-  ```mysql
+  ```sql
   SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;
   #或
   SET SESSION TRANSACTION_ISOLATION = 'SERIALIZABLE';
@@ -640,7 +640,7 @@ SET [GLOBAL|SESSION] TRANSACTION_ISOLATION = '隔离级别'
 
 初始化数据：
 
-```mysql
+```sql
 TRUNCATE TABLE account;
 INSERT INTO account VALUES (1,'张三','100'), (2,'李四','0');
 ```

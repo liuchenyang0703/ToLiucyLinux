@@ -79,19 +79,19 @@ MySQL 数据库服务器之前已经安装。所以，我们就从创建数据�
 
 - 方式1：创建数据库
 
-```mysql
+```sql
 CREATE DATABASE 数据库名; 
 ```
 
 - 方式2：创建数据库并指定字符集
 
-```mysql
+```sql
 CREATE DATABASE 数据库名 CHARACTER SET 字符集;
 ```
 
 - 方式3：判断数据库是否已经存在，不存在则创建数据库（`推荐`）
 
-```mysql
+```sql
 CREATE DATABASE IF NOT EXISTS 数据库名; 
 ```
 
@@ -103,25 +103,25 @@ CREATE DATABASE IF NOT EXISTS 数据库名;
 
 - 查看当前所有的数据库
 
-```mysql
+```sql
 SHOW DATABASES; #有一个S，代表多个数据库
 ```
 
 - 查看当前正在使用的数据库
 
-```mysql
+```sql
 SELECT DATABASE();  #使用的一个 mysql 中的全局函数
 ```
 
 - 查看指定库下所有的表
 
-```mysql
+```sql
 SHOW TABLES FROM 数据库名;
 ```
 
 - 查看数据库的创建信息
 
-```mysql
+```sql
 SHOW CREATE DATABASE 数据库名;
 或者：
 SHOW CREATE DATABASE 数据库名\G
@@ -129,7 +129,7 @@ SHOW CREATE DATABASE 数据库名\G
 
 - 使用/切换数据库
 
-```mysql
+```sql
 USE 数据库名;
 ```
 
@@ -139,7 +139,7 @@ USE 数据库名;
 
 - 更改数据库字符集
 
-```mysql
+```sql
 ALTER DATABASE 数据库名 CHARACTER SET 字符集;  #比如：gbk、utf8等
 ```
 
@@ -147,13 +147,13 @@ ALTER DATABASE 数据库名 CHARACTER SET 字符集;  #比如：gbk、utf8等
 
 - 方式1：删除指定的数据库
 
-```mysql
+```sql
 DROP DATABASE 数据库名;
 ```
 
 - 方式2：删除指定的数据库（`推荐`）
 
-```mysql
+```sql
 DROP DATABASE IF EXISTS 数据库名;
 ```
 
@@ -166,7 +166,7 @@ DROP DATABASE IF EXISTS 数据库名;
   - 存储空间
 - **语法格式：**
 
-```mysql
+```sql
 CREATE TABLE [IF NOT EXISTS] 表名(
 	字段1, 数据类型 [约束条件] [默认值],
 	字段2, 数据类型 [约束条件] [默认值],
@@ -186,7 +186,7 @@ CREATE TABLE [IF NOT EXISTS] 表名(
   - 默认值
 - 创建表举例1：
 
-```mysql
+```sql
 -- 创建表
 CREATE TABLE emp (
   -- int类型
@@ -200,7 +200,7 @@ CREATE TABLE emp (
 );
 ```
 
-```mysql
+```sql
 DESC emp;
 ```
 
@@ -210,7 +210,7 @@ MySQL在执行建表语句时，将id字段的类型设置为int(11)，这里的
 
 - 创建表举例2：
 
-```mysql
+```sql
 CREATE TABLE dept(
     -- int类型，自增
 	deptno INT(2) AUTO_INCREMENT,
@@ -221,7 +221,7 @@ CREATE TABLE dept(
 );
 ```
 
-```mysql
+```sql
 DESCRIBE dept;
 ```
 
@@ -239,13 +239,13 @@ DESCRIBE dept;
 
 - 通过列名和默认值定义列
 
-```mysql
+```sql
 CREATE TABLE emp1 AS SELECT * FROM employees;
 
 CREATE TABLE emp2 AS SELECT * FROM employees WHERE 1=2; -- 创建的emp2是空表
 ```
 
-```mysql
+```sql
 CREATE TABLE dept80
 AS 
 SELECT  employee_id, last_name, salary*12 ANNSAL, hire_date
@@ -254,7 +254,7 @@ WHERE   department_id = 80;
 
 ```
 
-```mysql
+```sql
 DESCRIBE dept80;
 ```
 
@@ -268,7 +268,7 @@ DESCRIBE dept80;
 
 语法格式如下：
 
-```mysql
+```sql
 SHOW CREATE TABLE 表名\G
 ```
 
@@ -292,13 +292,13 @@ SHOW CREATE TABLE 表名\G
 
 语法格式如下：
 
-```mysql
+```sql
 ALTER TABLE 表名 ADD 【COLUMN】 字段名 字段类型 【FIRST|AFTER 字段名】;
 ```
 
 举例：
 
-```mysql
+```sql
 ALTER TABLE dept80 
 ADD job_id varchar(15);
 ```
@@ -311,18 +311,18 @@ ADD job_id varchar(15);
 
 - 修改字段数据类型、长度、默认值、位置的语法格式如下：
 
-```mysql
+```sql
 ALTER TABLE 表名 MODIFY 【COLUMN】 字段名1 字段类型 【DEFAULT 默认值】【FIRST|AFTER 字段名2】;
 ```
 
 - 举例：
 
-```mysql
+```sql
 ALTER TABLE	dept80
 MODIFY last_name VARCHAR(30);
 ```
 
-```mysql
+```sql
 ALTER TABLE	dept80
 MODIFY salary double(9,2) default 1000;
 ```
@@ -334,13 +334,13 @@ MODIFY salary double(9,2) default 1000;
 
 使用 CHANGE old_column  new_column  dataType子句重命名列。语法格式如下：
 
-```mysql
+```sql
 ALTER TABLE 表名 CHANGE 【column】 列名 新列名 新数据类型;
 ```
 
 举例：
 
-```mysql
+```sql
 ALTER TABLE  dept80
 CHANGE department_name dept_name varchar(15); 
 ```
@@ -349,13 +349,13 @@ CHANGE department_name dept_name varchar(15);
 
 删除表中某个字段的语法格式如下：
 
-```mysql
+```sql
 ALTER TABLE 表名 DROP 【COLUMN】字段名
 ```
 
 举例：
 
-```mysql
+```sql
 ALTER TABLE  dept80
 DROP COLUMN  job_id; 
 ```
@@ -364,14 +364,14 @@ DROP COLUMN  job_id;
 
 - 方式一：使用RENAME
 
-```mysql
+```sql
 RENAME TABLE emp
 TO myemp;
 ```
 
 - 方式二：
 
-```mysql
+```sql
 ALTER table dept
 RENAME [TO] detail_dept;  -- [TO]可以省略
 ```
@@ -387,7 +387,7 @@ RENAME [TO] detail_dept;  -- [TO]可以省略
 - 所有相关索引被删除
 - 语法格式：
 
-```mysql
+```sql
 DROP TABLE [IF EXISTS] 数据表1 [, 数据表2, …, 数据表n];
 ```
 
@@ -395,7 +395,7 @@ DROP TABLE [IF EXISTS] 数据表1 [, 数据表2, …, 数据表n];
 
 - 举例：
 
-```mysql
+```sql
 DROP TABLE dept80;
 ```
 
@@ -409,7 +409,7 @@ DROP TABLE dept80;
 
 - 举例：
 
-```mysql
+```sql
 TRUNCATE TABLE detail_dept;
 ```
 
@@ -417,7 +417,7 @@ TRUNCATE TABLE detail_dept;
 
 - 对比：
 
-```mysql
+```sql
 SET autocommit = FALSE;
   
 DELETE FROM emp2; 
@@ -474,7 +474,7 @@ SELECT * FROM emp2;
 
 分别在MySQL 5.7版本和MySQL 8.0版本中创建数据库和数据表，结果如下：
 
-```mysql
+```sql
 CREATE DATABASE mytest;
 
 USE mytest;
@@ -490,14 +490,14 @@ SHOW TABLES;
 （1）在MySQL 5.7版本中，测试步骤如下：
 删除数据表book1和数据表book2，结果如下：
 
-```mysql
+```sql
 mysql> DROP TABLE book1,book2;
 ERROR 1051 (42S02): Unknown table 'mytest.book2'
 ```
 
 再次查询数据库中的数据表名称，结果如下：
 
-```mysql
+```sql
 mysql> SHOW TABLES;
 Empty set (0.00 sec)
 ```
@@ -507,14 +507,14 @@ Empty set (0.00 sec)
 （2）在MySQL 8.0版本中，测试步骤如下：
 删除数据表book1和数据表book2，结果如下：
 
-```mysql
+```sql
 mysql> DROP TABLE book1,book2;
 ERROR 1051 (42S02): Unknown table 'mytest.book2'
 ```
 
 再次查询数据库中的数据表名称，结果如下：
 
-```mysql
+```sql
 mysql> show tables;
 +------------------+
 | Tables_in_mytest |

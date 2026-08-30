@@ -26,7 +26,7 @@ breadcrumb: false
 
 ### 1.2 单列排序
 
-```mysql
+```sql
 SELECT   last_name, job_id, department_id, hire_date
 FROM     employees
 ORDER BY hire_date ;
@@ -36,7 +36,7 @@ ORDER BY hire_date ;
 
 ![1554974260133](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/1554974260133.png)
 
-```mysql
+```sql
 SELECT   last_name, job_id, department_id, hire_date
 FROM     employees
 ORDER BY hire_date DESC ;
@@ -46,7 +46,7 @@ ORDER BY hire_date DESC ;
 
 ![1554974827522](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/1554974827522.png)
 
-```mysql
+```sql
 SELECT employee_id, last_name, salary*12 annsal
 FROM   employees
 ORDER BY annsal;
@@ -58,7 +58,7 @@ ORDER BY annsal;
 
 ### 1.3 多列排序
 
-```mysql
+```sql
 SELECT last_name, department_id, salary
 FROM   employees
 ORDER BY department_id, salary DESC;
@@ -89,7 +89,7 @@ ORDER BY department_id, salary DESC;
 
 - 格式：
 
-  ```mysql
+  ```sql
   LIMIT [位置偏移量,] 行数
   ```
 
@@ -97,7 +97,7 @@ ORDER BY department_id, salary DESC;
 
 - 举例
 
-```mysql
+```sql
 --前10条记录：
 SELECT * FROM 表名 LIMIT 0,10;
 或者
@@ -114,7 +114,7 @@ SELECT * FROM 表名 LIMIT 20,10;
 
 - **分页显式公式** ：（当前页数-1）**每页条数，每页条数**
 
-```mysql
+```sql
 SELECT * FROM table 
 LIMIT(PageNo - 1)*PageSize,PageSize;
 ```
@@ -130,27 +130,27 @@ LIMIT(PageNo - 1)*PageSize,PageSize;
 
 - 如果是 SQL Server 和 Access，需要使用 `TOP` 关键字，比如：
 
-```mysql
+```sql
 SELECT TOP 5 name, hp_max FROM heros ORDER BY hp_max DESC
 ```
 
 - 如果是 DB2，使用`FETCH FIRST 5 ROWS ONLY`这样的关键字：
 
 
-```mysql
+```sql
 SELECT name, hp_max FROM heros ORDER BY hp_max DESC FETCH FIRST 5 ROWS ONLY
 ```
 
 - 如果是 Oracle，你需要基于 `ROWNUM` 来统计行数：
 
 
-```mysql
+```sql
 SELECT rownum,last_name,salary FROM employees WHERE rownum < 5 ORDER BY salary DESC;
 ```
 
 需要说明的是，这条语句是先取出来前 5 条数据行，然后再按照 hp_max 从高到低的顺序进行排序。但这样产生的结果和上述方法的并不一样。我会在后面讲到子查询，你可以使用
 
-```mysql
+```sql
 SELECT rownum, last_name,salary
 FROM (
     SELECT last_name,salary

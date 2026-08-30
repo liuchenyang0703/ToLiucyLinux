@@ -196,7 +196,7 @@ systemctl disable mysqld.service
 
 ### 3.2 修改密码
 
-```mysql
+```sql
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
 ```
 
@@ -262,7 +262,7 @@ firewall-cmd --reload
 
 - 修改允许远程登陆
 
-```mysql
+```sql
 use mysql;
 select Host,User from user;
 update user set host = '%' where user ='root';
@@ -279,7 +279,7 @@ flush privileges;
 
 **解决方法二：**
 
-```mysql
+```sql
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'abc123';
 ```
 
@@ -289,7 +289,7 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'abc123';
 
 ### 5.1 各级别的字符集
 
-```mysql
+```sql
 show variables like 'character%';
 ```
 

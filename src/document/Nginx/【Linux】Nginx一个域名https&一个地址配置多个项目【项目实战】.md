@@ -1,4 +1,4 @@
-﻿---
+---
 title: 【Linux】Nginx配置域名+https&一个地址配置多个项目【项目实战】
 icon: circle-info
 order: 1
@@ -349,7 +349,7 @@ http {
 
 Nginx配置文件完整代码展示（主要在`server`段）：
 
-```conf
+```ini
 
 user root;
 worker_processes 1;

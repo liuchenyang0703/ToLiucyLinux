@@ -11,7 +11,7 @@ tag:
   - Helm
   - 运维
 pageview: false
-date: 2026-7-6
+date: 2026-07-06
 comment: false
 breadcrumb: false
 ---
@@ -1378,4 +1378,3 @@ dependencies:
 | **条件+循环** | 实现动态生成 YAML |
 
 **核心思想**：Chart = 模板 + 配置，通过参数化实现一份模板，多环境部署。
-

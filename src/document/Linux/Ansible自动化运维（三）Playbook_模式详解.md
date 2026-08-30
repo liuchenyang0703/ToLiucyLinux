@@ -1,4 +1,4 @@
-﻿---
+---
 title: Ansible自动化运维（三）Playbook 模式详解
 icon: circle-info
 order: 1
@@ -287,7 +287,7 @@ ansible-playbook apache.yml（定义的yml文件名）
 1. **目录结构**：
    在你的Ansible项目目录下，确保设置以下目录结构：
 
-```bas
+```bash
    your_ansible_project/
    ├── group_vars/
    │   └── web-servers.yml

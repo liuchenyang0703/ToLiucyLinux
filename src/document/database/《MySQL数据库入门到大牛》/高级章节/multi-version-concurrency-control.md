@@ -31,7 +31,7 @@ MVCC在MySQL InnoDB中的实现主要是为了提高数据库并发性能，用�
 
 快照读又叫一致性读，读取的是快照数据。**不加锁的简单的 SELECT 都属于快照读**，即不加锁的非阻塞 读；比如这样：
 
-```mysql
+```sql
 SELECT * FROM player WHERE ...
 ```
 
@@ -45,7 +45,7 @@ SELECT * FROM player WHERE ...
 
 当前读读取的是记录的最新版本（最新数据，而不是历史版本的数据），读取时还要保证其他并发事务 不能修改当前记录，会对读取的记录进行加锁。加锁的 SELECT，或者对数据进行增删改都会进行当前 读。比如：
 
-```mysql
+```sql
 SELECT * FROM student LOCK IN SHARE MODE; # 共享锁
 SELECT * FROM student FOR UPDATE; # 排他锁
 INSERT INTO student values ... # 排他锁
@@ -171,7 +171,7 @@ MVCC 的实现依赖于：`隐藏字段`、`Undo Log`、`Read View`。
 
 现在有两个 `事务id` 分别为 `10` 、 `20` 的事务在执行:
 
-```mysql
+```sql
 # Transaction 10
 BEGIN;
 UPDATE student SET name="李四" WHERE id=1;
@@ -190,7 +190,7 @@ BEGIN;
 
 假设现在有一个使用 `READ COMMITTED` 隔离级别的事务开始执行：
 
-```mysql
+```sql
 # 使用READ COMMITTED隔离级别的事务
 BEGIN;
 
@@ -202,7 +202,7 @@ SELECT * FROM student WHERE id = 1; # 得到的列name的值为'张三'
 
 之后，我们把 `事务id` 为 `10` 的事务提交一下：
 
-```mysql
+```sql
 # Transaction 10
 BEGIN;
 UPDATE student SET name="李四" WHERE id=1;
@@ -212,7 +212,7 @@ COMMIT;
 
 然后再到 `事务id` 为 `20` 的事务中更新一下表 `student` 中 `id` 为 `1` 的记录：
 
-```mysql
+```sql
 # Transaction 20
 BEGIN;
 # 更新了一些别的表的记录
@@ -227,7 +227,7 @@ UPDATE student SET name="宋八" WHERE id=1;
 
 然后再到刚才使用 `READ COMMITTED` 隔离级别的事务中继续查找这个 id 为 1 的记录，如下：
 
-```mysql
+```sql
 # 使用READ COMMITTED隔离级别的事务
 BEGIN;
 
@@ -248,7 +248,7 @@ SELECT * FROM student WHERE id = 1; # 得到的列name的值为'王五'
 
 比如，系统里有两个 `事务id` 分别为 `10` 、 `20` 的事务在执行：
 
-```mysql
+```sql
 # Transaction 10
 BEGIN;
 UPDATE student SET name="李四" WHERE id=1;
@@ -265,7 +265,7 @@ BEGIN;
 
 假设现在有一个使用 `REPEATABLE READ` 隔离级别的事务开始执行：
 
-```mysql
+```sql
 # 使用REPEATABLE READ隔离级别的事务
 BEGIN;
 
@@ -277,7 +277,7 @@ SELECT * FROM student WHERE id = 1; # 得到的列name的值为'张三'
 
 之后，我们把 `事务id` 为 `10` 的事务提交一下，就像这样：
 
-```mysql
+```sql
 # Transaction 10
 BEGIN;
 
@@ -289,7 +289,7 @@ COMMIT;
 
 然后再到 `事务id` 为 `20` 的事务中更新一下表 `student` 中 `id` 为 `1` 的记录：
 
-```mysql
+```sql
 # Transaction 20
 BEGIN;
 # 更新了一些别的表的记录
@@ -304,7 +304,7 @@ UPDATE student SET name="宋八" WHERE id=1;
 
 然后再到刚才使用 `REPEATABLE READ` 隔离级别的事务中继续查找这个 `id` 为 `1` 的记录，如下：
 
-```mysql
+```sql
 # 使用REPEATABLE READ隔离级别的事务
 BEGIN;
 # SELECT1：Transaction 10、20均未提交
@@ -331,7 +331,7 @@ SELECT * FROM student WHERE id = 1; # 得到的列name的值仍为'张三'
 
 步骤1：事务 A 开始第一次查询数据，查询的 SQL 语句如下。
 
-```mysql
+```sql
 select * from student where id >= 1;
 ```
 
@@ -343,7 +343,7 @@ select * from student where id >= 1;
 
 步骤2：接着事务 B(trx_id=30)，往表 student 中新插入两条数据，并提交事务。
 
-```mysql
+```sql
 insert into student(id,name) values(2,'李四');
 insert into student(id,name) values(3,'王五');
 ```

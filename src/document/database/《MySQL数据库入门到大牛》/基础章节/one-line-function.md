@@ -75,7 +75,7 @@ MySQL提供的内置函数从`实现的功能角度`可以分为数值函数、�
 
 举例：
 
-```mysql
+```sql
 SELECT ABS(-123),ABS(32),SIGN(-23),SIGN(43),PI(),CEIL(32.32),CEILING(-43.23),FLOOR(32.32),
 FLOOR(-43.23),MOD(12,5)
 FROM DUAL;
@@ -83,14 +83,14 @@ FROM DUAL;
 
 ![image-20211025162304844](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20211025162304844.png)
 
-```mysql
+```sql
 SELECT RAND(),RAND(),RAND(10),RAND(10),RAND(-1),RAND(-1)
 FROM DUAL;
 ```
 
 ![image-20211025162538958](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20211025162538958.png)
 
-```mysql
+```sql
 SELECT ROUND(12.33),ROUND(12.343,2),ROUND(12.324,-1),TRUNCATE(12.66,1),TRUNCATE(12.66,-1)
 FROM DUAL;
 ```
@@ -104,7 +104,7 @@ FROM DUAL;
 | RADIANS(x) | 将角度转化为弧度，其中，参数x为角度值 |
 | DEGREES(x) | 将弧度转化为角度，其中，参数x为弧度值 |
 
-```mysql
+```sql
 SELECT RADIANS(30),RADIANS(60),RADIANS(90),DEGREES(2*PI()),DEGREES(RADIANS(90))
 FROM DUAL;
 ```
@@ -131,7 +131,7 @@ ATAN2(M,N)函数返回两个参数的反正切值。
 
 ATAN2(M,N)函数的使用示例如下：
 
-```mysql
+```sql
 SELECT SIN(RADIANS(30)),DEGREES(ASIN(1)),TAN(RADIANS(45)),DEGREES(ATAN(1)),DEGREES(ATAN2(1,1))
 FROM DUAL;
 ```
@@ -148,7 +148,7 @@ FROM DUAL;
 | LOG10(X)             | 返回以10为底的X的对数，当X <= 0 时，返回的结果为NULL |
 | LOG2(X)              | 返回以2为底的X的对数，当X <= 0 时，返回NULL          |
 
-```mysql
+```sql
 mysql> SELECT POW(2,5),POWER(2,4),EXP(2),LN(10),LOG10(10),LOG2(4)
     -> FROM DUAL;
 +----------+------------+------------------+-------------------+-----------+---------+
@@ -168,7 +168,7 @@ mysql> SELECT POW(2,5),POWER(2,4),EXP(2),LN(10),LOG10(10),LOG2(4)
 | OCT(x)        | 返回x的八进制编码        |
 | CONV(x,f1,f2) | 返回f1进制数变成f2进制数 |
 
-```mysql
+```sql
 mysql> SELECT BIN(10),HEX(10),OCT(10),CONV(10,2,8)
     -> FROM DUAL;
 +---------+---------+---------+--------------+
@@ -217,7 +217,7 @@ mysql> SELECT BIN(10),HEX(10),OCT(10),CONV(10,2,8)
 
 举例：
 
-```mysql
+```sql
 mysql> SELECT FIELD('mm','hello','msm','amma'),FIND_IN_SET('mm','hello,mm,amma')
     -> FROM DUAL;
 +----------------------------------+-----------------------------------+
@@ -228,7 +228,7 @@ mysql> SELECT FIELD('mm','hello','msm','amma'),FIND_IN_SET('mm','hello,mm,amma')
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT NULLIF('mysql','mysql'),NULLIF('mysql', '');
 +-------------------------+---------------------+
 | NULLIF('mysql','mysql') | NULLIF('mysql', '') |
@@ -252,7 +252,7 @@ mysql> SELECT NULLIF('mysql','mysql'),NULLIF('mysql', '');
 
 举例：
 
-```mysql
+```sql
 SELECT CURDATE(),CURTIME(),NOW(),SYSDATE()+0,UTC_DATE(),UTC_DATE()+0,UTC_TIME(),UTC_TIME()+0
 FROM DUAL;
 ```
@@ -269,7 +269,7 @@ FROM DUAL;
 
 举例：
 
-```mysql
+```sql
 mysql> SELECT UNIX_TIMESTAMP(now());
 +-----------------------+
 | UNIX_TIMESTAMP(now()) |
@@ -303,7 +303,7 @@ mysql> SELECT UNIX_TIMESTAMP('2011-11-11 11:11:11')
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT FROM_UNIXTIME(1576380910);
 +---------------------------+
 | FROM_UNIXTIME(1576380910) |
@@ -330,7 +330,7 @@ mysql> SELECT FROM_UNIXTIME(1576380910);
 
 举例：
 
-```mysql
+```sql
 SELECT YEAR(CURDATE()),MONTH(CURDATE()),DAY(CURDATE()),
 HOUR(CURTIME()),MINUTE(NOW()),SECOND(SYSDATE())
 FROM DUAL;
@@ -338,7 +338,7 @@ FROM DUAL;
 
 ![image-20211025213504115](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20211025213504115.png)
 
-```mysql
+```sql
 SELECT MONTHNAME('2021-10-26'),DAYNAME('2021-10-26'),WEEKDAY('2021-10-26'),
 QUARTER(CURDATE()),WEEK(CURDATE()),DAYOFYEAR(NOW()),
 DAYOFMONTH(NOW()),DAYOFWEEK(NOW())
@@ -359,7 +359,7 @@ EXTRACT(type FROM date)函数中type的取值与含义：
 
 ![image-20211012142746444](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/cisyam/202308291648071.png)
 
-```mysql
+```sql
 SELECT EXTRACT(MINUTE FROM NOW()),EXTRACT( WEEK FROM NOW()),
 EXTRACT( QUARTER FROM NOW()),EXTRACT( MINUTE_SECOND FROM NOW())
 FROM DUAL;
@@ -375,7 +375,7 @@ FROM DUAL;
 
 举例：
 
-```mysql
+```sql
 mysql> SELECT TIME_TO_SEC(NOW());
 +--------------------+
 | TIME_TO_SEC(NOW()) |
@@ -385,7 +385,7 @@ mysql> SELECT TIME_TO_SEC(NOW());
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT SEC_TO_TIME(78774);
 +--------------------+
 | SEC_TO_TIME(78774) |
@@ -410,7 +410,7 @@ mysql> SELECT SEC_TO_TIME(78774);
 
 举例：
 
-```mysql
+```sql
 SELECT DATE_ADD(NOW(), INTERVAL 1 DAY) AS col1,DATE_ADD('2021-10-21 23:32:12',INTERVAL 1 SECOND) AS col2,
 ADDDATE('2021-10-21 23:32:12',INTERVAL 1 SECOND) AS col3,
 DATE_ADD('2021-10-21 23:32:12',INTERVAL '1_1' MINUTE_SECOND) AS col4,
@@ -419,7 +419,7 @@ DATE_ADD(NOW(), INTERVAL '1_1' YEAR_MONTH) AS col6 #需要单引号
 FROM DUAL;
 ```
 
-```mysql
+```sql
 SELECT DATE_SUB('2021-01-21',INTERVAL 31 DAY) AS col1,
 SUBDATE('2021-01-21',INTERVAL 31 DAY) AS col2,
 DATE_SUB('2021-01-21 02:01:01',INTERVAL '1 1' DAY_HOUR) AS col3
@@ -443,14 +443,14 @@ FROM DUAL;
 
 举例：
 
-```mysql
+```sql
 SELECT ADDTIME(NOW(),20),SUBTIME(NOW(),30),SUBTIME(NOW(),'1:1:3'),DATEDIFF(NOW(),'2021-10-01'),
 TIMEDIFF(NOW(),'2021-10-25 22:10:10'),FROM_DAYS(366),TO_DAYS('0000-12-25'),
 LAST_DAY(NOW()),MAKEDATE(YEAR(NOW()),12),MAKETIME(10,21,23),PERIOD_ADD(20200101010101,10)
 FROM DUAL;
 ```
 
-```mysql
+```sql
 mysql> SELECT ADDTIME(NOW(), 50);
 +---------------------+
 | ADDTIME(NOW(), 50)  |
@@ -468,7 +468,7 @@ mysql> SELECT ADDTIME(NOW(), '1:1:1');
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT SUBTIME(NOW(), '1:1:1');
 +-------------------------+
 | SUBTIME(NOW(), '1:1:1') |
@@ -486,7 +486,7 @@ mysql> SELECT SUBTIME(NOW(), '-1:-1:-1');
 1 row in set, 1 warning (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT FROM_DAYS(366);
 +----------------+
 | FROM_DAYS(366) |
@@ -496,7 +496,7 @@ mysql> SELECT FROM_DAYS(366);
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT MAKEDATE(2020,1);
 +------------------+
 | MAKEDATE(2020,1) |
@@ -514,7 +514,7 @@ mysql> SELECT MAKEDATE(2020,32);
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT MAKETIME(1,1,1);
 +-----------------+
 | MAKETIME(1,1,1) |
@@ -524,7 +524,7 @@ mysql> SELECT MAKETIME(1,1,1);
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT PERIOD_ADD(20200101010101,1);
 +------------------------------+
 | PERIOD_ADD(20200101010101,1) |
@@ -534,7 +534,7 @@ mysql> SELECT PERIOD_ADD(20200101010101,1);
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT TO_DAYS(NOW());
 +----------------+
 | TO_DAYS(NOW()) |
@@ -546,7 +546,7 @@ mysql> SELECT TO_DAYS(NOW());
 
 举例：查询 7 天内的新增用户数有多少？
 
-```mysql
+```sql
 SELECT COUNT(*) as num FROM new_user WHERE TO_DAYS(NOW())-TO_DAYS(regist_time)<=7
 ```
 
@@ -584,7 +584,7 @@ GET_FORMAT函数中date_type和format_type参数取值如下：
 
 举例：
 
-```mysql
+```sql
 mysql> SELECT DATE_FORMAT(NOW(), '%H:%i:%s');
 +--------------------------------+
 | DATE_FORMAT(NOW(), '%H:%i:%s') |
@@ -594,7 +594,7 @@ mysql> SELECT DATE_FORMAT(NOW(), '%H:%i:%s');
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 SELECT STR_TO_DATE('09/01/2009','%m/%d/%Y')
 FROM DUAL;
 
@@ -605,7 +605,7 @@ SELECT STR_TO_DATE('2014-04-22 15:47:06','%Y-%m-%d %H:%i:%s')
 FROM DUAL;
 ```
 
-```mysql
+```sql
 mysql> SELECT GET_FORMAT(DATE, 'USA');
 +-------------------------+
 | GET_FORMAT(DATE, 'USA') |
@@ -618,7 +618,7 @@ SELECT DATE_FORMAT(NOW(),GET_FORMAT(DATE,'USA')),
 FROM DUAL;
 ```
 
-```mysql
+```sql
 mysql> SELECT STR_TO_DATE('2020-01-01 00:00:00','%Y-%m-%d'); 
 +-----------------------------------------------+
 | STR_TO_DATE('2020-01-01 00:00:00','%Y-%m-%d') |
@@ -639,17 +639,17 @@ mysql> SELECT STR_TO_DATE('2020-01-01 00:00:00','%Y-%m-%d');
 | CASE WHEN 条件1 THEN 结果1 WHEN 条件2 THEN 结果2 .... [ELSE resultn] END | 相当于Java的if...else if...else...              |
 | CASE  expr WHEN 常量值1 THEN 值1 WHEN 常量值1 THEN 值1 .... [ELSE 值n] END | 相当于Java的switch...case...                    |
 
-```mysql
+```sql
 SELECT IF(1 > 0,'正确','错误')    
 ->正确
 ```
 
-```mysql
+```sql
 SELECT IFNULL(null,'Hello Word')
 ->Hello Word
 ```
 
-```mysql
+```sql
 SELECT CASE 
 　　WHEN 1 > 0
 　　THEN '1 > 0'
@@ -660,14 +660,14 @@ SELECT CASE
 ->1 > 0
 ```
 
-```mysql
+```sql
 SELECT CASE 1 
 　　WHEN 1 THEN '我是1'
 　　WHEN 2 THEN '我是2'
 ELSE '你是谁'
 ```
 
-```mysql
+```sql
 SELECT employee_id,salary, CASE WHEN salary>=15000 THEN '高薪' 
 				  WHEN salary>=10000 THEN '潜力股'  
 				  WHEN salary>=8000 THEN '屌丝' 
@@ -675,7 +675,7 @@ SELECT employee_id,salary, CASE WHEN salary>=15000 THEN '高薪'
 FROM employees; 
 ```
 
-```mysql
+```sql
 SELECT oid,`status`, CASE `status` WHEN 1 THEN '未付款' 
 								   WHEN 2 THEN '已付款' 
 								   WHEN 3 THEN '已发货'  
@@ -684,7 +684,7 @@ SELECT oid,`status`, CASE `status` WHEN 1 THEN '未付款'
 FROM t_order;
 ```
 
-```mysql
+```sql
 mysql> SELECT CASE WHEN 1 > 0 THEN 'yes' WHEN 1 <= 0 THEN 'no' ELSE 'unknown' END;
 +---------------------------------------------------------------------+
 | CASE WHEN 1 > 0 THEN 'yes' WHEN 1 <= 0 THEN 'no' ELSE 'unknown' END |
@@ -702,7 +702,7 @@ mysql> SELECT CASE WHEN 1 < 0 THEN 'yes' WHEN 1 = 0 THEN 'no' ELSE 'unknown' END
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT CASE 1 WHEN 0 THEN 0 WHEN 1 THEN 1 ELSE -1 END;
 +------------------------------------------------+
 | CASE 1 WHEN 0 THEN 0 WHEN 1 THEN 1 ELSE -1 END |
@@ -720,12 +720,12 @@ mysql> SELECT CASE -1 WHEN 0 THEN 0 WHEN 1 THEN 1 ELSE -1 END;
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 SELECT employee_id,12 * salary * (1 + IFNULL(commission_pct,0))
 FROM employees;
 ```
 
-```mysql
+```sql
 SELECT last_name, job_id, salary,
        CASE job_id WHEN 'IT_PROG'  THEN  1.10*salary
                    WHEN 'ST_CLERK' THEN  1.15*salary
@@ -754,7 +754,7 @@ FROM   employees;
 
 举例：
 
-```mysql
+```sql
 mysql> SELECT PASSWORD('mysql'), PASSWORD(NULL);
 +-------------------------------------------+----------------+
 | PASSWORD('mysql')                         | PASSWORD(NULL) |
@@ -764,17 +764,17 @@ mysql> SELECT PASSWORD('mysql'), PASSWORD(NULL);
 1 row in set, 1 warning (0.00 sec)
 ```
 
-```mysql
+```sql
 SELECT md5('123')
 ->202cb962ac59075b964b07152d234b70
 ```
 
-```mysql
+```sql
 SELECT SHA('Tom123')
 ->c7c506980abc31cc390a2438c90861d0f1216d50
 ```
 
-```mysql
+```sql
 mysql> SELECT ENCODE('mysql', 'mysql');
 +--------------------------+
 | ENCODE('mysql', 'mysql') |
@@ -784,7 +784,7 @@ mysql> SELECT ENCODE('mysql', 'mysql');
 1 row in set, 1 warning (0.01 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT DECODE(ENCODE('mysql','mysql'),'mysql');
 +-----------------------------------------+
 | DECODE(ENCODE('mysql','mysql'),'mysql') |
@@ -809,7 +809,7 @@ MySQL中内置了一些可以查询MySQL信息的函数，这些函数主要用�
 
 举例：
 
-```mysql
+```sql
 mysql> SELECT DATABASE();
 +------------+
 | DATABASE() |
@@ -827,7 +827,7 @@ mysql> SELECT DATABASE();
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT USER(), CURRENT_USER(), SYSTEM_USER(),SESSION_USER();
 +----------------+----------------+----------------+----------------+
 | USER()         | CURRENT_USER() | SYSTEM_USER()  | SESSION_USER() |
@@ -837,7 +837,7 @@ mysql> SELECT USER(), CURRENT_USER(), SYSTEM_USER(),SESSION_USER();
 
 ```
 
-```mysql
+```sql
 mysql> SELECT CHARSET('ABC');
 +----------------+
 | CHARSET('ABC') |
@@ -847,7 +847,7 @@ mysql> SELECT CHARSET('ABC');
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT COLLATION('ABC');
 +--------------------+
 | COLLATION('ABC')   |
@@ -872,7 +872,7 @@ MySQL中有些函数无法对其进行具体的分类，但是这些函数在MyS
 
 举例：
 
-```mysql
+```sql
 # 如果n的值小于或者等于0，则只保留整数部分
 mysql> SELECT FORMAT(123.123, 2), FORMAT(123.523, 0), FORMAT(123.123, -2); 
 +--------------------+--------------------+---------------------+
@@ -883,7 +883,7 @@ mysql> SELECT FORMAT(123.123, 2), FORMAT(123.523, 0), FORMAT(123.123, -2);
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT CONV(16, 10, 2), CONV(8888,10,16), CONV(NULL, 10, 2);
 +-----------------+------------------+-------------------+
 | CONV(16, 10, 2) | CONV(8888,10,16) | CONV(NULL, 10, 2) |
@@ -893,7 +893,7 @@ mysql> SELECT CONV(16, 10, 2), CONV(8888,10,16), CONV(NULL, 10, 2);
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT INET_ATON('192.168.1.100');
 +----------------------------+
 | INET_ATON('192.168.1.100') |
@@ -905,7 +905,7 @@ mysql> SELECT INET_ATON('192.168.1.100');
 # 以“192.168.1.100”为例，计算方式为192乘以256的3次方，加上168乘以256的2次方，加上1乘以256，再加上100。
 ```
 
-```mysql
+```sql
 mysql> SELECT INET_NTOA(3232235876);
 +-----------------------+
 | INET_NTOA(3232235876) |
@@ -915,7 +915,7 @@ mysql> SELECT INET_NTOA(3232235876);
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT BENCHMARK(1, MD5('mysql'));
 +----------------------------+
 | BENCHMARK(1, MD5('mysql')) |
@@ -933,7 +933,7 @@ mysql> SELECT BENCHMARK(1000000, MD5('mysql'));
 1 row in set (0.20 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT CHARSET('mysql'), CHARSET(CONVERT('mysql' USING 'utf8'));
 +------------------+----------------------------------------+
 | CHARSET('mysql') | CHARSET(CONVERT('mysql' USING 'utf8')) |

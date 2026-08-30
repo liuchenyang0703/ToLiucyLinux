@@ -80,7 +80,7 @@ MySQL支持多种方法在单个或多个列上创建索引：在创建表的定
 
 举例：
 
-```mysql
+```sql
 CREATE TABLE dept(
 dept_id INT PRIMARY KEY AUTO_INCREMENT,
 dept_name VARCHAR(20)
@@ -96,7 +96,7 @@ CONSTRAINT emp_dept_id_fk FOREIGN KEY(dept_id) REFERENCES dept(dept_id)
 
 但是，如果显式创建表时创建索引的话，基本语法格式如下：
 
-```mysql
+```sql
 CREATE TABLE table_name [col_name data_type]
 [UNIQUE | FULLTEXT | SPATIAL] [INDEX | KEY] [index_name] (col_name [length]) [ASC |
 DESC]
@@ -113,7 +113,7 @@ DESC]
 
 在book表中的year_publication字段上建立普通索引，SQL语句如下：
 
-```mysql
+```sql
 CREATE TABLE book(
 book_id INT ,
 book_name VARCHAR(100),
@@ -127,7 +127,7 @@ INDEX(year_publication)
 
 **2. 创建唯一索引**
 
-```mysql
+```sql
 CREATE TABLE test1(
 id INT NOT NULL,
 name varchar(30) NOT NULL,
@@ -137,7 +137,7 @@ UNIQUE INDEX uk_idx_id(id)
 
 该语句执行完毕之后，使用SHOW CREATE TABLE查看表结构：
 
-```mysql
+```sql
 SHOW INDEX FROM test1 \G
 ```
 
@@ -147,7 +147,7 @@ SHOW INDEX FROM test1 \G
 
 * 随表一起建索引：
 
-```mysql
+```sql
 CREATE TABLE student (
 id INT(10) UNSIGNED AUTO_INCREMENT ,
 student_no VARCHAR(200),
@@ -158,7 +158,7 @@ PRIMARY KEY(id)
 
 * 删除主键索引：
 
-```mysql
+```sql
 ALTER TABLE student
 drop PRIMARY KEY;
 ```
@@ -169,7 +169,7 @@ drop PRIMARY KEY;
 
 引举:
 
-```mysql
+```sql
 CREATE TABLE test2(
 id INT NOT NULL,
 name CHAR(50) NULL,
@@ -179,7 +179,7 @@ INDEX single_idx_name(name(20))
 
 该语句执行完毕之后，使用SHOW CREATE TABLE查看表结构：
 
-```mysql
+```sql
 SHOW INDEX FROM test2 \G
 ```
 
@@ -187,7 +187,7 @@ SHOW INDEX FROM test2 \G
 
 举例：创建表test3，在表中的id、name和age字段上建立组合索引，SQL语句如下：
 
-```mysql
+```sql
 CREATE TABLE test3(
 id INT(11) NOT NULL,
 name CHAR(30) NOT NULL,
@@ -199,13 +199,13 @@ INDEX multi_idx(id,name,age)
 
 该语句执行完毕之后，使用SHOW INDEX 查看：
 
-```mysql
+```sql
 SHOW INDEX FROM test3 \G
 ```
 
 在test3表中，查询id和name字段，使用EXPLAIN语句查看索引的使用情况：
 
-```mysql
+```sql
 EXPLAIN SELECT * FROM test3 WHERE id=1 AND name='songhongkang' \G
 ```
 
@@ -217,7 +217,7 @@ FULLTEXT全文索引可以用于全文检索，并且只为 `CHAR` 、`VARCHAR` 
 
 举例1：创建表test4，在表中的info字段上建立全文索引，SQL语句如下：
 
-```mysql
+```sql
 CREATE TABLE test4(
 id INT NOT NULL,
 name CHAR(30) NOT NULL,
@@ -231,7 +231,7 @@ FULLTEXT INDEX futxt_idx_info(info)
 
 语句执行完毕之后，使用SHOW CREATE TABLE查看表结构：
 
-```mysql
+```sql
 SHOW INDEX FROM test4 \G
 ```
 
@@ -239,7 +239,7 @@ SHOW INDEX FROM test4 \G
 
 举例2：
 
-```mysql
+```sql
 CREATE TABLE articles (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR (200),
@@ -252,7 +252,7 @@ FULLTEXT index (title, body)
 
 举例3：
 
-```mysql
+```sql
 CREATE TABLE `papers` (
 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 `title` varchar(200) DEFAULT NULL,
@@ -264,13 +264,13 @@ FULLTEXT KEY `title` (`title`,`content`)
 
 不同于like方式的的查询：
 
-```mysql
+```sql
 SELECT * FROM papers WHERE content LIKE ‘%查询字符串%’;
 ```
 
 全文索引用match+against方式查询：
 
-```mysql
+```sql
 SELECT * FROM papers WHERE MATCH(title,content) AGAINST (‘查询字符串’);
 ```
 
@@ -288,7 +288,7 @@ SELECT * FROM papers WHERE MATCH(title,content) AGAINST (‘查询字符串’);
 
 举例：创建表test5，在空间类型为GEOMETRY的字段上创建空间索引，SQL语句如下：
 
-```mysql
+```sql
 CREATE TABLE test5(
 geo GEOMETRY NOT NULL,
 SPATIAL INDEX spa_idx_geo(geo)
@@ -297,7 +297,7 @@ SPATIAL INDEX spa_idx_geo(geo)
 
 该语句执行完毕之后，使用SHOW CREATE TABLE查看表结构：
 
-```mysql
+```sql
 SHOW INDEX FROM test5 \G
 ```
 
@@ -309,14 +309,14 @@ SHOW INDEX FROM test5 \G
 
 **1. 使用ALTER TABLE语句创建索引** ALTER TABLE语句创建索引的基本语法如下：
 
-```mysql
+```sql
 ALTER TABLE table_name ADD [UNIQUE | FULLTEXT | SPATIAL] [INDEX | KEY]
 [index_name] (col_name[length],...) [ASC | DESC]
 ```
 
 **2. 使用CREATE INDEX创建索引** CREATE INDEX语句可以在已经存在的表上添加索引，在MySQL中， CREATE INDEX被映射到一个ALTER TABLE语句上，基本语法结构为：
 
-```mysql
+```sql
 CREATE [UNIQUE | FULLTEXT | SPATIAL] INDEX index_name
 ON table_name (col_name[length],...) [ASC | DESC]
 ```
@@ -325,13 +325,13 @@ ON table_name (col_name[length],...) [ASC | DESC]
 
 **1. 使用ALTER TABLE删除索引**  ALTER TABLE删除索引的基本语法格式如下：
 
-```mysql
+```sql
 ALTER TABLE table_name DROP INDEX index_name;
 ```
 
 **2. 使用DROP INDEX语句删除索引** DROP INDEX删除索引的基本语法格式如下：
 
-```mysql
+```sql
 DROP INDEX index_name ON table_name;
 ```
 
@@ -347,7 +347,7 @@ MySQL在8.0版本之前创建的仍然是升序索引，使用时进行反向扫
 
 举例：分别在MySQL 5.7版本和MySQL 8.0版本中创建数据表ts1，结果如下：
 
-```mysql
+```sql
 CREATE TABLE ts1(a int,b int,index idx_a_b(a,b desc));
 ```
 
@@ -365,7 +365,7 @@ CREATE TABLE ts1(a int,b int,index idx_a_b(a,b desc));
 
 分别在MySQL 5.7版本和MySQL 8.0版本的数据表ts1中插入800条随机数据，执行语句如下：
 
-```mysql
+```sql
 DELIMITER //
 CREATE PROCEDURE ts_insert()
 BEGIN
@@ -385,7 +385,7 @@ CALL ts_insert();
 
 在MySQL 5.7版本中查看数据表ts1的执行计划，结果如下:
 
-```mysql
+```sql
 EXPLAIN SELECT * FROM ts1 ORDER BY a, b DESC LIMIT 5;
 ```
 
@@ -411,7 +411,7 @@ EXPLAIN SELECT * FROM ts1 ORDER BY a, b DESC LIMIT 5;
 
 在MySQL中创建隐藏索引通过SQL语句INVISIBLE来实现，其语法形式如下：
 
-```mysql
+```sql
 CREATE TABLE tablename(
 propname1 type1[CONSTRAINT1],
 propname2 type2[CONSTRAINT2],
@@ -427,7 +427,7 @@ INDEX [indexname](propname1 [(length)]) INVISIBLE
 
 可以为已经存在的表设置隐藏索引，其语法形式如下：
 
-```mysql
+```sql
 CREATE INDEX indexname
 ON tablename(propname[(length)]) INVISIBLE;
 ```
@@ -436,7 +436,7 @@ ON tablename(propname[(length)]) INVISIBLE;
 
 语法形式如下：
 
-```mysql
+```sql
 ALTER TABLE tablename
 ADD INDEX indexname (propname [(length)]) INVISIBLE;
 ```
@@ -445,7 +445,7 @@ ADD INDEX indexname (propname [(length)]) INVISIBLE;
 
 已存在的索引可通过如下语句切换可见状态：
 
-```mysql
+```sql
 ALTER TABLE tablename ALTER INDEX index_name INVISIBLE; #切换成隐藏索引
 ALTER TABLE tablename ALTER INDEX index_name VISIBLE; #切换成非隐藏索引
 ```
@@ -462,13 +462,13 @@ ALTER TABLE tablename ALTER INDEX index_name VISIBLE; #切换成非隐藏索引
 
 （1）在MySQL命令行执行如下命令查看查询优化器的开关设置。
 
-```mysql
+```sql
 mysql> select @@optimizer_switch \G
 ```
 
 在输出的结果信息中找到如下属性配置。
 
-```mysql
+```sql
 use_invisible_indexes=off
 ```
 
@@ -476,14 +476,14 @@ use_invisible_indexes=off
 
 （2）使隐藏索引对查询优化器可见，需要在MySQL命令行执行如下命令：
 
-```mysql
+```sql
 mysql> set session optimizer_switch="use_invisible_indexes=on";
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 SQL语句执行成功，再次查看查询优化器的开关设置。
 
-```mysql
+```sql
 mysql> select @@optimizer_switch \G
 *************************** 1. row ***************************
 @@optimizer_switch:
@@ -498,7 +498,7 @@ exes=on,skip_scan=on,hash_join=on
 
 此时，在输出结果中可以看到如下属性配置。
 
-```mysql
+```sql
 use_invisible_indexes=on
 ```
 
@@ -506,7 +506,7 @@ use_invisible_indexes属性的值为on，说明此时隐藏索引对查询优化
 
 （3）使用EXPLAIN查看以字段invisible_column作为查询条件时的索引使用情况。
 
-```mysql
+```sql
 explain select * from classes where cname = '高一2班';
 ```
 
@@ -514,14 +514,14 @@ explain select * from classes where cname = '高一2班';
 
 （4）如果需要使隐藏索引对查询优化器不可见，则只需要执行如下命令即可。
 
-```mysql
+```sql
 mysql> set session optimizer_switch="use_invisible_indexes=off";
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 再次查看查询优化器的开关设置。
 
-```mysql
+```sql
 mysql> select @@optimizer_switch \G
 ```
 
@@ -535,7 +535,7 @@ mysql> select @@optimizer_switch \G
 
 **第1步：创建数据库、创建表**
 
-```mysql
+```sql
 CREATE DATABASE atguigudb1;
 USE atguigudb1;
 #1.创建学生表和课程表
@@ -559,7 +559,7 @@ PRIMARY KEY (`id`)
 
 **第2步：创建模拟数据必需的存储函数**
 
-```mysql
+```sql
 #函数1：创建随机产生字符串函数
 DELIMITER //
 CREATE FUNCTION rand_string(n INT)
@@ -578,7 +578,7 @@ END //
 DELIMITER ;
 ```
 
-```mysql
+```sql
 #函数2：创建随机数函数
 DELIMITER //
 CREATE FUNCTION rand_num (from_num INT ,to_num INT) RETURNS INT(11)
@@ -592,7 +592,7 @@ DELIMITER ;
 
 创建函数，假如报错：
 
-```mysql
+```sql
 This function has none of DETERMINISTIC......
 ```
 
@@ -602,13 +602,13 @@ This function has none of DETERMINISTIC......
 
 * 查看mysql是否允许创建函数：
 
-```mysql
+```sql
 show variables like 'log_bin_trust_function_creators';
 ```
 
 * 命令开启：允许创建函数设置：
 
-```mysql
+```sql
 set global log_bin_trust_function_creators=1; # 不加global只是当前窗口有效。
 ```
 
@@ -616,19 +616,19 @@ set global log_bin_trust_function_creators=1; # 不加global只是当前窗口�
 
   * windows下：my.ini[mysqld]加上：
 
-    ```mysql
+    ```sql
     log_bin_trust_function_creators=1
     ```
 
   * linux下：/etc/my.cnf下my.cnf[mysqld]加上：
 
-    ```mysql
+    ```sql
     log_bin_trust_function_creators=1
     ```
 
 **第3步：创建插入模拟数据的存储过程**
 
-```mysql
+```sql
 # 存储过程1：创建插入课程表存储过程
 DELIMITER //
 CREATE PROCEDURE insert_course( max_num INT )
@@ -646,7 +646,7 @@ END //
 DELIMITER ;
 ```
 
-```mysql
+```sql
 # 存储过程2：创建插入学生信息表存储过程
 DELIMITER //
 CREATE PROCEDURE insert_stu( max_num INT )
@@ -666,11 +666,11 @@ DELIMITER ;
 
 **第4步：调用存储过程**
 
-```mysql
+```sql
 CALL insert_course(100);
 ```
 
-```mysql
+```sql
 CALL insert_stu(1000000);
 ```
 
@@ -702,7 +702,7 @@ CALL insert_stu(1000000);
 
 比如，我们想要查询课程表中不同的 student_id 都有哪些，如果我们没有对 student_id 创建索引，执行 SQL 语句：
 
-```mysql
+```sql
 SELECT DISTINCT(student_id) FROM `student_info`;
 ```
 
@@ -710,7 +710,7 @@ SELECT DISTINCT(student_id) FROM `student_info`;
 
 如果我们对 student_id 创建索引，再执行 SQL 语句：
 
-```mysql
+```sql
 SELECT DISTINCT(student_id) FROM `student_info`;
 ```
 
@@ -728,7 +728,7 @@ SELECT DISTINCT(student_id) FROM `student_info`;
 
 举个例子，如果我们只对 student_id 创建索引，执行 SQL 语句：
 
-```mysql
+```sql
 SELECT s.course_id, name, s.student_id, c.course_name
 FROM student_info s JOIN course c
 ON s.course_id = c.course_id
@@ -749,7 +749,7 @@ WHERE name = '462eed7ac6e791292a79';
 
 创建一张商户表，因为地址字段比较长，在地址字段上建立前缀索引
 
-```mysql
+```sql
 create table shop(address varchar(120) not null);
 alter table shop add index(address(12));
 ```
@@ -758,7 +758,7 @@ alter table shop add index(address(12));
 
 先看一下字段在全部数据中的选择度：
 
-```mysql
+```sql
 select count(distinct address) / count(*) from shop
 ```
 
@@ -766,13 +766,13 @@ select count(distinct address) / count(*) from shop
 
 公式：
 
-```mysql
+```sql
 count(distinct left(列名, 索引长度))/count(*)
 ```
 
 例如：
 
-```mysql
+```sql
 select count(distinct left(address,10)) / count(*) as sub10, -- 截取前10个字符的选择度
 count(distinct left(address,15)) / count(*) as sub11, -- 截取前15个字符的选择度
 count(distinct left(address,20)) / count(*) as sub12, -- 截取前20个字符的选择度
@@ -786,7 +786,7 @@ from shop;
 
 如果使用了索引列前缀，比方说前边只把address列的 `前12个字符` 放到了二级索引中，下边这个查询可能就有点尴尬了：
 
-```mysql
+```sql
 SELECT * FROM shop
 ORDER BY address
 LIMIT 12;
@@ -824,7 +824,7 @@ LIMIT 12;
 
 WHERE条件 (包括 GROUP BY、ORDER BY) 里用不到的字段不需要创建索引，索引的价值是快速定位，如果起不到定位的字段通常是不需要创建索引的。举个例子：
 
-```mysql
+```sql
 SELECT course_id, student_id, create_time
 FROM student_info
 WHERE student_id = 41251;
@@ -838,7 +838,7 @@ WHERE student_id = 41251;
 
 举例：创建表1：
 
-```mysql
+```sql
 CREATE TABLE t_without_index(
 a INT PRIMARY KEY AUTO_INCREMENT,
 b INT
@@ -847,7 +847,7 @@ b INT
 
 提供存储过程1：
 
-```mysql
+```sql
 #创建存储过程
 DELIMITER //
 CREATE PROCEDURE t_wout_insert()
@@ -868,7 +868,7 @@ CALL t_wout_insert()
 
 创建表2：
 
-```mysql
+```sql
 CREATE TABLE t_with_index(
 a INT PRIMARY KEY AUTO_INCREMENT,
 b INT,
@@ -878,7 +878,7 @@ INDEX idx_b(b)
 
 创建存储过程2：
 
-```mysql
+```sql
 #创建存储过程
 DELIMITER //
 CREATE PROCEDURE t_with_insert()
@@ -899,7 +899,7 @@ CALL t_with_insert();
 
 查询对比：
 
-```mysql
+```sql
 mysql> select * from t_without_index where b = 9879;
 +------+------+
 | a | b |
@@ -931,7 +931,7 @@ mysql> select * from t_with_index where b = 9879;
 
 学生表 student_gender 结构如下。其中数据表中的 student_gender 字段取值为 0 或 1，0 代表女性，1 代表男性。
 
-```mysql
+```sql
 CREATE TABLE student_gender(
     student_id INT(11) NOT NULL,
     student_name VARCHAR(50) NOT NULL,
@@ -942,7 +942,7 @@ CREATE TABLE student_gender(
 
 如果我们要筛选出这个学生表中的男性，可以使用：
 
-```mysql
+```sql
 SELECT * FROM student_gender WHERE student_gender = 1;
 ```
 
@@ -968,7 +968,7 @@ SELECT * FROM student_gender WHERE student_gender = 1;
 
 举例：建表语句如下
 
-```mysql
+```sql
 CREATE TABLE person_info(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -987,7 +987,7 @@ CREATE TABLE person_info(
 
 另一种情况，我们可能会对某个列 重复建立索引 ，比方说这样：
 
-```mysql
+```sql
 CREATE TABLE repeat_index_demo (
 col1 INT PRIMARY KEY,
 col2 INT,

@@ -64,7 +64,7 @@ breadcrumb: false
 
 - 查看某个表已有的约束
 
-```mysql
+```sql
 #information_schema数据库名（系统库）
 #table_constraints表名称（专门存储各个表的约束）
 SELECT * FROM information_schema.table_constraints 
@@ -98,7 +98,7 @@ NOT NULL
 
 （1）建表时
 
-```mysql
+```sql
 CREATE TABLE 表名称(
 	字段名  数据类型,
     字段名  数据类型 NOT NULL,  
@@ -108,7 +108,7 @@ CREATE TABLE 表名称(
 
 举例：
 
-```mysql
+```sql
 CREATE TABLE emp(
 id INT(10) NOT NULL,
 NAME VARCHAR(20) NOT NULL,
@@ -116,7 +116,7 @@ sex CHAR NULL
 );
 ```
 
-```mysql
+```sql
 CREATE TABLE student(
 	sid int,
     sname varchar(20) not null,
@@ -125,7 +125,7 @@ CREATE TABLE student(
 );
 ```
 
-```mysql
+```sql
 insert into student values(1,'张三','13710011002','110222198912032545'); #成功
 
 insert into student values(2,'李四','13710011002',null);#身份证号为空
@@ -139,24 +139,24 @@ ERROR 1048 (23000): Column 'sname' cannot be null
 
 （2）建表后
 
-```mysql
+```sql
 alter table 表名称 modify 字段名 数据类型 not null;
 ```
 
 举例：
 
-```mysql
+```sql
 ALTER TABLE emp
 MODIFY sex VARCHAR(30) NOT NULL;
 ```
 
-```mysql
+```sql
 alter table student modify sname varchar(20) not null;
 ```
 
 ### 2.5 删除非空约束
 
-```mysql
+```sql
 alter table 表名称 modify 字段名 数据类型 NULL;#去掉not null，相当于修改某个非注解字段，该字段允许为空
 
 或 
@@ -166,12 +166,12 @@ alter table 表名称 modify 字段名 数据类型;#去掉not null，相当于�
 
 举例：
 
-```mysql
+```sql
 ALTER TABLE emp
 MODIFY sex VARCHAR(30) NULL;
 ```
 
-```mysql
+```sql
 ALTER TABLE emp
 MODIFY NAME VARCHAR(15) DEFAULT 'abc' NULL;
 ```
@@ -200,7 +200,7 @@ UNIQUE
 
 （1）建表时
 
-```mysql
+```sql
 create table 表名称(
 	字段名  数据类型,
     字段名  数据类型  unique,  
@@ -217,7 +217,7 @@ create table 表名称(
 
 举例：
 
-```mysql
+```sql
 create table student(
 	sid int,
     sname varchar(20),
@@ -226,7 +226,7 @@ create table student(
 );
 ```
 
-```mysql
+```sql
 CREATE TABLE t_course(
 	cid INT UNIQUE,
 	cname VARCHAR(100) UNIQUE,
@@ -235,7 +235,7 @@ CREATE TABLE t_course(
 
 ```
 
-```mysql
+```sql
 CREATE TABLE USER(
  id INT NOT NULL,
  NAME VARCHAR(25),
@@ -247,12 +247,12 @@ CREATE TABLE USER(
 
 > 表示用户名和密码组合不能重复
 
-```mysql
+```sql
 insert into student values(1,'张三','13710011002','101223199012015623');
 insert into student values(2,'李四','13710011003','101223199012015624');
 ```
 
-```mysql
+```sql
 mysql> select * from student;
 +-----+-------+-------------+--------------------+
 | sid | sname | tel         | cardid             |
@@ -263,7 +263,7 @@ mysql> select * from student;
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into student values(3,'王五','13710011004','101223199012015624'); #身份证号重复
 ERROR 1062 (23000): Duplicate entry '101223199012015624' for key 'cardid'
 
@@ -273,37 +273,37 @@ ERROR 1062 (23000): Duplicate entry '13710011003' for key 'tel'
 
 （2）建表后指定唯一键约束
 
-```mysql
+```sql
 #字段列表中如果是一个字段，表示该列的值唯一。如果是两个或更多个字段，那么复合唯一，即多个字段的组合是唯一的
 #方式1：
 alter table 表名称 add unique key(字段列表); 
 ```
 
-```mysql
+```sql
 #方式2：
 alter table 表名称 modify 字段名 字段类型 unique;
 ```
 
 举例：
 
-```mysql
+```sql
 ALTER TABLE USER 
 ADD UNIQUE(NAME,PASSWORD);
 ```
 
-```mysql
+```sql
 ALTER TABLE USER 
 ADD CONSTRAINT uk_name_pwd UNIQUE(NAME,PASSWORD);
 ```
 
-```mysql
+```sql
 ALTER TABLE USER 
 MODIFY NAME VARCHAR(20) UNIQUE;
 ```
 
 举例：
 
-```mysql
+```sql
 create table student(
 	sid int primary key,
     sname varchar(20),
@@ -312,14 +312,14 @@ create table student(
 );
 ```
 
-```mysql
+```sql
 alter table student add unique key(tel);
 alter table student add unique key(cardid);
 ```
 
 ### 3.5 关于复合唯一约束
 
-```mysql
+```sql
 create table 表名称(
 	字段名  数据类型,
     字段名  数据类型,  
@@ -328,7 +328,7 @@ create table 表名称(
 );
 ```
 
-```mysql
+```sql
 #学生表
 create table student(
 	sid int,	#学号
@@ -353,13 +353,13 @@ create table student_course(
 );
 ```
 
-```mysql
+```sql
 insert into student values(1,'张三','13710011002','101223199012015623');#成功
 insert into student values(2,'李四','13710011003','101223199012015624');#成功
 insert into course values(1001,'Java'),(1002,'MySQL');#成功
 ```
 
-```mysql
+```sql
 mysql> select * from student;
 +-----+-------+-------------+--------------------+
 | sid | sname | tel         | cardid             |
@@ -379,7 +379,7 @@ mysql> select * from course;
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into student_course values
 (1, 1, 1001, 89),
 (2, 1, 1002, 90),
@@ -387,7 +387,7 @@ insert into student_course values
 (4, 2, 1002, 56);#成功
 ```
 
-```mysql
+```sql
 mysql> select * from student_course;
 +----+------+------+-------+
 | id | sid  | cid  | score |
@@ -400,7 +400,7 @@ mysql> select * from student_course;
 4 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into student_course values (5, 1, 1001, 88);#失败
 
 #ERROR 1062 (23000): Duplicate entry '1-1001' for key 'sid'   违反sid-cid的复合唯一
@@ -413,11 +413,11 @@ insert into student_course values (5, 1, 1001, 88);#失败
 - 删除时需要指定唯一索引名，唯一索引名就和唯一约束名一样。
 - 如果创建唯一约束时未指定名称，如果是单列，就默认和列名相同；如果是组合列，那么默认和()中排在第一个的列名相同。也可以自定义唯一性约束名。
 
-```mysql
+```sql
 SELECT * FROM information_schema.table_constraints WHERE table_name = '表名'; #查看都有哪些约束
 ```
 
-```mysql
+```sql
 ALTER TABLE USER 
 DROP INDEX uk_name_pwd;
 ```
@@ -456,7 +456,7 @@ primary key
 
 （1）建表时指定主键约束
 
-```mysql
+```sql
 create table 表名称(
 	字段名  数据类型  primary key, #列级模式
     字段名  数据类型,  
@@ -472,14 +472,14 @@ create table 表名称(
 
 举例：
 
-```mysql
+```sql
 create table temp(
 	id int primary key,
     name varchar(20)
 );
 ```
 
-```mysql
+```sql
 mysql> desc temp;
 +-------+-------------+------+-----+---------+-------+
 | Field | Type        | Null | Key | Default | Extra |
@@ -490,12 +490,12 @@ mysql> desc temp;
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into temp values(1,'张三');#成功
 insert into temp values(2,'李四');#成功
 ```
 
-```mysql
+```sql
 mysql> select * from temp;
 +----+------+
 | id | name |
@@ -506,7 +506,7 @@ mysql> select * from temp;
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into temp values(1,'张三');#失败
 ERROR 1062 (23000): Duplicate（重复） entry（键入，输入） '1' for key 'PRIMARY'
 
@@ -517,7 +517,7 @@ ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
 insert into temp values(3,'张三');#成功
 ```
 
-```mysql
+```sql
 mysql> select * from temp;
 +----+------+
 | id | name |
@@ -529,7 +529,7 @@ mysql> select * from temp;
 3 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into temp values(4,null);#成功
 
 
@@ -537,7 +537,7 @@ insert into temp values(null,'李琦');#失败
 ERROR 1048 (23000): Column 'id' cannot be null
 ```
 
-```mysql
+```sql
 mysql> select * from temp;
 +----+------+
 | id | name |
@@ -550,7 +550,7 @@ mysql> select * from temp;
 4 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 #演示一个表建立两个主键约束
 create table temp(
 	id int primary key,
@@ -563,7 +563,7 @@ ERROR 1068 (42000): Multiple（多重的） primary key defined（定义）
 
 - 列级约束
 
-```mysql
+```sql
 CREATE TABLE emp4(
 id INT PRIMARY KEY AUTO_INCREMENT ,
 NAME VARCHAR(20)
@@ -572,7 +572,7 @@ NAME VARCHAR(20)
 
 - 表级约束
 
-```mysql
+```sql
 CREATE TABLE emp5(
 id INT NOT NULL AUTO_INCREMENT,
 NAME VARCHAR(20),
@@ -583,21 +583,21 @@ CONSTRAINT emp5_id_pk PRIMARY KEY(id)
 
 （2）建表后增加主键约束
 
-```mysql
+```sql
 ALTER TABLE 表名称 ADD PRIMARY KEY(字段列表); #字段列表可以是一个字段，也可以是多个字段，如果是多个字段的话，是复合主键
 ```
 
-```mysql
+```sql
 ALTER TABLE student ADD PRIMARY KEY (sid);
 ```
 
-```mysql
+```sql
 ALTER TABLE emp5 ADD PRIMARY KEY(NAME,pwd);
 ```
 
 ### 4.5 关于复合主键
 
-```mysql
+```sql
 create table 表名称(
 	字段名  数据类型,
     字段名  数据类型,  
@@ -606,7 +606,7 @@ create table 表名称(
 );
 ```
 
-```mysql
+```sql
 #学生表
 create table student(
 	sid int primary key,  #学号
@@ -628,12 +628,12 @@ create table student_course(
 );
 ```
 
-```mysql
+```sql
 insert into student values(1,'张三'),(2,'李四');
 insert into course values(1001,'Java'),(1002,'MySQL');
 ```
 
-```mysql
+```sql
 mysql> select * from student;
 +-----+-------+
 | sid | sname |
@@ -653,11 +653,11 @@ mysql> select * from course;
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into student_course values(1, 1001, 89),(1,1002,90),(2,1001,88),(2,1002,56);
 ```
 
-```mysql
+```sql
 mysql> select * from student_course;
 +-----+------+-------+
 | sid | cid  | score |
@@ -670,12 +670,12 @@ mysql> select * from student_course;
 4 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into student_course values(1, 1001, 100);
 ERROR 1062 (23000): Duplicate entry '1-1001' for key 'PRIMARY'
 ```
 
-```mysql
+```sql
 mysql> desc student_course;
 +-------+---------+------+-----+---------+-------+
 | Field | Type    | Null | Key | Default | Extra |
@@ -689,7 +689,7 @@ mysql> desc student_course;
 
 - 再举例
 
-```mysql
+```sql
 CREATE TABLE emp6(
 id INT NOT NULL,
 NAME VARCHAR(20),
@@ -700,17 +700,17 @@ CONSTRAINT emp7_pk PRIMARY KEY(NAME,pwd)
 
 ### 4.6 删除主键约束
 
-```mysql
+```sql
 alter table 表名称 drop primary key;
 ```
 
 举例：
 
-```mysql
+```sql
 ALTER TABLE student DROP PRIMARY KEY;
 ```
 
-```mysql
+```sql
 ALTER TABLE emp5 DROP PRIMARY KEY;
 ```
 
@@ -740,7 +740,7 @@ auto_increment
 
 错误演示：
 
-```mysql
+```sql
 create table employee(
 	eid int auto_increment,
     ename varchar(20)
@@ -748,7 +748,7 @@ create table employee(
 # ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key   
 ```
 
-```mysql
+```sql
 create table employee(
 	eid int primary key,
     ename varchar(20) unique key auto_increment
@@ -760,7 +760,7 @@ create table employee(
 
 **（1）建表时**
 
-```mysql
+```sql
 create table 表名称(
 	字段名  数据类型  primary key auto_increment,
     字段名  数据类型  unique key not null,  
@@ -775,14 +775,14 @@ create table 表名称(
 );
 ```
 
-```mysql
+```sql
 create table employee(
 	eid int primary key auto_increment,
     ename varchar(20)
 );
 ```
 
-```mysql
+```sql
 mysql> desc employee;
 +-------+-------------+------+-----+---------+----------------+
 | Field | Type        | Null | Key | Default | Extra          |
@@ -795,24 +795,24 @@ mysql> desc employee;
 
 **（2）建表后**
 
-```mysql
+```sql
 alter table 表名称 modify 字段名 数据类型 auto_increment;
 ```
 
 例如：
 
-```mysql
+```sql
 create table employee(
 	eid int primary key ,
     ename varchar(20)
 );
 ```
 
-```mysql
+```sql
 alter table employee modify eid int auto_increment;
 ```
 
-```mysql
+```sql
 mysql> desc employee;
 +-------+-------------+------+-----+---------+----------------+
 | Field | Type        | Null | Key | Default | Extra          |
@@ -825,17 +825,17 @@ mysql> desc employee;
 
 ### 5.5 如何删除自增约束
 
-```mysql
+```sql
 #alter table 表名称 modify 字段名 数据类型 auto_increment;#给这个字段增加自增约束
 
 alter table 表名称 modify 字段名 数据类型; #去掉auto_increment相当于删除
 ```
 
-```mysql
+```sql
 alter table employee modify eid int;
 ```
 
-```mysql
+```sql
 mysql> desc employee;
 +-------+-------------+------+-----+---------+-------+
 | Field | Type        | Null | Key | Default | Extra |
@@ -853,7 +853,7 @@ mysql> desc employee;
 在MySQL 5.7版本中，测试步骤如下：
 创建的数据表中包含自增主键的id字段，语句如下：
 
-```mysql
+```sql
 CREATE TABLE test1(
 id INT PRIMARY KEY AUTO_INCREMENT
 );
@@ -861,14 +861,14 @@ id INT PRIMARY KEY AUTO_INCREMENT
 
 插入4个空值，执行如下：
 
-```mysql
+```sql
 INSERT INTO test1
 VALUES(0),(0),(0),(0);
 ```
 
 查询数据表test1中的数据，结果如下：
 
-```mysql
+```sql
 mysql> SELECT * FROM test1;
 +----+
 | id |
@@ -883,19 +883,19 @@ mysql> SELECT * FROM test1;
 
 删除id为4的记录，语句如下：
 
-```mysql
+```sql
 DELETE FROM test1 WHERE id = 4;
 ```
 
 再次插入一个空值，语句如下：
 
-```mysql
+```sql
 INSERT INTO test1 VALUES(0);
 ```
 
 查询此时数据表test1中的数据，结果如下：
 
-```mysql
+```sql
 mysql> SELECT * FROM test1;
 +----+
 | id |
@@ -911,19 +911,19 @@ mysql> SELECT * FROM test1;
 从结果可以看出，虽然删除了id为4的记录，但是再次插入空值时，并没有重用被删除的4，而是分配了5。
 删除id为5的记录，结果如下：
 
-```mysql
+```sql
 DELETE FROM test1 where id=5;
 ```
 
 **重启数据库**，重新插入一个空值。
 
-```mysql
+```sql
 INSERT INTO test1 values(0);
 ```
 
 再次查询数据表test1中的数据，结果如下：
 
-```mysql
+```sql
 mysql> SELECT * FROM test1;
 +----+
 | id |
@@ -941,7 +941,7 @@ mysql> SELECT * FROM test1;
 
 在MySQL 8.0版本中，上述测试步骤最后一步的结果如下：
 
-```mysql
+```sql
 mysql> SELECT * FROM test1;
 +----+
 | id |
@@ -1010,7 +1010,7 @@ FOREIGN KEY
 
 （1）建表时
 
-```mysql
+```sql
 create table 主表名称(
 	字段1  数据类型  primary key,
     字段2  数据类型
@@ -1028,7 +1028,7 @@ create table 从表名称(
 -- REFERENCES: 标示在父表中的列
 ```
 
-```mysql
+```sql
 create table dept( #主表
 	did int primary key,		#部门编号
     dname varchar(50)			#部门名称
@@ -1053,20 +1053,20 @@ create table emp(#从表
 
 格式：
 
-```mysql
+```sql
 ALTER TABLE 从表名 ADD [CONSTRAINT 约束名] FOREIGN KEY (从表的字段) REFERENCES 主表名(被引用字段) [on update xx][on delete xx];
 ```
 
 举例：
 
-```mysql
+```sql
 ALTER TABLE emp1
 ADD [CONSTRAINT emp_dept_id_fk] FOREIGN KEY(dept_id) REFERENCES dept(dept_id);
 ```
 
 举例：
 
-```mysql
+```sql
 create table dept(
 	did int primary key,		#部门编号
     dname varchar(50)			#部门名称
@@ -1080,7 +1080,7 @@ create table emp(
 #这两个表创建时，没有指定外键的话，那么创建顺序是随意
 ```
 
-```mysql
+```sql
 alter table emp add foreign key (deptid) references dept(did);
 ```
 
@@ -1088,7 +1088,7 @@ alter table emp add foreign key (deptid) references dept(did);
 
 （1）失败：不是键列
 
-```mysql
+```sql
 create table dept(
 	did int ,		#部门编号
     dname varchar(50)			#部门名称
@@ -1105,7 +1105,7 @@ create table emp(
 
 （2）失败：数据类型不一致
 
-```mysql
+```sql
 create table dept(
 	did int primary key,		#部门编号
     dname varchar(50)			#部门名称
@@ -1122,7 +1122,7 @@ create table emp(
 
 （3）成功，两个表字段名一样
 
-```mysql
+```sql
 create table dept(
 	did int primary key,		#部门编号
     dname varchar(50)			#部门名称
@@ -1140,7 +1140,7 @@ create table emp(
 
 （4）添加、删除、修改问题
 
-```mysql
+```sql
 create table dept(
 	did int primary key,		#部门编号
     dname varchar(50)			#部门名称
@@ -1155,7 +1155,7 @@ create table emp(
 );
 ```
 
-```mysql
+```sql
 insert into dept values(1001,'教学部');
 insert into dept values(1003, '财务部');
 
@@ -1165,7 +1165,7 @@ insert into emp values(2,'李四',1005);#添加从表记录失败
 ERROR 1452 (23000): Cannot add（添加） or update（修改） a child row: a foreign key constraint fails (`atguigudb`.`emp`, CONSTRAINT `emp_ibfk_1` FOREIGN KEY (`deptid`) REFERENCES `dept` (`did`)) 从表emp添加记录失败，因为主表dept没有1005部门
 ```
 
-```mysql
+```sql
 mysql> select * from dept;
 +------+--------+
 | did  | dname  |
@@ -1184,7 +1184,7 @@ mysql> select * from emp;
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 update emp set deptid = 1002 where eid = 1;#修改从表失败 
 ERROR 1452 (23000): Cannot add（添加） or update（修改） a child row（子表的记录）: a foreign key constraint fails（外键约束失败） (`atguigudb`.`emp`, CONSTRAINT `emp_ibfk_1` FOREIGN KEY (`deptid`) REFERENCES `dept` (`did`))  #部门表did字段现在没有1002的值，所以员工表中不能修改员工所在部门deptid为1002
 
@@ -1194,7 +1194,7 @@ ERROR 1451 (23000): Cannot delete（删除） or update（修改） a parent row
 update dept set did = 1002 where did = 1003;#修改主表成功  因为部门表的1003部门没有被emp表引用，所以可以修改
 ```
 
-```mysql
+```sql
 delete from dept where did=1001; #删除主表失败
 ERROR 1451 (23000): Cannot delete（删除） or update（修改） a parent row（父表记录）: a foreign key constraint fails (`atguigudb`.`emp`, CONSTRAINT `emp_ibfk_1` FOREIGN KEY (`deptid`) REFERENCES `dept` (`did`))  #因为部门表did的1001字段已经被emp引用了，所以部门表的1001字段对应的记录就不能被删除
 ```
@@ -1225,7 +1225,7 @@ ERROR 1451 (23000): Cannot delete（删除） or update（修改） a parent row
 
 （1）演示1：on update cascade on delete set null
 
-```mysql
+```sql
 create table dept(
 	did int primary key,		#部门编号
     dname varchar(50)			#部门名称
@@ -1240,7 +1240,7 @@ create table emp(
 );
 ```
 
-```mysql
+```sql
 insert into dept values(1001,'教学部');
 insert into dept values(1002, '财务部');
 insert into dept values(1003, '咨询部');
@@ -1252,14 +1252,14 @@ insert into emp values(3,'王五',1002);
 
 ```
 
-```mysql
+```sql
 mysql> select * from dept;
 
 mysql> select * from emp;
 
 ```
 
-```mysql
+```sql
 #修改主表成功，从表也跟着修改，修改了主表被引用的字段1002为1004，从表的引用字段就跟着修改为1004了
 mysql> update dept set did = 1004 where did = 1002;
 Query OK, 1 row affected (0.00 sec)
@@ -1286,7 +1286,7 @@ mysql> select * from emp;
 3 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 #删除主表的记录成功，从表对应的字段的值被修改为null
 mysql> delete from dept where did = 1001;
 Query OK, 1 row affected (0.01 sec)
@@ -1313,7 +1313,7 @@ mysql> select * from emp;
 
 （2）演示2：on update set null on delete cascade
 
-```mysql
+```sql
 create table dept(
 	did int primary key,		#部门编号
     dname varchar(50)			#部门名称
@@ -1328,7 +1328,7 @@ create table emp(
 );
 ```
 
-```mysql
+```sql
 insert into dept values(1001,'教学部');
 insert into dept values(1002, '财务部');
 insert into dept values(1003, '咨询部');
@@ -1338,7 +1338,7 @@ insert into emp values(2,'李四',1001);
 insert into emp values(3,'王五',1002);
 ```
 
-```mysql
+```sql
 mysql> select * from dept;
 +------+--------+
 | did  | dname  |
@@ -1360,7 +1360,7 @@ mysql> select * from emp;
 3 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 #修改主表，从表对应的字段设置为null
 mysql> update dept set did = 1004 where did = 1002;
 Query OK, 1 row affected (0.00 sec)
@@ -1387,7 +1387,7 @@ mysql> select * from emp;
 3 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 #删除主表的记录成功，主表的1001行被删除了，从表相应的记录也被删除了
 mysql> delete from dept where did=1001;
 Query OK, 1 row affected (0.00 sec)
@@ -1413,7 +1413,7 @@ mysql> select * from emp;
 
 （3）演示：on update cascade on delete cascade
 
-```mysql
+```sql
 create table dept(
 	did int primary key,		#部门编号
     dname varchar(50)			#部门名称
@@ -1428,7 +1428,7 @@ create table emp(
 );
 ```
 
-```mysql
+```sql
 insert into dept values(1001,'教学部');
 insert into dept values(1002, '财务部');
 insert into dept values(1003, '咨询部');
@@ -1438,7 +1438,7 @@ insert into emp values(2,'李四',1001);
 insert into emp values(3,'王五',1002);
 ```
 
-```mysql
+```sql
 mysql> select * from dept;
 +------+--------+
 | did  | dname  |
@@ -1460,7 +1460,7 @@ mysql> select * from emp;
 3 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 #修改主表，从表对应的字段自动修改
 mysql> update dept set did = 1004 where did = 1002;
 Query OK, 1 row affected (0.00 sec)
@@ -1487,7 +1487,7 @@ mysql> select * from emp;
 3 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 #删除主表的记录成功，主表的1001行被删除了，从表相应的记录也被删除了
 mysql> delete from dept where did=1001;
 Query OK, 1 row affected (0.00 sec)
@@ -1516,7 +1516,7 @@ mysql> select * from emp;
 
 流程如下：
 
-```mysql
+```sql
 (1)第一步先查看约束名和删除外键约束
 SELECT * FROM information_schema.table_constraints WHERE table_name = '表名称';#查看某个表的约束名
 
@@ -1531,7 +1531,7 @@ ALTER TABLE 从表名 DROP INDEX 索引名;
 
 举例：
 
-```mysql
+```sql
 mysql> SELECT * FROM information_schema.table_constraints WHERE table_name = 'emp';
 
 mysql> alter table emp drop foreign key emp_ibfk_1;
@@ -1540,7 +1540,7 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 ```
 
-```mysql
+```sql
 mysql> show index from emp;
 
 mysql> alter table emp drop index deptid;
@@ -1590,7 +1590,7 @@ MySQL5.7 可以使用check约束，但check约束对数据验证没有任何作�
 
 但是**MySQL 8.0中可以使用check约束了**。
 
-```mysql
+```sql
 create table employee(
 	eid int primary key,
     ename varchar(5),
@@ -1598,11 +1598,11 @@ create table employee(
 );
 ```
 
-```mysql
+```sql
 insert into employee values(1,'张三','妖');
 ```
 
-```mysql
+```sql
 mysql> select * from employee;
 +-----+-------+--------+
 | eid | ename | gender |
@@ -1614,7 +1614,7 @@ mysql> select * from employee;
 
 - 再举例
 
-```mysql
+```sql
 CREATE TABLE temp(
 id INT AUTO_INCREMENT,
 NAME VARCHAR(20),
@@ -1625,13 +1625,13 @@ PRIMARY KEY(id)
 
 - 再举例
 
-```mysql
+```sql
 age tinyint check(age >20) 或 sex char(2) check(sex in(‘男’,’女’))
 ```
 
 - 再举例
 
-```mysql
+```sql
 CHECK(height>=0 AND height<3)
 ```
 
@@ -1649,7 +1649,7 @@ DEFAULT
 
 （1）建表时
 
-```mysql
+```sql
 create table 表名称(
 	字段名  数据类型  primary key,
     字段名  数据类型  unique key not null,  
@@ -1667,7 +1667,7 @@ create table 表名称(
 说明：默认值约束一般不在唯一键和主键列上加
 ```
 
-```mysql
+```sql
 create table employee(
 	eid int primary key,
     ename varchar(20) not null,
@@ -1676,7 +1676,7 @@ create table employee(
 );
 ```
 
-```mysql
+```sql
 mysql> desc employee;
 +--------+-------------+------+-----+---------+-------+
 | Field  | Type        | Null | Key | Default | Extra |
@@ -1689,11 +1689,11 @@ mysql> desc employee;
 4 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into employee values(1,'汪飞','男','13700102535'); #成功
 ```
 
-```mysql
+```sql
 mysql> select * from employee;
 +-----+-------+--------+-------------+
 | eid | ename | gender | tel         |
@@ -1703,11 +1703,11 @@ mysql> select * from employee;
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into employee(eid,ename) values(2,'天琪'); #成功
 ```
 
-```mysql
+```sql
 mysql> select * from employee;
 +-----+-------+--------+-------------+
 | eid | ename | gender | tel         |
@@ -1718,7 +1718,7 @@ mysql> select * from employee;
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 insert into employee(eid,ename) values(3,'二虎');
 #ERROR 1062 (23000): Duplicate entry '' for key 'tel'  
 #如果tel有唯一性约束的话会报错，如果tel没有唯一性约束，可以添加成功
@@ -1726,7 +1726,7 @@ insert into employee(eid,ename) values(3,'二虎');
 
 再举例：
 
-```mysql
+```sql
 CREATE TABLE myemp(
 id INT AUTO_INCREMENT PRIMARY KEY,
 NAME VARCHAR(15),
@@ -1736,7 +1736,7 @@ salary DOUBLE(10,2) DEFAULT 2000
 
 （2）建表后
 
-```mysql
+```sql
 alter table 表名称 modify 字段名 数据类型 default 默认值;
 
 #如果这个字段原来有非空约束，你还保留非空约束，那么在加默认值约束时，还得保留非空约束，否则非空约束就被删除了
@@ -1744,7 +1744,7 @@ alter table 表名称 modify 字段名 数据类型 default 默认值;
 alter table 表名称 modify 字段名 数据类型 default 默认值 not null;
 ```
 
-```mysql
+```sql
 create table employee(
 	eid int primary key,
     ename varchar(20),
@@ -1753,7 +1753,7 @@ create table employee(
 );
 ```
 
-```mysql
+```sql
 mysql> desc employee;
 +--------+-------------+------+-----+---------+-------+
 | Field  | Type        | Null | Key | Default | Extra |
@@ -1766,12 +1766,12 @@ mysql> desc employee;
 4 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 alter table employee modify gender char default '男';  #给gender字段增加默认值约束
 alter table employee modify tel char(11) default ''; #给tel字段增加默认值约束
 ```
 
-```mysql
+```sql
 mysql> desc employee;
 +--------+-------------+------+-----+---------+-------+
 | Field  | Type        | Null | Key | Default | Extra |
@@ -1784,11 +1784,11 @@ mysql> desc employee;
 4 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 alter table employee modify tel char(11) default ''  not null;#给tel字段增加默认值约束，并保留非空约束
 ```
 
-```mysql
+```sql
 mysql> desc employee;
 +--------+-------------+------+-----+---------+-------+
 | Field  | Type        | Null | Key | Default | Extra |
@@ -1803,18 +1803,18 @@ mysql> desc employee;
 
 ### 8.4 如何删除默认值约束
 
-```mysql
+```sql
 alter table 表名称 modify 字段名 数据类型 ;#删除默认值约束，也不保留非空约束
 
 alter table 表名称 modify 字段名 数据类型  not null; #删除默认值约束，保留非空约束
 ```
 
-```mysql
+```sql
 alter table employee modify gender char; #删除gender字段默认值约束，如果有非空约束，也一并删除
 alter table employee modify tel char(11)  not null;#删除tel字段默认值约束，保留非空约束
 ```
 
-```mysql
+```sql
 mysql> desc employee;
 +--------+-------------+------+-----+---------+-------+
 | Field  | Type        | Null | Key | Default | Extra |

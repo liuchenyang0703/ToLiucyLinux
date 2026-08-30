@@ -59,7 +59,7 @@ MySQL从5.0版本开始支持存储过程和函数。存储过程和函数能够
 
 语法：
 
-```mysql
+```sql
 CREATE PROCEDURE 存储过程名(IN|OUT|INOUT 参数名 参数类型,...)
 [characteristics ...]
 BEGIN
@@ -70,7 +70,7 @@ END
 
 类似于Java中的方法：
 
-```mysql
+```sql
 修饰符 返回类型 方法名(参数类型 参数名,...){
 
 	方法体;
@@ -95,7 +95,7 @@ END
 
 3、`characteristics` 表示创建存储过程时指定的对存储过程的约束条件，其取值信息如下：
 
-```mysql
+```sql
 LANGUAGE SQL
 | [NOT] DETERMINISTIC
 | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
@@ -121,7 +121,7 @@ LANGUAGE SQL
 
 编写存储过程并不是一件简单的事情，可能存储过程中需要复杂的 SQL 语句。
 
-```mysql
+```sql
 1. BEGIN…END：BEGIN…END 中间包含了多个语句，每个语句都以（;）号为结束符。
 2. DECLARE：DECLARE 用来声明变量，使用的位置在于 BEGIN…END 语句中间，而且需要在其他语句使用之前进行变量的声明。
 3. SET：赋值语句，用于对变量进行赋值。
@@ -130,7 +130,7 @@ LANGUAGE SQL
 
 5、需要设置新的结束标记
 
-```mysql
+```sql
 DELIMITER 新的结束标记
 ```
 
@@ -142,7 +142,7 @@ DELIMITER 新的结束标记
 
 示例：
 
-```mysql
+```sql
 DELIMITER $
 
 CREATE PROCEDURE 存储过程名(IN|OUT|INOUT 参数名  参数类型,...)
@@ -158,7 +158,7 @@ END $
 
 举例1：创建存储过程select_all_data()，查看 emps 表的所有数据
 
-```mysql
+```sql
 DELIMITER $
 
 CREATE PROCEDURE select_all_data()
@@ -172,7 +172,7 @@ DELIMITER ;
 
 举例2：创建存储过程avg_employee_salary()，返回所有员工的平均工资
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE avg_employee_salary ()
@@ -185,7 +185,7 @@ DELIMITER ;
 
 举例3：创建存储过程show_max_salary()，用来查看“emps”表的最高薪资值。
 
-```mysql
+```sql
 CREATE PROCEDURE show_max_salary()
 	LANGUAGE SQL
 	NOT DETERMINISTIC
@@ -201,7 +201,7 @@ DELIMITER ;
 
 举例4：创建存储过程show_min_salary()，查看“emps”表的最低薪资值。并将最低薪资通过OUT参数“ms”输出
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE show_min_salary(OUT ms DOUBLE)
@@ -214,7 +214,7 @@ DELIMITER ;
 
 举例5：创建存储过程show_someone_salary()，查看“emps”表的某个员工的薪资，并用IN参数empname输入员工姓名。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE show_someone_salary(IN empname VARCHAR(20))
@@ -227,7 +227,7 @@ DELIMITER ;
 
 举例6：创建存储过程show_someone_salary2()，查看“emps”表的某个员工的薪资，并用IN参数empname输入员工姓名，用OUT参数empsalary输出员工薪资。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE show_someone_salary2(IN empname VARCHAR(20),OUT empsalary DOUBLE)
@@ -240,7 +240,7 @@ DELIMITER ;
 
 举例7：创建存储过程show_mgr_name()，查询某个员工领导的姓名，并用INOUT参数“empname”输入员工姓名，输出领导的姓名。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE show_mgr_name(INOUT empname VARCHAR(20))
@@ -258,7 +258,7 @@ DELIMITER ;
 
 存储过程有多种调用方法。存储过程必须使用CALL语句调用，并且存储过程和数据库相关，如果要执行其他数据库中的存储过程，需要指定数据库名称，例如CALL dbname.procname。
 
-```mysql
+```sql
 CALL 存储过程名(实参列表)
 ```
 
@@ -266,13 +266,13 @@ CALL 存储过程名(实参列表)
 
 1、调用in模式的参数：
 
-```mysql
+```sql
 CALL sp1('值');
 ```
 
 2、调用out模式的参数：
 
-```mysql
+```sql
 SET @name;
 CALL sp1(@name);
 SELECT @name;
@@ -280,7 +280,7 @@ SELECT @name;
 
 3、调用inout模式的参数：
 
-```mysql
+```sql
 SET @name=值;
 CALL sp1(@name);
 SELECT @name;
@@ -290,7 +290,7 @@ SELECT @name;
 
 **举例1：**
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE CountProc(IN sid INT,OUT num INT)
@@ -304,14 +304,14 @@ DELIMITER ;
 
 调用存储过程：
 
-```mysql
+```sql
 mysql> CALL CountProc (101, @num);
 Query OK, 1 row affected (0.00 sec)
 ```
 
 查看返回结果：
 
-```mysql
+```sql
 mysql> SELECT @num;
 ```
 
@@ -319,7 +319,7 @@ mysql> SELECT @num;
 
 **举例2：**创建存储过程，实现累加运算，计算 1+2+…+n 等于多少。具体的代码如下：
 
-```mysql
+```sql
 DELIMITER //
 CREATE PROCEDURE `add_num`(IN n INT)
 BEGIN
@@ -355,7 +355,7 @@ DELIMITER ;
 
 语法格式：
 
-```mysql
+```sql
 CREATE FUNCTION 函数名(参数名 参数类型,...) 
 RETURNS 返回值类型
 [characteristics ...]
@@ -381,7 +381,7 @@ RETURNS子句只能对FUNCTION做指定，对函数而言这是`强制`的。它
 
 在MySQL中，存储函数的使用方法与MySQL内部函数的使用方法是一样的。换言之，用户自己定义的存储函数与MySQL内部函数是一个性质的。区别在于，存储函数是`用户自己定义`的，而内部函数是MySQL的`开发者定义`的。
 
-```mysql
+```sql
 SELECT 函数名(实参列表)
 ```
 
@@ -391,7 +391,7 @@ SELECT 函数名(实参列表)
 
 创建存储函数，名称为email_by_name()，参数定义为空，该函数查询Abel的email，并返回，数据类型为字符串型。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE FUNCTION email_by_name()
@@ -407,7 +407,7 @@ DELIMITER ;
 
 调用：
 
-```mysql
+```sql
 SELECT email_by_name();
 ```
 
@@ -415,7 +415,7 @@ SELECT email_by_name();
 
 创建存储函数，名称为email_by_id()，参数传入emp_id，该函数查询emp_id的email，并返回，数据类型为字符串型。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE FUNCTION email_by_id(emp_id INT)
@@ -431,7 +431,7 @@ DELIMITER ;
 
 调用：
 
-```mysql
+```sql
 SET @emp_id = 102;
 SELECT email_by_id(102);
 ```
@@ -440,7 +440,7 @@ SELECT email_by_id(102);
 
 创建存储函数count_by_id()，参数传入dept_id，该函数查询dept_id部门的员工人数，并返回，数据类型为整型。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE FUNCTION count_by_id(dept_id INT)
@@ -460,7 +460,7 @@ DELIMITER ;
 
 调用：
 
-```mysql
+```sql
 SET @dept_id = 50;
 SELECT count_by_id(@dept_id);
 ```
@@ -475,7 +475,7 @@ SELECT count_by_id(@dept_id);
 - 方式2：
 
 
-```mysql
+```sql
 mysql> SET GLOBAL log_bin_trust_function_creators = 1;
 ```
 
@@ -500,13 +500,13 @@ MySQL存储了存储过程和函数的状态信息，用户可以使用SHOW STAT
 
 基本语法结构如下：
 
-```mysql
+```sql
 SHOW CREATE {PROCEDURE | FUNCTION} 存储过程名或函数名
 ```
 
 举例：
 
-```mysql
+```sql
 SHOW CREATE FUNCTION test_db.CountProc \G
 ```
 
@@ -514,7 +514,7 @@ SHOW CREATE FUNCTION test_db.CountProc \G
 
 基本语法结构如下：
 
-```mysql
+```sql
 SHOW {PROCEDURE | FUNCTION} STATUS [LIKE 'pattern']
 ```
 
@@ -523,7 +523,7 @@ SHOW {PROCEDURE | FUNCTION} STATUS [LIKE 'pattern']
 [LIKE 'pattern']：匹配存储过程或函数的名称，可以省略。当省略不写时，会列出MySQL数据库中存在的所有存储过程或函数的信息。
 举例：SHOW STATUS语句示例，代码如下：
 
-```mysql
+```sql
 mysql> SHOW PROCEDURE STATUS LIKE 'SELECT%' \G 
 *************************** 1. row ***************************
                   Db: test_db
@@ -544,7 +544,7 @@ collation_connection: utf8mb4_general_ci
 
 MySQL中存储过程和函数的信息存储在information_schema数据库下的Routines表中。可以通过查询该表的记录来查询存储过程和函数的信息。其基本语法形式如下：
 
-```mysql
+```sql
 SELECT * FROM information_schema.Routines
 WHERE ROUTINE_NAME='存储过程或函数的名' [AND ROUTINE_TYPE = {'PROCEDURE|FUNCTION'}];
 ```
@@ -553,7 +553,7 @@ WHERE ROUTINE_NAME='存储过程或函数的名' [AND ROUTINE_TYPE = {'PROCEDURE
 
 举例：从Routines表中查询名称为CountProc的存储函数的信息，代码如下：
 
-```mysql
+```sql
 SELECT * FROM information_schema.Routines
 WHERE ROUTINE_NAME='count_by_id'　AND　ROUTINE_TYPE = 'FUNCTION' \G
 ```
@@ -562,13 +562,13 @@ WHERE ROUTINE_NAME='count_by_id'　AND　ROUTINE_TYPE = 'FUNCTION' \G
 
 修改存储过程或函数，不影响存储过程或函数功能，只是修改相关特性。使用ALTER语句实现。
 
-```mysql
+```sql
 ALTER {PROCEDURE | FUNCTION} 存储过程或函数的名 [characteristic ...]
 ```
 
 其中，characteristic指定存储过程或函数的特性，其取值信息与创建存储过程、函数时的取值信息略有不同。
 
-```mysql
+```sql
 { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
 | SQL SECURITY { DEFINER | INVOKER }
 | COMMENT 'string'
@@ -591,7 +591,7 @@ ALTER {PROCEDURE | FUNCTION} 存储过程或函数的名 [characteristic ...]
 
 修改存储过程CountProc的定义。将读写权限改为MODIFIES SQL DATA，并指明调用者可以执行，代码如下：
 
-```mysql
+```sql
 ALTER　PROCEDURE　CountProc
 MODIFIES SQL DATA
 SQL SECURITY INVOKER ;
@@ -599,7 +599,7 @@ SQL SECURITY INVOKER ;
 
 查询修改后的信息：
 
-```mysql
+```sql
 SELECT specific_name,sql_data_access,security_type
 FROM information_schema.`ROUTINES`
 WHERE routine_name = 'CountProc' AND routine_type = 'PROCEDURE';
@@ -611,7 +611,7 @@ WHERE routine_name = 'CountProc' AND routine_type = 'PROCEDURE';
 
 修改存储函数CountProc的定义。将读写权限改为READS SQL DATA，并加上注释信息“FIND NAME”，代码如下：
 
-```mysql
+```sql
 ALTER　FUNCTION　CountProc
 READS SQL DATA
 COMMENT 'FIND NAME' ;
@@ -623,7 +623,7 @@ COMMENT 'FIND NAME' ;
 
 删除存储过程和函数，可以使用DROP语句，其语法结构如下：
 
-```mysql
+```sql
 DROP {PROCEDURE | FUNCTION} [IF EXISTS] 存储过程或函数的名
 ```
 
@@ -631,11 +631,11 @@ IF EXISTS：如果程序或函数不存储，它可以防止发生错误，产�
 
 举例：
 
-```mysql
+```sql
 DROP PROCEDURE CountProc;
 ```
 
-```mysql
+```sql
 DROP FUNCTION CountProc;
 ```
 

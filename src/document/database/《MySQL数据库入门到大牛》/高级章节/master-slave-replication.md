@@ -115,14 +115,14 @@ breadcrumb: false
 
 此外，克隆的方式生成的虚拟机（包含MySQL Server），则克隆的虚拟机MySQL Server的UUID相同，必须修改，否则在有些场景会报错。比如： `show slave status\G` ，报如下的错误：
 
-```mysql
+```sql
 Last_IO_Error: Fatal error: The slave I/O thread stops because master and slave have
 equal MySQL server UUIDs; these UUIDs must be different for replication to work.
 ```
 
 修改MySQL Server 的UUID方式：
 
-```mysql
+```sql
 vim /var/lib/mysql/auto.cnf
 
 systemctl restart mysqld
@@ -238,14 +238,14 @@ MySQL会根据执行的每一条具体的sql语句来区分对待记录的日志
 
 * 必选
 
-  ```mysql
+  ```sql
   #[必须]从服务器唯一ID
   server-id=2
   ```
 
 * 可选
 
-  ```mysql
+  ```sql
   #[可选]启用中继日志
   relay-log=mysql-relay
   ```
@@ -258,14 +258,14 @@ MySQL会根据执行的每一条具体的sql语句来区分对待记录的日志
 
 ### 3.4 主机：建立账户并授权
 
-```mysql
+```sql
 #在主机MySQL里执行授权主从复制的命令
 GRANT REPLICATION SLAVE ON *.* TO 'slave1'@'从机器数据库IP' IDENTIFIED BY 'abc123'; #5.5,5.7
 ```
 
 **注意：如果使用的是MySQL8，需要如下的方式建立账户，并授权slave:**
 
-```mysql
+```sql
 CREATE USER 'slave1'@'%' IDENTIFIED BY '123456';
 
 GRANT REPLICATION SLAVE ON *.* TO 'slave1'@'%';
@@ -284,7 +284,7 @@ flush privileges;
 
 查询Master的状态，并记录下File和Position的值。
 
-```mysql
+```sql
 show master status;
 ```
 
@@ -300,7 +300,7 @@ show master status;
 
 **步骤1** 从机上复制主机的命令
 
-```mysql
+```sql
 CHANGE MASTER TO
 MASTER_HOST='主机的IP地址',
 MASTER_USER='主机用户名',
@@ -311,7 +311,7 @@ MASTER_LOG_POS=具体值;
 
 举例：
 
-```mysql
+```sql
 CHANGE MASTER TO
 MASTER_HOST='192.168.1.150',MASTER_USER='slave1',MASTER_PASSWORD='123456',MASTER_LOG_F
 ILE='atguigu-bin.000007',MASTER_LOG_POS=154;
@@ -321,7 +321,7 @@ ILE='atguigu-bin.000007',MASTER_LOG_POS=154;
 
 **步骤2：**
 
-```mysql
+```sql
 #启动slave同步
 START SLAVE;
 ```
@@ -334,13 +334,13 @@ START SLAVE;
 
 可以执行如下操作，删除之前的relay_log信息。然后重新执行 CHANGE MASTER TO ...语句即可。
 
-```mysql
+```sql
 mysql> reset slave; #删除SLAVE数据库的relaylog日志文件，并重新启用新的relaylog文件
 ```
 
 接着，查看同步状态：
 
-```mysql
+```sql
 SHOW SLAVE STATUS\G;
 ```
 
@@ -365,7 +365,7 @@ SHOW SLAVE STATUS\G;
 
 主机新建库、新建表、insert记录，从机复制：
 
-```mysql
+```sql
 CREATE DATABASE atguigu_master_slave;
 
 CREATE TABLE mytbl(id INT,NAME VARCHAR(16));
@@ -379,7 +379,7 @@ INSERT INTO mytbl VALUES(2,@@hostname);
 
 * 停止主从同步命令：
 
-  ```mysql
+  ```sql
   stop slave;
   ```
 
@@ -391,7 +391,7 @@ INSERT INTO mytbl VALUES(2,@@hostname);
 
 重新配置主从，需要在从机上执行：
 
-```mysql
+```sql
 stop slave;
 
 reset master; #删除Master中所有的binglog文件，并将日志索引文件清空，重新开始所有新的日志文件(慎用)

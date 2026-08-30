@@ -84,7 +84,7 @@ SQL语言在功能上主要分为如下3大类：
 
 可以使用如下格式的注释结构
 
-```mysql
+```sql
 单行注释：#注释文字(MySQL特有的方式)
 单行注释：-- 注释文字(--后面必须包含一个空格。)
 多行注释：/* 注释文字  */
@@ -101,7 +101,7 @@ SQL语言在功能上主要分为如下3大类：
 
 举例：
 
-```mysql
+```sql
 #以下两句是一样的，不区分大小写
 show databases;
 SHOW DATABASES;
@@ -127,11 +127,11 @@ select id as 编 号, `name` as 姓 名 from t_stu; #错误，如果字段别名
 
 在命令行客户端登录mysql，使用source指令导入
 
-```mysql
+```sql
 mysql> source d:\mysqldb.sql
 ```
 
-```mysql
+```sql
 mysql> desc employees;
 +----------------+-------------+------+-----+---------+-------+
 | Field          | Type        | Null | Key | Default | Extra |
@@ -155,7 +155,7 @@ mysql> desc employees;
 
 ### 3.0 SELECT...
 
-```mysql
+```sql
 SELECT 1; #没有任何子句
 SELECT 9/2; #没有任何子句
 ```
@@ -207,7 +207,7 @@ FROM   departments;
 
 - 举例
 
-  ```mysql
+  ```sql
   SELECT last_name AS name, commission_pct comm
   FROM   employees;
   ```
@@ -218,7 +218,7 @@ FROM   departments;
 
 
 
-  ```mysql
+  ```sql
   SELECT last_name "Name", salary*12 "Annual Salary"
   FROM   employees;
   ```
@@ -253,7 +253,7 @@ FROM   employees;
 
 针对于：
 
-```mysql
+```sql
 SELECT DISTINCT department_id,salary 
 FROM employees;
 ```
@@ -279,14 +279,14 @@ FROM employees;
 
 - 错误的
 
-```mysql
+```sql
 mysql> SELECT * FROM ORDER;
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER' at line 1
 ```
 
 - 正确的
 
-```mysql
+```sql
 mysql> SELECT * FROM `ORDER`;
 +----------+------------+
 | order_id | order_name |
@@ -322,7 +322,7 @@ SQL 中的 SELECT 语法的确提供了这个功能，一般来说我们只从�
 
 比如说，我们想对 employees 数据表中的员工姓名进行查询，同时增加一列字段`corporation`，这个字段固定值为“尚硅谷”，可以这样写：
 
-```mysql
+```sql
 SELECT '尚硅谷' as corporation, last_name FROM employees;
 ```
 
@@ -332,13 +332,13 @@ SELECT '尚硅谷' as corporation, last_name FROM employees;
 
 使用DESCRIBE 或 DESC 命令，表示表结构。
 
-```mysql
+```sql
 DESCRIBE employees;
 或
 DESC employees;
 ```
 
-```mysql
+```sql
 mysql> desc employees;
 +----------------+-------------+------+-----+---------+-------+
 | Field          | Type        | Null | Key | Default | Extra |
@@ -377,7 +377,7 @@ mysql> desc employees;
 
 - 语法：
 
-  ```mysql
+  ```sql
   SELECT 字段1,字段2
   FROM 表名
   WHERE 过滤条件

@@ -262,7 +262,7 @@ metric_relabel_configs:
   - 应用 SDK 需注入 Trace ID（如 OpenTelemetry）
   - Histogram 指标支持添加 Exemplar
 
-```promql
+```text
 # 查看带有 exemplar 的 histogram
 histogram_quantile(0.99, rate(http_request_duration_seconds_bucket[5m]))
 ```

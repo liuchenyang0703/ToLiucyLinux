@@ -6,7 +6,7 @@ title: 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚 的技术博客
 heroImage: picture.jpg
 heroText: 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚 的技术博客
 heroFullScreen: true
-bgImage: https://api.mmp.cc/api/pcwallpaper?category=4k&type=jpg
+bgImage: https://imgapi.xl0408.top/index.php
 tagline: 技术文通俗易懂，吹水文风趣幽默。
 projects:
   - icon: columns

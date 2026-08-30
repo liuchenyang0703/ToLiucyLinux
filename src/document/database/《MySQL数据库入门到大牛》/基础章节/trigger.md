@@ -37,7 +37,7 @@ MySQL从`5.0.2`版本开始支持触发器。MySQL的触发器和存储过程一
 
 创建触发器的语法结构是：
 
-```mysql
+```sql
 CREATE TRIGGER 触发器名称 
 {BEFORE|AFTER} {INSERT|UPDATE|DELETE} ON 表名 
 FOR EACH ROW 
@@ -63,7 +63,7 @@ FOR EACH ROW
 
 1、创建数据表：
 
-```mysql
+```sql
 CREATE TABLE test_trigger (
 id INT PRIMARY KEY AUTO_INCREMENT,
 t_note VARCHAR(30)
@@ -78,7 +78,7 @@ t_log VARCHAR(30)
 
 2、创建触发器：创建名称为before_insert的触发器，向test_trigger数据表插入数据之前，向test_trigger_log数据表中插入before_insert的日志信息。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE TRIGGER before_insert
@@ -95,13 +95,13 @@ DELIMITER ;
 
 3、向test_trigger数据表中插入数据
 
-```mysql
+```sql
 INSERT INTO test_trigger (t_note) VALUES ('测试 BEFORE INSERT 触发器');
 ```
 
 4、查看test_trigger_log数据表中的数据
 
-```mysql
+```sql
 mysql> SELECT * FROM test_trigger_log;
 +----+---------------+
 | id | t_log         |
@@ -115,7 +115,7 @@ mysql> SELECT * FROM test_trigger_log;
 
 1、创建名称为after_insert的触发器，向test_trigger数据表插入数据之后，向test_trigger_log数据表中插入after_insert的日志信息。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE TRIGGER after_insert
@@ -131,13 +131,13 @@ DELIMITER ;
 
 2、向test_trigger数据表中插入数据。
 
-```mysql
+```sql
 INSERT INTO test_trigger (t_note) VALUES ('测试 AFTER INSERT 触发器');
 ```
 
 3、查看test_trigger_log数据表中的数据
 
-```mysql
+```sql
 mysql> SELECT * FROM test_trigger_log;
 +----+---------------+
 | id | t_log         |
@@ -151,7 +151,7 @@ mysql> SELECT * FROM test_trigger_log;
 
 **举例3：**定义触发器“salary_check_trigger”，基于员工表“employees”的INSERT事件，在INSERT之前检查将要添加的新员工薪资是否大于他领导的薪资，如果大于领导薪资，则报sqlstate_value为'HY000'的错误，从而使得添加失败。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE TRIGGER salary_check_trigger
@@ -178,19 +178,19 @@ DELIMITER ;
 
 方式1：查看当前数据库的所有触发器的定义
 
-```mysql
+```sql
 SHOW TRIGGERS\G
 ```
 
 方式2：查看当前数据库中某个触发器的定义
 
-```mysql
+```sql
 SHOW CREATE TRIGGER 触发器名
 ```
 
 方式3：从系统库information_schema的TRIGGERS表中查询“salary_check_trigger”触发器的信息。
 
-```mysql
+```sql
 SELECT * FROM information_schema.TRIGGERS;
 ```
 
@@ -198,7 +198,7 @@ SELECT * FROM information_schema.TRIGGERS;
 
 触发器也是数据库对象，删除触发器也用DROP语句，语法格式如下：
 
-```mysql
+```sql
 DROP TRIGGER  IF EXISTS 触发器名称;
 ```
 
@@ -244,7 +244,7 @@ DROP TRIGGER  IF EXISTS 触发器名称;
 
 比如，创建触发器用于修改会员储值操作。如果触发器中的操作出了问题，会导致会员储值金额更新失败。我用下面的代码演示一下：
 
-```mysql
+```sql
 mysql> update demo.membermaster set memberdeposit=20 where memberid = 2;
 ERROR 1054 (42S22): Unknown column 'aa' in 'field list'
 ```

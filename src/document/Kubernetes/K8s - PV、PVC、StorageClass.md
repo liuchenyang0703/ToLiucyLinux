@@ -12,7 +12,7 @@ tag:
   - yaml
   - 运维
 pageview: false
-date: 2026-8-24
+date: 2026-08-24
 comment: false
 breadcrumb: false
 ---

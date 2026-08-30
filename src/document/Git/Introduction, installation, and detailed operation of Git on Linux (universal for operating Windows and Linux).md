@@ -1,4 +1,4 @@
-﻿---
+---
 title: Linux上 Git 的简介、安装及操作详解（操作windows、linux通用）
 icon: circle-info
 order: 1
@@ -594,7 +594,7 @@ mvtest2  README.md  test
 ### 6.3 查看 Git 提交日志（记录）
 
 常用命令：
-```base
+```bash
 git log		#查看提交历史记录
 git log -2 	#查看最近几条记录
 git log -p -1		#-p 显示每次提交的内容差异,例如仅查看最近一次差异

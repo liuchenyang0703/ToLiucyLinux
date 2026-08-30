@@ -43,7 +43,7 @@ mysqldump命令执行时，可以将数据库备份成一个`文本文件`，该
 
 **基本语法：**
 
-```mysql
+```sql
 mysqldump –u 用户名称 –h 主机名称 –p密码 待备份的数据库名称[tbname, [tbname...]]> 备份文件名称.sql
 ```
 
@@ -51,17 +51,17 @@ mysqldump –u 用户名称 –h 主机名称 –p密码 待备份的数据库�
 
 举例：使用root用户备份atguigu数据库：
 
-```mysql
+```sql
 mysqldump -uroot -p atguigu>atguigu.sql #备份文件存储在当前目录下
 ```
 
-```mysql
+```sql
 mysqldump -uroot -p atguigudb1 > /var/lib/mysql/atguigu.sql
 ```
 
 备份文件剖析：
 
-```mysql
+```sql
 -- MySQL dump 10.13 Distrib 8.0.26, for Linux (x86_64)
 --
 -- Host: localhost Database: atguigu
@@ -124,7 +124,7 @@ UNLOCK TABLES;
 
 若想用mysqldump备份整个实例，可以使用 --all-databases 或 -A 参数：
 
-```mysql
+```sql
 mysqldump -uroot -pxxxxxx --all-databases > all_database.sql
 mysqldump -uroot -pxxxxxx -A > all_database.sql
 ```
@@ -133,19 +133,19 @@ mysqldump -uroot -pxxxxxx -A > all_database.sql
 
 使用 `--databases` 或 `-B` 参数了，该参数后面跟数据库名称，多个数据库间用空格隔开。如果指定 databases参数，备份文件中会存在创建数据库的语句，如果不指定参数，则不存在。语法如下：
 
-```mysql
+```sql
 mysqldump –u user –h host –p --databases [数据库的名称1 [数据库的名称2...]] > 备份文件名称.sql
 ```
 
 举例：
 
-```mysql
+```sql
 mysqldump -uroot -p --databases atguigu atguigu12 >two_database.sql
 ```
 
 或
 
-```mysql
+```sql
 mysqldump -uroot -p -B atguigu atguigu12 > two_database.sql
 ```
 
@@ -153,19 +153,19 @@ mysqldump -uroot -p -B atguigu atguigu12 > two_database.sql
 
 比如，在表变更前做个备份。语法如下：
 
-```mysql
+```sql
 mysqldump –u user –h host –p 数据库的名称 [表名1 [表名2...]] > 备份文件名称.sql
 ```
 
 举例：备份atguigu数据库下的book表
 
-```mysql
+```sql
 mysqldump -uroot -p atguigu book> book.sql
 ```
 
 book.sql文件内容如下
 
-```mysql
+```sql
 mysqldump -uroot -p atguigu book> book.sql^C
 [root@node1 ~]# ls
 kk kubekey kubekey-v1.1.1-linux-amd64.tar.gz README.md test1.sql two_database.sql
@@ -239,7 +239,7 @@ UNLOCK TABLES;
 
 备份多张表使用下面的命令，比如备份book和account表：
 
-```mysql
+```sql
 #备份多张表
 mysqldump -uroot -p atguigu book account > 2_tables_bak.sql
 ```
@@ -250,13 +250,13 @@ mysqldump -uroot -p atguigu book account > 2_tables_bak.sql
 
 举例：备份student表中id小于10的数据：
 
-```mysql
+```sql
 mysqldump -uroot -p atguigu student --where="id < 10 " > student_part_id10_low_bak.sql
 ```
 
 内容如下所示，insert语句只有id小于10的部分
 
-```mysql
+```sql
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
 INSERT INTO `student` VALUES (1,100002,'JugxTY',157,280),(2,100003,'QyUcCJ',251,277),
@@ -269,13 +269,13 @@ INSERT INTO `student` VALUES (1,100002,'JugxTY',157,280),(2,100003,'QyUcCJ',251,
 
 如果我们想备份某个库，但是某些表数据量很大或者与业务关联不大，这个时候可以考虑排除掉这些表，同样的，选项 `--ignore-table` 可以完成这个功能。
 
-```mysql
+```sql
 mysqldump -uroot -p atguigu --ignore-table=atguigu.student > no_stu_bak.sql
 ```
 
 通过如下指定判定文件中没有student表结构：
 
-```mysql
+```sql
 grep "student" no_stu_bak.sql
 ```
 
@@ -285,7 +285,7 @@ grep "student" no_stu_bak.sql
 
 * 只备份结构
 
-  ```mysql
+  ```sql
   mysqldump -uroot -p atguigu --no-data > atguigu_no_data_bak.sql
   #使用grep命令，没有找到insert相关语句，表示没有数据备份。
   [root@node1 ~]# grep "INSERT" atguigu_no_data_bak.sql
@@ -294,7 +294,7 @@ grep "student" no_stu_bak.sql
 
 * 只备份数据
 
-  ```mysql
+  ```sql
   mysqldump -uroot -p atguigu --no-create-info > atguigu_no_create_info_bak.sql
   #使用grep命令，没有找到create相关语句，表示没有数据结构。
   [root@node1 ~]# grep "CREATE" atguigu_no_create_info_bak.sql
@@ -309,7 +309,7 @@ mysqldump备份默认是不包含存储过程，自定义函数及事件的。�
 
 * 使用下面的SQL可以查看当前库有哪些存储过程或者函数
 
-```mysql
+```sql
 mysql> SELECT SPECIFIC_NAME,ROUTINE_TYPE ,ROUTINE_SCHEMA FROM
 information_schema.Routines WHERE ROUTINE_SCHEMA="atguigu";
 +---------------+--------------+----------------+
@@ -329,13 +329,13 @@ information_schema.Routines WHERE ROUTINE_SCHEMA="atguigu";
 
 下面备份atguigu库的数据，函数以及存储过程。
 
-```mysql
+```sql
 mysqldump -uroot -p -R -E --databases atguigu > fun_atguigu_bak.sql
 ```
 
 查询备份文件中是否存在函数，如下所示，可以看到确实包含了函数。
 
-```mysql
+```sql
 grep -C 5 "rand_num" fun_atguigu_bak.sql
 --
 --
@@ -417,7 +417,7 @@ DELIMITER ;
 
 mysqldump其他常用选项如下：
 
-```mysql
+```sql
 --add-drop-database：在每个CREATE DATABASE语句前添加DROP DATABASE语句。
 
 --add-drop-tables：在每个CREATE TABLE语句前添加DROP TABLE语句。
@@ -491,7 +491,7 @@ mysql命令可以执行备份文件中的`CREATE语句`和`INSERT语句`。通�
 
 基本语法：
 
-```mysql
+```sql
 mysql –u root –p [dbname] < backup.sql
 ```
 
@@ -503,13 +503,13 @@ mysql –u root –p [dbname] < backup.sql
 
 如果备份文件中包含了创建数据库的语句，则恢复的时候不需要指定数据库名称，如下所示
 
-```mysql
+```sql
 mysql -uroot -p < atguigu.sql
 ```
 
 否则需要指定数据库名称，如下所示
 
-```mysql
+```sql
 mysql -uroot -p atguigu4< atguigu.sql
 ```
 
@@ -517,11 +517,11 @@ mysql -uroot -p atguigu4< atguigu.sql
 
 如果我们现在有昨天的全量备份，现在想整个恢复，则可以这样操作：
 
-```mysql
+```sql
 mysql –u root –p < all.sql
 ```
 
-```mysql
+```sql
 mysql -uroot -pxxxxxx < all.sql
 ```
 
@@ -533,7 +533,7 @@ mysql -uroot -pxxxxxx < all.sql
 
 举例：
 
-```mysql
+```sql
 sed -n '/^-- Current Database: `atguigu`/,/^-- Current Database: `/p' all_database.sql > atguigu.sql
 #分离完成后我们再导入atguigu.sql即可恢复单个库
 ```
@@ -544,7 +544,7 @@ sed -n '/^-- Current Database: `atguigu`/,/^-- Current Database: `/p' all_databa
 
 举例：我们有atguigu整库的备份，但是由于class表误操作，需要单独恢复出这张表。
 
-```mysql
+```sql
 cat atguigu.sql | sed -e '/./{H;$!d;}' -e 'x;/CREATE TABLE `class`/!d;q' > class_structure.sql
 cat atguigu.sql | grep --ignore-case 'insert into `class`' > class_data.sql
 #用shell语法分离出创建表的语句及插入数据的语句后 再依次导出即可完成恢复
@@ -596,7 +596,7 @@ Query OK, 1 row affected (0.01 sec)
   * 因为InnoDB表的表空间不能直接复制。
 * 在Linux操作系统下，复制到数据库目录后，一定要将数据库的用户和组变成mysql，命令如下：
 
-```mysql
+```sql
 chown -R mysql.mysql /var/lib/mysql/dbname
 ```
 
@@ -616,7 +616,7 @@ chown -R mysql.mysql /var/lib/mysql/dbname
 
 （1）选择数据库atguigu，并查询account表，执行结果如下所示。
 
-```mysql
+```sql
 use atguigu;
 select * from account;
 mysql> select * from account;
@@ -634,7 +634,7 @@ mysql> select * from account;
 
 查询secure_file_priv值：
 
-```mysql
+```sql
 mysql> SHOW GLOBAL VARIABLES LIKE '%secure%';
 +--------------------------+-----------------------+
 | Variable_name            | Value                 |
@@ -649,13 +649,13 @@ mysql> SHOW GLOBAL VARIABLES LIKE '%secure%';
 
 （3）上面结果中显示，secure_file_priv变量的值为/var/lib/mysql-files/，导出目录设置为该目录，SQL语句如下。
 
-```mysql
+```sql
 SELECT * FROM account INTO OUTFILE "/var/lib/mysql-files/account.txt";
 ```
 
 （4）查看 /var/lib/mysql-files/account.txt`文件。
 
-```mysql
+```sql
 1 张三 90
 2 李四 100
 3 王五 0
@@ -665,7 +665,7 @@ SELECT * FROM account INTO OUTFILE "/var/lib/mysql-files/account.txt";
 
 **举例1：** 使用mysqldump命令将将atguigu数据库中account表中的记录导出到文本文件：
 
-```mysql
+```sql
 mysqldump -uroot -p -T "/var/lib/mysql-files/" atguigu account
 ```
 
@@ -673,7 +673,7 @@ mysqldump命令执行完毕后，在指定的目录/var/lib/mysql-files/下生�
 
 打开account.sql文件，其内容包含创建account表的CREATE语句。
 
-```mysql
+```sql
 [root@node1 mysql-files]# cat account.sql
 -- MySQL dump 10.13 Distrib 8.0.26, for Linux (x86_64)
 --
@@ -717,7 +717,7 @@ PRIMARY KEY (`id`)
 
 打开account.txt文件，其内容只包含account表中的数据。
 
-```mysql
+```sql
 [root@node1 mysql-files]# cat account.txt
 1 张三 90
 2 李四 100
@@ -726,7 +726,7 @@ PRIMARY KEY (`id`)
 
 **举例2：** 使用mysqldump将atguigu数据库中的account表导出到文本文件，使用FIELDS选项，要求字段之 间使用逗号“，”间隔，所有字符类型字段值用双引号括起来：
 
-```mysql
+```sql
 mysqldump -uroot -p -T "/var/lib/mysql-files/" atguigu account --fields-terminatedby=',' --fields-optionally-enclosed-by='\"'
 ```
 
@@ -734,7 +734,7 @@ mysqldump -uroot -p -T "/var/lib/mysql-files/" atguigu account --fields-terminat
 
 打开account.sql文件，其内容包含创建account表的CREATE语句。
 
-```mysql
+```sql
 [root@node1 mysql-files]# cat account.sql
 -- MySQL dump 10.13 Distrib 8.0.26, for Linux (x86_64)
 --
@@ -773,7 +773,7 @@ PRIMARY KEY (`id`)
 
 打开account.txt文件，其内容包含创建account表的数据。从文件中可以看出，字段之间用逗号隔开，字 符类型的值被双引号括起来。
 
-```mysql
+```sql
 [root@node1 mysql-files]# cat account.txt
 1,"张三",90
 2,"李四",100
@@ -784,13 +784,13 @@ PRIMARY KEY (`id`)
 
 **举例1：** 使用mysql语句导出atguigu数据中account表中的记录到文本文件：
 
-```mysql
+```sql
 mysql -uroot -p --execute="SELECT * FROM account;" atguigu> "/var/lib/mysql-files/account.txt"
 ```
 
 打开account.txt文件，其内容包含创建account表的数据。
 
-```mysql
+```sql
 [root@node1 mysql-files]# cat account.txt
 id name balance
 1 张三 90
@@ -800,13 +800,13 @@ id name balance
 
 **举例2：**将atguigu数据库account表中的记录导出到文本文件，使用--veritcal参数将该条件记录分为多行显示：
 
-```mysql
+```sql
 mysql -uroot -p --vertical --execute="SELECT * FROM account;" atguigu > "/var/lib/mysql-files/account_1.txt"
 ```
 
 打开account_1.txt文件，其内容包含创建account表的数据。
 
-```mysql
+```sql
 [root@node1 mysql-files]# cat account_1.txt
 *************************** 1. row ***************************
 id: 1
@@ -824,11 +824,11 @@ balance: 0
 
 **举例3：** 将atguigu数据库account表中的记录导出到xml文件，使用--xml参数，具体语句如下。
 
-```mysql
+```sql
 mysql -uroot -p --xml --execute="SELECT * FROM account;" atguigu>"/var/lib/mysqlfiles/account_3.xml"
 ```
 
-```mysql
+```sql
 [root@node1 mysql-files]# cat account_3.xml
 <?xml version="1.0"?>
 <resultset statement="SELECT * FROM account"
@@ -861,25 +861,25 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 使用SELECT...INTO OUTFILE将atguigu数据库中account表的记录导出到文本文件
 
-```mysql
+```sql
 SELECT * FROM atguigu.account INTO OUTFILE '/var/lib/mysql-files/account_0.txt';
 ```
 
 删除account表中的数据：
 
-```mysql
+```sql
 DELETE FROM atguigu.account;
 ```
 
 从文本文件account.txt中恢复数据：
 
-```mysql
+```sql
 LOAD DATA INFILE '/var/lib/mysql-files/account_0.txt' INTO TABLE atguigu.account;
 ```
 
 查询account表中的数据：
 
-```mysql
+```sql
 mysql> select * from account;
 +----+--------+---------+
 | id | name   | balance |
@@ -893,25 +893,25 @@ mysql> select * from account;
 
 **举例2：** 选择数据库atguigu，使用SELECT…INTO OUTFILE将atguigu数据库account表中的记录导出到文本文件，使用FIELDS选项和LINES选项，要求字段之间使用逗号"，"间隔，所有字段值用双引号括起来：
 
-```mysql
+```sql
 SELECT * FROM atguigu.account INTO OUTFILE '/var/lib/mysql-files/account_1.txt' FIELDS TERMINATED BY ',' ENCLOSED BY '\"';
 ```
 
 删除account表中的数据：
 
-```mysql
+```sql
 DELETE FROM atguigu.account;
 ```
 
 从/var/lib/mysql-files/account.txt中导入数据到account表中：
 
-```mysql
+```sql
 LOAD DATA INFILE '/var/lib/mysql-files/account_1.txt' INTO TABLE atguigu.account FIELDS TERMINATED BY ',' ENCLOSED BY '\"';
 ```
 
 查询account表中的数据，具体SQL如下：
 
-```mysql
+```sql
 select * from account;
 mysql> select * from account;
 +----+--------+---------+
@@ -930,25 +930,25 @@ mysql> select * from account;
 
 导出文件account.txt，字段之间使用逗号"，"间隔，字段值用双引号括起来：
 
-```mysql
+```sql
 SELECT * FROM atguigu.account INTO OUTFILE '/var/lib/mysql-files/account.txt' FIELDS TERMINATED BY ',' ENCLOSED BY '\"';
 ```
 
 删除account表中的数据：
 
-```mysql
+```sql
 DELETE FROM atguigu.account;
 ```
 
 使用mysqlimport命令将account.txt文件内容导入到数据库atguigu的account表中：
 
-```mysql
+```sql
 mysqlimport -uroot -p atguigu '/var/lib/mysql-files/account.txt' --fields-terminated-by=',' --fields-optionally-enclosed-by='\"'
 ```
 
 查询account表中的数据：
 
-```mysql
+```sql
 select * from account;
 mysql> select * from account;
 +----+--------+---------+
@@ -997,7 +997,7 @@ mysql> select * from account;
 
 举例：
 
-```mysql
+```sql
 #host1的机器中备份所有数据库,并将数据库迁移到名为host2的机器上
 mysqldump –h host1 –uroot –p –-all-databases|
 mysql –h host2 –uroot –p

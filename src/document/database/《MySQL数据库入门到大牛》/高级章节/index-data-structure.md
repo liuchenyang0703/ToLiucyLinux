@@ -76,7 +76,7 @@ MySQL官方对索引的定义为：索引（Index）是帮助MySQL高效获取�
 
 先来看一个精确匹配的例子：
 
-```mysql
+```sql
 SELECT [列名列表] FROM 表名 WHERE 列名 = xxx;
 ```
 
@@ -105,7 +105,7 @@ SELECT [列名列表] FROM 表名 WHERE 列名 = xxx;
 
 建一个表：
 
-```mysql
+```sql
 mysql> CREATE TABLE index_demo(
 -> c1 INT,
 -> c2 INT,
@@ -141,7 +141,7 @@ mysql> CREATE TABLE index_demo(
 
   假设：每个数据结构最多能存放3条记录（实际上一个数据页非常大，可以存放下好多记录）。
 
-  ```mysql
+  ```sql
   INSERT INTO index_demo VALUES(1, 4, 'u'), (3, 9, 'd'), (5, 3, 'y');
   ```
 
@@ -151,7 +151,7 @@ mysql> CREATE TABLE index_demo(
 
 ​      从图中可以看出来， index_demo 表中的3条记录都被插入到了编号为10的数据页中了。此时我们再来插入一条记录
 
-```mysql
+```sql
 INSERT INTO index_demo VALUES(4, 4, 'a');
 ```
 
@@ -473,7 +473,7 @@ MyISAM引擎使用 B+Tree 作为索引结构，叶子节点的data域存放的�
 
 实验：体会数组和hash表的查找方面的效率区别
 
-```mysql
+```sql
 // 算法复杂度为 O(n)
 @Test
 public void test1(){
@@ -495,7 +495,7 @@ public void test1(){
 }
 ```
 
-```mysql
+```sql
 // 算法复杂度为 O(1)
 @Test
 public void test2(){
@@ -533,7 +533,7 @@ public void test2(){
 
 我们可以通过 innodb_adaptive_hash_index 变量来查看是否开启了自适应 Hash，比如：
 
-```mysql
+```sql
 mysql> show variables like '%adaptive_hash_index';
 ```
 

@@ -164,7 +164,7 @@ breadcrumb: false
 
 步骤1：创建表并添加数据
 
-```mysql
+```sql
 CREATE TABLE mylock(
 id INT NOT NULL PRIMARY KEY auto_increment,
 NAME VARCHAR(20)
@@ -184,7 +184,7 @@ SELECT * FROM mylock;
 
 步骤二：查看表上加过的锁
 
-```mysql
+```sql
 SHOW OPEN TABLES; # 主要关注In_use字段的值
 或者
 SHOW OPEN TABLES where In_use > 0;
@@ -200,7 +200,7 @@ SHOW OPEN TABLES where In_use > 0;
 
 步骤3：手动增加表锁命令
 
-```mysql
+```sql
 LOCK TABLES t READ; # 存储引擎会对表t加表级别的共享锁。共享锁也叫读锁或S锁（Share的缩写）
 LOCK TABLES t WRITE; # 存储引擎会对表t加表级别的排他锁。排他锁也叫独占锁、写锁或X锁（exclusive的缩写）
 ```
@@ -211,7 +211,7 @@ LOCK TABLES t WRITE; # 存储引擎会对表t加表级别的排他锁。排他�
 
 步骤4：释放表锁
 
-```mysql
+```sql
 UNLOCK TABLES; # 使用此命令解锁当前加锁的表
 ```
 
@@ -259,14 +259,14 @@ InnoDB 支持 `多粒度锁（multiple granularity locking）` ，它允许 `行
 
 * **意向共享锁**（intention shared lock, IS）：事务有意向对表中的某些行加**共享锁**（S锁）
 
-  ```mysql
+  ```sql
   -- 事务要获取某些行的 S 锁，必须先获得表的 IS 锁。
   SELECT column FROM table ... LOCK IN SHARE MODE;
   ```
 
 * **意向排他锁**（intention exclusive lock, IX）：事务有意向对表中的某些行加**排他锁**（X锁）
 
-  ```mysql
+  ```sql
   -- 事务要获取某些行的 X 锁，必须先获得表的 IX 锁。
   SELECT column FROM table ... FOR UPDATE;
   ```
@@ -281,7 +281,7 @@ InnoDB 支持 `多粒度锁（multiple granularity locking）` ，它允许 `行
 
 **举例：**创建表teacher,插入6条数据，事务的隔离级别默认为`Repeatable-Read`，如下所示。
 
-```mysql
+```sql
 CREATE TABLE `teacher` (
 	`id` int NOT NULL,
     `name` varchar(255) NOT NULL,
@@ -297,7 +297,7 @@ INSERT INTO `teacher` VALUES
 ('6', 'leifengyang');
 ```
 
-```mysql
+```sql
 mysql> SELECT @@transaction_isolation;
 +-------------------------+
 | @@transaction_isolation |
@@ -308,7 +308,7 @@ mysql> SELECT @@transaction_isolation;
 
 假设事务A获取了某一行的排他锁，并未提交，语句如下所示:
 
-```mysql
+```sql
 BEGIN;
 
 SELECT * FROM teacher WHERE id = 6 FOR UPDATE;
@@ -316,7 +316,7 @@ SELECT * FROM teacher WHERE id = 6 FOR UPDATE;
 
 事务B想要获取teacher表的表读锁，语句如下：
 
-```mysql
+```sql
 BEGIN;
 
 LOCK TABLES teacher READ;
@@ -324,7 +324,7 @@ LOCK TABLES teacher READ;
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220712124209006.png" alt="image-20220712124209006"  />
 
-```mysql
+```sql
 BEGIN;
 
 SELECT * FROM teacher WHERE id = 6 FOR UPDATE;
@@ -334,7 +334,7 @@ SELECT * FROM teacher WHERE id = 6 FOR UPDATE;
 
 
 
-```mysql
+```sql
 BEGIN;
 
 LOCK TABLES teacher READ;
@@ -350,7 +350,7 @@ LOCK TABLES teacher READ;
 
 事务A先获得了某一行的排他锁，并未提交：
 
-```mysql
+```sql
 BEGIN;
 
 SELECT * FROM teacher WHERE id = 6 FOR UPDATE;
@@ -358,7 +358,7 @@ SELECT * FROM teacher WHERE id = 6 FOR UPDATE;
 
 事务A获取了teacher表上的意向排他锁。事务A获取了id为6的数据行上的排他锁。之后事务B想要获取teacher表上的共享锁。
 
-```mysql
+```sql
 BEGIN;
 
 LOCK TABLES teacher READ;
@@ -366,7 +366,7 @@ LOCK TABLES teacher READ;
 
 事务B检测到事务A持有teacher表的意向排他锁。事务B对teacher表的加锁请求被阻塞（排斥）。最后事务C也想获取teacher表中某一行的排他锁。
 
-````mysql
+````sql
 BEGIN;
 
 SELECT * FROM teacher WHERE id = 5 FOR UPDATE;
@@ -385,7 +385,7 @@ SELECT * FROM teacher WHERE id = 5 FOR UPDATE;
 
 在使用MySQL过程中，我们可以为表的某个列添加 `AUTO_INCREMENT` 属性。举例：
 
-```mysql
+```sql
 CREATE TABLE `teacher` (
 `id` int NOT NULL AUTO_INCREMENT,
 `name` varchar(255) NOT NULL,
@@ -395,13 +395,13 @@ PRIMARY KEY (`id`)
 
 由于这个表的id字段声明了AUTO_INCREMENT，意味着在书写插入语句时不需要为其赋值，SQL语句修改 如下所示。
 
-```mysql
+```sql
 INSERT INTO `teacher` (name) VALUES ('zhangsan'), ('lisi');
 ```
 
 上边的插入语句并没有为id列显式赋值，所以系统会自动为它赋上递增的值，结果如下所示。
 
-```mysql
+```sql
 mysql> select * from teacher;
 +----+----------+
 | id | name     |
@@ -462,7 +462,7 @@ MySQL5.5引入了meta data lock，简称MDL锁，属于表锁范畴。MDL 的作
 
 **会话A：**从表中查询数据
 
-```mysql
+```sql
 mysql> BEGIN;
 Query OK, 0 rows affected (0.00 sec)
 mysql> SELECT COUNT(1) FROM teacher;
@@ -476,7 +476,7 @@ mysql> SELECT COUNT(1) FROM teacher;
 
 **会话B：**修改表结构，增加新列
 
-```mysql
+```sql
 mysql> BEGIN;
 Query OK, 0 rows affected (0.00 sec)
 mysql> alter table teacher add age int not null;
@@ -484,7 +484,7 @@ mysql> alter table teacher add age int not null;
 
 **会话C：**查看当前MySQL的进程
 
-```mysql
+```sql
 mysql> show processlist;
 ```
 
@@ -506,7 +506,7 @@ InnoDB与MyISAM的最大不同有两点：一是支持事务（TRANSACTION）；
 
 首先我们创建表如下：
 
-```mysql
+```sql
 CREATE TABLE student (
 	id INT,
     name VARCHAR(20),
@@ -517,7 +517,7 @@ CREATE TABLE student (
 
 向这个表里插入几条记录：
 
-```mysql
+```sql
 INSERT INTO student VALUES
 (1, '张三', '一班'),
 (3, '李四', '一班'),
@@ -579,7 +579,7 @@ student表中的聚簇索引的简图如下所示。
 
 ![image-20220713174108634](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220713174108634.png)
 
-```mysql
+```sql
 mysql> select * from student where id > 20 lock in share mode;
 Empty set (0.01 sec)
 ```
@@ -602,7 +602,7 @@ Empty set (0.01 sec)
 
 `next-key锁`的本质就是一个`记录锁`和一个`gap锁`的合体，它既能保护该条记录，又能阻止别的事务将新记录插入被保护记录前边的`间隙`。
 
-```mysql
+```sql
 begin;
 select * from student where id <=8 and id > 3 for update;
 ```
@@ -681,7 +681,7 @@ select * from student where id <=8 and id > 3 for update;
 
 **session 1:**
 
-```mysql
+```sql
 mysql> begin;
 Query OK, 0 rows affected (0.00 sec)
 mysql> insert INTO student VALUES(34,"周八","二班");
@@ -690,7 +690,7 @@ Query OK, 1 row affected (0.00 sec)
 
 **session 2:**
 
-```mysql
+```sql
 mysql> begin;
 Query OK, 0 rows affected (0.00 sec)
 mysql> select * from student lock in share mode; #执行完，当前事务被阻塞
@@ -698,7 +698,7 @@ mysql> select * from student lock in share mode; #执行完，当前事务被阻
 
 执行下述语句，输出结果：
 
-```mysql
+```sql
 mysql> SELECT * FROM performance_schema.data_lock_waits\G;
 *************************** 1. row ***************************
 						ENGINE: INNODB
@@ -733,13 +733,13 @@ E. 写数据，并将自己的trx_id写入trx_id字段。
 
 显示加共享锁：
 
-```mysql
+```sql
 select .... lock in share mode
 ```
 
 显示加排它锁：
 
-```mysql
+```sql
 select .... for update
 ```
 
@@ -749,7 +749,7 @@ select .... for update
 
 全局锁的命令：
 
-```mysql
+```sql
 Flush tables with read lock
 ```
 
@@ -819,7 +819,7 @@ Flush tables with read lock
 
 我们前边说对一条记录加锁的本质就是在内存中创建一个`锁结构`与之关联，那么是不是一个事务对多条记录加锁，就要创建多个`锁结构`呢？比如：
 
-```mysql
+```sql
 # 事务T1
 SELECT * FROM user LOCK IN SHARE MODE;
 ```
@@ -903,7 +903,7 @@ SELECT * FROM user LOCK IN SHARE MODE;
 
 关于MySQL锁的监控，我们一般可以通过检查 InnoDB_row_lock 等状态变量来分析系统上的行锁的争夺情况
 
-```mysql
+```sql
 mysql> show status like 'innodb_row_lock%';
 +-------------------------------+-------+
 | Variable_name                 | Value |
@@ -945,7 +945,7 @@ MySQL8.0删除了information_schema.INNODB_LOCKS，添加了 `performance_schema
 
 （1）查询正在被锁阻塞的sql语句。
 
-```mysql
+```sql
 SELECT * FROM information_schema.INNODB_TRX\G;
 ```
 
@@ -953,7 +953,7 @@ SELECT * FROM information_schema.INNODB_TRX\G;
 
 （2）查询锁等待情况
 
-```mysql
+```sql
 SELECT * FROM data_lock_waits\G;
 *************************** 1. row ***************************
 							ENGINE: INNODB
@@ -972,7 +972,7 @@ BLOCKING_OBJECT_INSTANCE_BEGIN: 139747028813248
 
 （3）查询锁的情况
 
-```mysql
+```sql
 mysql > SELECT * from performance_schema.data_locks\G;
 *************************** 1. row ***************************
 ENGINE: INNODB
@@ -1064,7 +1064,7 @@ next-key lock的加锁规则
 
 我们以表test作为例子，建表语句和初始化语句如下：其中id为主键索引
 
-```mysql
+```sql
 CREATE TABLE `test` (
 `id` int(11) NOT NULL,
 `col1` int(11) DEFAULT NULL,
@@ -1105,7 +1105,7 @@ insert into test values(0,0,0),(5,5,5),
 
 上面两个例子是等值查询的，这个例子是关于范围查询的，也就是说下面的语句
 
-```mysql
+```sql
 select * from test where id=10 for update
 select * from tets where id>=10 and id<11 for update;
 ```
@@ -1185,7 +1185,7 @@ session A 的 delete 语句加了 limit 2 。你知道表 t 里 c=10 的记录�
 
 如下面一条语句
 
-```mysql
+```sql
 begin;
 select * from test where id>9 and id<12 order by id desc for update;
 ```

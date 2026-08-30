@@ -36,14 +36,14 @@ breadcrumb: false
 
 `学员表` 插 `50万` 条，` 班级表` 插 `1万` 条。
 
-```mysql
+```sql
 CREATE DATABASE atguigudb2;
 USE atguigudb2;
 ```
 
 **步骤1：建表**
 
-```mysql
+```sql
 CREATE TABLE `class` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `className` VARCHAR(30) DEFAULT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE `student` (
 
 * 命令开启：允许创建函数设置：
 
-```mysql
+```sql
 set global log_bin_trust_function_creators=1; # 不加global只是当前窗口有效。
 ```
 
@@ -75,7 +75,7 @@ set global log_bin_trust_function_creators=1; # 不加global只是当前窗口�
 
 保证每条数据都不同。
 
-```mysql
+```sql
 #随机产生字符串
 DELIMITER //
 CREATE FUNCTION rand_string(n INT) RETURNS VARCHAR(255)
@@ -97,7 +97,7 @@ DELIMITER ;
 
 随机产生班级编号
 
-```mysql
+```sql
 #用于随机产生多少到多少的编号
 DELIMITER //
 CREATE FUNCTION rand_num (from_num INT ,to_num INT) RETURNS INT(11)
@@ -113,7 +113,7 @@ DELIMITER ;
 
 **步骤4：创建存储过程**
 
-```mysql
+```sql
 #创建往stu表中插入数据的存储过程
 DELIMITER //
 CREATE PROCEDURE insert_stu( START INT , max_num INT )
@@ -135,7 +135,7 @@ DELIMITER ;
 
 创建往class表中插入数据的存储过程
 
-```mysql
+```sql
 #执行存储过程，往class表添加随机数据
 DELIMITER //
 CREATE PROCEDURE `insert_class`( max_num INT )
@@ -159,14 +159,14 @@ DELIMITER ;
 
 class
 
-```mysql
+```sql
 #执行存储过程，往class表添加1万条数据
 CALL insert_class(10000);
 ```
 
 stu
 
-```mysql
+```sql
 #执行存储过程，往stu表添加50万条数据
 CALL insert_stu(100000,500000);
 ```
@@ -175,7 +175,7 @@ CALL insert_stu(100000,500000);
 
 创建存储过程
 
-```mysql
+```sql
 DELIMITER //
 CREATE PROCEDURE `proc_drop_index`(dbname VARCHAR(200),tablename VARCHAR(200))
 BEGIN
@@ -205,7 +205,7 @@ DELIMITER ;
 
 执行存储过程
 
-```mysql
+```sql
 CALL proc_drop_index("dbname","tablename");
 ```
 
@@ -217,7 +217,7 @@ CALL proc_drop_index("dbname","tablename");
 
 系统中经常出现的sql语句如下：
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age=30;
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age=30 AND classId=4;
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age=30 AND classId=4 AND name = 'abcd';
@@ -225,14 +225,14 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age=30 AND classId=4 AND name =
 
 建立索引前执行：（关注执行时间）
 
-```mysql
+```sql
 mysql> SELECT SQL_NO_CACHE * FROM student WHERE age=30 AND classId=4 AND name = 'abcd';
 Empty set, 1 warning (0.28 sec)
 ```
 
 **建立索引**
 
-```mysql
+```sql
 CREATE INDEX idx_age ON student(age);
 CREATE INDEX idx_age_classid ON student(age,classId);
 CREATE INDEX idx_age_classid_name ON student(age,classId,name);
@@ -240,7 +240,7 @@ CREATE INDEX idx_age_classid_name ON student(age,classId,name);
 
 建立索引后执行：
 
-```mysql
+```sql
 mysql> SELECT SQL_NO_CACHE * FROM student WHERE age=30 AND classId=4 AND name = 'abcd';
 Empty set, 1 warning (0.01 sec)
 ```
@@ -253,25 +253,25 @@ Empty set, 1 warning (0.01 sec)
 
 举例1：
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.age=30 AND student.name = 'abcd';
 ```
 
 举例2：
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.classId=1 AND student.name = 'abcd';
 ```
 
 举例3：索引`idx_age_classid_name`还能否正常使用？
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.classId=4 AND student.age=30 AND student.name = 'abcd';
 ```
 
 如果索引了多列，要遵守最左前缀法则。指的是查询从索引的最左前列开始并且不跳过索引中的列。
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.age=30 AND student.name = 'abcd';
 ```
 
@@ -279,7 +279,7 @@ mysql> EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.age=30 AND stude
 
 虽然可以正常使用，但是只有部分被使用到了。
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.classId=1 AND student.name = 'abcd';
 ```
 
@@ -303,7 +303,7 @@ mysql> EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.classId=1 AND st
 
 可这个数据页已经满了，再插进来咋办呢？我们需要把当前 `页面分裂` 成两个页面，把本页中的一些记录移动到新创建的这个页中。页面分裂和记录移位意味着什么？意味着： `性能损耗` ！所以如果我们想尽量避免这样无谓的性能损耗，最好让插入的记录的 `主键值依次递增` ，这样就不会发生这样的性能损耗了。 所以我们建议：让主键具有 `AUTO_INCREMENT` ，让存储引擎自己为表生成主键，而不是我们手动插入 ， 比如： `person_info` 表：
 
-```mysql
+```sql
 CREATE TABLE person_info(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -321,27 +321,27 @@ CREATE TABLE person_info(
 
 1. 这两条sql哪种写法更好
 
-   ```mysql
+   ```sql
    EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.name LIKE 'abc%';
    ```
 
-   ```mysql
+   ```sql
    EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE LEFT(student.name,3) = 'abc';
    ```
 
 2. 创建索引
 
-   ```mysql
+   ```sql
    CREATE INDEX idx_name ON student(NAME);
    ```
 
 3. 第一种：索引优化生效
 
-   ```mysql
+   ```sql
    mysql> EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.name LIKE 'abc%';
    ```
 
-   ```mysql
+   ```sql
    mysql> SELECT SQL_NO_CACHE * FROM student WHERE student.name LIKE 'abc%';
    +---------+---------+--------+------+---------+
    | id | stuno | name | age | classId |
@@ -376,13 +376,13 @@ CREATE TABLE person_info(
 
 4. 第二种：索引优化失效
 
-   ```mysql
+   ```sql
    mysql> EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE LEFT(student.name,3) = 'abc';
    ```
 
    ![image-20220704214905412](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704214905412.png)
 
-   ```mysql
+   ```sql
    mysql> SELECT SQL_NO_CACHE * FROM student WHERE LEFT(student.name,3) = 'abc';
    +---------+---------+--------+------+---------+
    | id | stuno | name | age | classId |
@@ -421,13 +421,13 @@ CREATE TABLE person_info(
 
 * student表的字段stuno上设置有索引
 
-  ```mysql
+  ```sql
   CREATE INDEX idx_sno ON student(stuno);
   ```
 
 * 索引优化失效：（假设：student表的字段stuno上设置有索引）
 
-  ```mysql
+  ```sql
   EXPLAIN SELECT SQL_NO_CACHE id, stuno, NAME FROM student WHERE stuno+1 = 900001;
   ```
 
@@ -437,7 +437,7 @@ CREATE TABLE person_info(
 
 * 索引优化生效：
 
-  ```mysql
+  ```sql
   EXPLAIN SELECT SQL_NO_CACHE id, stuno, NAME FROM student WHERE stuno = 900000;
   ```
 
@@ -445,11 +445,11 @@ CREATE TABLE person_info(
 
 * student表的字段name上设置有索引
 
-  ```mysql
+  ```sql
   CREATE INDEX idx_name ON student(NAME);
   ```
 
-  ```mysql
+  ```sql
   EXPLAIN SELECT id, stuno, name FROM student WHERE SUBSTRING(name, 1,3)='abc';
   ```
 
@@ -457,7 +457,7 @@ CREATE TABLE person_info(
 
 * 索引优化生效
 
-  ```mysql
+  ```sql
   EXPLAIN SELECT id, stuno, NAME FROM student WHERE NAME LIKE 'abc%';
   ```
 
@@ -467,14 +467,14 @@ CREATE TABLE person_info(
 
 下列哪个sql语句可以用到索引。（假设name字段上设置有索引）
 
-```mysql
+```sql
 # 未使用到索引
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE name=123;
 ```
 
 ![image-20220704215658526](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704215658526.png)
 
-```mysql
+```sql
 # 使用到索引
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE name='123';
 ```
@@ -487,7 +487,7 @@ name=123发生类型转换，索引失效。
 
 1. 系统经常出现的sql如下：
 
-```mysql
+```sql
 ALTER TABLE student DROP INDEX idx_name;
 ALTER TABLE student DROP INDEX idx_age;
 ALTER TABLE student DROP INDEX idx_age_classid;
@@ -503,13 +503,13 @@ WHERE student.age=30 AND student.classId>20 AND student.name = 'abc' ;
 * 不能，范围右边的列不能使用。比如：(<) (<=) (>) (>=) 和 between 等
 * 如果这种sql出现较多，应该建立：
 
-```mysql
+```sql
 create index idx_age_name_classId on student(age,name,classId);
 ```
 
 * 将范围查询条件放置语句最后：
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.age=30 AND student.name = 'abc' AND student.classId>20;
 ```
 
@@ -523,13 +523,13 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.age=30 AND student.name
 
 * 为name字段创建索引
 
-```mysql
+```sql
 CREATE INDEX idx_name ON student(NAME);
 ```
 
 * 查看索引是否失效
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.name <> 'abc';
 ```
 
@@ -537,7 +537,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.name <> 'abc';
 
 或者
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.name != 'abc';
 ```
 
@@ -549,13 +549,13 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE student.name != 'abc';
 
 * IS NULL: 可以触发索引
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age IS NULL;
 ```
 
 * IS NOT NULL: 无法触发索引
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age IS NOT NULL;
 ```
 
@@ -571,7 +571,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age IS NOT NULL;
 
 * 使用到索引
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE name LIKE 'ab%';
 ```
 
@@ -579,7 +579,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE name LIKE 'ab%';
 
 * 未使用到索引
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE name LIKE '%ab%';
 ```
 
@@ -597,7 +597,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE name LIKE '%ab%';
 
 查询语句使用OR关键字的情况：
 
-```mysql
+```sql
 # 未使用到索引
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 10 OR classid = 100;
 ```
@@ -606,7 +606,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 10 OR classid = 100;
 
 因为classId字段上没有索引，所以上述查询语句没有使用索引。
 
-```mysql
+```sql
 #使用到索引
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 10 OR name = 'Abel';
 ```
@@ -638,7 +638,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 10 OR name = 'Abel';
 
 ### 3.1 数据准备
 
-```mysql
+```sql
 # 分类
 CREATE TABLE IF NOT EXISTS `type` (
 `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -701,7 +701,7 @@ INSERT INTO book(card) VALUES(FLOOR(1 + (RAND() * 20)));
 
 下面开始 EXPLAIN 分析
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM `type` LEFT JOIN book ON type.card = book.card;
 ```
 
@@ -711,7 +711,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM `type` LEFT JOIN book ON type.card = book.car
 
 添加索引优化
 
-```mysql
+```sql
 ALTER TABLE book ADD INDEX Y ( card); #【被驱动表】，可以避免全表扫描
 EXPLAIN SELECT SQL_NO_CACHE * FROM `type` LEFT JOIN book ON type.card = book.card;
 ```
@@ -720,7 +720,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM `type` LEFT JOIN book ON type.card = book.car
 
 可以看到第二行的 type 变为了 ref，rows 也变成了优化比较明显。这是由左连接特性决定的。LEFT JOIN 条件用于确定如何从右表搜索行，左边一定都有，所以 `右边是我们的关键点,一定需要建立索引` 。
 
-```mysql
+```sql
 ALTER TABLE `type` ADD INDEX X (card); #【驱动表】，无法避免全表扫描
 EXPLAIN SELECT SQL_NO_CACHE * FROM `type` LEFT JOIN book ON type.card = book.card;
 ```
@@ -729,7 +729,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM `type` LEFT JOIN book ON type.card = book.car
 
 接着：
 
-```mysql
+```sql
 DROP INDEX Y ON book;
 EXPLAIN SELECT SQL_NO_CACHE * FROM `type` LEFT JOIN book ON type.card = book.card;
 ```
@@ -738,14 +738,14 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM `type` LEFT JOIN book ON type.card = book.car
 
 ### 3.3 采用内连接
 
-```mysql
+```sql
 drop index X on type;
 drop index Y on book;（如果已经删除了可以不用再执行该操作）
 ```
 
 换成 inner join（MySQL自动选择驱动表）
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM type INNER JOIN book ON type.card=book.card;
 ```
 
@@ -753,14 +753,14 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM type INNER JOIN book ON type.card=book.card;
 
 添加索引优化
 
-```mysql
+```sql
 ALTER TABLE book ADD INDEX Y (card);
 EXPLAIN SELECT SQL_NO_CACHE * FROM type INNER JOIN book ON type.card=book.card;
 ```
 
 ![image-20220705161746184](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220705161746184.png)
 
-```mysql
+```sql
 ALTER TABLE type ADD INDEX X (card);
 EXPLAIN SELECT SQL_NO_CACHE * FROM type INNER JOIN book ON type.card=book.card;
 ```
@@ -771,7 +771,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM type INNER JOIN book ON type.card=book.card;
 
 接着：
 
-```mysql
+```sql
 DROP INDEX X ON `type`;
 EXPLAIN SELECT SQL_NO_CACHE * FROM TYPE INNER JOIN book ON type.card=book.card;
 ```
@@ -780,7 +780,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM TYPE INNER JOIN book ON type.card=book.card;
 
 接着：
 
-```mysql
+```sql
 ALTER TABLE `type` ADD INDEX X (card);
 EXPLAIN SELECT SQL_NO_CACHE * FROM `type` INNER JOIN book ON type.card=book.card;
 ```
@@ -789,7 +789,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM `type` INNER JOIN book ON type.card=book.card
 
 接着：
 
-```mysql
+```sql
 #向图书表中添加20条记录
 INSERT INTO book(card) VALUES(FLOOR(1 + (RAND() * 20)));
 INSERT INTO book(card) VALUES(FLOOR(1 + (RAND() * 20)));
@@ -830,7 +830,7 @@ join方式连接多个表，本质就是各个表之间数据的循环匹配。M
 
 * 对于内连接来说：
 
-```mysql
+```sql
 SELECT * FROM A JOIN B ON ...
 ```
 
@@ -838,7 +838,7 @@ A一定是驱动表吗？不一定，优化器会根据你查询语句做优化�
 
 * 对于外连接来说：
 
-```mysql
+```sql
 SELECT * FROM A LEFT JOIN B ON ...
 # 或
 SELECT * FROM B RIGHT JOIN A ON ... 
@@ -846,7 +846,7 @@ SELECT * FROM B RIGHT JOIN A ON ...
 
 通常，大家会认为A就是驱动表，B就是被驱动表。但也未必。测试如下：
 
-```mysql
+```sql
 CREATE TABLE a(f1 INT, f2 INT, INDEX(f1)) ENGINE=INNODB;
 CREATE TABLE b(f1 INT, f2 INT) ENGINE=INNODB;
 
@@ -910,7 +910,7 @@ Index Nested-Loop Join其优化的思路主要是为了`减少内存表数据的
 
 驱动表能不能一次加载完，要看join buffer能不能存储所有的数据，默认情况下`join_buffer_size=256k`。
 
-```mysql
+```sql
 mysql> show variables like '%join_buffer%';
 ```
 
@@ -922,7 +922,7 @@ join_buffer_size的最大值在32位操作系统可以申请4G，而在64位操�
 
 2、永远用小结果集驱动大结果集（其本质就是减少外层循环的数据数量）（小的度量单位指的是表行数 * 每行大小）
 
-```mysql
+```sql
 select t1.b,t2.* from t1 straight_join t2 on (t1.b=t2.b) where t2.id<=100; # 推荐
 select t1.b,t2.* from t2 straight_join t1 on (t1.b=t2.b) where t2.id<=100; # 不推荐
 ```
@@ -977,7 +977,7 @@ MySQL从4.1版本开始支持子查询，使用子查询可以进行SELECT语句
 
 * 使用子查询
 
-```mysql
+```sql
 # 创建班级表中班长的索引
 CREATE INDEX idx_monitor ON class(monitor);
 
@@ -991,7 +991,7 @@ WHERE monitor IS NOT NULL
 
 * 推荐使用多表查询
 
-```mysql
+```sql
 EXPLAIN SELECT stu1.* FROM student stu1 JOIN class c
 ON stu1.`stuno` = c.`monitor`
 WHERE c.`monitor` is NOT NULL;
@@ -1001,7 +1001,7 @@ WHERE c.`monitor` is NOT NULL;
 
 * 不推荐
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE a.*
 FROM student a
 WHERE a.stuno NOT IN (
@@ -1016,7 +1016,7 @@ WHERE a.stuno NOT IN (
 
 * 推荐：
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE a.*
 FROM student a LEFT OUTER JOIN class b
 ON a.stuno = b.monitor
@@ -1050,7 +1050,7 @@ WHERE b.monitor IS NULL;
 
 删除student表和class表中已创建的索引。
 
-```mysql
+```sql
 # 方式1
 DROP INDEX idx_monitor ON class;
 DROP INDEX idx_cid ON student;
@@ -1089,7 +1089,7 @@ call proc_drop_index('atguigudb2','student';)
 
 **小结**
 
-```mysql
+```sql
 INDEX a_b_c(a,b,c)
 order by 能使用索引最左前缀
 - ORDER BY a
@@ -1115,7 +1115,7 @@ ORDER BY子句，尽量使用Index方式排序，避免使用FileSort方式排�
 
 执行案例前先清除student上的索引，只留主键：
 
-```mysql
+```sql
 DROP INDEX idx_age ON student;
 DROP INDEX idx_age_classid_stuno ON student;
 DROP INDEX idx_age_classid_name ON student;
@@ -1126,7 +1126,7 @@ call proc_drop_index('atguigudb2','student');
 
 **场景:查询年龄为30岁的，且学生编号小于101000的学生，按用户名称排序**
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 30 AND stuno <101000 ORDER BY NAME ;
 ```
 
@@ -1134,7 +1134,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 30 AND stuno <101000 ORDE
 
 查询结果如下：
 
-```mysql
+```sql
 mysql> SELECT SQL_NO_CACHE * FROM student WHERE age = 30 AND stuno <101000 ORDER BY NAME;
 +---------+--------+--------+------+---------+
 | id      | stuno  |  name  | age  | classId |
@@ -1155,12 +1155,12 @@ mysql> SELECT SQL_NO_CACHE * FROM student WHERE age = 30 AND stuno <101000 ORDER
 
 **方案一: 为了去掉filesort我们可以把索引建成**
 
-```mysql
+```sql
 #创建新索引
 CREATE INDEX idx_age_name ON student(age,NAME);
 ```
 
-```mysql
+```sql
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 30 AND stuno <101000 ORDER BY NAME;
 ```
 
@@ -1176,7 +1176,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 30 AND stuno <101000 ORDE
 
 建一个三个字段的组合索引：
 
-```mysql
+```sql
 DROP INDEX idx_age_name ON student;
 CREATE INDEX idx_age_stuno_name ON student (age,stuno,NAME);
 EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 30 AND stuno <101000 ORDER BY NAME;
@@ -1188,7 +1188,7 @@ EXPLAIN SELECT SQL_NO_CACHE * FROM student WHERE age = 30 AND stuno <101000 ORDE
 
 结果如下：
 
-```mysql
+```sql
 mysql> SELECT SQL_NO_CACHE * FROM student
 -> WHERE age = 30 AND stuno <101000 ORDER BY NAME ;
 +-----+--------+--------+------+---------+
@@ -1226,7 +1226,7 @@ mysql> SELECT SQL_NO_CACHE * FROM student
 
 思考：这里我们使用如下索引，是否可行？
 
-```mysql
+```sql
 DROP INDEX idx_age_stuno_name ON student;
 
 CREATE INDEX idx_age_stuno ON student(age,stuno);
@@ -1287,7 +1287,7 @@ CREATE INDEX idx_age_stuno ON student(age,stuno);
 
 在索引上完成排序分页操作，最后根据主键关联回原表查询所需要的其他列内容。
 
-```mysql
+```sql
 EXPLAIN SELECT * FROM student t,(SELECT id FROM student ORDER BY id LIMIT 2000000,10) a WHERE t.id = a.id;
 ```
 
@@ -1297,7 +1297,7 @@ EXPLAIN SELECT * FROM student t,(SELECT id FROM student ORDER BY id LIMIT 200000
 
 该方案适用于主键自增的表，可以把Limit 查询转换成某个位置的查询 。
 
-```mysql
+```sql
 EXPLAIN SELECT * FROM student WHERE id > 2000000 LIMIT 10;
 ```
 
@@ -1315,7 +1315,7 @@ EXPLAIN SELECT * FROM student WHERE id > 2000000 LIMIT 10;
 
 **举例一：**
 
-```mysql
+```sql
 # 删除之前的索引
 DROP INDEX idx_age_stuno ON student;
 CREATE INDEX idx_age_name ON student(age, NAME);
@@ -1326,13 +1326,13 @@ EXPLAIN SELECT * FROM student WHERE age <> 20;
 
 **举例二：**
 
-```mysql
+```sql
 EXPLAIN SELECT * FROM student WHERE NAME LIKE '%abc';
 ```
 
 ![image-20220706124612180](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220706124612180.png)
 
-```mysql
+```sql
 CREATE INDEX idx_age_name ON student(age, NAME);
 EXPLAIN SELECT id,age,NAME FROM student WHERE NAME LIKE '%abc';
 ```
@@ -1341,7 +1341,7 @@ EXPLAIN SELECT id,age,NAME FROM student WHERE NAME LIKE '%abc';
 
 上述都使用到了声明的索引，下面的情况则不然，查询列依然多了classId,结果是未使用到索引：
 
-```mysql
+```sql
 EXPLAIN SELECT id,age,NAME,classId FROM student WHERE NAME LIKE '%abc';
 ```
 
@@ -1355,7 +1355,7 @@ EXPLAIN SELECT id,age,NAME,classId FROM student WHERE NAME LIKE '%abc';
 
 有一张教师表，表定义如下：
 
-```mysql
+```sql
 create table teacher(
 ID bigint unsigned primary key,
 email varchar(64),
@@ -1365,7 +1365,7 @@ email varchar(64),
 
 讲师要使用邮箱登录，所以业务代码中一定会出现类似于这样的语句：
 
-```mysql
+```sql
 mysql> select col1, col2 from teacher where email='xxx';
 ```
 
@@ -1375,7 +1375,7 @@ mysql> select col1, col2 from teacher where email='xxx';
 
 MySQL是支持前缀索引的。默认地，如果你创建索引的语句不指定前缀长度，那么索引就会包含整个字 符串。
 
-```mysql
+```sql
 mysql> alter table teacher add index index1(email);
 #或
 mysql> alter table teacher add index index2(email(6));
@@ -1422,7 +1422,7 @@ Index Condition Pushdown(ICP)是MySQL 5.6中新特性，是一种在存储引擎
 
 * 默认情况下启动索引条件下推。可以通过设置系统变量`optimizer_switch`控制：`index_condition_pushdown`
 
-```mysql
+```sql
 # 打开索引下推
 SET optimizer_switch = 'index_condition_pushdown=on';
 
@@ -1470,7 +1470,7 @@ SET optimizer_switch = 'index_condition_pushdown=off';
 
 这个表的建表语句是：
 
-```mysql
+```sql
 mysql> create table test(
 id int primary key,
 k int not null,
@@ -1606,7 +1606,7 @@ COMMIT 所释放的资源：
 
 会员卡号（cardno）看起来比较合适，因为会员卡号不能为空，而且有唯一性，可以用来 标识一条会员 记录。
 
-```mysql
+```sql
 mysql> CREATE TABLE demo.membermaster
 -> (
 -> cardno CHAR(8) PRIMARY KEY, -- 会员卡号为主键
@@ -1634,7 +1634,7 @@ Query OK, 0 rows affected (0.06 sec)
 
 接着，我们查询一下 2020 年 12 月 01 日的会员销售记录：
 
-```mysql
+```sql
 mysql> SELECT b.membername,c.goodsname,a.quantity,a.salesvalue,a.transdate
 -> FROM demo.trans AS a
 -> JOIN demo.membermaster AS b
@@ -1650,7 +1650,7 @@ mysql> SELECT b.membername,c.goodsname,a.quantity,a.salesvalue,a.transdate
 
 如果会员卡“10000001”又发给了王五，我们会更改会员信息表。导致查询时：
 
-```mysql
+```sql
 mysql> SELECT b.membername,c.goodsname,a.quantity,a.salesvalue,a.transdate
 -> FROM demo.trans AS a
 -> JOIN demo.membermaster AS b
@@ -1686,7 +1686,7 @@ mysql> SELECT b.membername,c.goodsname,a.quantity,a.salesvalue,a.transdate
 
 从上图可以发现，订单号不是自增ID！我们详细看下上述4个订单号：
 
-```mysql
+```sql
 1550672064762308113
 1481195847180308113
 1431156171142308113
@@ -1697,7 +1697,7 @@ mysql> SELECT b.membername,c.goodsname,a.quantity,a.salesvalue,a.transdate
 
 大胆猜测，淘宝的订单ID设计应该是：
 
-```mysql
+```sql
 订单ID = 时间 + 去重字段 + 用户ID后6位尾号
 ```
 
@@ -1723,7 +1723,7 @@ mysql> SELECT b.membername,c.goodsname,a.quantity,a.salesvalue,a.transdate
 
 MySQL数据库的UUID组成如下所示：
 
-```mysql
+```sql
 UUID = 时间+UUID版本（16字节）- 时钟序列（4字节） - MAC地址（12字节）
 ```
 
@@ -1753,7 +1753,7 @@ MySQL 8.0还解决了UUID存在的空间占用的问题，除去了UUID字符串
 
 可以通过MySQL8.0提供的uuid_to_bin函数实现上述功能，同样的，MySQL也提供了bin_to_uuid函数进行转化：
 
-```mysql
+```sql
 SET @uuid = UUID();
 SELECT @uuid,uuid_to_bin(@uuid),uuid_to_bin(@uuid,TRUE);
 ```

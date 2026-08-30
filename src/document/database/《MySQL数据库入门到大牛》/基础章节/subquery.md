@@ -31,7 +31,7 @@ SQL 中子查询的使用大大增强了 SELECT 查询的能力，因为很多�
 
 现有解决方式：
 
-```mysql
+```sql
 #方式一：
 SELECT salary
 FROM employees
@@ -48,7 +48,7 @@ WHERE e1.last_name = 'Abel'
 AND e1.`salary` < e2.`salary`
 ```
 
-```mysql
+```sql
 #方式三：子查询
 SELECT last_name,salary
 FROM employees
@@ -274,7 +274,7 @@ WHERE  salary =
 
 **题目：查询平均工资最低的部门id**
 
-```mysql
+```sql
 #方式1：
 SELECT department_id
 FROM employees
@@ -289,7 +289,7 @@ HAVING AVG(salary) = (
 			)
 ```
 
-```mysql
+```sql
 #方式2：
 SELECT department_id
 FROM employees
@@ -303,7 +303,7 @@ HAVING AVG(salary) <= ALL (
 
 ### 3.3 空值问题
 
-```mysql
+```sql
 SELECT last_name
 FROM employees
 WHERE employee_id NOT IN (
@@ -441,7 +441,7 @@ SET    column = (SELECT expression
 
 **题目：在employees中增加一个department_name字段，数据为员工对应的部门名称**
 
-```mysql
+```sql
 # 1）
 ALTER TABLE employees
 ADD(department_name VARCHAR2(14));
@@ -481,7 +481,7 @@ WHERE employee_id in
 
 **解答：**
 
-```mysql
+```sql
 #方式1：自连接
 SELECT e2.last_name,e2.salary
 FROM employees e1,employees e2
@@ -489,7 +489,7 @@ WHERE e1.last_name = 'Abel'
 AND e1.`salary` < e2.`salary`
 ```
 
-```mysql
+```sql
 #方式2：子查询
 SELECT last_name,salary
 FROM employees

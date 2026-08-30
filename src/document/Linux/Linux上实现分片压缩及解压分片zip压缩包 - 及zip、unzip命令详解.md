@@ -1,4 +1,4 @@
-﻿---
+---
 title: Linux上实现分片压缩及解压分片zip压缩包 - 及zip、unzip命令详解
 icon: circle-info
 order: 2
@@ -84,7 +84,7 @@ cs		# 要压缩的目录
 
 - 2、将当前工作目录内所有以.conf为后缀的文件打包
 
-```bsah
+```bash
 zip -r conf.zip /etc/*.conf
 ```
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412191615755.png)

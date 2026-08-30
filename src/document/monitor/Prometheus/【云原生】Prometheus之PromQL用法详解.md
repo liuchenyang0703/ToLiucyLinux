@@ -1,4 +1,4 @@
-﻿---
+---
 title: 【云原生】Prometheus之PromQL用法详解
 icon: circle-info
 order: 1
@@ -827,13 +827,13 @@ absent_over_time(this_metric_does_not_exist[5m])
 ✅ 实战建议：
 
 🔍 1. 用 `irate` 看 CPU 突发
-```promql
+```sql
 irate(node_cpu_seconds_total{mode="system"}[2m])
 ```
 > 适合看 **瞬时飙升**，比如 CPU 突然飙高但很快恢复的情况。
 
 📊 2. 用 `rate` 看趋势
-```promql
+```sql
 rate(node_cpu_seconds_total{mode="system"}[5m])
 ```
 > 适合看 **整体趋势**，比如系统负载逐渐升高。

@@ -45,7 +45,7 @@ breadcrumb: false
 
 - **查看所有或部分系统变量**
 
-```mysql
+```sql
 #查看所有全局变量
 SHOW GLOBAL VARIABLES;
 
@@ -55,7 +55,7 @@ SHOW SESSION VARIABLES;
 SHOW VARIABLES;
 ```
 
-```mysql
+```sql
 #查看满足条件的部分系统变量。
 SHOW GLOBAL VARIABLES LIKE '%标识符%';
 
@@ -65,7 +65,7 @@ SHOW SESSION VARIABLES LIKE '%标识符%';
 
 举例：
 
-```mysql
+```sql
 SHOW GLOBAL VARIABLES LIKE 'admin_%';
 ```
 
@@ -73,7 +73,7 @@ SHOW GLOBAL VARIABLES LIKE 'admin_%';
 
 作为 MySQL 编码规范，MySQL 中的系统变量以`两个“@”`开头，其中“@@global”仅用于标记全局系统变量，“@@session”仅用于标记会话系统变量。“@@”首先标记会话系统变量，如果会话系统变量不存在，则标记全局系统变量。
 
-```mysql
+```sql
 #查看指定的系统变量的值
 SELECT @@global.变量名;
 
@@ -91,7 +91,7 @@ SELECT @@变量名;
 
 方式2：在MySQL服务运行期间，使用“set”命令重新设置系统变量的值
 
-```mysql
+```sql
 #为某个系统变量赋值
 #方式1：
 SET @@global.变量名=变量值;
@@ -108,17 +108,17 @@ SET SESSION 变量名=变量值;
 
 举例：
 
-```mysql
+```sql
 SELECT @@global.autocommit;
 SET GLOBAL autocommit=0;
 ```
 
-```mysql
+```sql
 SELECT @@session.tx_isolation;
 SET @@session.tx_isolation='read-uncommitted';
 ```
 
-```mysql
+```sql
 SET GLOBAL max_connections = 1000;
 SELECT @@global.max_connections;
 ```
@@ -139,7 +139,7 @@ SELECT @@global.max_connections;
 
 - 变量的定义
 
-```mysql
+```sql
 #方式1：“=”或“:=”
 SET @用户变量 = 值;
 SET @用户变量 := 值;
@@ -152,31 +152,31 @@ SELECT 表达式 INTO @用户变量  [FROM 等子句];
 
 - 查看用户变量的值 （查看、比较、运算等）
 
-```mysql
+```sql
 SELECT @用户变量
 ```
 
 - 举例
 
-```mysql
+```sql
 SET @a = 1;
 
 SELECT @a;
 ```
 
-```mysql
+```sql
 SELECT @num := COUNT(*) FROM employees;
 
 SELECT @num;
 ```
 
-```mysql
+```sql
 SELECT AVG(salary) INTO @avgsalary FROM employees;
 
 SELECT @avgsalary;
 ```
 
-```mysql
+```sql
 SELECT @big;  #查看某个未声明的变量时，将得到NULL值
 ```
 
@@ -188,7 +188,7 @@ SELECT @big;  #查看某个未声明的变量时，将得到NULL值
 
 位置：只能放在 BEGIN ... END 中，而且只能放在第一句
 
-```mysql
+```sql
 BEGIN
 	#声明局部变量
 	DECLARE 变量名1 变量数据类型 [DEFAULT 变量默认值];
@@ -206,13 +206,13 @@ END
 
 **1.定义变量**
 
-```mysql
+```sql
 DECLARE 变量名 类型 [default 值];  # 如果没有DEFAULT子句，初始值为NULL
 ```
 
 举例：
 
-```mysql
+```sql
 DECLARE　myparam　INT　DEFAULT 100;
 ```
 
@@ -220,7 +220,7 @@ DECLARE　myparam　INT　DEFAULT 100;
 
 方式1：一般用于赋简单的值
 
-```mysql
+```sql
 SET 变量名=值;
 SET 变量名:=值;
 ```
@@ -228,19 +228,19 @@ SET 变量名:=值;
 方式2：一般用于赋表中的字段值
 
 
-```mysql
+```sql
 SELECT 字段名或表达式 INTO 变量名 FROM 表;
 ```
 
 **3.使用变量**（查看、比较、运算等）
 
-```mysql
+```sql
 SELECT 局部变量名;
 ```
 
 举例1：声明局部变量，并分别赋值为employees表中employee_id为102的last_name和salary
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE set_value()
@@ -260,7 +260,7 @@ DELIMITER ;
 
 举例2：声明两个变量，求和并打印 （分别使用会话用户变量、局部变量的方式实现）
 
-```mysql
+```sql
 #方式1：使用用户变量
 SET @m=1;
 SET @n=1;
@@ -269,7 +269,7 @@ SET @sum=@m+@n;
 SELECT @sum;
 ```
 
-```mysql
+```sql
 #方式2：使用局部变量
 DELIMITER //
 
@@ -289,7 +289,7 @@ DELIMITER ;
 
 举例3：创建存储过程“different_salary”查询某员工和他领导的薪资差距，并用IN参数emp_id接收员工id，用OUT参数dif_salary输出薪资差距结果。
 
-```mysql
+```sql
 #声明
 DELIMITER //
 
@@ -335,7 +335,7 @@ SELECT @diff_sal;
 
 **案例分析：**创建一个名称为“UpdateDataNoCondition”的存储过程。代码如下：
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE UpdateDataNoCondition()
@@ -352,7 +352,7 @@ DELIMITER ;
 
 调用存储过程：
 
-```mysql
+```sql
 mysql> CALL UpdateDataNoCondition();
 ERROR 1048 (23000): Column 'email' cannot be null
 
@@ -374,7 +374,7 @@ mysql> SELECT @x;
 
 定义条件使用DECLARE语句，语法格式如下：
 
-```mysql
+```sql
 DECLARE 错误名称 CONDITION FOR 错误码（或错误条件）
 ```
 
@@ -388,7 +388,7 @@ DECLARE 错误名称 CONDITION FOR 错误码（或错误条件）
 
 **举例1：**定义“Field_Not_Be_NULL”错误名与MySQL中违反非空约束的错误类型是“ERROR 1048 (23000)”对应。
 
-```mysql
+```sql
 #使用MySQL_error_code
 DECLARE Field_Not_Be_NULL CONDITION FOR 1048;
 
@@ -398,7 +398,7 @@ DECLARE Field_Not_Be_NULL CONDITION FOR SQLSTATE '23000';
 
 **举例2：**定义"ERROR 1148(42000)"错误，名称为command_not_allowed。
 
-```mysql
+```sql
 #使用MySQL_error_code
 DECLARE command_not_allowed CONDITION FOR 1148;
 
@@ -410,7 +410,7 @@ DECLARE command_not_allowed CONDITION FOR SQLSTATE '42000';
 
 可以为SQL执行过程中发生的某种类型的错误定义特殊的处理程序。定义处理程序时，使用DECLARE语句的语法如下：
 
-```mysql
+```sql
 DECLARE 处理方式 HANDLER FOR 错误类型 处理语句
 ```
 
@@ -429,7 +429,7 @@ DECLARE 处理方式 HANDLER FOR 错误类型 处理语句
 
 定义处理程序的几种方式，代码如下：
 
-```mysql
+```sql
 #方法1：捕获sqlstate_value
 DECLARE CONTINUE HANDLER FOR SQLSTATE '42S02' SET @info = 'NO_SUCH_TABLE';
 
@@ -454,7 +454,7 @@ DECLARE EXIT HANDLER FOR SQLEXCEPTION SET @info = 'ERROR';
 
 在存储过程中，定义处理程序，捕获sqlstate_value值，当遇到MySQL_error_code值为1048时，执行CONTINUE操作，并且将@proc_value的值设置为-1。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE UpdateDataNoCondition()
@@ -474,7 +474,7 @@ DELIMITER ;
 
 调用过程：
 
-```mysql
+```sql
 mysql> CALL UpdateDataWithCondition();
 Query OK, 0 rows affected (0.01 sec)
 
@@ -494,7 +494,7 @@ mysql> SELECT @x,@proc_value;
 
 在存储过程中，定义处理程序，捕获sqlstate_value值，当遇到sqlstate_value值为23000时，执行EXIT操作，并且将@proc_value的值设置为-1。
 
-```mysql
+```sql
 #准备工作
 CREATE TABLE departments
 AS
@@ -504,7 +504,7 @@ ALTER TABLE departments
 ADD CONSTRAINT uk_dept_name UNIQUE(department_id);
 ```
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE InsertDataWithCondition()
@@ -524,7 +524,7 @@ DELIMITER ;
 
 调用存储过程：
 
-```mysql
+```sql
 mysql> CALL InsertDataWithCondition();
 Query OK, 0 rows affected (0.01 sec)
 
@@ -557,7 +557,7 @@ mysql> SELECT @x,@proc_value;
 - IF 语句的语法结构是：
 
 
-```mysql
+```sql
 IF 表达式1 THEN 操作1
 [ELSEIF 表达式2 THEN 操作2]……
 [ELSE 操作N]
@@ -570,7 +570,7 @@ END IF
 
 - **举例1：**
 
-  ```mysql
+  ```sql
   IF val IS NULL 
   	THEN SELECT 'val is null';
   ELSE SELECT 'val is not null';
@@ -580,7 +580,7 @@ END IF
 
 - **举例2：**声明存储过程“update_salary_by_eid1”，定义IN参数emp_id，输入员工编号。判断该员工薪资如果低于8000元并且入职时间超过5年，就涨薪500元；否则就不变。
 
-  ```mysql
+  ```sql
   DELIMITER //
   
   CREATE PROCEDURE update_salary_by_eid1(IN emp_id INT)
@@ -604,7 +604,7 @@ END IF
 
 - **举例3：**声明存储过程“update_salary_by_eid2”，定义IN参数emp_id，输入员工编号。判断该员工薪资如果低于9000元并且入职时间超过5年，就涨薪500元；否则就涨薪100元。
 
-  ```mysql
+  ```sql
   DELIMITER //
   
   CREATE PROCEDURE update_salary_by_eid2(IN emp_id INT)
@@ -630,7 +630,7 @@ END IF
   
 - **举例4：**声明存储过程“update_salary_by_eid3”，定义IN参数emp_id，输入员工编号。判断该员工薪资如果低于9000元，就更新薪资为9000元；薪资如果大于等于9000元且低于10000的，但是奖金比例为NULL的，就更新奖金比例为0.01；其他的涨薪100元。
 
-  ```mysql
+  ```sql
   DELIMITER //
   
   CREATE PROCEDURE update_salary_by_eid3(IN emp_id INT)
@@ -658,7 +658,7 @@ END IF
 
 CASE 语句的语法结构1：
 
-```mysql
+```sql
 #情况一：类似于switch
 CASE 表达式
 WHEN 值1 THEN 结果1或语句1(如果是语句，需要加分号) 
@@ -670,7 +670,7 @@ END [case]（如果是放在begin end中需要加上case，如果放在select后
 
 CASE 语句的语法结构2：
 
-```mysql
+```sql
 #情况二：类似于多重if
 CASE 
 WHEN 条件1 THEN 结果1或语句1(如果是语句，需要加分号) 
@@ -684,7 +684,7 @@ END [case]（如果是放在begin end中需要加上case，如果放在select后
 
 使用CASE流程控制语句的第1种格式，判断val值等于1、等于2，或者两者都不等。
 
-```mysql
+```sql
 CASE val
 　　　WHEN 1 THEN SELECT 'val is 1';
 　　　WHEN 2 THEN SELECT 'val is 2';
@@ -696,7 +696,7 @@ END CASE;
 
 使用CASE流程控制语句的第2种格式，判断val是否为空、小于0、大于0或者等于0。
 
-```mysql
+```sql
 CASE
 	WHEN val IS NULL THEN SELECT 'val is null';
 	WHEN val < 0 THEN SELECT 'val is less than 0';
@@ -707,7 +707,7 @@ END CASE;
 
 - **举例3：**声明存储过程“update_salary_by_eid4”，定义IN参数emp_id，输入员工编号。判断该员工薪资如果低于9000元，就更新薪资为9000元；薪资大于等于9000元且低于10000的，但是奖金比例为NULL的，就更新奖金比例为0.01；其他的涨薪100元。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE update_salary_by_eid4(IN emp_id INT)
@@ -733,7 +733,7 @@ DELIMITER ;
 
 - 举例4：声明存储过程update_salary_by_eid5，定义IN参数emp_id，输入员工编号。判断该员工的入职年限，如果是0年，薪资涨50；如果是1年，薪资涨100；如果是2年，薪资涨200；如果是3年，薪资涨300；如果是4年，薪资涨400；其他的涨薪500。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE update_salary_by_eid5(IN emp_id INT)
@@ -766,7 +766,7 @@ LOOP循环语句用来重复执行某些语句。LOOP内的语句一直重复执
 
 LOOP语句的基本格式如下：
 
-```mysql
+```sql
 [loop_label:] LOOP
 	循环执行的语句
 END LOOP [loop_label]
@@ -778,7 +778,7 @@ END LOOP [loop_label]
 
 使用LOOP语句进行循环操作，id值小于10时将重复执行循环过程。
 
-```mysql
+```sql
 DECLARE id INT DEFAULT 0;
 add_loop:LOOP
 	SET id = id +1;
@@ -790,7 +790,7 @@ END LOOP add_loop;
 
 **举例2：**当市场环境变好时，公司为了奖励大家，决定给大家涨工资。声明存储过程“update_salary_loop()”，声明OUT参数num，输出循环次数。存储过程中实现循环给大家涨薪，薪资涨为原来的1.1倍。直到全公司的平均薪资达到12000结束。并统计循环次数。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE update_salary_loop(OUT num INT)
@@ -820,7 +820,7 @@ DELIMITER ;
 
 WHILE语句创建一个带条件判断的循环过程。WHILE在执行语句执行时，先对指定的表达式进行判断，如果为真，就执行循环内的语句，否则退出循环。WHILE语句的基本格式如下：
 
-```mysql
+```sql
 [while_label:] WHILE 循环条件  DO
 	循环体
 END WHILE [while_label];
@@ -832,7 +832,7 @@ while_label为WHILE语句的标注名称；如果循环条件结果为真，WHIL
 
 WHILE语句示例，i值小于10时，将重复执行循环过程，代码如下：
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE test_while()
@@ -853,7 +853,7 @@ CALL test_while();
 
 **举例2：**市场环境不好时，公司为了渡过难关，决定暂时降低大家的薪资。声明存储过程“update_salary_while()”，声明OUT参数num，输出循环次数。存储过程中实现循环给大家降薪，薪资降为原来的90%。直到全公司的平均薪资达到5000结束。并统计循环次数。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE update_salary_while(OUT num INT)
@@ -886,7 +886,7 @@ REPEAT语句创建一个带条件判断的循环过程。与WHILE循环不同的
 
 REPEAT语句的基本格式如下：
 
-```mysql
+```sql
 [repeat_label:] REPEAT
 　　　　循环体的语句
 UNTIL 结束循环的条件表达式
@@ -897,7 +897,7 @@ repeat_label为REPEAT语句的标注名称，该参数可以省略；REPEAT语�
 
 **举例1：**
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE test_repeat()
@@ -917,7 +917,7 @@ DELIMITER ;
 
 **举例2：**当市场环境变好时，公司为了奖励大家，决定给大家涨工资。声明存储过程“update_salary_repeat()”，声明OUT参数num，输出循环次数。存储过程中实现循环给大家涨薪，薪资涨为原来的1.15倍。直到全公司的平均薪资达到13000结束。并统计循环次数。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE update_salary_repeat(OUT num INT)
@@ -957,7 +957,7 @@ LEAVE语句：可以用在循环语句内，或者以 BEGIN 和 END 包裹起来
 
 基本格式如下：
 
-```mysql
+```sql
 LEAVE 标记名
 ```
 
@@ -972,7 +972,7 @@ LEAVE 标记名
 
 IF语句结束后查询“employees”表的总人数。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE leave_begin(IN num INT)
@@ -999,7 +999,7 @@ DELIMITER ;
 
 当市场环境不好时，公司为了渡过难关，决定暂时降低大家的薪资。声明存储过程“leave_while()”，声明OUT参数num，输出循环次数，存储过程中使用WHILE循环给大家降低薪资为原来薪资的90%，直到全公司的平均薪资小于等于10000，并统计循环次数。
 
-```mysql
+```sql
 DELIMITER //
 CREATE PROCEDURE leave_while(OUT num INT)
 
@@ -1041,7 +1041,7 @@ ITERATE语句：只能用在循环语句（LOOP、REPEAT和WHILE语句）内，�
 
 语句基本格式如下：
 
-```mysql
+```sql
 ITERATE label
 ```
 
@@ -1052,7 +1052,7 @@ label参数表示循环的标志。ITERATE语句必须跟在循环标志前面�
 - 如果num < 10，则继续执行循环；
 - 如果num > 15，则退出循环结构；
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE test_iterate()
@@ -1092,7 +1092,7 @@ MySQL中游标可以在存储过程和函数中使用。
 
 比如，我们查询了 employees 数据表中工资高于15000的员工都有哪些：
 
-```mysql
+```sql
 SELECT employee_id,last_name,salary FROM employees
 WHERE salary > 15000;
 ```
@@ -1111,13 +1111,13 @@ WHERE salary > 15000;
 
 在MySQL中，使用DECLARE关键字来声明游标，其语法的基本形式如下：
 
-```mysql
+```sql
 DECLARE cursor_name CURSOR FOR select_statement; 
 ```
 
 这个语法适用于 MySQL，SQL Server，DB2 和 MariaDB。如果是用 Oracle 或者 PostgreSQL，需要写成：
 
-```mysql
+```sql
 DECLARE cursor_name CURSOR IS select_statement;
 ```
 
@@ -1125,12 +1125,12 @@ DECLARE cursor_name CURSOR IS select_statement;
 
 比如：
 
-```mysql
+```sql
 DECLARE cur_emp CURSOR FOR 
 SELECT employee_id,salary FROM employees;
 ```
 
-```mysql
+```sql
 DECLARE cursor_fruit CURSOR FOR 
 SELECT f_name, f_price FROM fruits ;
 ```
@@ -1139,13 +1139,13 @@ SELECT f_name, f_price FROM fruits ;
 
 打开游标的语法如下：
 
-```mysql
+```sql
 OPEN cursor_name
 ```
 
 当我们定义好游标之后，如果想要使用游标，必须先打开游标。打开游标的时候 SELECT 语句的查询结果集就会送到游标工作区，为后面游标的`逐条读取`结果集中的记录做准备。
 
-```mysql
+```sql
 OPEN　cur_emp ;
 ```
 
@@ -1153,7 +1153,7 @@ OPEN　cur_emp ;
 
 语法如下：
 
-```mysql
+```sql
 FETCH cursor_name INTO var_name [, var_name] ...
 ```
 
@@ -1161,7 +1161,7 @@ FETCH cursor_name INTO var_name [, var_name] ...
 
 注意：var_name必须在声明游标之前就定义好。
 
-```mysql
+```sql
 FETCH　cur_emp INTO emp_id, emp_sal ;
 ```
 
@@ -1169,7 +1169,7 @@ FETCH　cur_emp INTO emp_id, emp_sal ;
 
 **第四步，关闭游标**
 
-```mysql
+```sql
 CLOSE cursor_name
 ```
 
@@ -1177,7 +1177,7 @@ CLOSE cursor_name
 
 关闭游标之后，我们就不能再检索查询结果中的数据行，如果需要检索只能再次打开游标。
 
-```mysql
+```sql
 CLOSE　cur_emp;
 ```
 
@@ -1185,7 +1185,7 @@ CLOSE　cur_emp;
 
 创建存储过程“get_count_by_limit_total_salary()”，声明IN参数 limit_total_salary，DOUBLE类型；声明OUT参数total_count，INT类型。函数的功能可以实现累加薪资最高的几个员工的薪资值，直到薪资总和达到limit_total_salary参数的值，返回累加的人数给total_count。
 
-```mysql
+```sql
 DELIMITER //
 
 CREATE PROCEDURE get_count_by_limit_total_salary(IN limit_total_salary DOUBLE,OUT total_count INT)
@@ -1232,14 +1232,14 @@ DELIMITER ;
 
 在MySQL数据库中，全局变量可以通过SET GLOBAL语句来设置。例如，设置服务器语句超时的限制，可以通过设置系统变量max_execution_time来实现：
 
-```mysql
+```sql
 SET GLOBAL MAX_EXECUTION_TIME=2000;
 ```
 
 使用SET GLOBAL语句设置的变量值只会`临时生效`。`数据库重启`后，服务器又会从MySQL配置文件中读取变量的默认值。
 MySQL 8.0版本新增了`SET PERSIST`命令。例如，设置服务器的最大连接数为1000：
 
-```mysql
+```sql
 SET PERSIST global max_connections = 1000;
 ```
 
@@ -1249,7 +1249,7 @@ MySQL会将该命令的配置保存到数据目录下的`mysqld-auto.cnf`文件�
 
 查看全局变量max_connections的值，结果如下：
 
-```mysql
+```sql
 mysql> show variables like '%max_connections%';
 +------------------------+-------+
 | Variable_name          | Value |
@@ -1262,14 +1262,14 @@ mysql> show variables like '%max_connections%';
 
 设置全局变量max_connections的值：
 
-```mysql
+```sql
 mysql> set persist max_connections=1000;
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 `重启MySQL服务器`，再次查询max_connections的值：
 
-```mysql
+```sql
 mysql> show variables like '%max_connections%';
 +------------------------+-------+
 | Variable_name          | Value |

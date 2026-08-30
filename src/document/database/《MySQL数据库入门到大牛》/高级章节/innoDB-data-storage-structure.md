@@ -36,7 +36,7 @@ breadcrumb: false
 
 不同的数据库管理系统（简称DBMS）的页大小不同。比如在 MySQL 的 InnoDB 存储引擎中，默认页的大小是 `16KB`，我们可以通过下面的命令来进行查看：
 
-```mysql
+```sql
 show variables like '%innodb_page_size%'
 ```
 
@@ -144,7 +144,7 @@ SQL Server 中页的大小为 `8KB`，而在 Oracle 中我们用术语 "`块`" �
 
 **查看 InnoDB 的表空间类型：**
 
-```mysql
+```sql
 show variables like 'innodb_file_per_table'
 ```
 
@@ -174,11 +174,11 @@ show variables like 'innodb_file_per_table'
 
 注意：用户不能直接访问 InnoDB 的这些内部系统表，除非你直接去解析系统表空间对应文件系统上的文件。不过考虑到查看这些表的内容可能有助于大家分析问题，所以在系统数据库 `information_schema` 中提供了一些以 `innodb_sys` 开头的表:
 
-```mysql
+```sql
 USE information_schema;
 ```
 
-```mysql
+```sql
 SHOW TABLES LIKE 'innodb_sys%';
 ```
 

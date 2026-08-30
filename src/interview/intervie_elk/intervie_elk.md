@@ -7,7 +7,7 @@ category:
 tag:
   - ELK常见面试题
   - 运维
-date: 2026-02-011
+date: 2026-02-11
 pageview: true
 article: false
 breadcrumb: false

@@ -31,7 +31,7 @@ breadcrumb: false
 
 ![1554975020388](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/1554975020388.png)
 
-```mysql
+```sql
 #案例：查询员工的姓名及其部门名称
 SELECT last_name, department_name
 FROM employees, departments;
@@ -41,7 +41,7 @@ FROM employees, departments;
 
 查询结果：
 
-```mysql
+```sql
 +-----------+----------------------+
 | last_name | department_name      |
 +-----------+----------------------+
@@ -71,7 +71,7 @@ FROM employees, departments;
 
 **分析错误情况：**
 
-```mysql
+```sql
 SELECT COUNT(employee_id) FROM employees;
 #输出107行
 
@@ -91,7 +91,7 @@ SELECT 107*27 FROM dual;
 
 SQL92中，笛卡尔积也称为`交叉连接`，英文是 `CROSS JOIN`。在 SQL99 中也是使用 CROSS JOIN表示交叉连接。它的作用就是可以把任意表进行连接，即使这两张表不相关。在MySQL中如下情况会出现笛卡尔积：
 
-```mysql
+```sql
 #查询员工姓名和所在部门名称
 SELECT last_name,department_name FROM employees,departments;
 SELECT last_name,department_name FROM employees CROSS JOIN departments;
@@ -111,7 +111,7 @@ SELECT last_name,department_name FROM employees JOIN departments;
 
 - 加入连接条件后，查询语法：
 
-  ```mysql
+  ```sql
   SELECT	table1.column, table2.column
   FROM	table1, table2
   WHERE	table1.column1 = table2.column2;  #连接条件
@@ -121,7 +121,7 @@ SELECT last_name,department_name FROM employees JOIN departments;
 
 - 正确写法：
 
-  ```mysql
+  ```sql
   #案例：查询员工的姓名及其部门名称
   SELECT last_name, department_name
   FROM employees, departments
@@ -138,7 +138,7 @@ SELECT last_name,department_name FROM employees JOIN departments;
 
 ![1554975496900](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/1554975496900.png)
 
-```mysql
+```sql
 SELECT employees.employee_id, employees.last_name, 
        employees.department_id, departments.department_id,
        departments.location_id
@@ -159,7 +159,7 @@ WHERE  employees.department_id = departments.department_id;
 - **多个表中有相同列时，必须在列名之前加上表名前缀。**
 - 在不同表中具有相同列名的列可以用`表名`加以区分。
 
-```mysql
+```sql
 SELECT employees.last_name, departments.department_name,employees.department_id
 FROM employees, departments
 WHERE employees.department_id = departments.department_id;
@@ -171,7 +171,7 @@ WHERE employees.department_id = departments.department_id;
 
 - 列名前使用表名前缀可以提高查询效率。
 
-```mysql
+```sql
 SELECT e.employee_id, e.last_name, e.department_id,
        d.department_id, d.location_id
 FROM   employees e , departments d
@@ -202,7 +202,7 @@ WHERE  e.department_id = d.department_id;
 
 ![1554978442447](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/1554978442447.png)
 
-```mysql
+```sql
 SELECT e.last_name, e.salary, j.grade_level
 FROM   employees e, job_grades j
 WHERE  e.salary BETWEEN j.lowest_sal AND j.highest_sal;
@@ -220,7 +220,7 @@ WHERE  e.salary BETWEEN j.lowest_sal AND j.highest_sal;
 
 **题目：查询employees表，返回“Xxx  works for Xxx”**
 
-```mysql
+```sql
 SELECT CONCAT(worker.last_name ,' works for ' 
        , manager.last_name)
 FROM   employees worker, employees manager
@@ -253,7 +253,7 @@ WHERE  worker.manager_id = manager.employee_id ;
 
 - Oracle 对 SQL92 支持较好，而 MySQL 则不支持 SQL92 的外连接。
 
-  ```mysql
+  ```sql
   #左外连接
   SELECT last_name,department_name
   FROM employees ,departments
@@ -273,7 +273,7 @@ WHERE  worker.manager_id = manager.employee_id ;
 
 - 使用JOIN...ON子句创建连接的语法结构：
 
-  ```mysql
+  ```sql
   SELECT table1.column, table2.column,table3.column
   FROM table1
       JOIN table2 ON table1 和 table2 的连接条件
@@ -282,7 +282,7 @@ WHERE  worker.manager_id = manager.employee_id ;
 
   它的嵌套逻辑类似我们使用的 FOR 循环：
 
-  ```mysql
+  ```sql
   for t1 in table1:
       for t2 in table2:
          if condition1:
@@ -303,7 +303,7 @@ WHERE  worker.manager_id = manager.employee_id ;
 
 - 语法：
 
-```mysql
+```sql
 SELECT 字段列表
 FROM A表 INNER JOIN B表
 ON 关联条件
@@ -312,7 +312,7 @@ WHERE 等其他子句;
 
 题目1：
 
-```mysql
+```sql
 SELECT e.employee_id, e.last_name, e.department_id, 
        d.department_id, d.location_id
 FROM   employees e JOIN departments d
@@ -325,7 +325,7 @@ ON     (e.department_id = d.department_id);
 
 题目2：
 
-```mysql
+```sql
 SELECT employee_id, city, department_name
 FROM   employees e 
 JOIN   departments d
@@ -344,7 +344,7 @@ ON     d.location_id = l.location_id;
 
 - 语法：
 
-```mysql
+```sql
 #实现查询结果是A
 SELECT 字段列表
 FROM A表 LEFT JOIN B表
@@ -354,7 +354,7 @@ WHERE 等其他子句;
 
 - 举例：
 
-```mysql
+```sql
 SELECT e.last_name, e.department_id, d.department_name
 FROM   employees e
 LEFT OUTER JOIN departments d
@@ -367,7 +367,7 @@ ON   (e.department_id = d.department_id) ;
 
 - 语法：
 
-```mysql
+```sql
 #实现查询结果是B
 SELECT 字段列表
 FROM A表 RIGHT JOIN B表
@@ -377,7 +377,7 @@ WHERE 等其他子句;
 
 - 举例：
 
-```mysql
+```sql
 SELECT e.last_name, e.department_id, d.department_name
 FROM   employees e
 RIGHT OUTER JOIN departments d
@@ -401,7 +401,7 @@ ON    (e.department_id = d.department_id) ;
 
 语法格式：
 
-```mysql
+```sql
 SELECT column,... FROM table1
 UNION [ALL]
 SELECT column,... FROM table2
@@ -423,12 +423,12 @@ UNION ALL操作符返回两个查询的结果集的并集。对于两个结果�
 
 举例：查询部门编号>90或邮箱包含a的员工信息
 
-```mysql
+```sql
 #方式1
 SELECT * FROM employees WHERE email LIKE '%a%' OR department_id>90;
 ```
 
-```mysql
+```sql
 #方式2
 SELECT * FROM employees  WHERE email LIKE '%a%'
 UNION
@@ -437,7 +437,7 @@ SELECT * FROM employees  WHERE department_id>90;
 
 举例：查询中国用户中男性的信息以及美国用户中年男性的用户信息
 
-```mysql
+```sql
 SELECT id,cname FROM t_chinamale WHERE csex='男'
 UNION ALL
 SELECT id,tname FROM t_usmale WHERE tGender='male';
@@ -449,28 +449,28 @@ SELECT id,tname FROM t_usmale WHERE tGender='male';
 
 ### 5.7.1 代码实现
 
-```mysql
+```sql
 #中图：内连接 A∩B
 SELECT employee_id,last_name,department_name
 FROM employees e JOIN departments d
 ON e.`department_id` = d.`department_id`;
 ```
 
-```mysql
+```sql
 #左上图：左外连接
 SELECT employee_id,last_name,department_name
 FROM employees e LEFT JOIN departments d
 ON e.`department_id` = d.`department_id`;
 ```
 
-```mysql
+```sql
 #右上图：右外连接
 SELECT employee_id,last_name,department_name
 FROM employees e RIGHT JOIN departments d
 ON e.`department_id` = d.`department_id`;
 ```
 
-```mysql
+```sql
 #左中图：A - A∩B
 SELECT employee_id,last_name,department_name
 FROM employees e LEFT JOIN departments d
@@ -478,7 +478,7 @@ ON e.`department_id` = d.`department_id`
 WHERE d.`department_id` IS NULL
 ```
 
-```mysql
+```sql
 #右中图：B-A∩B
 SELECT employee_id,last_name,department_name
 FROM employees e RIGHT JOIN departments d
@@ -486,7 +486,7 @@ ON e.`department_id` = d.`department_id`
 WHERE e.`department_id` IS NULL
 ```
 
-```mysql
+```sql
 #左下图：满外连接
 # 左中图 + 右上图  A∪B
 SELECT employee_id,last_name,department_name
@@ -499,7 +499,7 @@ FROM employees e RIGHT JOIN departments d
 ON e.`department_id` = d.`department_id`;
 ```
 
-```mysql
+```sql
 #右下图
 #左中图 + 右中图  A ∪B- A∩B 或者 (A -  A∩B) ∪ （B - A∩B）
 SELECT employee_id,last_name,department_name
@@ -517,7 +517,7 @@ WHERE e.`department_id` IS NULL
 
 - 左中图
 
-```mysql
+```sql
 #实现A -  A∩B
 select 字段列表
 from A表 left join B表
@@ -527,7 +527,7 @@ where 从表关联字段 is null and 等其他子句;
 
 - 右中图
 
-```mysql
+```sql
 #实现B -  A∩B
 select 字段列表
 from A表 right join B表
@@ -537,7 +537,7 @@ where 从表关联字段 is null and 等其他子句;
 
 - 左下图
 
-```mysql
+```sql
 #实现查询结果是A∪B
 #用左外的A，union 右外的B
 select 字段列表
@@ -555,7 +555,7 @@ where 等其他子句;
 
 - 右下图
 
-```mysql
+```sql
 #实现A∪B -  A∩B  或   (A -  A∩B) ∪ （B - A∩B）
 #使用左外的 (A -  A∩B)  union 右外的（B - A∩B）
 select 字段列表
@@ -581,7 +581,7 @@ SQL99 在 SQL92 的基础上提供了一些特殊语法，比如 `NATURAL JOIN` 
 
 在SQL92标准中：
 
-```mysql
+```sql
 SELECT employee_id,last_name,department_name
 FROM employees e JOIN departments d
 ON e.`department_id` = d.`department_id`
@@ -590,7 +590,7 @@ AND e.`manager_id` = d.`manager_id`;
 
 在 SQL99 中你可以写成：
 
-```mysql
+```sql
 SELECT employee_id,last_name,department_name
 FROM employees e NATURAL JOIN departments d;
 ```
@@ -599,7 +599,7 @@ FROM employees e NATURAL JOIN departments d;
 
 当我们进行连接的时候，SQL99还支持使用 USING 指定数据表里的`同名字段`进行等值连接。但是只能配合JOIN一起使用。比如：
 
-```mysql
+```sql
 SELECT employee_id,last_name,department_name
 FROM employees e JOIN departments d
 USING (department_id);
@@ -607,7 +607,7 @@ USING (department_id);
 
 你能看出与自然连接 NATURAL JOIN 不同的是，USING 指定了具体的相同的字段名称，你需要在 USING 的括号 () 中填入要指定的同名字段。同时使用 `JOIN...USING` 可以简化 JOIN ON 的等值连接。它与下面的 SQL 查询结果是相同的：
 
-```mysql
+```sql
 SELECT employee_id,last_name,department_name
 FROM employees e ,departments d
 WHERE e.department_id = d.department_id;
@@ -623,7 +623,7 @@ WHERE e.department_id = d.department_id;
 
 - USING：只能和JOIN一起使用，而且要求**两个**关联字段在关联表中名称一致，而且只能表示关联字段值相等
 
-```mysql
+```sql
 #关联条件
 #把关联条件写在where后面
 SELECT last_name,department_name 

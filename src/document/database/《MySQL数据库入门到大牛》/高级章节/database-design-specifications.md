@@ -108,13 +108,13 @@ user 表的设计不符合第一范式
 
 `比赛表 player_game` ，里面包含球员编号、姓名、年龄、比赛编号、比赛时间和比赛场地等属性，这 里候选键和主键都为（球员编号，比赛编号），我们可以通过候选键（或主键）来决定如下的关系：
 
-```mysql
+```sql
 (球员编号, 比赛编号) → (姓名, 年龄, 比赛时间, 比赛场地，得分)
 ```
 
 但是这个数据表不满足第二范式，因为数据表中的字段之间还存在着如下的对应关系：
 
-```mysql
+```sql
 (球员编号) → (姓名，年龄)
 
 (比赛编号) → (比赛时间, 比赛场地)
@@ -228,7 +228,7 @@ Orders表和OrderDetails表如下，此时符合第二范式。
 
 员工的信息存储在 `employees 表` 中，部门信息存储在 `departments 表` 中。通过 employees 表中的 department_id字段与 departments 表建立关联关系。如果要查询一个员工所在部门的名称：
 
-```mysql
+```sql
 select employee_id,department_name
 from employees e join departments d
 on e.department_id = d.department_id;
@@ -278,7 +278,7 @@ on e.department_id = d.department_id;
 
 如果我们想要查询课程 ID 为 10001 的前 1000 条评论，需要写成下面这样：
 
-```mysql
+```sql
 SELECT p.comment_text, p.comment_time, stu.stu_name
 FROM class_comment AS p LEFT JOIN student AS stu
 ON p.stu_id = stu.stu_id
@@ -297,7 +297,7 @@ LIMIT 1000;
 
 这样一来，只需单表查询就可以得到数据集结果：
 
-```mysql
+```sql
 SELECT comment_text, comment_time, stu_name
 FROM class_comment2
 WHERE class_id = 10001
@@ -779,7 +779,7 @@ ER 模型看起来比较麻烦，但是对我们把控项目整体非常重要�
 
 16. 【示范】一个较为规范的建表语句：
 
-```mysql
+```sql
 CREATE TABLE user_info (
 `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '自增主键',
 `user_id` bigint(11) NOT NULL COMMENT '用户id',

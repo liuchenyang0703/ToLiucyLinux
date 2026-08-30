@@ -20,7 +20,7 @@ breadcrumb: false
 
 * 查看mysql提供什么存储引擎
 
-```mysql
+```sql
 show engines;
 ```
 
@@ -30,7 +30,7 @@ show engines;
 
 * 查看默认的存储引擎
 
-```mysql
+```sql
 show variables like '%storage_engine%';
 #或
 SELECT @@default_storage_engine;
@@ -42,13 +42,13 @@ SELECT @@default_storage_engine;
 
 如果在创建表的语句中没有显式指定表的存储引擎的话，那就会默认使用 InnoDB 作为表的存储引擎。 如果我们想改变表的默认存储引擎的话，可以这样写启动服务器的命令行：
 
-```mysql
+```sql
 SET DEFAULT_STORAGE_ENGINE=MyISAM;
 ```
 
 或者修改 my.cnf 文件：
 
-```mysql
+```sql
 default-storage-engine=MyISAM
 # 重启服务
 systemctl restart mysqld.service
@@ -62,7 +62,7 @@ systemctl restart mysqld.service
 
 我们之前创建表的语句都没有指定表的存储引擎，那就会使用默认的存储引擎 InnoDB 。如果我们想显 式的指定一下表的存储引擎，那可以这么写：
 
-```mysql
+```sql
 CREATE TABLE 表名(
 建表语句;
 ) ENGINE = 存储引擎名称;
@@ -72,19 +72,19 @@ CREATE TABLE 表名(
 
 如果表已经建好了，我们也可以使用下边这个语句来修改表的存储引擎：
 
-```mysql
+```sql
 ALTER TABLE 表名 ENGINE = 存储引擎名称;
 ```
 
 比如我们修改一下 engine_demo_table 表的存储引擎：
 
-```mysql
+```sql
 mysql> ALTER TABLE engine_demo_table ENGINE = InnoDB;
 ```
 
 这时我们再查看一下 engine_demo_table 的表结构：
 
-```mysql
+```sql
 mysql> SHOW CREATE TABLE engine_demo_table\G
 *************************** 1. row ***************************
 Table: engine_demo_table
@@ -132,7 +132,7 @@ Create Table: CREATE TABLE `engine_demo_table` (
 
 使用案例如下
 
-```mysql
+```sql
 mysql> CREATE TABLE test (i INT NOT NULL, c CHAR(10) NOT NULL) ENGINE = CSV;
 Query OK, 0 rows affected (0.06 sec)
 mysql> INSERT INTO test VALUES(1,'record one'),(2,'record two');
@@ -154,7 +154,7 @@ mysql> SELECT * FROM test;
 
 如果检查 test.CSV 通过执行上述语句创建的数据库目录中的文件，其内容使用Notepad++打开如下：
 
-```mysql
+```sql
 "1","record one"
 "2","record two"
 ```

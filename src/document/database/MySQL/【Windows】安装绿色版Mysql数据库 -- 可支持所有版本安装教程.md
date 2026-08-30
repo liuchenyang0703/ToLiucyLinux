@@ -1,4 +1,4 @@
-﻿---
+---
 title: 【Windows】安装绿色版Mysql数据库 -- 可支持所有版本安装教程
 icon: circle-info
 order: 11
@@ -203,7 +203,7 @@ mysql -uroot -p
 
 **由于自动生成的密码比较复杂，我们可以更改密码，更改密码命令为：`alter user root@'localhost' identified by '123123';` 其中单引号内为更改后的密码；密码可以自己设定。**
 
-```mysql
+```sql
 alter user root@'localhost' identified by '123123';
 ```
 

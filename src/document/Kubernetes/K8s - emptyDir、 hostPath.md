@@ -11,7 +11,7 @@ tag:
   - 存储
   - 运维
 pageview: false
-date: 2026-8-10
+date: 2026-08-10
 comment: false
 breadcrumb: false
 ---
@@ -269,5 +269,4 @@ cat cs.txt
 > **总结**：本文介绍的 `emptyDir` 和 `hostPath` 是Kubernetes内置的基础存储，适用于临时缓存和节点运维等场景。但它们都无法满足Pod跨节点迁移时的数据持久化需求。
 
 > **扩展**：在生产环境中，对于数据库、消息队列等有状态服务，应使用 **PV（持久卷）和 PVC（持久卷声明）** 机制对接后端存储（如NFS、Ceph或云厂商云盘），以实现存储资源与Pod生命周期的解耦。关于PV/PVC的详细实践，我将在后续文章中深入探讨，届时可查看文章：[Kubernetes 共享存储：PV、PVC、StorageClass 详解及使用](https://liucy.blog.csdn.net/article/details/160662805)。
-
 

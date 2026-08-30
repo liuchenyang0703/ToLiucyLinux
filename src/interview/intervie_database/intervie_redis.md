@@ -274,7 +274,7 @@ EXEC       # 返回 nil 表示事务未执行
 
 **解决：** 配置两个参数（Redis 2.8+）：
 
-```conf
+```ini
 min-slaves-to-write 1      # 至少 1 个从节点连接时，主节点才接受写
 min-slaves-max-lag 10      # 从节点延迟超过 10 秒，主节点停止写
 ```

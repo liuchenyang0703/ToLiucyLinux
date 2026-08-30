@@ -45,39 +45,40 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { friends, LinkData } from './友情链接';
-
-const props = defineProps({
-  type: {
-    type: String,
-    required: true,
-  },
-});
 
 let linkDatas: LinkData[] = friends;
 
-const scrollWrapper = ref(null);
-const scrollContainer = ref(null);
+const scrollWrapper = ref<HTMLElement | null>(null);
+const scrollContainer = ref<HTMLElement | null>(null);
+let scrollInterval: ReturnType<typeof setInterval> | undefined;
 
 function autoScroll() {
-  if (scrollWrapper.value && scrollContainer.value) {
-    const wrapperWidth = scrollWrapper.value.clientWidth;
-    const containerWidth = scrollContainer.value.clientWidth / 2; // 因为内容复制了一份，所以实际内容宽度是容器宽度的一半
+  const wrapper = scrollWrapper.value;
+  const container = scrollContainer.value;
+  if (wrapper && container) {
+    const containerWidth = container.clientWidth / 2; // 因为内容复制了一份，所以实际内容宽度是容器宽度的一半
     let scrollPosition = 0;
     const scrollSpeed = 1;
-    const scrollInterval = setInterval(() => {
+    scrollInterval = setInterval(() => {
       scrollPosition += scrollSpeed;
       if (scrollPosition >= containerWidth) {
         scrollPosition = 0;
       }
-      scrollWrapper.value.scrollLeft = scrollPosition;
+      wrapper.scrollLeft = scrollPosition;
     }, 20);
   }
 }
 
 onMounted(() => {
   autoScroll();
+});
+
+onBeforeUnmount(() => {
+  if (scrollInterval) {
+    clearInterval(scrollInterval);
+  }
 });
 </script>
 

@@ -62,7 +62,7 @@ MySQL有不同类型的日志文件，用来存储不同类型的日志，分为
 
 ### 3.2 查看当前状态
 
-```mysql
+```sql
 mysql> SHOW VARIABLES LIKE '%general%';
 +------------------+------------------------------+
 | Variable_name    | Value                        |
@@ -91,23 +91,23 @@ general_log_file=[path[filename]] #日志文件所在目录路径，filename为�
 
 **方式2：临时性方式**
 
-```mysql
+```sql
 SET GLOBAL general_log=on; # 开启通用查询日志
 ```
 
-```mysql
+```sql
 SET GLOBAL general_log_file=’path/filename’; # 设置日志文件保存位置
 ```
 
 对应的，关闭操作SQL命令如下：
 
-```mysql
+```sql
 SET GLOBAL general_log=off; # 关闭通用查询日志
 ```
 
 查看设置后情况：
 
-```mysql
+```sql
 SHOW VARIABLES LIKE 'general_log%';
 ```
 
@@ -121,7 +121,7 @@ SHOW VARIABLES LIKE 'general_log%';
 
 从 `SHOW VARIABLES LIKE 'general_log%'`; 结果中可以看到通用查询日志的位置。
 
-```mysql
+```sql
 /usr/sbin/mysqld, Version: 8.0.26 (MySQL Community Server - GPL). started with:
 Tcp port: 3306 Unix socket: /var/lib/mysql/mysql.sock
 Time Id Command Argument
@@ -172,13 +172,13 @@ general_log=OFF
 
 使用SET语句停止MySQL通用查询日志功能：
 
-```mysql
+```sql
 SET GLOBAL general_log=off;
 ```
 
 查询通用日志功能：
 
-```mysql
+```sql
 SHOW VARIABLES LIKE 'general_log%';
 ```
 
@@ -188,7 +188,7 @@ SHOW VARIABLES LIKE 'general_log%';
 
 **手动删除文件**
 
-```mysql
+```sql
 SHOW VARIABLES LIKE 'general_log%';
 ```
 
@@ -196,13 +196,13 @@ SHOW VARIABLES LIKE 'general_log%';
 
 使用如下命令重新生成查询日志文件，具体命令如下。刷新MySQL数据目录，发现创建了新的日志文 件。前提一定要开启通用日志。
 
-```mysql
+```sql
 mysqladmin -uroot -p flush-logs
 ```
 
 如果希望备份旧的通用查询日志，就必须先将旧的日志文件复制出来或者改名，然后执行上面的mysqladmin命令。正确流程如下：
 
-```liunx
+```bash
 cd mysql-data-directory # 输入自己的通用日志文件所在目录
 mv mysql.general.log mysql.general.log.old # 指定旧的文件名 以及 新的文件名
 mysqladmin -uroot -p flush-logs
@@ -231,7 +231,7 @@ MySQL错误日志是以文本文件形式存储的，可以使用文本编辑器
 
 查询错误日志的存储路径：
 
-```mysql
+```sql
 mysql> SHOW VARIABLES LIKE 'log_err%';
 +----------------------------+----------------------------------------+
 | Variable_name              | Value                                  |
@@ -254,7 +254,7 @@ mysql> SHOW VARIABLES LIKE 'log_err%';
 
 * 第一步（方式1）：删除操作
 
-  ```mysql
+  ```sql
   rm -f /var/lib/mysql/mysqld.log
   ```
 
@@ -262,19 +262,19 @@ mysql> SHOW VARIABLES LIKE 'log_err%';
 
 * 第一步（方式2）：重命名文件
 
-  ```mysql
+  ```sql
   mv /var/log/mysqld.log /var/log/mysqld.log.old
   ```
 
 * 第二步：重建日志
 
-  ```mysql
+  ```sql
   mysqladmin -uroot -p flush-logs
   ```
 
   可能会报错
 
-  ```mysql
+  ```sql
   [root@atguigu01 log]# mysqladmin -uroot -p flush-logs
   Enter password:
   mysqladmin: refresh failed; error: 'Could not open file '/var/log/mysqld.log' for
@@ -287,7 +287,7 @@ mysql> SHOW VARIABLES LIKE 'log_err%';
 
 补充操作：
 
-```mysql
+```sql
 install -omysql -gmysql -m0644 /dev/null /var/log/mysqld.log
 ```
 
@@ -321,7 +321,7 @@ binlog主要应用场景：
 
 查看记录二进制日志是否开启：在MySQL8中默认情况下，二进制文件是开启的。
 
-```mysql
+```sql
 mysql> show variables like '%log_bin%';
 +---------------------------------+----------------------------------+
 | Variable_name                   | Value                            |
@@ -356,7 +356,7 @@ max_binlog_size=100M
 
 重新启动MySQL服务，查询二进制日志的信息，执行结果：
 
-```mysql
+```sql
 mysql> show variables like '%log_bin%';
 +---------------------------------+----------------------------------+
 | Variable_name                   | Value                            |
@@ -382,7 +382,7 @@ log-bin="/var/lib/mysql/binlog/atguigu-bin"
 
 注意：新建的文件夹需要使用mysql用户，使用下面的命令即可。
 
-```mysql
+```sql
 chown -R -v mysql:mysql binlog
 ```
 
@@ -392,7 +392,7 @@ chown -R -v mysql:mysql binlog
 
 如果不希望通过修改配置文件并重启的方式设置二进制日志的话，还可以使用如下指令，需要注意的是 在mysql8中只有 `会话级别` 的设置，没有了global级别的设置。
 
-```mysql
+```sql
 # global 级别
 mysql> set global sql_log_bin=0;
 ERROR 1228 (HY000): Variable 'sql_log_bin' is a SESSION variable and can`t be used
@@ -411,7 +411,7 @@ MySQL服务 `重新启动一次` ，以“.000001”为后缀的文件就会增�
 
 查看当前的二进制日志文件列表及大小。指令如下：
 
-```mysql
+```sql
 mysql> SHOW BINARY LOGS;
 +--------------------+-----------+-----------+
 | Log_name           | File_size | Encrypted |
@@ -423,7 +423,7 @@ mysql> SHOW BINARY LOGS;
 
 所有对数据库的修改都会记录在binlog中。但binlog是二进制文件，无法直接查看，想要更直观的观测它就要借助`mysqlbinlog`命令工具了。指令如下：在查看执行，先执行一条SQL语句，如下
 
-```mysql
+```sql
 update student set name='张三_back' where id=1;
 ```
 
@@ -435,7 +435,7 @@ update student set name='张三_back' where id=1;
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220715164809401.png" alt="image-20220715164809401" style="float:left;" />
 
-```mysql
+```sql
 mysqlbinlog -v "/var/lib/mysql/binlog/atguigu-bin.000002"
 #220105 9:16:37 server id 1 end_log_pos 324 CRC32 0x6b31978b Query thread_id=10
 exec_time=0 error_code=0
@@ -483,7 +483,7 @@ COMMIT/*!*/;
 
 前面的命令同时显示binlog格式的语句，使用如下命令不显示它
 
-```mysql
+```sql
 mysqlbinlog -v --base64-output=DECODE-ROWS "/var/lib/mysql/binlog/atguigu-bin.000002"
 #220105 9:16:37 server id 1 end_log_pos 324 CRC32 0x6b31978b Query thread_id=10
 exec_time=0 error_code=0
@@ -523,7 +523,7 @@ BEGIN
 
 关于mysqlbinlog工具的使用技巧还有很多，例如只解析对某个库的操作或者某个时间段内的操作等。简单分享几个常用的语句，更多操作可以参考官方文档。
 
-```mysql
+```sql
 # 可查看参数帮助
 mysqlbinlog --no-defaults --help
 # 查看最后100行
@@ -536,7 +536,7 @@ mysqlbinlog --no-defaults --base64-output=decode-rows -vv atguigu-bin.000002 |gr
 
 上面这种办法读取出binlog日志的全文内容比较多，不容易分辨查看到pos点信息，下面介绍一种更为方便的查询命令：
 
-```mysql
+```sql
 mysql> show binlog events [IN 'log_name'] [FROM pos] [LIMIT [offset,] row_count];
 ```
 
@@ -545,7 +545,7 @@ mysql> show binlog events [IN 'log_name'] [FROM pos] [LIMIT [offset,] row_count]
 * `LIMIT [offset]` ：偏移量(不指定就是0) 
 * `row_count` :查询总条数（不指定就是所有行）
 
-```mysql
+```sql
 mysql> show binlog events in 'atguigu-bin.000002';
 +--------------------+-----+----------------+-----------+-------------+--------------------------------------------------------+
 | Log_name           | Pos | Event_type     | Server_id | End_log_pos | Info                                                   |
@@ -572,7 +572,7 @@ mysql> show binlog events in 'atguigu-bin.000002';
 
 上面我们讲了这么多都是基于binlog的默认格式，binlog格式查看
 
-```mysql
+```sql
 mysql> show variables like 'binlog_format';
 +---------------+-------+
 | Variable_name | Value |
@@ -608,7 +608,7 @@ mysql> show variables like 'binlog_format';
 
 mysqlbinlog恢复数据的语法如下：
 
-```mysql
+```sql
 mysqlbinlog [option] filename|mysql –uuser -ppass;
 ```
 
@@ -632,7 +632,7 @@ MySQL的二进制文件可以配置自动删除，同时MySQL也提供了安全�
 
 PURGE MASTER LOGS语法如下：
 
-```mysql
+```sql
 PURGE {MASTER | BINARY} LOGS TO ‘指定日志文件名’
 PURGE {MASTER | BINARY} LOGS BEFORE ‘指定日期’
 ```
@@ -728,7 +728,7 @@ write和fsync的时机，可以由参数 `sync_binlog` 控制，默认是 `0` �
 
 中继日志与二进制日志的格式相同，可以用 `mysqlbinlog` 工具进行查看。下面是中继日志的一个片段：
 
-```mysql
+```sql
 SET TIMESTAMP=1618558728/*!*/;
 BEGIN
 /*!*/;
@@ -747,7 +747,7 @@ CD95YCABAAAAKAAAAGgDAAAAAFsAAAAAAAEAAgAB/wABAAAAfATkBw==
 
 这一段的意思是，主服务器（“server id 1”）对表 atguigu.test 进行了 2 步操作：
 
-```mysql
+```sql
 定位到表 atguigu.test 编号是 91 的记录，日志位置是 832；
 删除编号是 91 的记录，日志位置是 872
 ```

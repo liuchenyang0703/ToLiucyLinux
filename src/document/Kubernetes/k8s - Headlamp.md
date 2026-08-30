@@ -12,7 +12,7 @@ tag:
   - yaml
   - 运维
 pageview: false
-date: 2026-7-13
+date: 2026-07-13
 comment: false
 breadcrumb: false
 ---
@@ -578,7 +578,6 @@ kubectl get clusterrole | grep -i headlamp
 ```bash
 kubectl get pods,deploy,svc,endpoints,cm,secrets,sa,ClusterRoleBinding,clusterrole -A | grep -i headlamp
 ```
-
 
 
 

@@ -318,7 +318,7 @@ MySQL安装完毕之后，需要启动服务器进程，不然客户端无法连
 
 #### 方式2：使用命令行工具
 
-```mysql
+```sql
 # 启动 MySQL 服务命令：
 net start MySQL服务名
 
@@ -357,7 +357,7 @@ mysql -h 主机名 -P 端口号 -u 用户名 -p密码
 - 举例：
 
 
-```mysql
+```sql
 mysql -h localhost -P 3306 -u root -pabc123  # 这里我设置的root用户的密码是abc123
 ```
 
@@ -420,7 +420,7 @@ quit
 
 1、查看所有的数据库
 
-```mysql
+```sql
 show databases;
 ```
 
@@ -438,7 +438,7 @@ show databases;
 
 2、创建自己的数据库
 
-```mysql
+```sql
 create database 数据库名;
 
 #创建atguigudb数据库，该名称不能与已经存在的数据库重名。
@@ -447,7 +447,7 @@ create database atguigudb;
 
 3、使用自己的数据库
 
-```mysql
+```sql
 use 数据库名;
 
 #使用atguigudb数据库
@@ -460,7 +460,7 @@ use atguigudb;
 
 4、查看某个库的所有表格
 
-```mysql
+```sql
 show tables;  #要求前面有use语句
 
 show tables from 数据库名;
@@ -468,7 +468,7 @@ show tables from 数据库名;
 
 5、创建新的表格
 
-```mysql
+```sql
 create table 表名称(
 	字段名  数据类型,
 	字段名 数据类型
@@ -477,7 +477,7 @@ create table 表名称(
 
 说明：如果是最后一个字段，后面就用加逗号，因为逗号的作用是分割每个字段。
 
-```mysql
+```sql
 #创建学生表
 create table student(
 	id int,
@@ -487,18 +487,18 @@ create table student(
 
 6、查看一个表的数据
 
-```mysql
+```sql
 select * from 数据库表名称;
 ```
 
-```mysql
+```sql
 #查看学生表的数据
 select * from student;
 ```
 
 7、添加一条记录
 
-```mysql
+```sql
 insert into 表名称 values(值列表);
 
 #添加两条记录到student表中
@@ -508,7 +508,7 @@ insert into student values(2,'李四');
 
 报错：
 
-```mysql
+```sql
 mysql> insert into student values(1,'张三');
 ERROR 1366 (HY000): Incorrect string value: '\xD5\xC5\xC8\xFD' for column 'name' at row 1
 mysql> insert into student values(2,'李四');
@@ -520,7 +520,7 @@ mysql> show create table student;
 
 8、查看表的创建信息
 
-```mysql
+```sql
 show create table 表名称\G
 
 
@@ -528,7 +528,7 @@ show create table 表名称\G
 show create table student\G
 ```
 
-```mysql
+```sql
 #结果如下
 *************************** 1. row ***************************
        Table: student
@@ -543,14 +543,14 @@ Create Table: CREATE TABLE `student` (
 
 9、查看数据库的创建信息
 
-```mysql
+```sql
 show create database 数据库名\G
 
 #查看atguigudb数据库的详细创建信息
 show create database atguigudb\G
 ```
 
-```mysql
+```sql
 #结果如下
 *************************** 1. row ***************************
        Database: atguigudb
@@ -562,22 +562,22 @@ Create Database: CREATE DATABASE `atguigudb` /*!40100 DEFAULT CHARACTER SET lati
 
 10、删除表格
 
-```mysql
+```sql
 drop table 表名称;
 ```
 
-```mysql
+```sql
 #删除学生表
 drop table student;
 ```
 
 11、删除数据库
 
-```mysql
+```sql
 drop database 数据库名;
 ```
 
-```mysql
+```sql
 #删除atguigudb数据库
 drop database atguigudb;
 ```
@@ -588,7 +588,7 @@ drop database atguigudb;
 
 **问题再现：命令行操作sql乱码问题**
 
-```mysql
+```sql
 mysql> INSERT INTO t_stu VALUES(1,'张三','男');
 ERROR 1366 (HY000): Incorrect string value: '\xD5\xC5\xC8\xFD' for column 'sname' at row 1
 ```
@@ -716,7 +716,7 @@ DBeaver是一个通用的数据库管理工具和 SQL 客户端，支持所有�
 
 第二种解决方案如下，用命令行登录MySQL数据库之后，执行如下命令修改用户密码加密规则并更新用户密码，这里修改用户名为“root@localhost”的用户密码规则为“mysql_native_password”，密码值为“123456”，如图所示。
 
-```mysql
+```sql
 #使用mysql数据库
 USE mysql; 
 
@@ -802,7 +802,7 @@ mysqld --defaults-file="D:\ProgramFiles\mysql\MySQLServer5.7Data\my.ini" --skip-
 
 ### 问题4：命令行客户端的字符集问题
 
-```mysql
+```sql
 mysql> INSERT INTO t_stu VALUES(1,'张三','男');
 ERROR 1366 (HY000): Incorrect string value: '\xD5\xC5\xC8\xFD' for column 'sname' at row 1
 ```
@@ -831,7 +831,7 @@ ERROR 1366 (HY000): Incorrect string value: '\xD5\xC5\xC8\xFD' for column 'sname
 
 如果是在修改my.ini之前建的库和表，那么库和表的编码还是原来的Latin1，要么删了重建，要么使用alter语句修改编码。
 
-```mysql
+```sql
 mysql> create database 0728db charset Latin1;
 Query OK, 1 row affected (0.00 sec)
 ```
@@ -841,7 +841,7 @@ mysql> use 0728db;
 Database changed
 ```
 
-```mysql
+```sql
 mysql> create table student (id int , name varchar(20)) charset Latin1;
 Query OK, 0 rows affected (0.02 sec)
 
@@ -857,7 +857,7 @@ Create Table: CREATE TABLE `student` (
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> alter table student charset utf8; #修改表字符编码为UTF8
 Query OK, 0 rows affected (0.01 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -890,7 +890,7 @@ Create Table: CREATE TABLE `student` (
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> show create database 0728db;;
 +--------+-----------------------------------------------------------------+
 |Database| Create Database                                                 |

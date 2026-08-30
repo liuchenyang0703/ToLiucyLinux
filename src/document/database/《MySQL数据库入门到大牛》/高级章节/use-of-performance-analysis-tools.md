@@ -42,7 +42,7 @@ breadcrumb: false
 
 SHOW STATUS语句语法如下：
 
-```mysql
+```sql
 SHOW [GLOBAL|SESSION] STATUS LIKE '参数';
 ```
 
@@ -62,19 +62,19 @@ SHOW [GLOBAL|SESSION] STATUS LIKE '参数';
 
 若查询MySQL服务器的连接次数，则可以执行如下语句:
 
-```mysql
+```sql
 SHOW STATUS LIKE 'Connections';
 ```
 
 若查询服务器工作时间，则可以执行如下语句:
 
-```mysql
+```sql
 SHOW STATUS LIKE 'Uptime';
 ```
 
 若查询MySQL服务器的慢查询次数，则可以执行如下语句:
 
-```mysql
+```sql
 SHOW STATUS LIKE 'Slow_queries';
 ```
 
@@ -82,7 +82,7 @@ SHOW STATUS LIKE 'Slow_queries';
 
 再比如，如下的指令可以查看相关的指令情况：
 
-```mysql
+```sql
 SHOW STATUS LIKE 'Innodb_rows_%';
 ```
 
@@ -94,7 +94,7 @@ SHOW STATUS LIKE 'Innodb_rows_%';
 
 我们依然使用第8章的 student_info 表为例：
 
-```mysql
+```sql
 CREATE TABLE `student_info` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `student_id` INT NOT NULL ,
@@ -108,7 +108,7 @@ CREATE TABLE `student_info` (
 
 如果我们想要查询 id=900001 的记录，然后看下查询成本，我们可以直接在聚簇索引上进行查找：
 
-```mysql
+```sql
 SELECT student_id, class_id, NAME, create_time FROM student_info WHERE id = 900001;
 ```
 
@@ -116,7 +116,7 @@ SELECT student_id, class_id, NAME, create_time FROM student_info WHERE id = 9000
 
 然后再看下查询优化器的成本，实际上我们只需要检索一个页即可：
 
-```mysql
+```sql
 mysql> SHOW STATUS LIKE 'last_query_cost';
 +-----------------+----------+
 | Variable_name   |   Value  |
@@ -127,7 +127,7 @@ mysql> SHOW STATUS LIKE 'last_query_cost';
 
 如果我们想要查询 id 在 900001 到 9000100 之间的学生记录呢？
 
-```mysql
+```sql
 SELECT student_id, class_id, NAME, create_time FROM student_info WHERE id BETWEEN 900001 AND 900100;
 ```
 
@@ -135,7 +135,7 @@ SELECT student_id, class_id, NAME, create_time FROM student_info WHERE id BETWEE
 
 然后再看下查询优化器的成本，这时我们大概需要进行 20 个页的查询。
 
-```mysql
+```sql
 mysql> SHOW STATUS LIKE 'last_query_cost';
 +-----------------+-----------+
 | Variable_name   |   Value   |
@@ -165,7 +165,7 @@ mysql> SHOW STATUS LIKE 'last_query_cost';
 
 在使用前，我们需要先查下慢查询是否已经开启，使用下面这条命令即可：
 
-```mysql
+```sql
 mysql > show variables like '%slow_query_log';
 ```
 
@@ -173,7 +173,7 @@ mysql > show variables like '%slow_query_log';
 
 我们可以看到 `slow_query_log=OFF`，我们可以把慢查询日志打开，注意设置变量值的时候需要使用 global，否则会报错：
 
-```mysql
+```sql
 mysql > set global slow_query_log='ON';
 ```
 
@@ -187,7 +187,7 @@ mysql > set global slow_query_log='ON';
 
 接下来我们来看下慢查询的时间阈值设置，使用如下命令：
 
-```mysql
+```sql
 mysql > show variables like '%long_query_time%';
 ```
 
@@ -195,7 +195,7 @@ mysql > show variables like '%long_query_time%';
 
 这里如果我们想把时间缩短，比如设置为 1 秒，可以这样设置：
 
-```mysql
+```sql
 #测试发现：设置global的方式对当前session的long_query_time失效。对新连接的客户端有效。所以可以一并
 执行下述语句
 mysql > set global long_query_time = 1;
@@ -227,7 +227,7 @@ log_output=FILE
 
 查询当前系统中有多少条慢查询记录
 
-```mysql
+```sql
 SHOW GLOBAL STATUS LIKE '%Slow_queries%';
 ```
 
@@ -235,7 +235,7 @@ SHOW GLOBAL STATUS LIKE '%Slow_queries%';
 
 **步骤1. 建表**
 
-```mysql
+```sql
 CREATE TABLE `student` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `stuno` INT NOT NULL ,
@@ -250,13 +250,13 @@ CREATE TABLE `student` (
 
 创建函数，假如报错：
 
-```mysql
+```sql
 This function has none of DETERMINISTIC......
 ```
 
 * 命令开启：允许创建函数设置：
 
-```mysql
+```sql
 set global log_bin_trust_function_creators=1; # 不加global只是当前窗口有效。
 ```
 
@@ -264,7 +264,7 @@ set global log_bin_trust_function_creators=1; # 不加global只是当前窗口�
 
 随机产生字符串：（同上一章）
 
-```mysql
+```sql
 DELIMITER //
 CREATE FUNCTION rand_string(n INT)
 	RETURNS VARCHAR(255) #该函数会返回一个字符串
@@ -287,7 +287,7 @@ SELECT rand_string(10);
 
 产生随机数值：（同上一章）
 
-```mysql
+```sql
 DELIMITER //
 CREATE FUNCTION rand_num (from_num INT ,to_num INT) RETURNS INT(11)
 BEGIN
@@ -303,7 +303,7 @@ SELECT rand_num(10,100);
 
 **步骤4：创建存储过程**
 
-```mysql
+```sql
 DELIMITER //
 CREATE PROCEDURE insert_stu1( START INT , max_num INT )
 BEGIN
@@ -322,7 +322,7 @@ DELIMITER ;
 
 **步骤5：调用存储过程**
 
-```mysql
+```sql
 #调用刚刚写好的函数, 4000000条记录,从100001号开始
 
 CALL insert_stu1(100001,4000000);
@@ -332,7 +332,7 @@ CALL insert_stu1(100001,4000000);
 
 **1. 测试**
 
-```mysql
+```sql
 mysql> SELECT * FROM student WHERE stuno = 3455655;
 +---------+---------+--------+------+---------+
 |   id    |  stuno  |  name  | age  | classId |
@@ -359,7 +359,7 @@ mysql> SELECT * FROM student WHERE name = 'oQmLUr';
 
 **2. 分析**
 
-```mysql
+```sql
 show status like 'slow_queries';
 ```
 
@@ -447,7 +447,7 @@ slow_query_log=OFF
 
 重启MySQL服务，执行如下语句查询慢日志功能。
 
-```mysql
+```sql
 SHOW VARIABLES LIKE '%slow%'; #查询慢查询日志所在目录
 SHOW VARIABLES LIKE '%long_query_time%'; #查询超时时长
 ```
@@ -458,13 +458,13 @@ SHOW VARIABLES LIKE '%long_query_time%'; #查询超时时长
 
 （1）停止MySQL慢查询日志功能，具体SQL语句如下。
 
-```mysql
+```sql
 SET GLOBAL slow_query_log=off;
 ```
 
 （2）**重启MySQL服务**，使用SHOW语句查询慢查询日志功能信息，具体SQL语句如下。
 
-```mysql
+```sql
 SHOW VARIABLES LIKE '%slow%';
 #以及
 SHOW VARIABLES LIKE '%long_query_time%';
@@ -474,7 +474,7 @@ SHOW VARIABLES LIKE '%long_query_time%';
 
 使用SHOW语句显示慢查询日志信息，具体SQL语句如下。
 
-```mysql
+```sql
 SHOW VARIABLES LIKE `slow_query_log%`;
 ```
 
@@ -500,7 +500,7 @@ show profile 是 MySQL 提供的可以用来分析当前会话中 SQL 都做了�
 
 我们可以在会话级别开启这个功能。
 
-```mysql
+```sql
 mysql > show variables like 'profiling';
 ```
 
@@ -508,7 +508,7 @@ mysql > show variables like 'profiling';
 
 通过设置 profiling='ON' 来开启 show profile:
 
-```mysql
+```sql
 mysql > set profiling = 'ON';
 ```
 
@@ -516,7 +516,7 @@ mysql > set profiling = 'ON';
 
 然后执行相关的查询语句。接着看下当前会话都有哪些 profiles，使用下面这条命令：
 
-```mysql
+```sql
 mysql > show profiles;
 ```
 
@@ -524,13 +524,13 @@ mysql > show profiles;
 
 你能看到当前会话一共有 2 个查询。如果我们想要查看最近一次查询的开销，可以使用：
 
-```mysql
+```sql
 mysql > show profile;
 ```
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220628205317257.png" alt="image-20220628205317257" style="float:left;" />
 
-```mysql
+```sql
 mysql> show profile cpu,block io for query 2
 ```
 
@@ -606,7 +606,7 @@ https://dev.mysql.com/doc/refman/8.0/en/explain-output.html
 
 EXPLAIN 或 DESCRIBE语句的语法形式如下：
 
-```mysql
+```sql
 EXPLAIN SELECT select_options
 或者
 DESCRIBE SELECT select_options
@@ -614,7 +614,7 @@ DESCRIBE SELECT select_options
 
 如果我们想看看某个查询的执行计划的话，可以在具体的查询语句前边加一个 EXPLAIN ，就像这样：
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT 1;
 ```
 
@@ -630,7 +630,7 @@ EXPLAIN 语句输出的各个列的作用如下：
 
 **1. 建表**
 
-```mysql
+```sql
 CREATE TABLE s1 (
     id INT AUTO_INCREMENT,
     key1 VARCHAR(100),
@@ -648,7 +648,7 @@ CREATE TABLE s1 (
 ) ENGINE=INNODB CHARSET=utf8;
 ```
 
-```mysql
+```sql
 CREATE TABLE s2 (
     id INT AUTO_INCREMENT,
     key1 VARCHAR(100),
@@ -670,13 +670,13 @@ CREATE TABLE s2 (
 
 创建函数，假如报错，需开启如下命令：允许创建函数设置：
 
-```mysql
+```sql
 set global log_bin_trust_function_creators=1; # 不加global只是当前窗口有效。
 ```
 
 **3. 创建函数**
 
-```mysql
+```sql
 DELIMITER //
 CREATE FUNCTION rand_string1(n INT)
 	RETURNS VARCHAR(255) #该函数会返回一个字符串
@@ -698,7 +698,7 @@ DELIMITER ;
 
 创建往s1表中插入数据的存储过程：
 
-```mysql
+```sql
 DELIMITER //
 CREATE PROCEDURE insert_s1 (IN min_num INT (10),IN max_num INT (10))
 BEGIN
@@ -724,7 +724,7 @@ DELIMITER ;
 
 创建往s2表中插入数据的存储过程：
 
-```mysql
+```sql
 DELIMITER //
 CREATE PROCEDURE insert_s2 (IN min_num INT (10),IN max_num INT (10))
 BEGIN
@@ -752,13 +752,13 @@ DELIMITER ;
 
 s1表数据的添加：加入1万条记录：
 
-```mysql
+```sql
 CALL insert_s1(10001,10000);
 ```
 
 s2表数据的添加：加入1万条记录：
 
-```mysql
+```sql
 CALL insert_s2(10001,10000);
 ```
 
@@ -770,7 +770,7 @@ CALL insert_s2(10001,10000);
 
 不论我们的查询语句有多复杂，里边儿 包含了多少个表 ，到最后也是需要对每个表进行 单表访问 的，所 以MySQL规定EXPLAIN语句输出的每条记录都对应着某个单表的访问方法，该条记录的table列代表着该 表的表名（有时不是真实的表名字，可能是简称）。
 
-```mysql
+```sql
 mysql > EXPLAIN SELECT * FROM s1;
 ```
 
@@ -780,7 +780,7 @@ mysql > EXPLAIN SELECT * FROM s1;
 
 下边我们看一个连接查询的执行计划
 
-```mysql
+```sql
 mysql > EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 ```
 
@@ -792,13 +792,13 @@ mysql > EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 
 我们写的查询语句一般都以 SELECT 关键字开头，比较简单的查询语句里只有一个 SELECT 关键字，比 如下边这个查询语句：
 
-```mysql
+```sql
 SELECT * FROM s1 WHERE key1 = 'a';
 ```
 
 稍微复杂一点的连接查询中也只有一个 SELECT 关键字，比如：
 
-```mysql
+```sql
 SELECT * FROM s1 INNER JOIN s2
 ON s1.key1 = s2.key1
 WHERE s1.common_field = 'a';
@@ -808,7 +808,7 @@ WHERE s1.common_field = 'a';
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220628221948512.png" alt="image-20220628221948512" style="float:left;" />
 
-```mysql
+```sql
 mysql > EXPLAIN SELECT * FROM s1 WHERE key1 = 'a';
 ```
 
@@ -816,7 +816,7 @@ mysql > EXPLAIN SELECT * FROM s1 WHERE key1 = 'a';
 
 对于连接查询来说，一个SELECT关键字后边的FROM字句中可以跟随多个表，所以在连接查询的执行计划中，每个表都会对应一条记录，但是这些记录的id值都是相同的，比如：
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 ```
 
@@ -826,7 +826,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 
 对于包含子查询的查询语句来说，就可能涉及多个`SELECT`关键字，所以在**包含子查询的查询语句的执行计划中，每个`SELECT`关键字都会对应一个唯一的id值，比如这样：
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN (SELECT key1 FROM s2) OR key3 = 'a';
 ```
 
@@ -834,7 +834,7 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN (SELECT key1 FROM s2) OR key3 = 'a
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220629170848349.png" alt="image-20220629170848349" style="float:left;" />
 
-```mysql
+```sql
 # 查询优化器可能对涉及子查询的查询语句进行重写，转变为多表查询的操作。  
 mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN (SELECT key2 FROM s2 WHERE common_field = 'a');
 ```
@@ -845,7 +845,7 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN (SELECT key2 FROM s2 WHERE common_
 
 对于包含`UNION`子句的查询语句来说，每个`SELECT`关键字对应一个`id`值也是没错的，不过还是有点儿特别的东西，比方说下边的查询：
 
-```mysql
+```sql
 # Union去重
 mysql> EXPLAIN SELECT * FROM s1 UNION SELECT * FROM s2;
 ```
@@ -854,7 +854,7 @@ mysql> EXPLAIN SELECT * FROM s1 UNION SELECT * FROM s2;
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220629171104375.png" alt="image-20220629171104375" style="float:left;" />
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 UNION ALL SELECT * FROM s2;
 ```
 
@@ -878,7 +878,7 @@ mysql> EXPLAIN SELECT * FROM s1 UNION ALL SELECT * FROM s2;
 
   查询语句中不包含`UNION`或者子查询的查询都算作是`SIMPLE`类型，比方说下边这个单表查询`select_type`的值就是`SIMPLE`:
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1;
   ```
 
@@ -886,7 +886,7 @@ mysql> EXPLAIN SELECT * FROM s1 UNION ALL SELECT * FROM s2;
 
 ​        当然，连接查询也算是 SIMPLE 类型，比如：
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 ```
 
@@ -896,7 +896,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 
   对于包含`UNION、UNION ALL`或者子查询的大查询来说，它是由几个小查询组成的，其中最左边的那个查询的`select_type`的值就是`PRIMARY`,比方说：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 UNION SELECT * FROM s2;
   ```
 
@@ -916,7 +916,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 
   如果包含子查询的查询语句不能够转为对应的`semi-join`的形式，并且该子查询是不相关子查询，并且查询优化器决定采用将该子查询物化的方案来执行该子查询时，该子查询的第一个`SELECT`关键字代表的那个查询的`select_type`就是`SUBQUERY`，比如下边这个查询：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN (SELECT key1 FROM s2) OR key3 = 'a';
   ```
 
@@ -924,7 +924,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 
 * DEPENDENT SUBQUERY
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN (SELECT key1 FROM s2 WHERE s1.key2 = s2.key2) OR key3 = 'a';
   ```
 
@@ -932,7 +932,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 
 * DEPENDENT UNION
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN (SELECT key1 FROM s2 WHERE key1 = 'a' UNION SELECT key1 FROM s1 WHERE key1 = 'b');
   ```
 
@@ -940,7 +940,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 
 * DERIVED
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM (SELECT key1, count(*) as c FROM s1 GROUP BY key1) AS derived_s1 where c > 1;
   ```
 
@@ -952,7 +952,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 
   当查询优化器在执行包含子查询的语句时，选择将子查询物化之后的外层查询进行连接查询时，该子查询对应的`select_type`属性就是DERIVED，比如下边这个查询：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN (SELECT key1 FROM s2);
   ```
 
@@ -972,7 +972,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2;
 * <a>https://dev.mysql.com/doc/refman/5.7/en/alter-table-partition-operations.html</a>
 * 如果想详细了解，可以如下方式测试。创建分区表：
 
-```mysql
+```sql
 -- 创建分区表，
 -- 按照id分区，id<100 p0分区，其他p1分区
 CREATE TABLE user_partitions (id INT auto_increment,
@@ -985,7 +985,7 @@ PARTITION p1 VALUES less than MAXVALUE
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220629190304966.png" alt="image-20220629190304966" style="float:left;" />
 
-```mysql
+```sql
 DESC SELECT * FROM user_partitions WHERE id>200;
 ```
 
@@ -1005,7 +1005,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   当表中`只有一条记录`并且该表使用的存储引擎的统计数据是精确的，比如MyISAM、Memory，那么对该表的访问方法就是`system`。比方说我们新建一个`MyISAM`表，并为其插入一条记录：
 
-  ```mysql
+  ```sql
   mysql> CREATE TABLE t(i int) Engine=MyISAM;
   Query OK, 0 rows affected (0.05 sec)
   
@@ -1015,7 +1015,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   然后我们看一下查询这个表的执行计划：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM t;
   ```
 
@@ -1029,7 +1029,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   当我们根据主键或者唯一二级索引列与常数进行等值匹配时，对单表的访问方法就是`const`, 比如：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE id = 10005;
   ```
 
@@ -1039,7 +1039,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   在连接查询时，如果被驱动表是通过主键或者唯一二级索引列等值匹配的方式进行访问的（如果该主键或者唯一二级索引是联合索引的话，所有的索引列都必须进行等值比较）。则对该被驱动表的访问方法就是`eq_ref`，比方说：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.id = s2.id;
   ```
 
@@ -1051,7 +1051,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   当通过普通的二级索引列与常量进行等值匹配时来查询某个表，那么对该表的访问方法就可能是`ref`，比方说下边这个查询：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a';
   ```
 
@@ -1065,7 +1065,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   当对普通二级索引进行等值匹配查询，该索引列的值也可以是`NULL`值时，那么对该表的访问方法就可能是`ref_or_null`，比如说：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a' OR key1 IS NULL;
   ```
 
@@ -1075,7 +1075,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   一般情况下对于某个表的查询只能使用到一个索引，但单表访问方法时在某些场景下可以使用`Interseation、union、Sort-Union`这三种索引合并的方式来执行查询。我们看一下执行计划中是怎么体现MySQL使用索引合并的方式来对某个表执行查询的：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a' OR key3 = 'a';
   ```
 
@@ -1087,7 +1087,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   类似于两表连接中被驱动表的`eq_ref`访问方法，`unique_subquery`是针对在一些包含`IN`子查询的查询语句中，如果查询优化器决定将`IN`子查询转换为`EXISTS`子查询，而且子查询可以使用到主键进行等值匹配的话，那么该子查询执行计划的`type`列的值就是`unique_subquery`，比如下边的这个查询语句：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key2 IN (SELECT id FROM s2 where s1.key1 = s2.key1) OR key3 = 'a';
   ```
 
@@ -1097,7 +1097,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   `index_subquery` 与 `unique_subquery` 类似，只不过访问子查询中的表时使用的是普通的索引，比如这样：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE common_field IN (SELECT key3 FROM s2 where s1.key1 = s2.key1) OR key3 = 'a';
   ```
 
@@ -1105,7 +1105,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
 * `range`
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 IN ('a', 'b', 'c');
   ```
 
@@ -1113,7 +1113,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   或者：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 > 'a' AND key1 < 'b';
   ```
 
@@ -1123,7 +1123,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   当我们可以使用索引覆盖，但需要扫描全部的索引记录时，该表的访问方法就是`index`，比如这样：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT key_part2 FROM s1 WHERE key_part3 = 'a';
   ```
 
@@ -1137,7 +1137,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
   最熟悉的全表扫描，就不多说了，直接看例子：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1;
   ```
 
@@ -1155,7 +1155,7 @@ DESC SELECT * FROM user_partitions WHERE id>200;
 
 在EXPLAIN语句输出的执行计划中，`possible_keys`列表示在某个查询语句中，对某个列执行`单表查询时可能用到的索引`有哪些。一般查询涉及到的字段上若存在索引，则该索引将被列出，但不一定被查询使用。`key`列表示`实际用到的索引`有哪些，如果为NULL，则没有使用索引。比方说下面这个查询：
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key1 > 'z' AND key3 = 'a';
 ```
 
@@ -1169,7 +1169,7 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key1 > 'z' AND key3 = 'a';
 
 帮你检查`是否充分的利用了索引`，`值越大越好`，主要针对于联合索引，有一定的参考意义。
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE id = 10005;
 ```
 
@@ -1177,7 +1177,7 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE id = 10005;
 
 > int 占用 4 个字节
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key2 = 10126;
 ```
 
@@ -1185,7 +1185,7 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key2 = 10126;
 
 > key2上有一个唯一性约束，是否为NULL占用一个字节，那么就是5个字节
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a';
 ```
 
@@ -1193,13 +1193,13 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a';
 
 > key1 VARCHAR(100) 一个字符占3个字节，100*3，是否为NULL占用一个字节，varchar的长度信息占两个字节。
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key_part1 = 'a';
 ```
 
 ![image-20220704130442095](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704130442095.png)
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key_part1 = 'a' AND key_part2 = 'b';
 ```
 
@@ -1211,7 +1211,7 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key_part1 = 'a' AND key_part2 = 'b';
 
 key_len的长度计算公式：
 
-```mysql
+```sql
 varchar(10)变长字段且允许NULL = 10 * ( character set：utf8=3,gbk=2,latin1=1)+1(NULL)+2(变长字段)
 
 varchar(10)变长字段且不允许NULL = 10 * ( character set：utf8=3,gbk=2,latin1=1)+2(变长字段)
@@ -1225,7 +1225,7 @@ char(10)固定字段且不允许NULL = 10 * ( character set：utf8=3,gbk=2,latin
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704131759630.png" alt="image-20220704131759630" style="float:left;" />
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a';
 ```
 
@@ -1233,13 +1233,13 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a';
 
 可以看到`ref`列的值是`const`，表明在使用`idx_key1`索引执行查询时，与`key1`列作等值匹配的对象是一个常数，当然有时候更复杂一点:
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.id = s2.id;
 ```
 
 ![image-20220704130925426](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704130925426.png)
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s2.key1 = UPPER(s1.key1);
 ```
 
@@ -1249,7 +1249,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s2.key1 = UPPER(s1.key1);
 
 预估的需要读取的记录条数，`值越小越好`。
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key1 > 'z';
 ```
 
@@ -1261,7 +1261,7 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key1 > 'z';
 
 如果使用的是索引执行的单表扫描，那么计算时需要估计出满足除使用到对应索引的搜索条件外的其他搜索条件的记录有多少条。
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 WHERE key1 > 'z' AND common_field = 'a';
 ```
 
@@ -1269,7 +1269,7 @@ mysql> EXPLAIN SELECT * FROM s1 WHERE key1 > 'z' AND common_field = 'a';
 
 对于单表查询来说，这个filtered的值没有什么意义，我们`更关注在连接查询中驱动表对应的执行计划记录的filtered值`，它决定了被驱动表要执行的次数 (即: rows * filtered)
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.common_field = 'a';
 ```
 
@@ -1285,7 +1285,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   当查询语句没有`FROM`子句时将会提示该额外信息，比如：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT 1;
   ```
 
@@ -1295,7 +1295,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   当查询语句的`WHERE`子句永远为`FALSE`时将会提示该额外信息
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE 1 != 1;
   ```
 
@@ -1305,7 +1305,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704140148163.png" alt="image-20220704140148163" style="float:left;" />
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE common_field = 'a';
   ```
 
@@ -1313,7 +1313,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704140212813.png" alt="image-20220704140212813" style="float:left;" />
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a' AND common_field = 'a';
   ```
 
@@ -1323,7 +1323,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   当查询列表处有`MIN`或者`MAX`聚合函数，但是并没有符合`WHERE`子句中的搜索条件的记录时。
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT MIN(key1) FROM s1 WHERE key1 = 'abcdefg';
   ```
 
@@ -1333,7 +1333,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   当我们的查询列表以及搜索条件中只包含属于某个索引的列，也就是在可以使用覆盖索引的情况下，在`Extra`列将会提示该额外信息。比方说下边这个查询中只需要用到`idx_key1`而不需要回表操作:
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT key1 FROM s1 WHERE key1 = 'a';
   ```
 
@@ -1343,7 +1343,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   有些搜索条件中虽然出现了索引列，但却不能使用到索引，比如下边这个查询：
 
-  ```mysql
+  ```sql
   SELECT * FROM s1 WHERE key1 > 'z' AND key1 LIKE '%a';
   ```
 
@@ -1351,7 +1351,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704140411033.png" alt="image-20220704140411033" style="float:left;" />
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 > 'z' AND key1 LIKE '%b';
   ```
 
@@ -1361,7 +1361,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   在连接查询执行过程中，当被驱动表不能有效的利用索引加快访问速度，MySQL一般会为其分配一块名叫`join buffer`的内存块来加快查询速度，也就是我们所讲的`基于块的嵌套循环算法`。
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.common_field = s2.common_field;
   ```
 
@@ -1371,7 +1371,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   当我们使用左(外)连接时，如果`WHERE`子句中包含要求被驱动表的某个列等于`NULL`值的搜索条件，而且那个列是不允许存储`NULL`值的，那么在该表的执行计划的Extra列就会提示这个信息：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 LEFT JOIN s2 ON s1.key1 = s2.key1 WHERE s2.id IS NULL;
   ```
 
@@ -1385,7 +1385,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   如果出现`Using sort_union(...)`提示，说明准备使用`Sort-Union`索引合并的方式执行查询。
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 WHERE key1 = 'a' OR key3 = 'a';
   ```
 
@@ -1395,7 +1395,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   当我们的`LIMIT`子句的参数为`0`时，表示压根儿不打算从表中读取任何记录，将会提示该额外信息
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 LIMIT 0;
   ```
 
@@ -1405,7 +1405,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   有一些情况下对结果集中的记录进行排序是可以使用到索引的。
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 ORDER BY key1 LIMIT 10;
   ```
 
@@ -1413,7 +1413,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704145143170.png" alt="image-20220704145143170" style="float:left;" />
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT * FROM s1 ORDER BY common_field LIMIT 10;
   ```
 
@@ -1425,7 +1425,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704145924130.png" alt="image-20220704145924130" style="float:left;" />
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT DISTINCT common_field FROM s1;
   ```
 
@@ -1433,7 +1433,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   再比如：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT common_field, COUNT(*) AS amount FROM s1 GROUP BY common_field;
   ```
 
@@ -1441,7 +1441,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
   执行计划中出现`Using temporary`并不是一个好的征兆，因为建立与维护临时表要付出很大的成本的，所以我们`最好能使用索引来替代掉使用临时表`，比方说下边这个包含`GROUP BY`子句的查询就不需要使用临时表：
 
-  ```mysql
+  ```sql
   mysql> EXPLAIN SELECT key1, COUNT(*) AS amount FROM s1 GROUP BY key1;
   ```
 
@@ -1470,7 +1470,7 @@ mysql> EXPLAIN SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key1 WHERE s1.comm
 
 传统格式简单明了，输出是一个表格形式，概要说明查询计划。
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT s1.key1, s2.key1 FROM s1 LEFT JOIN s2 ON s1.key1 = s2.key1 WHERE s2.common_field IS NOT NULL;
 ```
 
@@ -1482,7 +1482,7 @@ mysql> EXPLAIN SELECT s1.key1, s2.key1 FROM s1 LEFT JOIN s2 ON s1.key1 = s2.key1
 
 * JSON格式：在EXPLAIN单词和真正的查询语句中间加上 FORMAT=JSON 。
 
-```mysql
+```sql
 EXPLAIN FORMAT=JSON SELECT ....
 ```
 
@@ -1492,7 +1492,7 @@ EXPLAIN FORMAT=JSON SELECT ....
 
 这样我们就可以得到一个json格式的执行计划，里面包含该计划花费的成本。比如这样：
 
-```mysql
+```sql
 mysql> EXPLAIN FORMAT=JSON SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key2 WHERE s1.common_field = 'a'\G
 ```
 
@@ -1555,7 +1555,7 @@ mysql> EXPLAIN FORMAT=JSON SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key2 W
 
 TREE格式是8.0.16版本之后引入的新格式，主要根据查询的 `各个部分之间的关系` 和 `各部分的执行顺序` 来描述如何查询。
 
-```mysql
+```sql
 mysql> EXPLAIN FORMAT=tree SELECT * FROM s1 INNER JOIN s2 ON s1.key1 = s2.key2 WHERE
 s1.common_field = 'a'\G
 *************************** 1. row ***************************
@@ -1580,13 +1580,13 @@ condition: (cast(s1.key1 as double) = cast(s2.key2 as double)) (cost=0.25 rows=1
 
 在我们使用`EXPLAIN`语句查看了某个查询的执行计划后，紧接着还可以使用`SHOW WARNINGS`语句查看与这个查询的执行计划有关的一些扩展信息，比如这样：
 
-```mysql
+```sql
 mysql> EXPLAIN SELECT s1.key1, s2.key1 FROM s1 LEFT JOIN s2 ON s1.key1 = s2.key1 WHERE s2.common_field IS NOT NULL;
 ```
 
 ![image-20220704174543663](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704174543663.png)
 
-```mysql
+```sql
 mysql> SHOW WARNINGS\G
 *************************** 1. row ***************************
     Level: Note
@@ -1605,7 +1605,7 @@ AS `key1` from `atguigu`.`s1` join `atguigu`.`s2` where ((`atguigu`.`s1`.`key1` 
 
 <img src="https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220704175711800.png" alt="image-20220704175711800" style="float:left;" />
 
-```mysql
+```sql
 SET optimizer_trace="enabled=on",end_markers_in_json=on;
 set optimizer_trace_max_mem_size=1000000;
 ```
@@ -1627,17 +1627,17 @@ set optimizer_trace_max_mem_size=1000000;
 
 测试：执行如下SQL语句
 
-```mysql
+```sql
 select * from student where id < 10;
 ```
 
 最后， 查询 information_schema.optimizer_trace 就可以知道MySQL是如何执行SQL的 ：
 
-```mysql
+```sql
 select * from information_schema.optimizer_trace\G
 ```
 
-```mysql
+```sql
 *************************** 1. row ***************************
 //第1部分：查询语句
 QUERY: select * from student where id < 10
@@ -1867,7 +1867,7 @@ INSUFFICIENT_PRIVILEGES: 0 //缺失权限
 
 索引情况
 
-```mysql
+```sql
 #1. 查询冗余索引
 select * from sys.schema_redundant_indexes;
 #2. 查询未使用过的索引
@@ -1879,7 +1879,7 @@ from sys.schema_index_statistics where table_schema='dbname';
 
 表相关
 
-```mysql
+```sql
 # 1. 查询表的访问量
 select table_schema,table_name,sum(io_read_requests+io_write_requests) as io from
 sys.schema_table_statistics group by table_schema,table_name order by io desc;
@@ -1892,7 +1892,7 @@ select * from sys.statements_with_full_table_scans where db='dbname';
 
 语句相关
 
-```mysql
+```sql
 #1. 监控SQL执行的频率
 select db,exec_count,query from sys.statement_analysis
 order by exec_count desc;
@@ -1907,7 +1907,7 @@ order by (tmp_tables+tmp_disk_tables) desc;
 
 IO相关
 
-```mysql
+```sql
 #1. 查看消耗磁盘IO的文件
 select file,avg_read,avg_write,avg_read+avg_write as avg_io
 from sys.io_global_by_file_by_bytes order by avg_read limit 10;
@@ -1915,7 +1915,7 @@ from sys.io_global_by_file_by_bytes order by avg_read limit 10;
 
 Innodb 相关
 
-```mysql
+```sql
 #1. 行锁阻塞情况
 select * from sys.innodb_lock_waits;
 ```

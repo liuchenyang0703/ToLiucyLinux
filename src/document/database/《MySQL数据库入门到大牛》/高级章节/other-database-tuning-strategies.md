@@ -136,7 +136,7 @@ breadcrumb: false
 
   可以通过如下几个MySQL状态值来适当调整线程池的大小：
 
-  ```mysql
+  ```sql
   mysql> show global status like 'Thread%';
   +-------------------+-------+
   | Variable_name | Value |
@@ -157,7 +157,7 @@ breadcrumb: false
 
 这里给出一份my.cnf的参考配置：
 
-```mysql
+```sql
 mysqld]
 port = 3306 
 serverid = 1 
@@ -223,7 +223,7 @@ query_cache_size=32M
 
 创建这两个表的SQL语句如下：
 
-```mysql
+```sql
 CREATE TABLE members (
     id int(11) NOT NULL AUTO_INCREMENT,
     username varchar(50) DEFAULT NULL,
@@ -242,7 +242,7 @@ CREATE TABLE members_detail (
 
 如果需要查询会员的基本信息或详细信息，那么可以用会员的id来查询。如果需要将会员的基本信息和 详细信息同时显示，那么可以将members表和members_detail表进行联合查询，查询语句如下：
 
-```mysql
+```sql
 SELECT * FROM members LEFT JOIN members_detail on members.id =
 members_detail.member_id;
 ```
@@ -255,7 +255,7 @@ members_detail.member_id;
 
 举例1： 学生信息表 和 班级表 的SQL语句如下：
 
-```mysql
+```sql
 CREATE TABLE `class` (
 `id` INT(11) NOT NULL AUTO_INCREMENT,
 `className` VARCHAR(30) DEFAULT NULL,
@@ -276,7 +276,7 @@ PRIMARY KEY (`id`)
 
 现在有一个模块需要经常查询带有学生名称（name）、学生所在班级名称（className）、学生班级班 长（monitor）的学生信息。根据这种情况可以创建一个 temp_student 表。temp_student表中存储学生名称（stu_name）、学生所在班级名称（className）和学生班级班长（monitor）信息。创建表的语句如下：
 
-```mysql
+```sql
 CREATE TABLE `temp_student` (
 `id` INT(11) NOT NULL AUTO_INCREMENT,
 `stu_name` INT NOT NULL ,
@@ -288,7 +288,7 @@ PRIMARY KEY (`id`)
 
 接下来，从学生信息表和班级表中查询相关信息存储到临时表中：
 
-```mysql
+```sql
 insert into temp_student(stu_name,className,monitor)
             select s.name,c.className,c.monitor
             from student as s,class as c
@@ -360,7 +360,7 @@ Decimal类型为精准浮点数，在计算时不会丢失精度，尤其是财�
 
 插入多条记录时，可以使用一条INSERT语句插入一条数据，也可以使用一条INSERT语句插入多条数据。插入一条记录的INSERT语句情形如下：
 
-```mysql
+```sql
 insert into student values(1,'zhangsan',18,1);
 insert into student values(2,'lisi',17,1);
 insert into student values(3,'wangwu',17,1);
@@ -369,7 +369,7 @@ insert into student values(4,'zhaoliu',19,1);
 
 使用一条INSERT语句插入多条记录的情形如下：
 
-```mysql
+```sql
 insert into student values
 (1,'zhangsan',18,1),
 (2,'lisi',17,1),
@@ -409,7 +409,7 @@ MySQL提供了分析表、检查表和优化表的语句。`分析表`主要是�
 
 MySQL中提供了ANALYZE TABLE语句分析表，ANALYZE TABLE语句的基本语法如下：
 
-```mysql
+```sql
 ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name[,tbl_name]…
 ```
 
@@ -419,7 +419,7 @@ ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name[,tbl_name]…
 
 ANALYZE TABLE分析后的统计结果会反应到 `cardinality` 的值，该值统计了表中某一键所在的列不重复 的值的个数。**该值越接近表中的总行数，则在表连接查询或者索引查询时，就越优先被优化器选择使用**。也就是索引列的cardinality的值与表中数据的总条数差距越大，即使查询的时候使用了该索引作为查 询条件，存储引擎实际查询的时候使用的概率就越小。下面通过例子来验证下。cardinality可以通过 SHOW INDEX FROM 表名查看。
 
-```mysql
+```sql
 mysql> ANALYZE TABLE user;
 +--------------+---------+----------+---------+
 | Table        | Op      | Msg_type |Msg_text |
@@ -441,7 +441,7 @@ MySQL中可以使用 `CHECK TABLE` 语句来检查表。CHECK TABLE语句能够�
 
 对于MyISAM类型的表，CHECK TABLE语句还会更新关键字统计数据。而且，CHECK TABLE也可以检查视 图是否有错误，比如在视图定义中被引用的表已不存在。该语句的基本语法如下：
 
-```mysql
+```sql
 CHECK TABLE tbl_name [, tbl_name] ... [option] ...
 option = {QUICK | FAST | MEDIUM | EXTENDED | CHANGED}
 ```
@@ -470,7 +470,7 @@ OPTIMIZE TABLE 语句对InnoDB和MyISAM类型的表都有效。该语句在执�
 
 OPTILMIZE TABLE语句的基本语法如下：
 
-```mysql
+```sql
 OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...
 ```
 
@@ -564,11 +564,11 @@ LOCAL | NO_WRITE_TO_BINLOG关键字的意义和分析表相同，都是指定不
 
 设置服务器语句超时的限制，可以通过设置系统变量 MAX_EXECUTION_TIME 来实现。默认情况下， MAX_EXECUTION_TIME的值为0，代表没有时间限制。 例如：
 
-```mysql
+```sql
 SET GLOBAL MAX_EXECUTION_TIME=2000;
 ```
 
-```mysql
+```sql
 SET SESSION MAX_EXECUTION_TIME=2000; #指定该会话中SELECT语句的超时时间
 ```
 

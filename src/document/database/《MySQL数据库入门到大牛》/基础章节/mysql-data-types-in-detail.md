@@ -78,13 +78,13 @@ breadcrumb: false
 
 举例：
 
-```mysql
+```sql
 CREATE TABLE test_int1 ( x TINYINT,　y SMALLINT,　z MEDIUMINT,　m INT,　n BIGINT );
 ```
 
 查看表结构 （MySQL5.7中显式如下，MySQL8中不再显式范围）
 
-```mysql
+```sql
 mysql> desc test_int1;
 +-------+--------------+------+-----+---------+-------+
 | Field | Type         | Null | Key | Default | Extra |
@@ -102,7 +102,7 @@ TINYINT有符号数和无符号数的取值范围分别为-128~127和0~255，由
 
 举例：
 
-```mysql
+```sql
 CREATE TABLE test_int2(
 f1 INT,
 f2 INT(5),
@@ -121,7 +121,7 @@ INSERT INTO test_int2(f1,f2,f3)
 VALUES(123456,123456,123456);
 ```
 
-```mysql
+```sql
 mysql> SELECT * FROM test_int2;
 +--------+--------+--------+
 | f1     | f2     | f3     |
@@ -139,7 +139,7 @@ mysql> SELECT * FROM test_int2;
 
 int类型默认显示宽度为int(11)，无符号int类型默认显示宽度为int(10)。
 
-```mysql
+```sql
 CREATE TABLE test_int3(
 f1 INT UNSIGNED
 );
@@ -194,7 +194,7 @@ mysql> desc test_int3;
 
 - REAL默认就是 DOUBLE。如果你把 SQL 模式设定为启用“`REAL_AS_FLOAT`”，那 么，MySQL 就认为 REAL 是 FLOAT。如果要启用“REAL_AS_FLOAT”，可以通过以下 SQL 语句实现：
 
-  ```mysql
+  ```sql
   SET sql_mode = “REAL_AS_FLOAT”;
   ```
 
@@ -231,7 +231,7 @@ MySQL 存储浮点数的格式为：`符号(S)`、`尾数(M)`和 `阶码(E)`。�
 
 - 举例
 
-  ```mysql
+  ```sql
   CREATE TABLE test_double1(
   f1 FLOAT,
   f2 FLOAT(5,2),
@@ -255,7 +255,7 @@ MySQL 存储浮点数的格式为：`符号(S)`、`尾数(M)`和 `阶码(E)`。�
 
 浮点数类型有个缺陷，就是不精准。下面我来重点解释一下为什么 MySQL 的浮点数不够精准。比如，我们设计一个表，有f1这个字段，插入值分别为0.47,0.44,0.19，我们期待的运行结果是：0.47 + 0.44 + 0.19 = 1.1。而使用sum之后查询：
 
-```mysql
+```sql
 CREATE TABLE test_double2(
 f1 DOUBLE
 );
@@ -264,7 +264,7 @@ INSERT INTO test_double2
 VALUES(0.47),(0.44),(0.19);
 ```
 
-```mysql
+```sql
 mysql> SELECT SUM(f1)
     -> FROM test_double2;
 +--------------------+
@@ -275,7 +275,7 @@ mysql> SELECT SUM(f1)
 1 row in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT SUM(f1) = 1.1,1.1 = 1.1
     -> FROM test_double2;
 +---------------+-----------+
@@ -319,7 +319,7 @@ MySQL 用 4 个字节存储 FLOAT 类型数据，用 8 个字节来存储 DOUBLE
 
 - 举例
 
-  ```mysql
+  ```sql
   CREATE TABLE test_decimal1(
   f1 DECIMAL,
   f2 DECIMAL(5,2)
@@ -335,7 +335,7 @@ MySQL 用 4 个字节存储 FLOAT 类型数据，用 8 个字节来存储 DOUBLE
   VALUES(1234.34);
   ```
 
-  ```mysql
+  ```sql
   mysql> SELECT * FROM test_decimal1;
   +------+--------+
   | f1   | f2     |
@@ -349,14 +349,14 @@ MySQL 用 4 个字节存储 FLOAT 类型数据，用 8 个字节来存储 DOUBLE
 
   我们运行下面的语句，把test_double2表中字段“f1”的数据类型修改为 DECIMAL(5,2)：
 
-  ```mysql
+  ```sql
   ALTER TABLE test_double2
   MODIFY f1 DECIMAL(5,2);
   ```
 
   然后，我们再一次运行求和语句：
 
-  ```mysql
+  ```sql
   mysql> SELECT SUM(f1)
       -> FROM test_double2;
   +---------+
@@ -367,7 +367,7 @@ MySQL 用 4 个字节存储 FLOAT 类型数据，用 8 个字节来存储 DOUBLE
   1 row in set (0.00 sec)
   ```
 
-  ```mysql
+  ```sql
   mysql> SELECT SUM(f1) = 1.1
       -> FROM test_double2;
   +---------------+
@@ -392,7 +392,7 @@ BIT类型中存储的是二进制值，类似010110。
 
 BIT类型，如果没有指定(M)，默认是1位。这个1位，表示只能存1位的二进制值。这里(M)是表示二进制的位数，位数最小值为1，最大值为64。
 
-```mysql
+```sql
 CREATE TABLE test_bit1(
 f1 BIT,
 f2 BIT(5),
@@ -414,7 +414,7 @@ VALUES(23);
 
 使用SELECT命令查询位字段时，可以用`BIN()`或`HEX()`函数进行读取。
 
-```mysql
+```sql
 mysql> SELECT * FROM test_bit1;
 +------------+------------+------------+
 | f1         | f2         | f3         |
@@ -425,7 +425,7 @@ mysql> SELECT * FROM test_bit1;
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT BIN(f2),HEX(f2)
     -> FROM test_bit1;
 +---------+---------+
@@ -437,7 +437,7 @@ mysql> SELECT BIN(f2),HEX(f2)
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 mysql> SELECT f2 + 0
     -> FROM test_bit1;
 +--------+
@@ -490,14 +490,14 @@ YEAR类型用来表示年份，在所有的日期时间类型中所占用的存�
 
 **从MySQL5.5.27开始，2位格式的YEAR已经不推荐使用**。YEAR默认格式就是“YYYY”，没必要写成YEAR(4)，从MySQL 8.0.19开始，不推荐使用指定显示宽度的YEAR(4)数据类型。
 
-```mysql
+```sql
 CREATE TABLE test_year(
 f1 YEAR,
 f2 YEAR(4)
 );
 ```
 
-```mysql
+```sql
 mysql> DESC test_year;
 +-------+---------+------+-----+---------+-------+
 | Field | Type    | Null | Key | Default | Extra |
@@ -508,7 +508,7 @@ mysql> DESC test_year;
 2 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 INSERT INTO test_year
 VALUES('2020','2021');
 
@@ -521,7 +521,7 @@ mysql> SELECT * FROM test_year;
 1 rows in set (0.00 sec)
 ```
 
-```mysql
+```sql
 INSERT INTO test_year
 VALUES('45','71');
 
@@ -551,7 +551,7 @@ DATE类型表示日期，没有时间部分，格式为`YYYY-MM-DD`，其中，Y
 
 创建数据表，表中只包含一个DATE类型的字段f1。
 
-```mysql
+```sql
 CREATE TABLE test_date1(
 f1 DATE
 );
@@ -560,7 +560,7 @@ Query OK, 0 rows affected (0.13 sec)
 
 插入数据：
 
-```mysql
+```sql
 INSERT INTO test_date1
 VALUES ('2020-10-01'), ('20201001'),(20201001);
 
@@ -590,14 +590,14 @@ TIME类型用来表示时间，不包含日期部分。在MySQL中，需要`3个
 
 创建数据表，表中包含一个TIME类型的字段f1。
 
-```mysql
+```sql
 CREATE TABLE test_time1(
 f1 TIME
 );
 Query OK, 0 rows affected (0.02 sec)
 ```
 
-```mysql
+```sql
 INSERT INTO test_time1
 VALUES('2 12:30:29'), ('12:35:29'), ('12:40'), ('2 12:40'),('1 05'), ('45');
 
@@ -625,7 +625,7 @@ DATETIME类型在所有的日期时间类型中占用的存储空间最大，总
 
 创建数据表，表中包含一个DATETIME类型的字段dt。
 
-```mysql
+```sql
 CREATE TABLE test_datetime1(
 dt DATETIME
 );
@@ -634,7 +634,7 @@ Query OK, 0 rows affected (0.02 sec)
 
 插入数据：
 
-```mysql
+```sql
 INSERT INTO test_datetime1
 VALUES ('2021-01-01 06:50:30'), ('20210101065030');
 
@@ -662,7 +662,7 @@ TIMESTAMP类型也可以表示日期时间，其显示格式与DATETIME类型相
 
 创建数据表，表中包含一个TIMESTAMP类型的字段ts。
 
-```mysql
+```sql
 CREATE TABLE test_timestamp1(
 ts TIMESTAMP
 );
@@ -670,7 +670,7 @@ ts TIMESTAMP
 
 插入数据：
 
-```mysql
+```sql
 INSERT INTO test_timestamp1
 VALUES ('1999-01-01 03:04:50'), ('19990101030405'), ('99-01-01 03:04:05'), ('990101030405');
 
@@ -695,20 +695,20 @@ VALUES ('2038-01-20 03:14:07');
 
 - TIMESTAMP和时区有关。TIMESTAMP会根据用户的时区不同，显示不同的结果。而DATETIME则只能反映出插入时当地的时区，其他时区的人查看数据必然会有误差的。
 
-  ```mysql
+  ```sql
   CREATE TABLE temp_time(
   d1 DATETIME,
   d2 TIMESTAMP
   );
   ```
 
-  ```mysql
+  ```sql
   INSERT INTO temp_time VALUES('2021-9-2 14:45:52','2021-9-2 14:45:52');
   
   INSERT INTO temp_time VALUES(NOW(),NOW());
   ```
 
-  ```mysql
+  ```sql
   mysql> SELECT * FROM temp_time;
   +---------------------+---------------------+
   | d1                  | d2                  |
@@ -719,12 +719,12 @@ VALUES ('2038-01-20 03:14:07');
   2 rows in set (0.00 sec)
   ```
 
-  ```mysql
+  ```sql
   #修改当前的时区
   SET time_zone = '+9:00';
   ```
 
-  ```mysql
+  ```sql
   mysql> SELECT * FROM temp_time;
   +---------------------+---------------------+
   | d1                  | d2                  |
@@ -742,7 +742,7 @@ VALUES ('2038-01-20 03:14:07');
 
 此外，一般存注册时间、商品发布时间等，不建议使用DATETIME存储，而是使用`时间戳`，因为DATETIME虽然直观，但不便于计算。
 
-```mysql
+```sql
 mysql> SELECT UNIX_TIMESTAMP();
 +------------------+
 | UNIX_TIMESTAMP() |
@@ -775,7 +775,7 @@ CHAR和VARCHAR类型都可以存储比较短的字符串。
 - 如果保存时，数据的实际长度比CHAR类型声明的长度小，则会在`右侧填充`空格以达到指定的长度。当MySQL检索CHAR类型的数据时，CHAR类型的字段会去除尾部的空格。
 - 定义CHAR类型字段时，声明的字段长度即为CHAR类型字段所占的存储空间的字节数。
 
-```mysql
+```sql
 CREATE TABLE test_char1(
 c1 CHAR,
 c2 CHAR(5)
@@ -784,14 +784,14 @@ c2 CHAR(5)
 DESC test_char1;
 ```
 
-```mysql
+```sql
 INSERT INTO test_char1
 VALUES('a','Tom');
 
 SELECT c1,CONCAT(c2,'***') FROM test_char1;
 ```
 
-```mysql
+```sql
 INSERT INTO test_char1(c2)
 VALUES('a  ');
 
@@ -805,20 +805,20 @@ FROM test_char1;
 - MySQL4.0版本以下，varchar(20)：指的是20字节，如果存放UTF8汉字时，只能存6个（每个汉字3字节） ；MySQL5.0版本以上，varchar(20)：指的是20字符。
 - 检索VARCHAR类型的字段数据时，会保留数据尾部的空格。VARCHAR类型的字段所占用的存储空间为字符串实际长度加1个字节。
 
-```mysql
+```sql
 CREATE TABLE test_varchar1(
 NAME VARCHAR  #错误
 );
 ```
 
-```mysql
+```sql
 #Column length too big for column 'NAME' (max = 21845);
 CREATE TABLE test_varchar2(
 NAME VARCHAR(65535)  #错误
 );
 ```
 
-```mysql
+```sql
 CREATE TABLE test_varchar3(
 NAME VARCHAR(5)
 );
@@ -872,13 +872,13 @@ VALUES('尚硅谷IT教育');
 
 创建数据表：
 
-```mysql
+```sql
 CREATE TABLE test_text(
 tx TEXT
 );
 ```
 
-```mysql
+```sql
 INSERT INTO test_text
 VALUES('atguigu   ');
 
@@ -911,7 +911,7 @@ ENUM类型也叫作枚举类型，ENUM类型的取值范围需要在定义字段
 
 创建表如下：
 
-```mysql
+```sql
 CREATE TABLE test_enum(
 season ENUM('春','夏','秋','冬','unknow')
 );
@@ -919,7 +919,7 @@ season ENUM('春','夏','秋','冬','unknow')
 
 添加数据：
 
-```mysql
+```sql
 INSERT INTO test_enum
 VALUES('春'),('秋');
 
@@ -960,7 +960,7 @@ SET类型在存储数据时成员个数越多，其占用的存储空间越大�
 
 创建表：
 
-```mysql
+```sql
 CREATE TABLE test_set(
 s SET ('A', 'B', 'C')
 );
@@ -968,7 +968,7 @@ s SET ('A', 'B', 'C')
 
 向表中插入数据：
 
-```mysql
+```sql
 INSERT INTO test_set (s) VALUES ('A'), ('A,B');
 
 #插入重复的SET类型成员时，MySQL会自动删除重复的成员
@@ -983,14 +983,14 @@ FROM test_set;
 
 举例：
 
-```mysql
+```sql
 CREATE TABLE temp_mul(
 gender ENUM('男','女'),
 hobby SET('吃饭','睡觉','打豆豆','写代码')
 );
 ```
 
-```mysql
+```sql
 INSERT INTO temp_mul VALUES('男','睡觉,打豆豆'); #成功
 
 # Data truncated for column 'gender' at row 1
@@ -1026,7 +1026,7 @@ VARBINARY (M)为可变长度的二进制字符串，M表示最多能存储的字
 
 创建表：
 
-```mysql
+```sql
 CREATE TABLE test_binary1(
 f1 BINARY,
 f2 BINARY(3),
@@ -1037,7 +1037,7 @@ f4 VARBINARY(10)
 
 添加数据：
 
-```mysql
+```sql
 INSERT INTO test_binary1(f1,f2)
 VALUES('a','a');
 
@@ -1045,7 +1045,7 @@ INSERT INTO test_binary1(f1,f2)
 VALUES('尚','尚');#失败
 ```
 
-```mysql
+```sql
 INSERT INTO test_binary1(f2,f4)
 VALUES('ab','ab');
 
@@ -1077,7 +1077,7 @@ MySQL中的BLOB类型包括TINYBLOB、BLOB、MEDIUMBLOB和LONGBLOB 4种类型，
 
 举例：
 
-```mysql
+```sql
 CREATE TABLE test_blob1(
 id INT,
 img MEDIUMBLOB
@@ -1101,7 +1101,7 @@ JSON（JavaScript Object Notation）是一种轻量级的`数据交换格式`。
 在MySQL 5.7中，就已经支持JSON数据类型。在MySQL 8.x版本中，JSON类型提供了可以进行自动验证的JSON文档和优化的存储结构，使得在MySQL中存储和读取JSON类型的数据更加方便和高效。
 创建数据表，表中包含一个JSON类型的字段 js 。
 
-```mysql
+```sql
 CREATE TABLE test_json(
 js json
 
@@ -1110,14 +1110,14 @@ js json
 
 向表中插入JSON数据。
 
-```mysql
+```sql
 INSERT INTO test_json (js) 
 VALUES ('{"name":"songhk", "age":18, "address":{"province":"beijing", "city":"beijing"}}');
 ```
 
 查询t19表中的数据。
 
-```mysql
+```sql
 mysql> SELECT *
     -> FROM test_json;
 ```
@@ -1126,7 +1126,7 @@ mysql> SELECT *
 
 当需要检索JSON类型的字段中数据的某个具体值时，可以使用“->”和“->>”符号。
 
-```mysql
+```sql
 mysql> SELECT js -> '$.name' AS NAME,js -> '$.age' AS age ,js -> '$.address.province' AS province, js -> '$.address.city' AS city
     -> FROM test_json;
 +----------+------+-----------+-----------+

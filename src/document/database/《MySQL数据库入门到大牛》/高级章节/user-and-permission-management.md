@@ -22,7 +22,7 @@ breadcrumb: false
 
 启动MySQL服务后，可以通过mysql命令来登录MySQL服务器，命令如下：
 
-```mysql
+```sql
 mysql –h hostname|hostIP –P port –u username –p DatabaseName –e "SQL语句"
 ```
 
@@ -33,7 +33,7 @@ mysql –h hostname|hostIP –P port –u username –p DatabaseName –e "SQL�
 - `DatabaseName参数`指明登录到哪一个数据库中。如果没有该参数，就会直接登录到MySQL数据库中，然后可以使用USE命令来选择数据库。
 - `-e参数`后面可以直接加SQL语句。登录MySQL服务器以后即可执行这个SQL语句，然后退出MySQL服务器。
 
-```mysql
+```sql
 mysql -uroot -p -hlocalhost -P3306 mysql -e "select host,user from user"
 ```
 
@@ -41,13 +41,13 @@ mysql -uroot -p -hlocalhost -P3306 mysql -e "select host,user from user"
 
 ### 1.2 创建用户
 
-```mysql
+```sql
 CREATE USER 用户名 [IDENTIFIED BY '密码'][,用户名 [IDENTIFIED BY '密码']];
 ```
 
 举例：
 
-```mysql
+```sql
 CREATE USER zhang3 IDENTIFIED BY '123123'; # 默认host是 %
 CREATE USER 'kangshifu'@'localhost' IDENTIFIED BY '123456';
 ```
@@ -56,7 +56,7 @@ CREATE USER 'kangshifu'@'localhost' IDENTIFIED BY '123456';
 
 ### 1.3 修改用户
 
-```mysql
+```sql
 UPDATE mysql.user SET USER='li4' WHERE USER='wang5'; 
 FLUSH PRIVILEGES;
 ```
@@ -67,20 +67,20 @@ FLUSH PRIVILEGES;
 
 **方式1：使用DROP方式删除（推荐）**
 
-```mysql
+```sql
 DROP USER user[,user]…;
 ```
 
 举例：
 
-```mysql
+```sql
 DROP USER li4 ; # 默认删除host为%的用户
 DROP USER 'kangshifu'@'localhost';
 ```
 
 **方式2：使用DELETE方式删除（不推荐，有残留信息）**
 
-```mysql
+```sql
 DELETE FROM mysql.user WHERE Host=’hostname’ AND User=’username’;
 FLUSH PRIVILEGES;
 ```
@@ -91,13 +91,13 @@ FLUSH PRIVILEGES;
 
 **1.** **使用ALTER USER命令来修改当前用户密码**
 
-```mysql
+```sql
 ALTER USER USER() IDENTIFIED BY 'new_password';
 ```
 
 **2.** **使用SET语句来修改当前用户密码**
 
-```mysql
+```sql
 SET PASSWORD='new_password';
 ```
 
@@ -107,14 +107,14 @@ SET PASSWORD='new_password';
 
 **1.** **使用ALTER语句来修改普通用户的密码**
 
-```mysql
+```sql
 ALTER USER user [IDENTIFIED BY '新密码'] 
 [,user[IDENTIFIED BY '新密码']]…;
 ```
 
 **2.** **使用SET命令来修改普通用户的密码**
 
-```mysql
+```sql
 SET PASSWORD FOR 'username'@'hostname'='new_password';
 ```
 
@@ -124,7 +124,7 @@ SET PASSWORD FOR 'username'@'hostname'='new_password';
 
 ### 2.1 权限列表
 
-```mysql
+```sql
 show privileges;
 ```
 
@@ -155,20 +155,20 @@ show privileges;
 
 ### 2.3 授予权限
 
-```mysql
+```sql
 GRANT 权限1,权限2,…权限n ON 数据库名称.表名称 TO 用户名@用户地址 [IDENTIFIED BY ‘密码口令’];
 ```
 
 - 该权限如果发现没有该用户，则会直接新建一个用户。
 - 给li4用户用本地命令行方式，授予atguigudb这个库下的所有表的插删改查的权限。
 
-```mysql
+```sql
 GRANT SELECT,INSERT,DELETE,UPDATE ON atguigudb.* TO li4@localhost;
 ```
 
 - 授予通过网络方式登录的joe用户 ，对所有库所有表的全部权限，密码设为123。注意这里唯独不包括grant的权限
 
-```mysql
+```sql
 GRANT ALL PRIVILEGES ON *.* TO joe@'%' IDENTIFIED BY '123';
 ```
 
@@ -178,7 +178,7 @@ GRANT ALL PRIVILEGES ON *.* TO joe@'%' IDENTIFIED BY '123';
 
 - 查看当前用户权限
 
-```mysql
+```sql
 SHOW GRANTS; 
 # 或 
 SHOW GRANTS FOR CURRENT_USER; 
@@ -188,7 +188,7 @@ SHOW GRANTS FOR CURRENT_USER();
 
 - 查看某用户的全局权限
 
-```mysql
+```sql
 SHOW GRANTS FOR 'user'@'主机地址';
 ```
 
@@ -200,13 +200,13 @@ SHOW GRANTS FOR 'user'@'主机地址';
 
 - 收回权限命令
 
-```mysql
+```sql
 REVOKE 权限1,权限2,…权限n ON 数据库名称.表名称 FROM 用户名@用户地址;
 ```
 
 - 举例
 
-```mysql
+```sql
 #收回全库全表的所有权限 
 REVOKE ALL PRIVILEGES ON *.* FROM joe@'%'; 
 #收回mysql库下的所有表的插删改查权限 
@@ -221,7 +221,7 @@ REVOKE SELECT,INSERT,UPDATE,DELETE ON mysql.* FROM joe@localhost;
 
 ### 3.1 创建角色
 
-```mysql
+```sql
 CREATE ROLE 'role_name'[@'host_name'] [,'role_name'[@'host_name']]...
 ```
 
@@ -231,13 +231,13 @@ CREATE ROLE 'role_name'[@'host_name'] [,'role_name'[@'host_name']]...
 
 ### 3.2 给角色赋予权限
 
-```mysql
+```sql
 GRANT privileges ON table_name TO 'role_name'[@'host_name'];
 ```
 
 上述语句中privileges代表权限的名称，多个权限以逗号隔开。可使用SHOW语句查询权限名称
 
-```mysql
+```sql
 SHOW PRIVILEGES\G
 ```
 
@@ -245,7 +245,7 @@ SHOW PRIVILEGES\G
 
 ### 3.3 查看角色的权限
 
-```mysql
+```sql
 SHOW GRANTS FOR 'role_name';
 ```
 
@@ -255,7 +255,7 @@ SHOW GRANTS FOR 'role_name';
 
 ### 3.4 回收角色的权限
 
-```mysql
+```sql
 REVOKE privileges ON tablename FROM 'rolename';
 ```
 
@@ -263,7 +263,7 @@ REVOKE privileges ON tablename FROM 'rolename';
 
 ### 3.5 删除角色
 
-```mysql
+```sql
 DROP ROLE role [,role2]...
 ```
 
@@ -275,13 +275,13 @@ DROP ROLE role [,role2]...
 
 角色创建并授权后，要赋给用户并处于`激活状态`才能发挥作用。
 
-```mysql
+```sql
 GRANT role [,role2,...] TO user [,user2,...];
 ```
 
 查询当前已激活的角色
 
-```mysql
+```sql
 SELECT CURRENT_ROLE();
 ```
 
@@ -291,13 +291,13 @@ SELECT CURRENT_ROLE();
 
 **方式1：使用set default role 命令激活角色**
 
-```mysql
+```sql
 SET DEFAULT ROLE ALL TO 'kangshifu'@'localhost';
 ```
 
 **方式2：将activate_all_roles_on_login设置为ON**
 
-```mysql
+```sql
 SET GLOBAL activate_all_roles_on_login=ON;
 ```
 
@@ -307,7 +307,7 @@ SET GLOBAL activate_all_roles_on_login=ON;
 
 ### 3.8 撤销用户的角色
 
-```mysql
+```sql
 REVOKE role FROM user;
 ```
 
@@ -324,7 +324,7 @@ mandatory_roles='role1,role2@localhost,r3@%.atguigu.com'
 
 方式2：运行时设置
 
-```mysql
+```sql
 SET PERSIST mandatory_roles = 'role1,role2@localhost,r3@%.example.com'; #系统重启后仍然有效
 SET GLOBAL mandatory_roles = 'role1,role2@localhost,r3@%.example.com'; #系统重启后失效
 ```

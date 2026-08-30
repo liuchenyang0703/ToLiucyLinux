@@ -61,7 +61,7 @@ breadcrumb: false
 
 - **在** **CREATE VIEW** **语句中嵌入子查询**
 
-```mysql
+```sql
 CREATE [OR REPLACE] 
 [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] 
 VIEW 视图名称 [(字段列表)]
@@ -71,7 +71,7 @@ AS 查询语句
 
 - 精简版
 
-```mysql
+```sql
 CREATE VIEW 视图名称 
 AS 查询语句
 ```
@@ -80,7 +80,7 @@ AS 查询语句
 
 举例：
 
-```mysql
+```sql
 CREATE VIEW empvu80
 AS 
 SELECT  employee_id, last_name, salary
@@ -99,7 +99,7 @@ FROM	salvu80;
 
 举例：
 
-```mysql
+```sql
 CREATE VIEW emp_year_salary (ename,year_salary)
 AS 
 SELECT ename,salary*12*(1+IFNULL(commission_pct,0))
@@ -108,7 +108,7 @@ FROM t_employee;
 
 举例：
 
-```mysql
+```sql
 CREATE VIEW salvu50
 AS 
 SELECT  employee_id ID_NUMBER, last_name NAME,salary*12 ANN_SALARY
@@ -124,7 +124,7 @@ WHERE   department_id = 50;
 
 举例：
 
-```mysql
+```sql
 CREATE VIEW empview 
 AS 
 SELECT employee_id emp_id,last_name NAME,department_name
@@ -132,7 +132,7 @@ FROM employees e,departments d
 WHERE e.department_id = d.department_id;
 ```
 
-```mysql
+```sql
 CREATE VIEW emp_dept
 AS 
 SELECT ename,dname
@@ -140,7 +140,7 @@ FROM t_employee LEFT JOIN t_department
 ON t_employee.did = t_department.did;
 ```
 
-```mysql
+```sql
 CREATE VIEW	dept_sum_vu
 (name, minsal, maxsal, avgsal)
 AS 
@@ -154,7 +154,7 @@ GROUP BY  d.department_name;
 
 我们经常需要输出某个格式的内容，比如我们想输出员工姓名和对应的部门名，对应格式为 emp_name(department_name)，就可以使用视图来完成数据格式化的操作：
 
-```mysql
+```sql
 CREATE VIEW emp_depart
 AS
 SELECT CONCAT(last_name,'(',department_name,')') AS emp_dept
@@ -168,7 +168,7 @@ WHERE e.department_id = d.department_id
 
 举例：联合“emp_dept”视图和“emp_year_salary”视图查询员工姓名、部门名称、年薪信息创建 “emp_dept_ysalary”视图。
 
-```mysql
+```sql
 CREATE VIEW emp_dept_ysalary
 AS 
 SELECT emp_dept.ename,dname,year_salary
@@ -180,19 +180,19 @@ ON emp_dept.ename = emp_year_salary.ename;
 
 语法1：查看数据库的表对象、视图对象
 
-```mysql
+```sql
 SHOW TABLES;
 ```
 
 语法2：查看视图的结构
 
-```mysql
+```sql
 DESC / DESCRIBE 视图名称;
 ```
 
 语法3：查看视图的属性信息
 
-```mysql
+```sql
 # 查看视图信息（显示数据表的存储引擎、版本、数据行数和数据大小等）
 SHOW TABLE STATUS LIKE '视图名称'\G
 ```
@@ -201,7 +201,7 @@ SHOW TABLE STATUS LIKE '视图名称'\G
 
 语法4：查看视图的详细定义信息
 
-```mysql
+```sql
 SHOW CREATE VIEW 视图名称;
 ```
 
@@ -213,7 +213,7 @@ MySQL支持使用INSERT、UPDATE和DELETE语句对视图中的数据进行插入
 
 举例：UPDATE操作
 
-```mysql
+```sql
 mysql> SELECT ename,tel FROM emp_tel WHERE ename = '孙洪亮';
 +---------+-------------+
 | ename   | tel         |
@@ -246,7 +246,7 @@ mysql> SELECT ename,tel FROM t_employee WHERE ename = '孙洪亮';
 
 举例：DELETE操作
 
-```mysql
+```sql
 mysql> SELECT ename,tel FROM emp_tel WHERE ename = '孙洪亮';
 +---------+-------------+
 | ename  	| tel           |
@@ -281,7 +281,7 @@ Empty set (0.00 sec)
 
 举例：
 
-```mysql
+```sql
 mysql> CREATE OR REPLACE VIEW emp_dept
     -> (ename,salary,birthday,tel,email,hiredate,dname)
     -> AS SELECT ename,salary,birthday,tel,email,hiredate,dname
@@ -291,7 +291,7 @@ Query OK, 0 rows affected (0.01 sec)
 
 ```
 
-```mysql
+```sql
 mysql> INSERT INTO emp_dept(ename,salary,birthday,tel,email,hiredate,dname)
     -> VALUES('张三',15000,'1995-01-08','18201587896',
     -> 'zs@atguigu.com','2022-02-14','新部门');
@@ -310,7 +310,7 @@ mysql> INSERT INTO emp_dept(ename,salary,birthday,tel,email,hiredate,dname)
 
 方式1：使用CREATE **OR REPLACE** VIEW 子句**修改视图**
 
-```mysql
+```sql
 CREATE OR REPLACE VIEW empvu80
 (id_number, name, sal, department_id)
 AS 
@@ -325,7 +325,7 @@ WHERE department_id = 80;
 
 修改视图的语法是：
 
-```mysql
+```sql
 ALTER VIEW 视图名称 
 AS
 查询语句
@@ -337,17 +337,17 @@ AS
 
 - 删除视图的语法是：
 
-  ```mysql
+  ```sql
   DROP VIEW IF EXISTS 视图名称;
   ```
 
-  ```mysql
+  ```sql
   DROP VIEW IF EXISTS 视图名称1,视图名称2,视图名称3,...;
   ```
 
 - 举例：
 
-  ```mysql
+  ```sql
   DROP VIEW empvu80;
   ```
 

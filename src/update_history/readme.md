@@ -550,3 +550,12 @@ category:
 ## 2026-08-27:
 > 1、更新了docker镜像加速地址文章
 > 2、关于本站新增搜索插件服务提供（src/about.md）
+
+## 2026-08-29:
+> 1、升级了vuepress-theme-hope 从rc.99到rc.107版本（src/package.json）
+> 2、修复了友情链接滚动条页面f12一直刷新报错问题（src/.vuepress/components/友情链接滚动.vue）
+> 3、修复了文章中一些错误的代码块命名，比如：bash写错为base等
+> 4、修复了访问页面f12：VM4908报错（src/.vuepress/config.ts）
+
+## 2026-08-30:
+> 1、修复了博客主页背景失效问题，更换新的随机图片链接（src/blog.md）

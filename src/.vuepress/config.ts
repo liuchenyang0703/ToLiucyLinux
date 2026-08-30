@@ -83,14 +83,17 @@ export default defineUserConfig({
     [
       "script",
       {},
-      `const btw = new BTWPlugin();
+      `window.addEventListener('load', () => {
+        if (typeof BTWPlugin === 'undefined') return;
+        const btw = new BTWPlugin();
         btw.init({
         id: 'container',
         blogId: '32863-1711898538696-276',
         name: 'Liucy',
         qrcode: '/assets/image/公众号.png',
         keyword: 'vip',
-    });`,
+        });
+      });`,
     ],
     [
       "script",

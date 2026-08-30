@@ -158,7 +158,7 @@ GROUP BY department_id, job_id ;
 
 使用`WITH ROLLUP`关键字之后，在所有查询出的分组记录之后增加一条记录，该记录计算查询出的所有记录的总和，即统计记录数量。
 
-```mysql
+```sql
 SELECT department_id,AVG(salary)
 FROM employees
 WHERE department_id > 80
@@ -229,7 +229,7 @@ WHERE 和 HAVING 也不是互相排斥的，我们可以在一个查询里面同
 
 ### 4.1 查询的结构
 
-```mysql
+```sql
 #方式1：
 SELECT ...,....,...
 FROM ...,...,....
@@ -283,7 +283,7 @@ FROM -> WHERE -> GROUP BY -> HAVING -> SELECT 的字段 -> DISTINCT -> ORDER BY 
 
 比如你写了一个 SQL 语句，那么它的关键字顺序和执行顺序是下面这样的：
 
-```mysql
+```sql
 SELECT DISTINCT player_id, player_name, count(*) as num # 顺序 5
 FROM player JOIN team ON player.team_id = team.team_id # 顺序 1
 WHERE height > 1.80 # 顺序 2

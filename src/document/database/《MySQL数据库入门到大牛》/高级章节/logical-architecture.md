@@ -73,7 +73,7 @@ TCP 连接收到请求后，必须要分配给一个线程专门与这个客户�
   * 这个执行计划表明应该 使用哪些索引 进行查询（全表检索还是使用索引检索），表之间的连 接顺序如何，最后会按照执行计划中的步骤调用存储引擎提供的方法来真正的执行查询，并将 查询结果返回给用户。
   * 它使用“ 选取-投影-连接 ”策略进行查询。例如：
 
-  ```mysql
+  ```sql
   SELECT id,name FROM student WHERE gender = '女';
   ```
 
@@ -123,27 +123,27 @@ MySQL的查询流程：
 
 一般建议大家在静态表里使用查询缓存，什么叫`静态表`呢？就是一般我们极少更新的表。比如，一个系统配置表、字典表，这张表上的查询才适合使用查询缓存。好在MySQL也提供了这种“`按需使用`”的方式。你可以将 my.cnf 参数 query_cache_type 设置成 DEMAND，代表当 sql 语句中有 SQL_CACHE关键字时才缓存。比如：
 
-```mysql
+```sql
 # query_cache_type 有3个值。 0代表关闭查询缓存OFF，1代表开启ON，2代表(DEMAND)
 query_cache_type=2
 ```
 
 这样对于默认的SQL语句都不使用查询缓存。而对于你确定要使用查询缓存的语句，可以供SQL_CACHE显示指定，像下面这个语句一样：
 
-```mysql
+```sql
 SELECT SQl_CACHE * FROM test WHERE ID=5;
 ```
 
 查看当前 mysql 实例是否开启缓存机制
 
-```mysql
+```sql
 # MySQL5.7中：
 show global variables like "%query_cache_type%";
 ```
 
 监控查询缓存的命中率：
 
-```mysql
+```sql
 show status like '%Qcache%';
 ```
 
@@ -199,12 +199,12 @@ select department_id,job_id, avg(salary) from employees group by department_id;
 
    举例：如下语句是执行两个表的 join：
 
-```mysql
+```sql
 select * from test1 join test2 using(ID)
 where test1.name='zhangwei' and test2.name='mysql高级课程';
 ```
 
-```mysql
+```sql
 方案1：可以先从表 test1 里面取出 name='zhangwei'的记录的 ID 值，再根据 ID 值关联到表 test2，再判
 断 test2 里面 name的值是否等于 'mysql高级课程'。
 
@@ -230,13 +230,13 @@ where test1.name='zhangwei' and test2.name='mysql高级课程';
 
 在执行之前需要判断该用户是否 `具备权限` 。如果没有，就会返回权限错误。如果具备权限，就执行 SQL 查询并返回结果。在 MySQL8.0 以下的版本，如果设置了查询缓存，这时会将查询结果进行缓存。
 
-```mysql
+```sql
 select * from test where id=1;
 ```
 
 比如：表 test 中，ID 字段没有索引，那么执行器的执行流程是这样的：
 
-```mysql
+```sql
 调用 InnoDB 引擎接口取这个表的第一行，判断 ID 值是不是1，如果不是则跳过，如果是则将这行存在结果集中；
 调用引擎接口取“下一行”，重复相同的判断逻辑，直到取到这个表的最后一行。
 执行器将上述遍历过程中所有满足条件的行组成的记录集作为结果集返回给客户端。
@@ -256,14 +256,14 @@ SQL 语句在 MySQL 中的流程是： `SQL语句`→`查询缓存`→`解析器
 
 执行时所使用的资源情况，命令如下：
 
-```mysql
+```sql
 mysql> select @@profiling;
 mysql> show variables like 'profiling';
 ```
 
 profiling=0 代表关闭，我们需要把 profiling 打开，即设置为 1：
 
-```mysql
+```sql
 mysql> set profiling=1;
 ```
 
@@ -271,7 +271,7 @@ mysql> set profiling=1;
 
 然后我们执行一个 SQL 查询（你可以执行任何一个 SQL 查询）：
 
-```mysql
+```sql
 mysql> select * from employees;
 ```
 
@@ -279,7 +279,7 @@ mysql> select * from employees;
 
 查看当前会话所产生的所有 profiles：
 
-```mysql
+```sql
 mysql> show profiles; # 显示最近的几次查询
 ```
 
@@ -287,7 +287,7 @@ mysql> show profiles; # 显示最近的几次查询
 
 显示执行计划，查看程序的执行步骤：
 
-```mysql
+```sql
 mysql> show profile;
 ```
 
@@ -295,7 +295,7 @@ mysql> show profile;
 
 当然你也可以查询指定的 Query ID，比如：
 
-```mysql
+```sql
 mysql> show profile for query 7;
 ```
 
@@ -303,7 +303,7 @@ mysql> show profile for query 7;
 
 此外，还可以查询更丰富的内容：
 
-```mysql
+```sql
 mysql> show profile cpu,block io for query 6;
 ```
 
@@ -311,7 +311,7 @@ mysql> show profile cpu,block io for query 6;
 
 继续：
 
-```mysql
+```sql
 mysql> show profile cpu,block io for query 7;
 ```
 
@@ -319,7 +319,7 @@ mysql> show profile cpu,block io for query 7;
 
 1、除了查看cpu、io阻塞等参数情况，还可以查询下列参数的利用情况。
 
-```mysql
+```sql
 Syntax:
 SHOW PROFILE [type [, type] ... ]
 	[FOR QUERY n]
@@ -350,13 +350,13 @@ type: {
 
 在 /etc/my.cnf 中新增一行：
 
-```mysql
+```sql
 query_cache_type=1
 ```
 
 #### 2) 重启mysql服务
 
-```mysql
+```sql
 systemctl restart mysqld
 ```
 
@@ -364,13 +364,13 @@ systemctl restart mysqld
 
 由于重启过服务，需要重新执行如下指令，开启profiling。
 
-```mysql
+```sql
 mysql> set profiling=1;
 ```
 
 #### 4) 执行语句两次：
 
-```mysql
+```sql
 mysql> select * from locations;
 ```
 
@@ -382,13 +382,13 @@ mysql> select * from locations;
 
 显示执行计划，查看程序的执行步骤：
 
-```mysql
+```sql
 mysql> show profile for query 1;
 ```
 
 ![image-20220615173803835](https://gaoziman.oss-cn-hangzhou.aliyuncs.com/img/image-20220615173803835.png)
 
-```mysql
+```sql
 mysql> show profile for query 2;
 ```
 
@@ -460,7 +460,7 @@ mysql> show profile for query 2;
 
 如果你使用的是 InnoDB 存储引擎，可以通过查看 innodb_buffer_pool_size 变量来查看缓冲池的大小。命令如下：
 
-```mysql
+```sql
 show variables like 'innodb_buffer_pool_size';
 ```
 
@@ -468,20 +468,20 @@ show variables like 'innodb_buffer_pool_size';
 
 你能看到此时 InnoDB 的缓冲池大小只有 134217728/1024/1024=128MB。我们可以修改缓冲池大小，比如改为256MB，方法如下：
 
-```mysql
+```sql
 set global innodb_buffer_pool_size = 268435456;
 ```
 
 或者：
 
-```mysql
+```sql
 [server]
 innodb_buffer_pool_size = 268435456
 ```
 
 ### 3.4 多个Buffer Pool实例
 
-```mysql
+```sql
 [server]
 innodb_buffer_pool_instances = 2
 ```
@@ -490,13 +490,13 @@ innodb_buffer_pool_instances = 2
 
 我们看下如何查看缓冲池的个数，使用命令：
 
-```mysql
+```sql
 show variables like 'innodb_buffer_pool_instances';
 ```
 
 那每个 Buffer Pool 实例实际占多少内存空间呢？其实使用这个公式算出来的：
 
-```mysql
+```sql
 innodb_buffer_pool_size/innodb_buffer_pool_instances
 ```
 
