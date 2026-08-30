@@ -2,14 +2,14 @@
     <div class="love-timer">
         <div class="avatars">
             <div class="avatar-wrapper">
-                <img src="/assets/image/aboutus/me.jpg" alt="Avatar 1" class="avatar left-avatar" />
+                <img src="/assets/image/aboutus/me.jpg" alt="Avatar 1" class="avatar left-avatar" @click.stop.prevent />
             </div>
             <div class="heart-container">
                 <div class="heart-beat">❤️</div>
                 <div class="heart-particles"></div>
             </div>
             <div class="avatar-wrapper">
-                <img src="/assets/image/aboutus/she.jpg" alt="Avatar 2" class="avatar right-avatar" />
+                <img src="/assets/image/aboutus/she.jpg" alt="Avatar 2" class="avatar right-avatar" @click.stop.prevent />
             </div>
         </div>
         <h2 class="title-animate">我们已经在一起</h2>

@@ -562,3 +562,6 @@ category:
 > 2、友情链接添加了我的，吧我的链接和其他好友的拆分开（src/.vuepress/components/友情链接.ts、友情链接.vue）（src/friendship.md）
 > 3、去除电流边框、轨道图片组件、运行时间贴边组件【采用的页脚展示】（src/.vuepress/client.ts）（src/.vuepress/components）
 > 4、消除client.ts中引用scss文件报错提示（此提示不影响运行）（src/.vuepress/public/js/vite-env.d.ts）
+> 5、关于我们新增了图片不可点击放大的操作（src/.vuepress/components/LoveTimer.vue）
+> 6、修复了f12，`cdn、penwrite`报错问题（src/.vuepress/config.ts）
+> 7、新增`moefy-canvas.d.ts`文件，消除`config.ts`中的报错提示（不影响运行）（src/.vuepress/public/js/moefy-canvas.d.ts）

@@ -81,31 +81,10 @@ export default defineUserConfig({
     ],
     // 添加统计
     [
-      "script",
-      {},
-      `window.addEventListener('load', () => {
-        if (typeof BTWPlugin === 'undefined') return;
-        const btw = new BTWPlugin();
-        btw.init({
-        id: 'container',
-        blogId: '32863-1711898538696-276',
-        name: 'Liucy',
-        qrcode: '/assets/image/公众号.png',
-        keyword: 'vip',
-        });
-      });`,
-    ],
-    [
-      "script",
-      {
-        src: "https://readmore.openwrite.cn/js/readmore.js"
-      }
-    ],
-    [
       "link",
       {
         rel: "stylesheet",
-        href: "no-chttps://cdn.jsdelivr.net/npm/@docsearch/css@3ache"
+        href: "https://cdn.jsdelivr.net/npm/@docsearch/css@3"
       }
     ],
     [
