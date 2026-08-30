@@ -28,3 +28,6 @@ declare module '@waline/client' {
     };
   }
 }
+
+// 消除client.ts中引用scss文件报错提示（此提示不影响运行）
+declare module "vuepress-theme-hope/presets/*.scss";
