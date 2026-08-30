@@ -1,0 +1,1 @@
+var e=`/ToLiucyLinux/assets/image/certificate/%E5%9F%8E%E5%B8%82%E4%B9%8B%E6%98%9F.png`,t=`/ToLiucyLinux/assets/image/certificate/%E5%8D%9A%E5%AE%A2%E4%B8%93%E5%AE%B6.png`;export{e as n,t};

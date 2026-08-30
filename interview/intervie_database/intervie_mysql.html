@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content="VuePress 2.0.0-rc.26" />
-    <meta name="theme" content="VuePress Theme Hope 2.0.0-rc.99" />
+    <meta name="generator" content="VuePress 2.0.0-rc.30" />
+    <meta name="theme" content="VuePress Theme Hope 2.0.0-rc.107" />
     <style>
       :root {
         --vp-c-bg: #fff;
@@ -22,8 +22,7 @@
     <script>
       const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
       const systemDarkMode =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
+        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
       if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
         document.documentElement.setAttribute("data-theme", "dark");
@@ -41,16 +40,19 @@
           hm.src = "https://hm.baidu.com/hm.js?1404449d13f81f463912cf1bf29d941e";
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
-        })();</script><script>const btw = new BTWPlugin();
+        })();</script><script>window.addEventListener('load', () => {
+        if (typeof BTWPlugin === 'undefined') return;
+        const btw = new BTWPlugin();
         btw.init({
         id: 'container',
         blogId: '32863-1711898538696-276',
         name: 'Liucy',
         qrcode: '/assets/image/公众号.png',
         keyword: 'vip',
-    });</script><script src="https://readmore.openwrite.cn/js/readmore.js"></script><link rel="stylesheet" href="no-chttps://cdn.jsdelivr.net/npm/@docsearch/css@3ache"><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script><link rel="icon" href="/ToLiucyLinux/favicon.ico"><title>Mysql常见面试题 | ToLiucyLinux</title><meta name="description" content="1、查看当前库和表的命令 查看当前数据库： 查看当前表： 2、MySQL的增删查改命令（CRUD） 增（INSERT）： 删（DELETE/TRUNCATE）： 查（SELECT）： 改（UPDATE）： 3、索引的作用是什么？有哪些类型？ 答： 索引是帮助MySQL高效获取数据的数据结构，主要作用是加快查询速度，同时也会影响写入性能（需要维护索引树）...">
-    <link rel="preload" href="/ToLiucyLinux/assets/style-FcmiBGV8.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-FcmiBGV8.css">
-    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-ChP1mfe_.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/intervie_mysql.html-DNmBetDq.js">
+        });
+      });</script><script src="https://readmore.openwrite.cn/js/readmore.js"></script><link rel="stylesheet" href="no-chttps://cdn.jsdelivr.net/npm/@docsearch/css@3ache"><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script><link rel="icon" href="/ToLiucyLinux/favicon.ico"><title>Mysql常见面试题 | ToLiucyLinux</title><meta name="description" content="1、查看当前库和表的命令 查看当前数据库： 查看当前表： 2、MySQL的增删查改命令（CRUD） 增（INSERT）： 删（DELETE/TRUNCATE）： 查（SELECT）： 改（UPDATE）： 3、索引的作用是什么？有哪些类型？ 答： 索引是帮助MySQL高效获取数据的数据结构，主要作用是加快查询速度，同时也会影响写入性能（需要维护索引树）...">
+    <link rel="preload" href="/ToLiucyLinux/assets/style-cBnbHDC2.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-cBnbHDC2.css">
+    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-kgUVk6Dw.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/intervie_mysql-D7M8vn-E.js">
     
   </head>
   <body>
@@ -106,7 +108,7 @@
 <span class="line"><span style="color:#C678DD;">SELECT</span><span style="color:#ABB2BF;"> @@transaction_isolation;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#7F848E;font-style:italic;">-- 设置会话隔离级别</span></span>
-<span class="line"><span style="color:#C678DD;">SET</span><span style="color:#C678DD;"> SESSION</span><span style="color:#C678DD;"> TRANSACTION</span><span style="color:#C678DD;"> ISOLATION</span><span style="color:#C678DD;"> LEVEL</span><span style="color:#C678DD;"> READ</span><span style="color:#C678DD;"> COMMITTED</span><span style="color:#ABB2BF;">;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>注意：</strong> InnoDB在可重复读级别通过**间隙锁（Gap Lock）**一定程度上解决了幻读问题。</p><h2 id="_9、如何解决主从复制中断问题" tabindex="-1"><a class="header-anchor" href="#_9、如何解决主从复制中断问题"><span>9、如何解决主从复制中断问题？</span></a></h2><p><strong>答：</strong> 主从复制中断是运维高频问题，需根据错误类型分类处理。</p><p><strong>常见中断原因及排查：</strong></p><table><thead><tr><th>现象</th><th>原因</th><th>解决方案</th></tr></thead><tbody><tr><td>Slave_IO_Running: No</td><td>网络不通、server_id重复、Binlog不存在</td><td>检查网络<code>telnet master_ip 3306</code>；检查<code>server_id</code>唯一性；检查主库Binlog是否被清理</td></tr><tr><td>Slave_SQL_Running: No</td><td>SQL执行错误（数据不一致、语法错误）</td><td>查看<code>Last_SQL_Error</code>；跳过错误或修复数据</td></tr><tr><td>主从延迟大</td><td>大事务、从库性能差、网络带宽不足</td><td>拆分大事务；升级从库硬件；检查网络</td></tr></tbody></table><p><strong>具体解决命令：</strong></p><div class="language-sql line-numbers-mode" data-highlighter="shiki" data-ext="sql" style="background-color:#282c34;color:#abb2bf;"><pre class="shiki one-dark-pro vp-code"><code class="language-sql"><span class="line"><span style="color:#7F848E;font-style:italic;">-- 1. 查看复制状态</span></span>
+<span class="line"><span style="color:#C678DD;">SET</span><span style="color:#C678DD;"> SESSION</span><span style="color:#C678DD;"> TRANSACTION</span><span style="color:#C678DD;"> ISOLATION</span><span style="color:#C678DD;"> LEVEL</span><span style="color:#C678DD;"> READ</span><span style="color:#C678DD;"> COMMITTED</span><span style="color:#ABB2BF;">;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>注意：</strong> InnoDB在可重复读级别通过<strong>间隙锁（Gap Lock）</strong>一定程度上解决了幻读问题。</p><h2 id="_9、如何解决主从复制中断问题" tabindex="-1"><a class="header-anchor" href="#_9、如何解决主从复制中断问题"><span>9、如何解决主从复制中断问题？</span></a></h2><p><strong>答：</strong> 主从复制中断是运维高频问题，需根据错误类型分类处理。</p><p><strong>常见中断原因及排查：</strong></p><table><thead><tr><th>现象</th><th>原因</th><th>解决方案</th></tr></thead><tbody><tr><td>Slave_IO_Running: No</td><td>网络不通、server_id重复、Binlog不存在</td><td>检查网络<code>telnet master_ip 3306</code>；检查<code>server_id</code>唯一性；检查主库Binlog是否被清理</td></tr><tr><td>Slave_SQL_Running: No</td><td>SQL执行错误（数据不一致、语法错误）</td><td>查看<code>Last_SQL_Error</code>；跳过错误或修复数据</td></tr><tr><td>主从延迟大</td><td>大事务、从库性能差、网络带宽不足</td><td>拆分大事务；升级从库硬件；检查网络</td></tr></tbody></table><p><strong>具体解决命令：</strong></p><div class="language-sql line-numbers-mode" data-highlighter="shiki" data-ext="sql" style="background-color:#282c34;color:#abb2bf;"><pre class="shiki one-dark-pro vp-code"><code class="language-sql"><span class="line"><span style="color:#7F848E;font-style:italic;">-- 1. 查看复制状态</span></span>
 <span class="line"><span style="color:#ABB2BF;">SHOW SLAVE </span><span style="color:#C678DD;">STATUS</span><span style="color:#ABB2BF;">\G</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#7F848E;font-style:italic;">-- 2. 跳过单个错误（位点模式，谨慎使用！）</span></span>
@@ -361,6 +363,6 @@
 <span class="line"><span>4. 校验：数据一致性检查（行数+校验和）</span></span>
 <span class="line"><span>5. 切换：修改应用连接串，停写旧库</span></span>
 <span class="line"><span>6. 回滚：保留旧库只读48小时，确认无误后下线</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><!----><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="update-time"><span class="vp-meta-label">最近更新: </span><time class="vp-meta-info" datetime="2026-02-23T12:49:13.000Z" data-allow-mismatch>2026/2/23 12:49</time></div><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2162059863@qq.com">liuchenyang</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><!----><a class="route-link auto-link next" href="/ToLiucyLinux/interview/intervie_database/intervie_RabbitMQ.html" aria-label="RabbitMQ常见面试题"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">RabbitMQ常见面试题<i class="vp-icon iconfont icon-redis" sizing="height"></i></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer"><a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a></div><div class="vp-copyright">Copyright © 2026 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚 </div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!----><div></div><!----><!--]--><!--]--></div>
-    <script type="module" src="/ToLiucyLinux/assets/app-ChP1mfe_.js" defer></script>
+    <script type="module" src="/ToLiucyLinux/assets/app-kgUVk6Dw.js" defer></script>
   </body>
 </html>

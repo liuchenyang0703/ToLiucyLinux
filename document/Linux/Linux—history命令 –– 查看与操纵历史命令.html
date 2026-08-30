@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content="VuePress 2.0.0-rc.26" />
-    <meta name="theme" content="VuePress Theme Hope 2.0.0-rc.99" />
+    <meta name="generator" content="VuePress 2.0.0-rc.30" />
+    <meta name="theme" content="VuePress Theme Hope 2.0.0-rc.107" />
     <style>
       :root {
         --vp-c-bg: #fff;
@@ -22,8 +22,7 @@
     <script>
       const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
       const systemDarkMode =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
+        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
       if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
         document.documentElement.setAttribute("data-theme", "dark");
@@ -41,16 +40,19 @@
           hm.src = "https://hm.baidu.com/hm.js?1404449d13f81f463912cf1bf29d941e";
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
-        })();</script><script>const btw = new BTWPlugin();
+        })();</script><script>window.addEventListener('load', () => {
+        if (typeof BTWPlugin === 'undefined') return;
+        const btw = new BTWPlugin();
         btw.init({
         id: 'container',
         blogId: '32863-1711898538696-276',
         name: 'Liucy',
         qrcode: '/assets/image/公众号.png',
         keyword: 'vip',
-    });</script><script src="https://readmore.openwrite.cn/js/readmore.js"></script><link rel="stylesheet" href="no-chttps://cdn.jsdelivr.net/npm/@docsearch/css@3ache"><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script><link rel="icon" href="/ToLiucyLinux/favicon.ico"><title>Linux—history命令 –– 查看与操纵历史命令 | ToLiucyLinux</title><meta name="description" content="history命令用于显示用户以前执行过的历史命令，并且能对历史命令进行追加和删除等操作。 如果你经常使用Linux命令，那么使用history命令可以有效地提升你的效率。 语法格式： history [参数] [目录] 常用参数： 参考实例： 查看所有的历史记录： 显示最近的10条命令： 将本次登录的命令写入历史文件中： 将命令历史文件中的内容读入到...">
-    <link rel="preload" href="/ToLiucyLinux/assets/style-FcmiBGV8.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-FcmiBGV8.css">
-    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-ChP1mfe_.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/Linux—history命令 –– 查看与操纵历史命令.html-VL2Ho5Wa.js">
+        });
+      });</script><script src="https://readmore.openwrite.cn/js/readmore.js"></script><link rel="stylesheet" href="no-chttps://cdn.jsdelivr.net/npm/@docsearch/css@3ache"><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script><link rel="icon" href="/ToLiucyLinux/favicon.ico"><title>Linux—history命令 –– 查看与操纵历史命令 | ToLiucyLinux</title><meta name="description" content="history命令用于显示用户以前执行过的历史命令，并且能对历史命令进行追加和删除等操作。 如果你经常使用Linux命令，那么使用history命令可以有效地提升你的效率。 语法格式： history [参数] [目录] 常用参数： 参考实例： 查看所有的历史记录： 显示最近的10条命令： 将本次登录的命令写入历史文件中： 将命令历史文件中的内容读入到...">
+    <link rel="preload" href="/ToLiucyLinux/assets/style-cBnbHDC2.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-cBnbHDC2.css">
+    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-kgUVk6Dw.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/Linux—history命令 –– 查看与操纵历史命令-BfTiCupC.js">
     
   </head>
   <body>
@@ -63,6 +65,6 @@
 <span class="line"><span style="color:#ABB2BF;">[root@linuxcool ~]# !</span><span style="color:#61AFEF;">3</span></span>
 <span class="line"><span style="color:#61AFEF;">abc</span><span style="color:#D19A66;"> 123</span><span style="color:#98C379;"> lcy</span><span style="color:#98C379;"> linux</span><span style="color:#98C379;"> history</span><span style="color:#98C379;"> ml</span><span style="color:#98C379;"> ss</span><span style="color:#ABB2BF;"> </span></span>
 <span class="line"><span style="color:#61AFEF;">dd</span><span style="color:#98C379;"> laks</span><span style="color:#D19A66;"> 111</span><span style="color:#98C379;"> vi</span><span style="color:#98C379;"> go</span><span style="color:#98C379;"> sl</span><span style="color:#98C379;"> sd</span><span style="color:#98C379;"> fsg</span><span style="color:#98C379;"> a</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><!----><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="update-time"><span class="vp-meta-label">最近更新: </span><time class="vp-meta-info" datetime="2025-01-16T09:56:20.000Z" data-allow-mismatch>2025/1/16 09:56</time></div><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2162059863@qq.com">liuchenyang</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/ToLiucyLinux/document/Linux/Linux_Log.html" aria-label="Linux 日志系统详解 - 管理、审计与排障最佳实践"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><i class="vp-icon iconfont icon-circle-info" sizing="height"></i>Linux 日志系统详解 - 管理、审计与排障最佳实践</div></a><a class="route-link auto-link next" href="/ToLiucyLinux/document/Linux/Linux%E2%80%94journalctl%E5%91%BD%E4%BB%A4%20%E2%80%93%20%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97.html" aria-label="Linux—journalctl命令 – 查看日志"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">Linux—journalctl命令 – 查看日志<i class="vp-icon iconfont icon-circle-info" sizing="height"></i></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:none;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer"><a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a></div><div class="vp-copyright">Copyright © 2026 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚 </div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!----><div></div><!----><!--]--><!--]--></div>
-    <script type="module" src="/ToLiucyLinux/assets/app-ChP1mfe_.js" defer></script>
+    <script type="module" src="/ToLiucyLinux/assets/app-kgUVk6Dw.js" defer></script>
   </body>
 </html>
