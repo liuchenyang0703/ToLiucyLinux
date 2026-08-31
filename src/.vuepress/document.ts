@@ -163,6 +163,14 @@ export const document = arraySidebar([
           collapsible: true,
           children: "structure",
         },
+        {
+          text: "漏洞扫描",
+          icon: "a-061_shuben",
+          prefix: "vulnerability/",
+          // 添加下拉框
+          collapsible: true,
+          children: "structure",
+        },
       ],
     },
     {

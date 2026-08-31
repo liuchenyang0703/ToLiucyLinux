@@ -568,3 +568,5 @@ category:
 
 ## 2026-08-31:
 > 1、《【Docker】完美解决拉取镜像超时报错：ERROR：Get "https://registry-1.docker.io/v2/"》文章新增一些常用vpn的开启方法（src/document/Docker）
+> 2、新增了一篇文章《Linux 下使用 Trivy 扫描 Docker 镜像漏洞》（src/document/secure/vulnerability）
+> 3、安全侧边栏新增一个漏洞扫描（src/.vuepress/document.ts）
