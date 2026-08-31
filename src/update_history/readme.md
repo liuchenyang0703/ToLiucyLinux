@@ -565,3 +565,6 @@ category:
 > 5、关于我们新增了图片不可点击放大的操作（src/.vuepress/components/LoveTimer.vue）
 > 6、修复了f12，`cdn、penwrite`报错问题（src/.vuepress/config.ts）
 > 7、新增`moefy-canvas.d.ts`文件，消除`config.ts`中的报错提示（不影响运行）（src/.vuepress/public/js/moefy-canvas.d.ts）
+
+## 2026-08-31:
+> 1、《【Docker】完美解决拉取镜像超时报错：ERROR：Get "https://registry-1.docker.io/v2/"》文章新增一些常用vpn的开启方法（src/document/Docker）

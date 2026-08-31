@@ -188,10 +188,54 @@ docker pull liuchenyang/ubuntu20.04:latest
 
  ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202503171726422.png)
 
-
 恭喜你，Docker Daemon 代理配置完成！
+
+
+
 > 注意：开启🐱之后可能会影响你的网络，请勿使用与非法途径，谨慎使用；
 > 注意：如果使用镜像源方式需要把代理的内容删除并容器docker才可使用；
+
+
+
+### 4.1 代理软件开启方法：
+
+> 都需要提前购买流量，有的是直接可以登录用户名密码的app，有的是通用只需要导入配置文件就行。
+
+#### 4.1.1 clash for windows
+
+* 安装好，导入代理配置，打开主页就可以看到端口等一些配置信息：端口号一般都是`7890`，也可以自己修改；
+
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202503171726962.png)
+
+ * 这里把`Allow LAN（允许局域网）`打开；然后把`TUN MODE（TUN模式）`打开，`System Proxy（系统代理）`打开；
+
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202503171726191.png)
+
+
+
+#### 4.1.2 FlClash
+
+* 安装好，导入代理配置，打开工具 - 局域网代理
+
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608311735188.png)
+
+
+
+* 选择代理 - 再点仪表板开启vpn，端口号一般都是`7890`，也可以自己修改（再配置里点击编辑 - 配置编辑 - 修改端口）；
+
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608311739122.png)
+
+
+
+#### 4.1.3 云梯（需再此平台购买）
+
+* 登录上自己的账号 - 点击设置 - 打开TUN模式，端口默认是7897（可以自定义） - 打开首页 - 连接
+
+
+
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608311744720.png)
+
+
 
 ## 五、Docker加速列表 - 2026.08.27 已更新 - 长期维护
 ><span id="dockerjiasu">Docker加速列表 - 2026.08.27 已更新 - 长期维护</span>
