@@ -1187,31 +1187,32 @@ http://localhost:8001/logs/kube-system/kube-apiserver-xxx.log
 ```
 ### 3.13 kubectl port-forward TCP端口映射
 > `kubectl port-forward` 是“**TCP 端口映射神器**”——  
-> **无需暴露 Service、不改 YAML**，就能把 **Pod/Service/Deployment** 的任意端口映射到 **本地 127.0.0.1:任意端口**，方便本地调试数据库、微服务、Dashboard 等；
+> **无需暴露 Service、不改 YAML**，就能把 **Pod/Service/Deployment** 的任意端口映射到 **本地 127.0.0.1:任意端口**，方便本地调试数据库、微服务、Dashboard 等；<br>
+> 使用此服务时，需要再所有节点安装`socat`服务，安装命令：`yum install -y socat`、`apt-get update && apt-get install -y socat`；
 
-#### 3.13.1 语法
+### 3.13.1 语法
 ```bash
 # Pod 端口 → 本地端口
 kubectl port-forward [-n <ns>] <pod名> <本地端口>:<Pod端口> [其他flag]
 
 # Service 端口 → 本地端口
-kubectl port-forward svc [-n <ns>] <服务名> <本地端口>:<Service端口> 
+kubectl port-forward [-n <ns>] svc/<服务名> <本地端口>:<Service端口> 
 
 # Deployment 端口 → 本地端口（自动选 Pod）
-kubectl port-forward deploy [-n <ns>] <部署名> <本地端口>:<容器端口>
+kubectl port-forward [-n <ns>] deploy/<部署名> <本地端口>:<容器端口>
 ```
 
-#### 3.13.2 常用场景及示例
+### 3.13.2 常用场景及示例
 
 | 场景 | 示例 | 效果 |
 | --- | --- | --- |
-| **本地连 MySQL** | `kubectl port-forward svc -n mysql mysql 3306:3306` | 本地 `mysql -h 127.0.0.1 -P 3306` 直连集群内 MySQL |
+| **本地连 MySQL** | `kubectl port-forward -n mysql svc/mysql 3306:3306` | 本地 `mysql -h 127.0.0.1 -P 3306` 直连集群内 MySQL |
 | **调试微服务** | `kubectl port-forward -n dev deploy/api 8080:80` | 本地 `curl http://127.0.0.1:8080/api` 调集群内 API |
 | **看 Kubernetes Dashboard** | `kubectl port-forward -n kube-system svc/kubernetes-dashboard 8443:443` | 浏览器 `https://localhost:8443` 打开 Dashboard |
 | **单个 Pod 调试用** | `kubectl port-forward -n nginx pod/nginx-pod 8080:80` | 本地测试该 Pod 实例 |
 | **随机本地端口** | `kubectl port-forward -n redis svc/redis :6379` | 自动分配如 `49153:6379`，避免冲突 |
 
-#### 3.13.3 port-forward与 proxy 区别
+### 3.13.3 port-forward与 proxy 区别
 | 维度       | kubectl proxy                            | kubectl port-forward                         |
 | -------- | ---------------------------------------- | -------------------------------------------- |
 | **协议**   | **HTTP/HTTPS** 代理                        | 纯 **TCP** 隧道                                 |
