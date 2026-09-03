@@ -17,7 +17,6 @@ pageview: true
 article: true
 breadcrumb: false
 comment: true
-star: true
 ---
 
 >👨‍🎓**博主简介**

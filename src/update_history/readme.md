@@ -576,3 +576,4 @@ category:
 
 ## 2026-09-03:
 > 1、所有文章添加上可评论功能（src/document/）（src/interview/）
+> 2、取消了两篇文章的星标
