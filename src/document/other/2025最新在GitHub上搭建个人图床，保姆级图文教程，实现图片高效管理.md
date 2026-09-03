@@ -8,10 +8,12 @@ category:
 tag:
   - github
   - 图床
-pageview: false
 date: 2025-11-26
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 

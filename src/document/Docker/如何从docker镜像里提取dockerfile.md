@@ -9,10 +9,12 @@ tag:
   - Linux
   - Docker
   - 运维
-pageview: false
 date: 2024-12-16
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 hello，大家好，今天在玩docker的时候发现了很好用的东西，他就是用来提取镜像中的dockerfile的。这个是前者留下来的镜像，但是dockerfile被删除了，现在想知道dockerfile里面是如何写的，然后去查了查就有了新的发现——通过镜像来提取dockerfile，接下来我就把方法分享给大家。

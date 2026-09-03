@@ -8,10 +8,12 @@ tag:
   - Linux
   - 磁盘
   - 运维
-pageview: false
 date: 2024-12-18
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ## 一、df – 显示磁盘空间使用情况

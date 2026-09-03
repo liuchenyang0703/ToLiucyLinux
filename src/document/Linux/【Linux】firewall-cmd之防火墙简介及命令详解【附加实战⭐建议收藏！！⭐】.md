@@ -8,10 +8,12 @@ tag:
   - Linux
   - 防火墙
   - 运维
-pageview: false
 date: 2024-12-17
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412171027216.png#pic_center)

@@ -10,10 +10,12 @@ tag:
   - 数据库
   - 达梦数据库
   - 运维
-pageview: false
 date: 2024-12-30
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ## 一、挂载并创建用户

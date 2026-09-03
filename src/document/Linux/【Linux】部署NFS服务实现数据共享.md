@@ -8,10 +8,12 @@ tag:
   - Linux
   - NFS
   - 运维
-pageview: false
 date: 2024-12-24
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412181441583.png)

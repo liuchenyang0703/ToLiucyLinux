@@ -9,10 +9,12 @@ tag:
   - Linux
   - Java
   - 运维
-pageview: false
 date: 2022-08-29
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ## 下载jak1.8安装包

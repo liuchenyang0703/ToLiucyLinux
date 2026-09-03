@@ -8,11 +8,12 @@ tag:
   - Linux
   - 邮件发送服务
   - 运维
-pageview: false
 date: 2023-07-24 14:07:55
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

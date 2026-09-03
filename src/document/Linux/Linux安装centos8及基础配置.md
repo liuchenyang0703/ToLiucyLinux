@@ -7,11 +7,12 @@ category:
 tag:
   - Linux
   - 运维
-pageview: false
 date: 2025-10-01 10:04:45
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

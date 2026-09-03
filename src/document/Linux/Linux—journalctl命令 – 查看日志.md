@@ -7,10 +7,12 @@ category:
 tag:
   - Linux
   - 运维
-pageview: false
 date: 2024-12-19
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 Systemd统一管理所有 Unit 的启动日志。带来的好处就是可以只用journalctl一个命令，查看所有日志（内核日志和 应用日志）。

@@ -8,10 +8,11 @@ tag:
   - RabbitMQ常见面试题
   - 运维
 date: 2026-02-11
+isOriginal: true
 pageview: true
 article: false
 breadcrumb: false
-isOriginal: true
+comment: true
 ---
 
 ## 1、RabbitMQ 有哪些安全机制？

@@ -11,11 +11,12 @@ tag:
   - kubernetes
   - Docker
   - 运维
-pageview: false
 date: 2023-05-30
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >🍁**博主简介**

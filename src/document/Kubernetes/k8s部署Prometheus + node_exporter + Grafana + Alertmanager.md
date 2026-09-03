@@ -14,11 +14,12 @@ tag:
   - node_exporter
   - Kubernetes
   - 运维
-pageview: false
 date: 2026-02-26
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

@@ -11,10 +11,12 @@ tag:
   - 共享存储
   - yaml
   - 运维
-pageview: false
 date: 2026-08-24
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

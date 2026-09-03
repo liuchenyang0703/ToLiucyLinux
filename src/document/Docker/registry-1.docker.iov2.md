@@ -9,11 +9,12 @@ tag:
   - Linux
   - Docker
   - 运维
-pageview: false
 date: 2023-02-20
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 star: true
 ---
 

@@ -10,10 +10,12 @@ tag:
   - kubernetes
   - Helm
   - 运维
-pageview: false
 date: 2026-07-06
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

@@ -7,10 +7,12 @@ category:
 tag:
   - Linux
   - 运维
-pageview: false
 date: 2024-12-19
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 Linux系统下，以.开头的都是隐藏文件

@@ -13,11 +13,12 @@ tag:
   - CoreDNS
   - 域名
   - 运维
-pageview: false
 date: 2026-02-04
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

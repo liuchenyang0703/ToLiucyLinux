@@ -9,11 +9,12 @@ tag:
   - Linux
   - kubernetes
   - 运维
-pageview: false
 date: 2025-11-24
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

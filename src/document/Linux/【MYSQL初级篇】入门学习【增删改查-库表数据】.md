@@ -8,10 +8,12 @@ category:
 tag:
   - Linux
   - 数据库
-pageview: false
 date: 2023-11-19 23:54:31
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/dfc7ac4d3ca04b14a86dc0b603e40e17.jpeg)

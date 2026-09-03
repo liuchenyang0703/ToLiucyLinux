@@ -8,10 +8,11 @@ tag:
   - 防火墙常见面试题
   - 运维
 date: 2026-02-19
+isOriginal: true
 pageview: true
 article: false
 breadcrumb: false
-isOriginal: true
+comment: true
 ---
 
 ## 一、firewalld 防火墙

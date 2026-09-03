@@ -8,11 +8,12 @@ category:
 tag:
    - Linux
    - Docker
-pageview: false
 date: 2025-08-27
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

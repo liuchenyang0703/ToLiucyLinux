@@ -9,10 +9,12 @@ tag:
   - 防火墙
   - iptables
   - 运维
-pageview: false
 date: 2024-12-18
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180922057.png)

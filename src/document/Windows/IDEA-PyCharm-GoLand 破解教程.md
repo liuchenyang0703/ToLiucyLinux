@@ -7,9 +7,12 @@ tag:
 - 开发工具
 category:
 - Windows
-pageview: false
 date: 2024-03-24
-comment: false
+isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 1、先到官网下载各个软件；

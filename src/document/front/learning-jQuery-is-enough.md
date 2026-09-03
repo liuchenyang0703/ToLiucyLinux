@@ -6,10 +6,12 @@ category:
   - 前端技术
 tag:
   - 前端技术
-pageview: false
 date: 2023-08-29
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ## 1. jQuery简介

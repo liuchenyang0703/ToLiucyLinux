@@ -11,10 +11,12 @@ tag:
   - Jenkins
   - 自动化运维
   - 运维
-pageview: false
 date: 2024-12-24
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/5cf90d2d830046058e5fa8768d5f47f4.jpeg)

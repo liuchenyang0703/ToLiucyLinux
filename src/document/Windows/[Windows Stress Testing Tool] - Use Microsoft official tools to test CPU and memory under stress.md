@@ -8,11 +8,12 @@ tag:
   - Windows
   - 运维
   - 压力测试
-pageview: false
 date: 2025-11-20
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

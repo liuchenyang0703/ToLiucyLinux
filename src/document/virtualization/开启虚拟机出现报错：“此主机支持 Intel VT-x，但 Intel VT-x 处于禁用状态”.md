@@ -9,10 +9,12 @@ tag:
   - Linux
   - 虚拟机
   - 运维
-pageview: false
 date: 2024-12-20
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

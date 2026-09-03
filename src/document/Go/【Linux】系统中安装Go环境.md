@@ -8,10 +8,12 @@ category:
 tag:
   - Linux
   - Go
-pageview: false
 date: 2022-08-29
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 > >👨‍🎓**博主简介**

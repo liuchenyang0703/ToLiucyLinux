@@ -11,11 +11,12 @@ tag:
   - 镜像
   - 安全
   - 运维
-pageview: false
 date: 2026-08-31
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 star: true
 ---
 

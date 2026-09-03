@@ -12,11 +12,12 @@ tag:
   - 监控
   - Prometheus
   - Grafana
-pageview: false
 date: 2023-07-10
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

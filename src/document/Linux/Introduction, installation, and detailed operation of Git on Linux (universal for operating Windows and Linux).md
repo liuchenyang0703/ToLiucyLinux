@@ -9,11 +9,12 @@ tag:
   - Linux
   - Git
   - 运维
-pageview: false
 date: 2024-10-24
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

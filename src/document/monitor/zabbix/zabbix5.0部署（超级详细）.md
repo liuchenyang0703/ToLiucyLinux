@@ -11,10 +11,12 @@ tag:
   - zabbix
   - 服务器监控
   - 运维
-pageview: false
 date: 2024-12-16
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ## 🏆Zabbix5.0部署

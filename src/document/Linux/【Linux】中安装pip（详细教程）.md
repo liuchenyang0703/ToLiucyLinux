@@ -10,9 +10,12 @@ category:
 - Python
 - 运维
 - pip
-pageview: false
 date: 2024-03-24
-comment: false
+isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7c453b5d405345618f248139a1f5798f.gif)

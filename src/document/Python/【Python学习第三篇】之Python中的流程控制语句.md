@@ -6,10 +6,12 @@ category:
   - Python
 tag:
   - Python
-pageview: false
 date: 2025-02-17
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 >👨‍🎓**博主简介**
 >

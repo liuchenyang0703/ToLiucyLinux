@@ -11,11 +11,12 @@ tag:
   - Docker
   - kubernetes
   - 运维
-pageview: false
 date: 2025-10-23
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 

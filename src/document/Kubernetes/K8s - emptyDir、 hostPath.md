@@ -10,10 +10,12 @@ tag:
   - kubernetes
   - 存储
   - 运维
-pageview: false
 date: 2026-08-10
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

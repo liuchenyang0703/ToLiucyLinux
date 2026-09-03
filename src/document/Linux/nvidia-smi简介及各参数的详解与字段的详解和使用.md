@@ -9,10 +9,12 @@ tag:
   - GPU
   - NVIDIA
   - 运维
-pageview: false
 date: 2024-12-20
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412201007644.png)

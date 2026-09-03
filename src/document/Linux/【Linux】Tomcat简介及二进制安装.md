@@ -8,10 +8,12 @@ tag:
   - Linux
   - Tomcat
   - 运维
-pageview: false
 date: 2024-12-18
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412180951125.jpeg)

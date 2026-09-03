@@ -11,11 +11,12 @@ tag:
   - Prometheus
   - Grafana
   - 运维
-pageview: false
 date: 2026-01-20
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

@@ -8,10 +8,11 @@ tag:
   - Kubernetes常见面试题
   - 运维
 date: 2026-02-07
+isOriginal: true
 pageview: true
 article: false
 breadcrumb: false
-isOriginal: true
+comment: true
 ---
 
 ## 1.说下k8s的核心组件都有哪些，并简述下他们各自的作用

@@ -8,10 +8,11 @@ tag:
   - Prometheus常见面试题
   - 运维
 date: 2026-02-07
+isOriginal: true
 pageview: true
 article: false
 breadcrumb: false
-isOriginal: true
+comment: true
 ---
 
 ## 1、Prometheus 的核心组件有哪些？  

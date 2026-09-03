@@ -7,10 +7,12 @@ category:
 tag:
   - Linux
   - 运维
-pageview: false
 date: 2024-12-19
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 tcpdump命令是一款sniffer工具，是linux上的抓包工具，嗅探器；它可以打印出所有经过网络接口的数据包的头信息。

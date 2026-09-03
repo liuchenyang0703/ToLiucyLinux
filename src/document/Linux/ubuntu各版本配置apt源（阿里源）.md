@@ -9,11 +9,12 @@ tag:
   - Linux
   - ubuntu
   - 运维
-pageview: false
 date: 2026-01-22
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202602021006733.png)

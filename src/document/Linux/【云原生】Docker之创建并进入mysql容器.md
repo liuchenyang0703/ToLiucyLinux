@@ -10,10 +10,12 @@ tag:
   - Linux
   - 数据库
   - Docker
-pageview: false
 date: 2023-11-19 23:54:31
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/1d08edbca8894c2ebb94586f53c2b100.png)

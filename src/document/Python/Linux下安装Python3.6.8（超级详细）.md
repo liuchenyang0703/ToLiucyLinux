@@ -9,9 +9,12 @@ category:
 - Linux
 - Python
 - 运维
-pageview: false
 date: 2024-03-24
-comment: false
+isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 ## 前言：

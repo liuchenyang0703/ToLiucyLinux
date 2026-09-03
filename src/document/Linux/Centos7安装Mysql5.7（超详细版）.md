@@ -8,10 +8,12 @@ category:
 tag:
   - Linux
   - 数据库
-pageview: false
 date: 2023-11-19 23:54:31
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ## 一、下载mysql5.7的安装包

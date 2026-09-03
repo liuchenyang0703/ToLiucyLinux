@@ -8,10 +8,12 @@ tag:
   - Linux
   - cpu
   - 运维
-pageview: false
 date: 2024-12-18
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 ## 一、lscpu  – 显示CPU架构的有关信息

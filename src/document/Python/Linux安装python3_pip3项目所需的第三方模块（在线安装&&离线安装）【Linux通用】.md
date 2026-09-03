@@ -9,10 +9,12 @@ category:
 - Linux
 - Python
 - 运维
-pageview: false
 date: 2022-05-26
-comment: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 >👨‍🎓**博主简介**
 >

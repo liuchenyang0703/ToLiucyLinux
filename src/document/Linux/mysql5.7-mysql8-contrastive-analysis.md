@@ -6,10 +6,12 @@ category:
   - 数据库
 tag:
   - 数据库
-pageview: false
 date: 2023-11-19 23:54:31
-comment: false
+isOriginal: true
+pageview: true
+article: true
 breadcrumb: false
+comment: true
 ---
 
 # MySQL5.7和MySQL8对比分析

@@ -10,11 +10,12 @@ tag:
   - 服务器安全
   - openssh
   - 运维
-pageview: false
 date: 2025-10-11 17:30:04
-comment: false
-breadcrumb: false
 isOriginal: true
+pageview: true
+article: true
+breadcrumb: false
+comment: true
 ---
 
 >👨‍🎓**博主简介**

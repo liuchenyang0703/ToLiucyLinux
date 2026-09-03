@@ -8,10 +8,11 @@ tag:
   - Mysql常见面试题
   - 运维
 date: 2026-02-07
+isOriginal: true
 pageview: true
 article: false
 breadcrumb: false
-isOriginal: true
+comment: true
 ---
 
 ## 1、查看当前库和表的命令
