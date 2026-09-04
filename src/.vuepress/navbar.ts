@@ -48,32 +48,6 @@ export default navbar([
       },
     ],
   },
-  // {
-  //   text: "网站相关",
-  //   icon: "circle-info",
-  //   children: [
-  //     {
-  //       text: "关于作者",
-  //       icon: "gerenjieshao",
-  //       link: "person.md"
-  //     },
-  //     {
-  //       text: "项目更新历史",
-  //       icon: "lishi",
-  //       link: "/update_history/",
-  //     },
-  //     {
-  //       text: "博客更新时间轴",
-  //       icon: "lishi",
-  //       link: "/timeline/",
-  //     },
-  //     {
-  //       text: "文件结构介绍",
-  //       icon: "wenjianjiegou",
-  //       link: "structure.md",
-  //     },
-  //   ],
-  // },
   {
     text: "网站相关",
     icon: "circle-info",
@@ -110,9 +84,18 @@ export default navbar([
       },
     ],
   },
-  { 
-    text: "关于我们",
-    icon: "aiqingqinglv",
-    link: "AboutUs.md" 
+  {
+    text: "我的故事",
+    icon: "gerenjieshao",
+    children: [
+      {
+        text: "关于我们",
+        children: ["AboutUs.md"],
+      },
+      {
+        text: "旅游",
+        children: ["travel.md"],
+      },
+    ],
   },
 ]);

@@ -577,3 +577,9 @@ category:
 ## 2026-09-03:
 > 1、所有文章添加上可评论功能（src/document/）（src/interview/）
 > 2、取消了两篇文章的星标
+
+## 2026-09-04:
+> 1、新增了旅游（src/travel.md）（src/.vuepress/components/layouts/Travel.vue、travel.ts）（src/.vuepress/client.ts）
+> 2、新增了旅游的图片（src/.vuepress/public/Travel）
+> 3、新增了我的故事，把旅游和关于我们移动到我的故事中（src/.vuepress/navbar.ts）
+> 4、更新了插件版本（packages.json、pnpm-lock.yaml）

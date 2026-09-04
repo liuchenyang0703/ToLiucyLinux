@@ -27,7 +27,7 @@ importers:
         specifier: 14.4.0
         version: 14.4.0(vue@3.5.42)
       '@waline/client':
-        specifier: ^3.8.0
+        specifier: ^3.15.2
         version: 3.15.2
       artplayer:
         specifier: ^5.4.0

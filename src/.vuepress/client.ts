@@ -43,6 +43,8 @@ import Connectivity from "./components/ip_check/Connectivity.vue";
 import WebRTC from "./components/ip_check/WebRTC.vue";
 // IP查询检测-自定义：DNS泄露测试
 import DNSLeak from "./components/ip_check/DNSLeak.vue";
+// 旅游-自定义：用于展示去过的城市与旅途照片
+import Travel from "./components/layouts/Travel.vue";
 
 export default defineClientConfig({
   setup() {
@@ -113,9 +115,11 @@ export default defineClientConfig({
   
   // 你可以在这里覆盖或新增布局
   layouts: {
-	// 404页面
+	  // 404页面
     // NotFound,
     // 博客必应壁纸及一言描述
     Blog,
+    // 旅游足迹相册页面
+    Travel,
   },
 });
