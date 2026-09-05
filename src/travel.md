@@ -1,6 +1,6 @@
 ---
 title: 旅游
-icon: ditu
+icon: lvyou
 toc: false
 date: 2026-09-03
 isOriginal: true

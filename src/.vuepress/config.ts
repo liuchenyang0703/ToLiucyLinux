@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
 import theme from "./theme.js";
+import { viteBundler } from "@vuepress/bundler-vite";
 // 鼠标点击
 import { popperPlugin } from "./plugins/vuepress-plugin-popper/index.js";
 import { PopperShape } from "@moefy-canvas/theme-popper";
@@ -25,6 +26,9 @@ export default defineUserConfig({
   lang: "zh-CN",
   title: "ToLiucyLinux",
   // description: "Liucy知识库",
+
+  // 统一 VueUse 实例，避免图标与透明导航栏的样式 ID 冲突。
+  bundler: viteBundler({ viteOptions: { optimizeDeps: { exclude: ["@vueuse/core"] }, resolve: { dedupe: ["@vueuse/core"] } } }),
 
   // 引入theme.ts配置
   theme,

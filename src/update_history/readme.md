@@ -583,3 +583,8 @@ category:
 > 2、新增了旅游的图片（src/.vuepress/public/Travel）
 > 3、新增了我的故事，把旅游和关于我们移动到我的故事中（src/.vuepress/navbar.ts）
 > 4、更新了插件版本（packages.json、pnpm-lock.yaml）
+
+## 2026-09-05:
+> 1、修改了vue图标的链接（src/.vuepress/theme.ts）
+> 2、修复了本地运行icon不展示问题（src/.vuepress/config.ts）
+> 3、旅游修改了图标样式（src/travel.md）
