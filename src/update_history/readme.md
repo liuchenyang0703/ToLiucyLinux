@@ -588,3 +588,4 @@ category:
 > 1、修改了vue图标的链接（src/.vuepress/theme.ts）
 > 2、修复了本地运行icon不展示问题（src/.vuepress/config.ts）
 > 3、旅游修改了图标样式（src/travel.md）
+> 4、添加一个友链（src/.vuepress/components/layouts/友情链接.ts）

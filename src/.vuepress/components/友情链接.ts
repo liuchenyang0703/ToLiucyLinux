@@ -87,6 +87,12 @@ export const friends: LinkData[] = [
     icon: "https://static.imdst.com/image/5/dd/a34353466215dd8721615b9d1538c.jpg",
     link: "https://blog.imdst.com/",
   },
+  {
+    name: "One",
+    desc: "明心静性，爱自己",
+    icon: "https://onedayxyy.cn/images/xyy-logo.webp",
+    link: "https://onedayxyy.cn/",
+  },
 ];
 
 export const invalid: LinkData[] = [
@@ -101,11 +107,5 @@ export const invalid: LinkData[] = [
     desc: "专注于编程技术分享与交流的个人博客",
     icon: "https://codesuc.top/img/logo-codesuc-icon.18c10571.svg",
     link: "https://codesuc.top",
-  },
-  {
-    name: "One",
-    desc: "明心静性，爱自己",
-    icon: "https://img.onedayxyy.cn/images/Teek/Teekwebsite/xyy-logo.webp",
-    link: "https://teek.onedayxyy.cn/",
   },
 ];
