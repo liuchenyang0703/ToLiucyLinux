@@ -1,0 +1,1 @@
+import"./chunk-A4ITRWGT-D68_Q8pS.js";import"./chunk-OMTJKCYW-DU-Vk6nJ.js";import{m as e}from"./chunk-XW6ABFJP-DEg0PDyN.js";import"./mermaid.esm.min-DKMSBkvr.js";export{e as createArchitectureServices};
