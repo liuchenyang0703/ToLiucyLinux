@@ -45,6 +45,8 @@ import WebRTC from "./components/ip_check/WebRTC.vue";
 import DNSLeak from "./components/ip_check/DNSLeak.vue";
 // 旅游-自定义：用于展示去过的城市与旅途照片
 import Travel from "./components/layouts/Travel.vue";
+// 文章归档-自定义：用于展示文章归档与发布日历
+import Archive from "./components/layouts/Archive.vue";
 
 export default defineClientConfig({
   setup() {
@@ -121,5 +123,7 @@ export default defineClientConfig({
     Blog,
     // 旅游足迹相册页面
     Travel,
+    // 文章归档与发布日历
+    Archive,
   },
 });

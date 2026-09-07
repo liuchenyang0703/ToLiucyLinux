@@ -589,3 +589,7 @@ category:
 > 2、修复了本地运行icon不展示问题（src/.vuepress/config.ts）
 > 3、旅游修改了图标样式（src/travel.md）
 > 4、添加一个友链（src/.vuepress/components/layouts/友情链接.ts）
+
+## 2026-09-07:
+> 1、新增了文章归档页面到网站相关中（src/archives.md）（src/.vuepress/navbar.ts）
+> 2、新增了文章归档全局自定义页面及集成（src/.vuepress/components/layouts/Archive.vue）（src/.vuepress/client.ts）

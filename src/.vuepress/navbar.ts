@@ -70,6 +70,11 @@ export default navbar([
         children: ["/timeline/"],
       },
       {
+        text: "文章归档",
+        icon: "lishi",
+        link: "archives.html",
+      },
+      {
         text: "关于本站",
         children: ["about.md","web_submit.md"],
       },
