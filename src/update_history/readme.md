@@ -599,4 +599,3 @@ category:
 > 2、旅游、关于我们、文章归档转移到`Custom`目录中（src/Custom）（src/.vuepress/navbar.ts）
 > 3、删除了test页面
 > 4、修改了文章归档的icon（src/Custom/archives.md）
-> 5、修改了旅游的图片存储，改为https存储到github中（src/.vuepress/components/layouts/Travel.vue、travel.ts）

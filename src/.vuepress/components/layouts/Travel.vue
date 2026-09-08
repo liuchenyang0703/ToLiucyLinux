@@ -7,7 +7,7 @@ import { travelList } from "./travel.js";
 const site = useSiteData();
 const CommentService = resolveComponent("CommentService");
 const { isDarkMode } = useDarkMode();
-const assetPath = (path: string): string => /^https?:\/\//u.test(path) ? path : `${site.value.base}${path}`;
+const assetPath = (path: string): string => `${site.value.base}${path}`;
 const currentIndex = ref(0);
 const currentTravel = computed(() => travelList[currentIndex.value]);
 let carouselTimer: ReturnType<typeof setInterval> | undefined;
