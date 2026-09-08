@@ -72,7 +72,7 @@ export default navbar([
       {
         text: "文章归档",
         icon: "lishi",
-        link: "archives.html",
+        link: "Custom/archives.md",
       },
       {
         text: "关于本站",
@@ -95,11 +95,11 @@ export default navbar([
     children: [
       {
         text: "关于我们",
-        children: ["AboutUs.md"],
+        children: ["Custom/AboutUs.md"],
       },
       {
         text: "旅游",
-        children: ["travel.md"],
+        children: ["Custom/travel.md"],
       },
     ],
   },

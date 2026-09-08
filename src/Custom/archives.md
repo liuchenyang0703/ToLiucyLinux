@@ -1,6 +1,6 @@
 ---
 title: 文章归档
-icon: lishi
+icon: guidang
 layout: Archive
 article: false
 sidebar: false

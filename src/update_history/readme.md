@@ -594,3 +594,7 @@ category:
 > 1、新增了文章归档页面到网站相关中（src/archives.md）（src/.vuepress/navbar.ts）
 > 2、新增了文章归档全局自定义页面及集成（src/.vuepress/components/layouts/Archive.vue）（src/.vuepress/client.ts）
 
+## 2026-09-08:
+> 1、修改了vue图标的链接（src/.vuepress/theme.ts）
+> 2、旅游、关于我们、文章归档转移到`Custom`目录中（src/Custom）（src/.vuepress/navbar.ts）
+> 3、删除了test页面
