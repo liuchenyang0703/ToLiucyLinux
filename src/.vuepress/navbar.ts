@@ -67,12 +67,7 @@ export default navbar([
       {
         text: "博客创作时间轴",
         icon: "lishi",
-        children: ["/timeline/"],
-      },
-      {
-        text: "文章归档",
-        icon: "lishi",
-        link: "Custom/archives.md",
+        children: ["/timeline/","Custom/archives.md"],
       },
       {
         text: "关于本站",
