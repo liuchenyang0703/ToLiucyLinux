@@ -28,7 +28,7 @@ export default defineUserConfig({
   // description: "Liucy知识库",
 
   // 统一 VueUse 实例，避免图标与透明导航栏的样式 ID 冲突。
-  // bundler: viteBundler({ viteOptions: { optimizeDeps: { exclude: ["@vueuse/core"] }, resolve: { dedupe: ["@vueuse/core"] } } }),
+  bundler: viteBundler({ viteOptions: { optimizeDeps: { exclude: ["@vueuse/core"] }, resolve: { dedupe: ["@vueuse/core"] } } }),
 
   // 引入theme.ts配置
   theme,
