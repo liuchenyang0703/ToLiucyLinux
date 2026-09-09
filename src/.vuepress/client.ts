@@ -1,5 +1,5 @@
-import { defineClientConfig } from "vuepress/client";
-import { onMounted } from 'vue';
+import { defineClientConfig, useRouter } from "vuepress/client";
+import { onMounted, onUnmounted } from 'vue';
 import { defineAsyncComponent } from 'vue';
 // 文档：为项目主页的特性添加闪光效果。
 import 'vuepress-theme-hope/presets/shinning-feature-panel.scss';
@@ -50,6 +50,9 @@ import Archive from "./components/layouts/Archive.vue";
 
 export default defineClientConfig({
   setup() {
+    const router = useRouter();
+    let removeBaiduRouteHook: (() => void) | undefined;
+
     // 动态加载不蒜子脚本
     const loadBusuanzi = () => {
       const script = document.createElement("script");
@@ -60,7 +63,17 @@ export default defineClientConfig({
     onMounted(() => {
       // 在页面加载完成后加载不蒜子
       loadBusuanzi();
+
+      // VuePress 是单页应用，页面切换不会重新执行 head 中的百度统计代码，需主动上报。
+      removeBaiduRouteHook = router.afterEach((to, from) => {
+        if (to.fullPath !== from.fullPath) {
+          const baiduQueue = (window as Window & { _hmt?: unknown[][] })._hmt;
+          baiduQueue?.push(["_trackPageview", to.fullPath]);
+        }
+      });
     });
+
+    onUnmounted(() => removeBaiduRouteHook?.());
     // 透明导航栏配置
     setupTransparentNavbar({
       type: "blog-homepage", // 你可以根据需要选择 'homepage', 'blog-homepage', 或 'all'

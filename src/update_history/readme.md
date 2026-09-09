@@ -611,3 +611,4 @@ category:
 > 8、优化了阿里字体的展示（src/.vuepress/styles/index.scss）
 > 9、友链、天气都添加了`alt`属性（src/.vuepress/components/友情链接.vue、友情链接滚动.vue、WeatherWidget.vue）
 > 10、所有的img引用图片都添加了`alt`属性（src/blog.md、document-all.md、person.md、README.md、tools-all.md、website-all.md）
+> 11、修改百度统计的内容，消除f12报错（src/.vuepress/config.ts、client.ts）

@@ -58,27 +58,23 @@ export default defineUserConfig({
     // 全屏
     ["meta", { name: "apple-mobile-web-app-capable", content: "true" }],
 
-    // 添加百度统计
-    // liuchenyang.top统计
+    // 百度统计新版代码：全站写入 <head>，并根据部署域名只加载对应的统计 ID。
     [
       "script",
       {},
-      `var _hmt1 = _hmt1 || [];
+      `var _hmt = window._hmt || [];
         (function() {
+          var siteIds = {
+            "liuchenyang.top": "891de2bc8f3b2f9c423b3993af701dcb",
+            "www.liuchenyang.top": "891de2bc8f3b2f9c423b3993af701dcb",
+            "liuchenyang0703.github.io": "1404449d13f81f463912cf1bf29d941e"
+          };
+          var siteId = siteIds[location.hostname];
+          if (!siteId || document.getElementById("baidu-tongji")) return;
           var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?891de2bc8f3b2f9c423b3993af701dcb";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();`,
-    ],
-    // liuchenyang0703.github.io/ToLiucyLinux/统计
-    [
-      "script",
-      {},
-      `var _hmt2 = _hmt2 || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?1404449d13f81f463912cf1bf29d941e";
+          hm.id = "baidu-tongji";
+          hm.src = "https://hm.baidu.com/hm.js?" + siteId;
+          hm.async = true;
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();`,
