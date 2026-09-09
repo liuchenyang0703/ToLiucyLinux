@@ -46,6 +46,14 @@ export default defineUserConfig({
     ],
     ["meta", { "http-equiv": "Pragma", content: "no-cache" }],
     ["meta", { "http-equiv": "Expires", content: "0" }],
+    // 将第三方脚本内部生成的 HTTP 子资源请求自动升级为 HTTPS。
+    [
+      "meta",
+      {
+        "http-equiv": "Content-Security-Policy",
+        content: "upgrade-insecure-requests",
+      },
+    ],
     [
       "meta",
       {

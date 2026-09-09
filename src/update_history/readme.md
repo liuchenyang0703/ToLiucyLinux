@@ -613,3 +613,6 @@ category:
 > 10、所有的img引用图片都添加了`alt`属性（src/blog.md、document-all.md、person.md、README.md、tools-all.md、website-all.md）
 > 11、修改百度统计的内容，消除f12报错（src/.vuepress/config.ts、client.ts）
 > 12、访问量组件添加了固定图片的大小，适应于手机及pc端（src/.vuepress/components/访问量.vue）
+> 13、修改了阿里图标库改为强制 HTTPS（src/.vuepress/theme.ts）
+> 14、天气组件脚本改为强制 HTTPS（src/.vuepress/components/WeatherWidget.vue）
+> 15、全站增加安全策略（src/.vuepress/config.ts）

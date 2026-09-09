@@ -24,7 +24,7 @@ export default {
         addWeatherImageAlt();
       }
 
-      const SCRIPT_SRC = '//cdn.sencdn.com/widget2/static/js/bundle.js';
+      const SCRIPT_SRC = 'https://cdn.sencdn.com/widget2/static/js/bundle.js';
 
       const loadScript = () => {
         // 避免重复插入
