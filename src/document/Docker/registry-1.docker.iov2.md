@@ -15,6 +15,7 @@ pageview: true
 article: true
 breadcrumb: false
 comment: true
+sticky: true
 star: true
 ---
 

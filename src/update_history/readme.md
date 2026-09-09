@@ -602,3 +602,5 @@ category:
 
 ## 2026-09-09:
 > 1、修改一下没有必要添加到文章列表里的配置`article: false`（src/about.md、donate.md、friendship.md、web_submit.md、honor.md）（src/Custom/AboutUS.md）
+> 2、置顶一篇文章（registry-1.docker.iov2.md）
+> 3、博客创建时间轴添加标签和分类（src/.vuepress/navbar.ts）
