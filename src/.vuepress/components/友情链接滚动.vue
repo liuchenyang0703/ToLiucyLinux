@@ -93,7 +93,11 @@ onBeforeUnmount(() => {
 .section-title {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #00E8AF;
+  color: #087f5b;
+}
+
+:global([data-theme="dark"]) .section-title {
+  color: #6ee7b7;
 }
 
 .section-description {

@@ -52,6 +52,24 @@ export default defineClientConfig({
   setup() {
     const router = useRouter();
     let removeBaiduRouteHook: (() => void) | undefined;
+    let aplayerObserver: MutationObserver | undefined;
+
+    const setAPlayerButtonLabels = () => {
+      const labels = [
+        [".aplayer-icon-order", "切换播放顺序"],
+        [".aplayer-icon-loop", "切换循环模式"],
+        [".aplayer-icon-menu", "打开播放列表"],
+        [".aplayer-icon-lrc", "切换歌词显示"],
+        [".aplayer-miniswitcher .aplayer-icon", "展开或收起播放器"],
+      ] as const;
+
+      labels.forEach(([selector, label]) => {
+        document.querySelectorAll<HTMLButtonElement>(selector).forEach((button) => {
+          button.setAttribute("aria-label", label);
+          if (!button.title) button.title = label;
+        });
+      });
+    };
 
     // 动态加载不蒜子脚本
     const loadBusuanzi = () => {
@@ -71,9 +89,17 @@ export default defineClientConfig({
           baiduQueue?.push(["_trackPageview", to.fullPath]);
         }
       });
+
+      // APlayer 的控制按钮只有图标，为动态生成的按钮补充无障碍名称。
+      setAPlayerButtonLabels();
+      aplayerObserver = new MutationObserver(setAPlayerButtonLabels);
+      aplayerObserver.observe(document.body, { childList: true, subtree: true });
     });
 
-    onUnmounted(() => removeBaiduRouteHook?.());
+    onUnmounted(() => {
+      removeBaiduRouteHook?.();
+      aplayerObserver?.disconnect();
+    });
     // 透明导航栏配置
     setupTransparentNavbar({
       type: "blog-homepage", // 你可以根据需要选择 'homepage', 'blog-homepage', 或 'all'

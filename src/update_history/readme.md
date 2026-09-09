@@ -616,3 +616,5 @@ category:
 > 13、修改了阿里图标库改为强制 HTTPS（src/.vuepress/theme.ts）
 > 14、天气组件脚本改为强制 HTTPS（src/.vuepress/components/WeatherWidget.vue）
 > 15、全站增加安全策略（src/.vuepress/config.ts）
+> 16、友情链接修改了颜色,增加了对比度（src/.vuepress/components/友情链接滚动.vue）
+> 17、播放器添加了无障碍模式（src/.vuepress/config.ts、client.ts）
