@@ -8,7 +8,13 @@
                     本站总访问量
                     <span id="busuanzi_value_site_pv" class="font-bold">--</span> 次
                 </span>
-                <img src="https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608251148677.GIF" alt="heart" width="150" height="150" />
+                <img
+                    class="heart-image"
+                    src="https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608251148677.GIF"
+                    alt="访问量统计装饰图"
+                    width="150"
+                    height="150"
+                />
                 <span class="text">
                     您是第
                     <span id="busuanzi_value_site_uv" class="font-bold">--</span> 位访问者
@@ -49,5 +55,13 @@
 .text {
     font-size: 0.875rem;
     line-height: 1.25rem;
+}
+
+.heart-image {
+    display: block;
+    width: min(150px, 100%);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
 }
 </style>
