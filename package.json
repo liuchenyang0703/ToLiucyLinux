@@ -14,7 +14,7 @@
     "@moefy-canvas/core": "0.6.0",
     "@moefy-canvas/theme-popper": "0.6.0",
     "@vuepress/bundler-vite": "2.0.0-rc.30",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.112",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.130",
     "@vuepress/plugin-umami-analytics": "2.0.0-rc.27",
     "@vueuse/core": "14.4.0",
     "@waline/client": "^3.15.2",
