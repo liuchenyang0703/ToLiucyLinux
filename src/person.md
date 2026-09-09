@@ -21,7 +21,7 @@ titles:
  
 copyright: false
 footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议 | <a href="person.html" target="_blank">关于作者</a><br>
- 版权所有 © 2023-present Liucy | <img src="./assets/image/公安.png" height="15" width="15"/> <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a> | <img src="https://icp.gov.moe/favicon.ico" height="15" width="15"/> <a href="https://icp.gov.moe/?keyword=20250703" target="_blank">萌ICP备20250703号</a>
+ 版权所有 © 2023-present Liucy | <img src="./assets/image/公安.png" alt="公安备案图标" height="15" width="15"/> <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a> | <img src="https://icp.gov.moe/favicon.ico" alt="萌ICP备案图标" height="15" width="15"/> <a href="https://icp.gov.moe/?keyword=20250703" target="_blank">萌ICP备20250703号</a>
 
 ---
 
@@ -145,14 +145,14 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 	<tr>
         <td rowspan="2" style="text-align: center;"><a href="https://blog.csdn.net/" target="_blank">CSDN</a></td>
         <td>2023 城市之星证书</td>
-        <td><img style="width: 160px" src="/assets/image/certificate/城市之星.png" /></td>
+        <td><img style="width: 160px" src="/assets/image/certificate/城市之星.png" alt="城市之星荣誉证书" /></td>
         <td>CSDN2023071935409</td>
 	    <td rowspan="2" style="text-align: center;"><a href="https://activity.csdn.net/cert" target="_blank">CSDN查询地址</a></td>
 	</tr>
     <tr>
         <!-- <td>CSDN</td> -->
         <td>博客专家证书</td>
-        <td><img style="width: 160px" src="/assets/image/certificate/博客专家.png" /></td>
+        <td><img style="width: 160px" src="/assets/image/certificate/博客专家.png" alt="博客专家荣誉证书" /></td>
         <td>CSDN2024040951774</td>
 	    <!-- <td rowspan="2"><a href="https://activity.csdn.net/cert">CSDN查询地址</a></td> -->
 	</tr>
@@ -167,7 +167,7 @@ footer:  使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">Vue
 
 ## 交个朋友 👬🏻
 
-<center><img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>I love to make friends.</b> so if you want to say <b>hi, I'll be happy to meet you more!</b> 😊</em></center>
+<center><img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" alt="挥手问候动画" width="60"> <em><b>I love to make friends.</b> so if you want to say <b>hi, I'll be happy to meet you more!</b> 😊</em></center>
 
 <br>
 <div style="text-align: center;">
