@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: http://liuchenyang.top/ToLiucyLinux/sitemap.xml
+Sitemap: https://liuchenyang.top/ToLiucyLinux/sitemap.xml
