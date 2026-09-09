@@ -28,21 +28,24 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"达梦数据库更换key及查看有效时长","image":["https://liuchenyang.top/logo.png"],"datePublished":"2024-12-30T00:00:00.000Z","dateModified":"2026-09-03T12:38:29.000Z","author":[{"@type":"Person","name":"𝑴𝒓.𝑳𝒊𝒖𝒄𝒚","url":"https://liuchenyang.top"}]}</script><meta property="og:url" content="https://liuchenyang.top/ToLiucyLinux/document/database/Dameng/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9B%B4%E6%8D%A2key%E5%8F%8A%E6%9F%A5%E7%9C%8B%E6%9C%89%E6%95%88%E6%97%B6%E9%95%BF.html"><meta property="og:site_name" content="ToLiucyLinux"><meta property="og:title" content="达梦数据库更换key及查看有效时长"><meta property="og:description" content="一、登录数据库，查看授权日期 二、更新授权key 2.1 备份并替换授权key 将dm.key移动到/opt/dmsetup/下进行替换并更新 2.2 重启达梦数据库 2.3 再次进入数据库查看授权日期是否更改"><meta property="og:type" content="article"><meta property="og:image" content="https://liuchenyang.top/logo.png"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2026-09-03T12:38:29.000Z"><meta property="article:tag" content="运维"><meta property="article:tag" content="达梦数据库"><meta property="article:tag" content="数据库"><meta property="article:tag" content="Linux"><meta property="article:published_time" content="2024-12-30T00:00:00.000Z"><meta property="article:modified_time" content="2026-09-03T12:38:29.000Z"><link rel="canonical" href="https://liuchenyang.top/document/database/Dameng/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9B%B4%E6%8D%A2key%E5%8F%8A%E6%9F%A5%E7%9C%8B%E6%9C%89%E6%95%88%E6%97%B6%E9%95%BF.html"><meta name="robots" content="all"><meta name="author" content="Liucy"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta name="keywords" content="Linux, Docker, kubernetes, 数据库, 自动化运维, 虚拟机, redis, 高可用, Python, Windows, Zabbix, Go, JAVA, 前端, 系统安全"><meta name="apple-mobile-web-app-capable" content="true"><script>var _hmt1 = _hmt1 || [];
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"达梦数据库更换key及查看有效时长","image":["https://liuchenyang.top/logo.png"],"datePublished":"2024-12-30T00:00:00.000Z","dateModified":"2026-09-03T12:38:29.000Z","author":[{"@type":"Person","name":"𝑴𝒓.𝑳𝒊𝒖𝒄𝒚","url":"https://liuchenyang.top"}]}</script><meta property="og:url" content="https://liuchenyang.top/ToLiucyLinux/document/database/Dameng/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9B%B4%E6%8D%A2key%E5%8F%8A%E6%9F%A5%E7%9C%8B%E6%9C%89%E6%95%88%E6%97%B6%E9%95%BF.html"><meta property="og:site_name" content="ToLiucyLinux"><meta property="og:title" content="达梦数据库更换key及查看有效时长"><meta property="og:description" content="一、登录数据库，查看授权日期 二、更新授权key 2.1 备份并替换授权key 将dm.key移动到/opt/dmsetup/下进行替换并更新 2.2 重启达梦数据库 2.3 再次进入数据库查看授权日期是否更改"><meta property="og:type" content="article"><meta property="og:image" content="https://liuchenyang.top/logo.png"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2026-09-03T12:38:29.000Z"><meta property="article:tag" content="运维"><meta property="article:tag" content="达梦数据库"><meta property="article:tag" content="数据库"><meta property="article:tag" content="Linux"><meta property="article:published_time" content="2024-12-30T00:00:00.000Z"><meta property="article:modified_time" content="2026-09-03T12:38:29.000Z"><link rel="canonical" href="https://liuchenyang.top/document/database/Dameng/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9B%B4%E6%8D%A2key%E5%8F%8A%E6%9F%A5%E7%9C%8B%E6%9C%89%E6%95%88%E6%97%B6%E9%95%BF.html"><meta name="robots" content="all"><meta name="author" content="Liucy"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta name="keywords" content="Linux, Docker, kubernetes, 数据库, 自动化运维, 虚拟机, redis, 高可用, Python, Windows, Zabbix, Go, JAVA, 前端, 系统安全"><meta name="apple-mobile-web-app-capable" content="true"><script>var _hmt = window._hmt || [];
         (function() {
+          var siteIds = {
+            "liuchenyang.top": "891de2bc8f3b2f9c423b3993af701dcb",
+            "www.liuchenyang.top": "891de2bc8f3b2f9c423b3993af701dcb",
+            "liuchenyang0703.github.io": "1404449d13f81f463912cf1bf29d941e"
+          };
+          var siteId = siteIds[location.hostname];
+          if (!siteId || document.getElementById("baidu-tongji")) return;
           var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?891de2bc8f3b2f9c423b3993af701dcb";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();</script><script>var _hmt2 = _hmt2 || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?1404449d13f81f463912cf1bf29d941e";
+          hm.id = "baidu-tongji";
+          hm.src = "https://hm.baidu.com/hm.js?" + siteId;
+          hm.async = true;
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();</script><link rel="icon" href="/ToLiucyLinux/favicon.ico"><title>达梦数据库更换key及查看有效时长 | ToLiucyLinux</title><meta name="description" content="一、登录数据库，查看授权日期 二、更新授权key 2.1 备份并替换授权key 将dm.key移动到/opt/dmsetup/下进行替换并更新 2.2 重启达梦数据库 2.3 再次进入数据库查看授权日期是否更改">
     <link rel="preload" href="/ToLiucyLinux/assets/style-x065ERvu.css" as="style"><link rel="stylesheet" href="/ToLiucyLinux/assets/style-x065ERvu.css">
-    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-CaYmaOP4.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/达梦数据库更换key及查看有效时长-BwpVjEiL.js">
+    <link rel="modulepreload" href="/ToLiucyLinux/assets/app-DG5Yq2pK.js"><link rel="modulepreload" href="/ToLiucyLinux/assets/达梦数据库更换key及查看有效时长-C9SXOKec.js">
     
   </head>
   <body>
@@ -67,6 +70,6 @@
 <span class="line"></span>
 <span class="line"><span style="color:#7F848E;font-style:italic;"># 查看授权时间</span></span>
 <span class="line"><span style="color:#C678DD;">select</span><span style="color:#E06C75;"> *</span><span style="color:#ABB2BF;"> from v</span><span style="color:#E06C75;">$license</span><span style="color:#ABB2BF;">;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><!----><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="update-time"><span class="vp-meta-label">最近更新: </span><time class="vp-meta-info" datetime="2026-09-03T12:38:29.000Z" data-allow-mismatch>2026/9/3 12:38</time></div><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2162059863@qq.com">liuchenyang</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/ToLiucyLinux/document/database/Dameng/Llinux%20%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%8D%B8%E8%BD%BD.html" aria-label="Llinux 达梦数据库的卸载"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><i class="vp-icon iconfont icon-circle-info" sizing="height"></i>Llinux 达梦数据库的卸载</div></a><!----></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer"><a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2023037493号-1</a></div><div class="vp-copyright">Copyright © 2026 𝑴𝒓.𝑳𝒊𝒖𝒄𝒚 </div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!----><div></div><!----><!--]--><!--]--></div>
-    <script type="module" src="/ToLiucyLinux/assets/app-CaYmaOP4.js" defer></script>
+    <script type="module" src="/ToLiucyLinux/assets/app-DG5Yq2pK.js" defer></script>
   </body>
 </html>
