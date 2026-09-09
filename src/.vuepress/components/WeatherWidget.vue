@@ -3,12 +3,27 @@
 </template>
 
 <script>
-import { onMounted } from 'vue';
+import { onBeforeUnmount, onMounted } from 'vue';
 
 export default {
   name: 'WeatherWidget',
   setup() {
+    let weatherObserver;
+
     onMounted(() => {
+      const weatherContainer = document.getElementById('tp-weather-widget');
+      const addWeatherImageAlt = () => {
+        weatherContainer?.querySelectorAll('img:not([alt])').forEach((image) => {
+          image.setAttribute('alt', '当前天气图标');
+        });
+      };
+
+      if (weatherContainer) {
+        weatherObserver = new MutationObserver(addWeatherImageAlt);
+        weatherObserver.observe(weatherContainer, { childList: true, subtree: true });
+        addWeatherImageAlt();
+      }
+
       const SCRIPT_SRC = '//cdn.sencdn.com/widget2/static/js/bundle.js';
 
       const loadScript = () => {
@@ -70,6 +85,8 @@ export default {
         }, 500);
       }
     });
+
+    onBeforeUnmount(() => weatherObserver?.disconnect());
     return {};
   }
 };

@@ -25,7 +25,7 @@ export default defineUserConfig({
 
   lang: "zh-CN",
   title: "ToLiucyLinux",
-  // description: "Liucy知识库",
+  description: "ToLiucyLinux 运维技术知识库，分享 Linux、Docker、Kubernetes、数据库、自动化运维与系统安全实战教程。",
 
   // 统一 VueUse 实例，避免图标与透明导航栏的样式 ID 冲突。
   bundler: viteBundler({ viteOptions: { optimizeDeps: { exclude: ["@vueuse/core"] }, resolve: { dedupe: ["@vueuse/core"] } } }),
@@ -83,20 +83,6 @@ export default defineUserConfig({
           s.parentNode.insertBefore(hm, s);
         })();`,
     ],
-    // 添加统计
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "https://cdn.jsdelivr.net/npm/@docsearch/css@3"
-      }
-    ],
-    [
-      "script",
-      {
-        src: "https://cdn.jsdelivr.net/npm/@docsearch/js@3"
-      }
-    ]
   ],
   pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
@@ -147,6 +133,8 @@ export default defineUserConfig({
   
   alias: {
     "@MyCoverLink": path.resolve(__dirname, "./components/友情链接.vue"),
+    // 首屏 Hero 图片直接带高优先级请求属性，改善 LCP 加载优先级。
+    "@theme-hope/components/home/HeroInfo": path.resolve(__dirname, "./components/HeroInfo.vue"),
   },
   
   // 页面启用预加载

@@ -11,7 +11,7 @@
                 <img class="link-picture" :src="item.icon" alt="" rel="noopener noreferrer external" />
                 <div class="card-content">
                   <div class="link-avatar my-auto">
-                    <img :src="item.icon" onerror='this.onerror=null,this.src=this.srcset="/assets/avatar.webp"' />
+                    <img :src="item.icon" :alt="`${item.name} 的网站头像`" onerror='this.onerror=null,this.src=this.srcset="/assets/avatar.webp"' />
                   </div>
                   <div class="link-text">
                     <div class="link-name">{{ item.name }}</div>
@@ -28,7 +28,7 @@
                 <img class="link-picture" :src="item.icon" alt="" rel="noopener noreferrer external" />
                 <div class="card-content">
                   <div class="link-avatar my-auto">
-                    <img :src="item.icon" onerror='this.onerror=null,this.src=this.srcset="/assets/avatar.webp"' />
+                    <img :src="item.icon" :alt="`${item.name} 的网站头像`" onerror='this.onerror=null,this.src=this.srcset="/assets/avatar.webp"' />
                   </div>
                   <div class="link-text">
                     <div class="link-name">{{ item.name }}</div>

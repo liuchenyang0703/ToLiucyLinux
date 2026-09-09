@@ -3,11 +3,12 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "http://liuchenyang.top",
+  // SEO、站点地图和分享卡片使用的正式站点域名，必须与线上主站一致。
+  hostname: "https://liuchenyang.top",
 
   author: {
     name: "𝑴𝒓.𝑳𝒊𝒖𝒄𝒚",
-    url: "http://liuchenyang.top",
+    url: "https://liuchenyang.top",
   },
 
 
@@ -256,6 +257,14 @@ export default hopeTheme({
     },
     // 启用博客类型
     blog: true,
+
+    // SEO：自动生成页面描述、Open Graph、JSON-LD 与首选链接。
+    seo: {
+      autoDescription: true,
+      fallBackImage: "https://liuchenyang.top/logo.png",
+      // GitHub Pages 等镜像页面统一声明主站地址，避免重复内容分散权重。
+      canonical: "https://liuchenyang.top",
+    },
 
     // 评论系统
     comment: {

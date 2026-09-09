@@ -1,6 +1,15 @@
 // 引入background的scss配置，主要配置的背景的透明及图片,如需不用注释此引用即可;
 // @import "./background.scss";
 
+// 覆盖阿里图标库的字体声明，避免图标字体阻塞首屏文字渲染。
+@font-face {
+  font-family: "iconfont";
+  src:
+    url("https://at.alicdn.com/t/c/font_4791124_5m7i80rjhsc.woff2?t=1788866935693") format("woff2"),
+    url("https://at.alicdn.com/t/c/font_4791124_5m7i80rjhsc.woff?t=1788866935693") format("woff");
+  font-display: swap;
+}
+
 body {
   @media (min-width: 1540px) {
     font-size: 16px;
@@ -192,4 +201,3 @@ blockquote {
   max-height: calc(100vh - 300px);
   overflow: auto;
 }
-

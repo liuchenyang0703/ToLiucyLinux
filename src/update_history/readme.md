@@ -605,3 +605,8 @@ category:
 > 2、置顶一篇文章（registry-1.docker.iov2.md）
 > 3、博客创建时间轴添加标签和分类（src/.vuepress/navbar.ts）
 > 4、公众号图片进行了压缩
+> 5、添加了SEO优化（src/.vuepress/theme.ts）
+> 6、新增了一个`HeroInfo.vue`：是首页顶部 Hero 区域的自定义组件，主要负责显示：首页 Logo 图片、首页大标题、首页描述文字、首页操作按钮、Hero 背景图片、全屏首页的向下滚动按钮（src/.vuepress/HeroInfo.vue）
+> 7、删除了`docsearch`搜索插件的cdn（src/.vuepress/config.ts）
+> 8、优化了阿里字体的展示（src/.vuepress/styles/index.scss）
+> 9、友链、天气都添加了`alt`属性（src/.vuepress/components/友情链接.vue、友情链接滚动.vue、WeatherWidget.vue）
