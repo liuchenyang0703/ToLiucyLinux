@@ -4,6 +4,7 @@ title: 关于本站
 order: 2
 category:
   - 关于本站
+article: false
 ---
 
 一个基于 VuePress Theme Hope 主题创建的个人博客，主要记录日常问题和一些学习笔记。

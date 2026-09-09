@@ -2,6 +2,7 @@
 title: 友情链接
 icon: link
 toc: false
+article: false
 ---
 
 ## 我的

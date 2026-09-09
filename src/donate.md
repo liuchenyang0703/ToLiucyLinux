@@ -2,6 +2,7 @@
 title: 赞赏
 icon: donate
 toc: false
+article: false
 ---
 
 ::: tip

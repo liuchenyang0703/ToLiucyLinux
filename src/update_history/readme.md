@@ -599,3 +599,6 @@ category:
 > 2、旅游、关于我们、文章归档转移到`Custom`目录中（src/Custom）（src/.vuepress/navbar.ts）
 > 3、删除了test页面
 > 4、修改了文章归档的icon（src/Custom/archives.md）
+
+## 2026-09-09:
+> 1、修改一下没有必要添加到文章列表里的配置`article: false`（src/about.md、donate.md、friendship.md、web_submit.md、honor.md）（src/Custom/AboutUS.md）

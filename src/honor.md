@@ -4,6 +4,7 @@ icon: rongyuqiang
 date: 2025-02-28 17:00:00
 category: 荣誉墙
 toc: false
+article: false
 ---
 
 ::: warning 关于证书信息的说明
