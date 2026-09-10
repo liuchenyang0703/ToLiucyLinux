@@ -3,6 +3,13 @@ home: true
 icon: home
 title: 主页
 heroImage: logo.png
+head:
+  - - link
+    - rel: preload
+      as: image
+      href: logo.png
+      type: image/png
+      fetchpriority: high
 heroText: LiucyLinux的学习指南
 tagline: ToLiucyLinux,一个优质的Linux编程学习网站，通俗易懂的Linux指南,分享思想，留下痕迹，带你告别碎片化学习，帮助你构筑你自己的知识体系。
 # 浅色背景
