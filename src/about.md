@@ -44,13 +44,7 @@ logo: https://avatars.githubusercontent.com/in/106117
 link: https://giscus.app/
 background: rgb(253, 230, 138, 0.15)
 ```
-```component VPCard
-title: Waline 
-desc: 本站评论所用服务<br> - 控制台
-logo: https://console.leancloud.app/favicon.ico
-link: https://console.leancloud.app/apps
-background: rgb(253, 230, 138, 0.15)
-```
+
 ```component VPCard
 title: Waline
 desc: 本站评论所用服务<br> - 配置信息及邮箱、github
@@ -216,6 +210,16 @@ background: rgb(253, 230, 138, 0.15)
 ::: warning
 请注意 VuePress 对目录大小写敏感。
 :::
+
+## waline项目说明
+
+* 部署视频可参考：[https://www.bilibili.com/video/BV1J2XuBtEGn](https://www.bilibili.com/video/BV1J2XuBtEGn)
+* 官方文档：[https://waline.js.org/guide/get-started/](https://waline.js.org/guide/get-started/)
+
+* 创建好之后通过域名访问评论系统，例如：
+  * `waline.liuchenyang.top`：为评论测试页面（第一个注册的为管理员）
+  * `waline.liuchenyang.top/ui`：为后台，可以查看所有的用户、评论等。
+
 
 ## test GFM警告案例
 ::: important

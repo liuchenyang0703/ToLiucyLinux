@@ -136,6 +136,11 @@ tag:
 
 ![1.1](https://s3.bmp.ovh/imgs/2023/03/29/ab416544129053c3.png)
 
+* 我的：
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609101730651.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609101731556.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609101731917.png)
+
 ### 3.2 继续使用环境变量设置模版
 
 `MAIL_SUBJECT_ADMIN`
@@ -158,7 +163,7 @@ tag:
 			<div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:15px;color:#555555;">{{self.comment | safe}}</div>
 			<p style="text-align:center;position: relative;z-index: 99;">您可以点击<a style="text-decoration:none;color:#cf5c83" href="{{site.postUrl}}" target="_blank">查看回复的完整內容</a></p>
 			<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png" style="width:100%;margin:25px auto 5px auto;display:block;pointer-events:none">
-			<p class="bottomhr" style="font-size:12px;text-align:center;color:#999">上冬十二(oragekk)博客竭诚为您服务！</p>
+			<p class="bottomhr" style="font-size:12px;text-align:center;color:#999">ToLiucyLinux博客竭诚为您服务！</p>
 			</div>
 		</div>
 		<img class="afterimg" style="width:535px;height:317px;z-index:100;margin-left: -3px;"src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png">
@@ -191,7 +196,7 @@ tag:
 			<p style="font-size:14px;color:#b7adad;text-align:center;position: relative;z-index: 99;">本邮件为系统自动发送，请勿直接回复邮件哦，可到博文内容回复。<br />{{site.url}}</p>
 			</p>
 			<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png" style="width:100%;margin:25px auto 5px auto;display:block;pointer-events:none">
-			<p class="bottomhr" style="font-size:12px;text-align:center;color:#999">上冬十二(oragekk)博客竭诚为您服务！</p>
+			<p class="bottomhr" style="font-size:12px;text-align:center;color:#999">ToLiucyLinux博客竭诚为您服务！</p>
 			</div>
 		</div>
 		<img class="afterimg" style="width:535px;height:317px;z-index:100;margin-left: -3px;"src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png">
