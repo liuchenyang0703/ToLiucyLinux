@@ -135,7 +135,7 @@ category:
 > 3、删除了year-end-2023-summary.md、tools.ts、tools目录、slides.md、一些logo备用、guide目录、framework.ts、framework目录、一个ico、comminicate.md、about-the-author.ts；
 > 4、修改了sidebar.ts的引用配置，去除了tools和framework、about-the-author（src/.vuepress/sidebar.ts）
 
-## 2025-01-14:
+## 2025-01-14:<Badge text="主题版本更新" type="info" />
 > 1、升级了vuepress-theme-hope到rc.68版本
 > 2、新增了顶部栏博客
 > 3、新增git提交等信息
@@ -386,7 +386,7 @@ category:
 > 4、修改了版权保护内容，复制会出现文章地址（src/.vuepress/theme.ts）
 > 5、新增文章最后更新时间（src/.vuepress/theme.ts）
 
-## 2025-12-24:
+## 2025-12-24:<Badge text="项目优化" type="tip" /><Badge text="主题版本更新" type="info" />
 > 1、升级了vuepress-theme-hope rc.68版本到rc.99版本
 > 2、去掉了雪花动画（src/.vuepress/client.ts）
 > 3、优化了主页预加载动画（src/.vuepress/components/缓冲.vue）
@@ -425,7 +425,7 @@ category:
 > 4、添加天气小组件 - 心知天气（src/.vuepress/client.ts）（src/.vuepress/components/WeatherWidget.vue）（src/.vuepress/theme.ts）
 > 5、修改了关于本站使用的插件（src/about.md）
 
-## 2025-12-30:
+## 2025-12-30:<Badge text="评论系统更换" type="important" />
 > 1、修改了代码块为：one-dark-pro（src/.vuepress/theme.ts）
 > 2、修改了代码块复制及天气组件暗黑模式下的样式（src/.vuepress/styles/index.scss）
 > 3、更新评论Giscus为Waline（src/.vuepress/theme.ts），需安装：`pnpm add -D @waline/client`
@@ -551,13 +551,13 @@ category:
 > 1、更新了docker镜像加速地址文章
 > 2、关于本站新增搜索插件服务提供（src/about.md）
 
-## 2026-08-29:
+## 2026-08-29:<Badge text="安全修复" type="warning" /><Badge text="主题版本更新" type="info" />
 > 1、升级了vuepress-theme-hope 从rc.99到rc.107版本（src/package.json）
 > 2、修复了友情链接滚动条页面f12一直刷新报错问题（src/.vuepress/components/友情链接滚动.vue）
 > 3、修复了文章中一些错误的代码块命名，比如：bash写错为base等
 > 4、修复了访问页面f12：VM4908报错（src/.vuepress/config.ts）
 
-## 2026-08-30:
+## 2026-08-30:<Badge text="安全修复" type="warning" />
 > 1、修复了博客主页背景失效问题，更换新的随机图片链接（src/blog.md）
 > 2、友情链接添加了我的，吧我的链接和其他好友的拆分开（src/.vuepress/components/友情链接.ts、友情链接.vue）（src/friendship.md）
 > 3、去除电流边框、轨道图片组件、运行时间贴边组件【采用的页脚展示】（src/.vuepress/client.ts）（src/.vuepress/components）
@@ -600,7 +600,7 @@ category:
 > 3、删除了test页面
 > 4、修改了文章归档的icon（src/Custom/archives.md）
 
-## 2026-09-09:
+## 2026-09-09:<Badge text="安全修复" type="warning" />
 > 1、修改一下没有必要添加到文章列表里的配置`article: false`（src/about.md、donate.md、friendship.md、web_submit.md、honor.md）（src/Custom/AboutUS.md）
 > 2、置顶一篇文章（registry-1.docker.iov2.md）
 > 3、博客创建时间轴添加标签和分类（src/.vuepress/navbar.ts）
@@ -620,10 +620,16 @@ category:
 > 17、播放器添加了无障碍模式（src/.vuepress/config.ts、client.ts）
 > 18、升级`docsearch`（package.json）
 
-## 2026-09-10:
+## 2026-09-10:<Badge text="安全修复" type="warning" /><Badge text="评论系统更新" type="tip" />
 > 1、关于本站新增了评论说明，删除了LeanCloud的页面（src/about.md）
 > 2、waline文章新增了我的配置（src/document/other/waline-mail.md）
 > 3、修复LCP请求（src/README.md）
 > 4、祝贺🎉目前评论的等级修复好了，对应的等级如下（随着评论数量而升级）：
 > LEVELS: 0,5,10,20,40,70,100,160,200,300,500,800,1000,5000
 > level0: '炼体',level1: '炼气',level2: '筑基',level3: '金丹',level4: '元婴',level5: '化神',level6: '炼虚',level7: '合体',level8: '大乘',level9: '真仙',level10: '金仙',level11: '太乙',level12: '大罗',level13: '道祖'
+
+## 2026-09-11:
+> 1、更新说明添加了一些说明体系在标题跟前（src/update_history/）
+> 2、关于本站页面`waline项目说明`添加了哔哩哔哩视频引用（src/about.md）
+> 3、关于我们页面取消面包屑导航（src/Custom/AboutUs.md）
+> 4、更新了推送脚本里的内容，`master`改为了`blog_source`（git_push.bat）

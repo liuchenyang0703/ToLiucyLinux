@@ -214,6 +214,10 @@ background: rgb(253, 230, 138, 0.15)
 ## waline项目说明
 
 * 部署视频可参考：[https://www.bilibili.com/video/BV1J2XuBtEGn](https://www.bilibili.com/video/BV1J2XuBtEGn)
+
+<BiliBili bvid="BV1J2XuBtEGn" />
+
+
 * 官方文档：[https://waline.js.org/guide/get-started/](https://waline.js.org/guide/get-started/)
 
 * 创建好之后通过域名访问评论系统，例如：
