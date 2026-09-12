@@ -622,11 +622,12 @@ category:
 > 17、播放器添加了无障碍模式（src/.vuepress/config.ts、client.ts）
 > 18、升级`docsearch`（package.json）
 
-## 2026-09-10:<Badge text="安全修复" type="warning" /><Badge text="评论系统更新" type="tip" />
+## 2026-09-10:<Badge text="安全修复" type="warning" /><Badge text="评论系统更新" type="tip" /><Badge text="评论、浏览量数据重新计算" type="danger" />
 > 1、关于本站新增了评论说明，删除了LeanCloud的页面（src/about.md）
 > 2、waline文章新增了我的配置（src/document/other/waline-mail.md）
 > 3、修复LCP请求（src/README.md）
-> 4、祝贺🎉目前评论的等级修复好了，对应的等级如下（随着评论数量而升级）：
+> 4、说明：更新了评论系统的数据存储（从`LeanCloud`迁移到了`Neon数据库`），所有浏览量和评论数据都会消失，因为没做数据迁移（数据不多），直接更换的；
+> 5、祝贺🎉目前评论的等级修复好了，对应的等级如下（随着评论数量而升级）：
 > LEVELS: 0,5,10,20,40,70,100,160,200,300,500,800,1000,5000
 > level0: '炼体',level1: '炼气',level2: '筑基',level3: '金丹',level4: '元婴',level5: '化神',level6: '炼虚',level7: '合体',level8: '大乘',level9: '真仙',level10: '金仙',level11: '太乙',level12: '大罗',level13: '道祖'
 
