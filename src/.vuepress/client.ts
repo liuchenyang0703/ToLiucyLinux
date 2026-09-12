@@ -33,8 +33,6 @@ import LoveTimer from "./components/LoveTimer.vue";
 import roll from "./components/友情链接滚动.vue";
 // 全局-自定义：天气预报小组件
 import WeatherWidget from "./components/WeatherWidget.vue";
-// 全局-自定义：添加访问页面缓冲加载配置
-const jz = defineAsyncComponent(() => import('./components/缓冲.vue'));
 // IP查询检测-自定义：IP 检测
 import ipcheck from "./components/ip_check/ipcheck.vue";
 // IP查询检测-自定义：网站连通性测试
@@ -127,7 +125,6 @@ export default defineClientConfig({
  },
   // 加载vue配置
   rootComponents: [
-    jz,
   ],
 
   // 全局组件（添加某个组件到全局）

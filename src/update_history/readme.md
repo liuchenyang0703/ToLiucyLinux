@@ -633,3 +633,6 @@ category:
 > 2、关于本站页面`waline项目说明`添加了哔哩哔哩视频引用（src/about.md）
 > 3、关于我们页面取消面包屑导航（src/Custom/AboutUs.md）
 > 4、更新了推送脚本里的内容，`master`改为了`blog_source`（git_push.bat）
+
+## 2026-09-12:
+> 1、取消了访问页面预加载缓冲效果
