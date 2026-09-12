@@ -38,14 +38,6 @@ background: rgb(253, 230, 138, 0.15)
 ```
 
 ```component VPCard
-title: Giscus
-desc: 本站评论所用服务<br> - 弃用
-logo: https://avatars.githubusercontent.com/in/106117
-link: https://giscus.app/
-background: rgb(253, 230, 138, 0.15)
-```
-
-```component VPCard
 title: Waline
 desc: 本站评论所用服务<br> - 配置信息及邮箱、github
 logo: https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/favicon.ico
@@ -110,14 +102,21 @@ link: https://dashboard.algolia.com/
 background: rgb(253, 230, 138, 0.15)
 ```
 
-<!-- ```component VPCard
-title: 
-desc: 
-logo: 
-link: 
-background: rgb(253, 230, 138, 0.15) 
-``` -->
+```component VPCard
+title: picgo
+desc: 用于本站图片存储中转工具
+logo: https://pics.molunerfinn.com/doc/picgo-logo.png
+link: https://picgo.app/
+background: rgb(253, 230, 138, 0.15)
+```
 
+```component VPCard
+title: GitHub
+desc: 用于本站源码存储、图片存储等仓库
+logo: https://github.githubassets.com/favicons/favicon.svg
+link: https://github.com/
+background: rgb(253, 230, 138, 0.15)
+```
 
 ## 图床
 - [Typora+PicGo搭建博客图床 - 使用阿里云oss](document/other/图床oss.md)
@@ -133,7 +132,7 @@ background: rgb(253, 230, 138, 0.15)
 ## 项目文件结构
 
 * 最外层目录
-```yaml
+```bash
 .
 ├── .git → Git 版本控制系统的隐藏文件夹，包含了版本控制的所有信息，如提交历史、分支、标签等。
 ├── .github → 存放与 GitHub 相关的配置文件，如 GitHub Actions 工作流、GitHub Pages 配置等。提交到github上会自动通过里面的配置文件来进行自动构建部署（可以修改仓库路径、名称）。
@@ -148,7 +147,7 @@ background: rgb(253, 230, 138, 0.15)
 
 * src内目录
 
-```yaml
+```bash
 .
 ├── src → 由你指定的文档文件夹，主要存放的是项目的源代码
 │    │
@@ -178,9 +177,19 @@ background: rgb(253, 230, 138, 0.15)
 │    │    │
 │    │    └── interview.ts → 面试题文章侧边栏配置
 │    │
+│    ├── Custom → 自定义layouts页面存储目录（不需要写内容的）
+│    │    │
+│    │    ├── AboutUs.md → 关于我们页面
+│    │    │
+│    │    ├── archives.md → 文章归档页面
+│    │    │
+│    │    └── travel.ts → 旅游页面
+│    │
 │    ├── document → 文档指南文件存储目录
 │    │
 │    ├── interview → 面试题文件存储目录
+│    │
+│    ├── tools → 在线小工具文件存储目录
 │    │
 │    ├── update_history → 历史更新记录目录
 │    │
@@ -199,6 +208,8 @@ background: rgb(253, 230, 138, 0.15)
 │    ├── person.md → 关于作者页面
 │    │
 │    ├── website-all.md → 运维服务官网页面
+│    │
+│    ├── web_submit.md → 网站提交初页面
 │    │
 │    ├── tools-all.md → 运维工具配置页面
 │    │
