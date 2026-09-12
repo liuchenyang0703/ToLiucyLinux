@@ -7,6 +7,8 @@ category:
   - 项目更新记录
 ---
 
+<GitActivity />
+
 ## 2023-11-06:
 > 项目启动。。。
 > 项目搁置。。。
@@ -636,3 +638,4 @@ category:
 
 ## 2026-09-12:
 > 1、取消了访问页面预加载缓冲效果
+> 2、项目更新记录页面新增了Git 提交活跃度日历组件（src/update_history/）（src/.vuepress/components/GitActivity.vue）（src/.vuepress/client.ts、config.ts）

@@ -45,6 +45,8 @@ import DNSLeak from "./components/ip_check/DNSLeak.vue";
 import Travel from "./components/layouts/Travel.vue";
 // 文章归档-自定义：用于展示文章归档与发布日历
 import Archive from "./components/layouts/Archive.vue";
+// git提交活跃度日历-自定义：用于展示git提交活跃度日历
+const GitActivity = defineAsyncComponent(() => import("./components/GitActivity.vue"));
 
 export default defineClientConfig({
   setup() {
@@ -149,6 +151,8 @@ export default defineClientConfig({
     app.component("WebRTC", WebRTC);
     // DNS泄露测试
     app.component("DNSLeak", DNSLeak);
+    // 项目更新记录页：Git 提交活跃度日历
+    app.component("GitActivity", GitActivity);
   },
   
   // 你可以在这里覆盖或新增布局

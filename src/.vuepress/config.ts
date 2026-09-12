@@ -1,5 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
+import { execFileSync } from "node:child_process";
 import theme from "./theme.js";
 import { viteBundler } from "@vuepress/bundler-vite";
 // 鼠标点击
@@ -28,7 +29,11 @@ export default defineUserConfig({
   description: "ToLiucyLinux 运维技术知识库，分享 Linux、Docker、Kubernetes、数据库、自动化运维与系统安全实战教程。",
 
   // 统一 VueUse 实例，避免图标与透明导航栏的样式 ID 冲突。
-  bundler: viteBundler({ viteOptions: { optimizeDeps: { exclude: ["@vueuse/core"] }, resolve: { dedupe: ["@vueuse/core"] } } }),
+  bundler: viteBundler({ viteOptions: {
+    define: { __GIT_COMMIT_ACTIVITY__: JSON.stringify(getGitActivity()) },
+    optimizeDeps: { exclude: ["@vueuse/core"] },
+    resolve: { dedupe: ["@vueuse/core"] },
+  } }),
 
   // 引入theme.ts配置
   theme,
@@ -144,3 +149,27 @@ export default defineUserConfig({
   // 页面启用预加载
   shouldPrefetch: false,
 });
+// export 配置结束
+
+
+
+// 获取git提交活跃度日历数据 - 开始
+interface GitActivityDay {
+  date: string;
+  count: number;
+}
+
+function getGitActivity(): GitActivityDay[] {
+  try {
+    const dates = execFileSync("git", ["log", "--format=%cs"], {
+      cwd: getDirname(import.meta.url),
+      encoding: "utf8",
+    }).trim().split(/\r?\n/u).filter(Boolean);
+    const counts = new Map<string, number>();
+    dates.forEach((date) => counts.set(date, (counts.get(date) ?? 0) + 1));
+    return [...counts].map(([date, count]) => ({ date, count }));
+  } catch {
+    return [];
+  }
+}
+// 获取git提交活跃度日历数据 - 结束
