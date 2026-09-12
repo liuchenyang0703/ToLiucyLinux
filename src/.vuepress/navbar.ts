@@ -46,6 +46,11 @@ export default navbar([
         icon: "ip2",
         link: "tools/ip_check.md"
       },
+      {
+        text: "Base64 编解码",
+        icon: "mima",
+        link: "tools/base64.md"
+      },
     ],
   },
   {

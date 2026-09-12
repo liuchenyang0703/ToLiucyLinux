@@ -3,6 +3,7 @@ title: IP 检测
 icon: ip2
 # 不将该页面添加到文章列表中
 article: false
+toc: false
 ---
 
 ## IP 检测

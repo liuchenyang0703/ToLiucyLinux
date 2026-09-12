@@ -34,13 +34,15 @@ import roll from "./components/友情链接滚动.vue";
 // 全局-自定义：天气预报小组件
 import WeatherWidget from "./components/WeatherWidget.vue";
 // IP查询检测-自定义：IP 检测
-import ipcheck from "./components/ip_check/ipcheck.vue";
+import ipcheck from "./components/tools/ip_check/ipcheck.vue";
 // IP查询检测-自定义：网站连通性测试
-import Connectivity from "./components/ip_check/Connectivity.vue";
+import Connectivity from "./components/tools/ip_check/Connectivity.vue";
 // IP查询检测-自定义：WebRTC 测试
-import WebRTC from "./components/ip_check/WebRTC.vue";
+import WebRTC from "./components/tools/ip_check/WebRTC.vue";
 // IP查询检测-自定义：DNS泄露测试
-import DNSLeak from "./components/ip_check/DNSLeak.vue";
+import DNSLeak from "./components/tools/ip_check/DNSLeak.vue";
+// 在线小工具-自定义：Base64 文本编解码
+const Base64Tool = defineAsyncComponent(() => import("./components/tools/Base64Tool.vue"));
 // 旅游-自定义：用于展示去过的城市与旅途照片
 import Travel from "./components/layouts/Travel.vue";
 // 文章归档-自定义：用于展示文章归档与发布日历
@@ -153,6 +155,8 @@ export default defineClientConfig({
     app.component("DNSLeak", DNSLeak);
     // 项目更新记录页：Git 提交活跃度日历
     app.component("GitActivity", GitActivity);
+    // 在线小工具：Base64 文本编解码
+    app.component("Base64Tool", Base64Tool);
   },
   
   // 你可以在这里覆盖或新增布局

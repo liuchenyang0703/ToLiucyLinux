@@ -641,3 +641,5 @@ category:
 > 1、取消了访问页面预加载缓冲效果
 > 2、项目更新记录页面新增了Git 提交活跃度日历组件（src/update_history/）（src/.vuepress/components/GitActivity.vue）（src/.vuepress/client.ts、config.ts）
 > 3、更新了关于本站页面的`文件结构`及`服务提供`（src/about.md）
+> 4、新增了 Base64编解码小工具（src/tools/base64.md）（src/.vuepress/components/tools/Base64Tool.vue）（src/.vuepress/client.ts）
+> 5、ip检测的核心文件也移动到了`components/tools`下
