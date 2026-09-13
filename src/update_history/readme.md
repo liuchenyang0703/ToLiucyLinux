@@ -646,3 +646,4 @@ category:
 
 ## 2026-09-13:
 > 1、新增了图片格式转换小工具（src/tools/image-converter.md）（src/.vuepress/components/tools/ImageConverter.vue）（src/.vuepress/client.ts、navbar.ts）
+> 2、新增了图片转Base64编解码小工具（src/tools/image-base64.md）（src/.vuepress/components/tools/ImageBase64Tool.vue）（src/.vuepress/client.ts、navbar.ts）

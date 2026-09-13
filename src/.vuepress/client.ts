@@ -45,6 +45,8 @@ import DNSLeak from "./components/tools/ip_check/DNSLeak.vue";
 const Base64Tool = defineAsyncComponent(() => import("./components/tools/Base64Tool.vue"));
 // 在线小工具-自定义：图片格式转换
 const ImageConverter = defineAsyncComponent(() => import("./components/tools/ImageConverter.vue"));
+// 在线小工具-自定义：图片Base64编解码
+const ImageBase64Tool = defineAsyncComponent(() => import("./components/tools/ImageBase64Tool.vue"));
 // 旅游-自定义：用于展示去过的城市与旅途照片
 import Travel from "./components/layouts/Travel.vue";
 // 文章归档-自定义：用于展示文章归档与发布日历
@@ -161,6 +163,8 @@ export default defineClientConfig({
     app.component("Base64Tool", Base64Tool);
     // 在线小工具：图片格式转换
     app.component("ImageConverter", ImageConverter);
+    // 在线小工具：图片Base64编解码
+    app.component("ImageBase64Tool", ImageBase64Tool);
   },
   
   // 你可以在这里覆盖或新增布局

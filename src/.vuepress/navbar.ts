@@ -52,6 +52,11 @@ export default navbar([
         link: "tools/base64.md"
       },
       {
+        text: "图片 Base64 编解码",
+        icon: "image",
+        link: "tools/image-base64.md"
+      },
+      {
         text: "图片格式转换",
         icon: "tupian",
         link: "tools/image-converter.md"
