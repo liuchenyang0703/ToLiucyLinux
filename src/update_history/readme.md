@@ -637,13 +637,14 @@ category:
 > 3、关于我们页面取消面包屑导航（src/Custom/AboutUs.md）
 > 4、更新了推送脚本里的内容，`master`改为了`blog_source`（git_push.bat）
 
-## 2026-09-12:
+## 2026-09-12:<Badge text="新增组件" type="tip" />
 > 1、取消了访问页面预加载缓冲效果
 > 2、项目更新记录页面新增了Git 提交活跃度日历组件（src/update_history/）（src/.vuepress/components/GitActivity.vue）（src/.vuepress/client.ts、config.ts）
 > 3、更新了关于本站页面的`文件结构`及`服务提供`（src/about.md）
 > 4、新增了 Base64编解码小工具（src/tools/base64.md）（src/.vuepress/components/tools/Base64Tool.vue）（src/.vuepress/client.ts、navbar.ts）
 > 5、ip检测的核心文件也移动到了`components/tools`下
 
-## 2026-09-13:
+## 2026-09-13:<Badge text="新增组件" type="tip" />
 > 1、新增了图片格式转换小工具（src/tools/image-converter.md）（src/.vuepress/components/tools/ImageConverter.vue）（src/.vuepress/client.ts、navbar.ts）
 > 2、新增了图片转Base64编解码小工具（src/tools/image-base64.md）（src/.vuepress/components/tools/ImageBase64Tool.vue）（src/.vuepress/client.ts、navbar.ts）
+> 3、更换小工具图标、修改了阿里icon图标的链接（src/.vuepress/theme.ts、navbar.ts）
