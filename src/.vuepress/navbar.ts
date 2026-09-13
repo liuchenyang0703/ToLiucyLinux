@@ -51,6 +51,11 @@ export default navbar([
         icon: "mima",
         link: "tools/base64.md"
       },
+      {
+        text: "图片格式转换",
+        icon: "tupian",
+        link: "tools/image-converter.md"
+      },
     ],
   },
   {
