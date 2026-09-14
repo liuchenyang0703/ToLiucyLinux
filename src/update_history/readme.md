@@ -648,3 +648,6 @@ category:
 > 1、新增了图片格式转换小工具（src/tools/image-converter.md）（src/.vuepress/components/tools/ImageConverter.vue）（src/.vuepress/client.ts、navbar.ts）
 > 2、新增了图片转Base64编解码小工具（src/tools/image-base64.md）（src/.vuepress/components/tools/ImageBase64Tool.vue）（src/.vuepress/client.ts、navbar.ts）
 > 3、更换小工具图标、修改了阿里icon图标的链接（src/.vuepress/theme.ts、navbar.ts）
+
+## 2026-09-14:
+> 1、更新《Windows上安装 Go 环境并配置环境变量 （超详细教程）》文章（src/document/Go、Windows）
