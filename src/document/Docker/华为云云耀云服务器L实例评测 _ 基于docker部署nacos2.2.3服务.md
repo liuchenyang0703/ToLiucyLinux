@@ -1,5 +1,5 @@
 ﻿---
-title: 华为云云耀云服务器L实例评测 _ 基于docker部署nacos2.2.3服务
+title: 华为云云耀云服务器L实例评测 | 基于docker部署nacos2.2.3服务
 icon: circle-info
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - Linux
   - Docker
   - 运维
-date: 2024-12-16
+date: 2023-09-15
 isOriginal: true
 pageview: true
 article: true

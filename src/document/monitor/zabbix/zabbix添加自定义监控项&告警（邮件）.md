@@ -1,5 +1,5 @@
 ﻿---
-title: zabbix添加自定义监控项&告警（邮件）
+title: zabbix添加客户端及自定义客户端监控项&告警（邮件）
 icon: circle-info
 order: 1
 category:
@@ -11,7 +11,7 @@ tag:
   - zabbix
   - 服务器监控
   - 运维
-date: 2024-12-16
+date: 2022-04-21
 isOriginal: true
 pageview: true
 article: true

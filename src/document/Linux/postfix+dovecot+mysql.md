@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】邮件服务器搭建 postfix+dovecot+mysql（终极版_超详细_亲测多遍无问题）
+title: 【Linux】邮件服务器搭建 postfix+dovecot+mysql （终极版 超详细 亲测多遍无问题）
 icon: circle-info
 order: 1
 category:
@@ -8,7 +8,7 @@ tag:
   - Linux
   - 邮件发送服务
   - 运维
-date: 2023-07-24 14:07:55
+date: 2023-07-24
 isOriginal: true
 pageview: true
 article: true

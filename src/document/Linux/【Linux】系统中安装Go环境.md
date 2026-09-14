@@ -8,7 +8,7 @@ category:
 tag:
   - Linux
   - Go
-date: 2022-08-29
+date: 2022-07-01
 isOriginal: true
 pageview: true
 article: true

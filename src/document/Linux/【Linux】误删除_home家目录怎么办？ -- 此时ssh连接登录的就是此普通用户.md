@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】误删除_home家目录怎么办？ -- 此时ssh连接登录的就是此普通用户
+title: 【Linux】误删除/home家目录怎么办？ -- 此时ssh连接登录的就是此普通用户
 icon: circle-info
 order: 1
 category:
@@ -7,7 +7,7 @@ category:
 tag:
   - Linux
   - 运维
-date: 2024-12-18
+date: 2024-03-20
 isOriginal: true
 pageview: true
 article: true

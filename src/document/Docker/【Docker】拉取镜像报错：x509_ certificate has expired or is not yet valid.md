@@ -1,5 +1,5 @@
 ﻿---
-title: 【Docker】拉取镜像报错：x509_ certificate has expired or is not yet valid
+title: 【Docker】拉取镜像报错：x509: certificate has expired or is not yet valid
 icon: circle-info
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - Linux
   - Docker
   - 运维
-date: 2024-12-16
+date: 2023-03-11
 isOriginal: true
 pageview: true
 article: true

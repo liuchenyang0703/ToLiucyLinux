@@ -6,7 +6,7 @@ category:
   - docsearch
 tag:
   - docsearch
-date: 2025-03-10
+date: 2025-05-08
 isOriginal: true
 pageview: true
 article: true

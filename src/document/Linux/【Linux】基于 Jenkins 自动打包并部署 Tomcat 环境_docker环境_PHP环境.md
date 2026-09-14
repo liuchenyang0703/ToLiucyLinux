@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】基于 Jenkins 自动打包并部署 Tomcat 环境_docker环境_PHP环境
+title: 【Linux】基于 Jenkins 自动打包并部署 Tomcat 环境/docker环境/PHP环境
 icon: circle-info
 order: 1
 category:
@@ -11,7 +11,7 @@ tag:
   - Jenkins
   - 自动化运维
   - 运维
-date: 2024-12-24
+date: 2022-10-24
 isOriginal: true
 pageview: true
 article: true

@@ -1,5 +1,5 @@
 ﻿---
-title: Docker发布_上传镜像到dockerhub&&下载_拉取镜像&&删除dockerhub镜像
+title: Docker发布/上传镜像到dockerhub&&下载/拉取镜像&&删除dockerhub镜像
 icon: circle-info
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - Linux
   - Docker
   - 运维
-date: 2024-12-16
+date: 2022-05-12
 isOriginal: true
 pageview: true
 article: true

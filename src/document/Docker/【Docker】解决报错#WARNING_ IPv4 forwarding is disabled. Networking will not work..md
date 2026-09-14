@@ -1,5 +1,5 @@
 ﻿---
-title: 【Docker】解决报错#WARNING_ IPv4 forwarding is disabled. Networking will not work.
+title: 【Docker】解决报错#WARNING: IPv4 forwarding is disabled. Networking will not work.
 icon: circle-info
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - Linux
   - Docker
   - 运维
-date: 2024-12-16
+date: 2023-03-09
 isOriginal: true
 pageview: true
 article: true

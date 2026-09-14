@@ -1,5 +1,5 @@
 ﻿---
-title: K8S_二进制集群搭建（一主两从）
+title: K8S 二进制集群搭建（一主两从）
 icon: circle-info
 order: 1
 category:

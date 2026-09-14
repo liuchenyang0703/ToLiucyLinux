@@ -1,5 +1,5 @@
 ﻿---
-title: 解决在linux上git clone 时报错 git@gitee.com_ Permission denied (publickey). Could not read from remote repo
+title: 解决在linux上git clone 时报错 git@gitee.com: Permission denied (publickey). Could not read from remote repo
 icon: circle-info
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - Linux
   - Git
   - 运维
-date: 2022-08-29
+date: 2023-08-03
 isOriginal: true
 pageview: true
 article: true

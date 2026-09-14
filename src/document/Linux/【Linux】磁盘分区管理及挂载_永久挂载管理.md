@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】磁盘分区管理及挂载_永久挂载管理
+title: 【Linux】磁盘分区管理及挂载/永久挂载管理
 icon: circle-info
 order: 1
 category:
@@ -8,7 +8,7 @@ tag:
   - Linux
   - 磁盘管理
   - 运维
-date: 2024-12-18
+date: 2023-12-18
 isOriginal: true
 pageview: true
 article: true

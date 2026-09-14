@@ -1,5 +1,5 @@
 ﻿---
-title: Linux中安装_部署docker-compose
+title: Linux中安装/部署docker-compose
 icon: circle-info
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - Linux
   - Docker
   - 运维
-date: 2024-12-16
+date: 2022-05-16
 isOriginal: true
 pageview: true
 article: true

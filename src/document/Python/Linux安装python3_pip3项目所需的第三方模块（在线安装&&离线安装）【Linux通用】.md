@@ -1,5 +1,5 @@
 ﻿---
-title: Linux安装python3_pip3项目所需的第三方模块（在线安装&&离线安装）【Linux通用】
+title: Linux安装python3/pip3项目所需的第三方模块（在线安装&&离线安装）【Linux通用】
 icon: circle-info
 order: 11
 tag:

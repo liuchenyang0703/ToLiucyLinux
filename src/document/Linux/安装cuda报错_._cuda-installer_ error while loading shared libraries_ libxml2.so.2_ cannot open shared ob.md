@@ -1,5 +1,5 @@
 ﻿---
-title: 安装cuda报错_._cuda-installer_ error while loading shared libraries_ libxml2.so.2_ cannot open shared ob
+title: 安装cuda报错:./cuda-installer: error while loading shared libraries: libxml2.so.2: cannot open shared ob
 icon: circle-info
 order: 1
 category:
@@ -10,7 +10,7 @@ tag:
   - NVIDIA
   - CUDA
   - 运维
-date: 2024-12-20
+date: 2023-04-20
 isOriginal: true
 pageview: true
 article: true

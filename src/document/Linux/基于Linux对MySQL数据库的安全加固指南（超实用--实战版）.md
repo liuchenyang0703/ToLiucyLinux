@@ -8,7 +8,7 @@ category:
 tag:
   - Linux
   - 数据库
-date: 2023-11-19 23:54:31
+date: 2023-09-15
 isOriginal: true
 pageview: true
 article: true
@@ -315,7 +315,7 @@ flush privileges;
 可以使用`zabbix`取关键词告警或者是`Prometheus + Grafana`;
 推荐文章：
 
-- [zabbix添加自定义监控项&告警（邮件）](https://liucy.blog.csdn.net/article/details/124101253)
+- [zabbix添加客户端及自定义客户端监控项&告警（邮件）](https://liucy.blog.csdn.net/article/details/124101253)
 - [【Linux】部署Prometheus + Grafana简介、监控及设置告警详细操作（多种方式安装，亲测无问题）](https://liucy.blog.csdn.net/article/details/131049402)
 
 
@@ -325,7 +325,7 @@ flush privileges;
 | [【Linux】Centos7 随机生成密码](http://t.csdn.cn/RnMZf) | [https://blog.csdn.net/liu_chen_yang/article/details/129922682](https://blog.csdn.net/liu_chen_yang/article/details/129922682) |
 |[mysql数据库定时备份脚本+定时删除 ](https://download.csdn.net/download/liu_chen_yang/87776124?spm=1001.2014.3001.5503)|[https://download.csdn.net/download/liu_chen_yang/87776124?spm=1001.2014.3001.5503](https://download.csdn.net/download/liu_chen_yang/87776124?spm=1001.2014.3001.5503) |
 |[docker修改容器的端口、容器名、映射地址......](https://liucy.blog.csdn.net/article/details/124511738)|[https://liucy.blog.csdn.net/article/details/124511738](https://liucy.blog.csdn.net/article/details/124511738)|
-|[zabbix添加自定义监控项&告警（邮件）](https://liucy.blog.csdn.net/article/details/124101253)|[https://liucy.blog.csdn.net/article/details/124101253](https://liucy.blog.csdn.net/article/details/124101253)|
+|[zabbix添加客户端及自定义客户端监控项&告警（邮件）](https://liucy.blog.csdn.net/article/details/124101253)|[https://liucy.blog.csdn.net/article/details/124101253](https://liucy.blog.csdn.net/article/details/124101253)|
 |[【Linux】部署Prometheus + Grafana简介、监控及设置告警详细操作（多种方式安装，亲测无问题）](https://liucy.blog.csdn.net/article/details/131049402)|[https://liucy.blog.csdn.net/article/details/131049402](https://liucy.blog.csdn.net/article/details/131049402)|
 |[mysql、mysqldump命令离线包（可直接使用命令）](https://download.csdn.net/download/liu_chen_yang/87769961?spm=1001.2014.3001.5503) |[https://download.csdn.net/download/liu_chen_yang/87769961?spm=1001.2014.3001.5503](https://download.csdn.net/download/liu_chen_yang/87769961?spm=1001.2014.3001.5503)|
 |[【Linux】Centos安装mariadb并授权远程登陆](https://liucy.blog.csdn.net/article/details/132077172)|[https://liucy.blog.csdn.net/article/details/132077172](https://liucy.blog.csdn.net/article/details/132077172)|

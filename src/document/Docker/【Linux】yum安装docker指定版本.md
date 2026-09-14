@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】yum安装docker指定版本.md
+title: 【Linux】yum安装docker指定版本
 icon: circle-info
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - Linux
   - Docker
   - 运维
-date: 2024-12-16
+date: 2023-02-27
 isOriginal: true
 pageview: true
 article: true

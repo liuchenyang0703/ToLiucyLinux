@@ -11,7 +11,7 @@ tag:
   - zabbix
   - 服务器监控
   - 运维
-date: 2024-12-16
+date: 2022-07-20
 isOriginal: true
 pageview: true
 article: true
@@ -27,7 +27,7 @@ comment: true
 >💻 [zabbix5.0部署（超级详细）](https://liucy.blog.csdn.net/article/details/124248236)<br>
 >
 >---
->💻 [zabbix添加自定义监控项&告警（邮件）](https://liucy.blog.csdn.net/article/details/124101253)<br>
+>💻 [zabbix添加客户端及自定义客户端监控项&告警（邮件）](https://liucy.blog.csdn.net/article/details/124101253)<br>
 >
 >---
 >💻 [Zabbix5.0配置企业微信告警](https://liucy.blog.csdn.net/article/details/125543212)<br>

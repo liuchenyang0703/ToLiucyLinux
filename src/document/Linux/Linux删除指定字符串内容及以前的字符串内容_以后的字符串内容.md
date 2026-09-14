@@ -1,5 +1,5 @@
 ﻿---
-title: Linux删除指定字符串内容及以前的字符串内容_以后的字符串内容
+title: Linux删除指定字符串内容及以前的字符串内容\以后的字符串内容
 icon: circle-info
 order: 1
 category:
@@ -7,7 +7,7 @@ category:
 tag:
   - Linux
   - 运维
-date: 2024-12-19
+date: 2023-02-16
 isOriginal: true
 pageview: true
 article: true

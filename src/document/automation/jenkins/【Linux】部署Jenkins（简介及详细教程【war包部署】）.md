@@ -11,7 +11,7 @@ tag:
   - Jenkins
   - 自动化运维
   - 运维
-date: 2024-12-24
+date: 2022-10-09
 isOriginal: true
 pageview: true
 article: true

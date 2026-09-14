@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】Docker洞察：掌握docker_inspect命令与Go模板技巧
+title: 【Linux】Docker洞察：掌握docker inspect命令与Go模板技巧
 icon: circle-info
 order: 1
 category:

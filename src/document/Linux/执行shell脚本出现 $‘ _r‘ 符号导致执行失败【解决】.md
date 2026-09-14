@@ -1,5 +1,5 @@
 ﻿---
-title: 执行shell脚本出现 $‘ _r‘ 符号导致执行失败【解决】
+title: 执行shell脚本出现 $‘ \r‘ 符号导致执行失败【解决】
 icon: circle-info
 order: 1
 category:
@@ -8,7 +8,7 @@ tag:
   - Linux
   - shell
   - 运维
-date: 2024-12-19
+date: 2024-06-24
 isOriginal: true
 pageview: true
 article: true

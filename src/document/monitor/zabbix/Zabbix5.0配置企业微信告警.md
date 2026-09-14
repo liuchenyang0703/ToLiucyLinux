@@ -11,7 +11,7 @@ tag:
   - zabbix
   - 服务器监控
   - 运维
-date: 2024-12-16
+date: 2022-07-14
 isOriginal: true
 pageview: true
 article: true
@@ -259,7 +259,7 @@ python /usr/lib/zabbix/alertscripts/weixin.py aaabbbccc abc 1234
 
 >因为之前我已经把监控项和触发器弄好了，所以，直接配置报警媒介类型就好了。
 
-可以参考：[zabbix添加自定义监控项&告警（邮件）](https://liucy.blog.csdn.net/article/details/124101253)
+可以参考：[zabbix添加客户端及自定义客户端监控项&告警（邮件）](https://liucy.blog.csdn.net/article/details/124101253)
 
 ### 1、配置报警媒介类型
 

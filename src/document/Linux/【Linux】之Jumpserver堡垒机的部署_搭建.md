@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】之Jumpserver堡垒机的部署_搭建
+title: 【Linux】之Jumpserver堡垒机的部署/搭建
 icon: circle-info
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - Jumpserver
   - 跳板机
   - 运维
-date: 2024-12-18
+date: 2022-09-05
 isOriginal: true
 pageview: true
 article: true

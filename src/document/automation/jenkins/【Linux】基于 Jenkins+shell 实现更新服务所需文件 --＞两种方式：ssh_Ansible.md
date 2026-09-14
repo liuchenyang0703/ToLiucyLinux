@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】基于 Jenkins+shell 实现更新服务所需文件 --＞两种方式：ssh_Ansible
+title: 【Linux】基于 Jenkins+shell 实现更新服务所需文件 --＞两种方式：ssh/Ansible
 icon: circle-info
 order: 1
 category:
@@ -11,7 +11,7 @@ tag:
   - Jenkins
   - 自动化运维
   - 运维
-date: 2024-12-24
+date: 2024-05-06
 isOriginal: true
 pageview: true
 article: true

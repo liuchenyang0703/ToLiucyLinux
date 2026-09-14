@@ -10,7 +10,7 @@ tag:
    - Linux
    - 自动化
    - Ansible
-date: 2024-12-15
+date: 2024-01-02
 isOriginal: true
 pageview: true
 article: true

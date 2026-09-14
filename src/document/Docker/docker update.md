@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】Docker_update_深度解析：命令、常用参数与实战示例
+title: 【Linux】Docker update 深度解析：命令、常用参数与实战示例
 icon: circle-info
 order: 1
 category:
