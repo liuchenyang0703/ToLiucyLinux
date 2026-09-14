@@ -28,35 +28,35 @@ comment: true
 
 ---
 
-# 一、前言
+## 一、前言
 
 > 本文主要讲解的是在`Windows`上安装Go语言的环境及配置环境变量（不包含使用，具体使用可学习Go语言知识）；
 > - Go语言版本：1.20.6
 > - Windows版本：windows10/11系统通用
 
-# 二、下载 Go 环境安装包
+## 二、下载 Go 环境安装包
 >下载go环境：[Go下载官网链接](https://golang.google.cn/dl/)
 
 进入官网找到自己需要的版本及系统，点击进行下载；
 
-![](https://i-blog.csdnimg.cn/blog_migrate/f3ef4e55cb1f43e128f590239b04fd3a.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141521920.png)
 
 等待下载完成，放到自己 自定义的目录（尽量使用英文），然后进行解压；
 
 
-![](https://i-blog.csdnimg.cn/direct/72bdef92b66b4bca8a70e8f11bad9c45.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141521606.png)
 
 解压后得到如下文件夹
 
-![](https://i-blog.csdnimg.cn/direct/ae111704bd4b4a709b082d64a3aa8437.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141521696.png)
 
-# 三、配置 Go 环境变量
+## 三、配置 Go 环境变量
 
 >解压后就是 Go 环境的完整路径，这时候需要进行配置环境变量；
 >返回桌面 右击此电脑 --> 属性 --> 高级系统设置 --> 环境变量，打开环境变量设置窗口。
 
-![](https://i-blog.csdnimg.cn/direct/3e0a85a482454ccaaf8f8fb801879ee6.png)
-![](https://i-blog.csdnimg.cn/direct/def64a73fae549ea9709e51eb86a3359.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141521356.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141521935.png)
 
 
 
@@ -72,7 +72,7 @@ comment: true
 >点击 系统变量下面的新建，在变量名一栏输入 `GOROOT` ，在变量值一栏输入 你解压文件所在的目录，例如：`F:\Go\install-GoFile\go1.20.6.windows-amd64\go`。
 > 最后点击确定，就将 GOROOT 新建完毕。
 
-![](https://i-blog.csdnimg.cn/direct/a48c54f08128456cb72ab1c0a3c024b3.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141521534.png)
 
 * 配置`GOPATH`环境变量
 
@@ -81,19 +81,20 @@ comment: true
 示例：`F:\Go\data\library;F:\Go\data\workspace`
 
 
-![](https://i-blog.csdnimg.cn/direct/c7b98bbeee374181840e7cc97b2baa58.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141521053.png)
 
 
 
 >然后将新建的`GOROOT`配置到 `Path` 这个环境变量中去，在系统变量中找到 `Path`，点击编辑 --> 新建，输入`%GOROOT%\bin`，点击确定。
 
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141520837.png)
 
-![](https://i-blog.csdnimg.cn/direct/2443f7960d0c4cd9aeb359e466a7276b.png)![](https://i-blog.csdnimg.cn/direct/3a599371930c428d874a46a07cafca27.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141520378.png)
 
 
 > 这样就配置完了，一路点击确定，直到桌面，需要点确定，保证配置生效；
 
-# 四、校验是否配置成功
+## 四、校验是否配置成功
 
 > `windows+R` 输入 cmd 打开终端，输入`go version`查看go的版本号，如果输出如下图所示，则安装成功。
 
@@ -105,10 +106,10 @@ go version
 go env
 ```
 
-![](https://i-blog.csdnimg.cn/direct/d52468e2c66c474489fa03a649907f68.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141520267.png)
 
 
-# 五、配置 GO111MODULE、GOPROXY、GOSUMDB
+## 五、配置 GO111MODULE、GOPROXY、GOSUMDB
 
 > *   `GO111MODULE`：用于控制是否启用 Go Modules 依赖管理模式的开关。
 > *   `GOPROXY`：用于指定 Go 依赖包的下载代理地址，解决下载慢或无法访问的问题。
@@ -133,11 +134,11 @@ go env -w GOSUMDB=off
 #查看环境变量
 go env
 ```
-![修改环境变量](https://i-blog.csdnimg.cn/direct/3e62ef13986f4e71aed0b7a798f36f59.png)
-![查看修改的成果](https://i-blog.csdnimg.cn/direct/86ce3fb203a744d5ab7802ad50c7ceca.png)
+![修改环境变量](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141520402.png)
+![查看修改的成果](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141519387.png)
 
 
-# 六、附加：如何查看配置的环境变量内容
+## 六、附加：如何查看配置的环境变量内容
 1. 可以再次点击 `此电脑-->属性-->环境变量` 查看
 
 2. 可以在cmd终端查看
@@ -146,14 +147,14 @@ go env
 echo %GOPATH%
 echo %GOROOT%
 ```
-![](https://i-blog.csdnimg.cn/direct/77909c12ab25410ba8a5a97d6e0864d9.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609141519007.png)
 
 
 
 >至此就配置完成了，后续使用命令进行服务启动等操作，可学习go知识进行操作。
 >🎉如果文章对你有帮助的话，欢迎 点赞 👍🏻 评论 💬 收藏 ⭐️ 加关注+💗
 
-# 七、相关文章：
+## 七、相关文章：
 |文章标题| 文章链接 |
 |--|--|
 |[Windows上安装 jdk 环境并配置环境变量 （超详细教程）](https://liucy.blog.csdn.net/article/details/132114315)  | [https://liucy.blog.csdn.net/article/details/132114315](https://liucy.blog.csdn.net/article/details/132114315) |
