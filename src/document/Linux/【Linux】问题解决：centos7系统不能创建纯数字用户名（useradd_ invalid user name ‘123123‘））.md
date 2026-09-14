@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】问题解决：centos7系统不能创建纯数字用户名（useradd: invalid user name ‘123123‘））
+title: "【Linux】问题解决：centos7系统不能创建纯数字用户名（useradd: invalid user name ‘123123‘））"
 icon: circle-info
 order: 1
 category:

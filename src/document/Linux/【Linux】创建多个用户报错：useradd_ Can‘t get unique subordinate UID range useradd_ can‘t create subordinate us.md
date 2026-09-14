@@ -1,5 +1,5 @@
 ﻿---
-title: 【Linux】创建多个用户报错：useradd: Can‘t get unique subordinate UID range useradd: can‘t create subordinate us
+title: "【Linux】创建多个用户报错：useradd: Can‘t get unique subordinate UID range useradd: can‘t create subordinate us"
 icon: circle-info
 order: 1
 category:

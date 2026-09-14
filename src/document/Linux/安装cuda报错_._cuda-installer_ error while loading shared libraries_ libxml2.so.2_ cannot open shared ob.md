@@ -1,5 +1,5 @@
 ﻿---
-title: 安装cuda报错:./cuda-installer: error while loading shared libraries: libxml2.so.2: cannot open shared ob
+title: "安装cuda报错:./cuda-installer: error while loading shared libraries: libxml2.so.2: cannot open shared ob"
 icon: circle-info
 order: 1
 category:
