@@ -132,7 +132,7 @@ rpmbuild
 > SPEC文件详细参数可参考： [SPEC 文件示例](#click_me_jump)
 
 
-```spec
+```text
 Name: python_env
 Version: 1.0
 Release: 1%{?dist}
@@ -335,7 +335,7 @@ rpmbuild
 或者使用`rpmdev-newspec docker.spec`命令创建`*.spec`模板
 >SPEC文件详细参数可参考： [SPEC 文件示例](#click_me_jump)
 
-```spec
+```text
 Name: docker
 Version: 24.0.5
 Release: 1%{?dist}
