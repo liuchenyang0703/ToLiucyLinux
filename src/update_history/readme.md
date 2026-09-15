@@ -653,3 +653,6 @@ category:
 > 1、更新《Windows上安装 Go 环境并配置环境变量 （超详细教程）》文章（src/document/Go、Windows）
 > 2、新增文件《Linux如何将文件或目录打成rpm包？-- rpmbuild打包详解》（src/document/Linux）
 > 3、更新所有文章的日期，与CSDN对其
+
+## 2026-09-15:
+> 1、再次检查与修复日期不对的文章（二次检查）
