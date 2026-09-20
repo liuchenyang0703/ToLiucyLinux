@@ -267,8 +267,65 @@ flush privileges;
 
 这样就链接成功了，就可以在里面操作增删改查库了。
 
+## 六、配置 systemd 管理
+* 创建 mysqld 启动文件
 
-## 总结
+`vi /etc/systemd/system/mysqld.service`
+```bash
+[Unit]
+Description=MySQL Server 5.7
+After=network.target
+After=syslog.target
+
+[Service]
+Type=forking
+User=mysql
+Group=mysql
+
+# MySQL 安装目录
+basedir=/usr/local/mysql
+# 数据目录（确保这个目录存在且属主是 mysql）
+datadir=/usr/local/mysql/data
+# 配置文件
+mycnf=/etc/my.cnf
+
+# PID 文件（需与 my.cnf 中的 pid-file 一致，若未设置则默认在 datadir 下）
+PIDFile=/usr/local/mysql/data/mysqld.pid
+
+# 启动命令
+ExecStart=/usr/local/mysql/bin/mysqld --defaults-file=/etc/my.cnf --daemonize --pid-file=/usr/local/mysql/data/mysqld.pid
+
+# 停止命令
+ExecStop=/bin/kill -TERM $MAINPID
+
+# 重启策略
+Restart=on-failure
+RestartSec=5
+
+# 限制
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+```
+
+* 加载配置并启动
+
+```bash
+# 重新加载 systemd 配置
+sudo systemctl daemon-reload
+
+# 启动 MySQL
+sudo systemctl start mysqld
+
+# 查看状态
+sudo systemctl status mysqld
+
+# 设置开机自启
+sudo systemctl enable mysqld
+```
+
+## 七、总结
 >现在centos7安装mysql5.7就完成了，本地客户端连接centos7中的mysql5.7服务端也是成功的。
 
 ## 【力荐】数据库定时备份脚本

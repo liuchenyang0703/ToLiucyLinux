@@ -656,3 +656,7 @@ category:
 
 ## 2026-09-15:
 > 1、再次检查与修复日期不对的文章（二次检查）
+
+## 2026-09-20:
+> 1、优化了《Centos7安装Mysql5.7（超详细版）》文章，新增了systemd管理（src/document/Linux）（src/document/database/MySQL）
+> 2、新增了一个拉取github代码的windows脚本（git_pull.bat）
