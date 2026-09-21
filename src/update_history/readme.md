@@ -660,3 +660,6 @@ category:
 ## 2026-09-20:
 > 1、优化了《Centos7安装Mysql5.7（超详细版）》文章，新增了systemd管理（src/document/Linux）（src/document/database/MySQL）
 > 2、新增了一个拉取github代码的windows脚本（git_pull.bat）
+
+## 2026-09-21:
+> 1、优化了《【Linux】Centos7安装Mysql5.7（超详细版）》文章，修改了文章名称，优化了远程登录配置（src/document/Linux）（src/document/database/MySQL）

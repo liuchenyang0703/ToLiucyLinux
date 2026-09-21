@@ -1,5 +1,5 @@
 ﻿---
-title: Centos7安装Mysql5.7（超详细版）
+title: 【Linux】Centos7安装Mysql5.7（超详细版）
 icon: circle-info
 order: 3
 category:
@@ -250,18 +250,35 @@ mysql -uroot -p123456
 ```
 就可以登录进来了；
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/7be8cc97b74c409ea53fff7b8f3e3aba.png)
+
 ### ⑩、开放远程登陆&&测试本地客户端连接
 
-```bash
-#登录进来之后，切换到mysql库
+```sql
+# 登录进来之后，切换到mysql库
 use mysql;
-#修改用户权限
-update user set user.Host='%' where user.User='root';
-#刷新权限
+# 新创建一个远程登录的root权限（密码可以设置的和本地登录密码一致）
+CREATE USER 'root'@'%' IDENTIFIED BY '密码';
+# 赋予远程登录root所有库及权限（相当于管理员）
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+# 刷新权限
 flush privileges;
 ```
-![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/47638eace2ef4c3ea86cea170154993e.png)
-开放远程登录这时候我们就可以用navicat、sqlyog等链接工具来连接数据库了，端口3306；自己可以测试一下，如果是直接在linux中用就不用测试了。
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609211330865.png)
+
+刷新完权限，退出重新登录，查看所有用户，就可以看到一个`%`@`root`的用户了，这个`%`为可以让一个用户远程登录，`root`为管理员账号名称；
+
+```sql
+# 登录进来之后，切换到mysql库
+use mysql;
+# 查看所有用户
+select * from user\G;
+```
+
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202609211330016.png)
+
+
+开放远程登录后我们就可以用`navicat`、`sqlyog`等工具来连接数据库进行操作了，端口默认为`3306`；
+
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/086bb558cd67434eb9a0a5bb5cc6e81f.png)
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/c4fe8ba7e22f46899831b97f034051ee.png)
 
