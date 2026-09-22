@@ -663,3 +663,6 @@ category:
 
 ## 2026-09-21:
 > 1、优化了《【Linux】Centos7安装Mysql5.7（超详细版）》文章，修改了文章名称，优化了远程登录配置（src/document/Linux）（src/document/database/MySQL）
+
+## 2026-09-22:
+> 1、新增了旅游地图，在`travel.ts`中添加新地点，地图同步更新（src/travel-map.md）（src/.vuepress/public/travel-china.json）（src/.vuepress/components/layouts/TravelMap.vue、travel.ts）（src/.vuepress/client.ts、navbar.ts）

@@ -109,7 +109,7 @@ export default navbar([
       },
       {
         text: "旅游",
-        children: ["Custom/travel.md"],
+        children: ["Custom/travel.md", "Custom/travel-map.md"],
       },
     ],
   },

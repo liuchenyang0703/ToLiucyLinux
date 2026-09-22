@@ -49,6 +49,8 @@ const ImageConverter = defineAsyncComponent(() => import("./components/tools/Ima
 const ImageBase64Tool = defineAsyncComponent(() => import("./components/tools/ImageBase64Tool.vue"));
 // 旅游-自定义：用于展示去过的城市与旅途照片
 import Travel from "./components/layouts/Travel.vue";
+// 旅游-自定义：用于展示去过的城市足迹地图与旅途照片地图
+import TravelMap from "./components/layouts/TravelMap.vue";
 // 文章归档-自定义：用于展示文章归档与发布日历
 import Archive from "./components/layouts/Archive.vue";
 // git提交活跃度日历-自定义：用于展示git提交活跃度日历
@@ -175,6 +177,8 @@ export default defineClientConfig({
     Blog,
     // 旅游足迹相册页面
     Travel,
+    // 旅游足迹地图页面
+    TravelMap,
     // 文章归档与发布日历
     Archive,
   },
