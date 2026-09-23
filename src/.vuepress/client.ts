@@ -60,61 +60,7 @@ export default defineClientConfig({
   setup() {
     const router = useRouter();
     let removeBaiduRouteHook: (() => void) | undefined;
-
-    // ==================== 音乐播放器开关 start ====================
-    let aplayerObserver: MutationObserver | undefined;
-    let musicEnabled = false;
-
-    const applyMusicState = () => {
-      document.documentElement.classList.toggle("music-enabled", musicEnabled);
-      document.querySelectorAll<HTMLButtonElement>(".music-switch").forEach((button) => {
-        button.ariaPressed = String(musicEnabled);
-        button.title = musicEnabled ? "隐藏音乐播放器" : "显示音乐播放器";
-      });
-
-      if (!musicEnabled) {
-        document.querySelectorAll<HTMLAudioElement>(".aplayer audio").forEach((audio) => audio.pause());
-      }
-    };
-
-    const addMusicSwitch = () => {
-      document.querySelectorAll<HTMLElement>(".vp-appearance-dropdown, .vp-appearance-wrapper").forEach((panel) => {
-        if (panel.querySelector(".music-switch-wrapper")) return;
-
-        const wrapper = document.createElement("div");
-        wrapper.className = "music-switch-wrapper";
-        wrapper.innerHTML = `
-          <label class="music-switch-title">音乐</label>
-          <button class="music-switch" type="button" aria-pressed="false" title="开启音乐播放器">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm0-8.65v2.07a7 7 0 0 1 0 13.16v2.07a9 9 0 0 0 0-17.3z" />
-            </svg>
-          </button>`;
-        wrapper.querySelector("button")?.addEventListener("click", () => {
-          musicEnabled = !musicEnabled;
-          applyMusicState();
-        });
-        panel.appendChild(wrapper);
-      });
-    };
-
-    const setAPlayerButtonLabels = () => {
-      const labels = [
-        [".aplayer-icon-order", "切换播放顺序"],
-        [".aplayer-icon-loop", "切换循环模式"],
-        [".aplayer-icon-menu", "打开播放列表"],
-        [".aplayer-icon-lrc", "切换歌词显示"],
-        [".aplayer-miniswitcher .aplayer-icon", "展开或收起播放器"],
-      ] as const;
-
-      labels.forEach(([selector, label]) => {
-        document.querySelectorAll<HTMLButtonElement>(selector).forEach((button) => {
-          button.setAttribute("aria-label", label);
-          if (!button.title) button.title = label;
-        });
-      });
-    };
-    // ===================== 音乐播放器开关 end =====================
+    let removeMusicPlayerSwitch: (() => void) | undefined;
 
     // 动态加载不蒜子脚本
     const loadBusuanzi = () => {
@@ -126,18 +72,7 @@ export default defineClientConfig({
     onMounted(() => {
       // 在页面加载完成后加载不蒜子
       loadBusuanzi();
-
-      // 音乐播放器开关：默认隐藏播放器，并注入开关按钮样式。
-      const style = document.createElement("style");
-      style.textContent = `
-        html:not(.music-enabled) .aplayer { display: none !important; }
-        .music-switch-title { display: block; padding: 0 .25rem; color: var(--vp-c-text-subtle); font-weight: 600; font-size: .75rem; line-height: 2; }
-        .music-switch { margin: 0; border: 0; padding: .25rem; background: transparent; color: var(--vp-c-text-mute); cursor: pointer; }
-        .music-switch:hover, .music-switch[aria-pressed="true"] { color: var(--vp-c-accent-hover); }
-        .music-switch svg { display: block; width: 1.25rem; height: 1.25rem; fill: currentcolor; }
-      `;
-      document.head.appendChild(style);
-      applyMusicState();
+      removeMusicPlayerSwitch = setupMusicPlayerSwitch();
 
       // VuePress 是单页应用，页面切换不会重新执行 head 中的百度统计代码，需主动上报。
       removeBaiduRouteHook = router.afterEach((to, from) => {
@@ -147,20 +82,11 @@ export default defineClientConfig({
         }
       });
 
-      // 音乐播放器开关：添加按钮，并监听异步生成的 APlayer。
-      setAPlayerButtonLabels();
-      addMusicSwitch();
-      aplayerObserver = new MutationObserver(() => {
-        setAPlayerButtonLabels();
-        addMusicSwitch();
-        applyMusicState();
-      });
-      aplayerObserver.observe(document.body, { childList: true, subtree: true });
     });
 
     onUnmounted(() => {
       removeBaiduRouteHook?.();
-      aplayerObserver?.disconnect();
+      removeMusicPlayerSwitch?.();
     });
     // 透明导航栏配置
     setupTransparentNavbar({
@@ -237,3 +163,85 @@ export default defineClientConfig({
     Archive,
   },
 });
+
+// ==================== 音乐播放器开关 start ====================
+function setupMusicPlayerSwitch(): () => void {
+  let musicEnabled = false;
+
+  const applyMusicState = () => {
+    document.documentElement.classList.toggle("music-enabled", musicEnabled);
+    document.querySelectorAll<HTMLButtonElement>(".music-switch").forEach((button) => {
+      button.ariaPressed = String(musicEnabled);
+      button.title = musicEnabled ? "隐藏音乐播放器" : "显示音乐播放器";
+    });
+
+    if (!musicEnabled) {
+      document.querySelectorAll<HTMLAudioElement>(".aplayer audio").forEach((audio) => audio.pause());
+    }
+  };
+
+  const addMusicSwitch = () => {
+    document.querySelectorAll<HTMLElement>(".vp-appearance-dropdown, .vp-appearance-wrapper").forEach((panel) => {
+      if (panel.querySelector(".music-switch-wrapper")) return;
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "music-switch-wrapper";
+      wrapper.innerHTML = `
+        <label class="music-switch-title">音乐</label>
+        <button class="music-switch" type="button" aria-pressed="false" title="显示音乐播放器">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm0-8.65v2.07a7 7 0 0 1 0 13.16v2.07a9 9 0 0 0 0-17.3z" />
+          </svg>
+        </button>`;
+      wrapper.querySelector("button")?.addEventListener("click", () => {
+        musicEnabled = !musicEnabled;
+        applyMusicState();
+      });
+      panel.appendChild(wrapper);
+    });
+  };
+
+  const setAPlayerButtonLabels = () => {
+    const labels = [
+      [".aplayer-icon-order", "切换播放顺序"],
+      [".aplayer-icon-loop", "切换循环模式"],
+      [".aplayer-icon-menu", "打开播放列表"],
+      [".aplayer-icon-lrc", "切换歌词显示"],
+      [".aplayer-miniswitcher .aplayer-icon", "展开或收起播放器"],
+    ] as const;
+
+    labels.forEach(([selector, label]) => {
+      document.querySelectorAll<HTMLButtonElement>(selector).forEach((button) => {
+        button.setAttribute("aria-label", label);
+        if (!button.title) button.title = label;
+      });
+    });
+  };
+
+  const style = document.createElement("style");
+  style.textContent = `
+    html:not(.music-enabled) .aplayer { display: none !important; }
+    .music-switch-title { display: block; padding: 0 .25rem; color: var(--vp-c-text-subtle); font-weight: 600; font-size: .75rem; line-height: 2; }
+    .music-switch { margin: 0; border: 0; padding: .25rem; background: transparent; color: var(--vp-c-text-mute); cursor: pointer; }
+    .music-switch:hover, .music-switch[aria-pressed="true"] { color: var(--vp-c-accent-hover); }
+    .music-switch svg { display: block; width: 1.25rem; height: 1.25rem; fill: currentcolor; }
+  `;
+  document.head.appendChild(style);
+
+  applyMusicState();
+  setAPlayerButtonLabels();
+  addMusicSwitch();
+
+  const observer = new MutationObserver(() => {
+    setAPlayerButtonLabels();
+    addMusicSwitch();
+    applyMusicState();
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  return () => {
+    observer.disconnect();
+    style.remove();
+  };
+}
+// ===================== 音乐播放器开关 end =====================
