@@ -1,0 +1,1 @@
+import"./chunk-A4ITRWGT-D68_Q8pS.js";import"./chunk-OMTJKCYW-CUqecjET.js";import{d as e}from"./chunk-XW6ABFJP-BqWin6nN.js";import"./mermaid.esm.min-DB-2palK.js";export{e as createPacketServices};
