@@ -66,6 +66,11 @@ export default navbar([
         icon: "gongju",
         link: "tools/byte-converter.md"
       },
+      {
+        text: "时间戳转换工具",
+        icon: "lishi",
+        link: "tools/timestamp-converter.md"
+      },
     ],
   },
   {

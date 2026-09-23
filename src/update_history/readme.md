@@ -671,3 +671,4 @@ category:
 > 1、新增音乐组件展示和隐藏、整理了代码位置（src/.vuepress/client.ts）
 > 2、优化了 **图片 base64 编解码** 工具（src/.vuepress/components/tools/ImageBase64Tool.vue）
 > 3、新增了字节单位换算器小工具（src/tools/byte-converter.md）（src/.vuepress/components/tools/ByteUnitConverter.vue）（src/.vuepress/client.ts、navbar.ts）
+> 4、新增了时间戳转换小工具（src/tools/timestamp-converter.md）（src/.vuepress/components/tools/TimestampConverter.vue）（src/.vuepress/client.ts、navbar.ts）

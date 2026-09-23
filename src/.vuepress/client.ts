@@ -49,6 +49,8 @@ const ImageConverter = defineAsyncComponent(() => import("./components/tools/Ima
 const ImageBase64Tool = defineAsyncComponent(() => import("./components/tools/ImageBase64Tool.vue"));
 // 在线小工具-自定义：字节单位换算器
 const ByteUnitConverter = defineAsyncComponent(() => import("./components/tools/ByteUnitConverter.vue"));
+// 在线小工具-自定义：时间戳转换工具
+const TimestampConverter = defineAsyncComponent(() => import("./components/tools/TimestampConverter.vue"));
 // 旅游-自定义：用于展示去过的城市与旅途照片
 import Travel from "./components/layouts/Travel.vue";
 // 旅游-自定义：用于展示去过的城市足迹地图与旅途照片地图
@@ -151,6 +153,8 @@ export default defineClientConfig({
     app.component("ImageBase64Tool", ImageBase64Tool);
     // 在线小工具：字节单位换算器
     app.component("ByteUnitConverter", ByteUnitConverter);
+    // 在线小工具：时间戳转换工具
+    app.component("TimestampConverter", TimestampConverter);
   },
   
   // 你可以在这里覆盖或新增布局
