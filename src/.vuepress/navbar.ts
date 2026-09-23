@@ -61,6 +61,11 @@ export default navbar([
         icon: "tupiangeshizhuanhuan",
         link: "tools/image-converter.md"
       },
+      {
+        text: "字节单位换算器",
+        icon: "gongju",
+        link: "tools/byte-converter.md"
+      },
     ],
   },
   {
