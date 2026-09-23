@@ -69,7 +69,7 @@ export default defineClientConfig({
       document.documentElement.classList.toggle("music-enabled", musicEnabled);
       document.querySelectorAll<HTMLButtonElement>(".music-switch").forEach((button) => {
         button.ariaPressed = String(musicEnabled);
-        button.title = musicEnabled ? "关闭音乐播放器" : "开启音乐播放器";
+        button.title = musicEnabled ? "隐藏音乐播放器" : "显示音乐播放器";
       });
 
       if (!musicEnabled) {
