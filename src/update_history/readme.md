@@ -664,10 +664,10 @@ category:
 ## 2026-09-21:
 > 1、优化了《【Linux】Centos7安装Mysql5.7（超详细版）》文章，修改了文章名称，优化了远程登录配置（src/document/Linux）（src/document/database/MySQL）
 
-## 2026-09-22:
+## 2026-09-22:<Badge text="新增独立页组件" type="tip" />
 > 1、新增了旅游地图，在`travel.ts`中添加新地点，地图同步更新（src/travel-map.md）（src/.vuepress/public/travel-china.json）（src/.vuepress/components/layouts/TravelMap.vue、travel.ts）（src/.vuepress/client.ts、navbar.ts）
 
-## 2026-09-23:
+## 2026-09-23:<Badge text="新增组件" type="tip" />
 > 1、新增音乐组件展示和隐藏、整理了代码位置（src/.vuepress/client.ts）
 > 2、优化了 **图片 base64 编解码** 工具（src/.vuepress/components/tools/ImageBase64Tool.vue）
 > 3、新增了字节单位换算器小工具（src/tools/byte-converter.md）（src/.vuepress/components/tools/ByteUnitConverter.vue）（src/.vuepress/client.ts、navbar.ts）
