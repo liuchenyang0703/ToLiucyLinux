@@ -1,0 +1,35 @@
+import{C as e,E as t,I as n,J as r,K as i,N as a,O as o,U as s,Z as c,_ as l,b as u,i as d,m as f,v as p,w as m,x as h}from"./app-ILGgpTwS.js";var g={class:`tool`},_={class:`tool-tabs`,role:`tablist`,"aria-label":`转换类型`},v=[`aria-selected`],y=[`aria-selected`],b={class:`panels`},x={role:`tabpanel`},S={class:`format-options`},C={class:`format-rule`},w=[`value`],T={key:1,class:`meta`},E={class:`actions`},D=[`disabled`],O={role:`tabpanel`},k={class:`actions`},A=[`disabled`],ee=[`disabled`],te=[`src`],j={key:1,class:`meta`},M=[`href`,`download`],N={key:0,class:`error`},P=d(o({__name:`ImageBase64Tool`,setup(o){let d=i(``),P=i(null),F=i(!1),I=i(!1),L=i(``),R=i(``),z=i(0),B=i(0),V=i(``),H=i(``),U=i(``),W=i(!1),G=i(`encode`),K=i(`data-url`),q=new Set([`image/jpeg`,`image/png`,`image/bmp`,`image/webp`]),J={"image/jpeg":`jpg`,"image/png":`png`,"image/bmp":`bmp`,"image/webp":`webp`},Y=u(()=>K.value===`data-url`?d.value:d.value.split(`,`,2)[1]||``),X=u(()=>new Blob([Y.value]).size),Z=e=>e<1024**2?`${(e/1024).toFixed(1)} KB`:`${(e/1024**2).toFixed(2)} MB`,Q=e=>{e&&URL.revokeObjectURL(e)},$=e=>{if(!e)return;if(U.value=``,!q.has(e.type)){U.value=`仅支持 JPG、JPEG、PNG、BMP 和 WebP 图片。`;return}let t=new FileReader;t.onload=()=>{d.value=String(t.result||``),R.value=e.name,z.value=e.size},t.onerror=()=>{U.value=`图片读取失败，请重新选择。`},t.readAsDataURL(e)},ne=async()=>{try{await navigator.clipboard.writeText(Y.value),W.value=!0,window.setTimeout(()=>W.value=!1,1500)}catch{U.value=`复制失败，请手动复制。`}},re=e=>new Promise((t,n)=>{let r=URL.createObjectURL(new Blob([`
+    self.onmessage = ({ data: value }) => {
+      try {
+        let payload = value.trim();
+        let declaredMime = "";
+        if (payload.startsWith("data:")) {
+          const commaIndex = payload.indexOf(",");
+          const match = payload.slice(0, commaIndex).match(/^data:(image\\/(?:jpeg|png|bmp|webp));base64$/i);
+          if (!match) throw new Error("请输入支持的图片 Data URL。");
+          declaredMime = match[1].toLowerCase();
+          payload = payload.slice(commaIndex + 1);
+        }
+        if (/\\s/.test(payload)) payload = payload.replace(/\\s+/g, "");
+        if (!payload || payload.length % 4 === 1 || !/^[A-Za-z0-9+/]*={0,2}$/.test(payload)) {
+          throw new Error("Base64 编码格式不正确。");
+        }
+
+        const binary = atob(payload);
+        const bytes = new Uint8Array(binary.length);
+        for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+
+        let mime = "";
+        if (bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff) mime = "image/jpeg";
+        else if (bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47) mime = "image/png";
+        else if (bytes[0] === 0x42 && bytes[1] === 0x4d) mime = "image/bmp";
+        else if (String.fromCharCode(...bytes.slice(0, 4)) === "RIFF" && String.fromCharCode(...bytes.slice(8, 12)) === "WEBP") mime = "image/webp";
+        else throw new Error("无法识别图片格式，仅支持 JPG、PNG、BMP 和 WebP。");
+
+        if (declaredMime && declaredMime !== mime) throw new Error("Data URL 中的图片类型与实际内容不一致。");
+        self.postMessage({ buffer: bytes.buffer, mime }, [bytes.buffer]);
+      } catch (error) {
+        self.postMessage({ error: error instanceof Error ? error.message : "Base64 解码失败。" });
+      }
+    };
+  `],{type:`text/javascript`})),i=new Worker(r),a=()=>{i.terminate(),URL.revokeObjectURL(r)};i.onmessage=({data:e})=>{a(),e.error||!e.buffer||!e.mime?n(Error(e.error||`Base64 解码失败。`)):t({buffer:e.buffer,mime:e.mime})},i.onerror=()=>{a(),n(Error(`Base64 解码失败。`))},i.postMessage(e)}),ie=async()=>{U.value=``,I.value=!0;try{let e=P.value?.value||``;if(!e)throw Error(`请输入 Base64 内容。`);await new Promise(e=>requestAnimationFrame(()=>e()));let{buffer:t,mime:n}=await re(e),r=new Blob([t],{type:n});Q(L.value),L.value=URL.createObjectURL(r),B.value=r.size,V.value=n,H.value=String(Date.now())}catch(e){U.value=e instanceof Error?e.message:`Base64 内容无效，或不是支持的图片格式。`}finally{I.value=!1}},ae=()=>{d.value=R.value=``,z.value=0},oe=()=>{Q(L.value),L.value=V.value=H.value=``,B.value=0,F.value=!1,P.value&&(P.value.value=``)};return a(()=>Q(L.value)),(i,a)=>(n(),m(`section`,g,[a[15]||=h(`header`,null,[h(`div`,null,[h(`small`,null,`LOCAL IMAGE BASE64 TOOL`),h(`h2`,null,`图片 Base64 编解码`),h(`p`,null,`所有操作都在浏览器本地完成，图片不会上传服务器。`)]),h(`span`,null,`JPG · JPEG · PNG · BMP · WebP`)],-1),h(`nav`,_,[h(`button`,{type:`button`,role:`tab`,"aria-selected":G.value===`encode`,class:r({active:G.value===`encode`}),onClick:a[0]||=e=>{G.value=`encode`,U.value=``}},`图片转 Base64`,10,v),h(`button`,{type:`button`,role:`tab`,"aria-selected":G.value===`decode`,class:r({active:G.value===`decode`}),onClick:a[1]||=e=>{G.value=`decode`,U.value=``}},`Base64 转图片`,10,y)]),h(`div`,b,[s(h(`article`,x,[a[12]||=h(`h3`,null,`图片转 Base64`,-1),h(`fieldset`,S,[a[10]||=h(`legend`,null,`输出格式`,-1),h(`label`,{class:r({selected:K.value===`data-url`})},[s(h(`input`,{"onUpdate:modelValue":a[2]||=e=>K.value=e,type:`radio`,value:`data-url`},null,512),[[f,K.value]]),a[8]||=t(`完整 Data URL`,-1)],2),h(`label`,{class:r({selected:K.value===`base64`})},[s(h(`input`,{"onUpdate:modelValue":a[3]||=e=>K.value=e,type:`radio`,value:`base64`},null,512),[[f,K.value]]),a[9]||=t(`纯 Base64 字符串`,-1)],2)]),h(`p`,C,c(K.value===`data-url`?`包含 data:image/…;base64, 前缀，可直接用于图片地址。`:`仅输出 Base64 编码正文，不包含格式和 MIME 类型前缀。`),1),h(`label`,{class:`drop`,onDragover:a[5]||=p(()=>{},[`prevent`]),onDrop:a[6]||=p(e=>$(e.dataTransfer?.files[0]),[`prevent`])},[h(`input`,{type:`file`,accept:`image/jpeg,image/png,image/bmp,image/webp,.jpg,.jpeg,.png,.bmp,.webp`,onChange:a[4]||=e=>$(e.target.files?.[0])},null,32),h(`b`,null,c(R.value||`选择或拖拽图片`),1),a[11]||=h(`small`,null,`支持 JPG、JPEG、PNG、BMP、WebP`,-1)],32),d.value?(n(),m(`textarea`,{key:0,value:Y.value,readonly:``,"aria-label":`Base64 编码结果`},null,8,w)):e(`v-if`,!0),d.value?(n(),m(`p`,T,`原图 `+c(Z(z.value))+` · 输出 `+c(Z(X.value)),1)):e(`v-if`,!0),h(`div`,E,[h(`button`,{class:`primary`,disabled:!d.value,onClick:ne},c(W.value?`已复制`:`复制 Base64`),9,D),h(`button`,{onClick:ae},`清空`)])],512),[[l,G.value===`encode`]]),s(h(`article`,O,[a[13]||=h(`h3`,null,`Base64 转图片`,-1),a[14]||=h(`p`,{class:`format-rule`},`自动识别完整 Data URL 或纯 Base64 字符串，以及对应的图片格式。`,-1),h(`textarea`,{ref_key:`decodeInput`,ref:P,placeholder:`粘贴 Data URL 或纯 Base64 内容…`,"aria-label":`待解码 Base64 内容`,spellcheck:`false`,autocomplete:`off`,autocapitalize:`off`,onInput:a[7]||=e=>F.value=!!e.target.value},null,544),h(`div`,k,[h(`button`,{class:`primary`,disabled:!F.value||I.value,onClick:ie},c(I.value?`正在解码…`:`解码图片`),9,A),h(`button`,{disabled:I.value,onClick:oe},`清空`,8,ee)]),L.value?(n(),m(`img`,{key:0,src:L.value,alt:`解码结果预览`},null,8,te)):e(`v-if`,!0),L.value?(n(),m(`p`,j,c(V.value)+` · `+c(Z(B.value)),1)):e(`v-if`,!0),L.value?(n(),m(`a`,{key:2,href:L.value,download:`base64-image-${H.value}.${J[V.value]||`png`}`},`下载图片`,8,M)):e(`v-if`,!0)],512),[[l,G.value===`decode`]])]),U.value?(n(),m(`p`,N,c(U.value),1)):e(`v-if`,!0)]))}}),[[`__scopeId`,`data-v-59caa81d`]]);export{P as default};
