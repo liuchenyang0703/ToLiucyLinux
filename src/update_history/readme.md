@@ -669,3 +669,4 @@ category:
 
 ## 2026-09-23:
 > 1、新增音乐组件开关（src/.vuepress/client.ts）
+> 2、优化了 **图片 base64 编解码** 工具（src/.vuepress/components/tools/ImageBase64Tool.vue）
