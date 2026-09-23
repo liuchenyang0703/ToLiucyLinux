@@ -60,7 +60,43 @@ export default defineClientConfig({
   setup() {
     const router = useRouter();
     let removeBaiduRouteHook: (() => void) | undefined;
+
+    // ==================== 音乐播放器开关 start ====================
     let aplayerObserver: MutationObserver | undefined;
+    let musicEnabled = false;
+
+    const applyMusicState = () => {
+      document.documentElement.classList.toggle("music-enabled", musicEnabled);
+      document.querySelectorAll<HTMLButtonElement>(".music-switch").forEach((button) => {
+        button.ariaPressed = String(musicEnabled);
+        button.title = musicEnabled ? "关闭音乐播放器" : "开启音乐播放器";
+      });
+
+      if (!musicEnabled) {
+        document.querySelectorAll<HTMLAudioElement>(".aplayer audio").forEach((audio) => audio.pause());
+      }
+    };
+
+    const addMusicSwitch = () => {
+      document.querySelectorAll<HTMLElement>(".vp-appearance-dropdown, .vp-appearance-wrapper").forEach((panel) => {
+        if (panel.querySelector(".music-switch-wrapper")) return;
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "music-switch-wrapper";
+        wrapper.innerHTML = `
+          <label class="music-switch-title">音乐</label>
+          <button class="music-switch" type="button" aria-pressed="false" title="开启音乐播放器">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm0-8.65v2.07a7 7 0 0 1 0 13.16v2.07a9 9 0 0 0 0-17.3z" />
+            </svg>
+          </button>`;
+        wrapper.querySelector("button")?.addEventListener("click", () => {
+          musicEnabled = !musicEnabled;
+          applyMusicState();
+        });
+        panel.appendChild(wrapper);
+      });
+    };
 
     const setAPlayerButtonLabels = () => {
       const labels = [
@@ -78,6 +114,7 @@ export default defineClientConfig({
         });
       });
     };
+    // ===================== 音乐播放器开关 end =====================
 
     // 动态加载不蒜子脚本
     const loadBusuanzi = () => {
@@ -90,6 +127,18 @@ export default defineClientConfig({
       // 在页面加载完成后加载不蒜子
       loadBusuanzi();
 
+      // 音乐播放器开关：默认隐藏播放器，并注入开关按钮样式。
+      const style = document.createElement("style");
+      style.textContent = `
+        html:not(.music-enabled) .aplayer { display: none !important; }
+        .music-switch-title { display: block; padding: 0 .25rem; color: var(--vp-c-text-subtle); font-weight: 600; font-size: .75rem; line-height: 2; }
+        .music-switch { margin: 0; border: 0; padding: .25rem; background: transparent; color: var(--vp-c-text-mute); cursor: pointer; }
+        .music-switch:hover, .music-switch[aria-pressed="true"] { color: var(--vp-c-accent-hover); }
+        .music-switch svg { display: block; width: 1.25rem; height: 1.25rem; fill: currentcolor; }
+      `;
+      document.head.appendChild(style);
+      applyMusicState();
+
       // VuePress 是单页应用，页面切换不会重新执行 head 中的百度统计代码，需主动上报。
       removeBaiduRouteHook = router.afterEach((to, from) => {
         if (to.fullPath !== from.fullPath) {
@@ -98,9 +147,14 @@ export default defineClientConfig({
         }
       });
 
-      // APlayer 的控制按钮只有图标，为动态生成的按钮补充无障碍名称。
+      // 音乐播放器开关：添加按钮，并监听异步生成的 APlayer。
       setAPlayerButtonLabels();
-      aplayerObserver = new MutationObserver(setAPlayerButtonLabels);
+      addMusicSwitch();
+      aplayerObserver = new MutationObserver(() => {
+        setAPlayerButtonLabels();
+        addMusicSwitch();
+        applyMusicState();
+      });
       aplayerObserver.observe(document.body, { childList: true, subtree: true });
     });
 

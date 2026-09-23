@@ -666,3 +666,6 @@ category:
 
 ## 2026-09-22:
 > 1、新增了旅游地图，在`travel.ts`中添加新地点，地图同步更新（src/travel-map.md）（src/.vuepress/public/travel-china.json）（src/.vuepress/components/layouts/TravelMap.vue、travel.ts）（src/.vuepress/client.ts、navbar.ts）
+
+## 2026-09-23:
+> 1、新增音乐组件开关（src/.vuepress/client.ts）
