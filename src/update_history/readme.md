@@ -675,3 +675,4 @@ category:
 
 ## 2026-09-24:
 > 1、ip检测新增了个人站点速度检测，网站速度检测进行了区分优化（src/.vuepress/components/tools/ip_check/Connectivity.vue）
+> 2、个人主页单独引入并修改了官方 PortfolioHome 主题组件，优化了内容区域宽度及居中展示（src/.vuepress/components/home/PortfolioHome.js）（src/.vuepress/styles/portfolio-home.scss、index.scss）（src/.vuepress/config.ts）

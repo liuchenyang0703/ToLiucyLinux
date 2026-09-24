@@ -1,30 +1,30 @@
-@use "sass:color";
-@use "@sass-palette/helper";
+.vp-portfolio-content-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 [vp-content].vp-portfolio-content {
-  --content-width: min(84%, 1200px);
-  --header-underline: #{color.change(
-      helper.get-color(hope-palette.$vp-c-accent),
-      $alpha: 0.4
-    )};
+  --content-width: min(92vw, 1200px);
+  --header-underline: color-mix(
+    in srgb,
+    var(--vp-c-accent) 40%,
+    transparent
+  );
 
   display: flex;
   flex-flow: column;
-  align-items: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  margin-inline: auto;
 
-  @media (min-width: hope-config.$laptop) {
+  @media (min-width: 1280px) {
     font-size: 18px;
   }
 
-  @media (max-width: hope-config.$mobile) {
+  @media (max-width: 419px) {
     font-size: 14px;
-  }
-
-  [data-theme="dark"] & {
-    --header-underline: #{color.change(
-        helper.get-dark-color(hope-palette.$vp-c-accent),
-        $alpha: 0.4
-      )};
   }
 
   > {
@@ -33,6 +33,7 @@
     h4,
     h5,
     h6 {
+      align-self: center;
       margin-bottom: 1rem;
       border-bottom: none;
       text-align: center;
@@ -41,7 +42,7 @@
     h2 {
       font-size: 2.5rem;
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: 419px) {
         font-size: 2rem;
       }
     }
@@ -49,13 +50,21 @@
     h3 {
       font-size: 2rem;
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: 419px) {
         font-size: 1.75rem;
       }
     }
 
     p {
       align-self: stretch;
+    }
+
+    ul,
+    ol,
+    table,
+    div {
+      box-sizing: border-box;
+      max-width: 100%;
     }
   }
 

@@ -142,6 +142,10 @@ export default defineUserConfig({
   
   alias: {
     "@MyCoverLink": path.resolve(__dirname, "./components/友情链接.vue"),
+    "@theme-hope/components/home/PortfolioHome": path.resolve(
+      __dirname,
+      "./components/home/PortfolioHome.js",
+    ),
     // 首屏 Hero 图片直接带高优先级请求属性，改善 LCP 加载优先级。
     "@theme-hope/components/home/HeroInfo": path.resolve(__dirname, "./components/HeroInfo.vue"),
   },
