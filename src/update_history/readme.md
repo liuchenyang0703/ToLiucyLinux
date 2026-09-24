@@ -673,6 +673,6 @@ category:
 > 3、新增了字节单位换算器小工具（src/tools/byte-converter.md）（src/.vuepress/components/tools/ByteUnitConverter.vue）（src/.vuepress/client.ts、navbar.ts）
 > 4、新增了时间戳转换小工具（src/tools/timestamp-converter.md）（src/.vuepress/components/tools/TimestampConverter.vue）（src/.vuepress/client.ts、navbar.ts）
 
-## 2026-09-24:
+## 2026-09-24:<Badge text="项目优化" type="tip" />
 > 1、ip检测新增了个人站点速度检测，网站速度检测进行了区分优化（src/.vuepress/components/tools/ip_check/Connectivity.vue）
 > 2、个人主页单独引入并修改了官方 PortfolioHome 主题组件，优化了内容区域宽度及居中展示（src/.vuepress/components/home/PortfolioHome.js）（src/.vuepress/styles/portfolio-home.scss、index.scss）（src/.vuepress/config.ts）
