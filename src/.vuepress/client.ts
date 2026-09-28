@@ -51,6 +51,8 @@ const ImageBase64Tool = defineAsyncComponent(() => import("./components/tools/Im
 const ByteUnitConverter = defineAsyncComponent(() => import("./components/tools/ByteUnitConverter.vue"));
 // 在线小工具-自定义：时间戳转换工具
 const TimestampConverter = defineAsyncComponent(() => import("./components/tools/TimestampConverter.vue"));
+// 在线小工具-自定义：节日与自定义倒计时
+const CountdownTool = defineAsyncComponent(() => import("./components/tools/CountdownTool.vue"));
 // 旅游-自定义：用于展示去过的城市与旅途照片
 import Travel from "./components/layouts/Travel.vue";
 // 旅游-自定义：用于展示去过的城市足迹地图与旅途照片地图
@@ -155,6 +157,8 @@ export default defineClientConfig({
     app.component("ByteUnitConverter", ByteUnitConverter);
     // 在线小工具：时间戳转换工具
     app.component("TimestampConverter", TimestampConverter);
+    // 在线小工具：节日与自定义倒计时
+    app.component("CountdownTool", CountdownTool);
   },
   
   // 你可以在这里覆盖或新增布局

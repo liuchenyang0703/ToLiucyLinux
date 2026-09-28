@@ -71,6 +71,11 @@ export default navbar([
         icon: "lishi",
         link: "tools/timestamp-converter.md"
       },
+      {
+        text: "节日倒计时",
+        icon: "lishi",
+        link: "tools/countdown.md"
+      },
     ],
   },
   {

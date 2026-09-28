@@ -676,3 +676,6 @@ category:
 ## 2026-09-24:<Badge text="项目优化" type="tip" />
 > 1、ip检测新增了个人站点速度检测，网站速度检测进行了区分优化（src/.vuepress/components/tools/ip_check/Connectivity.vue）
 > 2、个人主页单独引入并修改了官方 PortfolioHome 主题组件，优化了内容区域宽度及居中展示（src/.vuepress/components/home/PortfolioHome.js）（src/.vuepress/styles/portfolio-home.scss、index.scss）（src/.vuepress/config.ts）
+
+## 2026-09-28:<Badge text="新增组件" type="tip" />
+> 1、新增了节日倒计时小工具，支持自动计算中国法定节假日、自定义倒计时名称和日期，并使用浏览器本地缓存保存自定义内容（src/tools/countdown.md）（src/.vuepress/components/tools/CountdownTool.vue）（src/.vuepress/client.ts、navbar.ts）
