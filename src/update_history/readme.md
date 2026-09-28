@@ -665,7 +665,7 @@ category:
 > 1、优化了《【Linux】Centos7安装Mysql5.7（超详细版）》文章，修改了文章名称，优化了远程登录配置（src/document/Linux）（src/document/database/MySQL）
 
 ## 2026-09-22:<Badge text="新增独立页组件" type="tip" />
-> 1、新增了旅游地图，在`travel.ts`中添加新地点，地图同步更新（src/travel-map.md）（src/.vuepress/public/travel-china.json）（src/.vuepress/components/layouts/TravelMap.vue、travel.ts）（src/.vuepress/client.ts、navbar.ts）
+> 1、新增了旅游地图，在`travel.ts`中添加新地点，地图同步更新（src/Custom/travel-map.md）（src/.vuepress/public/travel-china.json）（src/.vuepress/components/layouts/TravelMap.vue、travel.ts）（src/.vuepress/client.ts、navbar.ts）
 
 ## 2026-09-23:<Badge text="新增组件" type="tip" />
 > 1、新增音乐组件展示和隐藏、整理了代码位置（src/.vuepress/client.ts）
@@ -679,4 +679,4 @@ category:
 
 ## 2026-09-28:<Badge text="新增组件" type="tip" />
 > 1、新增了节日倒计时小工具，支持自动计算中国法定节假日、自定义倒计时名称和日期，并使用浏览器本地缓存保存自定义内容（src/tools/countdown.md）（src/.vuepress/components/tools/CountdownTool.vue）（src/.vuepress/client.ts、navbar.ts）
-> 2、更换小工具图标、修改了阿里icon图标的链接（src/.vuepress/theme.ts、navbar.ts）（src/tools/byte-converter.md、countdown.md、timestamp-converter.md）
+> 2、更换小工具图标、旅游足迹图标、修改了阿里icon图标的链接（src/.vuepress/theme.ts、navbar.ts）（src/tools/byte-converter.md、countdown.md、timestamp-converter.md）（src/Custom/travel-map.md）

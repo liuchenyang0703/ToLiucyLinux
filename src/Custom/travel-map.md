@@ -1,6 +1,6 @@
 ---
 title: 旅行足迹地图
-icon: lvyou
+icon: lvhang
 toc: false
 date: 2026-09-22
 isOriginal: true
