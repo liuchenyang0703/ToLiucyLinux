@@ -63,17 +63,17 @@ export default navbar([
       },
       {
         text: "字节单位换算器",
-        icon: "gongju",
+        icon: "daimabiaozhun",
         link: "tools/byte-converter.md"
       },
       {
         text: "时间戳转换工具",
-        icon: "lishi",
+        icon: "shijianchuo",
         link: "tools/timestamp-converter.md"
       },
       {
         text: "节日倒计时",
-        icon: "lishi",
+        icon: "daojishi",
         link: "tools/countdown.md"
       },
     ],

@@ -679,3 +679,4 @@ category:
 
 ## 2026-09-28:<Badge text="新增组件" type="tip" />
 > 1、新增了节日倒计时小工具，支持自动计算中国法定节假日、自定义倒计时名称和日期，并使用浏览器本地缓存保存自定义内容（src/tools/countdown.md）（src/.vuepress/components/tools/CountdownTool.vue）（src/.vuepress/client.ts、navbar.ts）
+> 2、更换小工具图标、修改了阿里icon图标的链接（src/.vuepress/theme.ts、navbar.ts）（src/tools/byte-converter.md、countdown.md、timestamp-converter.md）
