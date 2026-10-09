@@ -149,7 +149,7 @@ highlights:
 
       - title: 免费在线抠图
         icon: https://www.koukoutu.com/icons/192.png
-        details: 永久免费的AI在线抠图工具，免登录抠图、无限制下载高清大图。
+        details: 免费的AI在线抠图工具，免登录抠图、无限制下载高清大图。
         link: https://www.koukoutu.com/
 
       - title: 免费的在线图片与 PDF 处理工具<br> <center>- docsmall</center>

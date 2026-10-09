@@ -683,3 +683,6 @@ category:
 
 ## 2026-09-29:
 > 1、更新了docker镜像加速地址文章（src/document/Docker）
+
+## 2026-10-09:<Badge text="安全修复" type="warning" />
+> 1、修复了一个可能违规词
