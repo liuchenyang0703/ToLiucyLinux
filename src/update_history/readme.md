@@ -689,3 +689,4 @@ category:
 
 ## 2026-10-10:<Badge text="新增组件" type="tip" />
 > 1、新增了 MD5 校验小工具，支持选择多个文件或整个文件夹、分块计算 MD5、按目录树展示文件结果、目标 MD5 对比、复制及导出校验结果（src/tools/md5-check.md）（src/.vuepress/components/tools/Md5CheckTool.vue）（src/.vuepress/client.ts、navbar.ts）（package.json/@types/spark-md5、spark-md5）
+> 2、更换 MD5 校验小工具 图标，修改了阿里icon图标的链接（src/.vuepress/theme.ts、navbar.ts）（src/tools/md5-check.md）

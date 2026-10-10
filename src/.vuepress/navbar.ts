@@ -78,7 +78,7 @@ export default navbar([
       },
       {
         text: "MD5 校验工具",
-        icon: "daimabiaozhun",
+        icon: "MD5",
         link: "tools/md5-check.md"
       },
     ],
