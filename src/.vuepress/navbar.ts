@@ -76,6 +76,11 @@ export default navbar([
         icon: "daojishi",
         link: "tools/countdown.md"
       },
+      {
+        text: "MD5 校验工具",
+        icon: "daimabiaozhun",
+        link: "tools/md5-check.md"
+      },
     ],
   },
   {

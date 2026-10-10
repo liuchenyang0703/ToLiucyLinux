@@ -14,6 +14,9 @@ importers:
       '@moefy-canvas/theme-popper':
         specifier: 0.6.0
         version: 0.6.0
+      '@types/spark-md5':
+        specifier: ^3.0.5
+        version: 3.0.5
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.30
         version: 2.0.0-rc.30(@types/node@26.4.0)(@vue/compiler-sfc@3.5.42)(esbuild@0.28.2)(sass-embedded@1.103.1)(sass@1.103.1)(yaml@2.9.0)
@@ -53,6 +56,9 @@ importers:
       sass-embedded:
         specifier: ^1.99.0
         version: 1.103.1
+      spark-md5:
+        specifier: ^3.0.2
+        version: 3.0.2
       vue:
         specifier: ^3.5.34
         version: 3.5.42
@@ -967,6 +973,9 @@ packages:
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==, tarball: https://registry.npmmirror.com/@types/sax/-/sax-1.2.7.tgz}
+
+  '@types/spark-md5@3.0.5':
+    resolution: {integrity: sha512-lWf05dnD42DLVKQJZrDHtWFidcLrHuip01CtnC2/S6AMhX4t9ZlEUj4iuRlAnts0PQk7KESOqKxeGE/b6sIPGg==, tarball: https://registry.npmmirror.com/@types/spark-md5/-/spark-md5-3.0.5.tgz}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==, tarball: https://registry.npmmirror.com/@types/trusted-types/-/trusted-types-2.0.7.tgz}
@@ -2551,6 +2560,9 @@ packages:
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==, tarball: https://registry.npmmirror.com/space-separated-tokens/-/space-separated-tokens-2.0.2.tgz}
 
+  spark-md5@3.0.2:
+    resolution: {integrity: sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==, tarball: https://registry.npmmirror.com/spark-md5/-/spark-md5-3.0.2.tgz}
+
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==, tarball: https://registry.npmmirror.com/sprintf-js/-/sprintf-js-1.0.3.tgz}
 
@@ -3735,6 +3747,8 @@ snapshots:
   '@types/sax@1.2.7':
     dependencies:
       '@types/node': 24.13.3
+
+  '@types/spark-md5@3.0.5': {}
 
   '@types/trusted-types@2.0.7': {}
 
@@ -5740,6 +5754,8 @@ snapshots:
   source-map-js@1.2.1: {}
 
   space-separated-tokens@2.0.2: {}
+
+  spark-md5@3.0.2: {}
 
   sprintf-js@1.0.3: {}
 

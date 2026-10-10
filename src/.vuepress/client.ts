@@ -53,6 +53,8 @@ const ByteUnitConverter = defineAsyncComponent(() => import("./components/tools/
 const TimestampConverter = defineAsyncComponent(() => import("./components/tools/TimestampConverter.vue"));
 // 在线小工具-自定义：节日与自定义倒计时
 const CountdownTool = defineAsyncComponent(() => import("./components/tools/CountdownTool.vue"));
+// 在线小工具-自定义：文件与文件夹 MD5 校验
+const Md5CheckTool = defineAsyncComponent(() => import("./components/tools/Md5CheckTool.vue"));
 // 旅游-自定义：用于展示去过的城市与旅途照片
 import Travel from "./components/layouts/Travel.vue";
 // 旅游-自定义：用于展示去过的城市足迹地图与旅途照片地图
@@ -159,6 +161,8 @@ export default defineClientConfig({
     app.component("TimestampConverter", TimestampConverter);
     // 在线小工具：节日与自定义倒计时
     app.component("CountdownTool", CountdownTool);
+    // 在线小工具：文件与文件夹 MD5 校验
+    app.component("Md5CheckTool", Md5CheckTool);
   },
   
   // 你可以在这里覆盖或新增布局
