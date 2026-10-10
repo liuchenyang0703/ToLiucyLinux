@@ -52,7 +52,7 @@ export default navbar([
         link: "tools/base64.md"
       },
       {
-        text: "图片 Base64 编解码",
+        text: "文件 Base64 编解码",
         icon: "ToBase64",
         link: "tools/image-base64.md"
       },

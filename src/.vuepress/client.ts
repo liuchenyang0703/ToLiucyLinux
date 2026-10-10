@@ -45,7 +45,7 @@ import DNSLeak from "./components/tools/ip_check/DNSLeak.vue";
 const Base64Tool = defineAsyncComponent(() => import("./components/tools/Base64Tool.vue"));
 // 在线小工具-自定义：图片格式转换
 const ImageConverter = defineAsyncComponent(() => import("./components/tools/ImageConverter.vue"));
-// 在线小工具-自定义：图片Base64编解码
+// 在线小工具-自定义：文件 Base64 编解码
 const ImageBase64Tool = defineAsyncComponent(() => import("./components/tools/ImageBase64Tool.vue"));
 // 在线小工具-自定义：字节单位换算器
 const ByteUnitConverter = defineAsyncComponent(() => import("./components/tools/ByteUnitConverter.vue"));
@@ -153,7 +153,7 @@ export default defineClientConfig({
     app.component("Base64Tool", Base64Tool);
     // 在线小工具：图片格式转换
     app.component("ImageConverter", ImageConverter);
-    // 在线小工具：图片Base64编解码
+    // 在线小工具：文件 Base64 编解码
     app.component("ImageBase64Tool", ImageBase64Tool);
     // 在线小工具：字节单位换算器
     app.component("ByteUnitConverter", ByteUnitConverter);
