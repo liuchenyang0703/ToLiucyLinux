@@ -692,3 +692,6 @@ category:
 > 2、更换 MD5 校验小工具 图标，修改了阿里icon图标的链接（src/.vuepress/theme.ts、navbar.ts）（src/tools/md5-check.md）
 > 3、将图片 Base64 编解码升级为文件 Base64 编解码，支持图片、PDF、Word、Excel、ZIP、TXT 等各类文件，并支持 MIME 类型、原文件名及常见文件头自动识别（src/tools/image-base64.md）（src/.vuepress/components/tools/ImageBase64Tool.vue）（src/.vuepress/client.ts、navbar.ts）
 > 4、修复 OFD 的 Base64 内容因采用 ZIP 容器而被错误识别为压缩包的问题，新增 OFD.xml 结构识别及 .ofd 下载扩展名恢复（src/.vuepress/components/tools/ImageBase64Tool.vue）
+
+## 2026-10-11:
+> 1、404修改为腾讯公益宝贝回家（src/.vuepress/components/layouts/404.vue）（src/.vuepress/client.ts）

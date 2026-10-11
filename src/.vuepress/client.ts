@@ -24,7 +24,7 @@ import Travelling from "./components/开往.js";
 // 全局-自定义：虫洞
 import Wormhole from "./components/虫洞.js";
 // 全局-自定义：404页面
-// import NotFound from "./components/layouts/404.vue";
+import NotFound from "./components/layouts/404.vue";
 // 主页-自定义：访问量组件
 import DataPanel from "./components/访问量.vue";
 // 关于本站-自定义：爱情倒计时组件
@@ -168,7 +168,7 @@ export default defineClientConfig({
   // 你可以在这里覆盖或新增布局
   layouts: {
 	  // 404页面
-    // NotFound,
+    NotFound,
     // 博客必应壁纸及一言描述
     Blog,
     // 旅游足迹相册页面
