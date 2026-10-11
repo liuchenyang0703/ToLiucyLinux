@@ -70,16 +70,7 @@ export default defineClientConfig({
     let removeBaiduRouteHook: (() => void) | undefined;
     let removeMusicPlayerSwitch: (() => void) | undefined;
 
-    // 动态加载不蒜子脚本
-    const loadBusuanzi = () => {
-      const script = document.createElement("script");
-      script.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
-      document.body.appendChild(script);
-    };
-
     onMounted(() => {
-      // 在页面加载完成后加载不蒜子
-      loadBusuanzi();
       removeMusicPlayerSwitch = setupMusicPlayerSwitch();
 
       // VuePress 是单页应用，页面切换不会重新执行 head 中的百度统计代码，需主动上报。

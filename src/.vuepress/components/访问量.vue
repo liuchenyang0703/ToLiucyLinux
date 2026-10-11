@@ -1,4 +1,27 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { nextTick, onBeforeUnmount, onMounted } from "vue";
+
+let busuanziScript: HTMLScriptElement | undefined;
+
+const loadBusuanzi = async (): Promise<void> => {
+    await nextTick();
+
+    document.querySelectorAll<HTMLScriptElement>('script[data-busuanzi-loader="true"]').forEach((script) => script.remove());
+
+    busuanziScript = document.createElement("script");
+    busuanziScript.async = true;
+    busuanziScript.dataset.busuanziLoader = "true";
+    busuanziScript.src = `https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js?t=${Date.now()}`;
+    document.body.appendChild(busuanziScript);
+};
+
+onMounted(() => void loadBusuanzi());
+
+onBeforeUnmount(() => {
+    busuanziScript?.remove();
+    busuanziScript = undefined;
+});
+</script>
 
 <template>
     <div class="panel">
