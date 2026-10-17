@@ -696,3 +696,6 @@ category:
 ## 2026-10-11:
 > 1、404修改为腾讯公益宝贝回家（src/.vuepress/components/layouts/404.vue）（src/.vuepress/client.ts）
 > 2、修复从站内其他页面返回首页后访问量显示为 `--`、必须刷新页面才恢复的问题，将不蒜子统计脚本改为由访问量组件在挂载后加载并在卸载时清理（src/.vuepress/components/访问量.vue）（src/.vuepress/client.ts）
+
+## 2026-10-17:
+> 1、新增一篇文章《GitLab + ArgoCD 实现 Kubernetes GitOps 自动化部署》（src/document/Kubernetes）
