@@ -14,6 +14,8 @@ export const travelList: TravelItem[] = [
   { city: "杭州", image: "Travel/杭州.jpeg", description: "山水杭州，一城诗意半城湖。", province: "浙江省", coordinates: [120.1551, 30.2741] },
   { city: "济南", image: "Travel/济南.jpeg", description: "泉城济南，寻访街巷里的清泉与烟火。", province: "山东省", coordinates: [117.1201, 36.6512] },
   { city: "青岛", image: "Travel/青岛.jpeg", description: "吹过海风，收藏青岛的碧海与红瓦。", province: "山东省", coordinates: [120.3826, 36.0671] },
+  { city: "烟台", image: "Travel/烟台.jpg", description: "漫游烟台，在山海之间遇见浪漫与惬意。", province: "山东省", coordinates: [121.4479, 37.4638] },
+  { city: "威海", image: "Travel/威海.jpg", description: "行至威海，收藏海岸线上的清风与蔚蓝。", province: "山东省", coordinates: [122.1204, 37.5131] },
   { city: "太原", image: "Travel/太原.jpeg", description: "走进太原，感受厚重悠长的晋阳文化。", province: "山西省", coordinates: [112.5489, 37.8706] },
   { city: "运城", image: "Travel/运城.jpeg", description: "在河东大地，遇见运城的人文与风景。", province: "山西省", coordinates: [111.0075, 35.0264] },
   { city: "芮城", image: "Travel/芮城.jpeg", description: "行至芮城，记录黄河岸边的古老故事。", province: "山西省", coordinates: [110.6942, 34.6936] },
