@@ -703,4 +703,5 @@ category:
 ## 2026-10-18:<Badge text="旅游足迹更新" type="tip" />
 > 1、新增烟台、威海两个旅游地点及照片，并同步更新旅游相册与旅游足迹地图（src/.vuepress/public/Travel/烟台.jpg、威海.jpg）（src/.vuepress/components/layouts/travel.ts）
 
-
+## 2026-10-19:
+> 1、《Linux 下使用 Trivy 扫描 Docker 镜像漏洞》文章优化
