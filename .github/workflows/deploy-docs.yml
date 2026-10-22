@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - blog_source
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,6 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: blog_source
           fetch-depth: 0
           # 如果你文档需要 Git 子模块，取消注释下一行
           # submodules: true
