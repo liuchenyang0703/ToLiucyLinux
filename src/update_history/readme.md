@@ -705,3 +705,6 @@ category:
 
 ## 2026-10-19:
 > 1、《Linux 下使用 Trivy 扫描 Docker 镜像漏洞》文章优化
+
+## 2026-10-22:
+> 1、替换博客页面的`Soul`为`Instagram`（src/.vuepress/theme.ts）

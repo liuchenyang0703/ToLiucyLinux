@@ -197,7 +197,7 @@ export default hopeTheme({
       Gitee: "https://gitee.com/liu-chenyang",
       Weibo: "https://weibo.com/u/6350216849",
       XiaoHongShu: "https://xhslink.com/m/5wagZ8CE1o0",
-      Soul: "https://www.soulapp.cn/",
+      Facebook: "https://www.facebook.com/profile.php?id=61595969270217",
       Twitter: "https://x.com/home",
       IdleFish: "https://m.tb.cn/h.75FKfBL?tk=Ka1WfywGAE3",
       "163Music": "https://music.163.com/#/artist?id=50843863",
