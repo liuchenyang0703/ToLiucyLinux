@@ -708,4 +708,4 @@ category:
 
 ## 2026-10-22:
 > 1、替换博客页面的`Soul`为`Instagram`（src/.vuepress/theme.ts）
-> 2、新增服务器热点漏洞页面，接入 CNNVD 热点漏洞并在构建阶段生成同源数据，每 6 小时自动更新；支持查看、搜索与危险等级筛选，自动关联并展示通用 CVE 编号，同时新增页面导航图标并更新阿里 Iconfont 图标库链接（src/tools/linux-vulnerabilities.md）（src/.vuepress/components/tools/LinuxVulnerabilityFeed.vue）（scripts/fetch-cnnvd-hot.mjs）（src/.vuepress/client.ts、navbar.ts、theme.ts）（.github/workflows/deploy-docs.yml）
+> 2、新增服务器热点漏洞页面，接入 CNNVD 热点漏洞并在构建阶段生成同源数据，每 6 小时自动更新；支持查看、搜索与危险等级筛选，自动关联并展示通用 CVE 编号，同时新增页面导航图标并更新阿里 Iconfont 图标库链接（src/tools/linux-vulnerabilities.md）（src/.vuepress/components/tools/LinuxVulnerabilityFeed.vue、fetch-cnnvd-hot.mjs）（src/.vuepress/client.ts、navbar.ts、theme.ts）（.github/workflows/deploy-docs.yml）

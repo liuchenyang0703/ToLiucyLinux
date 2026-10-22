@@ -29,26 +29,49 @@ const createSignedHeaders = async (apiPath) => {
   return { ...headers, "X-Sign": signResult.data };
 };
 
-const fetchDetail = async (item) => {
-  const headers = await createSignedHeaders(DETAIL_PATH);
-  const response = await fetch(`${BASE_URL}/homePage/searchVulByCnnvdCode`, {
-    method: "POST", headers, body: JSON.stringify({ cnnvdCode: item.cnnvdCode }),
-  });
-  const detail = await response.json();
-  return response.ok && detail.code === 200 ? detail.data : null;
+const wait = (milliseconds) => new Promise((resolvePromise) => setTimeout(resolvePromise, milliseconds));
+
+const fetchDetail = async (item, retries = 3) => {
+  let lastError;
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    try {
+      const headers = await createSignedHeaders(DETAIL_PATH);
+      const response = await fetch(`${BASE_URL}/homePage/searchVulByCnnvdCode`, {
+        method: "POST", headers, body: JSON.stringify({ cnnvdCode: item.cnnvdCode }),
+      });
+      const detail = await response.json();
+      if (response.ok && detail.code === 200 && detail.data) return detail.data;
+      throw new Error(detail.message || `CNNVD 详情请求失败：${response.status}`);
+    } catch (error) {
+      lastError = error;
+      if (attempt < retries) await wait(attempt * 500);
+    }
+  }
+  throw lastError;
 };
 
-const fetchDetailsInBatches = async (items, batchSize = 4) => {
+const fetchDetailsInBatches = async (items, batchSize = 2) => {
   const details = [];
   for (let index = 0; index < items.length; index += batchSize) {
     const batch = items.slice(index, index + batchSize);
     const results = await Promise.allSettled(batch.map(fetchDetail));
     details.push(...results.map((result) => result.status === "fulfilled" ? result.value : null));
+    if (index + batchSize < items.length) await wait(250);
   }
   return details;
 };
 
+const readExistingCveIds = async () => {
+  try {
+    const existing = JSON.parse(await readFile(OUTPUT, "utf8"));
+    return new Map((existing.items ?? []).map((item) => [String(item.id), item.cveId || ""]));
+  } catch {
+    return new Map();
+  }
+};
+
 const fetchHotVulnerabilities = async () => {
+  const existingCveIds = await readExistingCveIds();
   const headers = await createSignedHeaders(API_PATH);
   const dataResponse = await fetch(`${BASE_URL}/homePage/hotVulNewList`, {
     method: "POST", headers, body: JSON.stringify({ page: 1, pageSize: 100 }),
@@ -63,7 +86,8 @@ const fetchHotVulnerabilities = async () => {
     items: result.data.map((item, index) => {
       const detail = details[index];
       return {
-        id: String(item.vulId ?? ""), name: item.vulName || "未命名漏洞", cveId: detail?.cveId || "",
+        id: String(item.vulId ?? ""), name: item.vulName || "未命名漏洞",
+        cveId: detail?.cveId || existingCveIds.get(String(item.vulId ?? "")) || "",
         severity: severityMap[item.hazardLevel] || "UNKNOWN", severityLabel: item.hazardLevel || "未知",
         published: item.publishTime || "未知", hasAi: Number(item.hasAi) === 1,
         url: `https://www.cnnvd.org.cn/frontend/detail?vulId=${encodeURIComponent(item.vulId ?? "")}`,
