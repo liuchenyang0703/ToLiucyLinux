@@ -65,6 +65,8 @@ import TravelMap from "./components/layouts/TravelMap.vue";
 import Archive from "./components/layouts/Archive.vue";
 // git提交活跃度日历-自定义：用于展示git提交活跃度日历
 const GitActivity = defineAsyncComponent(() => import("./components/GitActivity.vue"));
+// 我的开源项目：读取并展示 GitHub 公共仓库
+const OpenSourceProjects = defineAsyncComponent(() => import("./components/OpenSourceProjects.vue"));
 
 export default defineClientConfig({
   setup() {
@@ -142,6 +144,8 @@ export default defineClientConfig({
     app.component("DNSLeak", DNSLeak);
     // 项目更新记录页：Git 提交活跃度日历
     app.component("GitActivity", GitActivity);
+    // 我的开源项目
+    app.component("OpenSourceProjects", OpenSourceProjects);
     // 在线小工具：Base64 文本编解码
     app.component("Base64Tool", Base64Tool);
     // 在线小工具：图片格式转换

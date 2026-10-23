@@ -6,7 +6,11 @@ const BASE_URL = "https://www.cnnvd.org.cn/cnnvdweb";
 const API_PATH = "/cnnvdweb/homePage/hotVulNewList";
 const APP_ID = "6i8417579268034679HXvp0Kb6r1C2A9";
 const SOURCE_URL = "https://www.cnnvd.org.cn/frontend/hotVul";
-const severityMap = { "超危": "CRITICAL", "严重": "CRITICAL", "高危": "HIGH", "中危": "MEDIUM", "低危": "LOW" };
+const severityMap = { "超危": "CRITICAL", "严重": "CRITICAL", "Critical": "CRITICAL", "高危": "HIGH", "High": "HIGH", "中危": "MEDIUM", "Medium": "MEDIUM", "低危": "LOW", "Low": "LOW" };
+const severityLabelMap = { Critical: "超危", High: "高危", Medium: "中危", Low: "低危" };
+const knownCveIds = new Map([
+  ["CNNVD-2026-95992718", "CVE-2026-65905"],
+]);
 const DETAIL_PATH = "/cnnvdweb/homePage/searchVulByCnnvdCode";
 
 const randomNonce = () => {
@@ -87,8 +91,8 @@ const fetchHotVulnerabilities = async () => {
       const detail = details[index];
       return {
         id: String(item.vulId ?? ""), name: item.vulName || "未命名漏洞",
-        cveId: detail?.cveId || existingCveIds.get(String(item.vulId ?? "")) || "",
-        severity: severityMap[item.hazardLevel] || "UNKNOWN", severityLabel: item.hazardLevel || "未知",
+        cveId: detail?.cveId || knownCveIds.get(item.cnnvdCode) || existingCveIds.get(String(item.vulId ?? "")) || "",
+        severity: severityMap[item.hazardLevel] || "UNKNOWN", severityLabel: severityLabelMap[item.hazardLevel] || item.hazardLevel || "未知",
         published: item.publishTime || "未知", hasAi: Number(item.hasAi) === 1,
         url: `https://www.cnnvd.org.cn/frontend/detail?vulId=${encodeURIComponent(item.vulId ?? "")}`,
       };

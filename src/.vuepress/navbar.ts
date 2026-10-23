@@ -93,10 +93,6 @@ export default navbar([
     icon: "circle-info",
     children: [
       {
-        text: "作者信息",
-        children: ["person.md","honor.md"],
-      },
-      {
         text: "友情链接",
         children: ["friendship.md"],
       },
@@ -128,6 +124,14 @@ export default navbar([
     text: "我的故事",
     icon: "gerenjieshao",
     children: [
+      {
+        text: "作者信息",
+        children: ["person.md","honor.md"],
+      },
+      {
+        text: "我的开源项目",
+        children: ["Custom/open-source-projects.md"],
+      },
       {
         text: "关于我们",
         children: ["Custom/AboutUs.md"],
