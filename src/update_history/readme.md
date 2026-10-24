@@ -713,3 +713,7 @@ category:
 ## 2026-10-23:<Badge text="新增页面" type="tip" />
 > 1、新增`我的开源项目`页面，展示 GitHub 与 Gitee 的全部公开仓库；支持平台、语言、原创/Fork 类型筛选、项目搜索及多种排序方式（src/Custom/open-source-projects.md）（src/.vuepress/components/OpenSourceProjects.vue）（src/.vuepress/client.ts、navbar.ts）
 > 2、修改了`关于作者`到`我的故事里`（src/.vuepress/navbar.ts）
+
+## 2026-10-24:
+> 1、修改了阿里icon图标的链接（src/.vuepress/theme.ts）
+> 2、新增一篇文章《【Linux】Ubuntu 如何下载离线安装包？（详解）》(src/document/Linux)

@@ -1,6 +1,6 @@
 ---
 title: 我的开源项目
-icon: github
+icon: kaiyuan
 article: false
 toc: false
 comment: false
