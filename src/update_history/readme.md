@@ -717,3 +717,4 @@ category:
 ## 2026-10-24:
 > 1、修改了阿里icon图标的链接（src/.vuepress/theme.ts）
 > 2、新增一篇文章《【Linux】Ubuntu 如何下载离线安装包？（详解）》(src/document/Linux)
+> 3、新增一篇文章《nerdctl 部署及使用指南》（src/document/Kubernetes）
