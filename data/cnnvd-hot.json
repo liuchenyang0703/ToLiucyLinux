@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-23T14:57:24.072Z",
+  "fetchedAt": "2026-10-24T05:30:31.852Z",
   "source": "CNNVD 热点漏洞",
   "sourceUrl": "https://www.cnnvd.org.cn/frontend/hotVul",
   "items": [
@@ -14,16 +14,6 @@
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161380"
     },
     {
-      "id": "800143365",
-      "name": "Citrix NetScaler Application Delivery Controller 输入验证错误漏洞",
-      "cveId": "CVE-2026-88771",
-      "severity": "CRITICAL",
-      "severityLabel": "超危",
-      "published": "2026-09-27",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800143365"
-    },
-    {
       "id": "800189118",
       "name": "PHP 资源管理错误漏洞",
       "cveId": "CVE-2026-109618",
@@ -34,14 +24,14 @@
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800189118"
     },
     {
-      "id": "800133703",
-      "name": "WordPress 代码注入漏洞",
-      "cveId": "CVE-2026-87902",
-      "severity": "HIGH",
-      "severityLabel": "高危",
-      "published": "2026-09-22",
+      "id": "800143365",
+      "name": "Citrix NetScaler Application Delivery Controller 输入验证错误漏洞",
+      "cveId": "CVE-2026-88771",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-09-27",
       "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800133703"
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800143365"
     },
     {
       "id": "800189120",
@@ -134,16 +124,6 @@
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800154789"
     },
     {
-      "id": "800133808",
-      "name": "F5 BIG-IP 缓冲区错误漏洞",
-      "cveId": "CVE-2026-94127",
-      "severity": "CRITICAL",
-      "severityLabel": "超危",
-      "published": "2026-09-22",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800133808"
-    },
-    {
       "id": "800176255",
       "name": "MariaDB Server 输入验证错误漏洞",
       "cveId": "CVE-2026-92262",
@@ -152,6 +132,56 @@
       "published": "2026-10-16",
       "hasAi": false,
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800176255"
+    },
+    {
+      "id": "800186304",
+      "name": "Apache Tomcat 授权问题漏洞",
+      "cveId": "CVE-2026-101296",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-10-20",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800186304"
+    },
+    {
+      "id": "800158232",
+      "name": "WukongCRM Wukong_HRM 授权问题漏洞",
+      "cveId": "",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-10-11",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800158232"
+    },
+    {
+      "id": "800172391",
+      "name": "Linux kernel 安全漏洞",
+      "cveId": "CVE-2026-99999",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-10-15",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800172391"
+    },
+    {
+      "id": "800161769",
+      "name": "Fortinet FortiSIEM 路径遍历漏洞",
+      "cveId": "",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-10-13",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161769"
+    },
+    {
+      "id": "800161229",
+      "name": "Rapid7 Metasploit Framework 授权问题漏洞",
+      "cveId": "CVE-2026-87689",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-10-13",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161229"
     },
     {
       "id": "800176771",
@@ -172,36 +202,6 @@
       "published": "2026-10-14",
       "hasAi": false,
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800167013"
-    },
-    {
-      "id": "800161339",
-      "name": "GitLab 跨站脚本漏洞",
-      "cveId": "CVE-2026-92883",
-      "severity": "HIGH",
-      "severityLabel": "高危",
-      "published": "2026-10-13",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161339"
-    },
-    {
-      "id": "800186304",
-      "name": "Apache Tomcat 授权问题漏洞",
-      "cveId": "CVE-2026-65905",
-      "severity": "CRITICAL",
-      "severityLabel": "超危",
-      "published": "2026-10-20",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800186304"
-    },
-    {
-      "id": "800133815",
-      "name": "Arista Networks VeloCloud Orchestrator On-Prem 输入验证错误漏洞",
-      "cveId": "CVE-2026-93952",
-      "severity": "CRITICAL",
-      "severityLabel": "超危",
-      "published": "2026-09-22",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800133815"
     }
   ]
 }
