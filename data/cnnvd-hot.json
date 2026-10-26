@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-10-24T05:40:36.608Z",
+  "fetchedAt": "2026-10-26T03:58:09.920Z",
   "source": "CNNVD 热点漏洞",
   "sourceUrl": "https://www.cnnvd.org.cn/frontend/hotVul",
   "items": [
     {
       "id": "800161380",
       "name": "GitLab 数字错误漏洞",
-      "cveId": "CVE-2026-97229",
+      "cveId": "",
       "severity": "CRITICAL",
       "severityLabel": "超危",
       "published": "2026-10-13",
@@ -26,7 +26,7 @@
     {
       "id": "800143365",
       "name": "Citrix NetScaler Application Delivery Controller 输入验证错误漏洞",
-      "cveId": "CVE-2026-88771",
+      "cveId": "",
       "severity": "CRITICAL",
       "severityLabel": "超危",
       "published": "2026-09-27",
@@ -46,7 +46,7 @@
     {
       "id": "800153677",
       "name": "Atlassian Bamboo Data Center 文件数据泄露漏洞",
-      "cveId": "CVE-2026-21589",
+      "cveId": "",
       "severity": "CRITICAL",
       "severityLabel": "超危",
       "published": "2026-10-05",
@@ -66,7 +66,7 @@
     {
       "id": "800160905",
       "name": "AnyDesk 输入验证错误漏洞",
-      "cveId": "CVE-2026-109390",
+      "cveId": "",
       "severity": "CRITICAL",
       "severityLabel": "超危",
       "published": "2026-10-12",
@@ -84,24 +84,34 @@
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800143369"
     },
     {
-      "id": "800161715",
-      "name": "Ivanti connect secure 授权问题漏洞",
-      "cveId": "CVE-2026-104935",
-      "severity": "HIGH",
-      "severityLabel": "高危",
-      "published": "2026-10-13",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161715"
-    },
-    {
       "id": "800019893",
       "name": "VMware Cloud Foundation 路径遍历漏洞",
-      "cveId": "CVE-2026-59310",
+      "cveId": "",
       "severity": "CRITICAL",
       "severityLabel": "超危",
       "published": "2026-07-30",
       "hasAi": true,
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800019893"
+    },
+    {
+      "id": "800193699",
+      "name": "Google brotli 异常处理不当漏洞",
+      "cveId": "CVE-2026-111497",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-10-22",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800193699"
+    },
+    {
+      "id": "800161715",
+      "name": "Ivanti connect secure 授权问题漏洞",
+      "cveId": "",
+      "severity": "HIGH",
+      "severityLabel": "高危",
+      "published": "2026-10-13",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161715"
     },
     {
       "id": "800166315",
@@ -116,7 +126,7 @@
     {
       "id": "800154789",
       "name": "The Handlebars Templating Language Handlebars.js 缓冲区错误漏洞",
-      "cveId": "CVE-2026-106446",
+      "cveId": "",
       "severity": "CRITICAL",
       "severityLabel": "超危",
       "published": "2026-10-06",
@@ -132,6 +142,36 @@
       "published": "2026-10-16",
       "hasAi": false,
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800176255"
+    },
+    {
+      "id": "800167013",
+      "name": "Cisco Secure Email 路径遍历漏洞",
+      "cveId": "",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-10-14",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800167013"
+    },
+    {
+      "id": "800161339",
+      "name": "GitLab 跨站脚本漏洞",
+      "cveId": "CVE-2026-92883",
+      "severity": "HIGH",
+      "severityLabel": "高危",
+      "published": "2026-10-13",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161339"
+    },
+    {
+      "id": "800193683",
+      "name": "GitLab 数字错误漏洞",
+      "cveId": "",
+      "severity": "CRITICAL",
+      "severityLabel": "超危",
+      "published": "2026-10-22",
+      "hasAi": false,
+      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800193683"
     },
     {
       "id": "800186304",
@@ -162,46 +202,6 @@
       "published": "2026-10-15",
       "hasAi": false,
       "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800172391"
-    },
-    {
-      "id": "800161769",
-      "name": "Fortinet FortiSIEM 路径遍历漏洞",
-      "cveId": "",
-      "severity": "CRITICAL",
-      "severityLabel": "超危",
-      "published": "2026-10-13",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161769"
-    },
-    {
-      "id": "800161229",
-      "name": "Rapid7 Metasploit Framework 授权问题漏洞",
-      "cveId": "CVE-2026-87689",
-      "severity": "CRITICAL",
-      "severityLabel": "超危",
-      "published": "2026-10-13",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800161229"
-    },
-    {
-      "id": "800176771",
-      "name": "ThimPress LearnPress 反序列化注入漏洞",
-      "cveId": "CVE-2026-104736",
-      "severity": "CRITICAL",
-      "severityLabel": "超危",
-      "published": "2026-10-17",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800176771"
-    },
-    {
-      "id": "800167013",
-      "name": "Cisco Secure Email 路径遍历漏洞",
-      "cveId": "CVE-2026-76519",
-      "severity": "CRITICAL",
-      "severityLabel": "超危",
-      "published": "2026-10-14",
-      "hasAi": false,
-      "url": "https://www.cnnvd.org.cn/frontend/detail?vulId=800167013"
     }
   ]
 }
