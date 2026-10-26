@@ -21,7 +21,7 @@ comment: true
 
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202412161043752.jpeg)
 ## ❀写在最前（相关文章）
-><font color=red size=4.5>**相关文章：**</font> <br>
+>**<font color=red size=4.5>相关文章：</font>** <br>
 >
 >---
 >💻 [zabbix5.0部署（超级详细）](https://liucy.blog.csdn.net/article/details/124248236)<br>
@@ -40,7 +40,7 @@ comment: true
 
 ---
 
-@[toc]
+
 
 >&emsp;&emsp;各位运维的朋友们都有可能遇到过在公司内网环境下无法访问外网情况，无法访问外网yum源部署ZABBIX 对于rpm包依赖问题比较头疼。本文将会进行离线部署实战。同时大家也可以写成一份shell脚本直接离线安装一键部署就可以了。
 

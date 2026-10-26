@@ -718,3 +718,8 @@ category:
 > 1、修改了阿里icon图标的链接（src/.vuepress/theme.ts）
 > 2、新增一篇文章《【Linux】Ubuntu 如何下载离线安装包？（详解）》(src/document/Linux)
 > 3、新增一篇文章《nerdctl 部署及使用指南》（src/document/Kubernetes）
+
+## 2026-10-26:
+> 1、去除热点漏洞页面
+> 2、修改文章《CentOS7 离线安装 Zabbix5.0》一些显示问题（src/document/monitor/zabbix）
+> 3、解决pnpm12版本，`pnpm install`安装模块时报错问题

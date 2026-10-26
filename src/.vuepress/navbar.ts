@@ -81,11 +81,6 @@ export default navbar([
         icon: "MD5",
         link: "tools/md5-check.md"
       },
-      {
-        text: "服务器热点漏洞",
-        icon: "bug",
-        link: "tools/linux-vulnerabilities.md"
-      },
     ],
   },
   {
