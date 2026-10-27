@@ -723,3 +723,6 @@ category:
 > 1、去除热点漏洞页面
 > 2、修改文章《CentOS7 离线安装 Zabbix5.0》一些显示问题（src/document/monitor/zabbix）
 > 3、解决pnpm12版本，`pnpm install`安装模块时报错问题
+
+## 2026-10-27:
+> 1、更新了docker镜像加速地址文章（src/document/Docker）

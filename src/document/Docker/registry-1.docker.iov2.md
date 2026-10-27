@@ -88,23 +88,19 @@ mv /etc/docker/daemon.json /etc/docker/daemon.json-bak
 [root@localhost docker]# sudo tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": [
-    "https://docker.apiba.cn",
-    "https://hub1.nat.tf",
-    "https://docker.1panel.live",
     "https://dockerproxy.net",
-    "https://hub3.nat.tf",
-    "https://hub.1panel.dev",
-    "https://docker.367231.xyz",
-    "https://docker-registry.nmqu.com",
-    "https://hub2.nat.tf",
-    "https://docker.jsdelivr.fyi",
-    "https://hub.rat.dev",
-    "https://hub.fast360.xyz",
-    "https://hub.amingg.com",
-    "https://docker.zhai.cm",
-    "https://dockertest.jsdelivr.fyi",
+    "https://docker.apiba.cn",
+    "https://docker.1panel.live",
+    "https://hub4.nat.tf",
     "https://docker.mybacc.com",
-    "https://docker.mrxn.net"
+    "https://docker.1ms.run",
+    "https://666860.xyz",
+    "https://hubp.me",
+    "https://hub3.nat.tf",
+    "https://dytt.online",
+    "https://docker.yomansunter.com",
+    "https://dockercf.jsdelivr.fyi",
+    "https://dislabaiot.xyz"
   ]
 }
 
@@ -249,28 +245,24 @@ docker pull liuchenyang/ubuntu20.04:latest
 
 
 
-## 五、Docker加速列表 - 2026.09.29 已更新 - 长期维护
-><span id="dockerjiasu">Docker加速列表 - 2026.09.29 已更新 - 长期维护</span>
+## 五、Docker加速列表 - 2026.10.27 已更新 - 长期维护
+><span id="dockerjiasu">Docker加速列表 - 2026.10.27 已更新 - 长期维护</span>
 
 | 镜像加速地址                      | 是否正常使用 |
 | --------------------------------- | ------------ |
-|https://docker.apiba.cn|正常（超级稳定）|
-|https://hub1.nat.tf|正常（超级稳定）|
-|https://docker.1panel.live|正常（超级稳定）|
 |https://dockerproxy.net|正常（超级稳定）|
-|https://hub3.nat.tf|正常（稳定）|
-|https://hub.1panel.dev|正常（稳定）|
-|https://docker.367231.xyz|正常（稳定）|
-|https://docker-registry.nmqu.com|正常（稳定）|
-|https://hub2.nat.tf|正常|
-|https://docker.jsdelivr.fyi|正常|
-|https://hub.rat.dev|正常|
-|https://hub.fast360.xyz|正常|
-|https://hub.amingg.com|正常|
-|https://docker.zhai.cm|正常|
-|https://dockertest.jsdelivr.fyi|正常|
+|https://docker.apiba.cn|正常（超级稳定）|
+|https://docker.1panel.live|正常（超级稳定）|
+|https://hub4.nat.tf|正常|
 |https://docker.mybacc.com|正常|
-|https://docker.mrxn.net|正常|
+|https://docker.1ms.run|正常|
+|https://666860.xyz|正常|
+|https://hubp.me|正常|
+|https://hub3.nat.tf|正常|
+|https://dytt.online|正常|
+|https://docker.yomansunter.com|正常|
+|https://dockercf.jsdelivr.fyi|正常|
+|https://dislabaiot.xyz|正常|
 
 
 
