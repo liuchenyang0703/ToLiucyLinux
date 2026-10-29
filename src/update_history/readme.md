@@ -708,7 +708,6 @@ category:
 
 ## 2026-10-22:
 > 1、替换博客页面的`Soul`为`Instagram`（src/.vuepress/theme.ts）
-> 2、新增服务器热点漏洞页面，接入 CNNVD 热点漏洞并在构建阶段生成同源数据，每 6 小时自动更新；支持查看、搜索与危险等级筛选，自动关联并展示通用 CVE 编号，补全详情接口缺失的 Apache Tomcat CVE 并兼容英文危险等级，同时新增页面导航图标并更新阿里 Iconfont 图标库链接（src/tools/linux-vulnerabilities.md）（src/.vuepress/components/tools/LinuxVulnerabilityFeed.vue、fetch-cnnvd-hot.mjs）（src/.vuepress/client.ts、navbar.ts、theme.ts）（.github/workflows/deploy-docs.yml）
 
 ## 2026-10-23:<Badge text="新增页面" type="tip" />
 > 1、新增`我的开源项目`页面，展示 GitHub 与 Gitee 的全部公开仓库；支持平台、语言、原创/Fork 类型筛选、项目搜索及多种排序方式（src/Custom/open-source-projects.md）（src/.vuepress/components/OpenSourceProjects.vue）（src/.vuepress/client.ts、navbar.ts）
@@ -726,3 +725,6 @@ category:
 
 ## 2026-10-27:
 > 1、更新了docker镜像加速地址文章（src/document/Docker）
+
+## 2026-10-28:
+> 1、删除漏洞页面构建时遗留下来的数据问题
