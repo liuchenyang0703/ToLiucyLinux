@@ -56,7 +56,7 @@ locale
 
 ```bash
 # 方法一、修改/etc/locale.conf文件
-echo "LANG=en_US.UTF-8" /etc/locale.conf
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 # 加载/etc/locale.conf文件，使其生效
 source /etc/locale.conf
 
@@ -90,7 +90,7 @@ yum groupinstall chinese-support
 下载完之后使用该中文包
 
 ```bash
-echo "LANG=zh_CN.UTF-8" /etc/locale.conf
+echo "LANG=zh_CN.UTF-8" >> /etc/locale.conf
 # 加载/etc/locale.conf文件，使其生效
 source /etc/locale.conf
 ```
