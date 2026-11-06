@@ -541,8 +541,8 @@ ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
 ETCD_INITIAL_CLUSTER_STATE="new"
 ```
 ![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110948550.png)
-![](https://i-blog.csdnimg.cn/direct/643b361826424a68b4256fc296d8aa6f.png)
-![](https://i-blog.csdnimg.cn/direct/e2bdc5d98b5a49bcb0693186eaf6d642.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202611061708508.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202611061708078.png)
 
 
 
