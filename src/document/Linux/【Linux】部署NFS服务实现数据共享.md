@@ -178,13 +178,22 @@ apt install -y nfs-kernel-server
 * 启动 nfs 服务并配置开机自启<font color=blue>（所有节点）</font>
 
 ```bash
+# centos
 systemctl enable --now nfs
+
+# ubuntu
+systemctl enable --now nfs-server
 ```
 
 * 查看服务状态
 
 ```bash
+# centos
 systemctl status nfs
+systemctl status rpcbind
+
+# ubuntu
+systemctl status nfs-server
 systemctl status rpcbind
 ```
 
