@@ -241,8 +241,11 @@ vim /etc/exports
 * 重启<font color=gree>服务端</font>NFS和RPC服务
 
 ```bash
+# centos
 systemctl restart nfs rpcbind
-```
+
+# ubuntu
+systemctl restart nfs-server rpcbind```
 ---
 
 ---
