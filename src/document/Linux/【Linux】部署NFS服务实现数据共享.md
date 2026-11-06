@@ -245,7 +245,9 @@ vim /etc/exports
 systemctl restart nfs rpcbind
 
 # ubuntu
-systemctl restart nfs-server rpcbind```
+systemctl restart nfs-server rpcbind
+```
+
 ---
 
 ---
