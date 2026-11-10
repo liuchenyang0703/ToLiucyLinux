@@ -1982,9 +1982,9 @@ k8s-node2    Ready    <none>   172m   v1.20.10
 ---
 两台node节点上`calico`服务默认拉取的镜像都有如下：
 
-![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202511110946890.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202611101528029.png)
 
-确保这四个都有，pod的`calico`的状态就会正常运行；
+确保这五个都有，pod的`calico`的状态就会正常运行；
 
 ---
 
