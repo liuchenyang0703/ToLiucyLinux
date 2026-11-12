@@ -168,10 +168,13 @@ nerdctl 默认会在 `/opt/cni/bin` 或 `/usr/local/libexec/cni` 下查找这些
 ```bash
 # 生成默认配置
 mkdir -p /etc/containerd
-containerd config default | tee /etc/containerd/config.toml
+containerd config default > /etc/containerd/config.toml
 
-# 将 SystemdCgroup 改为 true
+# 修改配置：使用 systemd cgroup driver
 sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+
+# 修改 sandbox 镜像地址（国内加速）
+sed -i 's|registry.k8s.io/pause:3.8|registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.9|g' /etc/containerd/config.toml
 
 # 启动 containerd 并配置开机自启
 systemctl daemon-reload
@@ -222,16 +225,16 @@ containerd-rootless-setuptool.sh install-buildkit
 
 
 ### 3.2 nerdctl 配置镜像加速地址
-> 既然docker都需要配置了，那么 **nerdctl** 和 **docker** 是同样的道理，拉取镜像都是从dockerhub里拉取，国内是拉取不到的，所以需要采用镜像加速源的方式来拉取镜像；
-> 但不同的是，配置文件位置不同，**docker** 的配置文件在：`/etc/docker/daemon.json`，**nerdctl** 的配置文件在：`/etc/containerd/config.toml`
+> 既然docker都需要配置了，那么 **containerd** 和 **docker** 是同样的道理，拉取镜像都是从dockerhub里拉取，国内是拉取不到的，所以需要采用镜像加速源的方式来拉取镜像；
+> 但不同的是，配置文件位置不同，**docker** 的配置文件在：`/etc/docker/daemon.json`，**containerd** 的配置文件在：`/etc/containerd/config.toml`
 
-如果没有找到`nerdctl`的配置的话应该是没有执行上面命令生成默认的配置，可使用命令：`containerd config default | tee /etc/containerd/config.toml`
+如果没有找到`containerd`的配置的话应该是没有执行上面命令生成默认的配置，可使用命令：`containerd config default | tee /etc/containerd/config.toml`
 
 * 开始配置镜像加速地址
 
 **1. 修改主配置**
 
-编辑 `/etc/containerd/config.toml`，把 `config_path` 从空值改成目录：
+编辑 `/etc/containerd/config.toml`，把 `config_path` 从空值改成目录（个别`containerd`版本名称、位置可能会有差异）：
 
 ```bash
 # 进入container配置文件
