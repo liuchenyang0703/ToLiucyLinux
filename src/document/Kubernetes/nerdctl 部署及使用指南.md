@@ -395,6 +395,28 @@ nerdctl login -u <username> -p <password> <registry>
 nerdctl login --insecure-registry -u <username> <registry>
 ```
 
+### 3.6 查看命名空间
+查看都有那些命名空间
+
+```bash
+nerdctl namespace ls
+```
+### 3.7 修改默认命名空间
+> nerdctl 默认看的是default命名空间的镜像，我们要用k8s，可以直接吧`k8s.io`的设置为默认的，修改之后拉取镜像/容器、查看都在这个命名空间下；
+
+* 创建nerdctl配置目录
+
+```bash
+mkdir -p /etc/nerdctl
+```
+* 创建配置文件并写入默认命名空间配置
+
+```bash
+cat > /etc/nerdctl/nerdctl.toml << EOF
+namespace = "k8s.io"
+EOF
+```
+
 ## 四、与 Kubernetes 集成
 
 nerdctl 的一个重要特性是支持 containerd 的命名空间机制。Kubernetes 默认使用 `k8s.io` 命名空间运行所有容器，nerdctl 可以直接操作该命名空间下的资源。
