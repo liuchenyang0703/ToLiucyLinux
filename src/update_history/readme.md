@@ -750,3 +750,4 @@ category:
 
 ## 2026-11-18:
 > 1、新增一篇文章《K8S 二进制集群搭建（一主两从）v1.37.2 版本》（src/document/Kubernetes）
+> 2、博客页面新增3个社交媒体（src/.vuepress/theme.ts）

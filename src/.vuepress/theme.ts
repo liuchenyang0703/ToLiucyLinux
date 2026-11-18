@@ -239,6 +239,12 @@ export default hopeTheme({
         link: "https://developer.aliyun.com/profile/7yu26jk3lfqxg",
       },
       AliPay: "https://open.alipay.com/portal/forum/developer/2406012047/article",
+      Youtube: "https://www.youtube.com/",
+      tiktok: {
+        icon: "https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/favicon.png",
+        link: "https://www.tiktok.com/",
+      },
+      Twitch: "https://www.twitch.tv/twitch",
     },
     // 时间轴的顶部文字展示。
     timeline: "创作时间",
