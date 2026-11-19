@@ -412,7 +412,10 @@ cat > ca-csr.json << EOF
             "L": "BeiJing",
             "ST": "BeiJing"
         }
-    ]
+    ],
+  "ca": {
+    "expiry": "87600h"
+  }
 }
 EOF
 ```
@@ -928,7 +931,10 @@ cat > ca-csr.json << EOF
             "O": "k8s",
             "OU": "System"
         }
-    ]
+    ],
+    "ca": {
+        "expiry": "87600h"
+    }
 }
 EOF
 ```
@@ -1308,7 +1314,7 @@ KUBE_CONTROLLER_MANAGER_OPTS="--v=2 \\
 --cluster-signing-cert-file=/opt/kubernetes/ssl/ca.pem \\
 --cluster-signing-key-file=/opt/kubernetes/ssl/ca-key.pem  \\
 --root-ca-file=/opt/kubernetes/ssl/ca.pem \\
---service-account-private-key-file=/opt/kubernetes/ssl/ca-key.pem \\
+--service-account-private-key-file=/opt/kubernetes/ssl/server-key.pem \\
 --cluster-signing-duration=87600h0m0s"
 EOF
 ```
@@ -1341,19 +1347,19 @@ EOF
 
 * [x] 证书自动签发（CA 与期限）
 
-| 内容                                                           | 含义                                               |
-| ----------------------------------------------------------- | ------------------------------------------------ |
+| 内容                                                        | 含义                                                         |
+| ----------------------------------------------------------- | ------------------------------------------------------------ |
 | `--cluster-signing-cert-file=/opt/kubernetes/ssl/ca.pem`    | 给 **Node、CSR、ServiceAccount** 签证书的 **CA 证书**。自动为kubelet颁发证书的CA,apiserver保持一致 |
-| `--cluster-signing-key-file=/opt/kubernetes/ssl/ca-key.pem` | 自动为kubelet颁发证书的CA,apiserver保持一致                           |
-| `--cluster-signing-duration=87600h0m0s`                     | 签出的证书有效期 **10 年**，生产可缩短（如 8760h）。                |
+| `--cluster-signing-key-file=/opt/kubernetes/ssl/ca-key.pem` | 自动为kubelet颁发证书的CA,apiserver保持一致                  |
+| `--cluster-signing-duration=87600h0m0s`                     | 签出的证书有效期 **10 年**，生产可缩短（如 8760h）。         |
 
 
 * [x] 根 CA & ServiceAccount JWT
 
-| 内容                                                                  | 含义                                                                                                                           |
-| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `--root-ca-file=/opt/kubernetes/ssl/ca.pem`                         | 注入到 **每个 ServiceAccount** 的 `/var/run/secrets/kubernetes.io/serviceaccount/ca.crt`；与 apiserver 的 `--client-ca-file` 保持一致。 ⚠️ |
-| `--service-account-private-key-file=/opt/kubernetes/ssl/ca-key.pem` | 给 **SA token** 签名的私钥；与 apiserver 的 `--service-account-signing-key-file` 必须 **同一对密钥**，否则 token 验证失败。 ⚠️                       |
+| 内容                                                         | 含义                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `--root-ca-file=/opt/kubernetes/ssl/ca.pem`                  | 注入到 **每个 ServiceAccount** 的 `/var/run/secrets/kubernetes.io/serviceaccount/ca.crt`；与 apiserver 的 `--client-ca-file` 保持一致。 ⚠️ |
+| `--service-account-private-key-file=/opt/kubernetes/ssl/server-key.pem` | 给 **SA token** 签名的私钥；与 apiserver 的 `--service-account-signing-key-file` 必须 **同一对密钥**，否则 token 验证失败。 ⚠️ |
 
 
 #### 5.4.2 生成kube-controller-manager证书
@@ -2608,3 +2614,6 @@ systemctl status kubelet
 |calico 网络插件开源地址  | [https://github.com/projectcalico/calico](https://github.com/projectcalico/calico) |
 | metrics-server插件开源地址 | [https://github.com/kubernetes-sigs/metrics-server](https://github.com/kubernetes-sigs/metrics-server) |
 
+### 9.4 证书有效期
+> 依据本文部署的所有的证书有效期默认为10年，包括`ca`证书和`server`证书；
+> 如需查询可参考本文：[Kubernetes 查询证书有效期及续签证书（适用于二进制部署）](https://liucy.blog.csdn.net/article/details/170984459)，在此文的 `1.5 证书有效期检查总结：Kubernetes 集群 证书统一检查（包含有效期预警）`部分。
