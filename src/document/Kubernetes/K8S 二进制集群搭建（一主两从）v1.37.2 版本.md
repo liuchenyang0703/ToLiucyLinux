@@ -2616,4 +2616,5 @@ systemctl status kubelet
 
 ### 9.4 证书有效期
 > 依据本文部署的所有的证书有效期默认为10年，包括`ca`证书和`server`证书；
+> `kubelet Server` 证书（kubelet.crt）除外，该证书由 `kubelet` 自动生成，默认有效期为 `1` 年，通常由 `kubelet` 自身管理和更新，虽然是自动更新，但也要定期检查，不可大意。
 > 如需查询可参考本文：[Kubernetes 查询证书有效期及续签证书（适用于二进制部署）](https://liucy.blog.csdn.net/article/details/170984459)，在此文的 `1.5 证书有效期检查总结：Kubernetes 集群 证书统一检查（包含有效期预警）`部分。
