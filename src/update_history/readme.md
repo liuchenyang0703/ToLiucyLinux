@@ -757,3 +757,4 @@ category:
 
 ## 2026-11-25:
 > 1、更新docker镜像加速地址文章（src/document/Docker）
+> 2、更新主页不蒜子统计规则（src/.vuepress/components/访问量.vue）

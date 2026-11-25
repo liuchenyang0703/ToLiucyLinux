@@ -1,36 +1,95 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 
-let busuanziScript: HTMLScriptElement | undefined;
+interface Counts {
+    site_pv: number;
+    site_uv: number;
+}
 
-const loadBusuanzi = async (): Promise<void> => {
-    await nextTick();
+const cacheKey = "toliucylinux-visitor-counts";
+const counts = ref<Counts>();
+const status = ref<"loading" | "ready" | "failed" | "regressed">("loading");
+let cancelRequest: (() => void) | undefined;
 
-    document.querySelectorAll<HTMLScriptElement>('script[data-busuanzi-loader="true"]').forEach((script) => script.remove());
-
-    busuanziScript = document.createElement("script");
-    busuanziScript.async = true;
-    busuanziScript.dataset.busuanziLoader = "true";
-    busuanziScript.src = `https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js?t=${Date.now()}`;
-    document.body.appendChild(busuanziScript);
+const isCounts = (value: unknown): value is Counts => {
+    if (!value || typeof value !== "object") return false;
+    const { site_pv, site_uv } = value as Counts;
+    return Number.isSafeInteger(site_pv) && site_pv >= 0
+        && Number.isSafeInteger(site_uv) && site_uv >= 0;
 };
 
-onMounted(() => void loadBusuanzi());
+const readCache = (): Counts | undefined => {
+    try {
+        const cached: unknown = JSON.parse(localStorage.getItem(cacheKey) ?? "null");
+        return isCounts(cached) ? cached : undefined;
+    } catch {
+        return undefined;
+    }
+};
 
-onBeforeUnmount(() => {
-    busuanziScript?.remove();
-    busuanziScript = undefined;
+const loadBusuanzi = () => {
+    cancelRequest?.();
+    status.value = "loading";
+    const script = document.createElement("script");
+    const callback = `BusuanziCallback_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+    const callbacks = window as unknown as Record<string, (value: unknown) => void>;
+    const cleanup = () => {
+        window.clearTimeout(timeout);
+        script.remove();
+        delete callbacks[callback];
+        cancelRequest = undefined;
+    };
+    const fail = () => {
+        cleanup();
+        status.value = "failed";
+    };
+    const timeout = window.setTimeout(fail, 8000);
+    cancelRequest = cleanup;
+    callbacks[callback] = (value) => {
+        if (!isCounts(value)) {
+            fail();
+            return;
+        }
+        cleanup();
+        const previous = readCache() ?? counts.value;
+        if (previous && (value.site_pv < previous.site_pv || value.site_uv < previous.site_uv)) {
+            counts.value = previous;
+            status.value = "regressed";
+            console.warn("[访问量] 不蒜子返回的累计统计回落", { previous, received: value });
+            return;
+        }
+        counts.value = value;
+        status.value = "ready";
+        try {
+            localStorage.setItem(cacheKey, JSON.stringify(value));
+        } catch {
+            // The live counts remain available when storage is blocked.
+        }
+    };
+    script.async = true;
+    script.referrerPolicy = "no-referrer-when-downgrade";
+    script.src = `https://busuanzi.ibruce.info/busuanzi?jsonpCallback=${callback}`;
+    script.onerror = fail;
+    document.head.appendChild(script);
+};
+
+onMounted(() => {
+    counts.value = readCache();
+    loadBusuanzi();
 });
+
+onBeforeUnmount(() => cancelRequest?.());
 </script>
 
 <template>
     <div class="panel">
         <div class="container">
             <section class="grid">
-                <span class="text">
+                <span v-if="counts" class="text">
                     本站总访问量
-                    <span id="busuanzi_value_site_pv" class="font-bold">--</span> 次
+                    <span class="font-bold">{{ counts.site_pv }}</span> 次
                 </span>
+                <span v-else class="text" role="status">{{ status === "loading" ? "正在读取访问量…" : "访问量暂时无法读取" }}</span>
                 <img
                     class="heart-image"
                     src="https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/202608251148677.GIF"
@@ -38,11 +97,17 @@ onBeforeUnmount(() => {
                     width="150"
                     height="150"
                 />
-                <span class="text">
-                    您是第
-                    <span id="busuanzi_value_site_uv" class="font-bold">--</span> 位访问者
+                <span v-if="counts" class="text">
+                    累计访客
+                    <span class="font-bold">{{ counts.site_uv }}</span> 人
                 </span>
+                <span v-else aria-hidden="true"></span>
             </section>
+            <div v-if="status === 'failed' || status === 'regressed'" class="retry">
+                <span v-if="status === 'regressed'" role="status">统计服务返回了更低的数字，暂显示上次数据。</span>
+                <span v-else-if="counts" role="status">当前显示上次读取的统计。</span>
+                <button type="button" @click="loadBusuanzi">重试</button>
+            </div>
         </div>
     </div>
 </template>
@@ -78,6 +143,14 @@ onBeforeUnmount(() => {
 .text {
     font-size: 0.875rem;
     line-height: 1.25rem;
+}
+
+.retry {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-bottom: 0.75rem;
+    font-size: 0.875rem;
 }
 
 .heart-image {
