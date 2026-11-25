@@ -89,18 +89,20 @@ mv /etc/docker/daemon.json /etc/docker/daemon.json-bak
 {
   "registry-mirrors": [
     "https://dockerproxy.net",
-    "https://docker.apiba.cn",
+    "https://docker.mybacc.com",
     "https://docker.1panel.live",
     "https://hub4.nat.tf",
-    "https://docker.mybacc.com",
-    "https://docker.1ms.run",
+    "https://docker.apiba.cn",
+    "https://hub.rat.dev",
+    "https://hub.1panel.dev",
+    "https://docker-0.unsee.tech",
     "https://666860.xyz",
-    "https://hubp.me",
+    "https://xdark.top",
+    "https://hub.amingg.com",
     "https://hub3.nat.tf",
-    "https://dytt.online",
-    "https://docker.yomansunter.com",
-    "https://dockercf.jsdelivr.fyi",
-    "https://dislabaiot.xyz"
+    "https://dockertest.jsdelivr.fyi",
+    "https://docker-mirror.aigc2d.com",
+    "https://docker.anyhub.us.kg"
   ]
 }
 
@@ -245,24 +247,26 @@ docker pull liuchenyang/ubuntu20.04:latest
 
 
 
-## 五、Docker加速列表 - 2026.10.27 已更新 - 长期维护
-><span id="dockerjiasu">Docker加速列表 - 2026.10.27 已更新 - 长期维护</span>
+## 五、Docker加速列表 - 2026.11.25 已更新 - 长期维护
+><span id="dockerjiasu">Docker加速列表 - 2026.11.25 已更新 - 长期维护</span>
 
-| 镜像加速地址                      | 是否正常使用 |
-| --------------------------------- | ------------ |
-|https://dockerproxy.net|正常（超级稳定）|
-|https://docker.apiba.cn|正常（超级稳定）|
-|https://docker.1panel.live|正常（超级稳定）|
-|https://hub4.nat.tf|正常|
-|https://docker.mybacc.com|正常|
-|https://docker.1ms.run|正常|
-|https://666860.xyz|正常|
-|https://hubp.me|正常|
-|https://hub3.nat.tf|正常|
-|https://dytt.online|正常|
-|https://docker.yomansunter.com|正常|
-|https://dockercf.jsdelivr.fyi|正常|
-|https://dislabaiot.xyz|正常|
+| 镜像加速地址 | 是否正常使用 |
+| --- | --- |
+| https://dockerproxy.net | 正常（超级稳定） |
+| https://docker.mybacc.com | 正常（超级稳定） |
+| https://docker.1panel.live | 正常（超级稳定） |
+| https://hub4.nat.tf | 正常（稳定） |
+| https://docker.apiba.cn | 正常 |
+| https://hub.rat.dev | 正常 |
+| https://hub.1panel.dev | 正常 |
+| https://docker-0.unsee.tech | 正常 |
+| https://666860.xyz | 正常 |
+| https://xdark.top | 正常 |
+| https://hub.amingg.com | 正常 |
+| https://hub3.nat.tf | 正常 |
+| https://dockertest.jsdelivr.fyi | 正常 |
+| https://docker-mirror.aigc2d.com | 正常 |
+| https://docker.anyhub.us.kg | 正常 |
 
 
 
