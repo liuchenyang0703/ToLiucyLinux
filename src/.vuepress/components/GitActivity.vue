@@ -61,6 +61,20 @@ const calendar = computed(() => {
 
   return { year, total, weeks, months };
 });
+
+function positionCalendarTip(event: PointerEvent): void {
+  const cell = event.currentTarget as HTMLElement;
+  const scroll = cell.closest(".calendar-scroll");
+  if (!scroll) return;
+  const bounds = scroll.getBoundingClientRect();
+  const box = cell.getBoundingClientRect();
+  const left = Math.max(0, bounds.left);
+  const right = Math.min(document.documentElement.clientWidth, bounds.left + scroll.clientWidth);
+  const width = Math.min(160, Math.max(0, right - left));
+  const start = Math.max(left, Math.min(box.left + box.width / 2 - width / 2, right - width));
+  cell.style.setProperty("--tip-offset", `${start - box.left}px`);
+  cell.style.setProperty("--tip-width", `${width}px`);
+}
 </script>
 
 <template>
@@ -88,6 +102,7 @@ const calendar = computed(() => {
                 v-for="day in week"
                 :key="day.date"
                 class="calendar-day"
+                @pointerenter="positionCalendarTip"
                 :class="day.inYear ? `level-${day.level}` : 'outside-year'"
                 :data-tip="day.inYear ? `${day.date}：提交 ${day.count} 次` : undefined"
                 :aria-label="day.inYear ? `${day.date}，提交 ${day.count} 次` : undefined"
@@ -133,4 +148,12 @@ const calendar = computed(() => {
 .legend i { display: inline-block; width: 10px; height: 10px; }
 .empty-tip { color: var(--vp-c-text-mute); font-size: .8rem; text-align: center; }
 @media (max-width: 600px) { .git-activity { padding-inline: .8rem; }.activity-footer > span:first-child { display: none; } }
+.calendar-day:hover::after {
+  box-sizing: border-box;
+  left: var(--tip-offset, 0px);
+  width: var(--tip-width, 160px);
+  text-align: center;
+  white-space: nowrap;
+  transform: none;
+}
 </style>

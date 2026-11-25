@@ -107,6 +107,20 @@ const archives = computed(() => {
     months: [...months].map(([month, items]) => ({ month, items })),
   }));
 });
+
+function positionCalendarTip(event: PointerEvent): void {
+  const cell = event.currentTarget as HTMLElement;
+  const scroll = cell.closest(".calendar-scroll");
+  if (!scroll) return;
+  const bounds = scroll.getBoundingClientRect();
+  const box = cell.getBoundingClientRect();
+  const left = Math.max(0, bounds.left);
+  const right = Math.min(document.documentElement.clientWidth, bounds.left + scroll.clientWidth);
+  const width = Math.min(160, Math.max(0, right - left));
+  const start = Math.max(left, Math.min(box.left + box.width / 2 - width / 2, right - width));
+  cell.style.setProperty("--tip-offset", `${start - box.left}px`);
+  cell.style.setProperty("--tip-width", `${width}px`);
+}
 </script>
 
 <template>
@@ -142,6 +156,7 @@ const archives = computed(() => {
                         v-for="day in week"
                         :key="day.key"
                         class="calendar-day"
+                        @pointerenter="positionCalendarTip"
                         :class="[day.inYear ? `level-${day.level}` : 'outside-year']"
                         :data-tip="day.inYear ? `${day.key}：${day.count} 篇文章` : undefined"
                         :aria-label="day.inYear ? `${day.key}，${day.count} 篇文章` : undefined"
@@ -257,5 +272,13 @@ const archives = computed(() => {
   .archive-content { display: flex; flex-direction: column; }
   .year-selector { position: static; order: -1; flex-direction: row; width: 100%; overflow-x: auto; padding-bottom: .25rem; }
   .year-selector button { flex: 0 0 auto; min-width: 72px; align-items: center; }
+}
+.calendar-day:hover::after {
+  box-sizing: border-box;
+  left: var(--tip-offset, 0px);
+  width: var(--tip-width, 160px);
+  text-align: center;
+  white-space: nowrap;
+  transform: none;
 }
 </style>
