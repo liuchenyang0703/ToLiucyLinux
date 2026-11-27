@@ -1879,9 +1879,9 @@ k8s-master   Ready    <none>   2m2s   v1.37.2
 **解答：**
 &emsp;&emsp;因为前面部署`containerd`，默认带的有`cni`网络插件，所以状态就会展示`Ready`；但是网络插件`calico`我们还是需要部署的，为了避免`calico`和`cni`的配置冲突（插件不冲突），这里，我们先把`cni`的配置进行备份，备份之后再次查看node节点就会变成：`NotReady`；
 
-<font color=red>**所有节点都需要执行进行备份**</font>
-<font color=red>**所有节点都需要执行进行备份**</font>
-<font color=red>**所有节点都需要执行进行备份**</font>
+**<font color=red>所有节点都需要执行进行备份</font>**
+**<font color=red>所有节点都需要执行进行备份</font>**
+**<font color=red>所有节点都需要执行进行备份</font>**
 
 
 ```bash
@@ -2264,11 +2264,10 @@ for i in {4,6}; do scp -r /usr/lib/systemd/system/{kubelet,kube-proxy}.service r
 ```
 
 ### 7.2 删除不需要的配置和证书（其他node节点）
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
-> 
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
-> 
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
+
+> **<font color=red>注意：不要删错了，是删除拷贝过去的node节点，不是master节点；</font>**
+> **<font color=red>注意：不要删错了，是删除拷贝过去的node节点，不是master节点；</font>**
+> **<font color=red>注意：不要删错了，是删除拷贝过去的node节点，不是master节点；</font>**
 #### 7.2.1 删除 kube-apiserver、kube-controller-manager、kube-scheduler 配置
 
 ```bash
