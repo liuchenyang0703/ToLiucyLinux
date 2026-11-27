@@ -759,3 +759,6 @@ category:
 > 1、更新docker镜像加速地址文章（src/document/Docker）
 > 2、更新主页不蒜子统计规则（src/.vuepress/components/访问量.vue）
 > 3、修复文章归档和项目更新记录的热力图悬浮提示在边缘被裁切的问题，提示框会根据可见区域自动调整位置（src/.vuepress/components/layouts/Archive.vue、src/.vuepress/components/GitActivity.vue）
+
+## 2026-11-27:
+> 1、更新文章：《K8S 二进制集群搭建（一主两从）v1.37.2 版本》

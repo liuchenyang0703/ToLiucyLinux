@@ -2264,9 +2264,11 @@ for i in {4,6}; do scp -r /usr/lib/systemd/system/{kubelet,kube-proxy}.service r
 ```
 
 ### 7.2 删除不需要的配置和证书（其他node节点）
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font> 
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font> 
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font> 
+> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
+> 
+> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
+> 
+> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
 #### 7.2.1 删除 kube-apiserver、kube-controller-manager、kube-scheduler 配置
 
 ```bash
@@ -2284,9 +2286,16 @@ rm -f /opt/kubernetes/ssl/kubelet*
 **说明:**  
 这几个文件是证书申请审批后自动生成的，每个Node不同，必须删除。
 
+#### 7.2.3 删除不必要的CA私钥和apiserver证书
+
+```bash
+rm -rf /opt/kubernetes/ssl/server*
+rm -rf /opt/kubernetes/ssl/ca-key.pem
+```
+
 删除完剩余这几个；
 
-![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/20261118175238567.png)
+![](https://gcore.jsdelivr.net/gh/liuchenyang0703/blog-images@main/images/20261127140755892.png)
 
 ### 7.3 修改kubelet和kubeproxy配置中的主机名
 > `node1` 和 `node2`分别进行修改；
