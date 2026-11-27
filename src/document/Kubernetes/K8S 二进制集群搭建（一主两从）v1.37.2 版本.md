@@ -2264,9 +2264,9 @@ for i in {4,6}; do scp -r /usr/lib/systemd/system/{kubelet,kube-proxy}.service r
 ```
 
 ### 7.2 删除不需要的配置和证书（其他node节点）
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
-> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font>
+> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font> 
+> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font> 
+> <font color=red>**注意：不要删错了，是删除拷贝过去的node节点，不是master节点；**</font> 
 #### 7.2.1 删除 kube-apiserver、kube-controller-manager、kube-scheduler 配置
 
 ```bash
